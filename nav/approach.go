@@ -481,9 +481,8 @@ func (nav *Nav) ClearedApproach(airport string, id string, straightIn bool) (av.
 	// Follow LNAV instructions more quickly given an approach clearance;
 	// assume that at this point they are expecting them and ready to dial things in.
 	if dh := nav.DeferredNavHeading; dh != nil {
-		now := time.Now()
-		if dh.Time.Sub(now) > 6*time.Second {
-			dh.Time = now.Add(time.Duration((3 + 3*nav.Rand.Float32()) * float32(time.Second)))
+		if dh.Time.Sub(nav.SimTime) > 6*time.Second {
+			dh.Time = nav.SimTime.Add(time.Duration((3 + 3*nav.Rand.Float32()) * float32(time.Second)))
 		}
 	}
 

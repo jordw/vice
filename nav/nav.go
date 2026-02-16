@@ -59,7 +59,8 @@ type Nav struct {
 	FinalAltitude float32
 	Waypoints     av.WaypointArray
 
-	Rand *rand.Rand
+	SimTime time.Time // updated each tick via Update; used for deferred heading timers
+	Rand    *rand.Rand
 }
 
 // DeferredNavHeading stores a heading assignment from the controller and the
@@ -67,12 +68,8 @@ type Nav struct {
 // seconds after the controller issues it in order to model the delay
 // before pilots start to follow assignments.
 type DeferredNavHeading struct {
-	// Time is just plain old wallclock time; it should be sim time, but a
-	// lot of replumbing would be required to have that available where
-	// needed. The downsides are minor: 1. On quit and resume, any pending
-	// assignments will generally be followed immediately, and 2. if the
-	// sim rate is increased, the delay will end up being longer than
-	// intended.
+	// Time is in sim time (set via nav.SimTime). This ensures deferred
+	// commands resolve correctly during fast-forward and after sleep/wake.
 	Time    time.Time
 	Heading *float32
 	Turn    *TurnMethod
@@ -478,9 +475,8 @@ func (nav *Nav) EnqueueHeading(hdg float32, turn TurnMethod) {
 		delay = 5 + 4*nav.Rand.Float32()
 	}
 
-	now := time.Now()
 	nav.DeferredNavHeading = &DeferredNavHeading{
-		Time:    now.Add(time.Duration(delay * float32(time.Second))),
+		Time:    nav.SimTime.Add(time.Duration(delay * float32(time.Second))),
 		Heading: &hdg,
 		Turn:    &turn,
 	}
@@ -507,18 +503,16 @@ func (nav *Nav) EnqueueDirectFix(wps []av.Waypoint) {
 		delay = 8 + 5*nav.Rand.Float32()
 	}
 
-	now := time.Now()
 	nav.DeferredNavHeading = &DeferredNavHeading{
-		Time:      now.Add(time.Duration(delay * float32(time.Second))),
+		Time:      nav.SimTime.Add(time.Duration(delay * float32(time.Second))),
 		Waypoints: wps,
 	}
 }
 
 func (nav *Nav) EnqueueOnCourse() {
 	delay := 8 + 5*nav.Rand.Float32()
-	now := time.Now()
 	nav.DeferredNavHeading = &DeferredNavHeading{
-		Time: now.Add(time.Duration(delay * float32(time.Second))),
+		Time: nav.SimTime.Add(time.Duration(delay * float32(time.Second))),
 	}
 }
 

@@ -130,6 +130,8 @@ func (nav *Nav) Update(callsign string, model *wx.Model, fp *av.FlightPlan, simT
 
 // UpdateWithWeather is a helper for simulations that use pre-fetched weather
 func (nav *Nav) UpdateWithWeather(callsign string, wxs wx.Sample, fp *av.FlightPlan, simTime time.Time, bravo *av.AirspaceGrid) *av.Waypoint {
+	nav.SimTime = simTime
+
 	// Log current state every tick
 	NavLog(callsign, simTime, NavLogState, "pos=%.4f,%.4f alt=%.0f hdg=%.0f ias=%.0f gs=%.0f bank=%.1f rate=%.0f",
 		nav.FlightState.Position[0], nav.FlightState.Position[1],
@@ -159,7 +161,7 @@ func (nav *Nav) TargetHeading(callsign string, wxs wx.Sample, simTime time.Time)
 	}
 
 	// Is it time to start following a heading or direct to a fix recently issued by the controller?
-	if dh := nav.DeferredNavHeading; dh != nil && time.Now().After(dh.Time) {
+	if dh := nav.DeferredNavHeading; dh != nil && simTime.After(dh.Time) {
 		nav.Heading = NavHeading{Assigned: dh.Heading, Turn: dh.Turn, Hold: dh.Hold} // these may be nil
 		if len(dh.Waypoints) > 0 {
 			nav.Waypoints = dh.Waypoints
