@@ -323,6 +323,7 @@ func makeNav(callsign av.ADSBCallsign, fp av.FlightPlan, perf av.AircraftPerform
 		Perf:           perf,
 		FinalAltitude:  float32(fp.Altitude),
 		FixAssignments: make(map[string]NavFixAssignment),
+		SimTime:        simTime,
 		Rand:           rand.Make(),
 	}
 
