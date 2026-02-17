@@ -401,7 +401,19 @@ func (nav *Nav) directFixWaypoints(fix string) ([]av.Waypoint, error) {
 	return nil, ErrInvalidFix
 }
 
+func (nav *Nav) ExpectDirectFix(fix string) av.CommandIntent {
+	if !nav.fixInRoute(fix) {
+		return av.MakeUnableIntent("unable. {fix} isn't in our route", fix)
+	}
+	nav.ExpectDirect = fix
+	return av.NavigationIntent{
+		Type: av.NavExpectDirectFix,
+		Fix:  fix,
+	}
+}
+
 func (nav *Nav) DirectFix(fix string, simTime time.Time) av.CommandIntent {
+	nav.ExpectDirect = "" // Clear any pending expect-direct
 	if wps, err := nav.directFixWaypoints(fix); err == nil {
 		if hold := nav.Heading.Hold; hold != nil {
 			// We'll finish our lap and then depart the holding fix direct to the fix

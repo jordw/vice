@@ -56,6 +56,8 @@ type Nav struct {
 	// second to override it.
 	DeferredNavHeading *DeferredNavHeading
 
+	ExpectDirect string
+
 	FinalAltitude float32
 	Waypoints     av.WaypointArray
 
@@ -86,6 +88,7 @@ type NavSnapshot struct {
 	Waypoints          av.WaypointArray
 	DeferredNavHeading *DeferredNavHeading
 	FixAssignments     map[string]NavFixAssignment
+	ExpectDirect       string
 }
 
 // TakeSnapshot captures the current controller-modifiable nav state for later rollback.
@@ -98,6 +101,7 @@ func (nav *Nav) TakeSnapshot() NavSnapshot {
 		Waypoints:          nav.Waypoints,
 		DeferredNavHeading: nav.DeferredNavHeading,
 		FixAssignments:     nav.FixAssignments,
+		ExpectDirect:       nav.ExpectDirect,
 	})
 }
 
@@ -111,6 +115,7 @@ func (nav *Nav) RestoreSnapshot(snap NavSnapshot) {
 	nav.Waypoints = snap.Waypoints
 	nav.DeferredNavHeading = snap.DeferredNavHeading
 	nav.FixAssignments = snap.FixAssignments
+	nav.ExpectDirect = snap.ExpectDirect
 }
 
 type FlightState struct {
@@ -646,6 +651,10 @@ func (nav *Nav) Summary(fp av.FlightPlan, model *wx.Model, simTime time.Time, lg
 		if dh.Hold != nil {
 			lines = append(lines, fmt.Sprintf("Will shortly enter hold at %s", dh.Hold.Hold.DisplayName()))
 		}
+	}
+
+	if nav.ExpectDirect != "" {
+		lines = append(lines, "Expecting direct "+nav.ExpectDirect)
 	}
 
 	// weather

@@ -1427,6 +1427,16 @@ func (s *Sim) ExpediteClimb(tcw TCW, callsign av.ADSBCallsign) (av.CommandIntent
 		})
 }
 
+func (s *Sim) ExpectDirectFix(tcw TCW, callsign av.ADSBCallsign, fix string) (av.CommandIntent, error) {
+	s.mu.Lock(s.lg)
+	defer s.mu.Unlock(s.lg)
+
+	return s.dispatchControlledAircraftCommand(tcw, callsign,
+		func(tcw TCW, ac *Aircraft) av.CommandIntent {
+			return ac.ExpectDirectFix(fix)
+		})
+}
+
 func (s *Sim) DirectFix(tcw TCW, callsign av.ADSBCallsign, fix string) (av.CommandIntent, error) {
 	s.mu.Lock(s.lg)
 	defer s.mu.Unlock(s.lg)
@@ -2799,6 +2809,8 @@ func (s *Sim) runOneControlCommand(tcw TCW, callsign av.ADSBCallsign, command st
 			return s.ExpediteDescent(tcw, callsign)
 		} else if command == "EC" {
 			return s.ExpediteClimb(tcw, callsign)
+		} else if strings.HasPrefix(command, "EX") && len(command) > 2 {
+			return s.ExpectDirectFix(tcw, callsign, command[2:])
 		} else if len(command) > 1 {
 			// Parse: "EI22L/LAHSO26" -> approach="I22L", lahsoRunway="26"
 			components := strings.Split(command[1:], "/")

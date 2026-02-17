@@ -111,6 +111,20 @@ func ParseCommands(tokens []Token, ac Aircraft) ([]string, float64) {
 			}
 		}
 
+		// Handle "expect direct {fix}" and "expect [to] resume [the] arrival [at] {fix}"
+		if strings.ToLower(tokens[pos].Text) == "expect" && pos+2 < len(tokens) {
+			if cmd, consumed := tryExpectDirectFix(tokens[pos:], ac); consumed > 0 {
+				logLocalStt("  matched expect direct fix: %q (consumed=%d)", cmd, consumed)
+				commands = append(commands, cmd)
+				totalConf += 1.0
+				if category := getCommandCategory(cmd); category != "" {
+					excludeCategories[category] = true
+				}
+				pos += consumed
+				continue
+			}
+		}
+
 		// Try to match a command
 		match, newPos := matchCommandNew(tokens, pos, ac, isThen, excludeCategories)
 		if newPos > pos {
@@ -405,4 +419,51 @@ func tryImplicitApproachMatch(tokens []Token, ac Aircraft) (string, int) {
 	}
 
 	return prefix + appr, consumed
+}
+
+// tryExpectDirectFix checks for "expect direct {fix}" or
+// "expect [to] resume [the] arrival [at] {fix}" patterns.
+// tokens[0] must be "expect". Returns the command string and total tokens consumed.
+func tryExpectDirectFix(tokens []Token, ac Aircraft) (string, int) {
+	// skipFiller advances past filler words.
+	skipFiller := func(tokens []Token, i int) int {
+		for i < len(tokens) && IsFillerWord(strings.ToLower(tokens[i].Text)) {
+			i++
+		}
+		return i
+	}
+
+	i := skipFiller(tokens, 1)
+
+	// "expect direct {fix}"
+	if i < len(tokens) && FuzzyMatch(tokens[i].Text, "direct", 0.8) {
+		i = skipFiller(tokens, i+1)
+		if i < len(tokens) {
+			fix, _, consumed := extractFix(tokens[i:], ac.Fixes)
+			if consumed > 0 {
+				return "EX" + fix, i + consumed
+			}
+		}
+		return "", 0
+	}
+
+	// "expect [to] resume [the] arrival [at] {fix}"
+	if i < len(tokens) && FuzzyMatch(tokens[i].Text, "resume", 0.8) {
+		i = skipFiller(tokens, i+1)
+		if i < len(tokens) && FuzzyMatch(tokens[i].Text, "arrival", 0.8) {
+			i = skipFiller(tokens, i+1)
+			// skip optional "at" (not a filler word)
+			if i < len(tokens) && strings.ToLower(tokens[i].Text) == "at" {
+				i++
+			}
+			if i < len(tokens) {
+				fix, _, consumed := extractFix(tokens[i:], ac.Fixes)
+				if consumed > 0 {
+					return "EX" + fix, i + consumed
+				}
+			}
+		}
+	}
+
+	return "", 0
 }

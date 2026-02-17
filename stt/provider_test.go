@@ -3288,3 +3288,106 @@ func TestNegativeThatWasForFullParse(t *testing.T) {
 		})
 	}
 }
+
+func TestExpectDirectFix(t *testing.T) {
+	tests := []struct {
+		name       string
+		transcript string
+		aircraft   map[string]Aircraft
+		expected   string
+	}{
+		{
+			name:       "expect direct fix",
+			transcript: "American 100 expect direct celtic",
+			aircraft: map[string]Aircraft{
+				"American 100": {
+					Callsign: "AAL100",
+					State:    "arrival",
+					Fixes:    map[string]string{"celtic": "CELTK"},
+				},
+			},
+			expected: "AAL100 EXCELTK",
+		},
+		{
+			name:       "expect direct fix with heading",
+			transcript: "American 100 turn left heading one three zero expect direct celtic",
+			aircraft: map[string]Aircraft{
+				"American 100": {
+					Callsign: "AAL100",
+					State:    "arrival",
+					Fixes:    map[string]string{"celtic": "CELTK"},
+				},
+			},
+			expected: "AAL100 L130 EXCELTK",
+		},
+		{
+			name:       "expect resume arrival at fix",
+			transcript: "Delta 200 expect to resume the arrival at beech",
+			aircraft: map[string]Aircraft{
+				"Delta 200": {
+					Callsign: "DAL200",
+					State:    "arrival",
+					Fixes:    map[string]string{"beech": "BEECH"},
+				},
+			},
+			expected: "DAL200 EXBEECH",
+		},
+		{
+			name:       "expect resume arrival without optional words",
+			transcript: "Delta 200 expect resume arrival beech",
+			aircraft: map[string]Aircraft{
+				"Delta 200": {
+					Callsign: "DAL200",
+					State:    "arrival",
+					Fixes:    map[string]string{"beech": "BEECH"},
+				},
+			},
+			expected: "DAL200 EXBEECH",
+		},
+		{
+			name:       "expect approach not confused with expect direct",
+			transcript: "Southwest 789 expect RNAV runway three six direct merit",
+			aircraft: map[string]Aircraft{
+				"Southwest 789": {
+					Callsign: "SWA789",
+					State:    "arrival",
+					Fixes:    map[string]string{"merit": "MRIT1"},
+					CandidateApproaches: map[string]string{
+						"rnav runway three six": "R36",
+					},
+					ApproachFixes: map[string]map[string]string{
+						"R36": {"merit": "MERIT"},
+					},
+				},
+			},
+			expected: "SWA789 ER36 DMRIT1",
+		},
+		{
+			name:       "expect direct with no matching fix falls through",
+			transcript: "American 100 expect direct delta",
+			aircraft: map[string]Aircraft{
+				"American 100": {
+					Callsign: "AAL100",
+					State:    "arrival",
+					Fixes:    map[string]string{"celtic": "CELTK"},
+				},
+			},
+			expected: "AAL100 SAYAGAIN/APPROACH",
+		},
+	}
+
+	provider := NewTranscriber(nil)
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result, err := provider.DecodeTranscript(tt.aircraft, tt.transcript, "")
+			if err != nil {
+				t.Errorf("unexpected error: %v", err)
+				return
+			}
+			if result != tt.expected {
+				t.Errorf("got %q, want %q", result, tt.expected)
+			}
+		})
+	}
+}

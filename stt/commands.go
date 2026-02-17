@@ -90,6 +90,9 @@ func getCommandCategory(cmd string) string {
 		// H270 (heading)
 		return "heading"
 	case 'E':
+		if len(cmd) > 2 && cmd[:2] == "EX" {
+			return "expect_direct"
+		}
 		// EI9L (expect approach)
 		// Use different category from cleared_approach so both can appear in same transmission
 		return "expect_approach"

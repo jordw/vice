@@ -403,6 +403,7 @@ const (
 	NavDepartFixDirect
 	NavDepartFixHeading
 	NavCrossFixAt
+	NavExpectDirectFix
 	NavResumeOwnNav
 	NavAltitudeDiscretion
 )
@@ -421,6 +422,8 @@ type NavigationIntent struct {
 
 func (n NavigationIntent) Render(rt *RadioTransmission, r *rand.Rand) {
 	switch n.Type {
+	case NavExpectDirectFix:
+		rt.Add("[expect direct {fix}|we'll plan for direct {fix}|expecting direct {fix}]", n.Fix)
 	case NavDirectFix:
 		rt.Add("direct {fix}", n.Fix)
 	case NavDirectFixFromHold:
