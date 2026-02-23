@@ -53,6 +53,9 @@ var (
 		showLaunchControl bool
 		showMessages      bool
 		showFlightStrips  bool
+		showTestBench     bool
+
+		testBenchWindow *TestBench
 
 		// STT state
 		pttRecording              bool
@@ -257,14 +260,26 @@ func uiDraw(mgr *client.ConnectionManager, config *Config, p platform.Platform, 
 			imgui.SetTooltip("Display online vice documentation")
 		}
 
+		if *devMode && controlClient != nil && controlClient.Connected() {
+			if imgui.Button(renderer.FontAwesomeIconWrench) {
+				ui.showTestBench = !ui.showTestBench
+			}
+			if imgui.IsItemHovered() {
+				imgui.SetTooltip("Test bench")
+			}
+		}
+
 		// Handle PTT key for STT recording
 		uiHandlePTTKey(p, controlClient, config, lg)
 
 		// Position for right-side icons (add space for mic icon when recording/garbling)
 		width, _ := ui.font.BoundText(renderer.FontAwesomeIconInfoCircle, 0)
 		numIcons := 6
+		if *devMode && controlClient != nil && controlClient.Connected() {
+			numIcons++
+		}
 		if ui.pttRecording || ui.pttGarbling {
-			numIcons = 7
+			numIcons++
 		}
 		displaySize := imgui.CurrentIO().DisplaySize()
 		imgui.SetCursorPos(imgui.Vec2{X: displaySize.X - float32(numIcons*width+15), Y: 0})
@@ -319,6 +334,13 @@ func uiDraw(mgr *client.ConnectionManager, config *Config, p platform.Platform, 
 			ui.launchControlWindow.Draw(eventStream, p)
 		}
 
+		if ui.showTestBench {
+			if ui.testBenchWindow == nil {
+				ui.testBenchWindow = NewTestBench(controlClient, eventStream, lg)
+			}
+			ui.testBenchWindow.Draw(&ui.showTestBench, p)
+		}
+
 		if ui.showMessages {
 			config.MessagesPane.DrawWindow(&ui.showMessages, controlClient, p, lg)
 		}
@@ -361,6 +383,7 @@ func uiDraw(mgr *client.ConnectionManager, config *Config, p platform.Platform, 
 
 func uiResetControlClient(c *client.ControlClient, p platform.Platform, lg *log.Logger) {
 	ui.launchControlWindow = nil
+	ui.testBenchWindow = nil
 	clear(acknowledgedATIS)
 }
 
