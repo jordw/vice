@@ -120,6 +120,7 @@ func approachFixNames(ap *av.Approach) (iaf, ifFix, faf string) {
 //
 //	{approach}      → approach ID (e.g. "I2L")
 //	{approach_name} → full name (e.g. "ILS Runway 22L")
+//	{runway}        → runway identifier (e.g. "22L")
 //	{iaf}           → Initial Approach Fix name
 //	{if}            → Intermediate Fix name
 //	{faf}           → Final Approach Fix name
@@ -133,6 +134,7 @@ func (ds *TestBench) resolveStep(step TestBenchStep) TestBenchStep {
 	r := strings.NewReplacer(
 		"{approach}", ap.approachId,
 		"{approach_name}", ap.approach.FullName,
+		"{runway}", ap.approach.Runway,
 		"{iaf}", iaf,
 		"{if}", ifFix,
 		"{faf}", faf,
@@ -660,6 +662,17 @@ func matchWaitFor(waitFor string, event sim.Event) bool {
 	case "go_around":
 		return strings.Contains(text, "going around") ||
 			strings.Contains(text, "on the go")
+	case "request_visual":
+		return strings.Contains(text, "requesting the visual") ||
+			strings.Contains(text, "can we get the visual")
+	case "negative_field":
+		return strings.Contains(text, "negative field") ||
+			strings.Contains(text, "field not in sight") ||
+			strings.Contains(text, "no joy on the field")
+	case "traffic_in_sight":
+		return strings.Contains(text, "traffic in sight") ||
+			strings.Contains(text, "have the traffic") ||
+			strings.Contains(text, "got the traffic")
 	}
 	return false
 }

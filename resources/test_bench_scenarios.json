@@ -64,5 +64,132 @@
         {"command": "CVS", "expect_readback": "climb via"}
       ]
     }
+  ],
+  "Visual Approach": [
+    {
+      "label": "AP -> field in sight -> CVA",
+      "aircraft": [
+        {"callsign": "TEST1", "distance_nm": 12, "altitude": 4000, "speed": 210,
+         "note": "extended centerline, 12nm out"}
+      ],
+      "steps": [
+        {"command": "E{approach}", "callsign": "TEST1", "expect_readback": "{approach_name}"},
+        {"command": "AP/12/12", "callsign": "TEST1"},
+        {"wait_for": "field_in_sight"},
+        {"command": "CVA{runway}", "callsign": "TEST1", "expect_readback": "visual approach"}
+      ]
+    },
+    {
+      "label": "AP -> looking (wrong bearing)",
+      "aircraft": [
+        {"callsign": "TEST1", "distance_nm": 12, "altitude": 4000, "speed": 210, "bearing": 90,
+         "note": "offset 90° from centerline"}
+      ],
+      "steps": [
+        {"command": "AP/6/12", "callsign": "TEST1", "expect_readback": "looking"}
+      ]
+    },
+    {
+      "label": "AP -> looking (out of range)",
+      "aircraft": [
+        {"callsign": "TEST1", "distance_nm": 25, "altitude": 3000, "speed": 210,
+         "note": "25nm out, too far"}
+      ],
+      "steps": [
+        {"command": "AP/12/25", "callsign": "TEST1", "expect_readback": "looking"}
+      ]
+    },
+    {
+      "label": "AP -> looking -> negative field",
+      "aircraft": [
+        {"callsign": "TEST1", "distance_nm": 25, "altitude": 3000, "speed": 210, "bearing": 60,
+         "note": "offset bearing + far out, should not see field"}
+      ],
+      "steps": [
+        {"command": "AP/3/25", "callsign": "TEST1", "expect_readback": "looking"},
+        {"wait_for": "negative_field"}
+      ]
+    },
+    {
+      "label": "EVA then AP -> CVA",
+      "aircraft": [
+        {"callsign": "TEST1", "distance_nm": 12, "altitude": 4000, "speed": 210,
+         "note": "extended centerline, 12nm out"}
+      ],
+      "steps": [
+        {"command": "EVA{runway}", "callsign": "TEST1", "expect_readback": "visual approach"},
+        {"command": "AP/12/12", "callsign": "TEST1"},
+        {"wait_for": "field_in_sight"},
+        {"command": "CVA{runway}", "callsign": "TEST1", "expect_readback": "visual approach"}
+      ]
+    },
+    {
+      "label": "CVA without field in sight (unable)",
+      "aircraft": [
+        {"callsign": "TEST1", "distance_nm": 10, "altitude": 4000, "speed": 210,
+         "note": "no AP issued, field not in sight"}
+      ],
+      "steps": [
+        {"command": "CVA{runway}", "callsign": "TEST1", "expect_readback": "unable"}
+      ]
+    },
+    {
+      "label": "CVA after ILS assigned (override)",
+      "aircraft": [
+        {"callsign": "TEST1", "distance_nm": 12, "altitude": 4000, "speed": 210,
+         "note": "extended centerline, 12nm out"}
+      ],
+      "steps": [
+        {"command": "E{approach}", "callsign": "TEST1", "expect_readback": "{approach_name}"},
+        {"command": "AP/12/12", "callsign": "TEST1"},
+        {"wait_for": "field_in_sight"},
+        {"command": "CVA{runway}", "callsign": "TEST1", "expect_readback": "visual approach"}
+      ]
+    },
+    {
+      "label": "TRAFFIC -> in sight -> CVA",
+      "aircraft": [
+        {"callsign": "TEST1", "distance_nm": 12, "altitude": 4000, "speed": 210,
+         "note": "trailing, 12nm out"},
+        {"callsign": "TEST2", "distance_nm": 8, "altitude": 3500, "speed": 210,
+         "note": "lead traffic, 8nm out"}
+      ],
+      "steps": [
+        {"command": "TRAFFIC/12/4/35", "callsign": "TEST1"},
+        {"wait_for": "traffic_in_sight"},
+        {"command": "CVA{runway}", "callsign": "TEST1", "expect_readback": "visual approach"}
+      ]
+    },
+    {
+      "label": "TRAFFIC -> looking -> in sight -> CVA",
+      "aircraft": [
+        {"callsign": "TEST1", "distance_nm": 12, "altitude": 4000, "speed": 210,
+         "note": "trailing, 12nm out"},
+        {"callsign": "TEST2", "distance_nm": 8, "altitude": 3500, "speed": 210,
+         "note": "lead traffic, 8nm out"}
+      ],
+      "steps": [
+        {"command": "TRAFFIC/12/4/35", "callsign": "TEST1"},
+        {"wait_for": "traffic_in_sight"},
+        {"command": "CVA{runway}", "callsign": "TEST1", "expect_readback": "visual approach"}
+      ]
+    },
+    {
+      "label": "TRAFFIC -> CVA, then sequence #2",
+      "aircraft": [
+        {"callsign": "TEST1", "distance_nm": 12, "altitude": 4000, "speed": 210,
+         "note": "trailing, 12nm out"},
+        {"callsign": "TEST2", "distance_nm": 8, "altitude": 3500, "speed": 210,
+         "note": "lead, 8nm out, extended centerline"}
+      ],
+      "steps": [
+        {"command": "AP/12/8", "callsign": "TEST2"},
+        {"wait_for": "field_in_sight"},
+        {"command": "CVA{runway}", "callsign": "TEST2", "expect_readback": "visual approach"},
+        {"command": "TRAFFIC/12/4/35", "callsign": "TEST1"},
+        {"wait_for": "traffic_in_sight"},
+        {"command": "CVA{runway}", "callsign": "TEST1", "expect_readback": "visual approach"}
+      ]
+    }
   ]
 }
