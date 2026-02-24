@@ -52,6 +52,7 @@ type NewSimConfiguration struct {
 	showReliefPositions bool
 	selectedTCW         sim.TCW
 	selectedTCPs        map[sim.TCP]bool
+	virtualPositions    map[sim.TCP]bool // positions unchecked by user (to be made virtual)
 
 	// New UI state for improved flow
 	filterText string // search/filter for scenario selection
@@ -217,6 +218,7 @@ func (c *NewSimConfiguration) SetScenario(groupName, scenarioName string) {
 	}
 	c.ScenarioName = scenarioName
 	c.savedVFRDepartureRateScale = c.ScenarioSpec.LaunchConfig.VFRDepartureRateScale
+	c.virtualPositions = make(map[sim.TCP]bool)
 
 	// Initialize default wind direction from runways
 	c.initDefaultWindDirection()
@@ -1271,6 +1273,63 @@ func (c *NewSimConfiguration) DrawConfigurationUI(p platform.Platform, config *C
 	}
 	imgui.Spacing()
 
+	// POSITION SELECTION section - only show when there are multiple human positions
+	if c.ScenarioSpec != nil && len(c.ScenarioSpec.HumanPositions) > 1 {
+		drawSectionHeader("Position Selection")
+
+		// Determine which positions have assignments (inbound, departure,
+		// or go-around) and should not be made virtual.
+		assignedPositions := make(map[sim.TCP]bool)
+		if cc := c.ScenarioSpec.ControllerConfiguration; cc != nil {
+			for _, tcp := range cc.InboundAssignments {
+				assignedPositions[tcp] = true
+			}
+			for _, tcp := range cc.DepartureAssignments {
+				assignedPositions[tcp] = true
+			}
+			for _, tcp := range cc.GoAroundAssignments {
+				assignedPositions[tcp] = true
+			}
+		}
+
+		// Count how many positions are still checked (human)
+		humanCount := 0
+		for _, tcp := range c.ScenarioSpec.HumanPositions {
+			if !c.virtualPositions[tcp] {
+				humanCount++
+			}
+		}
+
+		if imgui.CollapsingHeaderBoolPtr("Positions###positionSelection", nil) {
+			controllersForGroup := controlPositionsForGroup(c.selectedServer, c.GroupName)
+			for _, tcp := range c.ScenarioSpec.HumanPositions {
+				checked := !c.virtualPositions[tcp]
+				label := controllerDisplayLabel(controllersForGroup, av.ControlPosition(tcp))
+
+				// Disable if this position has assignments or is the last checked position
+				disabled := assignedPositions[tcp] || (checked && humanCount == 1)
+				if disabled {
+					imgui.BeginDisabled()
+				}
+				if imgui.Checkbox("##pos_"+string(tcp), &checked) {
+					if checked {
+						delete(c.virtualPositions, tcp)
+						humanCount++
+					} else {
+						c.virtualPositions[tcp] = true
+						humanCount--
+					}
+				}
+				if disabled {
+					imgui.EndDisabled()
+				}
+				imgui.SameLine()
+				imgui.Text(label)
+			}
+		}
+		imgui.Spacing()
+	}
+
 	// SESSION OPTIONS section (remote only)
 	if c.newSimType == NewSimCreateRemote {
 		drawSectionHeader("Session Options")
@@ -1440,6 +1499,8 @@ func (c *NewSimConfiguration) Start(config *Config) error {
 	} else {
 		// Create sim configuration for new sim
 		c.NewSimRequest.Initials = config.ControllerInitials
+		// Copy virtual positions selection into the request
+		c.NewSimRequest.VirtualPositions = util.SortedMapKeys(c.virtualPositions)
 		if err := c.mgr.CreateNewSim(c.NewSimRequest, config.ControllerInitials, c.selectedServer, c.lg); err != nil {
 			c.lg.Errorf("CreateNewSim failed: %v", err)
 			return err

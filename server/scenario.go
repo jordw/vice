@@ -1504,6 +1504,7 @@ func initializeSimConfigurations(sg *scenarioGroup, catalogs map[string]map[stri
 			PrimaryAirport:          sg.PrimaryAirport,
 			MagneticVariation:       sg.MagneticVariation,
 			WindSpecifier:           scenario.WindSpecifier,
+			HumanPositions:          scenario.ControllerConfiguration.AllPositions(),
 		}
 
 		catalog.Scenarios[name] = spec

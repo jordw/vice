@@ -69,6 +69,8 @@ type ScenarioSpec struct {
 
 	DepartureRunways []sim.DepartureRunway
 	ArrivalRunways   []sim.ArrivalRunway
+
+	HumanPositions []sim.TCP // All positions from DefaultConsolidation
 }
 
 func (s *ScenarioSpec) AllAirports() []string {
@@ -147,6 +149,8 @@ type NewSimRequest struct {
 
 	PilotErrorInterval float32
 
+	VirtualPositions []sim.TCP // Positions the user unchecked (to be made virtual)
+
 	Initials   string // Controller initials (e.g., "XX")
 	Privileged bool
 }
@@ -222,6 +226,72 @@ func (sm *SimManager) makeSimConfiguration(req *NewSimRequest, lg *log.Logger) *
 
 	wxp := sm.getWXProvider()
 
+	cc := sc.ControllerConfiguration
+	// If the user unchecked some positions, rebuild the consolidation
+	// so those positions become virtual.
+	if len(req.VirtualPositions) > 0 {
+		cc = deep.MustCopy(cc)
+		virtualSet := make(map[sim.TCP]bool)
+		for _, tcp := range req.VirtualPositions {
+			virtualSet[tcp] = true
+		}
+
+		// Prune virtual positions from the consolidation tree while
+		// preserving its structure. When a virtual position is removed,
+		// its children are reparented to its parent.
+		pc := cc.DefaultConsolidation
+		for vp := range virtualSet {
+			// Find the parent of vp (if any).
+			var parent sim.TCP
+			for p, children := range pc {
+				if slices.Contains(children, vp) {
+					parent = p
+					break
+				}
+			}
+
+			// Collect vp's children (if it's a parent node).
+			vpChildren := pc[vp]
+
+			if parent != "" {
+				// Remove vp from its parent's children and add vp's
+				// children in its place.
+				filtered := slices.DeleteFunc(pc[parent], func(t sim.TCP) bool { return t == vp })
+				pc[parent] = append(filtered, vpChildren...)
+			} else if len(vpChildren) > 0 {
+				// vp is the root; promote its first child as the new root.
+				newRoot := vpChildren[0]
+				// Merge the remaining children under the new root.
+				pc[newRoot] = append(pc[newRoot], vpChildren[1:]...)
+			}
+
+			delete(pc, vp)
+		}
+
+		if len(pc) == 0 {
+			lg.Errorf("all positions marked as virtual; ignoring VirtualPositions")
+		} else {
+			// Reassign any inbound/departure/go-around assignments that
+			// reference a now-virtual position to the consolidation root.
+			root, _ := pc.RootPosition()
+			for flow, tcp := range cc.InboundAssignments {
+				if virtualSet[tcp] {
+					cc.InboundAssignments[flow] = root
+				}
+			}
+			for spec, tcp := range cc.DepartureAssignments {
+				if virtualSet[tcp] {
+					cc.DepartureAssignments[spec] = root
+				}
+			}
+			for key, tcp := range cc.GoAroundAssignments {
+				if virtualSet[tcp] {
+					cc.GoAroundAssignments[key] = root
+				}
+			}
+		}
+	}
+
 	nsc := sim.NewSimConfiguration{
 		TFRs:                        req.TFRs,
 		Facility:                    req.Facility,
@@ -249,7 +319,7 @@ func (sm *SimManager) makeSimConfiguration(req *NewSimRequest, lg *log.Logger) *
 		ControllerAirspace:          sc.Airspace,
 		ControlPositions:            sg.ControlPositions,
 		VirtualControllers:          sc.VirtualControllers,
-		ControllerConfiguration:     sc.ControllerConfiguration,
+		ControllerConfiguration:     cc,
 		WXProvider:                  wxp,
 		Emergencies:                 req.Emergencies,
 		StartTime:                   req.StartTime,
