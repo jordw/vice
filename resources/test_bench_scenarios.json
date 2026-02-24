@@ -163,13 +163,13 @@
     {
       "label": "TRAFFIC -> looking -> in sight -> CVA",
       "aircraft": [
-        {"callsign": "TEST1", "distance_nm": 12, "altitude": 4000, "speed": 210,
-         "note": "trailing, 12nm out"},
+        {"callsign": "TEST1", "distance_nm": 18, "altitude": 5000, "speed": 210,
+         "note": "trailing, 18nm out — far enough to initially say looking"},
         {"callsign": "TEST2", "distance_nm": 8, "altitude": 3500, "speed": 210,
          "note": "lead traffic, 8nm out"}
       ],
       "steps": [
-        {"command": "TRAFFIC/12/4/35", "callsign": "TEST1"},
+        {"command": "TRAFFIC/2/10/35", "callsign": "TEST1", "expect_readback": "looking"},
         {"wait_for": "traffic_in_sight"},
         {"command": "CVA{runway}", "callsign": "TEST1", "expect_readback": "visual approach"}
       ]
