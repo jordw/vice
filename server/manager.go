@@ -382,10 +382,13 @@ func (sm *SimManager) Add(session *simSession, result *NewSimResult, initialTCP 
 
 	sm.mu.Lock(sm.lg)
 
-	// Empty sim name is just a local sim, so no problem with replacing it...
-	if _, ok := sm.sessionsByName[session.name]; ok && session.name != "" {
-		sm.mu.Unlock(sm.lg)
-		return ErrDuplicateSimName
+	if old, ok := sm.sessionsByName[session.name]; ok {
+		if session.name != "" {
+			sm.mu.Unlock(sm.lg)
+			return ErrDuplicateSimName
+		}
+		// Local sim (empty name): kill the old one before replacing it.
+		close(old.done)
 	}
 
 	sm.lg.Infof("%s: adding sim", session.name)
@@ -426,9 +429,13 @@ func (sm *SimManager) Add(session *simSession, result *NewSimResult, initialTCP 
 func (sm *SimManager) runSimUpdateLoop(session *simSession) {
 	defer sm.lg.CatchAndReportCrash()
 
-	// Terminate idle Sims after 4 hours, but not local Sims.
-	const simIdleLimit = 4 * time.Hour
-	for sm.local || session.sim.IdleTime() < simIdleLimit {
+	for session.sim.IdleTime() < 4*time.Hour {
+		select {
+		case <-session.done:
+			goto done
+		default:
+		}
+
 		if !sm.local && !util.DebuggerIsRunning() {
 			session.CullIdleControllers(sm)
 		}
@@ -437,8 +444,7 @@ func (sm *SimManager) runSimUpdateLoop(session *simSession) {
 
 		time.Sleep(100 * time.Millisecond)
 	}
-
-	sm.lg.Infof("%s: terminating sim after %s idle", session.name, session.sim.IdleTime())
+done:
 
 	session.sim.Destroy()
 

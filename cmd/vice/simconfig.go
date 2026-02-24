@@ -1445,6 +1445,8 @@ func (c *NewSimConfiguration) Start(config *Config) error {
 			c.lg.Errorf("CreateNewSim failed: %v", err)
 			return err
 		}
+		// Save the request so the sim can be restarted.
+		config.NewSimRequest = &c.NewSimRequest
 	}
 
 	*c.defaultFacility = c.Facility

@@ -90,7 +90,8 @@ type ConfigNoSim struct {
 }
 
 type ConfigSim struct {
-	Sim *sim.Sim
+	Sim           *sim.Sim
+	NewSimRequest *server.NewSimRequest
 }
 
 func configFilePath(lg *log.Logger) string {

@@ -22,6 +22,7 @@ import (
 	"github.com/mmp/vice/log"
 	"github.com/mmp/vice/platform"
 	"github.com/mmp/vice/renderer"
+	"github.com/mmp/vice/server"
 	"github.com/mmp/vice/util"
 
 	"github.com/AllenDang/cimgui-go/imgui"
@@ -135,6 +136,12 @@ type FixedSizeDialogClient interface {
 	FixedSize() [2]float32 // Returns [width, height] in pixels (before DPI scaling)
 }
 
+// CenteredDialogClient is an optional interface that dialog clients can implement
+// to vertically center the dialog instead of positioning it near the top.
+type CenteredDialogClient interface {
+	CenteredDialog()
+}
+
 func NewModalDialogBox(c ModalDialogClient, p platform.Platform) *ModalDialogBox {
 	return &ModalDialogBox{client: c, platform: p}
 }
@@ -170,9 +177,13 @@ func (m *ModalDialogBox) Draw() {
 		imgui.SetNextWindowSizeConstraints(imgui.Vec2{dpiScale * 850, dpiScale * 100}, imgui.Vec2{-1, maxHeight})
 	}
 
-	// Center the dialog on the main viewport, near the top.
-	topMargin := vpSize.Y * 0.05
-	imgui.SetNextWindowPosV(imgui.Vec2{vpPos.X + vpSize.X/2, vpPos.Y + topMargin}, imgui.CondAlways, imgui.Vec2{0.5, 0})
+	if _, ok := m.client.(CenteredDialogClient); ok {
+		imgui.SetNextWindowPosV(imgui.Vec2{vpPos.X + vpSize.X/2, vpPos.Y + vpSize.Y/2}, imgui.CondAlways, imgui.Vec2{0.5, 0.5})
+	} else {
+		// Near the top of the viewport.
+		topMargin := vpSize.Y * 0.05
+		imgui.SetNextWindowPosV(imgui.Vec2{vpPos.X + vpSize.X/2, vpPos.Y + topMargin}, imgui.CondAlways, imgui.Vec2{0.5, 0})
+	}
 
 	if imgui.BeginPopupModalV(title, nil, flags) {
 		if !m.isOpen {
@@ -712,6 +723,42 @@ func ShowFatalErrorDialog(r renderer.Renderer, p platform.Platform, lg *log.Logg
 		p.PostRender()
 	}
 	os.Exit(1)
+}
+
+///////////////////////////////////////////////////////////////////////////
+
+type RestartSimModalClient struct {
+	mgr    *client.ConnectionManager
+	config *Config
+	lg     *log.Logger
+}
+
+func (r *RestartSimModalClient) Title() string    { return "Restart Simulation" }
+func (r *RestartSimModalClient) Opening()          {}
+func (r *RestartSimModalClient) CenteredDialog()   {}
+
+func (r *RestartSimModalClient) Buttons() []ModalDialogButton {
+	return []ModalDialogButton{
+		{text: "Restart", action: func() bool {
+			req := *r.config.NewSimRequest
+			req.NewSimName = server.MakeNewSimRequest().NewSimName
+			req.Initials = r.config.ControllerInitials
+			srv := r.mgr.LocalServer
+			if !r.mgr.ClientIsLocal() && r.mgr.RemoteServer != nil {
+				srv = r.mgr.RemoteServer
+			}
+			if err := r.mgr.CreateNewSim(req, r.config.ControllerInitials, srv, r.lg); err != nil {
+				r.lg.Errorf("Unable to restart simulation: %v", err)
+			}
+			return true
+		}},
+		{text: "Cancel", action: func() bool { return true }},
+	}
+}
+
+func (r *RestartSimModalClient) Draw() int {
+	imgui.Text("Are you sure you want to restart the simulation?")
+	return -1
 }
 
 ///////////////////////////////////////////////////////////////////////////

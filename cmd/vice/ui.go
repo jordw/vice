@@ -197,6 +197,19 @@ func uiDraw(mgr *client.ConnectionManager, config *Config, p platform.Platform, 
 			imgui.SetTooltip("Start new simulation")
 		}
 
+		if controlClient != nil && controlClient.Connected() && config.NewSimRequest != nil {
+			if imgui.Button(renderer.FontAwesomeIconHistory) {
+				uiShowModalDialog(NewModalDialogBox(&RestartSimModalClient{
+					mgr:    mgr,
+					config: config,
+					lg:     lg,
+				}, p), true)
+			}
+			if imgui.IsItemHovered() {
+				imgui.SetTooltip("Restart simulation with same settings")
+			}
+		}
+
 		if controlClient != nil && controlClient.Connected() {
 			if imgui.Button(renderer.FontAwesomeIconCog) {
 				ui.showSettings = !ui.showSettings

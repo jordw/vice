@@ -209,6 +209,7 @@ var (
 	FontAwesomeIconFolder              = faUsedIcons["Folder"]
 	FontAwesomeIconGithub              = faBrandsUsedIcons["Github"]
 	FontAwesomeIconHandPointLeft       = faUsedIcons["HandPointLeft"]
+	FontAwesomeIconHistory             = faUsedIcons["History"]
 	FontAwesomeIconHome                = faUsedIcons["Home"]
 	FontAwesomeIconInfoCircle          = faUsedIcons["InfoCircle"]
 	FontAwesomeIconKeyboard            = faUsedIcons["Keyboard"]
@@ -262,6 +263,7 @@ var (
 		"File":                FontAwesomeString("File"),
 		"Folder":              FontAwesomeString("Folder"),
 		"HandPointLeft":       FontAwesomeString("HandPointLeft"),
+		"History":             FontAwesomeString("History"),
 		"Home":                FontAwesomeString("Home"),
 		"InfoCircle":          FontAwesomeString("InfoCircle"),
 		"Keyboard":            FontAwesomeString("Keyboard"),

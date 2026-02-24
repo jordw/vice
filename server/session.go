@@ -27,6 +27,7 @@ type simSession struct {
 	sim                *sim.Sim
 	password           string
 	connectionsByToken map[string]*connectionState
+	done               chan struct{}
 
 	lg *log.Logger
 	mu util.LoggingMutex
@@ -44,6 +45,7 @@ func makeSimSession(name, scenarioGroup, scenario, password string, s *sim.Sim, 
 		password:           password,
 		lg:                 lg,
 		connectionsByToken: make(map[string]*connectionState),
+		done:               make(chan struct{}),
 	}
 }
 
