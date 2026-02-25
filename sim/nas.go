@@ -86,8 +86,25 @@ func (sc *STARSComputer) AddHeldDeparture(ac *Aircraft) {
 
 // Note: called with Sim holding its mutex, so we can access its members here.
 func (sc *STARSComputer) Update(s *Sim) {
-	// Delete any dropped flight plans after the few minute delay has passed.
+	// Build a set of ACIDs that are currently associated with aircraft
+	// so we can remove any stale copies from the unassociated FlightPlans
+	// slice. (This shouldn't happen, but has been observed in practice.)
+	associatedACIDs := make(map[ACID]bool)
+	for _, ac := range s.Aircraft {
+		if ac.IsAssociated() {
+			associatedACIDs[ac.NASFlightPlan.ACID] = true
+		}
+	}
+
+	// Delete any dropped flight plans after the few minute delay has passed,
+	// and remove any flight plans that are already associated with aircraft.
 	sc.FlightPlans = util.FilterSlice(sc.FlightPlans, func(fp *NASFlightPlan) bool {
+		if associatedACIDs[fp.ACID] {
+			// This FP is already associated with an aircraft; the copy
+			// here is stale. Don't return its resources since the
+			// associated copy owns them.
+			return false
+		}
 		if !fp.DeleteTime.IsZero() && s.State.SimTime.After(fp.DeleteTime) {
 			// Return beacon code, list index
 			s.deleteFlightPlan(fp)
@@ -430,5 +447,31 @@ func (sc *STARSComputer) getListIndex() int {
 func (sc *STARSComputer) returnListIndex(idx int) {
 	if idx != UnsetSTARSListIndex {
 		sc.AvailableIndices = append(sc.AvailableIndices, idx)
+	}
+}
+
+// rebuildAvailableIndices reconstructs the available index pool from
+// scratch by collecting all indices currently in use (by associated
+// aircraft flight plans and unassociated flight plans) and making
+// everything else available. This fixes inconsistencies that can arise
+// from save/load cycles.
+func (sc *STARSComputer) rebuildAvailableIndices(aircraft map[av.ADSBCallsign]*Aircraft) {
+	var usedIndices [100]bool // 1-99 are handed out
+	for _, ac := range aircraft {
+		if ac.NASFlightPlan != nil && ac.NASFlightPlan.ListIndex != UnsetSTARSListIndex {
+			usedIndices[ac.NASFlightPlan.ListIndex] = true
+		}
+	}
+	for _, fp := range sc.FlightPlans {
+		if fp.ListIndex != UnsetSTARSListIndex {
+			usedIndices[fp.ListIndex] = true
+		}
+	}
+
+	sc.AvailableIndices = sc.AvailableIndices[:0]
+	for i := 1; i <= 99; i++ {
+		if !usedIndices[i] {
+			sc.AvailableIndices = append(sc.AvailableIndices, i)
+		}
 	}
 }

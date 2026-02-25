@@ -492,6 +492,11 @@ func (s *Sim) Activate(lg *log.Logger, provider wx.Provider) {
 	// Restore json:"-" fields that are lost during JSON config save/load.
 	restoreControllerFields(s.ControlPositions)
 	restoreControllerFields(s.State.Controllers)
+
+	// Rebuild AvailableIndices from scratch to fix any inconsistencies
+	// from save/load cycles or other bugs. Collect all indices currently
+	// in use by flight plans, then set available = everything else.
+	s.STARSComputer.rebuildAvailableIndices(s.Aircraft)
 }
 
 // restoreControllerFields reconstructs the json:"-" fields
