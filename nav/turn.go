@@ -404,9 +404,12 @@ func (nav *Nav) shouldTurnToIntercept(p0 math.Point2LL, hdg math.MagneticHeading
 	initialDist := math.SignedPointLineDistance(math.LL2NM(nav.FlightState.Position, nav.FlightState.NmPerLongitude), p0nm, p1)
 	eta := math.Abs(initialDist) / nav.FlightState.GS * 3600 // in seconds
 	turnAngle := TurnAngle(nav.FlightState.Heading, hdg, turn)
-	if eta < 2 && turnAngle < 4 {
-		// Just in case, start the turn; for larger turn angles, fall
-		// through to see if this is correctable.
+	if (eta < 2 || math.Abs(initialDist) < courseCaptureTolerance) && turnAngle < 4 {
+		// Nearly on the course already, the aircraft takes it up. A path
+		// that turns so little never crosses the course, so the
+		// prediction below would only wait while the aircraft drifts
+		// onto it. For larger turn angles, fall through to see if this
+		// is correctable.
 		return turnToInterceptTurn, true
 	}
 

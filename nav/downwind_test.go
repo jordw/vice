@@ -271,3 +271,93 @@ func TestVisualClearanceFromAnywhereLands(t *testing.T) {
 		}
 	}
 }
+
+// TestVisualCapturedOnFinalFliesTheCenterline covers a visual whose reference
+// approaches leave the runway's extended centerline, as PHNL 26L's offset LDA
+// and curved RNP do. An aircraft nearly established on the centerline 5 nm
+// out captures it and flies it to the runway, rather than waiting to drift
+// onto it until the stabilized final is behind it, or turning out for the
+// references' fixes.
+func TestVisualCapturedOnFinalFliesTheCenterline(t *testing.T) {
+	apg := LookupApproachGeometry(t, "PHNL", "X26L")
+	// Left of the outbound course and converging on it at 1.5 degrees.
+	hdg := math.TrueToMagnetic(math.OffsetHeading(apg.RunwayHeading, float32(-1.5)), apg.MagneticVariation)
+	f := NewArrivalFlight(t, ArrivalConfig{
+		Waypoints:        apg.ThresholdOffset(5, -0.13).DMSString(),
+		DepartureAirport: "KLAX",
+		ArrivalAirport:   "PHNL",
+		AircraftType:     "A320",
+		InitialAltitude:  1850,
+		InitialSpeed:     190,
+		InitialHeading:   float32(hdg),
+	})
+	f.ExpectVisualApproach("26L")
+	if u, unable := f.ClearedVisualApproach("26L").(speech.UnableIntent); unable {
+		t.Fatalf("refused: %v", u)
+	}
+
+	nmPerLong := apg.NmPerLongitude
+	thr := math.LL2NM(apg.Threshold, nmPerLong)
+	centerline := math.Add2f(thr, math.HeadingVector(apg.RunwayHeading))
+	f.StepUntil("reached the threshold", func() bool {
+		fs := &f.nav.FlightState
+		if !f.nav.Approach.Cleared {
+			t.Fatalf("clearance dropped %.1f nm out", math.NMDistance2LL(fs.Position, apg.Threshold))
+		}
+		if d := math.SignedPointLineDistance(math.LL2NM(fs.Position, nmPerLong), thr, centerline); math.Abs(d) > 0.2 {
+			t.Fatalf("%.2f nm off the centerline %.1f nm out", math.Abs(d), math.NMDistance2LL(fs.Position, apg.Threshold))
+		}
+		return math.NMDistance2LL(fs.Position, apg.Threshold) < 0.2
+	})
+}
+
+// TestVisualCrossingFinalCloseInLinesUp covers pilots cleared for a visual
+// while crossing the final close in. Their join on the final is right
+// beside them, so there is no room to turn onto it there; they come around
+// and cross the threshold lined up.
+func TestVisualCrossingFinalCloseInLinesUp(t *testing.T) {
+	for _, tc := range []struct {
+		airport av.ICAOAirportCode
+		runway  string
+		dist    float32 // nm from the threshold, on the extended centerline
+		hdg     float32 // degrees from the landing direction
+	}{
+		{"KSNA", "20R", 3.5, 270},
+		{"KSAN", "27", 3.5, 270},
+		{"KIAH", "8L", 3.5, 90},
+	} {
+		name := fmt.Sprintf("%s %s, %.1f nm out heading %.0f off the runway", tc.airport, tc.runway, tc.dist, tc.hdg)
+		rwy, _ := av.LookupRunway(db.Lookups{}, tc.airport, tc.runway)
+		opp, _ := av.LookupOppositeRunway(db.Lookups{}, tc.airport, tc.runway)
+		nmPerLong := math.NMPerLongitudeAt(rwy.Threshold)
+		magVar, err := db.DB.MagneticGrid.Lookup(rwy.Threshold)
+		if err != nil {
+			t.Fatal(err)
+		}
+		landing := math.Heading2LL(rwy.Threshold, opp.Threshold, nmPerLong)
+		elev := float32(rwy.Elevation)
+		alt := elev + max(1500, 900+(tc.dist-3)*ftPerNMOnGlideslope) + 300
+		f := NewArrivalFlight(t, ArrivalConfig{
+			Waypoints:        math.Offset2LL(rwy.Threshold, math.OppositeHeading(landing), tc.dist, nmPerLong).DMSString(),
+			DepartureAirport: "KMCO",
+			ArrivalAirport:   tc.airport,
+			AircraftType:     "A320",
+			InitialAltitude:  alt,
+			InitialSpeed:     190,
+			AssignedAltitude: alt,
+			InitialHeading:   float32(math.TrueToMagnetic(math.OffsetHeading(landing, tc.hdg), magVar)),
+		})
+		f.ExpectVisualApproach(tc.runway)
+		if u, unable := f.ClearedVisualApproach(tc.runway).(speech.UnableIntent); unable {
+			t.Errorf("%s: refused: %v", name, u)
+			continue
+		}
+		f.StepUntil("reached the threshold", func() bool {
+			fs := &f.nav.FlightState
+			return math.NMDistance2LL(fs.Position, rwy.Threshold) < 0.2 && fs.Altitude-elev < 600
+		})
+		if off := math.HeadingDifference(math.MagneticToTrue(f.nav.FlightState.Heading, magVar), landing); off > 20 {
+			t.Errorf("%s: crossed the threshold %.0f degrees off the runway", name, off)
+		}
+	}
+}

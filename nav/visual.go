@@ -381,7 +381,11 @@ func (nav *Nav) visualRouteAt(course InterceptCourse, p math.Point2LL) []av.Wayp
 		thr := math.LL2NM(ap.Threshold, nmPerLong)
 		behind := math.Dot(math.Sub2f(math.LL2NM(p, nmPerLong), thr), out) + 1
 		start := av.Waypoint{Fix: "_" + ap.Runway + "_EXTENDED", Location: math.NM2LL(math.Add2f(thr, math.Scale2f(out, behind)), nmPerLong)}
-		route = slices.Concat(av.WaypointArray{start}, wps[idx:])
+		onFinal := slices.DeleteFunc(wps[idx:].Clone(), func(wp av.Waypoint) bool {
+			d := math.SignedPointLineDistance(math.LL2NM(wp.Location, nmPerLong), thr, math.Add2f(thr, out))
+			return math.Abs(d) >= av.FinalCourseLateralLeeway
+		})
+		route = slices.Concat(av.WaypointArray{start}, onFinal)
 	}
 	// The join is ahead of the aircraft, which may still be turning onto
 	// the course, by as much as it takes to reach it without circling.
@@ -523,28 +527,35 @@ func (nav *Nav) selectVisualApproachRoute(followTraffic *math.Point2LL, referenc
 
 // canFlyToJoin reports whether the aircraft can fly straight to join and
 // on along its route: it can turn to the join without circling and lines
-// up on the route after it.
+// up on the route after it. A join closer than a turn radius leaves no room
+// to turn toward it first, so the aircraft arrives on its own heading.
 func (nav *Nav) canFlyToJoin(join visualApproachJoinPoint) bool {
 	fs := &nav.FlightState
+	r := nav.currentTurnRadius()
+	dist := math.NMDistance2LL(fs.Position, join.location)
 	in := math.MagneticToTrue(fs.Heading, fs.MagneticVariation)
-	if math.NMDistance2LL(fs.Position, join.location) > 0.01 {
+	if dist > r {
 		in = math.Heading2LL(fs.Position, join.location, fs.NmPerLongitude)
 	}
-	return nav.canTurnTo(join.location, nav.currentTurnRadius()) && nav.linesUpAt(join, in)
+	return nav.canTurnTo(join.location, r) && nav.linesUpAt(join, in, dist)
 }
 
-// linesUpAt reports whether an aircraft arriving at join on heading in
-// lines up on its route from there. A turn onto the route through no more
-// than a fly-by anticipates in full does; a sharper one, turning back
-// toward the runway, needs room after it, a turn's width and a stabilized
-// final.
-func (nav *Nav) linesUpAt(join visualApproachJoinPoint, in math.TrueHeading) bool {
+// linesUpAt reports whether an aircraft that flies the last room nm to
+// join straight on heading in lines up on its route from there. A turn
+// onto the route through no more than a fly-by anticipates in full does,
+// if room leaves space to start it early enough. A sharper one, turning
+// back toward the runway, needs room after it instead: a turn's width and
+// a stabilized final.
+func (nav *Nav) linesUpAt(join visualApproachJoinPoint, in math.TrueHeading, room float32) bool {
 	if join.segment+1 >= len(join.route) {
 		return true
 	}
+	r := nav.currentTurnRadius()
 	out := math.Heading2LL(join.location, join.route[join.segment+1].Location, nav.FlightState.NmPerLongitude)
-	return math.HeadingDifference(in, out) <= maxFlyByAngle ||
-		join.distanceToThreshold >= 2*nav.currentTurnRadius()+nav.minimumFinal()
+	if turn := math.HeadingDifference(in, out); turn <= maxFlyByAngle {
+		return room >= r*math.Tan(math.Radians(turn/2))
+	}
+	return join.distanceToThreshold >= 2*r+nav.minimumFinal()
 }
 
 // currentTurnRadius returns the radius in nm of the aircraft's turns at its
@@ -685,11 +696,11 @@ func (nav *Nav) visualJoinBehind(routes []av.WaypointArray, from math.Point2LL, 
 			return 0, false
 		}
 		turn := math.Add2f(pos, math.Scale2f(hdgVec, max(downwind, 0)))
-		base := hdg
-		if math.Distance2f(turn, j) > 0.01 {
-			base = math.VectorHeading(math.Sub2f(j, turn))
+		base, room := hdg, max(downwind, 0)
+		if leg := math.Distance2f(turn, j); leg > 0.01 {
+			base, room = math.VectorHeading(math.Sub2f(j, turn)), leg
 		}
-		if insideTurnCircle(turn, hdgVec, j, r) || !nav.linesUpAt(*join, base) {
+		if insideTurnCircle(turn, hdgVec, j, r) || !nav.linesUpAt(*join, base, room) {
 			return 0, false
 		}
 		if downwind >= downwindMinLeg {

@@ -830,9 +830,11 @@ func TestVisualApproachWaypointsUseReferenceApproachDogleg(t *testing.T) {
 	}
 
 	n := nav.Nav{
+		Perf: db.DB.AircraftPerformance["A320"],
 		FlightState: nav.FlightState{
-			Position:          math.NM2LL([2]float32{-8, -5}, nmPerLong),
+			Position:          math.NM2LL([2]float32{-9, -5}, nmPerLong),
 			Heading:           180,
+			IAS:               180,
 			NmPerLongitude:    nmPerLong,
 			MagneticVariation: 0,
 			ArrivalAirport:    av.Waypoint{Fix: "KTEST"},
@@ -970,9 +972,11 @@ func TestVisualApproachPreservesAssignedDescent(t *testing.T) {
 		Instructions: nav.Instructions{
 			Altitude: nav.Altitude{Assigned: &assigned},
 		},
+		Perf: db.DB.AircraftPerformance["A320"],
 		FlightState: nav.FlightState{
 			Position:          math.Point2LL{1.0 / nmPerLong, -14.0 / 60},
 			Heading:           270,
+			IAS:               180,
 			Altitude:          5000,
 			NmPerLongitude:    nmPerLong,
 			MagneticVariation: 0,
@@ -1099,9 +1103,11 @@ func TestVisualApproachDropsNonDescentAssignment(t *testing.T) {
 		Instructions: nav.Instructions{
 			Altitude: nav.Altitude{Assigned: &maintain, ActiveAssigned: &maintain},
 		},
+		Perf: db.DB.AircraftPerformance["A320"],
 		FlightState: nav.FlightState{
 			Position:          math.Point2LL{1.0 / nmPerLong, -14.0 / 60},
 			Heading:           270,
+			IAS:               180,
 			Altitude:          3000,
 			NmPerLongitude:    nmPerLong,
 			MagneticVariation: 0,
@@ -1160,9 +1166,11 @@ func TestVisualApproachPreservesPendingDescent(t *testing.T) {
 				ActivateAt:     nav.NewTime(time.Now().Add(5 * time.Second)),
 			},
 		},
+		Perf: db.DB.AircraftPerformance["A320"],
 		FlightState: nav.FlightState{
 			Position:          math.Point2LL{1.0 / nmPerLong, -14.0 / 60},
 			Heading:           270,
+			IAS:               180,
 			Altitude:          5000,
 			NmPerLongitude:    nmPerLong,
 			MagneticVariation: 0,
@@ -1218,9 +1226,11 @@ func TestVisualApproachDropsAssignedDescentBelowProfile(t *testing.T) {
 		Instructions: nav.Instructions{
 			Altitude: nav.Altitude{Assigned: &belowProfile, ActiveAssigned: &belowProfile},
 		},
+		Perf: db.DB.AircraftPerformance["A320"],
 		FlightState: nav.FlightState{
 			Position:          math.Point2LL{1.0 / nmPerLong, -8.0 / 60},
 			Heading:           270,
+			IAS:               180,
 			Altitude:          7000,
 			NmPerLongitude:    nmPerLong,
 			MagneticVariation: 0,
@@ -1588,9 +1598,11 @@ func TestVisualApproachFollowingLandingTrafficFliesOwnJoin(t *testing.T) {
 		}},
 	}
 	n := nav.Nav{
+		Perf: db.DB.AircraftPerformance["A320"],
 		FlightState: nav.FlightState{
 			Position:       math.NM2LL([2]float32{0, -8}, nmPerLong),
 			Heading:        360,
+			IAS:            180,
 			NmPerLongitude: nmPerLong,
 			ArrivalAirport: av.Waypoint{Fix: "KTEST"},
 		},

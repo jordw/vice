@@ -1238,6 +1238,31 @@ func TestLocalizerFlythroughLateTurn(t *testing.T) {
 	f.Run()
 }
 
+// TestLocalizerNearlyParallelCaptures covers an aircraft vectored within the
+// capture tolerance of the localizer on a heading a couple of degrees off
+// it: it is established at once rather than left to drift onto the course.
+func TestLocalizerNearlyParallelCaptures(t *testing.T) {
+	apg := LookupApproachGeometry(t, "KJFK", "I22L")
+	// Right of the outbound course, so a turn right toward it converges.
+	hdg := math.TrueToMagnetic(math.OffsetHeading(apg.RunwayHeading, 2), apg.MagneticVariation)
+	f := NewArrivalFlight(t, ArrivalConfig{
+		Waypoints:        apg.ThresholdOffset(10, 0.15).DMSString(),
+		DepartureAirport: "KMCO",
+		ArrivalAirport:   "KJFK",
+		AircraftType:     "A320",
+		InitialAltitude:  3000,
+		InitialSpeed:     180,
+		InitialHeading:   float32(hdg),
+	})
+	f.ExpectApproach("I22L")
+	f.ClearedApproach("I22L")
+
+	f.Step(5)
+	if f.nav.Approach.InterceptState != OnApproachCourse {
+		t.Errorf("intercept state %d after 5 s, want established on the localizer", f.nav.Approach.InterceptState)
+	}
+}
+
 // TestClearedApproachAfterVectorEstablishmentSkipsProcedureTurn is a
 // regression test for a bug where an aircraft vectored to intercept an ILS,
 // allowed to establish on the localizer, and only then cleared for the
@@ -2246,9 +2271,11 @@ func TestClearedVisualApproachDoesNotMutateApproach(t *testing.T) {
 				VisualReferences: []*av.Approach{ap},
 			},
 		},
+		Perf: db.DB.AircraftPerformance["A320"],
 		FlightState: FlightState{
 			Position:       math.NM2LL([2]float32{3, -8}, nmPerLong),
 			Heading:        270, // pointed at the final
+			IAS:            180,
 			NmPerLongitude: nmPerLong,
 			ArrivalAirport: av.Waypoint{Fix: "KTEST"},
 		},
