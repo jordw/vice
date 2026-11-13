@@ -20,6 +20,14 @@ REM   - Visual Studio Build Tools with C++ workload (for sherpa-onnx MSVC build)
 REM
 REM whisper-cpp is built automatically if needed.
 
+REM When "exit /b 1" runs inside a parenthesized block that has more commands
+REM after it, it sets ERRORLEVEL, but cmd /c (which is how PowerShell and CI
+REM run this script) returns 0. So the script runs as a subroutine, and this
+REM top-level exit returns the ERRORLEVEL that it leaves.
+call :main %*
+exit /b %errorlevel%
+
+:main
 set DO_CHECK=0
 set DO_TEST=0
 set DO_RELEASE=0
@@ -400,7 +408,7 @@ if %DO_TEST%==1 (
 )
 
 echo === Done ===
-goto :eof
+exit /b 0
 
 :sync_models
 set MANIFEST=resources\models\manifest.json
