@@ -1,0 +1,362 @@
+{
+  "time": "2026-11-07T20:24:12.48986284Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Frontier flight four nine three speed one eight zero knots",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, juliet, information, Ozzy two, Ondre one, Chipper one, Varnam two, Bang three, Easy, Guy, Defense, Andie, Yinz, City, Dewhy, niner right, one zero, eight left, runway, I L S, Frontier Flight four 93, Delta 98, Delta eight 79, Delta four 58, Delta 42 21, honey, Schel, Luck, Bazaar, Bang, Sneve, Jaaj, Hyzumn, Respy, Larry, Grits, Varnum, Hartsfield Jackson Atlanta International Airport",
+  "whisper_duration_ms": 447.773,
+  "audio_duration_ms": 3400,
+  "processor": "GPU: NVIDIA GeForce GTX 1050 (4218MB)",
+  "whisper_model": "ggml-base.en-jlvatc-q5_0.bin",
+  "callsign": "FFT493",
+  "command": "S180",
+  "stt_aircraft": {
+    "Delta 42 21": {
+      "Callsign": "DAL4221",
+      "AircraftType": "B752",
+      "Fixes": {
+        "Atlanta": "KATL",
+        "Bazaar": "BAZAR",
+        "Hartsfield": "KATL",
+        "Jaaj": "JAAJJ",
+        "Larry": "LARII",
+        "Schel": "SCHEL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 10": "I10",
+        "ILS Runway 8L": "I8L",
+        "ILS Runway 9R": "I9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway eight left": "8L",
+        "visual approach runway niner right": "9R",
+        "visual approach runway one zero": "10",
+        "visual eight left": "8L",
+        "visual niner right": "9R",
+        "visual one zero": "10",
+        "visual runway eight left": "8L",
+        "visual runway niner right": "9R",
+        "visual runway one zero": "10"
+      },
+      "ApproachFixes": {
+        "I10": {
+          "City": "CTEEE",
+          "Dewhy": "DEWHY",
+          "Yinz": "YINNZ",
+          "Zman": "ZMANN"
+        },
+        "I8L": {
+          "Bazaar": "BAZAR",
+          "Jaaj": "JAAJJ",
+          "Larry": "LARII",
+          "Schel": "SCHEL"
+        },
+        "I9R": {
+          "Andie": "ANDIY",
+          "Burny": "BURNY",
+          "Defense": "DFINS",
+          "Easy": "EEASY",
+          "Guy": "GGUYY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 8L",
+      "STAR": "CHPPR1",
+      "Route": [
+        "LARII",
+        "JAAJJ",
+        "BAZAR",
+        "SCHEL",
+        "KATL"
+      ],
+      "Altitude": 4000,
+      "Heading": 120,
+      "Speed": 261,
+      "AssignedHeading": 120,
+      "State": "cleared approach",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D"
+    },
+    "Delta 98": {
+      "Callsign": "DAL98",
+      "LastAddressed": true,
+      "AircraftType": "A321",
+      "Fixes": {
+        "Atlanta": "KATL",
+        "Bazaar": "BAZAR",
+        "Hartsfield": "KATL",
+        "Jaaj": "JAAJJ",
+        "Larry": "LARII",
+        "Schel": "SCHEL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 10": "I10",
+        "ILS Runway 8L": "I8L",
+        "ILS Runway 9R": "I9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway eight left": "8L",
+        "visual approach runway niner right": "9R",
+        "visual approach runway one zero": "10",
+        "visual eight left": "8L",
+        "visual niner right": "9R",
+        "visual one zero": "10",
+        "visual runway eight left": "8L",
+        "visual runway niner right": "9R",
+        "visual runway one zero": "10"
+      },
+      "ApproachFixes": {
+        "I10": {
+          "City": "CTEEE",
+          "Dewhy": "DEWHY",
+          "Yinz": "YINNZ",
+          "Zman": "ZMANN"
+        },
+        "I8L": {
+          "Bazaar": "BAZAR",
+          "Jaaj": "JAAJJ",
+          "Larry": "LARII",
+          "Schel": "SCHEL"
+        },
+        "I9R": {
+          "Andie": "ANDIY",
+          "Burny": "BURNY",
+          "Defense": "DFINS",
+          "Easy": "EEASY",
+          "Guy": "GGUYY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 8L",
+      "STAR": "OZZZI2",
+      "Route": [
+        "KATL"
+      ],
+      "Altitude": 5000,
+      "Heading": 162,
+      "Speed": 237,
+      "AssignedHeading": 110,
+      "State": "cleared approach",
+      "ControllerFrequency": "1L",
+      "TrackingController": "1L"
+    },
+    "Delta eight 79": {
+      "Callsign": "DAL879",
+      "AircraftType": "B752",
+      "Fixes": {
+        "Atlanta": "KATL",
+        "Bang": "BANNG",
+        "Grits": "GRITZ",
+        "Hartsfield": "KATL",
+        "Hyzumn": "HYZMN",
+        "Luck": "LUCKK",
+        "honey": "HONID"
+      },
+      "SID": "BANNG3",
+      "Route": [
+        "GRITZ",
+        "HYZMN",
+        "BANNG",
+        "LUCKK",
+        "HONID",
+        "KMIA"
+      ],
+      "Altitude": 6311,
+      "Heading": 114,
+      "Speed": 275,
+      "State": "departure",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N"
+    },
+    "Delta four 58": {
+      "Callsign": "DAL458",
+      "AircraftType": "B739",
+      "Fixes": {
+        "Atlanta": "KATL",
+        "Hartsfield": "KATL",
+        "Respy": "RESPE",
+        "Varnum": "VARNM"
+      },
+      "SID": "VARNM2",
+      "Route": [
+        "VARNM",
+        "RESPE",
+        "MYS",
+        "TTH",
+        "AXC",
+        "SPI",
+        "DSM",
+        "ONL",
+        "BOY",
+        "JAC",
+        "FETHR",
+        "BOI",
+        "KBOI"
+      ],
+      "Altitude": 11913,
+      "Heading": 325,
+      "Speed": 324,
+      "State": "departure",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N"
+    },
+    "Frontier Flight four 93": {
+      "Callsign": "FFT493",
+      "AircraftType": "A20N",
+      "Fixes": {
+        "Atlanta": "KATL",
+        "Bazaar": "BAZAR",
+        "Hartsfield": "KATL",
+        "Jaaj": "JAAJJ",
+        "Larry": "LARII",
+        "Schel": "SCHEL",
+        "Sneve": "SNEVE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 10": "I10",
+        "ILS Runway 8L": "I8L",
+        "ILS Runway 9R": "I9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway eight left": "8L",
+        "visual approach runway niner right": "9R",
+        "visual approach runway one zero": "10",
+        "visual eight left": "8L",
+        "visual niner right": "9R",
+        "visual one zero": "10",
+        "visual runway eight left": "8L",
+        "visual runway niner right": "9R",
+        "visual runway one zero": "10"
+      },
+      "ApproachFixes": {
+        "I10": {
+          "City": "CTEEE",
+          "Dewhy": "DEWHY",
+          "Yinz": "YINNZ",
+          "Zman": "ZMANN"
+        },
+        "I8L": {
+          "Bazaar": "BAZAR",
+          "Jaaj": "JAAJJ",
+          "Larry": "LARII",
+          "Schel": "SCHEL"
+        },
+        "I9R": {
+          "Andie": "ANDIY",
+          "Burny": "BURNY",
+          "Defense": "DFINS",
+          "Easy": "EEASY",
+          "Guy": "GGUYY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 8L",
+      "STAR": "ONDRE1",
+      "Route": [
+        "SNEVE",
+        "KATL"
+      ],
+      "Altitude": 5125,
+      "Heading": 275,
+      "Speed": 229,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1L",
+      "TrackingController": "1L"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Frontier flight four nine three speed one eight zero knots\"",
+    "[local-stt] normalized words: [frontier flight 4 9 3 speed 1 8 0 knots]",
+    "[local-stt] tokens: 6",
+    "[local-stt]   token[0]: Text=\"frontier\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"flight\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"493\" Type=1 Value=493",
+    "[local-stt]   token[3]: Text=\"speed\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"180\" Type=1 Value=180",
+    "[local-stt]   token[5]: Text=\"knots\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 6 tokens, 5 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 6 tokens, 5 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Frontier Flight four 93\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Frontier Flight four 93\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"Frontier Flight four 93\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Frontier Flight four 93\" (airline=0.562, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Frontier Flight four 93\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 15 results",
+    "[local-stt]     result 0: \"Frontier Flight four 93\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Delta 42 21\" (airline=0.442, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Delta four 58\" (airline=0.442, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Delta eight 79\" (airline=0.442, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Delta 98\" (airline=0.442, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Frontier Flight four 93\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"Frontier Flight four 93\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Frontier Flight four 93\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"Frontier Flight four 93\" (airline=0.500, flight=1.000, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Frontier Flight four 93\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"FFT493\" (spokenKey=\"Frontier Flight four 93\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"FFT493\" SpokenKey=\"Frontier Flight four 93\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=5125 Fixes=7 Approaches=3 VisualApproaches=9 AssignedApproach=\"ILS Runway 8L\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Bazaar\" -\u003e \"BAZAR\"",
+    "[local-stt]   fix: \"Schel\" -\u003e \"SCHEL\"",
+    "[local-stt]   fix: \"Larry\" -\u003e \"LARII\"",
+    "[local-stt]   fix: \"Atlanta\" -\u003e \"KATL\"",
+    "[local-stt]   fix: \"Hartsfield\" -\u003e \"KATL\"",
+    "[local-stt]   fix: \"Sneve\" -\u003e \"SNEVE\"",
+    "[local-stt]   fix: \"Jaaj\" -\u003e \"JAAJJ\"",
+    "[local-stt]   approach: \"ILS Runway 8L\" -\u003e \"I8L\"",
+    "[local-stt]   approach: \"ILS Runway 9R\" -\u003e \"I9R\"",
+    "[local-stt]   approach: \"ILS Runway 10\" -\u003e \"I10\"",
+    "[local-stt]   visual approach: \"visual runway eight left\" -\u003e \"8L\"",
+    "[local-stt]   visual approach: \"visual approach runway niner right\" -\u003e \"9R\"",
+    "[local-stt]   visual approach: \"visual niner right\" -\u003e \"9R\"",
+    "[local-stt]   visual approach: \"visual runway one zero\" -\u003e \"10\"",
+    "[local-stt]   visual approach: \"visual approach runway one zero\" -\u003e \"10\"",
+    "[local-stt]   visual approach: \"visual one zero\" -\u003e \"10\"",
+    "[local-stt]   visual approach: \"visual approach runway eight left\" -\u003e \"8L\"",
+    "[local-stt]   visual approach: \"visual eight left\" -\u003e \"8L\"",
+    "[local-stt]   visual approach: \"visual runway niner right\" -\u003e \"9R\"",
+    "[local-stt] command tokens after disregard: 3",
+    "[local-stt]   token[0]: Text=\"speed\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"180\" Type=1 Value=180",
+    "[local-stt]   token[2]: Text=\"knots\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 3 tokens",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"180\" against 7 fixes",
+    "[local-stt]   extractFix: no match found for \"180\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"knots\" against 7 fixes",
+    "[local-stt]   extractFix: no match found for \"knots\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"180\" against 7 fixes",
+    "[local-stt]   extractFix: no match found for \"180\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"knots\" against 7 fixes",
+    "[local-stt]   extractFix: no match found for \"knots\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"180\" against 7 fixes",
+    "[local-stt]   extractFix: no match found for \"180\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"knots\" against 7 fixes",
+    "[local-stt]   extractFix: no match found for \"knots\"",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: looking for STAR=\"ONDRE1\" telephony=\"Ondre one\"",
+    "[local-stt]   extractSTAR: phonetic match \"one eight zero knots\" -\u003e \"ONDRE1\"",
+    "[local-stt]   matched command: \"RSTAR\" [resume_star] (pos=0, conf=0.95, consumed=3, isThen=false)",
+    "[local-stt]   matched command: \"S180\" [speed_only] (pos=0, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"speed\", skipping",
+    "[local-stt]   no match at token[2]=\"knots\", skipping",
+    "[local-stt]   no match at token[1]=\"180\", skipping",
+    "[local-stt]   no match at token[2]=\"knots\", skipping",
+    "[local-stt]   beam final[0]: score=1.631 pos=3 commands=[RSTAR]",
+    "[local-stt]   beam final[1]: score=1.090 pos=3 commands=[S180]",
+    "[local-stt]   beam final[2]: score=-2.303 pos=3 commands=[]",
+    "[local-stt] ParseCommands: result=[RSTAR] (avgConf=0.95)",
+    "[local-stt] parsed commands: [RSTAR] (conf=0.95, kinds=1)",
+    "[local-stt] validated commands: [RSTAR] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"FFT493 RSTAR\" (conf=0.95, time=1.5001ms) ==="
+  ]
+}

@@ -1,0 +1,718 @@
+{
+  "time": "2026-11-03T01:01:54.299889679Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1072:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Southwest 11 80 climb maintain wind zero thousand",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, quebec, kilo, information, SAVANNAH, Sinba, three, one zero, one, runway, I L S, r-nav, Southwest 11 80, turbo centurion seven niner yankee, cessna T two ten seven niner yankee, november niner three seven niner yankee, cessna one seventy-two niner brahvo golf, skyhawk niner brahvo golf, november seven eight niner brahvo golf, Bonanza one pahpah victor, B E thirty-three one pahpah victor, bonanza thirty-three one pahpah victor, november five one pahpah victor, Zutox, Zutan, Wosug, Hundo, Mizlu, DUBLIN, Gorge, Sovie, Terbe, Wigvo, Soup, Tilee, Woxit, Smalls, Hilton Head Airport, Savannah Hilton Head International Airport",
+  "whisper_duration_ms": 151.874,
+  "audio_duration_ms": 3656,
+  "processor": "GPU: NVIDIA GeForce RTX 4070 SUPER (11997MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "SWA1180",
+  "command": "C100",
+  "reason": "\"wind zero\" is one zero",
+  "stt_aircraft": {
+    "B E thirty-three one pahpah victor": {
+      "Callsign": "N51PV/T",
+      "AircraftType": "BE33",
+      "Fixes": {
+        "Charleston": "KCHS",
+        "Mizlu": "MIZLU",
+        "Savannah Hilton Head": "KSAV",
+        "Terbe": "TERBE",
+        "Wosug": "WOSUG",
+        "Woxit": "WOXIT",
+        "Zutan": "ZUTAN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1": "I1",
+        "ILS Runway 10": "I10",
+        "RNAV Runway 1": "R1",
+        "RNAV Runway 10": "R10"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one": "1",
+        "visual approach runway one zero": "10",
+        "visual one": "1",
+        "visual one zero": "10",
+        "visual runway one": "1",
+        "visual runway one zero": "10"
+      },
+      "ApproachFixes": {
+        "I1": {
+          "Mizlu": "MIZLU",
+          "Sinba": "CINBA",
+          "Terbe": "TERBE"
+        },
+        "I10": {
+          "SAVANNAH": "SAV",
+          "Sovie": "SOVIE",
+          "Tilee": "TILEE"
+        },
+        "R1": {
+          "Mizlu": "MIZLU",
+          "Terbe": "TERBE",
+          "Wosug": "WOSUG",
+          "Zutan": "ZUTAN"
+        },
+        "R10": {
+          "Sovie": "SOVIE",
+          "Tilee": "TILEE",
+          "Woxit": "WOXIT",
+          "Zutox": "ZUTOX"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 1",
+      "Route": [
+        "WOXIT",
+        "KSAV"
+      ],
+      "Altitude": 3000,
+      "Heading": 246,
+      "Speed": 130,
+      "State": "arrival",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "10",
+        "28",
+        "1",
+        "19"
+      ]
+    },
+    "Bonanza one pahpah victor": {
+      "Callsign": "N51PV/T",
+      "AircraftType": "BE33",
+      "Fixes": {
+        "Charleston": "KCHS",
+        "Mizlu": "MIZLU",
+        "Savannah Hilton Head": "KSAV",
+        "Terbe": "TERBE",
+        "Wosug": "WOSUG",
+        "Woxit": "WOXIT",
+        "Zutan": "ZUTAN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1": "I1",
+        "ILS Runway 10": "I10",
+        "RNAV Runway 1": "R1",
+        "RNAV Runway 10": "R10"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one": "1",
+        "visual approach runway one zero": "10",
+        "visual one": "1",
+        "visual one zero": "10",
+        "visual runway one": "1",
+        "visual runway one zero": "10"
+      },
+      "ApproachFixes": {
+        "I1": {
+          "Mizlu": "MIZLU",
+          "Sinba": "CINBA",
+          "Terbe": "TERBE"
+        },
+        "I10": {
+          "SAVANNAH": "SAV",
+          "Sovie": "SOVIE",
+          "Tilee": "TILEE"
+        },
+        "R1": {
+          "Mizlu": "MIZLU",
+          "Terbe": "TERBE",
+          "Wosug": "WOSUG",
+          "Zutan": "ZUTAN"
+        },
+        "R10": {
+          "Sovie": "SOVIE",
+          "Tilee": "TILEE",
+          "Woxit": "WOXIT",
+          "Zutox": "ZUTOX"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 1",
+      "Route": [
+        "WOXIT",
+        "KSAV"
+      ],
+      "Altitude": 3000,
+      "Heading": 246,
+      "Speed": 130,
+      "State": "arrival",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "10",
+        "28",
+        "1",
+        "19"
+      ]
+    },
+    "Southwest 11 80": {
+      "Callsign": "SWA1180",
+      "LastAddressed": true,
+      "AircraftType": "B38M",
+      "Fixes": {
+        "DUBLIN": "DBN",
+        "Savannah Hilton Head": "KSAV",
+        "Smalls": "SMALZ",
+        "Wigvo": "WIGVO"
+      },
+      "Route": [
+        "SMALZ",
+        "WIGVO",
+        "DBN",
+        "ARNNY",
+        "KHOU"
+      ],
+      "Altitude": 2331,
+      "Heading": 90,
+      "Speed": 230,
+      "State": "departure",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N"
+    },
+    "bonanza thirty-three one pahpah victor": {
+      "Callsign": "N51PV/T",
+      "AircraftType": "BE33",
+      "Fixes": {
+        "Charleston": "KCHS",
+        "Mizlu": "MIZLU",
+        "Savannah Hilton Head": "KSAV",
+        "Terbe": "TERBE",
+        "Wosug": "WOSUG",
+        "Woxit": "WOXIT",
+        "Zutan": "ZUTAN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1": "I1",
+        "ILS Runway 10": "I10",
+        "RNAV Runway 1": "R1",
+        "RNAV Runway 10": "R10"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one": "1",
+        "visual approach runway one zero": "10",
+        "visual one": "1",
+        "visual one zero": "10",
+        "visual runway one": "1",
+        "visual runway one zero": "10"
+      },
+      "ApproachFixes": {
+        "I1": {
+          "Mizlu": "MIZLU",
+          "Sinba": "CINBA",
+          "Terbe": "TERBE"
+        },
+        "I10": {
+          "SAVANNAH": "SAV",
+          "Sovie": "SOVIE",
+          "Tilee": "TILEE"
+        },
+        "R1": {
+          "Mizlu": "MIZLU",
+          "Terbe": "TERBE",
+          "Wosug": "WOSUG",
+          "Zutan": "ZUTAN"
+        },
+        "R10": {
+          "Sovie": "SOVIE",
+          "Tilee": "TILEE",
+          "Woxit": "WOXIT",
+          "Zutox": "ZUTOX"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 1",
+      "Route": [
+        "WOXIT",
+        "KSAV"
+      ],
+      "Altitude": 3000,
+      "Heading": 246,
+      "Speed": 130,
+      "State": "arrival",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "10",
+        "28",
+        "1",
+        "19"
+      ]
+    },
+    "cessna T two ten seven niner yankee": {
+      "Callsign": "N9379Y/T",
+      "AircraftType": "T210",
+      "Fixes": {
+        "Gorge": "GORGE",
+        "Hilton Head": "KHXD",
+        "Hundo": "HUNDO",
+        "Soup": "SOOOP"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 3": "R3"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three": "3",
+        "visual runway three": "3",
+        "visual three": "3"
+      },
+      "ApproachFixes": {
+        "R3": {
+          "Gorge": "GORGE",
+          "Hundo": "HUNDO"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 3",
+      "Route": [
+        "SOOOP",
+        "KHXD"
+      ],
+      "Altitude": 9946,
+      "Heading": 220,
+      "Speed": 162,
+      "AssignedHeading": 220,
+      "State": "arrival",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N",
+      "AddressingForm": 1
+    },
+    "cessna one seventy-two niner brahvo golf": {
+      "Callsign": "N789BG/T",
+      "AircraftType": "C172",
+      "Fixes": {
+        "Savannah Hilton Head": "KSAV",
+        "Sovie": "SOVIE",
+        "Tilee": "TILEE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1": "I1",
+        "ILS Runway 10": "I10",
+        "RNAV Runway 1": "R1",
+        "RNAV Runway 10": "R10"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one": "1",
+        "visual approach runway one zero": "10",
+        "visual one": "1",
+        "visual one zero": "10",
+        "visual runway one": "1",
+        "visual runway one zero": "10"
+      },
+      "ApproachFixes": {
+        "I1": {
+          "Mizlu": "MIZLU",
+          "Sinba": "CINBA",
+          "Terbe": "TERBE"
+        },
+        "I10": {
+          "SAVANNAH": "SAV",
+          "Sovie": "SOVIE",
+          "Tilee": "TILEE"
+        },
+        "R1": {
+          "Mizlu": "MIZLU",
+          "Terbe": "TERBE",
+          "Wosug": "WOSUG",
+          "Zutan": "ZUTAN"
+        },
+        "R10": {
+          "Sovie": "SOVIE",
+          "Tilee": "TILEE",
+          "Woxit": "WOXIT",
+          "Zutox": "ZUTOX"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 10",
+      "Route": [
+        "TILEE",
+        "SOVIE",
+        "KSAV"
+      ],
+      "Altitude": 2600,
+      "Heading": 3,
+      "Speed": 125,
+      "State": "cleared approach",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "10",
+        "28",
+        "1",
+        "19"
+      ]
+    },
+    "november five one pahpah victor": {
+      "Callsign": "N51PV",
+      "AircraftType": "BE33",
+      "Fixes": {
+        "Charleston": "KCHS",
+        "Mizlu": "MIZLU",
+        "Savannah Hilton Head": "KSAV",
+        "Terbe": "TERBE",
+        "Wosug": "WOSUG",
+        "Woxit": "WOXIT",
+        "Zutan": "ZUTAN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1": "I1",
+        "ILS Runway 10": "I10",
+        "RNAV Runway 1": "R1",
+        "RNAV Runway 10": "R10"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one": "1",
+        "visual approach runway one zero": "10",
+        "visual one": "1",
+        "visual one zero": "10",
+        "visual runway one": "1",
+        "visual runway one zero": "10"
+      },
+      "ApproachFixes": {
+        "I1": {
+          "Mizlu": "MIZLU",
+          "Sinba": "CINBA",
+          "Terbe": "TERBE"
+        },
+        "I10": {
+          "SAVANNAH": "SAV",
+          "Sovie": "SOVIE",
+          "Tilee": "TILEE"
+        },
+        "R1": {
+          "Mizlu": "MIZLU",
+          "Terbe": "TERBE",
+          "Wosug": "WOSUG",
+          "Zutan": "ZUTAN"
+        },
+        "R10": {
+          "Sovie": "SOVIE",
+          "Tilee": "TILEE",
+          "Woxit": "WOXIT",
+          "Zutox": "ZUTOX"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 1",
+      "Route": [
+        "WOXIT",
+        "KSAV"
+      ],
+      "Altitude": 3000,
+      "Heading": 246,
+      "Speed": 130,
+      "State": "arrival",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "1",
+        "19"
+      ]
+    },
+    "november niner three seven niner yankee": {
+      "Callsign": "N9379Y",
+      "AircraftType": "T210",
+      "Fixes": {
+        "Gorge": "GORGE",
+        "Hilton Head": "KHXD",
+        "Hundo": "HUNDO",
+        "Soup": "SOOOP"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 3": "R3"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three": "3",
+        "visual runway three": "3",
+        "visual three": "3"
+      },
+      "ApproachFixes": {
+        "R3": {
+          "Gorge": "GORGE",
+          "Hundo": "HUNDO"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 3",
+      "Route": [
+        "SOOOP",
+        "KHXD"
+      ],
+      "Altitude": 9946,
+      "Heading": 220,
+      "Speed": 162,
+      "AssignedHeading": 220,
+      "State": "arrival",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N"
+    },
+    "november seven eight niner brahvo golf": {
+      "Callsign": "N789BG",
+      "AircraftType": "C172",
+      "Fixes": {
+        "Savannah Hilton Head": "KSAV",
+        "Sovie": "SOVIE",
+        "Tilee": "TILEE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1": "I1",
+        "ILS Runway 10": "I10",
+        "RNAV Runway 1": "R1",
+        "RNAV Runway 10": "R10"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one": "1",
+        "visual approach runway one zero": "10",
+        "visual one": "1",
+        "visual one zero": "10",
+        "visual runway one": "1",
+        "visual runway one zero": "10"
+      },
+      "ApproachFixes": {
+        "I1": {
+          "Mizlu": "MIZLU",
+          "Sinba": "CINBA",
+          "Terbe": "TERBE"
+        },
+        "I10": {
+          "SAVANNAH": "SAV",
+          "Sovie": "SOVIE",
+          "Tilee": "TILEE"
+        },
+        "R1": {
+          "Mizlu": "MIZLU",
+          "Terbe": "TERBE",
+          "Wosug": "WOSUG",
+          "Zutan": "ZUTAN"
+        },
+        "R10": {
+          "Sovie": "SOVIE",
+          "Tilee": "TILEE",
+          "Woxit": "WOXIT",
+          "Zutox": "ZUTOX"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 10",
+      "Route": [
+        "TILEE",
+        "SOVIE",
+        "KSAV"
+      ],
+      "Altitude": 2600,
+      "Heading": 3,
+      "Speed": 125,
+      "State": "cleared approach",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "1",
+        "19"
+      ]
+    },
+    "skyhawk niner brahvo golf": {
+      "Callsign": "N789BG/T",
+      "AircraftType": "C172",
+      "Fixes": {
+        "Savannah Hilton Head": "KSAV",
+        "Sovie": "SOVIE",
+        "Tilee": "TILEE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1": "I1",
+        "ILS Runway 10": "I10",
+        "RNAV Runway 1": "R1",
+        "RNAV Runway 10": "R10"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one": "1",
+        "visual approach runway one zero": "10",
+        "visual one": "1",
+        "visual one zero": "10",
+        "visual runway one": "1",
+        "visual runway one zero": "10"
+      },
+      "ApproachFixes": {
+        "I1": {
+          "Mizlu": "MIZLU",
+          "Sinba": "CINBA",
+          "Terbe": "TERBE"
+        },
+        "I10": {
+          "SAVANNAH": "SAV",
+          "Sovie": "SOVIE",
+          "Tilee": "TILEE"
+        },
+        "R1": {
+          "Mizlu": "MIZLU",
+          "Terbe": "TERBE",
+          "Wosug": "WOSUG",
+          "Zutan": "ZUTAN"
+        },
+        "R10": {
+          "Sovie": "SOVIE",
+          "Tilee": "TILEE",
+          "Woxit": "WOXIT",
+          "Zutox": "ZUTOX"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 10",
+      "Route": [
+        "TILEE",
+        "SOVIE",
+        "KSAV"
+      ],
+      "Altitude": 2600,
+      "Heading": 3,
+      "Speed": 125,
+      "State": "cleared approach",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "10",
+        "28",
+        "1",
+        "19"
+      ]
+    },
+    "turbo centurion seven niner yankee": {
+      "Callsign": "N9379Y/T",
+      "AircraftType": "T210",
+      "Fixes": {
+        "Gorge": "GORGE",
+        "Hilton Head": "KHXD",
+        "Hundo": "HUNDO",
+        "Soup": "SOOOP"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 3": "R3"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three": "3",
+        "visual runway three": "3",
+        "visual three": "3"
+      },
+      "ApproachFixes": {
+        "R3": {
+          "Gorge": "GORGE",
+          "Hundo": "HUNDO"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 3",
+      "Route": [
+        "SOOOP",
+        "KHXD"
+      ],
+      "Altitude": 9946,
+      "Heading": 220,
+      "Speed": 162,
+      "AssignedHeading": 220,
+      "State": "arrival",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N",
+      "AddressingForm": 1
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Southwest 11 80 climb maintain wind zero thousand\"",
+    "[local-stt] normalized words: [southwest 11 80 climb maintain wind 0 thousand]",
+    "[local-stt] tokens: 7",
+    "[local-stt]   token[0]: Text=\"southwest\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"11\" Type=1 Value=11",
+    "[local-stt]   token[2]: Text=\"80\" Type=1 Value=80",
+    "[local-stt]   token[3]: Text=\"climb\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"wind\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"0\" Type=2 Value=0",
+    "[local-stt] MatchCallsign: 7 tokens, 11 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 7 tokens, 11 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Southwest 11 80\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Southwest 11 80\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"Southwest 11 80\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Southwest 11 80\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 1 results",
+    "[local-stt]     result 0: \"Southwest 11 80\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Southwest 11 80\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"Southwest 11 80\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Southwest 11 80\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"Southwest 11 80\" (airline=0.500, flight=0.700, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Southwest 11 80\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   best callsign candidate: \"SWA1180\" (conf=1.00, consumed=3, addressingForm=0, spokenKey=\"Southwest 11 80\"; 2 candidates)",
+    "[local-stt] ParseCommands: 4 tokens",
+    "[local-stt]   matched command: \"C0\" [climb_maintain] (pos=0, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[0]=\"climb\", skipping",
+    "[local-stt]   matched command: \"A0\" [maintain_altitude] (pos=1, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[1]=\"maintain\", skipping",
+    "[local-stt]   no match at token[2]=\"wind\", skipping",
+    "[local-stt]   matched command: \"A0\" [standalone_altitude] (pos=3, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[3]=\"0\", skipping",
+    "[local-stt]   beam final[0]: score=2.391 pos=4 commands=[C0]",
+    "[local-stt]   beam final[1]: score=-0.509 pos=4 commands=[A0]",
+    "[local-stt]   beam final[2]: score=-4.007 pos=4 commands=[A0]",
+    "[local-stt]   beam final[3]: score=-6.908 pos=4 commands=[]",
+    "[local-stt] ParseCommands: result=[C0] (avgConf=1.00)",
+    "[local-stt] ParseCommands: 6 tokens",
+    "[local-stt]   no match at token[0]=\"11\", skipping",
+    "[local-stt]   no match at token[1]=\"80\", skipping",
+    "[local-stt]   matched command: \"C0\" [climb_maintain] (pos=2, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[2]=\"climb\", skipping",
+    "[local-stt]   matched command: \"A0\" [maintain_altitude] (pos=3, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[3]=\"maintain\", skipping",
+    "[local-stt]   no match at token[4]=\"wind\", skipping",
+    "[local-stt]   matched command: \"A0\" [standalone_altitude] (pos=5, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[5]=\"0\", skipping",
+    "[local-stt]   beam final[0]: score=2.391 pos=6 commands=[C0]",
+    "[local-stt]   beam final[1]: score=-0.509 pos=6 commands=[A0]",
+    "[local-stt]   beam final[2]: score=-4.007 pos=6 commands=[A0]",
+    "[local-stt]   beam final[3]: score=-6.908 pos=6 commands=[]",
+    "[local-stt] ParseCommands: result=[C0] (avgConf=1.00)",
+    "[local-stt] callsign match: Callsign=\"SWA1180\" SpokenKey=\"Southwest 11 80\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"departure\" Altitude=2331 Fixes=4 Approaches=0 VisualApproaches=0 AssignedApproach=\"\" LAHSORunways=[]",
+    "[local-stt]   fix: \"DUBLIN\" -\u003e \"DBN\"",
+    "[local-stt]   fix: \"Savannah Hilton Head\" -\u003e \"KSAV\"",
+    "[local-stt]   fix: \"Smalls\" -\u003e \"SMALZ\"",
+    "[local-stt]   fix: \"Wigvo\" -\u003e \"WIGVO\"",
+    "[local-stt] command tokens after disregard: 4",
+    "[local-stt]   token[0]: Text=\"climb\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"wind\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"0\" Type=2 Value=0",
+    "[local-stt] ParseCommands: 4 tokens",
+    "[local-stt]   matched command: \"C0\" [climb_maintain] (pos=0, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[0]=\"climb\", skipping",
+    "[local-stt]   matched command: \"A0\" [maintain_altitude] (pos=1, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[1]=\"maintain\", skipping",
+    "[local-stt]   no match at token[2]=\"wind\", skipping",
+    "[local-stt]   matched command: \"A0\" [standalone_altitude] (pos=3, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[3]=\"0\", skipping",
+    "[local-stt]   beam final[0]: score=2.391 pos=4 commands=[C0]",
+    "[local-stt]   beam final[1]: score=-0.509 pos=4 commands=[A0]",
+    "[local-stt]   beam final[2]: score=-4.007 pos=4 commands=[A0]",
+    "[local-stt]   beam final[3]: score=-6.908 pos=4 commands=[]",
+    "[local-stt] ParseCommands: result=[C0] (avgConf=1.00)",
+    "[local-stt] parsed commands: [C0] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [SAYAGAIN/ALTITUDE] (conf=0.85)",
+    "[local-stt] validation errors: [climb target must be above current altitude]",
+    "[local-stt] === DecodeTranscript END: \"SWA1180 SAYAGAIN/ALTITUDE\" (conf=0.85, time=5.1282ms) ==="
+  ]
+}

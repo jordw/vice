@@ -1,0 +1,743 @@
+{
+  "time": "2026-11-09T21:40:27.30158896Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "November six golf mike turn right heading three one zero correction three two zero cleared ILS three five",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, yankee, alpha, information, Manchester one, Yitur, Yinuy, Hakam, Fosan, of the, Oldman, six, three five, three four, runway, zulu, yankee, r-nav, I L S, skymaster six golf mike, cessna skymaster six golf mike, november five three six golf mike, ExecJet 16 10, Chronos six 96, Amflight five 71, Amflight one zero seven, Elee, Ihob, Teto, Shows, Martin, Fitzy, KENNEBUNK, You'll, Jazz, Yoknz, Pelan, Pros, Dunk, I deed, GARDNER, Celts, CONK erd, Pudgy, BOSTON, Canton, Manchester-Boston Regional Airport, Manch, Portsmouth International Airport at Pease",
+  "whisper_duration_ms": 571.402,
+  "audio_duration_ms": 5576,
+  "processor": "GPU: Apple M4 Pro, 14 CPU / 20 GPU cores, 64GB",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "N536GM",
+  "command": "R320 CI35",
+  "reason": "correction of a heading",
+  "stt_aircraft": {
+    "Amflight five 71": {
+      "Callsign": "AMF571",
+      "LastAddressed": true,
+      "AircraftType": "B190",
+      "Fixes": {
+        "BOSTON": "BOS",
+        "Celts": "CELTS",
+        "Dunk": "DUNKK",
+        "Hyannis": "KHYA",
+        "Manch": "MANCH",
+        "Manchester": "KMHT"
+      },
+      "SID": "MHT1",
+      "Route": [
+        "MANCH",
+        "BOS",
+        "CELTS",
+        "DUNKK",
+        "KHYA"
+      ],
+      "Altitude": 2671,
+      "Heading": 9,
+      "Speed": 195,
+      "AssignedHeading": 120,
+      "State": "departure",
+      "ControllerFrequency": "1Z",
+      "TrackingController": "1Z"
+    },
+    "Amflight one zero seven": {
+      "Callsign": "AMF107",
+      "AircraftType": "B190",
+      "Fixes": {
+        "CONK erd": "CON",
+        "Canton": "CAMTN",
+        "I deed": "IDEED",
+        "KENNEBUNK": "ENE",
+        "Pease": "KPSM",
+        "Portsmith": "KPSM",
+        "Yoknz": "YOKNZ"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 34": "I34",
+        "RNAV Runway 34": "R34"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three four": "34",
+        "visual runway three four": "34",
+        "visual three four": "34"
+      },
+      "ApproachFixes": {
+        "I34": {
+          "CONK erd": "CON",
+          "I deed": "IDEED",
+          "KENNEBUNK": "ENE",
+          "Yoknz": "YOKNZ"
+        },
+        "R34": {
+          "I deed": "IDEED",
+          "Yinuy": "YINUY",
+          "Yitur": "YITUR",
+          "Yoknz": "YOKNZ"
+        }
+      },
+      "AssignedApproach": "ILS Runway 34",
+      "Route": [
+        "CAMTN",
+        "CON",
+        "KPSM"
+      ],
+      "Altitude": 2000,
+      "Heading": 70,
+      "Speed": 178,
+      "AssignedHeading": 70,
+      "AssignedSpeed": 180,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W"
+    },
+    "Chronos six 96": {
+      "Callsign": "CNS696",
+      "AircraftType": "PC12",
+      "Fixes": {
+        "CONK erd": "CON",
+        "Canton": "CAMTN",
+        "Fitzy": "FITZY",
+        "GARDNER": "GDM",
+        "Jazz": "JAAZZ",
+        "Manchester": "KMHT",
+        "Pros": "PROES",
+        "Teto": "TEETO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 35": "I35",
+        "ILS Runway 6": "I6",
+        "RNAV Runway 6": "R6",
+        "RNAV Y Runway 35": "Y35",
+        "RNAV Z Runway 35": "Z35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway six": "6",
+        "visual approach runway three five": "35",
+        "visual runway six": "6",
+        "visual runway three five": "35",
+        "visual six": "6",
+        "visual three five": "35"
+      },
+      "ApproachFixes": {
+        "I35": {
+          "Elee": "ELEEE",
+          "Ihob": "IHOBB",
+          "Martin": "MNTIN",
+          "Pelan": "PELAN",
+          "Shows": "SHOWZ",
+          "You'll": "YOULL"
+        },
+        "I6": {
+          "Fitzy": "FITZY",
+          "GARDNER": "GDM",
+          "Jazz": "JAAZZ",
+          "Pros": "PROES",
+          "Teto": "TEETO"
+        },
+        "R6": {
+          "Fitzy": "FITZY",
+          "Fosan": "FOSAN",
+          "Hakam": "HAKAM",
+          "Jazz": "JAAZZ"
+        },
+        "Y35": {
+          "Elee": "ELEEE",
+          "Ihob": "IHOBB",
+          "Martin": "MNTIN",
+          "Pelan": "PELAN",
+          "Shows": "SHOWZ",
+          "You'll": "YOULL",
+          "Zohwi": "XOHWI"
+        },
+        "Z35": {
+          "Martin": "MNTIN",
+          "Oldman": "OLDMN",
+          "Pelan": "PELAN",
+          "Shows": "SHOWZ",
+          "You'll": "YOULL",
+          "of the": "OFTHE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 6",
+      "Route": [
+        "CAMTN",
+        "CON",
+        "KMHT"
+      ],
+      "Altitude": 10375,
+      "Heading": 210,
+      "Speed": 273,
+      "AssignedAltitude": 8000,
+      "AssignedHeading": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "LAHSORunways": [
+        "6",
+        "24",
+        "17",
+        "35"
+      ]
+    },
+    "ExecJet 16 10": {
+      "Callsign": "EJA1610",
+      "AircraftType": "CL35",
+      "Fixes": {
+        "Fitzy": "FITZY",
+        "GARDNER": "GDM",
+        "Jazz": "JAAZZ",
+        "Manchester": "KMHT",
+        "Pros": "PROES",
+        "Pudgy": "PUDGY",
+        "Teto": "TEETO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 35": "I35",
+        "ILS Runway 6": "I6",
+        "RNAV Runway 6": "R6",
+        "RNAV Y Runway 35": "Y35",
+        "RNAV Z Runway 35": "Z35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway six": "6",
+        "visual approach runway three five": "35",
+        "visual runway six": "6",
+        "visual runway three five": "35",
+        "visual six": "6",
+        "visual three five": "35"
+      },
+      "ApproachFixes": {
+        "I35": {
+          "Elee": "ELEEE",
+          "Ihob": "IHOBB",
+          "Martin": "MNTIN",
+          "Pelan": "PELAN",
+          "Shows": "SHOWZ",
+          "You'll": "YOULL"
+        },
+        "I6": {
+          "Fitzy": "FITZY",
+          "GARDNER": "GDM",
+          "Jazz": "JAAZZ",
+          "Pros": "PROES",
+          "Teto": "TEETO"
+        },
+        "R6": {
+          "Fitzy": "FITZY",
+          "Fosan": "FOSAN",
+          "Hakam": "HAKAM",
+          "Jazz": "JAAZZ"
+        },
+        "Y35": {
+          "Elee": "ELEEE",
+          "Ihob": "IHOBB",
+          "Martin": "MNTIN",
+          "Pelan": "PELAN",
+          "Shows": "SHOWZ",
+          "You'll": "YOULL",
+          "Zohwi": "XOHWI"
+        },
+        "Z35": {
+          "Martin": "MNTIN",
+          "Oldman": "OLDMN",
+          "Pelan": "PELAN",
+          "Shows": "SHOWZ",
+          "You'll": "YOULL",
+          "of the": "OFTHE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 6",
+      "Route": [
+        "PUDGY",
+        "GDM",
+        "KMHT"
+      ],
+      "Altitude": 4042,
+      "Heading": 72,
+      "Speed": 257,
+      "AssignedHeading": 72,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "LAHSORunways": [
+        "6",
+        "24",
+        "17",
+        "35"
+      ]
+    },
+    "cessna skymaster six golf mike": {
+      "Callsign": "N536GM/T",
+      "AircraftType": "C337",
+      "Fixes": {
+        "Elee": "ELEEE",
+        "GARDNER": "GDM",
+        "Ihob": "IHOBB",
+        "Manchester": "KMHT",
+        "Martin": "MNTIN",
+        "Pelan": "PELAN",
+        "Pudgy": "PUDGY",
+        "Shows": "SHOWZ",
+        "You'll": "YOULL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 35": "I35",
+        "ILS Runway 6": "I6",
+        "RNAV Runway 6": "R6",
+        "RNAV Y Runway 35": "Y35",
+        "RNAV Z Runway 35": "Z35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway six": "6",
+        "visual approach runway three five": "35",
+        "visual runway six": "6",
+        "visual runway three five": "35",
+        "visual six": "6",
+        "visual three five": "35"
+      },
+      "ApproachFixes": {
+        "I35": {
+          "Elee": "ELEEE",
+          "Ihob": "IHOBB",
+          "Martin": "MNTIN",
+          "Pelan": "PELAN",
+          "Shows": "SHOWZ",
+          "You'll": "YOULL"
+        },
+        "I6": {
+          "Fitzy": "FITZY",
+          "GARDNER": "GDM",
+          "Jazz": "JAAZZ",
+          "Pros": "PROES",
+          "Teto": "TEETO"
+        },
+        "R6": {
+          "Fitzy": "FITZY",
+          "Fosan": "FOSAN",
+          "Hakam": "HAKAM",
+          "Jazz": "JAAZZ"
+        },
+        "Y35": {
+          "Elee": "ELEEE",
+          "Ihob": "IHOBB",
+          "Martin": "MNTIN",
+          "Pelan": "PELAN",
+          "Shows": "SHOWZ",
+          "You'll": "YOULL",
+          "Zohwi": "XOHWI"
+        },
+        "Z35": {
+          "Martin": "MNTIN",
+          "Oldman": "OLDMN",
+          "Pelan": "PELAN",
+          "Shows": "SHOWZ",
+          "You'll": "YOULL",
+          "of the": "OFTHE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 35",
+      "Route": [
+        "PUDGY",
+        "GDM",
+        "KMHT"
+      ],
+      "Altitude": 2000,
+      "Heading": 290,
+      "Speed": 166,
+      "AssignedHeading": 290,
+      "State": "arrival",
+      "ControllerFrequency": "1Z",
+      "TrackingController": "1Z",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "6",
+        "24",
+        "17",
+        "35"
+      ]
+    },
+    "november five three six golf mike": {
+      "Callsign": "N536GM",
+      "AircraftType": "C337",
+      "Fixes": {
+        "Elee": "ELEEE",
+        "GARDNER": "GDM",
+        "Ihob": "IHOBB",
+        "Manchester": "KMHT",
+        "Martin": "MNTIN",
+        "Pelan": "PELAN",
+        "Pudgy": "PUDGY",
+        "Shows": "SHOWZ",
+        "You'll": "YOULL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 35": "I35",
+        "ILS Runway 6": "I6",
+        "RNAV Runway 6": "R6",
+        "RNAV Y Runway 35": "Y35",
+        "RNAV Z Runway 35": "Z35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway six": "6",
+        "visual approach runway three five": "35",
+        "visual runway six": "6",
+        "visual runway three five": "35",
+        "visual six": "6",
+        "visual three five": "35"
+      },
+      "ApproachFixes": {
+        "I35": {
+          "Elee": "ELEEE",
+          "Ihob": "IHOBB",
+          "Martin": "MNTIN",
+          "Pelan": "PELAN",
+          "Shows": "SHOWZ",
+          "You'll": "YOULL"
+        },
+        "I6": {
+          "Fitzy": "FITZY",
+          "GARDNER": "GDM",
+          "Jazz": "JAAZZ",
+          "Pros": "PROES",
+          "Teto": "TEETO"
+        },
+        "R6": {
+          "Fitzy": "FITZY",
+          "Fosan": "FOSAN",
+          "Hakam": "HAKAM",
+          "Jazz": "JAAZZ"
+        },
+        "Y35": {
+          "Elee": "ELEEE",
+          "Ihob": "IHOBB",
+          "Martin": "MNTIN",
+          "Pelan": "PELAN",
+          "Shows": "SHOWZ",
+          "You'll": "YOULL",
+          "Zohwi": "XOHWI"
+        },
+        "Z35": {
+          "Martin": "MNTIN",
+          "Oldman": "OLDMN",
+          "Pelan": "PELAN",
+          "Shows": "SHOWZ",
+          "You'll": "YOULL",
+          "of the": "OFTHE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 35",
+      "Route": [
+        "PUDGY",
+        "GDM",
+        "KMHT"
+      ],
+      "Altitude": 2000,
+      "Heading": 290,
+      "Speed": 166,
+      "AssignedHeading": 290,
+      "State": "arrival",
+      "ControllerFrequency": "1Z",
+      "TrackingController": "1Z",
+      "LAHSORunways": [
+        "6",
+        "24",
+        "17",
+        "35"
+      ]
+    },
+    "skymaster six golf mike": {
+      "Callsign": "N536GM/T",
+      "AircraftType": "C337",
+      "Fixes": {
+        "Elee": "ELEEE",
+        "GARDNER": "GDM",
+        "Ihob": "IHOBB",
+        "Manchester": "KMHT",
+        "Martin": "MNTIN",
+        "Pelan": "PELAN",
+        "Pudgy": "PUDGY",
+        "Shows": "SHOWZ",
+        "You'll": "YOULL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 35": "I35",
+        "ILS Runway 6": "I6",
+        "RNAV Runway 6": "R6",
+        "RNAV Y Runway 35": "Y35",
+        "RNAV Z Runway 35": "Z35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway six": "6",
+        "visual approach runway three five": "35",
+        "visual runway six": "6",
+        "visual runway three five": "35",
+        "visual six": "6",
+        "visual three five": "35"
+      },
+      "ApproachFixes": {
+        "I35": {
+          "Elee": "ELEEE",
+          "Ihob": "IHOBB",
+          "Martin": "MNTIN",
+          "Pelan": "PELAN",
+          "Shows": "SHOWZ",
+          "You'll": "YOULL"
+        },
+        "I6": {
+          "Fitzy": "FITZY",
+          "GARDNER": "GDM",
+          "Jazz": "JAAZZ",
+          "Pros": "PROES",
+          "Teto": "TEETO"
+        },
+        "R6": {
+          "Fitzy": "FITZY",
+          "Fosan": "FOSAN",
+          "Hakam": "HAKAM",
+          "Jazz": "JAAZZ"
+        },
+        "Y35": {
+          "Elee": "ELEEE",
+          "Ihob": "IHOBB",
+          "Martin": "MNTIN",
+          "Pelan": "PELAN",
+          "Shows": "SHOWZ",
+          "You'll": "YOULL",
+          "Zohwi": "XOHWI"
+        },
+        "Z35": {
+          "Martin": "MNTIN",
+          "Oldman": "OLDMN",
+          "Pelan": "PELAN",
+          "Shows": "SHOWZ",
+          "You'll": "YOULL",
+          "of the": "OFTHE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 35",
+      "Route": [
+        "PUDGY",
+        "GDM",
+        "KMHT"
+      ],
+      "Altitude": 2000,
+      "Heading": 290,
+      "Speed": 166,
+      "AssignedHeading": 290,
+      "State": "arrival",
+      "ControllerFrequency": "1Z",
+      "TrackingController": "1Z",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "6",
+        "24",
+        "17",
+        "35"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"November six golf mike turn right heading three one zero correction three two zero cleared ILS three five\"",
+    "[local-stt] normalized words: [november 6 golf mike turn right heading 3 1 0 correction 3 2 0 cleared ils 3 5]",
+    "[local-stt] tokens: 13",
+    "[local-stt]   token[0]: Text=\"november\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"6\" Type=1 Value=6",
+    "[local-stt]   token[2]: Text=\"golf\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"mike\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"heading\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"310\" Type=1 Value=310",
+    "[local-stt]   token[8]: Text=\"correction\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"320\" Type=1 Value=320",
+    "[local-stt]   token[10]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"ils\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"35\" Type=1 Value=35",
+    "[local-stt] MatchCallsign: 13 tokens, 7 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 13 tokens, 7 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": 3 results",
+    "[local-stt]     result 0: \"cessna skymaster six golf mike\" (airline=0.950, flight=0.950, skip=1)",
+    "[local-stt]     result 1: \"skymaster six golf mike\" (airline=0.950, flight=0.950, skip=1)",
+    "[local-stt]     result 2: \"november five three six golf mike\" (airline=0.950, flight=0.950, skip=1)",
+    "[local-stt]     pattern \"ga_suffix\": selected \"november five three six golf mike\" (airline=0.95, flight=0.95, skip=1)",
+    "[local-stt]   pattern \"airline_flight\": 4 results",
+    "[local-stt]     result 0: \"november five three six golf mike\" (airline=1.000, flight=0.850, skip=0)",
+    "[local-stt]     result 1: \"cessna skymaster six golf mike\" (airline=0.431, flight=0.850, skip=0)",
+    "[local-stt]     result 2: \"skymaster six golf mike\" (airline=0.569, flight=0.850, skip=0)",
+    "[local-stt]     result 3: \"november five three six golf mike\" (airline=0.458, flight=0.850, skip=2)",
+    "[local-stt]     pattern \"airline_flight\": selected \"november five three six golf mike\" (airline=1.00, flight=0.85, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 10 results",
+    "[local-stt]     result 0: \"Amflight five 71\" (airline=0.417, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Chronos six 96\" (airline=0.423, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Amflight one zero seven\" (airline=0.417, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"ExecJet 16 10\" (airline=0.512, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Amflight five 71\" (airline=0.417, flight=0.000, skip=2)",
+    "[local-stt]     pattern \"airline_only\": selected \"Amflight one zero seven\" (airline=0.58, flight=0.00, skip=3)",
+    "[local-stt]     pattern \"airline_only\": scoring rejected \"Amflight one zero seven\"",
+    "[local-stt]   pattern \"ga_november\": 1 results",
+    "[local-stt]     result 0: \"november five three six golf mike\" (airline=0.800, flight=0.750, skip=0)",
+    "[local-stt]     pattern \"ga_november\": selected \"november five three six golf mike\" (airline=0.80, flight=0.75, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": no results",
+    "[local-stt]   best callsign candidate: \"N536GM\" (conf=0.97, consumed=4, addressingForm=0, spokenKey=\"november five three six golf mike\"; 2 candidates)",
+    "[local-stt] ParseCommands: 9 tokens",
+    "[local-stt]   matched command: \"R310\" [turn_right_heading] (pos=0, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[0]=\"turn\", skipping",
+    "[local-stt]   no match at token[4]=\"correction\", skipping",
+    "[local-stt]   matched command: \"R310\" [turn_right_heading] (pos=1, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[1]=\"right\", skipping",
+    "[local-stt]   no match at token[5]=\"320\", skipping",
+    "[local-stt]   no match at token[4]=\"correction\", skipping",
+    "[local-stt]   matched command: \"H310\" [heading_only] (pos=2, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[2]=\"heading\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"35\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"35\"",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"ils\" variant=\"\" runway=\"three five\" -\u003e \"I35\" (consumed=2)",
+    "[local-stt]   matched command: \"CI35\" [cleared_approach] (pos=6, conf=0.98, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[6]=\"cleared\", skipping",
+    "[local-stt]   no match at token[5]=\"320\", skipping",
+    "[local-stt]   no match at token[4]=\"correction\", skipping",
+    "[local-stt]   no match at token[3]=\"310\", skipping",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"ils\" variant=\"\" runway=\"three five\" -\u003e \"I35\" (consumed=2)",
+    "[local-stt]   implicit approach match: \"CI35\" (consumed=2)",
+    "[local-stt]   no match at token[7]=\"ils\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"35\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"35\"",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"ils\" variant=\"\" runway=\"three five\" -\u003e \"I35\" (consumed=2)",
+    "[local-stt]   matched command: \"CI35\" [cleared_approach] (pos=6, conf=0.98, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[6]=\"cleared\", skipping",
+    "[local-stt]   no match at token[5]=\"320\", skipping",
+    "[local-stt]   no match at token[8]=\"35\", skipping",
+    "[local-stt]   beam final[0]: score=4.134 pos=9 commands=[R310 CI35]",
+    "[local-stt]   beam final[1]: score=1.233 pos=9 commands=[R310 CI35]",
+    "[local-stt]   beam final[2]: score=0.289 pos=9 commands=[R310 CI35]",
+    "[local-stt]   beam final[3]: score=0.089 pos=9 commands=[R310]",
+    "[local-stt] ParseCommands: result=[R310 CI35] (avgConf=0.99)",
+    "[local-stt] ParseCommands: 11 tokens",
+    "[local-stt]   no match at token[0]=\"golf\", skipping",
+    "[local-stt]   no match at token[1]=\"mike\", skipping",
+    "[local-stt]   matched command: \"R310\" [turn_right_heading] (pos=2, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[2]=\"turn\", skipping",
+    "[local-stt]   no match at token[6]=\"correction\", skipping",
+    "[local-stt]   matched command: \"R310\" [turn_right_heading] (pos=3, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[3]=\"right\", skipping",
+    "[local-stt]   no match at token[7]=\"320\", skipping",
+    "[local-stt]   no match at token[6]=\"correction\", skipping",
+    "[local-stt]   matched command: \"H310\" [heading_only] (pos=4, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[4]=\"heading\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"35\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"35\"",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"ils\" variant=\"\" runway=\"three five\" -\u003e \"I35\" (consumed=2)",
+    "[local-stt]   matched command: \"CI35\" [cleared_approach] (pos=8, conf=0.98, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[8]=\"cleared\", skipping",
+    "[local-stt]   no match at token[7]=\"320\", skipping",
+    "[local-stt]   no match at token[6]=\"correction\", skipping",
+    "[local-stt]   no match at token[5]=\"310\", skipping",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"ils\" variant=\"\" runway=\"three five\" -\u003e \"I35\" (consumed=2)",
+    "[local-stt]   implicit approach match: \"CI35\" (consumed=2)",
+    "[local-stt]   no match at token[9]=\"ils\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"35\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"35\"",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"ils\" variant=\"\" runway=\"three five\" -\u003e \"I35\" (consumed=2)",
+    "[local-stt]   matched command: \"CI35\" [cleared_approach] (pos=8, conf=0.98, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[8]=\"cleared\", skipping",
+    "[local-stt]   no match at token[7]=\"320\", skipping",
+    "[local-stt]   no match at token[10]=\"35\", skipping",
+    "[local-stt]   beam final[0]: score=4.134 pos=11 commands=[R310 CI35]",
+    "[local-stt]   beam final[1]: score=1.233 pos=11 commands=[R310 CI35]",
+    "[local-stt]   beam final[2]: score=0.289 pos=11 commands=[R310 CI35]",
+    "[local-stt]   beam final[3]: score=0.089 pos=11 commands=[R310]",
+    "[local-stt] ParseCommands: result=[R310 CI35] (avgConf=0.99)",
+    "[local-stt] callsign match: Callsign=\"N536GM\" SpokenKey=\"november five three six golf mike\" Conf=0.97 Consumed=4",
+    "[local-stt] MatchCallsign: 4 tokens, 7 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 4 tokens, 7 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": no results",
+    "[local-stt]   pattern \"airline_only\": 4 results",
+    "[local-stt]     result 0: \"Chronos six 96\" (airline=0.571, flight=0.000, skip=1)",
+    "[local-stt]     result 1: \"ExecJet 16 10\" (airline=0.524, flight=0.000, skip=1)",
+    "[local-stt]     result 2: \"Amflight five 71\" (airline=0.486, flight=0.000, skip=2)",
+    "[local-stt]     result 3: \"Amflight one zero seven\" (airline=0.486, flight=0.000, skip=2)",
+    "[local-stt]     pattern \"airline_only\": selected \"Chronos six 96\" (airline=0.57, flight=0.00, skip=1)",
+    "[local-stt]     pattern \"airline_only\": scoring rejected \"Chronos six 96\"",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": no results",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=2000 Fixes=9 Approaches=5 VisualApproaches=6 AssignedApproach=\"ILS Runway 35\" LAHSORunways=[6 24 17 35]",
+    "[local-stt]   fix: \"Manchester\" -\u003e \"KMHT\"",
+    "[local-stt]   fix: \"GARDNER\" -\u003e \"GDM\"",
+    "[local-stt]   fix: \"You'll\" -\u003e \"YOULL\"",
+    "[local-stt]   fix: \"Martin\" -\u003e \"MNTIN\"",
+    "[local-stt]   fix: \"Ihob\" -\u003e \"IHOBB\"",
+    "[local-stt]   fix: \"Pudgy\" -\u003e \"PUDGY\"",
+    "[local-stt]   fix: \"Pelan\" -\u003e \"PELAN\"",
+    "[local-stt]   fix: \"Shows\" -\u003e \"SHOWZ\"",
+    "[local-stt]   fix: \"Elee\" -\u003e \"ELEEE\"",
+    "[local-stt]   approach: \"RNAV Runway 6\" -\u003e \"R6\"",
+    "[local-stt]   approach: \"ILS Runway 6\" -\u003e \"I6\"",
+    "[local-stt]   approach: \"RNAV Z Runway 35\" -\u003e \"Z35\"",
+    "[local-stt]   approach: \"RNAV Y Runway 35\" -\u003e \"Y35\"",
+    "[local-stt]   approach: \"ILS Runway 35\" -\u003e \"I35\"",
+    "[local-stt]   visual approach: \"visual six\" -\u003e \"6\"",
+    "[local-stt]   visual approach: \"visual runway three five\" -\u003e \"35\"",
+    "[local-stt]   visual approach: \"visual approach runway three five\" -\u003e \"35\"",
+    "[local-stt]   visual approach: \"visual three five\" -\u003e \"35\"",
+    "[local-stt]   visual approach: \"visual runway six\" -\u003e \"6\"",
+    "[local-stt]   visual approach: \"visual approach runway six\" -\u003e \"6\"",
+    "[local-stt]   correction: preserving command keyword \"heading\" for corrected value",
+    "[local-stt] command tokens after disregard: 5",
+    "[local-stt]   token[0]: Text=\"heading\" Type=0 Value=0",
+    "[local-stt]   token[1]: Text=\"320\" Type=1 Value=320",
+    "[local-stt]   token[2]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"ils\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"35\" Type=1 Value=35",
+    "[local-stt] ParseCommands: 5 tokens",
+    "[local-stt]   matched command: \"H320\" [heading_only] (pos=0, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"heading\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"35\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"35\"",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"ils\" variant=\"\" runway=\"three five\" -\u003e \"I35\" (consumed=2)",
+    "[local-stt]   matched command: \"CI35\" [cleared_approach] (pos=2, conf=0.98, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[2]=\"cleared\", skipping",
+    "[local-stt]   no match at token[1]=\"320\", skipping",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"ils\" variant=\"\" runway=\"three five\" -\u003e \"I35\" (consumed=2)",
+    "[local-stt]   implicit approach match: \"CI35\" (consumed=2)",
+    "[local-stt]   no match at token[3]=\"ils\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"35\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"35\"",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"ils\" variant=\"\" runway=\"three five\" -\u003e \"I35\" (consumed=2)",
+    "[local-stt]   matched command: \"CI35\" [cleared_approach] (pos=2, conf=0.98, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[2]=\"cleared\", skipping",
+    "[local-stt]   no match at token[4]=\"35\", skipping",
+    "[local-stt]   beam final[0]: score=2.938 pos=5 commands=[H320 CI35]",
+    "[local-stt]   beam final[1]: score=-0.560 pos=5 commands=[CI35]",
+    "[local-stt]   beam final[2]: score=-0.907 pos=5 commands=[H320 CI35]",
+    "[local-stt]   beam final[3]: score=-1.107 pos=5 commands=[H320]",
+    "[local-stt] ParseCommands: result=[H320 CI35] (avgConf=0.99)",
+    "[local-stt] parsed commands: [H320 CI35] (conf=0.99, kinds=1)",
+    "[local-stt] validated commands: [H320 CI35] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"N536GM H320 CI35\" (conf=0.96, time=8.091375ms) ==="
+  ]
+}

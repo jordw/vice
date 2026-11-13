@@ -1,0 +1,553 @@
+{
+  "time": "2026-11-07T09:49:48.626690905Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Forex Three Three Two anchorage hello hold at kneel one zero five zero radial one minute leg right turn",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, mike, information, Witty five, Kroto five, Erome, Muffs, Senix, Nerds, Wesol, Lithe, Wugsi, Aink, seven left, seven right, runway, zulu, r-nav, I L S, UPS three 98 heavy, Horizon Air 93 71, Horizon Air 74 36, Alaska niner 29, Wewwo, Elias, KENAI, Culen, Andy, Hoper, Aslee, Silty, Gayle, Nicole, Ted Stevens Anchorage International Airport",
+  "whisper_duration_ms": 805.92,
+  "audio_duration_ms": 9288,
+  "processor": "GPU: NVIDIA GeForce RTX 3050 Laptop GPU (3965MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "FDX332",
+  "command": "HNEELL/R50/1M/R",
+  "reason": "\"on zero five zero radial\" with on heard as one",
+  "stt_aircraft": {
+    "Alaska niner 29": {
+      "Callsign": "ASA929",
+      "AircraftType": "B39M",
+      "Fixes": {
+        "Aslee": "ASLEE",
+        "Culen": "CULEN",
+        "Elias": "ELIAS",
+        "KENAI": "ENA",
+        "Nicole": "NHCOL",
+        "Ted Stevens Anchorage": "PANC",
+        "Tuli": "TULLI",
+        "Wewwo": "WEWWO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 7L": "I7L",
+        "ILS Runway 7R": "I7R",
+        "RNAV Z Runway 7R": "R7R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway seven left": "7L",
+        "visual approach runway seven right": "7R",
+        "visual runway seven left": "7L",
+        "visual runway seven right": "7R",
+        "visual seven left": "7L",
+        "visual seven right": "7R"
+      },
+      "ApproachFixes": {
+        "I7L": {
+          "Aink": "AINKK",
+          "KENAI": "ENA",
+          "Wugsi": "WUGSI",
+          "webby": "WEBBI"
+        },
+        "I7R": {
+          "Elias": "ELIAS",
+          "KENAI": "ENA",
+          "Tuli": "TULLI",
+          "Wewwo": "WEWWO"
+        },
+        "R7R": {
+          "Elias": "ELIAS",
+          "Erome": "EROME",
+          "Hoper": "HOPER",
+          "Lithe": "LITHE",
+          "Muffs": "MUFFS",
+          "Nerds": "NURDS",
+          "Senix": "CENIX",
+          "Tuli": "TULLI",
+          "Wesol": "WESOL"
+        }
+      },
+      "AssignedApproach": "ILS Runway 7R",
+      "STAR": "KROTO5",
+      "Route": [
+        "NHCOL",
+        "ASLEE",
+        "CULEN",
+        "PANC"
+      ],
+      "Altitude": 12111,
+      "Heading": 163,
+      "Speed": 301,
+      "State": "arrival",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N",
+      "LAHSORunways": [
+        "15",
+        "33",
+        "15",
+        "33"
+      ]
+    },
+    "Fedex three 32 heavy": {
+      "Callsign": "FDX332",
+      "AircraftType": "MD11",
+      "Fixes": {
+        "Elias": "ELIAS",
+        "KENAI": "ENA",
+        "Neil": "NEELL",
+        "Shanken": "SHNKN",
+        "Ted Stevens Anchorage": "PANC",
+        "Tuli": "TULLI",
+        "Wewwo": "WEWWO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 7L": "I7L",
+        "ILS Runway 7R": "I7R",
+        "RNAV Z Runway 7R": "R7R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway seven left": "7L",
+        "visual approach runway seven right": "7R",
+        "visual runway seven left": "7L",
+        "visual runway seven right": "7R",
+        "visual seven left": "7L",
+        "visual seven right": "7R"
+      },
+      "ApproachFixes": {
+        "I7L": {
+          "Aink": "AINKK",
+          "KENAI": "ENA",
+          "Wugsi": "WUGSI",
+          "webby": "WEBBI"
+        },
+        "I7R": {
+          "Elias": "ELIAS",
+          "KENAI": "ENA",
+          "Tuli": "TULLI",
+          "Wewwo": "WEWWO"
+        },
+        "R7R": {
+          "Elias": "ELIAS",
+          "Erome": "EROME",
+          "Hoper": "HOPER",
+          "Lithe": "LITHE",
+          "Muffs": "MUFFS",
+          "Nerds": "NURDS",
+          "Senix": "CENIX",
+          "Tuli": "TULLI",
+          "Wesol": "WESOL"
+        }
+      },
+      "AssignedApproach": "ILS Runway 7R",
+      "STAR": "NEELL7",
+      "Route": [
+        "NEELL",
+        "SHNKN",
+        "ELIAS",
+        "PANC"
+      ],
+      "Altitude": 11576,
+      "Heading": 48,
+      "Speed": 380,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "15",
+        "33",
+        "15",
+        "33"
+      ]
+    },
+    "Horizon Air 74 36": {
+      "Callsign": "QXE7436",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Aslee": "ASLEE",
+        "Culen": "CULEN",
+        "Elias": "ELIAS",
+        "KENAI": "ENA",
+        "Nicole": "NHCOL",
+        "Ted Stevens Anchorage": "PANC",
+        "Tuli": "TULLI",
+        "Wewwo": "WEWWO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 7L": "I7L",
+        "ILS Runway 7R": "I7R",
+        "RNAV Z Runway 7R": "R7R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway seven left": "7L",
+        "visual approach runway seven right": "7R",
+        "visual runway seven left": "7L",
+        "visual runway seven right": "7R",
+        "visual seven left": "7L",
+        "visual seven right": "7R"
+      },
+      "ApproachFixes": {
+        "I7L": {
+          "Aink": "AINKK",
+          "KENAI": "ENA",
+          "Wugsi": "WUGSI",
+          "webby": "WEBBI"
+        },
+        "I7R": {
+          "Elias": "ELIAS",
+          "KENAI": "ENA",
+          "Tuli": "TULLI",
+          "Wewwo": "WEWWO"
+        },
+        "R7R": {
+          "Elias": "ELIAS",
+          "Erome": "EROME",
+          "Hoper": "HOPER",
+          "Lithe": "LITHE",
+          "Muffs": "MUFFS",
+          "Nerds": "NURDS",
+          "Senix": "CENIX",
+          "Tuli": "TULLI",
+          "Wesol": "WESOL"
+        }
+      },
+      "AssignedApproach": "ILS Runway 7R",
+      "STAR": "KROTO5",
+      "Route": [
+        "NHCOL",
+        "ASLEE",
+        "CULEN",
+        "PANC"
+      ],
+      "Altitude": 6079,
+      "Heading": 168,
+      "Speed": 233,
+      "State": "arrival",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N",
+      "LAHSORunways": [
+        "15",
+        "33",
+        "15",
+        "33"
+      ]
+    },
+    "Horizon Air 93 71": {
+      "Callsign": "QXE9371",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Andy": "ANDDI",
+        "Elias": "ELIAS",
+        "Gayle": "GAYLL",
+        "Hoper": "HOPER",
+        "KENAI": "ENA",
+        "Silty": "SILTY",
+        "Ted Stevens Anchorage": "PANC",
+        "Tuli": "TULLI",
+        "Wewwo": "WEWWO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 7L": "I7L",
+        "ILS Runway 7R": "I7R",
+        "RNAV Z Runway 7R": "R7R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway seven left": "7L",
+        "visual approach runway seven right": "7R",
+        "visual runway seven left": "7L",
+        "visual runway seven right": "7R",
+        "visual seven left": "7L",
+        "visual seven right": "7R"
+      },
+      "ApproachFixes": {
+        "I7L": {
+          "Aink": "AINKK",
+          "KENAI": "ENA",
+          "Wugsi": "WUGSI",
+          "webby": "WEBBI"
+        },
+        "I7R": {
+          "Elias": "ELIAS",
+          "KENAI": "ENA",
+          "Tuli": "TULLI",
+          "Wewwo": "WEWWO"
+        },
+        "R7R": {
+          "Elias": "ELIAS",
+          "Erome": "EROME",
+          "Hoper": "HOPER",
+          "Lithe": "LITHE",
+          "Muffs": "MUFFS",
+          "Nerds": "NURDS",
+          "Senix": "CENIX",
+          "Tuli": "TULLI",
+          "Wesol": "WESOL"
+        }
+      },
+      "AssignedApproach": "ILS Runway 7R",
+      "STAR": "WITTI5",
+      "Route": [
+        "GAYLL",
+        "HOPER",
+        "SILTY",
+        "ANDDI",
+        "PANC"
+      ],
+      "Altitude": 15284,
+      "Heading": 271,
+      "Speed": 261,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "15",
+        "33",
+        "15",
+        "33"
+      ]
+    },
+    "UPS three 98 heavy": {
+      "Callsign": "UPS398",
+      "LastAddressed": true,
+      "AircraftType": "B748",
+      "Fixes": {
+        "Andy": "ANDDI",
+        "Elias": "ELIAS",
+        "KENAI": "ENA",
+        "Silty": "SILTY",
+        "Ted Stevens Anchorage": "PANC",
+        "Tuli": "TULLI",
+        "Wewwo": "WEWWO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 7L": "I7L",
+        "ILS Runway 7R": "I7R",
+        "RNAV Z Runway 7R": "R7R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway seven left": "7L",
+        "visual approach runway seven right": "7R",
+        "visual runway seven left": "7L",
+        "visual runway seven right": "7R",
+        "visual seven left": "7L",
+        "visual seven right": "7R"
+      },
+      "ApproachFixes": {
+        "I7L": {
+          "Aink": "AINKK",
+          "KENAI": "ENA",
+          "Wugsi": "WUGSI",
+          "webby": "WEBBI"
+        },
+        "I7R": {
+          "Elias": "ELIAS",
+          "KENAI": "ENA",
+          "Tuli": "TULLI",
+          "Wewwo": "WEWWO"
+        },
+        "R7R": {
+          "Elias": "ELIAS",
+          "Erome": "EROME",
+          "Hoper": "HOPER",
+          "Lithe": "LITHE",
+          "Muffs": "MUFFS",
+          "Nerds": "NURDS",
+          "Senix": "CENIX",
+          "Tuli": "TULLI",
+          "Wesol": "WESOL"
+        }
+      },
+      "AssignedApproach": "ILS Runway 7R",
+      "STAR": "WITTI5",
+      "Route": [
+        "SILTY",
+        "ANDDI",
+        "PANC"
+      ],
+      "Altitude": 11195,
+      "Heading": 294,
+      "Speed": 217,
+      "AssignedSpeed": 220,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "15",
+        "33",
+        "15",
+        "33"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Forex Three Three Two anchorage hello hold at kneel one zero five zero radial one minute leg right turn\"",
+    "[local-stt] normalized words: [forex 3 3 2 anchorage hello hold at kneel 1 0 5 0 radial 1 minute leg right turn]",
+    "[local-stt] tokens: 14",
+    "[local-stt]   token[0]: Text=\"forex\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"332\" Type=1 Value=332",
+    "[local-stt]   token[2]: Text=\"anchorage\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"hello\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"hold\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"at\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"kneel\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"1050\" Type=1 Value=1050",
+    "[local-stt]   token[8]: Text=\"radial\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"1\" Type=1 Value=1",
+    "[local-stt]   token[10]: Text=\"minute\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"leg\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt]   token[13]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 14 tokens, 5 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 14 tokens, 5 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"Fedex three 32 heavy\" (airline=0.760, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Fedex three 32 heavy\" (airline=0.76, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 10 results",
+    "[local-stt]     result 0: \"Fedex three 32 heavy\" (airline=0.760, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Horizon Air 74 36\" (airline=0.562, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Horizon Air 93 71\" (airline=0.562, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Alaska niner 29\" (airline=0.567, flight=0.000, skip=2)",
+    "[local-stt]     result 4: \"Horizon Air 74 36\" (airline=0.587, flight=0.000, skip=2)",
+    "[local-stt]     pattern \"airline_only\": selected \"Fedex three 32 heavy\" (airline=0.76, flight=0.00, skip=0)",
+    "[local-stt]     pattern \"airline_only\": below MinScore (1.26 \u003c 1.30) for \"Fedex three 32 heavy\"",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Fedex three 32 heavy\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Fedex three 32 heavy\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"Fedex three 32 heavy\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   best callsign candidate: \"FDX332\" (conf=0.95, consumed=2, addressingForm=0, spokenKey=\"Fedex three 32 heavy\"; 1 candidates)",
+    "[local-stt] callsign match: Callsign=\"FDX332\" SpokenKey=\"Fedex three 32 heavy\" Conf=0.95 Consumed=2",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=11576 Fixes=7 Approaches=3 VisualApproaches=6 AssignedApproach=\"ILS Runway 7R\" LAHSORunways=[15 33 15 33]",
+    "[local-stt]   fix: \"Ted Stevens Anchorage\" -\u003e \"PANC\"",
+    "[local-stt]   fix: \"Neil\" -\u003e \"NEELL\"",
+    "[local-stt]   fix: \"Shanken\" -\u003e \"SHNKN\"",
+    "[local-stt]   fix: \"Elias\" -\u003e \"ELIAS\"",
+    "[local-stt]   fix: \"KENAI\" -\u003e \"ENA\"",
+    "[local-stt]   fix: \"Wewwo\" -\u003e \"WEWWO\"",
+    "[local-stt]   fix: \"Tuli\" -\u003e \"TULLI\"",
+    "[local-stt]   approach: \"ILS Runway 7L\" -\u003e \"I7L\"",
+    "[local-stt]   approach: \"RNAV Z Runway 7R\" -\u003e \"R7R\"",
+    "[local-stt]   approach: \"ILS Runway 7R\" -\u003e \"I7R\"",
+    "[local-stt]   visual approach: \"visual runway seven left\" -\u003e \"7L\"",
+    "[local-stt]   visual approach: \"visual approach runway seven left\" -\u003e \"7L\"",
+    "[local-stt]   visual approach: \"visual seven left\" -\u003e \"7L\"",
+    "[local-stt]   visual approach: \"visual runway seven right\" -\u003e \"7R\"",
+    "[local-stt]   visual approach: \"visual approach runway seven right\" -\u003e \"7R\"",
+    "[local-stt]   visual approach: \"visual seven right\" -\u003e \"7R\"",
+    "[local-stt] command tokens after disregard: 12",
+    "[local-stt]   token[0]: Text=\"anchorage\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"hello\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"hold\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"at\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"kneel\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"1050\" Type=1 Value=1050",
+    "[local-stt]   token[6]: Text=\"radial\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"1\" Type=1 Value=1",
+    "[local-stt]   token[8]: Text=\"minute\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"leg\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 12 tokens",
+    "[local-stt]   no match at token[0]=\"anchorage\", skipping",
+    "[local-stt]   matched command: \"\" [greeting] (pos=1, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[1]=\"hello\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   matched command: \"HNEELL\" [hold] (pos=2, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   matched command: \"\" [greeting] (pos=2, conf=0.83, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[2]=\"hold\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   matched command: \"HNEELL\" [hold] (pos=2, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   matched command: \"\" [greeting] (pos=2, conf=0.83, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[2]=\"hold\", skipping",
+    "[local-stt]   no match at token[5]=\"1050\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractApproach: no type match, falling back to assigned approach \"I7R\" (dir=R)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   matched command: \"ANEELL/CI7R\" [at_fix_cleared_approach] (pos=3, conf=0.95, consumed=8, isThen=false)",
+    "[local-stt]   matched command: \"ANEELL/S105\" [after_fix_speed_bare] (pos=3, conf=0.95, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[3]=\"at\", skipping",
+    "[local-stt]   no match at token[5]=\"1050\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractApproach: no type match, falling back to assigned approach \"I7R\" (dir=R)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"kneel\" against 7 fixes",
+    "[local-stt]   extractFix: matched \"kneel\" -\u003e \"NEELL\" (fuzzy 0.87)",
+    "[local-stt]   matched command: \"ANEELL/CI7R\" [at_fix_cleared_approach] (pos=3, conf=0.95, consumed=8, isThen=false)",
+    "[local-stt]   matched command: \"ANEELL/S105\" [after_fix_speed_bare] (pos=3, conf=0.95, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[3]=\"at\", skipping",
+    "[local-stt]   no match at token[11]=\"turn\", skipping",
+    "[local-stt]   no match at token[11]=\"turn\", skipping",
+    "[local-stt]   no match at token[6]=\"radial\", skipping",
+    "[local-stt]   no match at token[6]=\"radial\", skipping",
+    "[local-stt]   no match at token[7]=\"1\", skipping",
+    "[local-stt]   no match at token[7]=\"1\", skipping",
+    "[local-stt]   no match at token[8]=\"minute\", skipping",
+    "[local-stt]   no match at token[8]=\"minute\", skipping",
+    "[local-stt]   no match at token[9]=\"leg\", skipping",
+    "[local-stt]   no match at token[9]=\"leg\", skipping",
+    "[local-stt]   no match at token[10]=\"right\", skipping",
+    "[local-stt]   no match at token[10]=\"right\", skipping",
+    "[local-stt]   no match at token[11]=\"turn\", skipping",
+    "[local-stt]   no match at token[11]=\"turn\", skipping",
+    "[local-stt]   beam final[0]: score=5.252 pos=12 commands=[ANEELL/CI7R]",
+    "[local-stt]   beam final[1]: score=2.647 pos=12 commands=[ANEELL/CI7R]",
+    "[local-stt]   beam final[2]: score=2.445 pos=12 commands=[ANEELL/S105]",
+    "[local-stt]   beam final[3]: score=2.391 pos=12 commands=[HNEELL]",
+    "[local-stt] ParseCommands: result=[ANEELL/CI7R] (avgConf=0.95)",
+    "[local-stt] parsed commands: [ANEELL/CI7R] (conf=0.95, kinds=10001)",
+    "[local-stt] validated commands: [ANEELL/CI7R] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"FDX332 ANEELL/CI7R\" (conf=0.90, time=10.9935ms) ==="
+  ]
+}

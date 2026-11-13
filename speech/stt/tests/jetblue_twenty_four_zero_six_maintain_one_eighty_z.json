@@ -1,0 +1,640 @@
+{
+  "time": "2026-11-13T00:28:12.664786576Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "JetBlue Twenty Four Zero Six maintain one eighty zero knots until doing caution work turbulence contact tower",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, india, golf, information, Philbo four, Jakey four, Flosi four, Teterboro four, Malcon, Wawa, Holler, Catxo, Guzti, STILLWATER, Jersey, Pesme, Frankie, Alida, Elize, Coate, six, four right, runway, yankee, x-ray, r-nav, zulu, I L S, United 56 heavy, United 22 63, United one 23 heavy, Dash Port 23 39, Spirit Wings 30 zero six, citation niner hotel alpha, november three four niner hotel alpha, JetBlue 24 zero six, ForeFlight four 81, ForeFlight one 93, Dandy, Leesy, Vings, Philbo, POTTSTOWN, Mart, Gonzo, Boply, Griddy, Kilma, Metro, Regal, Doin', Lanna, Teterboro Airport, Newark Liberty International Airport, SOLBERG",
+  "whisper_duration_ms": 373.32,
+  "audio_duration_ms": 4936,
+  "processor": "GPU: NVIDIA GeForce RTX 4090 (24138MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "JBU2406",
+  "command": "S180/UDOOIN CWT TO",
+  "stt_aircraft": {
+    "Dash Port 23 39": {
+      "Callsign": "PTR2339",
+      "AircraftType": "DH8D",
+      "Fixes": {
+        "Doin'": "DOOIN",
+        "Griddy": "GRITY",
+        "Kilma": "KILMA",
+        "Newark": "KEWR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4R": "I4R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four right": "4R",
+        "visual four right": "4R",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4R": {
+          "Doin'": "DOOIN",
+          "Griddy": "GRITY",
+          "Kilma": "KILMA"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "FLOSI4",
+      "Route": [
+        "KEWR"
+      ],
+      "Altitude": 6000,
+      "Heading": 190,
+      "Speed": 286,
+      "AssignedHeading": 190,
+      "State": "arrival",
+      "ControllerFrequency": "4P",
+      "TrackingController": "4P",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "ForeFlight four 81": {
+      "Callsign": "FFL481",
+      "AircraftType": "FA50",
+      "Fixes": {
+        "Boply": "BOPLY",
+        "Lanna": "LANNA",
+        "POTTSTOWN": "PTW",
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL",
+        "SOLBERG": "SBJ",
+        "Teterboro": "KTEB"
+      },
+      "SID": "TEB4",
+      "Route": [
+        "SBJ",
+        "LANNA",
+        "BOPLY",
+        "PTW",
+        "KPHL"
+      ],
+      "Altitude": 7000,
+      "Heading": 252,
+      "Speed": 272,
+      "State": "departure",
+      "ControllerFrequency": "4P",
+      "TrackingController": "41D"
+    },
+    "ForeFlight one 93": {
+      "Callsign": "FFL193",
+      "AircraftType": "FA50",
+      "Fixes": {
+        "Boply": "BOPLY",
+        "Lanna": "LANNA",
+        "POTTSTOWN": "PTW",
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL",
+        "SOLBERG": "SBJ",
+        "Teterboro": "KTEB"
+      },
+      "SID": "TEB4",
+      "Route": [
+        "SBJ",
+        "LANNA",
+        "BOPLY",
+        "PTW",
+        "KPHL"
+      ],
+      "Altitude": 8000,
+      "Heading": 251,
+      "Speed": 273,
+      "State": "departure",
+      "ControllerFrequency": "4P",
+      "TrackingController": "41D"
+    },
+    "JetBlue 24 zero six": {
+      "Callsign": "JBU2406",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Doin'": "DOOIN",
+        "Newark": "KEWR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4R": "I4R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four right": "4R",
+        "visual four right": "4R",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4R": {
+          "Doin'": "DOOIN",
+          "Griddy": "GRITY",
+          "Kilma": "KILMA"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "PHLBO4",
+      "Route": [
+        "DOOIN",
+        "KEWR"
+      ],
+      "Altitude": 3000,
+      "Heading": 36,
+      "Speed": 171,
+      "State": "cleared approach",
+      "ControllerFrequency": "4P",
+      "TrackingController": "4P",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "Spirit Wings 30 zero six": {
+      "Callsign": "NKS3006",
+      "LastAddressed": true,
+      "AircraftType": "A320",
+      "Fixes": {
+        "Doin'": "DOOIN",
+        "Griddy": "GRITY",
+        "Kilma": "KILMA",
+        "Mart": "MARRT",
+        "Metro": "METRO",
+        "Newark": "KEWR",
+        "Philbo": "PHLBO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4R": "I4R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four right": "4R",
+        "visual four right": "4R",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4R": {
+          "Doin'": "DOOIN",
+          "Griddy": "GRITY",
+          "Kilma": "KILMA"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "PHLBO4",
+      "Route": [
+        "METRO",
+        "MARRT",
+        "PHLBO",
+        "KEWR"
+      ],
+      "Altitude": 3063,
+      "Heading": 70,
+      "Speed": 257,
+      "AssignedHeading": 70,
+      "State": "arrival",
+      "ControllerFrequency": "4P",
+      "TrackingController": "4P",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "United 22 63": {
+      "Callsign": "UAL2263",
+      "AircraftType": "B739",
+      "Fixes": {
+        "Doin'": "DOOIN",
+        "Griddy": "GRITY",
+        "Kilma": "KILMA",
+        "Mart": "MARRT",
+        "Metro": "METRO",
+        "Newark": "KEWR",
+        "Philbo": "PHLBO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4R": "I4R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four right": "4R",
+        "visual four right": "4R",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4R": {
+          "Doin'": "DOOIN",
+          "Griddy": "GRITY",
+          "Kilma": "KILMA"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "PHLBO4",
+      "Route": [
+        "METRO",
+        "MARRT",
+        "PHLBO",
+        "KEWR"
+      ],
+      "Altitude": 7632,
+      "Heading": 82,
+      "Speed": 299,
+      "AssignedHeading": 90,
+      "State": "arrival",
+      "ControllerFrequency": "4P",
+      "TrackingController": "4P",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "United 56 heavy": {
+      "Callsign": "UAL56",
+      "AircraftType": "B772",
+      "Fixes": {
+        "Doin'": "DOOIN",
+        "Griddy": "GRITY",
+        "Kilma": "KILMA",
+        "Newark": "KEWR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4R": "I4R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four right": "4R",
+        "visual four right": "4R",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4R": {
+          "Doin'": "DOOIN",
+          "Griddy": "GRITY",
+          "Kilma": "KILMA"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "FLOSI4",
+      "Route": [
+        "KEWR"
+      ],
+      "Altitude": 5000,
+      "Heading": 160,
+      "Speed": 241,
+      "AssignedHeading": 160,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "4P",
+      "TrackingController": "4P",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "United one 23 heavy": {
+      "Callsign": "UAL123",
+      "AircraftType": "B763",
+      "Fixes": {
+        "Doin'": "DOOIN",
+        "Griddy": "GRITY",
+        "Newark": "KEWR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4R": "I4R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four right": "4R",
+        "visual four right": "4R",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4R": {
+          "Doin'": "DOOIN",
+          "Griddy": "GRITY",
+          "Kilma": "KILMA"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "FLOSI4",
+      "Route": [
+        "GRITY",
+        "DOOIN",
+        "KEWR"
+      ],
+      "Altitude": 3000,
+      "Heading": 54,
+      "Speed": 210,
+      "State": "cleared approach",
+      "ControllerFrequency": "4P",
+      "TrackingController": "4P",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "citation niner hotel alpha": {
+      "Callsign": "N349HA/T",
+      "AircraftType": "C500",
+      "Fixes": {
+        "Dandy": "DANDY",
+        "Gonzo": "GNNZO",
+        "Leesy": "LEESY",
+        "SOLBERG": "SBJ",
+        "Teterboro": "KTEB",
+        "Torby": "TORBY",
+        "Vings": "VINGS"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 6": "I6",
+        "ILS Z Runway 6": "IZ6",
+        "RNAV X Runway 6": "RX6",
+        "RNAV Y Runway 6": "RY6",
+        "RNAV Z Runway 6": "RZ6"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway six": "6",
+        "visual runway six": "6",
+        "visual six": "6"
+      },
+      "ApproachFixes": {
+        "I6": {
+          "Dandy": "DANDY",
+          "Leesy": "LEESY",
+          "Torby": "TORBY",
+          "Vings": "VINGS"
+        },
+        "IZ6": {
+          "Alida": "ALIDA",
+          "Coate": "COATE",
+          "Dandy": "DANDY",
+          "Elize": "ELIZE",
+          "Leesy": "LEESY",
+          "Malcon": "MALCN",
+          "SOLBERG": "SBJ",
+          "STILLWATER": "STW",
+          "Torby": "TORBY",
+          "Vings": "VINGS",
+          "Wawa": "WAWAH"
+        },
+        "RX6": {
+          "Alida": "ALIDA",
+          "Coate": "COATE",
+          "Elize": "ELIZE",
+          "Frankie": "FRNKI",
+          "Jersey": "JERSE",
+          "Pesme": "PESME",
+          "SOLBERG": "SBJ",
+          "STILLWATER": "STW",
+          "Teebern": "TBERN"
+        },
+        "RY6": {
+          "Alida": "ALIDA",
+          "Coate": "COATE",
+          "Dandy": "DANDY",
+          "Elize": "ELIZE",
+          "Leesy": "LEESY",
+          "Malcon": "MALCN",
+          "SOLBERG": "SBJ",
+          "STILLWATER": "STW",
+          "Torby": "TORBY",
+          "Vings": "VINGS",
+          "Wawa": "WAWAH"
+        },
+        "RZ6": {
+          "Awkeb": "AWKEB",
+          "Catxo": "CATXO",
+          "Coate": "COATE",
+          "Elize": "ELIZE",
+          "Evege": "EVEGE",
+          "Guzti": "GUZTI",
+          "Holler": "HOLUR",
+          "Offec": "OFFEC",
+          "SOLBERG": "SBJ",
+          "STILLWATER": "STW"
+        }
+      },
+      "AssignedApproach": "ILS Runway 6",
+      "STAR": "JAIKE4",
+      "Route": [
+        "GNNZO",
+        "SBJ",
+        "KTEB"
+      ],
+      "Altitude": 7000,
+      "Heading": 57,
+      "Speed": 290,
+      "State": "arrival",
+      "ControllerFrequency": "4H",
+      "TrackingController": "4U",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "1",
+        "19"
+      ]
+    },
+    "november three four niner hotel alpha": {
+      "Callsign": "N349HA",
+      "AircraftType": "C500",
+      "Fixes": {
+        "Dandy": "DANDY",
+        "Gonzo": "GNNZO",
+        "Leesy": "LEESY",
+        "SOLBERG": "SBJ",
+        "Teterboro": "KTEB",
+        "Torby": "TORBY",
+        "Vings": "VINGS"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 6": "I6",
+        "ILS Z Runway 6": "IZ6",
+        "RNAV X Runway 6": "RX6",
+        "RNAV Y Runway 6": "RY6",
+        "RNAV Z Runway 6": "RZ6"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway six": "6",
+        "visual runway six": "6",
+        "visual six": "6"
+      },
+      "ApproachFixes": {
+        "I6": {
+          "Dandy": "DANDY",
+          "Leesy": "LEESY",
+          "Torby": "TORBY",
+          "Vings": "VINGS"
+        },
+        "IZ6": {
+          "Alida": "ALIDA",
+          "Coate": "COATE",
+          "Dandy": "DANDY",
+          "Elize": "ELIZE",
+          "Leesy": "LEESY",
+          "Malcon": "MALCN",
+          "SOLBERG": "SBJ",
+          "STILLWATER": "STW",
+          "Torby": "TORBY",
+          "Vings": "VINGS",
+          "Wawa": "WAWAH"
+        },
+        "RX6": {
+          "Alida": "ALIDA",
+          "Coate": "COATE",
+          "Elize": "ELIZE",
+          "Frankie": "FRNKI",
+          "Jersey": "JERSE",
+          "Pesme": "PESME",
+          "SOLBERG": "SBJ",
+          "STILLWATER": "STW",
+          "Teebern": "TBERN"
+        },
+        "RY6": {
+          "Alida": "ALIDA",
+          "Coate": "COATE",
+          "Dandy": "DANDY",
+          "Elize": "ELIZE",
+          "Leesy": "LEESY",
+          "Malcon": "MALCN",
+          "SOLBERG": "SBJ",
+          "STILLWATER": "STW",
+          "Torby": "TORBY",
+          "Vings": "VINGS",
+          "Wawa": "WAWAH"
+        },
+        "RZ6": {
+          "Awkeb": "AWKEB",
+          "Catxo": "CATXO",
+          "Coate": "COATE",
+          "Elize": "ELIZE",
+          "Evege": "EVEGE",
+          "Guzti": "GUZTI",
+          "Holler": "HOLUR",
+          "Offec": "OFFEC",
+          "SOLBERG": "SBJ",
+          "STILLWATER": "STW"
+        }
+      },
+      "AssignedApproach": "ILS Runway 6",
+      "STAR": "JAIKE4",
+      "Route": [
+        "GNNZO",
+        "SBJ",
+        "KTEB"
+      ],
+      "Altitude": 7000,
+      "Heading": 57,
+      "Speed": 290,
+      "State": "arrival",
+      "ControllerFrequency": "4H",
+      "TrackingController": "4U",
+      "LAHSORunways": [
+        "1",
+        "19"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"JetBlue Twenty Four Zero Six maintain one eighty zero knots until doing caution work turbulence contact tower\"",
+    "[local-stt] normalized words: [jetblue 24 0 6 maintain 1 80 0 knots until doing caution work turbulence contact tower]",
+    "[local-stt] tokens: 12",
+    "[local-stt]   token[0]: Text=\"jetblue\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"2406\" Type=1 Value=2406",
+    "[local-stt]   token[2]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"1800\" Type=1 Value=1800",
+    "[local-stt]   token[4]: Text=\"knots\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"until\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"doing\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"caution\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"work\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"turbulence\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"contact\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"tower\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 12 tokens, 10 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 12 tokens, 10 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"JetBlue 24 zero six\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"JetBlue 24 zero six\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"JetBlue 24 zero six\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"United 22 63\" (airline=0.540, flight=0.700, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"JetBlue 24 zero six\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 13 results",
+    "[local-stt]     result 0: \"United 22 63\" (airline=0.540, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"ForeFlight four 81\" (airline=0.495, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"United one 23 heavy\" (airline=0.540, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"ForeFlight one 93\" (airline=0.495, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"United 56 heavy\" (airline=0.540, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"JetBlue 24 zero six\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"JetBlue 24 zero six\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"JetBlue 24 zero six\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"JetBlue 24 zero six\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"JBU2406\" (spokenKey=\"JetBlue 24 zero six\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"JBU2406\" SpokenKey=\"JetBlue 24 zero six\" Conf=1.00 Consumed=2",
+    "[local-stt] aircraft context: State=\"cleared approach\" Altitude=3000 Fixes=2 Approaches=1 VisualApproaches=3 AssignedApproach=\"ILS Runway 4R\" LAHSORunways=[11 29]",
+    "[local-stt]   fix: \"Newark\" -\u003e \"KEWR\"",
+    "[local-stt]   fix: \"Doin'\" -\u003e \"DOOIN\"",
+    "[local-stt]   approach: \"ILS Runway 4R\" -\u003e \"I4R\"",
+    "[local-stt]   visual approach: \"visual runway four right\" -\u003e \"4R\"",
+    "[local-stt]   visual approach: \"visual approach runway four right\" -\u003e \"4R\"",
+    "[local-stt]   visual approach: \"visual four right\" -\u003e \"4R\"",
+    "[local-stt] command tokens after disregard: 10",
+    "[local-stt]   token[0]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"1800\" Type=1 Value=1800",
+    "[local-stt]   token[2]: Text=\"knots\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"until\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"doing\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"caution\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"work\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"turbulence\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"contact\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"tower\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 10 tokens",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"doing\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"doing\" -\u003e \"DOOIN\" (fuzzy 0.92)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"doing\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"doing\" -\u003e \"DOOIN\" (fuzzy 0.92)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"doing\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"doing\" -\u003e \"DOOIN\" (fuzzy 0.92)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"doing\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"doing\" -\u003e \"DOOIN\" (fuzzy 0.92)",
+    "[local-stt]   matched command: \"S180/UDOOIN\" [maintain_speed_until] (pos=0, conf=1.00, consumed=5, isThen=false)",
+    "[local-stt]   matched command: \"S180\" [maintained_speed_question] (pos=0, conf=0.98, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[0]=\"maintain\", skipping",
+    "[local-stt]   no match at token[5]=\"caution\", skipping",
+    "[local-stt]   no match at token[3]=\"until\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"doing\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"doing\" -\u003e \"DOOIN\" (fuzzy 0.92)",
+    "[local-stt]   matched command: \"S180/UDOOIN\" [bare_speed_knots_until] (pos=1, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[1]=\"1800\", skipping",
+    "[local-stt]   no match at token[6]=\"work\", skipping",
+    "[local-stt]   matched command: \"SAYAGAIN/ALTITUDE\" [] (pos=4, conf=0.50, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[4]=\"doing\", skipping",
+    "[local-stt]   no match at token[5]=\"caution\", skipping",
+    "[local-stt]   no match at token[2]=\"knots\", skipping",
+    "[local-stt]   no match at token[7]=\"turbulence\", skipping",
+    "[local-stt]   no match at token[5]=\"caution\", skipping",
+    "[local-stt]   no match at token[6]=\"work\", skipping",
+    "[local-stt]   no match at token[5]=\"caution\", skipping",
+    "[local-stt]   matched command: \"TO\" [contact_tower] (pos=8, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[8]=\"contact\", skipping",
+    "[local-stt]   no match at token[6]=\"work\", skipping",
+    "[local-stt]   no match at token[7]=\"turbulence\", skipping",
+    "[local-stt]   no match at token[6]=\"work\", skipping",
+    "[local-stt]   no match at token[7]=\"turbulence\", skipping",
+    "[local-stt]   no match at token[9]=\"tower\", skipping",
+    "[local-stt]   matched command: \"TO\" [contact_tower] (pos=8, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[8]=\"contact\", skipping",
+    "[local-stt]   matched command: \"TO\" [contact_tower] (pos=8, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[8]=\"contact\", skipping",
+    "[local-stt]   beam final[0]: score=4.185 pos=10 commands=[S180/UDOOIN TO]",
+    "[local-stt]   beam final[1]: score=2.933 pos=10 commands=[S180 SAYAGAIN/ALTITUDE TO]",
+    "[local-stt]   beam final[2]: score=1.284 pos=10 commands=[S180/UDOOIN TO]",
+    "[local-stt]   beam final[3]: score=0.687 pos=10 commands=[S180/UDOOIN]",
+    "[local-stt] ParseCommands: result=[S180/UDOOIN TO] (avgConf=1.00)",
+    "[local-stt] parsed commands: [S180/UDOOIN TO] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [S180/UDOOIN TO] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"JBU2406 S180/UDOOIN TO\" (conf=1.00, time=6.3216ms) ==="
+  ]
+}

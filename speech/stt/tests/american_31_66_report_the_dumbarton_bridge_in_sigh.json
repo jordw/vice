@@ -1,0 +1,1686 @@
+{
+  "time": "2026-11-11T14:57:09.726622909Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "American 31 66 report the Dumbarton Bridge in sight",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, quebec, information, Surfer four, Dymid five, Guts, wibni, Sepin, Dumba, Girr, Ziled, Diveck, Faith, Herman, Chera, two eight left, two eight right, runway, Toe, Tipp, zulu, yankee, r-nav, I L S, GLS, FMS, Approach, Visual, Bridge, Quiet, United 26 20, United 24 hundred, Southwest 90 zero one, SkyWest 53 39, Alaska seven, Alaska 14 zero six, American six 86, American 31 66, American 27 99, Bridge, San Mateo Bridge, Bridges, Dumbarton Bridges, Airport, Sidney, Sap, Rock me, Shelton, Wetor, Rachel, Ponke, Janyy, Turbo, Freely, Garow, Epic, Eddie, Follet, waves, Archie, Cedar, San Francisco International Airport",
+  "whisper_duration_ms": 154.561,
+  "audio_duration_ms": 4168,
+  "processor": "GPU: NVIDIA GeForce RTX 5070 (11943MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "AAL3166",
+  "command": "RP/DumbartonBridges",
+  "stt_aircraft": {
+    "Alaska 14 zero six": {
+      "Callsign": "ASA1406",
+      "AircraftType": "B39M",
+      "Fixes": {
+        "Archie": "ARCHI",
+        "Diveck": "DIVEC",
+        "Duyet": "DUYET",
+        "Eddie": "EDDYY",
+        "Faith": "FAITH",
+        "Follet": "FOLET",
+        "Herman": "HEMAN",
+        "Nepic": "NEPIC",
+        "Ponke": "PONKE",
+        "Rock me": "ROKME",
+        "San Francisco": "KSFO",
+        "Sidney": "SIDBY",
+        "Wetor": "WETOR"
+      },
+      "CandidateApproaches": {
+        "FMS Bridge Visual Runway 28R": "FMS",
+        "GLS Runway 28L": "GLL",
+        "GLS Runway 28R": "GLR",
+        "ILS Runway 28L": "I8L",
+        "ILS Runway 28R": "I8R",
+        "Quiet Bridge Visual Runway 28R": "QBR",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Y Runway 28R": "Y8R",
+        "RNAV Z Runway 28R": "Z8R",
+        "Tipp Toe Visual Runway 28L": "TTL",
+        "Tipp Toe Visual Runway 28R": "TTR"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "FMS": {
+          "Archie": "ARCHI",
+          "Eddie": "EDDYY",
+          "Garow": "GAROW",
+          "Janyy": "JANYY",
+          "Rachel": "RAACL",
+          "Sap": "SAPPP",
+          "Shelton": "SHLTN",
+          "Sidney": "SIDBY",
+          "Turbo": "TRBOW"
+        },
+        "GLL": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Nepic": "NEPIC",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "GLR": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        },
+        "I8L": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "I8R": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        },
+        "QBR": {
+          "Archie": "ARCHI",
+          "Eddie": "EDDYY",
+          "Garow": "GAROW",
+          "Janyy": "JANYY",
+          "Rachel": "RAACL",
+          "Sap": "SAPPP",
+          "Shelton": "SHLTN",
+          "Sidney": "SIDBY",
+          "Turbo": "TRBOW"
+        },
+        "R8L": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Nepic": "NEPIC",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "TTL": {
+          "Chera": "CHERA",
+          "Eddie": "EDDYY",
+          "Sidney": "SIDBY"
+        },
+        "TTR": {
+          "Chera": "CHERA",
+          "Eddie": "EDDYY",
+          "Sidney": "SIDBY"
+        },
+        "Y8R": {
+          "Archie": "ARCHI",
+          "Dong": "DONNG",
+          "Eddie": "EDDYY",
+          "Fabla": "FABLA",
+          "Guts": "GUTTS",
+          "Joseph": "JOSUF",
+          "Sidney": "SIDBY",
+          "wibni": "WIBNI"
+        },
+        "Z8R": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 28L",
+      "STAR": "SERFR4",
+      "Route": [
+        "FOLET",
+        "EDDYY",
+        "KSFO"
+      ],
+      "Altitude": 10000,
+      "Heading": 329,
+      "Speed": 309,
+      "AssignedAltitude": 6000,
+      "State": "arrival",
+      "ControllerFrequency": "2G",
+      "TrackingController": "2G",
+      "LAHSORunways": [
+        "1L",
+        "19R",
+        "1R",
+        "19L",
+        "1L",
+        "19R",
+        "1R",
+        "19L"
+      ]
+    },
+    "Alaska seven": {
+      "Callsign": "ASA7",
+      "AircraftType": "B738",
+      "Fixes": {
+        "San Francisco": "KSFO"
+      },
+      "CandidateApproaches": {
+        "FMS Bridge Visual Runway 28R": "FMS",
+        "GLS Runway 28L": "GLL",
+        "GLS Runway 28R": "GLR",
+        "ILS Runway 28L": "I8L",
+        "ILS Runway 28R": "I8R",
+        "Quiet Bridge Visual Runway 28R": "QBR",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Y Runway 28R": "Y8R",
+        "RNAV Z Runway 28R": "Z8R",
+        "Tipp Toe Visual Runway 28L": "TTL",
+        "Tipp Toe Visual Runway 28R": "TTR"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "FMS": {
+          "Archie": "ARCHI",
+          "Eddie": "EDDYY",
+          "Garow": "GAROW",
+          "Janyy": "JANYY",
+          "Rachel": "RAACL",
+          "Sap": "SAPPP",
+          "Shelton": "SHLTN",
+          "Sidney": "SIDBY",
+          "Turbo": "TRBOW"
+        },
+        "GLL": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Nepic": "NEPIC",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "GLR": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        },
+        "I8L": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "I8R": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        },
+        "QBR": {
+          "Archie": "ARCHI",
+          "Eddie": "EDDYY",
+          "Garow": "GAROW",
+          "Janyy": "JANYY",
+          "Rachel": "RAACL",
+          "Sap": "SAPPP",
+          "Shelton": "SHLTN",
+          "Sidney": "SIDBY",
+          "Turbo": "TRBOW"
+        },
+        "R8L": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Nepic": "NEPIC",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "TTL": {
+          "Chera": "CHERA",
+          "Eddie": "EDDYY",
+          "Sidney": "SIDBY"
+        },
+        "TTR": {
+          "Chera": "CHERA",
+          "Eddie": "EDDYY",
+          "Sidney": "SIDBY"
+        },
+        "Y8R": {
+          "Archie": "ARCHI",
+          "Dong": "DONNG",
+          "Eddie": "EDDYY",
+          "Fabla": "FABLA",
+          "Guts": "GUTTS",
+          "Joseph": "JOSUF",
+          "Sidney": "SIDBY",
+          "wibni": "WIBNI"
+        },
+        "Z8R": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        }
+      },
+      "STAR": "DYAMD5",
+      "Route": [
+        "KSFO"
+      ],
+      "Altitude": 5000,
+      "Heading": 150,
+      "Speed": 269,
+      "AssignedHeading": 150,
+      "State": "arrival",
+      "ControllerFrequency": "2Z",
+      "TrackingController": "2Z",
+      "LAHSORunways": [
+        "1L",
+        "19R",
+        "1R",
+        "19L",
+        "1L",
+        "19R",
+        "1R",
+        "19L"
+      ]
+    },
+    "American 27 99": {
+      "Callsign": "AAL2799",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Archie": "ARCHI",
+        "Cedar": "CEDES",
+        "Eddie": "EDDYY",
+        "Freely": "FRELY",
+        "Garow": "GAROW",
+        "Janyy": "JANYY",
+        "Rachel": "RAACL",
+        "San Francisco": "KSFO",
+        "Sap": "SAPPP",
+        "Shelton": "SHLTN",
+        "Sidney": "SIDBY",
+        "Turbo": "TRBOW"
+      },
+      "CandidateApproaches": {
+        "FMS Bridge Visual Runway 28R": "FMS",
+        "GLS Runway 28L": "GLL",
+        "GLS Runway 28R": "GLR",
+        "ILS Runway 28L": "I8L",
+        "ILS Runway 28R": "I8R",
+        "Quiet Bridge Visual Runway 28R": "QBR",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Y Runway 28R": "Y8R",
+        "RNAV Z Runway 28R": "Z8R",
+        "Tipp Toe Visual Runway 28L": "TTL",
+        "Tipp Toe Visual Runway 28R": "TTR"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "FMS": {
+          "Archie": "ARCHI",
+          "Eddie": "EDDYY",
+          "Garow": "GAROW",
+          "Janyy": "JANYY",
+          "Rachel": "RAACL",
+          "Sap": "SAPPP",
+          "Shelton": "SHLTN",
+          "Sidney": "SIDBY",
+          "Turbo": "TRBOW"
+        },
+        "GLL": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Nepic": "NEPIC",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "GLR": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        },
+        "I8L": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "I8R": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        },
+        "QBR": {
+          "Archie": "ARCHI",
+          "Eddie": "EDDYY",
+          "Garow": "GAROW",
+          "Janyy": "JANYY",
+          "Rachel": "RAACL",
+          "Sap": "SAPPP",
+          "Shelton": "SHLTN",
+          "Sidney": "SIDBY",
+          "Turbo": "TRBOW"
+        },
+        "R8L": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Nepic": "NEPIC",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "TTL": {
+          "Chera": "CHERA",
+          "Eddie": "EDDYY",
+          "Sidney": "SIDBY"
+        },
+        "TTR": {
+          "Chera": "CHERA",
+          "Eddie": "EDDYY",
+          "Sidney": "SIDBY"
+        },
+        "Y8R": {
+          "Archie": "ARCHI",
+          "Dong": "DONNG",
+          "Eddie": "EDDYY",
+          "Fabla": "FABLA",
+          "Guts": "GUTTS",
+          "Joseph": "JOSUF",
+          "Sidney": "SIDBY",
+          "wibni": "WIBNI"
+        },
+        "Z8R": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        }
+      },
+      "ReportingPoints": {
+        "airport": "Airport",
+        "bridge": "SanMateoBridge",
+        "bridges": "DumbartonBridges",
+        "dumbarton bridges": "DumbartonBridges",
+        "san mateo bridge": "SanMateoBridge"
+      },
+      "AssignedApproach": "Quiet Bridge Visual Runway 28R",
+      "STAR": "DYAMD5",
+      "Route": [
+        "CEDES",
+        "FRELY",
+        "ARCHI",
+        "KSFO"
+      ],
+      "Altitude": 13741,
+      "Heading": 247,
+      "Speed": 345,
+      "State": "arrival",
+      "ControllerFrequency": "2Z",
+      "TrackingController": "2Z",
+      "LAHSORunways": [
+        "1L",
+        "19R",
+        "1R",
+        "19L",
+        "1L",
+        "19R",
+        "1R",
+        "19L"
+      ]
+    },
+    "American 31 66": {
+      "Callsign": "AAL3166",
+      "AircraftType": "A21N",
+      "Fixes": {
+        "Archie": "ARCHI",
+        "Eddie": "EDDYY",
+        "Garow": "GAROW",
+        "Janyy": "JANYY",
+        "Rachel": "RAACL",
+        "San Francisco": "KSFO",
+        "Sap": "SAPPP",
+        "Shelton": "SHLTN",
+        "Sidney": "SIDBY",
+        "Turbo": "TRBOW"
+      },
+      "CandidateApproaches": {
+        "FMS Bridge Visual Runway 28R": "FMS",
+        "GLS Runway 28L": "GLL",
+        "GLS Runway 28R": "GLR",
+        "ILS Runway 28L": "I8L",
+        "ILS Runway 28R": "I8R",
+        "Quiet Bridge Visual Runway 28R": "QBR",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Y Runway 28R": "Y8R",
+        "RNAV Z Runway 28R": "Z8R",
+        "Tipp Toe Visual Runway 28L": "TTL",
+        "Tipp Toe Visual Runway 28R": "TTR"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "FMS": {
+          "Archie": "ARCHI",
+          "Eddie": "EDDYY",
+          "Garow": "GAROW",
+          "Janyy": "JANYY",
+          "Rachel": "RAACL",
+          "Sap": "SAPPP",
+          "Shelton": "SHLTN",
+          "Sidney": "SIDBY",
+          "Turbo": "TRBOW"
+        },
+        "GLL": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Nepic": "NEPIC",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "GLR": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        },
+        "I8L": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "I8R": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        },
+        "QBR": {
+          "Archie": "ARCHI",
+          "Eddie": "EDDYY",
+          "Garow": "GAROW",
+          "Janyy": "JANYY",
+          "Rachel": "RAACL",
+          "Sap": "SAPPP",
+          "Shelton": "SHLTN",
+          "Sidney": "SIDBY",
+          "Turbo": "TRBOW"
+        },
+        "R8L": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Nepic": "NEPIC",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "TTL": {
+          "Chera": "CHERA",
+          "Eddie": "EDDYY",
+          "Sidney": "SIDBY"
+        },
+        "TTR": {
+          "Chera": "CHERA",
+          "Eddie": "EDDYY",
+          "Sidney": "SIDBY"
+        },
+        "Y8R": {
+          "Archie": "ARCHI",
+          "Dong": "DONNG",
+          "Eddie": "EDDYY",
+          "Fabla": "FABLA",
+          "Guts": "GUTTS",
+          "Joseph": "JOSUF",
+          "Sidney": "SIDBY",
+          "wibni": "WIBNI"
+        },
+        "Z8R": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        }
+      },
+      "ReportingPoints": {
+        "airport": "Airport",
+        "bridge": "SanMateoBridge",
+        "bridges": "DumbartonBridges",
+        "dumbarton bridges": "DumbartonBridges",
+        "san mateo bridge": "SanMateoBridge"
+      },
+      "AssignedApproach": "Quiet Bridge Visual Runway 28R",
+      "STAR": "DYAMD5",
+      "Route": [
+        "ARCHI",
+        "KSFO"
+      ],
+      "Altitude": 8812,
+      "Heading": 238,
+      "Speed": 268,
+      "State": "arrival",
+      "ControllerFrequency": "2Z",
+      "TrackingController": "2Z",
+      "LAHSORunways": [
+        "1L",
+        "19R",
+        "1R",
+        "19L",
+        "1L",
+        "19R",
+        "1R",
+        "19L"
+      ]
+    },
+    "American six 86": {
+      "Callsign": "AAL686",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Archie": "ARCHI",
+        "Diveck": "DIVEC",
+        "Duyet": "DUYET",
+        "Eddie": "EDDYY",
+        "Epic": "EPICK",
+        "Faith": "FAITH",
+        "Follet": "FOLET",
+        "Herman": "HEMAN",
+        "Nepic": "NEPIC",
+        "Ponke": "PONKE",
+        "Rock me": "ROKME",
+        "San Francisco": "KSFO",
+        "Sidney": "SIDBY",
+        "Wetor": "WETOR",
+        "waves": "WWAVS"
+      },
+      "CandidateApproaches": {
+        "FMS Bridge Visual Runway 28R": "FMS",
+        "GLS Runway 28L": "GLL",
+        "GLS Runway 28R": "GLR",
+        "ILS Runway 28L": "I8L",
+        "ILS Runway 28R": "I8R",
+        "Quiet Bridge Visual Runway 28R": "QBR",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Y Runway 28R": "Y8R",
+        "RNAV Z Runway 28R": "Z8R",
+        "Tipp Toe Visual Runway 28L": "TTL",
+        "Tipp Toe Visual Runway 28R": "TTR"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "FMS": {
+          "Archie": "ARCHI",
+          "Eddie": "EDDYY",
+          "Garow": "GAROW",
+          "Janyy": "JANYY",
+          "Rachel": "RAACL",
+          "Sap": "SAPPP",
+          "Shelton": "SHLTN",
+          "Sidney": "SIDBY",
+          "Turbo": "TRBOW"
+        },
+        "GLL": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Nepic": "NEPIC",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "GLR": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        },
+        "I8L": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "I8R": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        },
+        "QBR": {
+          "Archie": "ARCHI",
+          "Eddie": "EDDYY",
+          "Garow": "GAROW",
+          "Janyy": "JANYY",
+          "Rachel": "RAACL",
+          "Sap": "SAPPP",
+          "Shelton": "SHLTN",
+          "Sidney": "SIDBY",
+          "Turbo": "TRBOW"
+        },
+        "R8L": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Nepic": "NEPIC",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "TTL": {
+          "Chera": "CHERA",
+          "Eddie": "EDDYY",
+          "Sidney": "SIDBY"
+        },
+        "TTR": {
+          "Chera": "CHERA",
+          "Eddie": "EDDYY",
+          "Sidney": "SIDBY"
+        },
+        "Y8R": {
+          "Archie": "ARCHI",
+          "Dong": "DONNG",
+          "Eddie": "EDDYY",
+          "Fabla": "FABLA",
+          "Guts": "GUTTS",
+          "Joseph": "JOSUF",
+          "Sidney": "SIDBY",
+          "wibni": "WIBNI"
+        },
+        "Z8R": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 28L",
+      "STAR": "SERFR4",
+      "Route": [
+        "WWAVS",
+        "EPICK",
+        "FOLET",
+        "EDDYY",
+        "KSFO"
+      ],
+      "Altitude": 23003,
+      "Heading": 314,
+      "Speed": 399,
+      "State": "arrival",
+      "ControllerFrequency": "2G",
+      "TrackingController": "2G",
+      "LAHSORunways": [
+        "1L",
+        "19R",
+        "1R",
+        "19L",
+        "1L",
+        "19R",
+        "1R",
+        "19L"
+      ]
+    },
+    "SkyWest 53 39": {
+      "Callsign": "SKW5339",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Archie": "ARCHI",
+        "Diveck": "DIVEC",
+        "Duyet": "DUYET",
+        "Eddie": "EDDYY",
+        "Faith": "FAITH",
+        "Herman": "HEMAN",
+        "Nepic": "NEPIC",
+        "Ponke": "PONKE",
+        "Rock me": "ROKME",
+        "San Francisco": "KSFO",
+        "Sidney": "SIDBY",
+        "Wetor": "WETOR"
+      },
+      "CandidateApproaches": {
+        "FMS Bridge Visual Runway 28R": "FMS",
+        "GLS Runway 28L": "GLL",
+        "GLS Runway 28R": "GLR",
+        "ILS Runway 28L": "I8L",
+        "ILS Runway 28R": "I8R",
+        "Quiet Bridge Visual Runway 28R": "QBR",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Y Runway 28R": "Y8R",
+        "RNAV Z Runway 28R": "Z8R",
+        "Tipp Toe Visual Runway 28L": "TTL",
+        "Tipp Toe Visual Runway 28R": "TTR"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "FMS": {
+          "Archie": "ARCHI",
+          "Eddie": "EDDYY",
+          "Garow": "GAROW",
+          "Janyy": "JANYY",
+          "Rachel": "RAACL",
+          "Sap": "SAPPP",
+          "Shelton": "SHLTN",
+          "Sidney": "SIDBY",
+          "Turbo": "TRBOW"
+        },
+        "GLL": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Nepic": "NEPIC",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "GLR": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        },
+        "I8L": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "I8R": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        },
+        "QBR": {
+          "Archie": "ARCHI",
+          "Eddie": "EDDYY",
+          "Garow": "GAROW",
+          "Janyy": "JANYY",
+          "Rachel": "RAACL",
+          "Sap": "SAPPP",
+          "Shelton": "SHLTN",
+          "Sidney": "SIDBY",
+          "Turbo": "TRBOW"
+        },
+        "R8L": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Nepic": "NEPIC",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "TTL": {
+          "Chera": "CHERA",
+          "Eddie": "EDDYY",
+          "Sidney": "SIDBY"
+        },
+        "TTR": {
+          "Chera": "CHERA",
+          "Eddie": "EDDYY",
+          "Sidney": "SIDBY"
+        },
+        "Y8R": {
+          "Archie": "ARCHI",
+          "Dong": "DONNG",
+          "Eddie": "EDDYY",
+          "Fabla": "FABLA",
+          "Guts": "GUTTS",
+          "Joseph": "JOSUF",
+          "Sidney": "SIDBY",
+          "wibni": "WIBNI"
+        },
+        "Z8R": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 28L",
+      "STAR": "SERFR4",
+      "Route": [
+        "EDDYY",
+        "KSFO"
+      ],
+      "Altitude": 6216,
+      "Heading": 330,
+      "Speed": 241,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "2G",
+      "TrackingController": "2G",
+      "LAHSORunways": [
+        "1L",
+        "19R",
+        "1R",
+        "19L",
+        "1L",
+        "19R",
+        "1R",
+        "19L"
+      ]
+    },
+    "Southwest 90 zero one": {
+      "Callsign": "SWA9001",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Archie": "ARCHI",
+        "Diveck": "DIVEC",
+        "Duyet": "DUYET",
+        "Eddie": "EDDYY",
+        "Faith": "FAITH",
+        "Follet": "FOLET",
+        "Herman": "HEMAN",
+        "Nepic": "NEPIC",
+        "Ponke": "PONKE",
+        "Rock me": "ROKME",
+        "San Francisco": "KSFO",
+        "Sidney": "SIDBY",
+        "Wetor": "WETOR"
+      },
+      "CandidateApproaches": {
+        "FMS Bridge Visual Runway 28R": "FMS",
+        "GLS Runway 28L": "GLL",
+        "GLS Runway 28R": "GLR",
+        "ILS Runway 28L": "I8L",
+        "ILS Runway 28R": "I8R",
+        "Quiet Bridge Visual Runway 28R": "QBR",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Y Runway 28R": "Y8R",
+        "RNAV Z Runway 28R": "Z8R",
+        "Tipp Toe Visual Runway 28L": "TTL",
+        "Tipp Toe Visual Runway 28R": "TTR"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "FMS": {
+          "Archie": "ARCHI",
+          "Eddie": "EDDYY",
+          "Garow": "GAROW",
+          "Janyy": "JANYY",
+          "Rachel": "RAACL",
+          "Sap": "SAPPP",
+          "Shelton": "SHLTN",
+          "Sidney": "SIDBY",
+          "Turbo": "TRBOW"
+        },
+        "GLL": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Nepic": "NEPIC",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "GLR": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        },
+        "I8L": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "I8R": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        },
+        "QBR": {
+          "Archie": "ARCHI",
+          "Eddie": "EDDYY",
+          "Garow": "GAROW",
+          "Janyy": "JANYY",
+          "Rachel": "RAACL",
+          "Sap": "SAPPP",
+          "Shelton": "SHLTN",
+          "Sidney": "SIDBY",
+          "Turbo": "TRBOW"
+        },
+        "R8L": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Nepic": "NEPIC",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "TTL": {
+          "Chera": "CHERA",
+          "Eddie": "EDDYY",
+          "Sidney": "SIDBY"
+        },
+        "TTR": {
+          "Chera": "CHERA",
+          "Eddie": "EDDYY",
+          "Sidney": "SIDBY"
+        },
+        "Y8R": {
+          "Archie": "ARCHI",
+          "Dong": "DONNG",
+          "Eddie": "EDDYY",
+          "Fabla": "FABLA",
+          "Guts": "GUTTS",
+          "Joseph": "JOSUF",
+          "Sidney": "SIDBY",
+          "wibni": "WIBNI"
+        },
+        "Z8R": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 28L",
+      "STAR": "SERFR4",
+      "Route": [
+        "FOLET",
+        "EDDYY",
+        "KSFO"
+      ],
+      "Altitude": 15002,
+      "Heading": 333,
+      "Speed": 357,
+      "State": "arrival",
+      "ControllerFrequency": "2G",
+      "TrackingController": "2G",
+      "LAHSORunways": [
+        "1L",
+        "19R",
+        "1R",
+        "19L",
+        "1L",
+        "19R",
+        "1R",
+        "19L"
+      ]
+    },
+    "United 24 hundred": {
+      "Callsign": "UAL2400",
+      "AircraftType": "B39M",
+      "Fixes": {
+        "San Francisco": "KSFO"
+      },
+      "CandidateApproaches": {
+        "FMS Bridge Visual Runway 28R": "FMS",
+        "GLS Runway 28L": "GLL",
+        "GLS Runway 28R": "GLR",
+        "ILS Runway 28L": "I8L",
+        "ILS Runway 28R": "I8R",
+        "Quiet Bridge Visual Runway 28R": "QBR",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Y Runway 28R": "Y8R",
+        "RNAV Z Runway 28R": "Z8R",
+        "Tipp Toe Visual Runway 28L": "TTL",
+        "Tipp Toe Visual Runway 28R": "TTR"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "FMS": {
+          "Archie": "ARCHI",
+          "Eddie": "EDDYY",
+          "Garow": "GAROW",
+          "Janyy": "JANYY",
+          "Rachel": "RAACL",
+          "Sap": "SAPPP",
+          "Shelton": "SHLTN",
+          "Sidney": "SIDBY",
+          "Turbo": "TRBOW"
+        },
+        "GLL": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Nepic": "NEPIC",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "GLR": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        },
+        "I8L": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "I8R": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        },
+        "QBR": {
+          "Archie": "ARCHI",
+          "Eddie": "EDDYY",
+          "Garow": "GAROW",
+          "Janyy": "JANYY",
+          "Rachel": "RAACL",
+          "Sap": "SAPPP",
+          "Shelton": "SHLTN",
+          "Sidney": "SIDBY",
+          "Turbo": "TRBOW"
+        },
+        "R8L": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Nepic": "NEPIC",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "TTL": {
+          "Chera": "CHERA",
+          "Eddie": "EDDYY",
+          "Sidney": "SIDBY"
+        },
+        "TTR": {
+          "Chera": "CHERA",
+          "Eddie": "EDDYY",
+          "Sidney": "SIDBY"
+        },
+        "Y8R": {
+          "Archie": "ARCHI",
+          "Dong": "DONNG",
+          "Eddie": "EDDYY",
+          "Fabla": "FABLA",
+          "Guts": "GUTTS",
+          "Joseph": "JOSUF",
+          "Sidney": "SIDBY",
+          "wibni": "WIBNI"
+        },
+        "Z8R": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        }
+      },
+      "STAR": "DYAMD5",
+      "Route": [
+        "KSFO"
+      ],
+      "Altitude": 1896,
+      "Heading": 285,
+      "Speed": 240,
+      "AssignedHeading": 285,
+      "State": "arrival",
+      "ControllerFrequency": "2Z",
+      "TrackingController": "2Z",
+      "LAHSORunways": [
+        "1L",
+        "19R",
+        "1R",
+        "19L",
+        "1L",
+        "19R",
+        "1R",
+        "19L"
+      ]
+    },
+    "United 26 20": {
+      "Callsign": "UAL2620",
+      "AircraftType": "B39M",
+      "Fixes": {
+        "Garow": "GAROW",
+        "Janyy": "JANYY",
+        "Rachel": "RAACL",
+        "San Francisco": "KSFO",
+        "Sap": "SAPPP",
+        "Shelton": "SHLTN"
+      },
+      "CandidateApproaches": {
+        "FMS Bridge Visual Runway 28R": "FMS",
+        "GLS Runway 28L": "GLL",
+        "GLS Runway 28R": "GLR",
+        "ILS Runway 28L": "I8L",
+        "ILS Runway 28R": "I8R",
+        "Quiet Bridge Visual Runway 28R": "QBR",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Y Runway 28R": "Y8R",
+        "RNAV Z Runway 28R": "Z8R",
+        "Tipp Toe Visual Runway 28L": "TTL",
+        "Tipp Toe Visual Runway 28R": "TTR"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "FMS": {
+          "Archie": "ARCHI",
+          "Eddie": "EDDYY",
+          "Garow": "GAROW",
+          "Janyy": "JANYY",
+          "Rachel": "RAACL",
+          "Sap": "SAPPP",
+          "Shelton": "SHLTN",
+          "Sidney": "SIDBY",
+          "Turbo": "TRBOW"
+        },
+        "GLL": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Nepic": "NEPIC",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "GLR": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        },
+        "I8L": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "I8R": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        },
+        "QBR": {
+          "Archie": "ARCHI",
+          "Eddie": "EDDYY",
+          "Garow": "GAROW",
+          "Janyy": "JANYY",
+          "Rachel": "RAACL",
+          "Sap": "SAPPP",
+          "Shelton": "SHLTN",
+          "Sidney": "SIDBY",
+          "Turbo": "TRBOW"
+        },
+        "R8L": {
+          "Archie": "ARCHI",
+          "Diveck": "DIVEC",
+          "Duyet": "DUYET",
+          "Eddie": "EDDYY",
+          "Faith": "FAITH",
+          "Herman": "HEMAN",
+          "Nepic": "NEPIC",
+          "Ponke": "PONKE",
+          "Rock me": "ROKME",
+          "Sidney": "SIDBY",
+          "Wetor": "WETOR"
+        },
+        "TTL": {
+          "Chera": "CHERA",
+          "Eddie": "EDDYY",
+          "Sidney": "SIDBY"
+        },
+        "TTR": {
+          "Chera": "CHERA",
+          "Eddie": "EDDYY",
+          "Sidney": "SIDBY"
+        },
+        "Y8R": {
+          "Archie": "ARCHI",
+          "Dong": "DONNG",
+          "Eddie": "EDDYY",
+          "Fabla": "FABLA",
+          "Guts": "GUTTS",
+          "Joseph": "JOSUF",
+          "Sidney": "SIDBY",
+          "wibni": "WIBNI"
+        },
+        "Z8R": {
+          "Archie": "ARCHI",
+          "Axmul": "AXMUL",
+          "Dumba": "DUMBA",
+          "Eddie": "EDDYY",
+          "Girr": "GIRRR",
+          "Sepin": "CEPIN",
+          "Sidney": "SIDBY",
+          "Ziled": "ZILED"
+        }
+      },
+      "ReportingPoints": {
+        "airport": "Airport",
+        "bridge": "SanMateoBridge",
+        "bridges": "DumbartonBridges",
+        "dumbarton bridges": "DumbartonBridges",
+        "san mateo bridge": "SanMateoBridge"
+      },
+      "AssignedApproach": "Quiet Bridge Visual Runway 28R",
+      "STAR": "DYAMD5",
+      "Route": [
+        "GAROW",
+        "JANYY",
+        "RAACL",
+        "SHLTN",
+        "SAPPP",
+        "KSFO"
+      ],
+      "Altitude": 4056,
+      "Heading": 278,
+      "Speed": 225,
+      "AssignedSpeed": 210,
+      "State": "cleared approach",
+      "ControllerFrequency": "2Z",
+      "TrackingController": "2Z",
+      "LAHSORunways": [
+        "1L",
+        "19R",
+        "1R",
+        "19L",
+        "1L",
+        "19R",
+        "1R",
+        "19L"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"American 31 66 report the Dumbarton Bridge in sight\"",
+    "[local-stt] normalized words: [american 31 66 report the dumbarton bridge in sight]",
+    "[local-stt] tokens: 9",
+    "[local-stt]   token[0]: Text=\"american\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"31\" Type=1 Value=31",
+    "[local-stt]   token[2]: Text=\"66\" Type=1 Value=66",
+    "[local-stt]   token[3]: Text=\"report\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"the\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"dumbarton\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"bridge\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"in\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"sight\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 9 tokens, 9 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 9 tokens, 9 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"American 31 66\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"American 31 66\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"American 31 66\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"American 31 66\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 15 results",
+    "[local-stt]     result 0: \"American 31 66\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"American six 86\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Alaska seven\" (airline=0.575, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"United 24 hundred\" (airline=0.361, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Alaska 14 zero six\" (airline=0.575, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"American 27 99\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"American 31 66\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"American 31 66\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"American 31 66\" (airline=0.500, flight=0.700, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"American 31 66\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"AAL3166\" (spokenKey=\"American 31 66\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"AAL3166\" SpokenKey=\"American 31 66\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=8812 Fixes=10 Approaches=11 VisualApproaches=6 AssignedApproach=\"Quiet Bridge Visual Runway 28R\" LAHSORunways=[1L 19R 1R 19L 1L 19R 1R 19L]",
+    "[local-stt]   fix: \"Rachel\" -\u003e \"RAACL\"",
+    "[local-stt]   fix: \"Sap\" -\u003e \"SAPPP\"",
+    "[local-stt]   fix: \"Eddie\" -\u003e \"EDDYY\"",
+    "[local-stt]   fix: \"San Francisco\" -\u003e \"KSFO\"",
+    "[local-stt]   fix: \"Turbo\" -\u003e \"TRBOW\"",
+    "[local-stt]   fix: \"Garow\" -\u003e \"GAROW\"",
+    "[local-stt]   fix: \"Shelton\" -\u003e \"SHLTN\"",
+    "[local-stt]   fix: \"Sidney\" -\u003e \"SIDBY\"",
+    "[local-stt]   fix: \"Archie\" -\u003e \"ARCHI\"",
+    "[local-stt]   fix: \"Janyy\" -\u003e \"JANYY\"",
+    "[local-stt]   approach: \"ILS Runway 28L\" -\u003e \"I8L\"",
+    "[local-stt]   approach: \"ILS Runway 28R\" -\u003e \"I8R\"",
+    "[local-stt]   approach: \"Quiet Bridge Visual Runway 28R\" -\u003e \"QBR\"",
+    "[local-stt]   approach: \"GLS Runway 28R\" -\u003e \"GLR\"",
+    "[local-stt]   approach: \"Tipp Toe Visual Runway 28R\" -\u003e \"TTR\"",
+    "[local-stt]   approach: \"FMS Bridge Visual Runway 28R\" -\u003e \"FMS\"",
+    "[local-stt]   approach: \"RNAV Y Runway 28R\" -\u003e \"Y8R\"",
+    "[local-stt]   approach: \"RNAV Runway 28L\" -\u003e \"R8L\"",
+    "[local-stt]   approach: \"Tipp Toe Visual Runway 28L\" -\u003e \"TTL\"",
+    "[local-stt]   approach: \"GLS Runway 28L\" -\u003e \"GLL\"",
+    "[local-stt]   approach: \"RNAV Z Runway 28R\" -\u003e \"Z8R\"",
+    "[local-stt]   visual approach: \"visual runway two eight right\" -\u003e \"28R\"",
+    "[local-stt]   visual approach: \"visual approach runway two eight right\" -\u003e \"28R\"",
+    "[local-stt]   visual approach: \"visual two eight right\" -\u003e \"28R\"",
+    "[local-stt]   visual approach: \"visual runway two eight left\" -\u003e \"28L\"",
+    "[local-stt]   visual approach: \"visual approach runway two eight left\" -\u003e \"28L\"",
+    "[local-stt]   visual approach: \"visual two eight left\" -\u003e \"28L\"",
+    "[local-stt] command tokens after disregard: 6",
+    "[local-stt]   token[0]: Text=\"report\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"the\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"dumbarton\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"bridge\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"in\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"sight\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 6 tokens",
+    "[local-stt]   matched command: \"RP/DumbartonBridges\" [reporting_point_in_sight_report] (pos=0, conf=1.00, consumed=6, isThen=false)",
+    "[local-stt]   no match at token[0]=\"report\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bridge\" against 10 fixes",
+    "[local-stt]   extractFix: no match found for \"bridge\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"in\" against 10 fixes",
+    "[local-stt]   extractFix: no match found for \"in\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"sight\" against 10 fixes",
+    "[local-stt]   extractFix: matched \"sight\" -\u003e \"SIDBY\" (fuzzy 0.78)",
+    "[local-stt]   skipping filler word: \"the\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bridge\" against 10 fixes",
+    "[local-stt]   extractFix: no match found for \"bridge\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"in\" against 10 fixes",
+    "[local-stt]   extractFix: no match found for \"in\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"sight\" against 10 fixes",
+    "[local-stt]   extractFix: matched \"sight\" -\u003e \"SIDBY\" (fuzzy 0.78)",
+    "[local-stt]   no match at token[2]=\"dumbarton\", skipping",
+    "[local-stt]   no match at token[3]=\"bridge\", skipping",
+    "[local-stt]   no match at token[4]=\"in\", skipping",
+    "[local-stt]   no match at token[5]=\"sight\", skipping",
+    "[local-stt]   beam final[0]: score=3.575 pos=6 commands=[RP/DumbartonBridges]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=6 commands=[]",
+    "[local-stt] ParseCommands: result=[RP/DumbartonBridges] (avgConf=1.00)",
+    "[local-stt] parsed commands: [RP/DumbartonBridges] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [RP/DumbartonBridges] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"AAL3166 RP/DumbartonBridges\" (conf=1.00, time=2.6246ms) ==="
+  ]
+}

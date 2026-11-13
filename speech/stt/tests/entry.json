@@ -1,0 +1,439 @@
+{
+  "time": "2026-11-02T03:28:53.656236458Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1072:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": ",",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, quebec, information, Legos four, Gicep, THERMAL, Zee Jay, Kanec, Dunby, Cogid, Uriji, Zasog, wagav, Tanner, Alipe, Give, Palsy, Zavan, Pass-if, Gates, Vivof, Carca, Icuga, two four, runway, zulu, yankee, r-nav, I L S, X-O-jet niner 82, Flexjet 77, Envoy 84 80, ExecJet 67 50, ExecJet 45 12, Sidru, Zanig, Wunub, recco, homely, S-con, Genta, JULIAN, OCEANSIDE, McClellan-Palomar Airport",
+  "whisper_duration_ms": 913.99,
+  "audio_duration_ms": 456,
+  "processor": "GPU: AMD Radeon(TM) Graphics (8016MB)",
+  "whisper_model": "ggml-base.en-jlvatc-q5_0.bin",
+  "callsign": "",
+  "command": "",
+  "stt_aircraft": {
+    "Envoy 84 80": {
+      "Callsign": "ENY8480",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Genta": "GENTA",
+        "McClellan-Palomar": "KCRQ",
+        "S-con": "ESCON",
+        "Sidru": "CIDRU",
+        "Wunub": "WUNUB",
+        "Zanig": "ZANIG",
+        "recco": "RECCO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 24": "I4",
+        "RNAV Y Runway 24": "RY4",
+        "RNAV Z Runway 24": "RZ4"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two four": "24",
+        "visual runway two four": "24",
+        "visual two four": "24"
+      },
+      "ApproachFixes": {
+        "I4": {
+          "Genta": "GENTA",
+          "JULIAN": "JLI",
+          "OCEANSIDE": "OCN",
+          "S-con": "ESCON",
+          "Sidru": "CIDRU",
+          "Wunub": "WUNUB",
+          "Zanig": "ZANIG",
+          "homely": "HOMLY",
+          "recco": "RECCO"
+        },
+        "RY4": {
+          "Dunby": "DUNBY",
+          "Gicep": "GICEP",
+          "Gugec": "GUGEC",
+          "JULIAN": "JLI",
+          "Jabal": "JABAL",
+          "Kanec": "KANEC",
+          "OCEANSIDE": "OCN",
+          "THERMAL": "TRM",
+          "Tanner": "TANNR",
+          "Uriji": "URIJI",
+          "Zasog": "ZASOG",
+          "Zee Jay": "ZZJAY",
+          "Zuxax": "ZUXAX"
+        },
+        "RZ4": {
+          "Alipe": "ALIPE",
+          "Carca": "CARCA",
+          "Cogid": "COGID",
+          "Gates": "GAETS",
+          "Give": "EGIVE",
+          "Icuga": "ICUGA",
+          "JULIAN": "JLI",
+          "Jubim": "JUBIM",
+          "Palsy": "PALCI",
+          "Pass-if": "PACIF",
+          "Tanner": "TANNR",
+          "Uriji": "URIJI",
+          "Vivof": "VIVOF",
+          "Zasog": "ZASOG",
+          "Zavan": "ZAVAN",
+          "wagav": "WAGAV"
+        }
+      },
+      "AssignedApproach": "ILS Runway 24",
+      "Route": [
+        "GENTA",
+        "RECCO",
+        "ZANIG",
+        "ESCON",
+        "WUNUB",
+        "CIDRU",
+        "KCRQ"
+      ],
+      "Altitude": 7500,
+      "Heading": 212,
+      "Speed": 163,
+      "AssignedAltitude": 7500,
+      "AssignedSpeed": 150,
+      "State": "arrival",
+      "ControllerFrequency": "5M",
+      "TrackingController": "5M"
+    },
+    "ExecJet 45 12": {
+      "Callsign": "EJA4512",
+      "AircraftType": "C750",
+      "Fixes": {
+        "McClellan-Palomar": "KCRQ",
+        "OCEANSIDE": "OCN",
+        "S-con": "ESCON",
+        "Sidru": "CIDRU",
+        "Wunub": "WUNUB",
+        "homely": "HOMLY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 24": "I4",
+        "RNAV Y Runway 24": "RY4",
+        "RNAV Z Runway 24": "RZ4"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two four": "24",
+        "visual runway two four": "24",
+        "visual two four": "24"
+      },
+      "ApproachFixes": {
+        "I4": {
+          "Genta": "GENTA",
+          "JULIAN": "JLI",
+          "OCEANSIDE": "OCN",
+          "S-con": "ESCON",
+          "Sidru": "CIDRU",
+          "Wunub": "WUNUB",
+          "Zanig": "ZANIG",
+          "homely": "HOMLY",
+          "recco": "RECCO"
+        },
+        "RY4": {
+          "Dunby": "DUNBY",
+          "Gicep": "GICEP",
+          "Gugec": "GUGEC",
+          "JULIAN": "JLI",
+          "Jabal": "JABAL",
+          "Kanec": "KANEC",
+          "OCEANSIDE": "OCN",
+          "THERMAL": "TRM",
+          "Tanner": "TANNR",
+          "Uriji": "URIJI",
+          "Zasog": "ZASOG",
+          "Zee Jay": "ZZJAY",
+          "Zuxax": "ZUXAX"
+        },
+        "RZ4": {
+          "Alipe": "ALIPE",
+          "Carca": "CARCA",
+          "Cogid": "COGID",
+          "Gates": "GAETS",
+          "Give": "EGIVE",
+          "Icuga": "ICUGA",
+          "JULIAN": "JLI",
+          "Jubim": "JUBIM",
+          "Palsy": "PALCI",
+          "Pass-if": "PACIF",
+          "Tanner": "TANNR",
+          "Uriji": "URIJI",
+          "Vivof": "VIVOF",
+          "Zasog": "ZASOG",
+          "Zavan": "ZAVAN",
+          "wagav": "WAGAV"
+        }
+      },
+      "AssignedApproach": "ILS Runway 24",
+      "STAR": "LEGOZ4",
+      "Route": [
+        "OCN",
+        "HOMLY",
+        "ESCON",
+        "WUNUB",
+        "CIDRU",
+        "KCRQ"
+      ],
+      "Altitude": 6000,
+      "Heading": 101,
+      "Speed": 276,
+      "AssignedAltitude": 6000,
+      "State": "arrival",
+      "ControllerFrequency": "5D",
+      "TrackingController": "5D"
+    },
+    "ExecJet 67 50": {
+      "Callsign": "EJA6750",
+      "AircraftType": "H25B",
+      "Fixes": {
+        "McClellan-Palomar": "KCRQ"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 24": "I4",
+        "RNAV Y Runway 24": "RY4",
+        "RNAV Z Runway 24": "RZ4"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two four": "24",
+        "visual runway two four": "24",
+        "visual two four": "24"
+      },
+      "ApproachFixes": {
+        "I4": {
+          "Genta": "GENTA",
+          "JULIAN": "JLI",
+          "OCEANSIDE": "OCN",
+          "S-con": "ESCON",
+          "Sidru": "CIDRU",
+          "Wunub": "WUNUB",
+          "Zanig": "ZANIG",
+          "homely": "HOMLY",
+          "recco": "RECCO"
+        },
+        "RY4": {
+          "Dunby": "DUNBY",
+          "Gicep": "GICEP",
+          "Gugec": "GUGEC",
+          "JULIAN": "JLI",
+          "Jabal": "JABAL",
+          "Kanec": "KANEC",
+          "OCEANSIDE": "OCN",
+          "THERMAL": "TRM",
+          "Tanner": "TANNR",
+          "Uriji": "URIJI",
+          "Zasog": "ZASOG",
+          "Zee Jay": "ZZJAY",
+          "Zuxax": "ZUXAX"
+        },
+        "RZ4": {
+          "Alipe": "ALIPE",
+          "Carca": "CARCA",
+          "Cogid": "COGID",
+          "Gates": "GAETS",
+          "Give": "EGIVE",
+          "Icuga": "ICUGA",
+          "JULIAN": "JLI",
+          "Jubim": "JUBIM",
+          "Palsy": "PALCI",
+          "Pass-if": "PACIF",
+          "Tanner": "TANNR",
+          "Uriji": "URIJI",
+          "Vivof": "VIVOF",
+          "Zasog": "ZASOG",
+          "Zavan": "ZAVAN",
+          "wagav": "WAGAV"
+        }
+      },
+      "AssignedApproach": "ILS Runway 24",
+      "Route": [
+        "KCRQ"
+      ],
+      "Altitude": 2127,
+      "Heading": 245,
+      "Speed": 141,
+      "State": "cleared approach",
+      "ControllerFrequency": "5M",
+      "TrackingController": "5M"
+    },
+    "Flexjet 77": {
+      "Callsign": "LXJ77",
+      "LastAddressed": true,
+      "AircraftType": "LJ40",
+      "Fixes": {
+        "McClellan-Palomar": "KCRQ",
+        "S-con": "ESCON",
+        "Sidru": "CIDRU",
+        "Wunub": "WUNUB"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 24": "I4",
+        "RNAV Y Runway 24": "RY4",
+        "RNAV Z Runway 24": "RZ4"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two four": "24",
+        "visual runway two four": "24",
+        "visual two four": "24"
+      },
+      "ApproachFixes": {
+        "I4": {
+          "Genta": "GENTA",
+          "JULIAN": "JLI",
+          "OCEANSIDE": "OCN",
+          "S-con": "ESCON",
+          "Sidru": "CIDRU",
+          "Wunub": "WUNUB",
+          "Zanig": "ZANIG",
+          "homely": "HOMLY",
+          "recco": "RECCO"
+        },
+        "RY4": {
+          "Dunby": "DUNBY",
+          "Gicep": "GICEP",
+          "Gugec": "GUGEC",
+          "JULIAN": "JLI",
+          "Jabal": "JABAL",
+          "Kanec": "KANEC",
+          "OCEANSIDE": "OCN",
+          "THERMAL": "TRM",
+          "Tanner": "TANNR",
+          "Uriji": "URIJI",
+          "Zasog": "ZASOG",
+          "Zee Jay": "ZZJAY",
+          "Zuxax": "ZUXAX"
+        },
+        "RZ4": {
+          "Alipe": "ALIPE",
+          "Carca": "CARCA",
+          "Cogid": "COGID",
+          "Gates": "GAETS",
+          "Give": "EGIVE",
+          "Icuga": "ICUGA",
+          "JULIAN": "JLI",
+          "Jubim": "JUBIM",
+          "Palsy": "PALCI",
+          "Pass-if": "PACIF",
+          "Tanner": "TANNR",
+          "Uriji": "URIJI",
+          "Vivof": "VIVOF",
+          "Zasog": "ZASOG",
+          "Zavan": "ZAVAN",
+          "wagav": "WAGAV"
+        }
+      },
+      "AssignedApproach": "ILS Runway 24",
+      "STAR": "LEGOZ4",
+      "Route": [
+        "ESCON",
+        "WUNUB",
+        "CIDRU",
+        "KCRQ"
+      ],
+      "Altitude": 4000,
+      "Heading": 248,
+      "Speed": 241,
+      "State": "cleared approach",
+      "ControllerFrequency": "5D",
+      "TrackingController": "5D"
+    },
+    "X-O-jet niner 82": {
+      "Callsign": "XOJ982",
+      "AircraftType": "C750",
+      "Fixes": {
+        "McClellan-Palomar": "KCRQ",
+        "OCEANSIDE": "OCN",
+        "S-con": "ESCON",
+        "Sidru": "CIDRU",
+        "Wunub": "WUNUB",
+        "homely": "HOMLY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 24": "I4",
+        "RNAV Y Runway 24": "RY4",
+        "RNAV Z Runway 24": "RZ4"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two four": "24",
+        "visual runway two four": "24",
+        "visual two four": "24"
+      },
+      "ApproachFixes": {
+        "I4": {
+          "Genta": "GENTA",
+          "JULIAN": "JLI",
+          "OCEANSIDE": "OCN",
+          "S-con": "ESCON",
+          "Sidru": "CIDRU",
+          "Wunub": "WUNUB",
+          "Zanig": "ZANIG",
+          "homely": "HOMLY",
+          "recco": "RECCO"
+        },
+        "RY4": {
+          "Dunby": "DUNBY",
+          "Gicep": "GICEP",
+          "Gugec": "GUGEC",
+          "JULIAN": "JLI",
+          "Jabal": "JABAL",
+          "Kanec": "KANEC",
+          "OCEANSIDE": "OCN",
+          "THERMAL": "TRM",
+          "Tanner": "TANNR",
+          "Uriji": "URIJI",
+          "Zasog": "ZASOG",
+          "Zee Jay": "ZZJAY",
+          "Zuxax": "ZUXAX"
+        },
+        "RZ4": {
+          "Alipe": "ALIPE",
+          "Carca": "CARCA",
+          "Cogid": "COGID",
+          "Gates": "GAETS",
+          "Give": "EGIVE",
+          "Icuga": "ICUGA",
+          "JULIAN": "JLI",
+          "Jubim": "JUBIM",
+          "Palsy": "PALCI",
+          "Pass-if": "PACIF",
+          "Tanner": "TANNR",
+          "Uriji": "URIJI",
+          "Vivof": "VIVOF",
+          "Zasog": "ZASOG",
+          "Zavan": "ZAVAN",
+          "wagav": "WAGAV"
+        }
+      },
+      "AssignedApproach": "ILS Runway 24",
+      "STAR": "LEGOZ4",
+      "Route": [
+        "OCN",
+        "HOMLY",
+        "ESCON",
+        "WUNUB",
+        "CIDRU",
+        "KCRQ"
+      ],
+      "Altitude": 8393,
+      "Heading": 90,
+      "Speed": 290,
+      "AssignedAltitude": 6000,
+      "State": "arrival",
+      "ControllerFrequency": "5D",
+      "TrackingController": "5D"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \",\"",
+    "[local-stt] normalized words: []",
+    "[local-stt] no words after normalization, returning \"\""
+  ]
+}

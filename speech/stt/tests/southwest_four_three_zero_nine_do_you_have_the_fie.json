@@ -1,0 +1,369 @@
+{
+  "time": "2026-11-04T00:50:34.586830189Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Southwest Four Three Zero Nine do you have the field in sight",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, sierra, information, Roe-buck three, Ocean five, J-Fund two, Kelys, Sandbah, Sirino, Egg Roll, two two left, runway, yankee, x-ray, r-nav, I L S, Southwest 43 zero niner, Delta 18 heavy, Air Canada niner zero three, American 74 62, Islay, Leezi, Vocus, Harris, Ada, Wyane, Tale, Wintah, Bridget, Noley, Patrick, Autumn, Georgio, Lowland, Boston Logan International Airport",
+  "whisper_duration_ms": 378.469,
+  "audio_duration_ms": 2888,
+  "processor": "GPU: NVIDIA GeForce RTX 4060 (7956MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "SWA4309",
+  "command": "AP",
+  "reason": "do you have the field in sight",
+  "stt_aircraft": {
+    "Air Canada niner zero three": {
+      "Callsign": "ACA903",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Ada": "ADDDA",
+        "Boston": "KBOS",
+        "Bridget": "BRGIT",
+        "Georgio": "GRGIO",
+        "Leezi": "LEEZI",
+        "Noley": "NOLEY",
+        "Vocus": "VOCUS",
+        "Wyane": "WYANE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22L": "I2L",
+        "RNAV X Runway 22L": "X2L",
+        "RNAV Y Runway 22L": "Y2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual runway two two left": "22L",
+        "visual two two left": "22L"
+      },
+      "ApproachFixes": {
+        "I2L": {
+          "Noley": "NOLEY",
+          "Vocus": "VOCUS",
+          "Wyane": "WYANE"
+        },
+        "X2L": {
+          "Noley": "NOLEY",
+          "Vocus": "VOCUS",
+          "Wyane": "WYANE",
+          "Zumol": "ZUMOL"
+        },
+        "Y2L": {
+          "Chelc": "CHELC",
+          "Egg Roll": "EGGRL",
+          "Kelys": "KELYS",
+          "Sandbah": "SNDBA",
+          "Sirino": "SRINO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22L",
+      "STAR": "OOSHN5",
+      "Route": [
+        "GRGIO",
+        "BRGIT",
+        "ADDDA",
+        "LEEZI",
+        "KBOS"
+      ],
+      "Altitude": 11014,
+      "Heading": 285,
+      "Speed": 269,
+      "State": "arrival",
+      "ControllerFrequency": "1R",
+      "TrackingController": "1R",
+      "LAHSORunways": [
+        "9",
+        "27",
+        "14",
+        "32",
+        "15L",
+        "33R",
+        "15R",
+        "33L"
+      ]
+    },
+    "American 74 62": {
+      "Callsign": "AAL7462",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Boston": "KBOS",
+        "Lowland": "LWLND",
+        "Noley": "NOLEY",
+        "Vocus": "VOCUS",
+        "Wyane": "WYANE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22L": "I2L",
+        "RNAV X Runway 22L": "X2L",
+        "RNAV Y Runway 22L": "Y2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual runway two two left": "22L",
+        "visual two two left": "22L"
+      },
+      "ApproachFixes": {
+        "I2L": {
+          "Noley": "NOLEY",
+          "Vocus": "VOCUS",
+          "Wyane": "WYANE"
+        },
+        "X2L": {
+          "Noley": "NOLEY",
+          "Vocus": "VOCUS",
+          "Wyane": "WYANE",
+          "Zumol": "ZUMOL"
+        },
+        "Y2L": {
+          "Chelc": "CHELC",
+          "Egg Roll": "EGGRL",
+          "Kelys": "KELYS",
+          "Sandbah": "SNDBA",
+          "Sirino": "SRINO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22L",
+      "STAR": "JFUND2",
+      "Route": [
+        "LWLND",
+        "KBOS"
+      ],
+      "Altitude": 4000,
+      "Heading": 30,
+      "Speed": 219,
+      "State": "arrival",
+      "ControllerFrequency": "1R",
+      "TrackingController": "1R",
+      "LAHSORunways": [
+        "9",
+        "27",
+        "14",
+        "32",
+        "15L",
+        "33R",
+        "15R",
+        "33L"
+      ]
+    },
+    "Delta 18 heavy": {
+      "Callsign": "DAL18",
+      "AircraftType": "A333",
+      "Fixes": {
+        "Autumn": "AUTUM",
+        "Boston": "KBOS",
+        "Harris": "HRRIS",
+        "Islay": "ISLAY",
+        "Lowland": "LWLND",
+        "Noley": "NOLEY",
+        "Vocus": "VOCUS",
+        "Wintah": "WINTA",
+        "Wyane": "WYANE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22L": "I2L",
+        "RNAV X Runway 22L": "X2L",
+        "RNAV Y Runway 22L": "Y2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual runway two two left": "22L",
+        "visual two two left": "22L"
+      },
+      "ApproachFixes": {
+        "I2L": {
+          "Noley": "NOLEY",
+          "Vocus": "VOCUS",
+          "Wyane": "WYANE"
+        },
+        "X2L": {
+          "Noley": "NOLEY",
+          "Vocus": "VOCUS",
+          "Wyane": "WYANE",
+          "Zumol": "ZUMOL"
+        },
+        "Y2L": {
+          "Chelc": "CHELC",
+          "Egg Roll": "EGGRL",
+          "Kelys": "KELYS",
+          "Sandbah": "SNDBA",
+          "Sirino": "SRINO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22L",
+      "STAR": "JFUND2",
+      "Route": [
+        "AUTUM",
+        "WINTA",
+        "HRRIS",
+        "ISLAY",
+        "LWLND",
+        "KBOS"
+      ],
+      "Altitude": 12061,
+      "Heading": 114,
+      "Speed": 342,
+      "State": "arrival",
+      "ControllerFrequency": "1R",
+      "TrackingController": "1R",
+      "LAHSORunways": [
+        "9",
+        "27",
+        "14",
+        "32",
+        "15L",
+        "33R",
+        "15R",
+        "33L"
+      ]
+    },
+    "Southwest 43 zero niner": {
+      "Callsign": "SWA4309",
+      "AircraftType": "B737",
+      "Fixes": {
+        "Boston": "KBOS",
+        "Noley": "NOLEY",
+        "Patrick": "PTRIK",
+        "Tale": "TAALE",
+        "Vocus": "VOCUS",
+        "Wyane": "WYANE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22L": "I2L",
+        "RNAV X Runway 22L": "X2L",
+        "RNAV Y Runway 22L": "Y2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual runway two two left": "22L",
+        "visual two two left": "22L"
+      },
+      "ApproachFixes": {
+        "I2L": {
+          "Noley": "NOLEY",
+          "Vocus": "VOCUS",
+          "Wyane": "WYANE"
+        },
+        "X2L": {
+          "Noley": "NOLEY",
+          "Vocus": "VOCUS",
+          "Wyane": "WYANE",
+          "Zumol": "ZUMOL"
+        },
+        "Y2L": {
+          "Chelc": "CHELC",
+          "Egg Roll": "EGGRL",
+          "Kelys": "KELYS",
+          "Sandbah": "SNDBA",
+          "Sirino": "SRINO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22L",
+      "STAR": "ROBUC3",
+      "Route": [
+        "PTRIK",
+        "TAALE",
+        "KBOS"
+      ],
+      "Altitude": 5000,
+      "Heading": 330,
+      "Speed": 207,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "9",
+        "27",
+        "14",
+        "32",
+        "15L",
+        "33R",
+        "15R",
+        "33L"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Southwest Four Three Zero Nine do you have the field in sight\"",
+    "[local-stt] normalized words: [southwest 4 3 0 9 do you have the field in sight]",
+    "[local-stt] tokens: 9",
+    "[local-stt]   token[0]: Text=\"southwest\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"4309\" Type=1 Value=4309",
+    "[local-stt]   token[2]: Text=\"do\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"you\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"have\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"the\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"field\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"in\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"sight\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 9 tokens, 4 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 9 tokens, 4 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Southwest 43 zero niner\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Southwest 43 zero niner\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"Southwest 43 zero niner\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Southwest 43 zero niner\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 5 results",
+    "[local-stt]     result 0: \"Delta 18 heavy\" (airline=0.437, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Southwest 43 zero niner\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Southwest 43 zero niner\" (airline=0.537, flight=0.000, skip=2)",
+    "[local-stt]     result 3: \"Delta 18 heavy\" (airline=0.610, flight=0.000, skip=2)",
+    "[local-stt]     result 4: \"Southwest 43 zero niner\" (airline=0.630, flight=0.000, skip=3)",
+    "[local-stt]     pattern \"airline_only\": selected \"Southwest 43 zero niner\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Southwest 43 zero niner\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Southwest 43 zero niner\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"Southwest 43 zero niner\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"SWA4309\" (spokenKey=\"Southwest 43 zero niner\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"SWA4309\" SpokenKey=\"Southwest 43 zero niner\" Conf=1.00 Consumed=2",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=5000 Fixes=6 Approaches=3 VisualApproaches=3 AssignedApproach=\"ILS Runway 22L\" LAHSORunways=[9 27 14 32 15L 33R 15R 33L]",
+    "[local-stt]   fix: \"Vocus\" -\u003e \"VOCUS\"",
+    "[local-stt]   fix: \"Boston\" -\u003e \"KBOS\"",
+    "[local-stt]   fix: \"Patrick\" -\u003e \"PTRIK\"",
+    "[local-stt]   fix: \"Tale\" -\u003e \"TAALE\"",
+    "[local-stt]   fix: \"Noley\" -\u003e \"NOLEY\"",
+    "[local-stt]   fix: \"Wyane\" -\u003e \"WYANE\"",
+    "[local-stt]   approach: \"RNAV X Runway 22L\" -\u003e \"X2L\"",
+    "[local-stt]   approach: \"ILS Runway 22L\" -\u003e \"I2L\"",
+    "[local-stt]   approach: \"RNAV Y Runway 22L\" -\u003e \"Y2L\"",
+    "[local-stt]   visual approach: \"visual runway two two left\" -\u003e \"22L\"",
+    "[local-stt]   visual approach: \"visual approach runway two two left\" -\u003e \"22L\"",
+    "[local-stt]   visual approach: \"visual two two left\" -\u003e \"22L\"",
+    "[local-stt] command tokens after disregard: 7",
+    "[local-stt]   token[0]: Text=\"do\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"you\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"have\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"the\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"field\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"in\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"sight\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 7 tokens",
+    "[local-stt]   matched command: \"AP\" [airport_in_sight_inquiry] (pos=0, conf=1.00, consumed=7, isThen=false)",
+    "[local-stt]   no match at token[0]=\"do\", skipping",
+    "[local-stt]   matched command: \"AP\" [airport_in_sight_inquiry] (pos=1, conf=1.00, consumed=6, isThen=false)",
+    "[local-stt]   skipping filler word: \"you\"",
+    "[local-stt]   matched command: \"AP\" [airport_in_sight_inquiry] (pos=2, conf=1.00, consumed=5, isThen=false)",
+    "[local-stt]   no match at token[2]=\"have\", skipping",
+    "[local-stt]   skipping filler word: \"the\"",
+    "[local-stt]   no match at token[4]=\"field\", skipping",
+    "[local-stt]   no match at token[5]=\"in\", skipping",
+    "[local-stt]   no match at token[6]=\"sight\", skipping",
+    "[local-stt]   beam final[0]: score=3.587 pos=7 commands=[AP]",
+    "[local-stt]   beam final[1]: score=0.687 pos=7 commands=[AP]",
+    "[local-stt]   beam final[2]: score=0.687 pos=7 commands=[AP]",
+    "[local-stt]   beam final[3]: score=-4.605 pos=7 commands=[]",
+    "[local-stt] ParseCommands: result=[AP] (avgConf=1.00)",
+    "[local-stt] parsed commands: [AP] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [AP] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"SWA4309 AP\" (conf=1.00, time=2.1026ms) ==="
+  ]
+}

@@ -1,0 +1,879 @@
+{
+  "time": "2026-11-06T18:29:35.504290351Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Delta ten twenty four three miles from Zalpo two thousand till established could i last only two two left approach maintain one nine zero nine",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, kilo, information, Parch four, Cameron five, Corvet, Rivra, Gigpe, Wikol, Capit, Nayik, two two right, two two left, runway, yankee, x-ray, r-nav, Visual, Belmont, I L S, JetBlue seven 17, Endeavor 51 63, Endeavor 49 zero niner, Delta eight 84, Delta six 24, Delta 27 93, Delta 10 24, Sajul, Norton, DEER PARK, Rosley, Lefer, Haupt, Detgy, Tapper, Seagull, Hair, Cimble, Zalpo, John F. Kennedy International Airport",
+  "whisper_duration_ms": 561.687,
+  "audio_duration_ms": 6216,
+  "processor": "GPU: AMD Radeon 780M Graphics (9118MB)",
+  "whisper_model": "ggml-small.en-jlvatc-q5_0.bin",
+  "callsign": "DAL1024",
+  "command": "A20 CI2L S190",
+  "stt_aircraft": {
+    "Delta 10 24": {
+      "Callsign": "DAL1024",
+      "AircraftType": "A21N",
+      "Fixes": {
+        "J F K": "KJFK",
+        "Kennedy": "KJFK",
+        "Zalpo": "ZALPO"
+      },
+      "CandidateApproaches": {
+        "Belmont Visual Runway 22 Left": "BVA",
+        "ILS Runway 22L": "I2L",
+        "ILS Runway 22R": "I2R",
+        "RNAV Runway 22R": "R2R",
+        "RNAV X Runway 22L": "RX2L",
+        "RNAV Y Runway 22L": "RY2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual approach runway two two right": "22R",
+        "visual runway two two left": "22L",
+        "visual runway two two right": "22R",
+        "visual two two left": "22L",
+        "visual two two right": "22R"
+      },
+      "ApproachFixes": {
+        "BVA": {
+          "Zalpo": "ZALPO"
+        },
+        "I2L": {
+          "Cimble": "CIMBL",
+          "DEER PARK": "DPK",
+          "Detgy": "DETGY",
+          "Hair": "HAIRR",
+          "Haupt": "HAUPT",
+          "Lefer": "LEFER",
+          "Norton": "NRTON",
+          "Rosley": "ROSLY",
+          "Sajul": "SAJUL",
+          "Seagull": "CEEGL",
+          "Tapper": "TAPPR",
+          "Zalpo": "ZALPO"
+        },
+        "I2R": {
+          "Cimble": "CIMBL",
+          "Corvet": "CORVT",
+          "Detgy": "DETGY",
+          "Hair": "HAIRR",
+          "Haupt": "HAUPT",
+          "Lefer": "LEFER",
+          "Matter": "MATTR",
+          "Norton": "NRTON",
+          "Sajul": "SAJUL",
+          "Seagull": "CEEGL",
+          "Tapper": "TAPPR"
+        },
+        "R2R": {
+          "DEER PARK": "DPK",
+          "Heneb": "HENEB",
+          "Rivra": "RIVRA"
+        },
+        "RX2L": {
+          "Capit": "CAPIT",
+          "DEER PARK": "DPK",
+          "E-knee": "ENEEE",
+          "Gigpe": "GIGPE",
+          "Wikol": "WIKOL",
+          "Zosdo": "ZOSDO"
+        },
+        "RY2L": {
+          "DEER PARK": "DPK",
+          "Nayik": "NAYIK",
+          "Zalpo": "ZALPO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22L",
+      "STAR": "CAMRN5",
+      "Route": [
+        "ZALPO",
+        "KJFK"
+      ],
+      "Altitude": 2000,
+      "Heading": 233,
+      "Speed": 200,
+      "State": "arrival",
+      "ControllerFrequency": "2A",
+      "TrackingController": "2A",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13L",
+        "31R",
+        "13R",
+        "31L"
+      ]
+    },
+    "Delta 27 93": {
+      "Callsign": "DAL2793",
+      "AircraftType": "A21N",
+      "Fixes": {
+        "Cimble": "CIMBL",
+        "DEER PARK": "DPK",
+        "Detgy": "DETGY",
+        "Hair": "HAIRR",
+        "Haupt": "HAUPT",
+        "J F K": "KJFK",
+        "Kennedy": "KJFK",
+        "Lefer": "LEFER",
+        "Norton": "NRTON",
+        "Rosley": "ROSLY",
+        "Sajul": "SAJUL",
+        "Seagull": "CEEGL",
+        "Tapper": "TAPPR",
+        "Zalpo": "ZALPO"
+      },
+      "CandidateApproaches": {
+        "Belmont Visual Runway 22 Left": "BVA",
+        "ILS Runway 22L": "I2L",
+        "ILS Runway 22R": "I2R",
+        "RNAV Runway 22R": "R2R",
+        "RNAV X Runway 22L": "RX2L",
+        "RNAV Y Runway 22L": "RY2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual approach runway two two right": "22R",
+        "visual runway two two left": "22L",
+        "visual runway two two right": "22R",
+        "visual two two left": "22L",
+        "visual two two right": "22R"
+      },
+      "ApproachFixes": {
+        "BVA": {
+          "Zalpo": "ZALPO"
+        },
+        "I2L": {
+          "Cimble": "CIMBL",
+          "DEER PARK": "DPK",
+          "Detgy": "DETGY",
+          "Hair": "HAIRR",
+          "Haupt": "HAUPT",
+          "Lefer": "LEFER",
+          "Norton": "NRTON",
+          "Rosley": "ROSLY",
+          "Sajul": "SAJUL",
+          "Seagull": "CEEGL",
+          "Tapper": "TAPPR",
+          "Zalpo": "ZALPO"
+        },
+        "I2R": {
+          "Cimble": "CIMBL",
+          "Corvet": "CORVT",
+          "Detgy": "DETGY",
+          "Hair": "HAIRR",
+          "Haupt": "HAUPT",
+          "Lefer": "LEFER",
+          "Matter": "MATTR",
+          "Norton": "NRTON",
+          "Sajul": "SAJUL",
+          "Seagull": "CEEGL",
+          "Tapper": "TAPPR"
+        },
+        "R2R": {
+          "DEER PARK": "DPK",
+          "Heneb": "HENEB",
+          "Rivra": "RIVRA"
+        },
+        "RX2L": {
+          "Capit": "CAPIT",
+          "DEER PARK": "DPK",
+          "E-knee": "ENEEE",
+          "Gigpe": "GIGPE",
+          "Wikol": "WIKOL",
+          "Zosdo": "ZOSDO"
+        },
+        "RY2L": {
+          "DEER PARK": "DPK",
+          "Nayik": "NAYIK",
+          "Zalpo": "ZALPO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22L",
+      "STAR": "CAMRN5",
+      "Route": [
+        "KJFK"
+      ],
+      "Altitude": 4000,
+      "Heading": 40,
+      "Speed": 226,
+      "AssignedHeading": 40,
+      "State": "arrival",
+      "ControllerFrequency": "2A",
+      "TrackingController": "2A",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13L",
+        "31R",
+        "13R",
+        "31L"
+      ]
+    },
+    "Delta eight 84": {
+      "Callsign": "DAL884",
+      "AircraftType": "A21N",
+      "Fixes": {
+        "Cimble": "CIMBL",
+        "DEER PARK": "DPK",
+        "Detgy": "DETGY",
+        "Hair": "HAIRR",
+        "Haupt": "HAUPT",
+        "J F K": "KJFK",
+        "Kennedy": "KJFK",
+        "Lefer": "LEFER",
+        "Norton": "NRTON",
+        "Rosley": "ROSLY",
+        "Sajul": "SAJUL",
+        "Seagull": "CEEGL",
+        "Tapper": "TAPPR",
+        "Zalpo": "ZALPO"
+      },
+      "CandidateApproaches": {
+        "Belmont Visual Runway 22 Left": "BVA",
+        "ILS Runway 22L": "I2L",
+        "ILS Runway 22R": "I2R",
+        "RNAV Runway 22R": "R2R",
+        "RNAV X Runway 22L": "RX2L",
+        "RNAV Y Runway 22L": "RY2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual approach runway two two right": "22R",
+        "visual runway two two left": "22L",
+        "visual runway two two right": "22R",
+        "visual two two left": "22L",
+        "visual two two right": "22R"
+      },
+      "ApproachFixes": {
+        "BVA": {
+          "Zalpo": "ZALPO"
+        },
+        "I2L": {
+          "Cimble": "CIMBL",
+          "DEER PARK": "DPK",
+          "Detgy": "DETGY",
+          "Hair": "HAIRR",
+          "Haupt": "HAUPT",
+          "Lefer": "LEFER",
+          "Norton": "NRTON",
+          "Rosley": "ROSLY",
+          "Sajul": "SAJUL",
+          "Seagull": "CEEGL",
+          "Tapper": "TAPPR",
+          "Zalpo": "ZALPO"
+        },
+        "I2R": {
+          "Cimble": "CIMBL",
+          "Corvet": "CORVT",
+          "Detgy": "DETGY",
+          "Hair": "HAIRR",
+          "Haupt": "HAUPT",
+          "Lefer": "LEFER",
+          "Matter": "MATTR",
+          "Norton": "NRTON",
+          "Sajul": "SAJUL",
+          "Seagull": "CEEGL",
+          "Tapper": "TAPPR"
+        },
+        "R2R": {
+          "DEER PARK": "DPK",
+          "Heneb": "HENEB",
+          "Rivra": "RIVRA"
+        },
+        "RX2L": {
+          "Capit": "CAPIT",
+          "DEER PARK": "DPK",
+          "E-knee": "ENEEE",
+          "Gigpe": "GIGPE",
+          "Wikol": "WIKOL",
+          "Zosdo": "ZOSDO"
+        },
+        "RY2L": {
+          "DEER PARK": "DPK",
+          "Nayik": "NAYIK",
+          "Zalpo": "ZALPO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22L",
+      "STAR": "CAMRN5",
+      "Route": [
+        "KJFK"
+      ],
+      "Altitude": 2248,
+      "Heading": 310,
+      "Speed": 207,
+      "AssignedHeading": 310,
+      "State": "arrival",
+      "ControllerFrequency": "2A",
+      "TrackingController": "2A",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13L",
+        "31R",
+        "13R",
+        "31L"
+      ]
+    },
+    "Delta six 24": {
+      "Callsign": "DAL624",
+      "AircraftType": "B752",
+      "Fixes": {
+        "J F K": "KJFK",
+        "Kennedy": "KJFK"
+      },
+      "CandidateApproaches": {
+        "Belmont Visual Runway 22 Left": "BVA",
+        "ILS Runway 22L": "I2L",
+        "ILS Runway 22R": "I2R",
+        "RNAV Runway 22R": "R2R",
+        "RNAV X Runway 22L": "RX2L",
+        "RNAV Y Runway 22L": "RY2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual approach runway two two right": "22R",
+        "visual runway two two left": "22L",
+        "visual runway two two right": "22R",
+        "visual two two left": "22L",
+        "visual two two right": "22R"
+      },
+      "ApproachFixes": {
+        "BVA": {
+          "Zalpo": "ZALPO"
+        },
+        "I2L": {
+          "Cimble": "CIMBL",
+          "DEER PARK": "DPK",
+          "Detgy": "DETGY",
+          "Hair": "HAIRR",
+          "Haupt": "HAUPT",
+          "Lefer": "LEFER",
+          "Norton": "NRTON",
+          "Rosley": "ROSLY",
+          "Sajul": "SAJUL",
+          "Seagull": "CEEGL",
+          "Tapper": "TAPPR",
+          "Zalpo": "ZALPO"
+        },
+        "I2R": {
+          "Cimble": "CIMBL",
+          "Corvet": "CORVT",
+          "Detgy": "DETGY",
+          "Hair": "HAIRR",
+          "Haupt": "HAUPT",
+          "Lefer": "LEFER",
+          "Matter": "MATTR",
+          "Norton": "NRTON",
+          "Sajul": "SAJUL",
+          "Seagull": "CEEGL",
+          "Tapper": "TAPPR"
+        },
+        "R2R": {
+          "DEER PARK": "DPK",
+          "Heneb": "HENEB",
+          "Rivra": "RIVRA"
+        },
+        "RX2L": {
+          "Capit": "CAPIT",
+          "DEER PARK": "DPK",
+          "E-knee": "ENEEE",
+          "Gigpe": "GIGPE",
+          "Wikol": "WIKOL",
+          "Zosdo": "ZOSDO"
+        },
+        "RY2L": {
+          "DEER PARK": "DPK",
+          "Nayik": "NAYIK",
+          "Zalpo": "ZALPO"
+        }
+      },
+      "STAR": "CAMRN5",
+      "Route": [
+        "KJFK"
+      ],
+      "Altitude": 2000,
+      "Heading": 360,
+      "Speed": 211,
+      "AssignedHeading": 360,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "2A",
+      "TrackingController": "2A",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13L",
+        "31R",
+        "13R",
+        "31L"
+      ]
+    },
+    "Endeavor 49 zero niner": {
+      "Callsign": "EDV4909",
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Cimble": "CIMBL",
+        "DEER PARK": "DPK",
+        "Detgy": "DETGY",
+        "Hair": "HAIRR",
+        "Haupt": "HAUPT",
+        "J F K": "KJFK",
+        "Kennedy": "KJFK",
+        "Lefer": "LEFER",
+        "Norton": "NRTON",
+        "Rosley": "ROSLY",
+        "Sajul": "SAJUL",
+        "Seagull": "CEEGL",
+        "Tapper": "TAPPR",
+        "Zalpo": "ZALPO"
+      },
+      "CandidateApproaches": {
+        "Belmont Visual Runway 22 Left": "BVA",
+        "ILS Runway 22L": "I2L",
+        "ILS Runway 22R": "I2R",
+        "RNAV Runway 22R": "R2R",
+        "RNAV X Runway 22L": "RX2L",
+        "RNAV Y Runway 22L": "RY2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual approach runway two two right": "22R",
+        "visual runway two two left": "22L",
+        "visual runway two two right": "22R",
+        "visual two two left": "22L",
+        "visual two two right": "22R"
+      },
+      "ApproachFixes": {
+        "BVA": {
+          "Zalpo": "ZALPO"
+        },
+        "I2L": {
+          "Cimble": "CIMBL",
+          "DEER PARK": "DPK",
+          "Detgy": "DETGY",
+          "Hair": "HAIRR",
+          "Haupt": "HAUPT",
+          "Lefer": "LEFER",
+          "Norton": "NRTON",
+          "Rosley": "ROSLY",
+          "Sajul": "SAJUL",
+          "Seagull": "CEEGL",
+          "Tapper": "TAPPR",
+          "Zalpo": "ZALPO"
+        },
+        "I2R": {
+          "Cimble": "CIMBL",
+          "Corvet": "CORVT",
+          "Detgy": "DETGY",
+          "Hair": "HAIRR",
+          "Haupt": "HAUPT",
+          "Lefer": "LEFER",
+          "Matter": "MATTR",
+          "Norton": "NRTON",
+          "Sajul": "SAJUL",
+          "Seagull": "CEEGL",
+          "Tapper": "TAPPR"
+        },
+        "R2R": {
+          "DEER PARK": "DPK",
+          "Heneb": "HENEB",
+          "Rivra": "RIVRA"
+        },
+        "RX2L": {
+          "Capit": "CAPIT",
+          "DEER PARK": "DPK",
+          "E-knee": "ENEEE",
+          "Gigpe": "GIGPE",
+          "Wikol": "WIKOL",
+          "Zosdo": "ZOSDO"
+        },
+        "RY2L": {
+          "DEER PARK": "DPK",
+          "Nayik": "NAYIK",
+          "Zalpo": "ZALPO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22L",
+      "STAR": "CAMRN5",
+      "Route": [
+        "KJFK"
+      ],
+      "Altitude": 4000,
+      "Heading": 20,
+      "Speed": 224,
+      "AssignedHeading": 20,
+      "State": "arrival",
+      "ControllerFrequency": "2A",
+      "TrackingController": "2A",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13L",
+        "31R",
+        "13R",
+        "31L"
+      ]
+    },
+    "Endeavor 51 63": {
+      "Callsign": "EDV5163",
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Cimble": "CIMBL",
+        "DEER PARK": "DPK",
+        "Detgy": "DETGY",
+        "Hair": "HAIRR",
+        "Haupt": "HAUPT",
+        "J F K": "KJFK",
+        "Kennedy": "KJFK",
+        "Lefer": "LEFER",
+        "Norton": "NRTON",
+        "Rosley": "ROSLY",
+        "Sajul": "SAJUL",
+        "Seagull": "CEEGL",
+        "Tapper": "TAPPR",
+        "Zalpo": "ZALPO"
+      },
+      "CandidateApproaches": {
+        "Belmont Visual Runway 22 Left": "BVA",
+        "ILS Runway 22L": "I2L",
+        "ILS Runway 22R": "I2R",
+        "RNAV Runway 22R": "R2R",
+        "RNAV X Runway 22L": "RX2L",
+        "RNAV Y Runway 22L": "RY2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual approach runway two two right": "22R",
+        "visual runway two two left": "22L",
+        "visual runway two two right": "22R",
+        "visual two two left": "22L",
+        "visual two two right": "22R"
+      },
+      "ApproachFixes": {
+        "BVA": {
+          "Zalpo": "ZALPO"
+        },
+        "I2L": {
+          "Cimble": "CIMBL",
+          "DEER PARK": "DPK",
+          "Detgy": "DETGY",
+          "Hair": "HAIRR",
+          "Haupt": "HAUPT",
+          "Lefer": "LEFER",
+          "Norton": "NRTON",
+          "Rosley": "ROSLY",
+          "Sajul": "SAJUL",
+          "Seagull": "CEEGL",
+          "Tapper": "TAPPR",
+          "Zalpo": "ZALPO"
+        },
+        "I2R": {
+          "Cimble": "CIMBL",
+          "Corvet": "CORVT",
+          "Detgy": "DETGY",
+          "Hair": "HAIRR",
+          "Haupt": "HAUPT",
+          "Lefer": "LEFER",
+          "Matter": "MATTR",
+          "Norton": "NRTON",
+          "Sajul": "SAJUL",
+          "Seagull": "CEEGL",
+          "Tapper": "TAPPR"
+        },
+        "R2R": {
+          "DEER PARK": "DPK",
+          "Heneb": "HENEB",
+          "Rivra": "RIVRA"
+        },
+        "RX2L": {
+          "Capit": "CAPIT",
+          "DEER PARK": "DPK",
+          "E-knee": "ENEEE",
+          "Gigpe": "GIGPE",
+          "Wikol": "WIKOL",
+          "Zosdo": "ZOSDO"
+        },
+        "RY2L": {
+          "DEER PARK": "DPK",
+          "Nayik": "NAYIK",
+          "Zalpo": "ZALPO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22L",
+      "STAR": "CAMRN5",
+      "Route": [
+        "KJFK"
+      ],
+      "Altitude": 4000,
+      "Heading": 40,
+      "Speed": 226,
+      "AssignedHeading": 40,
+      "State": "arrival",
+      "ControllerFrequency": "2A",
+      "TrackingController": "2A",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13L",
+        "31R",
+        "13R",
+        "31L"
+      ]
+    },
+    "JetBlue seven 17": {
+      "Callsign": "JBU717",
+      "LastAddressed": true,
+      "AircraftType": "BCS3",
+      "Fixes": {
+        "Cimble": "CIMBL",
+        "DEER PARK": "DPK",
+        "Detgy": "DETGY",
+        "Hair": "HAIRR",
+        "Haupt": "HAUPT",
+        "J F K": "KJFK",
+        "Kennedy": "KJFK",
+        "Lefer": "LEFER",
+        "Norton": "NRTON",
+        "Rosley": "ROSLY",
+        "Sajul": "SAJUL",
+        "Seagull": "CEEGL",
+        "Tapper": "TAPPR",
+        "Zalpo": "ZALPO"
+      },
+      "CandidateApproaches": {
+        "Belmont Visual Runway 22 Left": "BVA",
+        "ILS Runway 22L": "I2L",
+        "ILS Runway 22R": "I2R",
+        "RNAV Runway 22R": "R2R",
+        "RNAV X Runway 22L": "RX2L",
+        "RNAV Y Runway 22L": "RY2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual approach runway two two right": "22R",
+        "visual runway two two left": "22L",
+        "visual runway two two right": "22R",
+        "visual two two left": "22L",
+        "visual two two right": "22R"
+      },
+      "ApproachFixes": {
+        "BVA": {
+          "Zalpo": "ZALPO"
+        },
+        "I2L": {
+          "Cimble": "CIMBL",
+          "DEER PARK": "DPK",
+          "Detgy": "DETGY",
+          "Hair": "HAIRR",
+          "Haupt": "HAUPT",
+          "Lefer": "LEFER",
+          "Norton": "NRTON",
+          "Rosley": "ROSLY",
+          "Sajul": "SAJUL",
+          "Seagull": "CEEGL",
+          "Tapper": "TAPPR",
+          "Zalpo": "ZALPO"
+        },
+        "I2R": {
+          "Cimble": "CIMBL",
+          "Corvet": "CORVT",
+          "Detgy": "DETGY",
+          "Hair": "HAIRR",
+          "Haupt": "HAUPT",
+          "Lefer": "LEFER",
+          "Matter": "MATTR",
+          "Norton": "NRTON",
+          "Sajul": "SAJUL",
+          "Seagull": "CEEGL",
+          "Tapper": "TAPPR"
+        },
+        "R2R": {
+          "DEER PARK": "DPK",
+          "Heneb": "HENEB",
+          "Rivra": "RIVRA"
+        },
+        "RX2L": {
+          "Capit": "CAPIT",
+          "DEER PARK": "DPK",
+          "E-knee": "ENEEE",
+          "Gigpe": "GIGPE",
+          "Wikol": "WIKOL",
+          "Zosdo": "ZOSDO"
+        },
+        "RY2L": {
+          "DEER PARK": "DPK",
+          "Nayik": "NAYIK",
+          "Zalpo": "ZALPO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22L",
+      "STAR": "PARCH4",
+      "Route": [
+        "KJFK"
+      ],
+      "Altitude": 3566,
+      "Heading": 320,
+      "Speed": 212,
+      "AssignedHeading": 320,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "2A",
+      "TrackingController": "2A",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13L",
+        "31R",
+        "13R",
+        "31L"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Delta ten twenty four three miles from Zalpo two thousand till established could i last only two two left approach maintain one nine zero nine\"",
+    "[local-stt] normalized words: [delta 10 24 3 miles from zalpo 2 thousand till established could i last only 2 2 left approach maintain 1 9 0 9]",
+    "[local-stt] tokens: 19",
+    "[local-stt]   token[0]: Text=\"delta\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"10\" Type=1 Value=10",
+    "[local-stt]   token[2]: Text=\"24\" Type=1 Value=24",
+    "[local-stt]   token[3]: Text=\"3\" Type=1 Value=3",
+    "[local-stt]   token[4]: Text=\"miles\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"from\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"zalpo\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"20\" Type=2 Value=20",
+    "[local-stt]   token[8]: Text=\"till\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"established\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"could\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"i\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"last\" Type=0 Value=-1",
+    "[local-stt]   token[13]: Text=\"only\" Type=0 Value=-1",
+    "[local-stt]   token[14]: Text=\"22\" Type=1 Value=22",
+    "[local-stt]   token[15]: Text=\"left\" Type=0 Value=-1",
+    "[local-stt]   token[16]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[17]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[18]: Text=\"1909\" Type=1 Value=1909",
+    "[local-stt] MatchCallsign: 19 tokens, 7 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 19 tokens, 7 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Delta 10 24\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Delta 10 24\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"Delta 10 24\" (airline=1.000, flight=0.960, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Delta 10 24\" (airline=1.00, flight=0.96, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 7 results",
+    "[local-stt]     result 0: \"Delta six 24\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Delta eight 84\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Delta 27 93\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Delta 10 24\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Endeavor 49 zero niner\" (airline=0.547, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Delta 10 24\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Delta 10 24\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Delta 10 24\" (airline=0.500, flight=0.650, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"Delta 10 24\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"DAL1024\" (spokenKey=\"Delta 10 24\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"DAL1024\" SpokenKey=\"Delta 10 24\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=2000 Fixes=3 Approaches=6 VisualApproaches=6 AssignedApproach=\"ILS Runway 22L\" LAHSORunways=[13L 31R 13L 31R 13R 31L]",
+    "[local-stt]   fix: \"Kennedy\" -\u003e \"KJFK\"",
+    "[local-stt]   fix: \"J F K\" -\u003e \"KJFK\"",
+    "[local-stt]   fix: \"Zalpo\" -\u003e \"ZALPO\"",
+    "[local-stt]   approach: \"RNAV Y Runway 22L\" -\u003e \"RY2L\"",
+    "[local-stt]   approach: \"RNAV X Runway 22L\" -\u003e \"RX2L\"",
+    "[local-stt]   approach: \"ILS Runway 22L\" -\u003e \"I2L\"",
+    "[local-stt]   approach: \"Belmont Visual Runway 22 Left\" -\u003e \"BVA\"",
+    "[local-stt]   approach: \"ILS Runway 22R\" -\u003e \"I2R\"",
+    "[local-stt]   approach: \"RNAV Runway 22R\" -\u003e \"R2R\"",
+    "[local-stt]   visual approach: \"visual runway two two left\" -\u003e \"22L\"",
+    "[local-stt]   visual approach: \"visual approach runway two two left\" -\u003e \"22L\"",
+    "[local-stt]   visual approach: \"visual two two left\" -\u003e \"22L\"",
+    "[local-stt]   visual approach: \"visual runway two two right\" -\u003e \"22R\"",
+    "[local-stt]   visual approach: \"visual approach runway two two right\" -\u003e \"22R\"",
+    "[local-stt]   visual approach: \"visual two two right\" -\u003e \"22R\"",
+    "[local-stt] command tokens after disregard: 16",
+    "[local-stt]   token[0]: Text=\"3\" Type=1 Value=3",
+    "[local-stt]   token[1]: Text=\"miles\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"from\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"zalpo\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"20\" Type=2 Value=20",
+    "[local-stt]   token[5]: Text=\"till\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"established\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"could\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"i\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"last\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"only\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"22\" Type=1 Value=22",
+    "[local-stt]   token[12]: Text=\"left\" Type=0 Value=-1",
+    "[local-stt]   token[13]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[14]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[15]: Text=\"1909\" Type=1 Value=1909",
+    "[local-stt] ParseCommands: 16 tokens",
+    "[local-stt]   no match at token[0]=\"3\", skipping",
+    "[local-stt]   no match at token[1]=\"miles\", skipping",
+    "[local-stt]   matched command: \"\" [acknowledgment] (pos=2, conf=0.85, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[2]=\"from\", skipping",
+    "[local-stt]   no match at token[3]=\"zalpo\", skipping",
+    "[local-stt]   no match at token[3]=\"zalpo\", skipping",
+    "[local-stt]   matched command: \"A20\" [altitude_until_established] (pos=4, conf=0.95, consumed=4, isThen=false)",
+    "[local-stt]   matched command: \"A20\" [standalone_altitude] (pos=4, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[4]=\"20\", skipping",
+    "[local-stt]   matched command: \"A20\" [altitude_until_established] (pos=4, conf=0.95, consumed=4, isThen=false)",
+    "[local-stt]   matched command: \"A20\" [standalone_altitude] (pos=4, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[4]=\"20\", skipping",
+    "[local-stt]   skipping filler word: \"i\"",
+    "[local-stt]   matched command: \"\" [until_established] (pos=5, conf=0.93, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[5]=\"till\", skipping",
+    "[local-stt]   skipping filler word: \"i\"",
+    "[local-stt]   matched command: \"\" [until_established] (pos=5, conf=0.93, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[5]=\"till\", skipping",
+    "[local-stt]   no match at token[9]=\"last\", skipping",
+    "[local-stt]   skipping filler word: \"i\"",
+    "[local-stt]   no match at token[9]=\"last\", skipping",
+    "[local-stt]   skipping filler word: \"i\"",
+    "[local-stt]   no match at token[10]=\"only\", skipping",
+    "[local-stt]   no match at token[9]=\"last\", skipping",
+    "[local-stt]   no match at token[10]=\"only\", skipping",
+    "[local-stt]   no match at token[9]=\"last\", skipping",
+    "[local-stt]   no match at token[11]=\"22\", skipping",
+    "[local-stt]   no match at token[10]=\"only\", skipping",
+    "[local-stt]   no match at token[11]=\"22\", skipping",
+    "[local-stt]   no match at token[10]=\"only\", skipping",
+    "[local-stt]   no match at token[12]=\"left\", skipping",
+    "[local-stt]   no match at token[11]=\"22\", skipping",
+    "[local-stt]   no match at token[12]=\"left\", skipping",
+    "[local-stt]   no match at token[11]=\"22\", skipping",
+    "[local-stt]   no match at token[13]=\"approach\", skipping",
+    "[local-stt]   no match at token[12]=\"left\", skipping",
+    "[local-stt]   no match at token[13]=\"approach\", skipping",
+    "[local-stt]   no match at token[12]=\"left\", skipping",
+    "[local-stt]   matched command: \"S190\" [maintain_speed] (pos=14, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[14]=\"maintain\", skipping",
+    "[local-stt]   no match at token[13]=\"approach\", skipping",
+    "[local-stt]   matched command: \"S190\" [maintain_speed] (pos=14, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[14]=\"maintain\", skipping",
+    "[local-stt]   no match at token[13]=\"approach\", skipping",
+    "[local-stt]   matched command: \"S190\" [maintain_speed] (pos=14, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[14]=\"maintain\", skipping",
+    "[local-stt]   no match at token[15]=\"1909\", skipping",
+    "[local-stt]   beam final[0]: score=3.812 pos=16 commands=[A20 S190]",
+    "[local-stt]   beam final[1]: score=3.706 pos=16 commands=[A20 S190]",
+    "[local-stt]   beam final[2]: score=1.074 pos=16 commands=[A20 S190]",
+    "[local-stt]   beam final[3]: score=0.313 pos=16 commands=[A20]",
+    "[local-stt] ParseCommands: result=[A20 S190] (avgConf=0.97)",
+    "[local-stt] parsed commands: [A20 S190] (conf=0.97, kinds=10001)",
+    "[local-stt] validated commands: [A20 S190] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"DAL1024 A20 S190\" (conf=0.97, time=7.9837ms) ==="
+  ]
+}

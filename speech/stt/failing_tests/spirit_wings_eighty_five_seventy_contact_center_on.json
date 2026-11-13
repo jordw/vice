@@ -1,0 +1,188 @@
+{
+  "time": "2026-11-07T22:19:46.419143165Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Spirit Wings Eighty Five Seventy contact center one three three decimal nine",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, lima, information, Bullfrog three, Ended two, Bay-po two, Fadi, Mera, ST PETERSBURG, Lizard, Zaplin, Uflix, Jetstream, cobox, Zadsa, Darbs, Bucks, one niner right, one niner left, runway, r-nav, I L S, Southwest 45 95, Spirit Wings 49 74, Delta 11 32 heavy, spring, Wilon, Jockey, Ecake, Amory, Baypo, Lacen, Tampa International Airport, Finki, Ended",
+  "whisper_duration_ms": 470.921,
+  "audio_duration_ms": 3656,
+  "processor": "GPU: NVIDIA GeForce RTX 4060 Ti (8163MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "",
+  "command": "",
+  "reason": "callsign of an aircraft that is no longer on frequency; the only Spirit Wings in context is another flight",
+  "stt_aircraft": {
+    "Delta 11 32 heavy": {
+      "Callsign": "DAL1132",
+      "AircraftType": "B763",
+      "Fixes": {
+        "Amory": "AMORY",
+        "Ended": "ENDED",
+        "Jockey": "JOKKY",
+        "Lacen": "LACEN",
+        "Tampa": "KTPA"
+      },
+      "SID": "ENDED2",
+      "Route": [
+        "ENDED",
+        "LACEN",
+        "AMORY",
+        "JOKKY",
+        "DAWWN",
+        "BEORN",
+        "KATL"
+      ],
+      "Altitude": 5371,
+      "Heading": 270,
+      "Speed": 217,
+      "AssignedHeading": 270,
+      "State": "departure",
+      "ControllerFrequency": "1G",
+      "TrackingController": "1G"
+    },
+    "Southwest 45 95": {
+      "Callsign": "SWA4595",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Tampa": "KTPA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 19L": "I9L",
+        "ILS Runway 19R": "I9R",
+        "RNAV Runway 19L": "R9L",
+        "RNAV Runway 19R": "R9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one niner left": "19L",
+        "visual approach runway one niner right": "19R",
+        "visual one niner left": "19L",
+        "visual one niner right": "19R",
+        "visual runway one niner left": "19L",
+        "visual runway one niner right": "19R"
+      },
+      "ApproachFixes": {
+        "I9L": {
+          "Bucks": "BUCCS",
+          "Pomse": "POMSE"
+        },
+        "I9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE"
+        },
+        "R9L": {
+          "Darbs": "DARBS",
+          "Jetstream": "JSTRM",
+          "Lizard": "LZARD",
+          "Pomse": "POMSE",
+          "Uflix": "UFLIX",
+          "Zadsa": "ZADSA",
+          "Zaplin": "ZPLIN",
+          "cobox": "COBOX"
+        },
+        "R9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE",
+          "Zeshy": "ZESHY"
+        }
+      },
+      "STAR": "BLFRG3",
+      "Route": [
+        "KTPA"
+      ],
+      "Altitude": 11000,
+      "Heading": 325,
+      "Speed": 295,
+      "State": "arrival",
+      "ControllerFrequency": "1G",
+      "TrackingController": "1G",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "Spirit Wings 49 74": {
+      "Callsign": "NKS4974",
+      "AircraftType": "A20N",
+      "Fixes": {
+        "Baypo": "BAYPO",
+        "Camjo": "CAMJO",
+        "Ecake": "ECAKE",
+        "Finki": "FINKI",
+        "Tampa": "KTPA",
+        "Wilon": "WILON",
+        "spring": "SPRNG"
+      },
+      "SID": "BAYPO2",
+      "Route": [
+        "FINKI",
+        "BAYPO",
+        "ECAKE",
+        "WILON",
+        "SPRNG",
+        "CAMJO",
+        "HEPAR",
+        "TEEEM",
+        "BLAAN",
+        "BWAGS",
+        "EFFAY",
+        "WNGUD",
+        "POLYY",
+        "RAANE",
+        "OGRAE",
+        "PEETT",
+        "BBDOL",
+        "KPHL"
+      ],
+      "Altitude": 4633,
+      "Heading": 203,
+      "Speed": 208,
+      "State": "departure",
+      "ControllerFrequency": "1G",
+      "TrackingController": "1G"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Spirit Wings Eighty Five Seventy contact center one three three decimal nine\"",
+    "[local-stt] normalized words: [spirit wings 85 70 contact center 1 3 3 decimal 9]",
+    "[local-stt] tokens: 9",
+    "[local-stt]   token[0]: Text=\"spirit\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"wings\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"85\" Type=1 Value=85",
+    "[local-stt]   token[3]: Text=\"70\" Type=1 Value=70",
+    "[local-stt]   token[4]: Text=\"contact\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"center\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"133\" Type=1 Value=133",
+    "[local-stt]   token[7]: Text=\"decimal\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"9\" Type=1 Value=9",
+    "[local-stt] MatchCallsign: 9 tokens, 3 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 9 tokens, 3 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": no results",
+    "[local-stt]   pattern \"airline_only\": 3 results",
+    "[local-stt]     result 0: \"Southwest 45 95\" (airline=0.567, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Delta 11 32 heavy\" (airline=0.456, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Southwest 45 95\" (airline=0.437, flight=0.000, skip=1)",
+    "[local-stt]     pattern \"airline_only\": selected \"Southwest 45 95\" (airline=0.57, flight=0.00, skip=0)",
+    "[local-stt]     pattern \"airline_only\": scoring rejected \"Southwest 45 95\"",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": no results",
+    "[local-stt] callsign match: Callsign=\"\" SpokenKey=\"\" Conf=0.00 Consumed=0",
+    "[local-stt] no callsign match for \"Spirit Wings Eighty Five Seventy contact center one three three decimal nine\", ignoring"
+  ]
+}

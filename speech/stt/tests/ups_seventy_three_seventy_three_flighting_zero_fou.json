@@ -1,0 +1,815 @@
+{
+  "time": "2026-11-06T17:29:40.857146049Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "UPS Seventy Three Seventy Three flighting zero four zero descend and maintain three thousand",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, alpha, information, Saki five, Opaca four, Maggie three, Kalani four, Book eight, Palay three, Keola three, two six left, runway, r-nav, L D A, UPS three heavy, UPS 26 32 heavy, United 73 73, Southwest 65 64, Southwest three 32, november niner five zero juliet uniform, november seven two two lima whiskey, B Three Six Tango seven niner kebeck, Turbo Bonanza seven niner kebeck, november six four seven niner kebeck, november five four two four three, Japan Air 44 45 heavy, Hawaiian six zero four, Hawaiian five 29, Delta 43 heavy, Shlay, Jolip, Saki, Bispy, Nobody, Heftel, Cecil, KOKO HEAD, LANAI, On ode, Cudek, Bambo, Pupi, grittle, Roshe, HONOLULU, Kalaupapa Airport, Keola, Paylay, Daniel K. Inouye International Airport",
+  "whisper_duration_ms": 405.995,
+  "audio_duration_ms": 5832,
+  "processor": "GPU: NVIDIA GeForce RTX 4080 Laptop GPU (11995MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "UAL7373",
+  "command": "H040 D30",
+  "reason": "UPS for United; number exact; later transmission confirms",
+  "stt_aircraft": {
+    "B Three Six Tango seven niner kebeck": {
+      "Callsign": "N6479Q/T",
+      "AircraftType": "B36T",
+      "Fixes": {
+        "Bambo": "BAMBO",
+        "Bispy": "BISPE",
+        "Cecil": "SECIL",
+        "Cudek": "CUDEK",
+        "Daniel K. Inouye": "PHNL",
+        "HONOLULU": "HNL",
+        "Heftel": "HEFTL",
+        "Jolip": "JOLIP",
+        "KOKO HEAD": "CKH",
+        "Molokai": "PHMK",
+        "Nobody": "NBODY",
+        "On ode": "ONODE",
+        "Saki": "SAKKI",
+        "Shlay": "SHLAE",
+        "grittle": "GRITL"
+      },
+      "CandidateApproaches": {
+        "LDA Runway 26L": "L6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two six left": "26L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "L6L": {
+          "Bispy": "BISPE",
+          "Cecil": "SECIL",
+          "Cudek": "CUDEK",
+          "Heftel": "HEFTL",
+          "Jolip": "JOLIP",
+          "Nobody": "NBODY",
+          "On ode": "ONODE",
+          "Saki": "SAKKI",
+          "Shlay": "SHLAE"
+        },
+        "R6L": {
+          "Cecil": "SECIL",
+          "Ibicu": "IBICU",
+          "Kuhio": "KUHIO",
+          "Nali": "NALII",
+          "Saki": "SAKKI"
+        }
+      },
+      "AssignedApproach": "LDA Runway 26L",
+      "STAR": "MAGGI3",
+      "Route": [
+        "BAMBO",
+        "GRITL",
+        "CKH",
+        "HNL",
+        "PHNL"
+      ],
+      "Altitude": 6655,
+      "Heading": 290,
+      "Speed": 133,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H",
+      "AddressingForm": 1
+    },
+    "Delta 43 heavy": {
+      "Callsign": "DAL43",
+      "AircraftType": "B763",
+      "Fixes": {
+        "Bispy": "BISPE",
+        "Cecil": "SECIL",
+        "Cudek": "CUDEK",
+        "Daniel K. Inouye": "PHNL",
+        "HONOLULU": "HNL",
+        "Heftel": "HEFTL",
+        "Jolip": "JOLIP",
+        "Nobody": "NBODY",
+        "On ode": "ONODE",
+        "Saki": "SAKKI",
+        "Shlay": "SHLAE"
+      },
+      "CandidateApproaches": {
+        "LDA Runway 26L": "L6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two six left": "26L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "L6L": {
+          "Bispy": "BISPE",
+          "Cecil": "SECIL",
+          "Cudek": "CUDEK",
+          "Heftel": "HEFTL",
+          "Jolip": "JOLIP",
+          "Nobody": "NBODY",
+          "On ode": "ONODE",
+          "Saki": "SAKKI",
+          "Shlay": "SHLAE"
+        },
+        "R6L": {
+          "Cecil": "SECIL",
+          "Ibicu": "IBICU",
+          "Kuhio": "KUHIO",
+          "Nali": "NALII",
+          "Saki": "SAKKI"
+        }
+      },
+      "AssignedApproach": "LDA Runway 26L",
+      "STAR": "BOOKE8",
+      "Route": [
+        "HNL",
+        "PHNL"
+      ],
+      "Altitude": 8000,
+      "Heading": 110,
+      "Speed": 312,
+      "AssignedHeading": 110,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "Hawaiian five 29": {
+      "Callsign": "HAL529",
+      "AircraftType": "B712",
+      "Fixes": {
+        "Daniel K. Inouye": "PHNL",
+        "Kahului": "PHOG",
+        "LANAI": "LNY",
+        "Paylay": "PALAY",
+        "Roshe": "ROSHE"
+      },
+      "SID": "PALAY3",
+      "Route": [
+        "PALAY",
+        "ROSHE",
+        "LNY",
+        "PHOG"
+      ],
+      "Altitude": 2543,
+      "Heading": 220,
+      "Speed": 224,
+      "State": "departure",
+      "ControllerFrequency": "1L",
+      "TrackingController": "1L"
+    },
+    "Hawaiian six zero four": {
+      "Callsign": "HAL604",
+      "AircraftType": "A21N",
+      "Fixes": {
+        "Bispy": "BISPE",
+        "Cecil": "SECIL",
+        "Cudek": "CUDEK",
+        "Daniel K. Inouye": "PHNL",
+        "Heftel": "HEFTL",
+        "Jolip": "JOLIP",
+        "KOKO HEAD": "CKH",
+        "Nobody": "NBODY",
+        "On ode": "ONODE",
+        "Saki": "SAKKI",
+        "Shlay": "SHLAE",
+        "grittle": "GRITL"
+      },
+      "CandidateApproaches": {
+        "LDA Runway 26L": "L6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two six left": "26L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "L6L": {
+          "Bispy": "BISPE",
+          "Cecil": "SECIL",
+          "Cudek": "CUDEK",
+          "Heftel": "HEFTL",
+          "Jolip": "JOLIP",
+          "Nobody": "NBODY",
+          "On ode": "ONODE",
+          "Saki": "SAKKI",
+          "Shlay": "SHLAE"
+        },
+        "R6L": {
+          "Cecil": "SECIL",
+          "Ibicu": "IBICU",
+          "Kuhio": "KUHIO",
+          "Nali": "NALII",
+          "Saki": "SAKKI"
+        }
+      },
+      "AssignedApproach": "LDA Runway 26L",
+      "STAR": "MAGGI3",
+      "Route": [
+        "GRITL",
+        "CKH",
+        "PHNL"
+      ],
+      "Altitude": 3973,
+      "Heading": 270,
+      "Speed": 232,
+      "AssignedHeading": 270,
+      "State": "cleared approach",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "Japan Air 44 45 heavy": {
+      "Callsign": "JAL4445",
+      "LastAddressed": true,
+      "AircraftType": "B763",
+      "Fixes": {
+        "Daniel K. Inouye": "PHNL",
+        "Keola": "KEOLA",
+        "Pupi": "PUPPI"
+      },
+      "SID": "KEOLA3",
+      "Route": [
+        "KEOLA",
+        "PUPPI",
+        "CRESP",
+        "RJAA"
+      ],
+      "Altitude": 6020,
+      "Heading": 186,
+      "Speed": 292,
+      "State": "departure",
+      "ControllerFrequency": "1L",
+      "TrackingController": "1L"
+    },
+    "Southwest 65 64": {
+      "Callsign": "SWA6564",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Bispy": "BISPE",
+        "Cecil": "SECIL",
+        "Cudek": "CUDEK",
+        "Daniel K. Inouye": "PHNL",
+        "Heftel": "HEFTL",
+        "Jolip": "JOLIP",
+        "Kahului": "PHOG",
+        "Nobody": "NBODY",
+        "On ode": "ONODE",
+        "Saki": "SAKKI",
+        "Shlay": "SHLAE"
+      },
+      "CandidateApproaches": {
+        "LDA Runway 26L": "L6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two six left": "26L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "L6L": {
+          "Bispy": "BISPE",
+          "Cecil": "SECIL",
+          "Cudek": "CUDEK",
+          "Heftel": "HEFTL",
+          "Jolip": "JOLIP",
+          "Nobody": "NBODY",
+          "On ode": "ONODE",
+          "Saki": "SAKKI",
+          "Shlay": "SHLAE"
+        },
+        "R6L": {
+          "Cecil": "SECIL",
+          "Ibicu": "IBICU",
+          "Kuhio": "KUHIO",
+          "Nali": "NALII",
+          "Saki": "SAKKI"
+        }
+      },
+      "AssignedApproach": "LDA Runway 26L",
+      "STAR": "SAKKI5",
+      "Route": [
+        "PHNL"
+      ],
+      "Altitude": 5000,
+      "Heading": 139,
+      "Speed": 287,
+      "AssignedHeading": 120,
+      "State": "arrival",
+      "ControllerFrequency": "1L",
+      "TrackingController": "1L"
+    },
+    "Southwest three 32": {
+      "Callsign": "SWA332",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Daniel K. Inouye": "PHNL",
+        "HONOLULU": "HNL",
+        "Lihue": "PHLI"
+      },
+      "CandidateApproaches": {
+        "LDA Runway 26L": "L6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two six left": "26L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "L6L": {
+          "Bispy": "BISPE",
+          "Cecil": "SECIL",
+          "Cudek": "CUDEK",
+          "Heftel": "HEFTL",
+          "Jolip": "JOLIP",
+          "Nobody": "NBODY",
+          "On ode": "ONODE",
+          "Saki": "SAKKI",
+          "Shlay": "SHLAE"
+        },
+        "R6L": {
+          "Cecil": "SECIL",
+          "Ibicu": "IBICU",
+          "Kuhio": "KUHIO",
+          "Nali": "NALII",
+          "Saki": "SAKKI"
+        }
+      },
+      "STAR": "BOOKE8",
+      "Route": [
+        "HNL",
+        "PHNL"
+      ],
+      "Altitude": 8000,
+      "Heading": 76,
+      "Speed": 310,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "Turbo Bonanza seven niner kebeck": {
+      "Callsign": "N6479Q/T",
+      "AircraftType": "B36T",
+      "Fixes": {
+        "Bambo": "BAMBO",
+        "Bispy": "BISPE",
+        "Cecil": "SECIL",
+        "Cudek": "CUDEK",
+        "Daniel K. Inouye": "PHNL",
+        "HONOLULU": "HNL",
+        "Heftel": "HEFTL",
+        "Jolip": "JOLIP",
+        "KOKO HEAD": "CKH",
+        "Molokai": "PHMK",
+        "Nobody": "NBODY",
+        "On ode": "ONODE",
+        "Saki": "SAKKI",
+        "Shlay": "SHLAE",
+        "grittle": "GRITL"
+      },
+      "CandidateApproaches": {
+        "LDA Runway 26L": "L6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two six left": "26L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "L6L": {
+          "Bispy": "BISPE",
+          "Cecil": "SECIL",
+          "Cudek": "CUDEK",
+          "Heftel": "HEFTL",
+          "Jolip": "JOLIP",
+          "Nobody": "NBODY",
+          "On ode": "ONODE",
+          "Saki": "SAKKI",
+          "Shlay": "SHLAE"
+        },
+        "R6L": {
+          "Cecil": "SECIL",
+          "Ibicu": "IBICU",
+          "Kuhio": "KUHIO",
+          "Nali": "NALII",
+          "Saki": "SAKKI"
+        }
+      },
+      "AssignedApproach": "LDA Runway 26L",
+      "STAR": "MAGGI3",
+      "Route": [
+        "BAMBO",
+        "GRITL",
+        "CKH",
+        "HNL",
+        "PHNL"
+      ],
+      "Altitude": 6655,
+      "Heading": 290,
+      "Speed": 133,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H",
+      "AddressingForm": 1
+    },
+    "UPS 26 32 heavy": {
+      "Callsign": "UPS2632",
+      "AircraftType": "B748",
+      "Fixes": {
+        "Daniel K. Inouye": "PHNL"
+      },
+      "CandidateApproaches": {
+        "LDA Runway 26L": "L6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two six left": "26L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "L6L": {
+          "Bispy": "BISPE",
+          "Cecil": "SECIL",
+          "Cudek": "CUDEK",
+          "Heftel": "HEFTL",
+          "Jolip": "JOLIP",
+          "Nobody": "NBODY",
+          "On ode": "ONODE",
+          "Saki": "SAKKI",
+          "Shlay": "SHLAE"
+        },
+        "R6L": {
+          "Cecil": "SECIL",
+          "Ibicu": "IBICU",
+          "Kuhio": "KUHIO",
+          "Nali": "NALII",
+          "Saki": "SAKKI"
+        }
+      },
+      "STAR": "KLANI4",
+      "Route": [
+        "PHNL"
+      ],
+      "Altitude": 12000,
+      "Heading": 88,
+      "Speed": 379,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "UPS three heavy": {
+      "Callsign": "UPS3",
+      "AircraftType": "B748",
+      "Fixes": {
+        "Daniel K. Inouye": "PHNL",
+        "Heftel": "HEFTL",
+        "On ode": "ONODE"
+      },
+      "CandidateApproaches": {
+        "LDA Runway 26L": "L6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two six left": "26L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "L6L": {
+          "Bispy": "BISPE",
+          "Cecil": "SECIL",
+          "Cudek": "CUDEK",
+          "Heftel": "HEFTL",
+          "Jolip": "JOLIP",
+          "Nobody": "NBODY",
+          "On ode": "ONODE",
+          "Saki": "SAKKI",
+          "Shlay": "SHLAE"
+        },
+        "R6L": {
+          "Cecil": "SECIL",
+          "Ibicu": "IBICU",
+          "Kuhio": "KUHIO",
+          "Nali": "NALII",
+          "Saki": "SAKKI"
+        }
+      },
+      "AssignedApproach": "LDA Runway 26L",
+      "STAR": "KLANI4",
+      "Route": [
+        "ONODE",
+        "HEFTL",
+        "PHNL"
+      ],
+      "Altitude": 3000,
+      "Heading": 307,
+      "Speed": 161,
+      "State": "cleared approach",
+      "ControllerFrequency": "1L",
+      "TrackingController": "1L"
+    },
+    "United 73 73": {
+      "Callsign": "UAL7373",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Bispy": "BISPE",
+        "Cecil": "SECIL",
+        "Cudek": "CUDEK",
+        "Daniel K. Inouye": "PHNL",
+        "HONOLULU": "HNL",
+        "Heftel": "HEFTL",
+        "Jolip": "JOLIP",
+        "Nobody": "NBODY",
+        "On ode": "ONODE",
+        "Saki": "SAKKI",
+        "Shlay": "SHLAE"
+      },
+      "CandidateApproaches": {
+        "LDA Runway 26L": "L6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two six left": "26L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "L6L": {
+          "Bispy": "BISPE",
+          "Cecil": "SECIL",
+          "Cudek": "CUDEK",
+          "Heftel": "HEFTL",
+          "Jolip": "JOLIP",
+          "Nobody": "NBODY",
+          "On ode": "ONODE",
+          "Saki": "SAKKI",
+          "Shlay": "SHLAE"
+        },
+        "R6L": {
+          "Cecil": "SECIL",
+          "Ibicu": "IBICU",
+          "Kuhio": "KUHIO",
+          "Nali": "NALII",
+          "Saki": "SAKKI"
+        }
+      },
+      "AssignedApproach": "LDA Runway 26L",
+      "STAR": "OPACA4",
+      "Route": [
+        "HNL",
+        "PHNL"
+      ],
+      "Altitude": 6000,
+      "Heading": 70,
+      "Speed": 286,
+      "AssignedHeading": 70,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "november five four two four three": {
+      "Callsign": "N54243",
+      "Fixes": {
+        "Kalaeloa": "PHJR",
+        "Kalaupapa": "PHLU"
+      },
+      "Altitude": 24,
+      "Heading": 31,
+      "Speed": 101,
+      "State": "vfr flight following",
+      "ControllerFrequency": "1H"
+    },
+    "november niner five zero juliet uniform": {
+      "Callsign": "N950JU",
+      "Fixes": {
+        "Kalaeloa": "PHJR",
+        "Kalaupapa": "PHLU"
+      },
+      "Altitude": 2896,
+      "Heading": 81,
+      "Speed": 259,
+      "State": "vfr flight following",
+      "ControllerFrequency": "1H"
+    },
+    "november seven two two lima whiskey": {
+      "Callsign": "N722LW",
+      "Fixes": {
+        "Kalaeloa": "PHJR",
+        "Kalaupapa": "PHLU"
+      },
+      "Altitude": 7358,
+      "Heading": 84,
+      "Speed": 307,
+      "State": "vfr flight following",
+      "ControllerFrequency": "1H"
+    },
+    "november six four seven niner kebeck": {
+      "Callsign": "N6479Q",
+      "AircraftType": "B36T",
+      "Fixes": {
+        "Bambo": "BAMBO",
+        "Bispy": "BISPE",
+        "Cecil": "SECIL",
+        "Cudek": "CUDEK",
+        "Daniel K. Inouye": "PHNL",
+        "HONOLULU": "HNL",
+        "Heftel": "HEFTL",
+        "Jolip": "JOLIP",
+        "KOKO HEAD": "CKH",
+        "Molokai": "PHMK",
+        "Nobody": "NBODY",
+        "On ode": "ONODE",
+        "Saki": "SAKKI",
+        "Shlay": "SHLAE",
+        "grittle": "GRITL"
+      },
+      "CandidateApproaches": {
+        "LDA Runway 26L": "L6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two six left": "26L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "L6L": {
+          "Bispy": "BISPE",
+          "Cecil": "SECIL",
+          "Cudek": "CUDEK",
+          "Heftel": "HEFTL",
+          "Jolip": "JOLIP",
+          "Nobody": "NBODY",
+          "On ode": "ONODE",
+          "Saki": "SAKKI",
+          "Shlay": "SHLAE"
+        },
+        "R6L": {
+          "Cecil": "SECIL",
+          "Ibicu": "IBICU",
+          "Kuhio": "KUHIO",
+          "Nali": "NALII",
+          "Saki": "SAKKI"
+        }
+      },
+      "AssignedApproach": "LDA Runway 26L",
+      "STAR": "MAGGI3",
+      "Route": [
+        "BAMBO",
+        "GRITL",
+        "CKH",
+        "HNL",
+        "PHNL"
+      ],
+      "Altitude": 6655,
+      "Heading": 290,
+      "Speed": 133,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"UPS Seventy Three Seventy Three flighting zero four zero descend and maintain three thousand\"",
+    "[local-stt] normalized words: [ups 73 73 flighting 0 4 0 descend and maintain 3 thousand]",
+    "[local-stt] tokens: 9",
+    "[local-stt]   token[0]: Text=\"ups\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"73\" Type=1 Value=73",
+    "[local-stt]   token[2]: Text=\"73\" Type=1 Value=73",
+    "[local-stt]   token[3]: Text=\"flighting\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"040\" Type=1 Value=40",
+    "[local-stt]   token[5]: Text=\"descend\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"and\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"30\" Type=2 Value=30",
+    "[local-stt] MatchCallsign: 9 tokens, 15 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 9 tokens, 15 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 3 results",
+    "[local-stt]     result 0: \"United 73 73\" (airline=0.550, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"UPS three heavy\" (airline=1.000, flight=0.750, skip=0)",
+    "[local-stt]     result 2: \"Delta 43 heavy\" (airline=0.541, flight=0.700, skip=3)",
+    "[local-stt]     pattern \"airline_flight\": selected \"UPS three heavy\" (airline=1.00, flight=0.75, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 11 results",
+    "[local-stt]     result 0: \"United 73 73\" (airline=0.550, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Southwest three 32\" (airline=0.463, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"UPS 26 32 heavy\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Southwest 65 64\" (airline=0.463, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"UPS three heavy\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"UPS 26 32 heavy\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"United 73 73\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"United 73 73\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"United 73 73\" (airline=0.500, flight=0.700, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"United 73 73\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   best callsign candidate: \"UPS3\" (conf=0.95, consumed=3, addressingForm=0, spokenKey=\"UPS three heavy\"; 3 candidates)",
+    "[local-stt] ParseCommands: 6 tokens",
+    "[local-stt]   matched command: \"H040\" [fly_heading] (pos=0, conf=0.92, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"flighting\", skipping",
+    "[local-stt]   matched command: \"D30\" [descend_maintain] (pos=2, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[2]=\"descend\", skipping",
+    "[local-stt]   no match at token[1]=\"040\", skipping",
+    "[local-stt]   matched command: \"A30\" [maintain_altitude] (pos=3, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   skipping filler word: \"and\"",
+    "[local-stt]   matched command: \"D30\" [descend_maintain] (pos=2, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[2]=\"descend\", skipping",
+    "[local-stt]   matched command: \"A30\" [maintain_altitude] (pos=4, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[4]=\"maintain\", skipping",
+    "[local-stt]   beam final[0]: score=3.425 pos=6 commands=[H040 D30]",
+    "[local-stt]   beam final[1]: score=0.089 pos=6 commands=[D30]",
+    "[local-stt]   beam final[2]: score=-0.074 pos=6 commands=[H040 A30]",
+    "[local-stt]   beam final[3]: score=-0.074 pos=6 commands=[H040 A30]",
+    "[local-stt] ParseCommands: result=[H040 D30] (avgConf=0.96)",
+    "[local-stt] ParseCommands: 6 tokens",
+    "[local-stt]   matched command: \"H040\" [fly_heading] (pos=0, conf=0.92, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"flighting\", skipping",
+    "[local-stt]   matched command: \"D30\" [descend_maintain] (pos=2, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[2]=\"descend\", skipping",
+    "[local-stt]   no match at token[1]=\"040\", skipping",
+    "[local-stt]   matched command: \"A30\" [maintain_altitude] (pos=3, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   skipping filler word: \"and\"",
+    "[local-stt]   matched command: \"D30\" [descend_maintain] (pos=2, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[2]=\"descend\", skipping",
+    "[local-stt]   matched command: \"A30\" [maintain_altitude] (pos=4, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[4]=\"maintain\", skipping",
+    "[local-stt]   beam final[0]: score=3.425 pos=6 commands=[H040 D30]",
+    "[local-stt]   beam final[1]: score=0.089 pos=6 commands=[D30]",
+    "[local-stt]   beam final[2]: score=-0.074 pos=6 commands=[H040 A30]",
+    "[local-stt]   beam final[3]: score=-0.074 pos=6 commands=[H040 A30]",
+    "[local-stt] ParseCommands: result=[H040 D30] (avgConf=0.96)",
+    "[local-stt] ParseCommands: 8 tokens",
+    "[local-stt]   no match at token[0]=\"73\", skipping",
+    "[local-stt]   no match at token[1]=\"73\", skipping",
+    "[local-stt]   matched command: \"H040\" [fly_heading] (pos=2, conf=0.92, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[2]=\"flighting\", skipping",
+    "[local-stt]   matched command: \"D30\" [descend_maintain] (pos=4, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[4]=\"descend\", skipping",
+    "[local-stt]   no match at token[3]=\"040\", skipping",
+    "[local-stt]   matched command: \"A30\" [maintain_altitude] (pos=5, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   skipping filler word: \"and\"",
+    "[local-stt]   matched command: \"D30\" [descend_maintain] (pos=4, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[4]=\"descend\", skipping",
+    "[local-stt]   matched command: \"A30\" [maintain_altitude] (pos=6, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[6]=\"maintain\", skipping",
+    "[local-stt]   beam final[0]: score=3.425 pos=8 commands=[H040 D30]",
+    "[local-stt]   beam final[1]: score=0.089 pos=8 commands=[D30]",
+    "[local-stt]   beam final[2]: score=-0.074 pos=8 commands=[H040 A30]",
+    "[local-stt]   beam final[3]: score=-0.074 pos=8 commands=[H040 A30]",
+    "[local-stt] ParseCommands: result=[H040 D30] (avgConf=0.96)",
+    "[local-stt] callsign match: Callsign=\"UPS3\" SpokenKey=\"UPS three heavy\" Conf=0.95 Consumed=3",
+    "[local-stt] aircraft context: State=\"cleared approach\" Altitude=3000 Fixes=3 Approaches=2 VisualApproaches=3 AssignedApproach=\"LDA Runway 26L\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Daniel K. Inouye\" -\u003e \"PHNL\"",
+    "[local-stt]   fix: \"On ode\" -\u003e \"ONODE\"",
+    "[local-stt]   fix: \"Heftel\" -\u003e \"HEFTL\"",
+    "[local-stt]   approach: \"RNAV Runway 26L\" -\u003e \"R6L\"",
+    "[local-stt]   approach: \"LDA Runway 26L\" -\u003e \"L6L\"",
+    "[local-stt]   visual approach: \"visual runway two six left\" -\u003e \"26L\"",
+    "[local-stt]   visual approach: \"visual approach runway two six left\" -\u003e \"26L\"",
+    "[local-stt]   visual approach: \"visual two six left\" -\u003e \"26L\"",
+    "[local-stt] command tokens after disregard: 6",
+    "[local-stt]   token[0]: Text=\"flighting\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"040\" Type=1 Value=40",
+    "[local-stt]   token[2]: Text=\"descend\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"and\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"30\" Type=2 Value=30",
+    "[local-stt] ParseCommands: 6 tokens",
+    "[local-stt]   matched command: \"H040\" [fly_heading] (pos=0, conf=0.92, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"flighting\", skipping",
+    "[local-stt]   matched command: \"D30\" [descend_maintain] (pos=2, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[2]=\"descend\", skipping",
+    "[local-stt]   no match at token[1]=\"040\", skipping",
+    "[local-stt]   matched command: \"A30\" [maintain_altitude] (pos=3, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   skipping filler word: \"and\"",
+    "[local-stt]   matched command: \"D30\" [descend_maintain] (pos=2, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[2]=\"descend\", skipping",
+    "[local-stt]   matched command: \"A30\" [maintain_altitude] (pos=4, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[4]=\"maintain\", skipping",
+    "[local-stt]   beam final[0]: score=3.425 pos=6 commands=[H040 D30]",
+    "[local-stt]   beam final[1]: score=0.089 pos=6 commands=[D30]",
+    "[local-stt]   beam final[2]: score=-0.074 pos=6 commands=[H040 A30]",
+    "[local-stt]   beam final[3]: score=-0.074 pos=6 commands=[H040 A30]",
+    "[local-stt] ParseCommands: result=[H040 D30] (avgConf=0.96)",
+    "[local-stt] parsed commands: [H040 D30] (conf=0.96, kinds=1)",
+    "[local-stt] validated commands: [H040 D30] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"UPS3 H040 D30\" (conf=0.91, time=8.6827ms) ==="
+  ]
+}

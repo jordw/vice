@@ -1,0 +1,253 @@
+{
+  "time": "2026-11-06T01:45:22.551521694Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Delta 11 52 Philadelphia departure unit contact clementine one zero thousand",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, sierra, information, Pat's four, Jim's four, Philly four, Wikav, B-dawk, Jepug, Kusle, Albeck, Menge, Martin, Enzew, three five, two seven right, runway, r-nav, I L S, Piedmont 59 41, Blue Streak 56 21, Delta 11 52, Turnbull, CASANOVA, Muddog, Pats, WESTMINSTER, Jimms, Esso, Reefee, Philadelphia International Airport, Stoen",
+  "whisper_duration_ms": 888.883,
+  "audio_duration_ms": 4808,
+  "processor": "GPU: NVIDIA GeForce GTX 1660 SUPER (6180MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "DAL1152",
+  "command": "C100",
+  "reason": "radar contact, garbled, must not be a handoff",
+  "stt_aircraft": {
+    "Blue Streak 56 21": {
+      "Callsign": "JIA5621",
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Esso": "ESSSO",
+        "Pats": "PAATS",
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "27R",
+        "RNAV Runway 35": "G35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway two seven right": "27R",
+        "visual runway three five": "35",
+        "visual runway two seven right": "27R",
+        "visual three five": "35",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "27R": {
+          "Enzew": "ENZEW",
+          "Jalto": "JALTO",
+          "Martin": "MRTIN",
+          "Menge": "MENGE"
+        },
+        "G35": {
+          "Albeck": "ALBEK",
+          "B-dawk": "BDAWK",
+          "Cemek": "CEMEK",
+          "Harlu": "HARLU",
+          "Jepug": "JEPUG",
+          "Jimms": "JIIMS",
+          "Kusle": "KUSLE",
+          "Wikav": "WIKAV"
+        }
+      },
+      "STAR": "PAATS4",
+      "Route": [
+        "ESSSO",
+        "PAATS",
+        "KPHL"
+      ],
+      "Altitude": 10000,
+      "Heading": 12,
+      "Speed": 300,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "17",
+        "35",
+        "8",
+        "26",
+        "9L",
+        "27R"
+      ]
+    },
+    "Delta 11 52": {
+      "Callsign": "DAL1152",
+      "AircraftType": "A321",
+      "Fixes": {
+        "CASANOVA": "CSN",
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL",
+        "Reefee": "REEFI",
+        "Stoen": "STOEN",
+        "WESTMINSTER": "EMI"
+      },
+      "SID": "PHL4",
+      "Route": [
+        "STOEN",
+        "REEFI",
+        "EMI",
+        "CSN",
+        "MOL",
+        "KATL"
+      ],
+      "Altitude": 3117,
+      "Heading": 245,
+      "Speed": 208,
+      "State": "departure",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "Piedmont 59 41": {
+      "Callsign": "PDT5941",
+      "AircraftType": "E145",
+      "Fixes": {
+        "Jimms": "JIIMS",
+        "Muddog": "MDOGG",
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL",
+        "Turnbull": "TRNBL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "27R",
+        "RNAV Runway 35": "G35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway two seven right": "27R",
+        "visual runway three five": "35",
+        "visual runway two seven right": "27R",
+        "visual three five": "35",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "27R": {
+          "Enzew": "ENZEW",
+          "Jalto": "JALTO",
+          "Martin": "MRTIN",
+          "Menge": "MENGE"
+        },
+        "G35": {
+          "Albeck": "ALBEK",
+          "B-dawk": "BDAWK",
+          "Cemek": "CEMEK",
+          "Harlu": "HARLU",
+          "Jepug": "JEPUG",
+          "Jimms": "JIIMS",
+          "Kusle": "KUSLE",
+          "Wikav": "WIKAV"
+        }
+      },
+      "STAR": "JIIMS4",
+      "Route": [
+        "JIIMS",
+        "MDOGG",
+        "TRNBL",
+        "KPHL"
+      ],
+      "Altitude": 9000,
+      "Heading": 351,
+      "Speed": 291,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "17",
+        "35",
+        "8",
+        "26",
+        "9L",
+        "27R"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Delta 11 52 Philadelphia departure unit contact clementine one zero thousand\"",
+    "[local-stt] normalized words: [delta 11 52 philadelphia departure unit contact clementine 1 0 thousand]",
+    "[local-stt] tokens: 9",
+    "[local-stt]   token[0]: Text=\"delta\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"11\" Type=1 Value=11",
+    "[local-stt]   token[2]: Text=\"52\" Type=1 Value=52",
+    "[local-stt]   token[3]: Text=\"philadelphia\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"departure\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"unit\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"contact\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"clementine\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"100\" Type=2 Value=100",
+    "[local-stt] MatchCallsign: 9 tokens, 3 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 9 tokens, 3 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Delta 11 52\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Delta 11 52\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"Delta 11 52\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Delta 11 52\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 6 results",
+    "[local-stt]     result 0: \"Blue Streak 56 21\" (airline=0.483, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Piedmont 59 41\" (airline=0.383, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Delta 11 52\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Blue Streak 56 21\" (airline=0.556, flight=0.000, skip=3)",
+    "[local-stt]     result 4: \"Piedmont 59 41\" (airline=0.575, flight=0.000, skip=3)",
+    "[local-stt]     pattern \"airline_only\": selected \"Delta 11 52\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"Delta 11 52\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Delta 11 52\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"Delta 11 52\" (airline=0.500, flight=0.700, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Delta 11 52\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"DAL1152\" (spokenKey=\"Delta 11 52\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"DAL1152\" SpokenKey=\"Delta 11 52\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"departure\" Altitude=3117 Fixes=6 Approaches=0 VisualApproaches=0 AssignedApproach=\"\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Reefee\" -\u003e \"REEFI\"",
+    "[local-stt]   fix: \"WESTMINSTER\" -\u003e \"EMI\"",
+    "[local-stt]   fix: \"CASANOVA\" -\u003e \"CSN\"",
+    "[local-stt]   fix: \"Philly\" -\u003e \"KPHL\"",
+    "[local-stt]   fix: \"Philadelphia\" -\u003e \"KPHL\"",
+    "[local-stt]   fix: \"Stoen\" -\u003e \"STOEN\"",
+    "[local-stt] command tokens after disregard: 6",
+    "[local-stt]   token[0]: Text=\"philadelphia\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"departure\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"unit\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"contact\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"clementine\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"100\" Type=2 Value=100",
+    "[local-stt] ParseCommands: 6 tokens",
+    "[local-stt]   matched command: \"\" [position_id] (pos=0, conf=0.74, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"philadelphia\", skipping",
+    "[local-stt]   no match at token[2]=\"unit\", skipping",
+    "[local-stt]   matched command: \"\" [radar_contact_info] (pos=1, conf=0.78, consumed=3, isThen=false)",
+    "[local-stt]   matched command: \"\" [position_id] (pos=1, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[1]=\"departure\", skipping",
+    "[local-stt]   no match at token[3]=\"contact\", skipping",
+    "[local-stt]   matched command: \"C100\" [climb_maintain] (pos=4, conf=0.92, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[4]=\"clementine\", skipping",
+    "[local-stt]   no match at token[2]=\"unit\", skipping",
+    "[local-stt]   no match at token[2]=\"unit\", skipping",
+    "[local-stt]   matched command: \"C100\" [climb_maintain] (pos=4, conf=0.92, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[4]=\"clementine\", skipping",
+    "[local-stt]   no match at token[3]=\"contact\", skipping",
+    "[local-stt]   matched command: \"A100\" [standalone_altitude] (pos=5, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[5]=\"100\", skipping",
+    "[local-stt]   matched command: \"A100\" [standalone_altitude] (pos=5, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[5]=\"100\", skipping",
+    "[local-stt]   matched command: \"C100\" [climb_maintain] (pos=4, conf=0.92, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[4]=\"clementine\", skipping",
+    "[local-stt]   beam final[0]: score=1.631 pos=6 commands=[C100]",
+    "[local-stt]   beam final[1]: score=-0.236 pos=6 commands=[C100]",
+    "[local-stt]   beam final[2]: score=-0.777 pos=6 commands=[C100]",
+    "[local-stt]   beam final[3]: score=-1.107 pos=6 commands=[A100]",
+    "[local-stt] ParseCommands: result=[C100] (avgConf=0.92)",
+    "[local-stt] parsed commands: [C100] (conf=0.92, kinds=101)",
+    "[local-stt] validated commands: [C100] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"DAL1152 C100\" (conf=0.92, time=9.9849ms) ==="
+  ]
+}

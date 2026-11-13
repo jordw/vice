@@ -1,0 +1,1036 @@
+{
+  "time": "2026-11-10T01:50:10.810597638Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Radar Breakout Air Correction Southwest Sixty Eight Fifty Four maintain one six zero knots correction maintain one seven zero knots until eight five miles just reduce speed to one seven zero for now",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, alpha, information, Snakepit two, Smoke three, Jacks two, Gibbs four, Cozart, Coyle, Musky, Pukai, Trak, Miller, Gobge, Stewer, knight, two three right, two three left, runway, zulu, yankee, r-nav, I L S, United 21, Southwest 71 43, Southwest 68 54, Spirit Wings 46 68, American 96 38 heavy, American six 79, American three 47, American 25, Checkered, Driver, Race in, peyton, Pacer, Clang, Ramey, Bird, Larry, Sibov, Zosar, Indianapolis International Airport",
+  "whisper_duration_ms": 724.095,
+  "audio_duration_ms": 8648,
+  "processor": "GPU: NVIDIA GeForce RTX 3060 (12329MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "SWA6854",
+  "command": "S170",
+  "reason": "corrections of a speed; 170 knots must not be an altitude",
+  "stt_aircraft": {
+    "American 25": {
+      "Callsign": "AAL25",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Checkered": "CKERD",
+        "Clang": "CLANG",
+        "Driver": "DRVVR",
+        "Indianapolis": "KIND",
+        "Indy": "KIND",
+        "Race in": "RACEN",
+        "Zosar": "ZOSAR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23L": "I3L",
+        "ILS Runway 23R": "I3R",
+        "RNAV Y Runway 23L": "R3L",
+        "RNAV Y Runway 23R": "R3R",
+        "RNAV Z Runway 23L": "Z3L",
+        "RNAV Z Runway 23R": "Z3R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three left": "23L",
+        "visual approach runway two three right": "23R",
+        "visual runway two three left": "23L",
+        "visual runway two three right": "23R",
+        "visual two three left": "23L",
+        "visual two three right": "23R"
+      },
+      "ApproachFixes": {
+        "I3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "I3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "R3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "R3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "Z3L": {
+          "Bird": "BBIRD",
+          "Gobge": "GOBGE",
+          "Larry": "LLARY",
+          "Miller": "MIILR",
+          "Pacer": "PACRR",
+          "Pukai": "PUKAE",
+          "Stewer": "STEWR",
+          "Trak": "TRAAK",
+          "knight": "KNIGT"
+        },
+        "Z3R": {
+          "Checkered": "CKERD",
+          "Coyle": "COYLE",
+          "Cozart": "COZRT",
+          "Driver": "DRVVR",
+          "Miller": "MIILR",
+          "Musky": "MUSKE",
+          "Race in": "RACEN",
+          "Trak": "TRAAK",
+          "peyton": "PETYN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 23R",
+      "STAR": "SMUKE3",
+      "Route": [
+        "ZOSAR",
+        "KIND"
+      ],
+      "Altitude": 4164,
+      "Heading": 44,
+      "Speed": 248,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "American 96 38 heavy": {
+      "Callsign": "AAL9638",
+      "AircraftType": "B788",
+      "Fixes": {
+        "Bird": "BBIRD",
+        "Indianapolis": "KIND",
+        "Indy": "KIND",
+        "Pacer": "PACRR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23L": "I3L",
+        "ILS Runway 23R": "I3R",
+        "RNAV Y Runway 23L": "R3L",
+        "RNAV Y Runway 23R": "R3R",
+        "RNAV Z Runway 23L": "Z3L",
+        "RNAV Z Runway 23R": "Z3R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three left": "23L",
+        "visual approach runway two three right": "23R",
+        "visual runway two three left": "23L",
+        "visual runway two three right": "23R",
+        "visual two three left": "23L",
+        "visual two three right": "23R"
+      },
+      "ApproachFixes": {
+        "I3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "I3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "R3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "R3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "Z3L": {
+          "Bird": "BBIRD",
+          "Gobge": "GOBGE",
+          "Larry": "LLARY",
+          "Miller": "MIILR",
+          "Pacer": "PACRR",
+          "Pukai": "PUKAE",
+          "Stewer": "STEWR",
+          "Trak": "TRAAK",
+          "knight": "KNIGT"
+        },
+        "Z3R": {
+          "Checkered": "CKERD",
+          "Coyle": "COYLE",
+          "Cozart": "COZRT",
+          "Driver": "DRVVR",
+          "Miller": "MIILR",
+          "Musky": "MUSKE",
+          "Race in": "RACEN",
+          "Trak": "TRAAK",
+          "peyton": "PETYN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 23L",
+      "STAR": "SNKPT2",
+      "Route": [
+        "BBIRD",
+        "PACRR",
+        "KIND"
+      ],
+      "Altitude": 4033,
+      "Heading": 235,
+      "Speed": 154,
+      "AssignedSpeed": 170,
+      "State": "cleared approach",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "American six 79": {
+      "Callsign": "AAL679",
+      "AircraftType": "MD82",
+      "Fixes": {
+        "Bird": "BBIRD",
+        "Indianapolis": "KIND",
+        "Indy": "KIND",
+        "Larry": "LLARY",
+        "Pacer": "PACRR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23L": "I3L",
+        "ILS Runway 23R": "I3R",
+        "RNAV Y Runway 23L": "R3L",
+        "RNAV Y Runway 23R": "R3R",
+        "RNAV Z Runway 23L": "Z3L",
+        "RNAV Z Runway 23R": "Z3R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three left": "23L",
+        "visual approach runway two three right": "23R",
+        "visual runway two three left": "23L",
+        "visual runway two three right": "23R",
+        "visual two three left": "23L",
+        "visual two three right": "23R"
+      },
+      "ApproachFixes": {
+        "I3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "I3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "R3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "R3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "Z3L": {
+          "Bird": "BBIRD",
+          "Gobge": "GOBGE",
+          "Larry": "LLARY",
+          "Miller": "MIILR",
+          "Pacer": "PACRR",
+          "Pukai": "PUKAE",
+          "Stewer": "STEWR",
+          "Trak": "TRAAK",
+          "knight": "KNIGT"
+        },
+        "Z3R": {
+          "Checkered": "CKERD",
+          "Coyle": "COYLE",
+          "Cozart": "COZRT",
+          "Driver": "DRVVR",
+          "Miller": "MIILR",
+          "Musky": "MUSKE",
+          "Race in": "RACEN",
+          "Trak": "TRAAK",
+          "peyton": "PETYN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 23L",
+      "STAR": "SNKPT2",
+      "Route": [
+        "LLARY",
+        "BBIRD",
+        "PACRR",
+        "KIND"
+      ],
+      "Altitude": 7389,
+      "Heading": 238,
+      "Speed": 253,
+      "State": "cleared approach",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "American three 47": {
+      "Callsign": "AAL347",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Checkered": "CKERD",
+        "Clang": "CLANG",
+        "Driver": "DRVVR",
+        "Indianapolis": "KIND",
+        "Indy": "KIND",
+        "Race in": "RACEN",
+        "Sibov": "CIBOV",
+        "Zosar": "ZOSAR",
+        "peyton": "PETYN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23L": "I3L",
+        "ILS Runway 23R": "I3R",
+        "RNAV Y Runway 23L": "R3L",
+        "RNAV Y Runway 23R": "R3R",
+        "RNAV Z Runway 23L": "Z3L",
+        "RNAV Z Runway 23R": "Z3R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three left": "23L",
+        "visual approach runway two three right": "23R",
+        "visual runway two three left": "23L",
+        "visual runway two three right": "23R",
+        "visual two three left": "23L",
+        "visual two three right": "23R"
+      },
+      "ApproachFixes": {
+        "I3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "I3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "R3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "R3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "Z3L": {
+          "Bird": "BBIRD",
+          "Gobge": "GOBGE",
+          "Larry": "LLARY",
+          "Miller": "MIILR",
+          "Pacer": "PACRR",
+          "Pukai": "PUKAE",
+          "Stewer": "STEWR",
+          "Trak": "TRAAK",
+          "knight": "KNIGT"
+        },
+        "Z3R": {
+          "Checkered": "CKERD",
+          "Coyle": "COYLE",
+          "Cozart": "COZRT",
+          "Driver": "DRVVR",
+          "Miller": "MIILR",
+          "Musky": "MUSKE",
+          "Race in": "RACEN",
+          "Trak": "TRAAK",
+          "peyton": "PETYN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 23R",
+      "STAR": "JAKKS2",
+      "Route": [
+        "CIBOV",
+        "PETYN",
+        "ZOSAR",
+        "KIND"
+      ],
+      "Altitude": 11496,
+      "Heading": 143,
+      "Speed": 341,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "Southwest 68 54": {
+      "Callsign": "SWA6854",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Checkered": "CKERD",
+        "Clang": "CLANG",
+        "Driver": "DRVVR",
+        "Indianapolis": "KIND",
+        "Indy": "KIND",
+        "Race in": "RACEN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23L": "I3L",
+        "ILS Runway 23R": "I3R",
+        "RNAV Y Runway 23L": "R3L",
+        "RNAV Y Runway 23R": "R3R",
+        "RNAV Z Runway 23L": "Z3L",
+        "RNAV Z Runway 23R": "Z3R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three left": "23L",
+        "visual approach runway two three right": "23R",
+        "visual runway two three left": "23L",
+        "visual runway two three right": "23R",
+        "visual two three left": "23L",
+        "visual two three right": "23R"
+      },
+      "ApproachFixes": {
+        "I3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "I3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "R3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "R3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "Z3L": {
+          "Bird": "BBIRD",
+          "Gobge": "GOBGE",
+          "Larry": "LLARY",
+          "Miller": "MIILR",
+          "Pacer": "PACRR",
+          "Pukai": "PUKAE",
+          "Stewer": "STEWR",
+          "Trak": "TRAAK",
+          "knight": "KNIGT"
+        },
+        "Z3R": {
+          "Checkered": "CKERD",
+          "Coyle": "COYLE",
+          "Cozart": "COZRT",
+          "Driver": "DRVVR",
+          "Miller": "MIILR",
+          "Musky": "MUSKE",
+          "Race in": "RACEN",
+          "Trak": "TRAAK",
+          "peyton": "PETYN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 23R",
+      "STAR": "SMUKE3",
+      "Route": [
+        "KIND"
+      ],
+      "Altitude": 4000,
+      "Heading": 200,
+      "Speed": 213,
+      "AssignedHeading": 200,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "Southwest 71 43": {
+      "Callsign": "SWA7143",
+      "LastAddressed": true,
+      "AircraftType": "B737",
+      "Fixes": {
+        "Indianapolis": "KIND",
+        "Indy": "KIND",
+        "Pacer": "PACRR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23L": "I3L",
+        "ILS Runway 23R": "I3R",
+        "RNAV Y Runway 23L": "R3L",
+        "RNAV Y Runway 23R": "R3R",
+        "RNAV Z Runway 23L": "Z3L",
+        "RNAV Z Runway 23R": "Z3R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three left": "23L",
+        "visual approach runway two three right": "23R",
+        "visual runway two three left": "23L",
+        "visual runway two three right": "23R",
+        "visual two three left": "23L",
+        "visual two three right": "23R"
+      },
+      "ApproachFixes": {
+        "I3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "I3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "R3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "R3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "Z3L": {
+          "Bird": "BBIRD",
+          "Gobge": "GOBGE",
+          "Larry": "LLARY",
+          "Miller": "MIILR",
+          "Pacer": "PACRR",
+          "Pukai": "PUKAE",
+          "Stewer": "STEWR",
+          "Trak": "TRAAK",
+          "knight": "KNIGT"
+        },
+        "Z3R": {
+          "Checkered": "CKERD",
+          "Coyle": "COYLE",
+          "Cozart": "COZRT",
+          "Driver": "DRVVR",
+          "Miller": "MIILR",
+          "Musky": "MUSKE",
+          "Race in": "RACEN",
+          "Trak": "TRAAK",
+          "peyton": "PETYN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 23L",
+      "STAR": "GIIBS4",
+      "Route": [
+        "PACRR",
+        "KIND"
+      ],
+      "Altitude": 3000,
+      "Heading": 236,
+      "Speed": 150,
+      "AssignedSpeed": 170,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "Spirit Wings 46 68": {
+      "Callsign": "NKS4668",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Bird": "BBIRD",
+        "Clang": "CLANG",
+        "Indianapolis": "KIND",
+        "Indy": "KIND",
+        "Larry": "LLARY",
+        "Pacer": "PACRR",
+        "Ramey": "RAMEY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23L": "I3L",
+        "ILS Runway 23R": "I3R",
+        "RNAV Y Runway 23L": "R3L",
+        "RNAV Y Runway 23R": "R3R",
+        "RNAV Z Runway 23L": "Z3L",
+        "RNAV Z Runway 23R": "Z3R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three left": "23L",
+        "visual approach runway two three right": "23R",
+        "visual runway two three left": "23L",
+        "visual runway two three right": "23R",
+        "visual two three left": "23L",
+        "visual two three right": "23R"
+      },
+      "ApproachFixes": {
+        "I3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "I3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "R3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "R3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "Z3L": {
+          "Bird": "BBIRD",
+          "Gobge": "GOBGE",
+          "Larry": "LLARY",
+          "Miller": "MIILR",
+          "Pacer": "PACRR",
+          "Pukai": "PUKAE",
+          "Stewer": "STEWR",
+          "Trak": "TRAAK",
+          "knight": "KNIGT"
+        },
+        "Z3R": {
+          "Checkered": "CKERD",
+          "Coyle": "COYLE",
+          "Cozart": "COZRT",
+          "Driver": "DRVVR",
+          "Miller": "MIILR",
+          "Musky": "MUSKE",
+          "Race in": "RACEN",
+          "Trak": "TRAAK",
+          "peyton": "PETYN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 23L",
+      "STAR": "GIIBS4",
+      "Route": [
+        "RAMEY",
+        "KIND"
+      ],
+      "Altitude": 4095,
+      "Heading": 39,
+      "Speed": 246,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "United 21": {
+      "Callsign": "UAL21",
+      "AircraftType": "B739",
+      "Fixes": {
+        "Checkered": "CKERD",
+        "Clang": "CLANG",
+        "Driver": "DRVVR",
+        "Indianapolis": "KIND",
+        "Indy": "KIND",
+        "Race in": "RACEN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23L": "I3L",
+        "ILS Runway 23R": "I3R",
+        "RNAV Y Runway 23L": "R3L",
+        "RNAV Y Runway 23R": "R3R",
+        "RNAV Z Runway 23L": "Z3L",
+        "RNAV Z Runway 23R": "Z3R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three left": "23L",
+        "visual approach runway two three right": "23R",
+        "visual runway two three left": "23L",
+        "visual runway two three right": "23R",
+        "visual two three left": "23L",
+        "visual two three right": "23R"
+      },
+      "ApproachFixes": {
+        "I3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "I3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "R3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "R3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "Z3L": {
+          "Bird": "BBIRD",
+          "Gobge": "GOBGE",
+          "Larry": "LLARY",
+          "Miller": "MIILR",
+          "Pacer": "PACRR",
+          "Pukai": "PUKAE",
+          "Stewer": "STEWR",
+          "Trak": "TRAAK",
+          "knight": "KNIGT"
+        },
+        "Z3R": {
+          "Checkered": "CKERD",
+          "Coyle": "COYLE",
+          "Cozart": "COZRT",
+          "Driver": "DRVVR",
+          "Miller": "MIILR",
+          "Musky": "MUSKE",
+          "Race in": "RACEN",
+          "Trak": "TRAAK",
+          "peyton": "PETYN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 23R",
+      "STAR": "JAKKS2",
+      "Route": [
+        "KIND"
+      ],
+      "Altitude": 4000,
+      "Heading": 44,
+      "Speed": 247,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Radar Breakout Air Correction Southwest Sixty Eight Fifty Four maintain one six zero knots correction maintain one seven zero knots until eight five miles just reduce speed to one seven zero for now\"",
+    "[local-stt] normalized words: [radar breakout air correction southwest 68 54 maintain 1 6 0 knots correction maintain 1 7 0 knots until 8 5 miles just reduce speed to 1 7 0 for now]",
+    "[local-stt] tokens: 24",
+    "[local-stt]   token[0]: Text=\"radar\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"breakout\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"air\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"correction\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"southwest\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"68\" Type=1 Value=68",
+    "[local-stt]   token[6]: Text=\"54\" Type=1 Value=54",
+    "[local-stt]   token[7]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"160\" Type=1 Value=160",
+    "[local-stt]   token[9]: Text=\"knots\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"correction\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"170\" Type=1 Value=170",
+    "[local-stt]   token[13]: Text=\"knots\" Type=0 Value=-1",
+    "[local-stt]   token[14]: Text=\"until\" Type=0 Value=-1",
+    "[local-stt]   token[15]: Text=\"85\" Type=1 Value=85",
+    "[local-stt]   token[16]: Text=\"miles\" Type=0 Value=-1",
+    "[local-stt]   token[17]: Text=\"just\" Type=0 Value=-1",
+    "[local-stt]   token[18]: Text=\"reduce\" Type=0 Value=-1",
+    "[local-stt]   token[19]: Text=\"speed\" Type=0 Value=-1",
+    "[local-stt]   token[20]: Text=\"to\" Type=0 Value=-1",
+    "[local-stt]   token[21]: Text=\"170\" Type=1 Value=170",
+    "[local-stt]   token[22]: Text=\"for\" Type=0 Value=-1",
+    "[local-stt]   token[23]: Text=\"now\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 24 tokens, 8 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 24 tokens, 8 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"Southwest 68 54\" (airline=0.412, flight=1.000, skip=1)",
+    "[local-stt]     result 1: \"Southwest 68 54\" (airline=0.433, flight=1.000, skip=3)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Southwest 68 54\" (airline=0.43, flight=1.00, skip=3)",
+    "[local-stt]   pattern \"airline_only\": 22 results",
+    "[local-stt]     result 0: \"American 96 38 heavy\" (airline=0.547, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"American 25\" (airline=0.547, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"American six 79\" (airline=0.547, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"American three 47\" (airline=0.547, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"American three 47\" (airline=0.472, flight=0.000, skip=1)",
+    "[local-stt]     pattern \"airline_only\": selected \"American 25\" (airline=0.71, flight=0.00, skip=2)",
+    "[local-stt]     pattern \"airline_only\": below MinScore (1.21 \u003c 1.30) for \"American 25\"",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": no results",
+    "[local-stt]   best callsign candidate: \"SWA6854\" (conf=0.92, consumed=7, addressingForm=0, spokenKey=\"Southwest 68 54\"; 1 candidates)",
+    "[local-stt] callsign match: Callsign=\"SWA6854\" SpokenKey=\"Southwest 68 54\" Conf=0.92 Consumed=7",
+    "[local-stt] MatchCallsign: 13 tokens, 8 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 13 tokens, 8 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 3 results",
+    "[local-stt]     result 0: \"Southwest 68 54\" (airline=0.644, flight=0.833, skip=2)",
+    "[local-stt]     result 1: \"Southwest 68 54\" (airline=0.541, flight=0.833, skip=3)",
+    "[local-stt]     result 2: \"American 25\" (airline=0.442, flight=0.700, skip=3)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Southwest 68 54\" (airline=0.64, flight=0.83, skip=2)",
+    "[local-stt]   pattern \"airline_only\": 17 results",
+    "[local-stt]     result 0: \"Southwest 68 54\" (airline=0.412, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Southwest 71 43\" (airline=0.412, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"American 96 38 heavy\" (airline=0.683, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"United 21\" (airline=0.514, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"American 25\" (airline=0.683, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"United 21\" (airline=0.79, flight=0.00, skip=3)",
+    "[local-stt]     pattern \"airline_only\": below MinScore (1.29 \u003c 1.30) for \"United 21\"",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": no results",
+    "[local-stt]   best callsign candidate: \"SWA6854\" (conf=0.72, consumed=5, addressingForm=0, spokenKey=\"Southwest 68 54\"; 1 candidates)",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=4000 Fixes=6 Approaches=6 VisualApproaches=6 AssignedApproach=\"ILS Runway 23R\" LAHSORunways=[14 32 14 32]",
+    "[local-stt]   fix: \"Indianapolis\" -\u003e \"KIND\"",
+    "[local-stt]   fix: \"Indy\" -\u003e \"KIND\"",
+    "[local-stt]   fix: \"Clang\" -\u003e \"CLANG\"",
+    "[local-stt]   fix: \"Race in\" -\u003e \"RACEN\"",
+    "[local-stt]   fix: \"Driver\" -\u003e \"DRVVR\"",
+    "[local-stt]   fix: \"Checkered\" -\u003e \"CKERD\"",
+    "[local-stt]   approach: \"ILS Runway 23L\" -\u003e \"I3L\"",
+    "[local-stt]   approach: \"RNAV Z Runway 23L\" -\u003e \"Z3L\"",
+    "[local-stt]   approach: \"RNAV Y Runway 23L\" -\u003e \"R3L\"",
+    "[local-stt]   approach: \"RNAV Z Runway 23R\" -\u003e \"Z3R\"",
+    "[local-stt]   approach: \"RNAV Y Runway 23R\" -\u003e \"R3R\"",
+    "[local-stt]   approach: \"ILS Runway 23R\" -\u003e \"I3R\"",
+    "[local-stt]   visual approach: \"visual approach runway two three left\" -\u003e \"23L\"",
+    "[local-stt]   visual approach: \"visual two three left\" -\u003e \"23L\"",
+    "[local-stt]   visual approach: \"visual runway two three right\" -\u003e \"23R\"",
+    "[local-stt]   visual approach: \"visual approach runway two three right\" -\u003e \"23R\"",
+    "[local-stt]   visual approach: \"visual two three right\" -\u003e \"23R\"",
+    "[local-stt]   visual approach: \"visual runway two three left\" -\u003e \"23L\"",
+    "[local-stt] command tokens after disregard: 13",
+    "[local-stt]   token[0]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"170\" Type=1 Value=170",
+    "[local-stt]   token[2]: Text=\"knots\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"until\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"85\" Type=1 Value=85",
+    "[local-stt]   token[5]: Text=\"miles\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"just\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"reduce\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"speed\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"to\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"170\" Type=1 Value=170",
+    "[local-stt]   token[11]: Text=\"for\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"now\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 13 tokens",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"85\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"85\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"85\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"85\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"85\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"85\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"miles\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"miles\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"just\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"just\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"85\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"85\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"miles\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"miles\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"just\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"just\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"85\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"85\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"miles\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"miles\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"just\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"just\"",
+    "[local-stt]   matched command: \"S170\" [maintained_speed_question] (pos=0, conf=0.98, consumed=3, isThen=false)",
+    "[local-stt]   matched command: \"S170\" [maintain_speed] (pos=0, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"maintain\", skipping",
+    "[local-stt]   no match at token[3]=\"until\", skipping",
+    "[local-stt]   no match at token[2]=\"knots\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"85\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"85\"",
+    "[local-stt]   no match at token[1]=\"170\", skipping",
+    "[local-stt]   no match at token[4]=\"85\", skipping",
+    "[local-stt]   no match at token[3]=\"until\", skipping",
+    "[local-stt]   no match at token[2]=\"knots\", skipping",
+    "[local-stt]   no match at token[5]=\"miles\", skipping",
+    "[local-stt]   no match at token[4]=\"85\", skipping",
+    "[local-stt]   no match at token[3]=\"until\", skipping",
+    "[local-stt]   no match at token[6]=\"just\", skipping",
+    "[local-stt]   no match at token[5]=\"miles\", skipping",
+    "[local-stt]   no match at token[4]=\"85\", skipping",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: looking for STAR=\"SMUKE3\" telephony=\"Smoke three\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   no match at token[7]=\"reduce\", skipping",
+    "[local-stt]   no match at token[6]=\"just\", skipping",
+    "[local-stt]   no match at token[5]=\"miles\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"to\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"to\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"170\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"170\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"for\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"for\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"now\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"now\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"to\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"to\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"170\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"170\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"for\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"for\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"now\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"now\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"to\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"to\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"170\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"170\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"for\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"for\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"now\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"now\"",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: looking for STAR=\"SMUKE3\" telephony=\"Smoke three\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   extractSTAR: looking for STAR=\"SMUKE3\" telephony=\"Smoke three\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   extractSTAR: looking for STAR=\"SMUKE3\" telephony=\"Smoke three\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   extractSTAR: looking for STAR=\"SMUKE3\" telephony=\"Smoke three\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   no match at token[8]=\"speed\", skipping",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: looking for STAR=\"SMUKE3\" telephony=\"Smoke three\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   no match at token[7]=\"reduce\", skipping",
+    "[local-stt]   no match at token[6]=\"just\", skipping",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"to\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"to\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"170\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"170\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"for\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"for\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"now\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"now\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"to\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"to\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"170\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"170\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"for\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"for\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"now\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"now\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"to\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"to\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"170\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"170\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"for\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"for\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"now\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"now\"",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: looking for STAR=\"SMUKE3\" telephony=\"Smoke three\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   extractSTAR: looking for STAR=\"SMUKE3\" telephony=\"Smoke three\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   extractSTAR: looking for STAR=\"SMUKE3\" telephony=\"Smoke three\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   extractSTAR: looking for STAR=\"SMUKE3\" telephony=\"Smoke three\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   no match at token[8]=\"speed\", skipping",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: looking for STAR=\"SMUKE3\" telephony=\"Smoke three\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   matched command: \"S170\" [speed_for_now_verb] (pos=7, conf=1.00, consumed=6, isThen=false)",
+    "[local-stt]   matched command: \"S170\" [reduce_speed] (pos=7, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[7]=\"reduce\", skipping",
+    "[local-stt]   no match at token[10]=\"170\", skipping",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   no match at token[11]=\"for\", skipping",
+    "[local-stt]   no match at token[11]=\"for\", skipping",
+    "[local-stt]   no match at token[10]=\"170\", skipping",
+    "[local-stt]   no match at token[12]=\"now\", skipping",
+    "[local-stt]   no match at token[12]=\"now\", skipping",
+    "[local-stt]   no match at token[11]=\"for\", skipping",
+    "[local-stt]   no match at token[12]=\"now\", skipping",
+    "[local-stt]   beam final[0]: score=1.742 pos=13 commands=[S170]",
+    "[local-stt]   beam final[1]: score=1.284 pos=13 commands=[S170]",
+    "[local-stt]   beam final[2]: score=1.090 pos=13 commands=[S170]",
+    "[local-stt]   beam final[3]: score=-0.017 pos=13 commands=[S170]",
+    "[local-stt] ParseCommands: result=[S170] (avgConf=0.98)",
+    "[local-stt] parsed commands: [S170] (conf=0.98, kinds=1)",
+    "[local-stt] validated commands: [S170] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"SWA6854 S170\" (conf=0.90, time=11.3198ms) ==="
+  ]
+}

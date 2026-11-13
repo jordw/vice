@@ -1,0 +1,537 @@
+{
+  "time": "2026-11-05T03:36:09.335213334Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Jet Card Thirty Six Sixty Five landing two three zero intercept localizer",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, uniform, information, Zoris, Siknu, Viddy, Ferbu, Pogte, Crims, three one, two seven, runway, r-nav, I L S, grumman yankee five kilo echo, november five five five kilo echo, citation five six whiskey, november four two five six whiskey, Blue Streak 48 19, Jet Card 36 65, Jet Card 30 19, Hammer, Egger, Horse, CHEYENNE, Collar, Cheyenne Regional Jerry Olson Field, SIDNEY",
+  "whisper_duration_ms": 354.764,
+  "audio_duration_ms": 5064,
+  "processor": "GPU: NVIDIA GeForce RTX 4070 (12010MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "DPJ3665",
+  "command": "H230 I",
+  "reason": "\"landing\" is heading",
+  "stt_aircraft": {
+    "Blue Streak 48 19": {
+      "Callsign": "JIA4819",
+      "LastAddressed": true,
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "CHEYENNE": "CYS",
+        "Cheyenne Regional Jerry Olson": "KCYS",
+        "Collar": "COLLA",
+        "Egger": "EGBER",
+        "Hammer": "HAMER",
+        "Horse": "HORSE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27": "I27",
+        "RNAV Runway 27": "R27",
+        "RNAV Runway 31": "R31"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one": "31",
+        "visual approach runway two seven": "27",
+        "visual runway three one": "31",
+        "visual runway two seven": "27",
+        "visual three one": "31",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "I27": {
+          "CHEYENNE": "CYS",
+          "Collar": "COLLA",
+          "Egger": "EGBER",
+          "Hammer": "HAMER",
+          "Horse": "HORSE"
+        },
+        "R27": {
+          "CHEYENNE": "CYS",
+          "Collar": "COLLA",
+          "Crims": "CRIMS",
+          "Egger": "EGBER",
+          "Ferbu": "FERBU",
+          "Horse": "HORSE",
+          "Pogte": "POGTE",
+          "Viddy": "VIDEE"
+        },
+        "R31": {
+          "CHEYENNE": "CYS",
+          "Hammer": "HAMER",
+          "Lori": "LORYI",
+          "Siknu": "CIKNU",
+          "Zoris": "ZORIS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 27",
+      "Route": [
+        "CYS",
+        "KCYS"
+      ],
+      "Altitude": 9909,
+      "Heading": 159,
+      "Speed": 304,
+      "AssignedHeading": 80,
+      "State": "arrival",
+      "ControllerFrequency": "6A",
+      "TrackingController": "6A",
+      "LAHSORunways": [
+        "13",
+        "31",
+        "9",
+        "27"
+      ]
+    },
+    "Jet Card 30 19": {
+      "Callsign": "DPJ3019",
+      "AircraftType": "E55P",
+      "Fixes": {
+        "Cheyenne Regional Jerry Olson": "KCYS",
+        "SIDNEY": "SNY"
+      },
+      "Route": [
+        "SNY",
+        "LBF",
+        "KOMA"
+      ],
+      "Altitude": 10024,
+      "Heading": 52,
+      "Speed": 301,
+      "State": "departure",
+      "ControllerFrequency": "6A",
+      "TrackingController": "C21"
+    },
+    "Jet Card 36 65": {
+      "Callsign": "DPJ3665",
+      "AircraftType": "C680",
+      "Fixes": {
+        "Cheyenne Regional Jerry Olson": "KCYS",
+        "Collar": "COLLA",
+        "Horse": "HORSE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27": "I27",
+        "RNAV Runway 27": "R27",
+        "RNAV Runway 31": "R31"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one": "31",
+        "visual approach runway two seven": "27",
+        "visual runway three one": "31",
+        "visual runway two seven": "27",
+        "visual three one": "31",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "I27": {
+          "CHEYENNE": "CYS",
+          "Collar": "COLLA",
+          "Egger": "EGBER",
+          "Hammer": "HAMER",
+          "Horse": "HORSE"
+        },
+        "R27": {
+          "CHEYENNE": "CYS",
+          "Collar": "COLLA",
+          "Crims": "CRIMS",
+          "Egger": "EGBER",
+          "Ferbu": "FERBU",
+          "Horse": "HORSE",
+          "Pogte": "POGTE",
+          "Viddy": "VIDEE"
+        },
+        "R31": {
+          "CHEYENNE": "CYS",
+          "Hammer": "HAMER",
+          "Lori": "LORYI",
+          "Siknu": "CIKNU",
+          "Zoris": "ZORIS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 27",
+      "Route": [
+        "COLLA",
+        "HORSE",
+        "KCYS"
+      ],
+      "Altitude": 8000,
+      "Heading": 216,
+      "Speed": 241,
+      "State": "arrival",
+      "ControllerFrequency": "6A",
+      "TrackingController": "6A",
+      "LAHSORunways": [
+        "13",
+        "31",
+        "9",
+        "27"
+      ]
+    },
+    "citation five six whiskey": {
+      "Callsign": "N4256W/T",
+      "AircraftType": "C550",
+      "Fixes": {
+        "CHEYENNE": "CYS",
+        "Cheyenne Regional Jerry Olson": "KCYS",
+        "Collar": "COLLA",
+        "Egger": "EGBER",
+        "Hammer": "HAMER",
+        "Horse": "HORSE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27": "I27",
+        "RNAV Runway 27": "R27",
+        "RNAV Runway 31": "R31"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one": "31",
+        "visual approach runway two seven": "27",
+        "visual runway three one": "31",
+        "visual runway two seven": "27",
+        "visual three one": "31",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "I27": {
+          "CHEYENNE": "CYS",
+          "Collar": "COLLA",
+          "Egger": "EGBER",
+          "Hammer": "HAMER",
+          "Horse": "HORSE"
+        },
+        "R27": {
+          "CHEYENNE": "CYS",
+          "Collar": "COLLA",
+          "Crims": "CRIMS",
+          "Egger": "EGBER",
+          "Ferbu": "FERBU",
+          "Horse": "HORSE",
+          "Pogte": "POGTE",
+          "Viddy": "VIDEE"
+        },
+        "R31": {
+          "CHEYENNE": "CYS",
+          "Hammer": "HAMER",
+          "Lori": "LORYI",
+          "Siknu": "CIKNU",
+          "Zoris": "ZORIS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 27",
+      "Route": [
+        "CYS",
+        "KCYS"
+      ],
+      "Altitude": 8000,
+      "Heading": 80,
+      "Speed": 248,
+      "AssignedHeading": 80,
+      "State": "arrival",
+      "ControllerFrequency": "6A",
+      "TrackingController": "6A",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "13",
+        "31",
+        "9",
+        "27"
+      ]
+    },
+    "grumman yankee five kilo echo": {
+      "Callsign": "N555KE/T",
+      "AircraftType": "AA1",
+      "Fixes": {
+        "CHEYENNE": "CYS",
+        "Cheyenne Regional Jerry Olson": "KCYS",
+        "Denver": "KDEN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27": "I27",
+        "RNAV Runway 27": "R27",
+        "RNAV Runway 31": "R31"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one": "31",
+        "visual approach runway two seven": "27",
+        "visual runway three one": "31",
+        "visual runway two seven": "27",
+        "visual three one": "31",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "I27": {
+          "CHEYENNE": "CYS",
+          "Collar": "COLLA",
+          "Egger": "EGBER",
+          "Hammer": "HAMER",
+          "Horse": "HORSE"
+        },
+        "R27": {
+          "CHEYENNE": "CYS",
+          "Collar": "COLLA",
+          "Crims": "CRIMS",
+          "Egger": "EGBER",
+          "Ferbu": "FERBU",
+          "Horse": "HORSE",
+          "Pogte": "POGTE",
+          "Viddy": "VIDEE"
+        },
+        "R31": {
+          "CHEYENNE": "CYS",
+          "Hammer": "HAMER",
+          "Lori": "LORYI",
+          "Siknu": "CIKNU",
+          "Zoris": "ZORIS"
+        }
+      },
+      "Route": [
+        "CYS",
+        "KCYS"
+      ],
+      "Altitude": 10000,
+      "Heading": 335,
+      "Speed": 95,
+      "State": "arrival",
+      "ControllerFrequency": "6A",
+      "TrackingController": "6A",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "13",
+        "31",
+        "9",
+        "27"
+      ]
+    },
+    "november five five five kilo echo": {
+      "Callsign": "N555KE",
+      "AircraftType": "AA1",
+      "Fixes": {
+        "CHEYENNE": "CYS",
+        "Cheyenne Regional Jerry Olson": "KCYS",
+        "Denver": "KDEN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27": "I27",
+        "RNAV Runway 27": "R27",
+        "RNAV Runway 31": "R31"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one": "31",
+        "visual approach runway two seven": "27",
+        "visual runway three one": "31",
+        "visual runway two seven": "27",
+        "visual three one": "31",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "I27": {
+          "CHEYENNE": "CYS",
+          "Collar": "COLLA",
+          "Egger": "EGBER",
+          "Hammer": "HAMER",
+          "Horse": "HORSE"
+        },
+        "R27": {
+          "CHEYENNE": "CYS",
+          "Collar": "COLLA",
+          "Crims": "CRIMS",
+          "Egger": "EGBER",
+          "Ferbu": "FERBU",
+          "Horse": "HORSE",
+          "Pogte": "POGTE",
+          "Viddy": "VIDEE"
+        },
+        "R31": {
+          "CHEYENNE": "CYS",
+          "Hammer": "HAMER",
+          "Lori": "LORYI",
+          "Siknu": "CIKNU",
+          "Zoris": "ZORIS"
+        }
+      },
+      "Route": [
+        "CYS",
+        "KCYS"
+      ],
+      "Altitude": 10000,
+      "Heading": 335,
+      "Speed": 95,
+      "State": "arrival",
+      "ControllerFrequency": "6A",
+      "TrackingController": "6A",
+      "LAHSORunways": [
+        "13",
+        "31",
+        "9",
+        "27"
+      ]
+    },
+    "november four two five six whiskey": {
+      "Callsign": "N4256W",
+      "AircraftType": "C550",
+      "Fixes": {
+        "CHEYENNE": "CYS",
+        "Cheyenne Regional Jerry Olson": "KCYS",
+        "Collar": "COLLA",
+        "Egger": "EGBER",
+        "Hammer": "HAMER",
+        "Horse": "HORSE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27": "I27",
+        "RNAV Runway 27": "R27",
+        "RNAV Runway 31": "R31"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one": "31",
+        "visual approach runway two seven": "27",
+        "visual runway three one": "31",
+        "visual runway two seven": "27",
+        "visual three one": "31",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "I27": {
+          "CHEYENNE": "CYS",
+          "Collar": "COLLA",
+          "Egger": "EGBER",
+          "Hammer": "HAMER",
+          "Horse": "HORSE"
+        },
+        "R27": {
+          "CHEYENNE": "CYS",
+          "Collar": "COLLA",
+          "Crims": "CRIMS",
+          "Egger": "EGBER",
+          "Ferbu": "FERBU",
+          "Horse": "HORSE",
+          "Pogte": "POGTE",
+          "Viddy": "VIDEE"
+        },
+        "R31": {
+          "CHEYENNE": "CYS",
+          "Hammer": "HAMER",
+          "Lori": "LORYI",
+          "Siknu": "CIKNU",
+          "Zoris": "ZORIS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 27",
+      "Route": [
+        "CYS",
+        "KCYS"
+      ],
+      "Altitude": 8000,
+      "Heading": 80,
+      "Speed": 248,
+      "AssignedHeading": 80,
+      "State": "arrival",
+      "ControllerFrequency": "6A",
+      "TrackingController": "6A",
+      "LAHSORunways": [
+        "13",
+        "31",
+        "9",
+        "27"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Jet Card Thirty Six Sixty Five landing two three zero intercept localizer\"",
+    "[local-stt] normalized words: [jet card 36 65 landing 2 3 0 intercept localizer]",
+    "[local-stt] tokens: 8",
+    "[local-stt]   token[0]: Text=\"jet\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"card\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"36\" Type=1 Value=36",
+    "[local-stt]   token[3]: Text=\"65\" Type=1 Value=65",
+    "[local-stt]   token[4]: Text=\"landing\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"230\" Type=1 Value=230",
+    "[local-stt]   token[6]: Text=\"intercept\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"localizer\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 8 tokens, 7 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 8 tokens, 7 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Jet Card 36 65\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Jet Card 36 65\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"Jet Card 36 65\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Jet Card 36 65\" (airline=0.850, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Jet Card 36 65\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 4 results",
+    "[local-stt]     result 0: \"Jet Card 30 19\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Jet Card 36 65\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Jet Card 30 19\" (airline=0.850, flight=0.000, skip=1)",
+    "[local-stt]     result 3: \"Jet Card 36 65\" (airline=0.850, flight=0.000, skip=1)",
+    "[local-stt]     pattern \"airline_only\": selected \"Jet Card 30 19\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Jet Card 36 65\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 1: \"Jet Card 36 65\" (airline=0.500, flight=1.000, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Jet Card 36 65\" (airline=0.50, flight=1.00, skip=1)",
+    "[local-stt]   exact callsign \"DPJ3665\" (spokenKey=\"Jet Card 36 65\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"DPJ3665\" SpokenKey=\"Jet Card 36 65\" Conf=1.00 Consumed=4",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=8000 Fixes=3 Approaches=3 VisualApproaches=6 AssignedApproach=\"ILS Runway 27\" LAHSORunways=[13 31 9 27]",
+    "[local-stt]   fix: \"Cheyenne Regional Jerry Olson\" -\u003e \"KCYS\"",
+    "[local-stt]   fix: \"Collar\" -\u003e \"COLLA\"",
+    "[local-stt]   fix: \"Horse\" -\u003e \"HORSE\"",
+    "[local-stt]   approach: \"ILS Runway 27\" -\u003e \"I27\"",
+    "[local-stt]   approach: \"RNAV Runway 27\" -\u003e \"R27\"",
+    "[local-stt]   approach: \"RNAV Runway 31\" -\u003e \"R31\"",
+    "[local-stt]   visual approach: \"visual runway two seven\" -\u003e \"27\"",
+    "[local-stt]   visual approach: \"visual approach runway two seven\" -\u003e \"27\"",
+    "[local-stt]   visual approach: \"visual two seven\" -\u003e \"27\"",
+    "[local-stt]   visual approach: \"visual runway three one\" -\u003e \"31\"",
+    "[local-stt]   visual approach: \"visual approach runway three one\" -\u003e \"31\"",
+    "[local-stt]   visual approach: \"visual three one\" -\u003e \"31\"",
+    "[local-stt] command tokens after disregard: 4",
+    "[local-stt]   token[0]: Text=\"landing\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"230\" Type=1 Value=230",
+    "[local-stt]   token[2]: Text=\"intercept\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"localizer\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 4 tokens",
+    "[local-stt]   matched command: \"D230\" [descend] (pos=0, conf=0.92, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"landing\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"localizer\" against 3 fixes",
+    "[local-stt]   extractFix: no match found for \"localizer\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"localizer\" against 3 fixes",
+    "[local-stt]   extractFix: no match found for \"localizer\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"localizer\" against 3 fixes",
+    "[local-stt]   extractFix: no match found for \"localizer\"",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   matched command: \"I\" [intercept_localizer_side] (pos=2, conf=0.89, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[2]=\"intercept\", skipping",
+    "[local-stt]   no match at token[1]=\"230\", skipping",
+    "[local-stt]   matched command: \"I\" [standalone_localizer] (pos=3, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[3]=\"localizer\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"localizer\" against 3 fixes",
+    "[local-stt]   extractFix: no match found for \"localizer\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"localizer\" against 3 fixes",
+    "[local-stt]   extractFix: no match found for \"localizer\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"localizer\" against 3 fixes",
+    "[local-stt]   extractFix: no match found for \"localizer\"",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   matched command: \"I\" [intercept_localizer_side] (pos=2, conf=0.89, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[2]=\"intercept\", skipping",
+    "[local-stt]   beam final[0]: score=2.006 pos=4 commands=[D230 I]",
+    "[local-stt]   beam final[1]: score=-0.672 pos=4 commands=[D230 I]",
+    "[local-stt]   beam final[2]: score=-1.330 pos=4 commands=[I]",
+    "[local-stt]   beam final[3]: score=-3.572 pos=4 commands=[D230]",
+    "[local-stt] ParseCommands: result=[D230 I] (avgConf=0.91)",
+    "[local-stt] parsed commands: [D230 I] (conf=0.91, kinds=1)",
+    "[local-stt] validated commands: [SAYAGAIN/ALTITUDE I] (conf=0.85)",
+    "[local-stt] validation errors: [descend target must be below current altitude]",
+    "[local-stt] === DecodeTranscript END: \"DPJ3665 SAYAGAIN/ALTITUDE I\" (conf=0.77, time=2.4998ms) ==="
+  ]
+}

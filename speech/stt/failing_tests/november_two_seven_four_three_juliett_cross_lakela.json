@@ -1,0 +1,1976 @@
+{
+  "time": "2026-11-12T20:23:32.303046719Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "november two seven four three juliett cross lakeland at or above two thousand seven hundred cleared r Nav runway five approach",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, whiskey, juliet, echo, information, Matty six, Lubber four, Dades two, Bullfrog three, Bangs two, Tides one, Dormer three, Bay-po two, Iczor, Ufsop, Elije, Humki, Hickey, Dale, Izy, Payton, Dried, Pimal, Filter, Anaze, Dajbo, Ingram, Muwty, Vestrum, Poser, Spars, Orast, Dicky, Zervo, Joiner, grace, Esue, Stacy, Sister, Borst, snork, Fitpa, Faxed, Sabe, Guner, Bomer, one right, three six, one, three two, one left, one zero, runway, zulu, yankee, r-nav, I L S, United six 83, United 21 zero one, United 13 42, Southwest 44 43, Southwest 24 19, Southwest 20 22, Spirit Wings 19 zero five, november five three eight mike tango, november four zulu lima, november three five two seven hotel, turbo centurion four three juliet, cessna T two ten four three juliet, november two seven four three juliet, citation one sierra brahvo, november two seven one sierra brahvo, hawker eight fifty one zero hotel, november one niner one zero hotel, Steel Jet seven 65, Envoy 37 59, Delta 27 zero six, Allegiant one 96, Allegiant 13 68, American 31 zero three, American 25 16, Fivdo, Camjo, flyin, Tooth, Mahar, Arshw, Bass, spring, Tyner, Alroe, Cruz, Fruit, LAKELAND, blout, Wilon, Ringy, Selman, Kidle, Pistol, Lifie, Ended, Goofs, Rooker, Ecake, SARASOTA, Lagoo, Bangs, Deside, Dormer, woody, bring, Matty, Baypo, Murdo, Jetstream, ST PETERSBURG, sykes, Zephyrhills Municipal Airport, Peter O Knight Airport, Lakeland Linder International Airport, Finki, Sarasota Bradenton International Airport, Tampa International Airport",
+  "whisper_duration_ms": 211.945,
+  "audio_duration_ms": 8776,
+  "processor": "GPU: AMD Radeon RX 9070 XT (16304MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "N2743J",
+  "command": "CLAL/A27+ SAYAGAIN/APPROACH",
+  "reason": "a clear approach clearance for a runway the aircraft does not have",
+  "stt_aircraft": {
+    "Allegiant 13 68": {
+      "Callsign": "AAY1368",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Murdo": "MURDO",
+        "Ringy": "RINGY",
+        "SARASOTA": "SRQ",
+        "Sarasota": "KSRQ"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 32": "I32",
+        "RNAV Runway 32": "R32"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three two": "32",
+        "visual runway three two": "32",
+        "visual three two": "32"
+      },
+      "ApproachFixes": {
+        "I32": {
+          "Ringy": "RINGY",
+          "SARASOTA": "SRQ"
+        },
+        "R32": {
+          "Faxed": "FAXID",
+          "Ringy": "RINGY",
+          "SARASOTA": "SRQ",
+          "Sabe": "SABEE",
+          "Zaldi": "ZALDI"
+        }
+      },
+      "AssignedApproach": "ILS Runway 32",
+      "STAR": "BANGZ2",
+      "Route": [
+        "MURDO",
+        "KSRQ"
+      ],
+      "Altitude": 3342,
+      "Heading": 137,
+      "Speed": 186,
+      "AssignedSpeed": 180,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "LAHSORunways": [
+        "4",
+        "22"
+      ]
+    },
+    "Allegiant one 96": {
+      "Callsign": "AAY196",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Baypo": "BAYPO",
+        "Camjo": "CAMJO",
+        "Clearwater": "KPIE",
+        "Ecake": "ECAKE",
+        "Finki": "FINKI",
+        "Wilon": "WILON",
+        "spring": "SPRNG"
+      },
+      "SID": "BAYPO2",
+      "Route": [
+        "FINKI",
+        "BAYPO",
+        "ECAKE",
+        "WILON",
+        "SPRNG",
+        "CAMJO",
+        "HEPAR",
+        "TEEEM",
+        "KABE"
+      ],
+      "Altitude": 1600,
+      "Speed": 266,
+      "State": "departure",
+      "ControllerFrequency": "1P",
+      "TrackingController": "1P"
+    },
+    "American 25 16": {
+      "Callsign": "AAL2516",
+      "AircraftType": "A321",
+      "Fixes": {
+        "Lagoo": "LAGOO",
+        "ST PETERSBURG": "PIE",
+        "Selman": "SELMN",
+        "Tampa": "KTPA",
+        "Tyner": "TYNER"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "RNAV Y Runway 1L": "RY1L",
+        "RNAV Y Runway 1R": "RY1R",
+        "RNAV Z Runway 1L": "RZ1L",
+        "RNAV Z Runway 1R": "RZ1R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Lagoo": "LAGOO",
+          "ST PETERSBURG": "PIE",
+          "Selman": "SELMN",
+          "Tyner": "TYNER"
+        },
+        "RY1L": {
+          "Fitpa": "FITPA",
+          "ST PETERSBURG": "PIE",
+          "Tyner": "TYNER",
+          "Zerur": "ZERUR",
+          "snork": "SNORK"
+        },
+        "RY1R": {
+          "Anaze": "ANAZE",
+          "LAKELAND": "LAL",
+          "Muwty": "MUWTY",
+          "Zelto": "ZELTO"
+        },
+        "RZ1L": {
+          "Borst": "BORST",
+          "Dicky": "DICKY",
+          "Esue": "ESSUE",
+          "Joiner": "JOYNR",
+          "Orast": "ORAST",
+          "Poser": "POZER",
+          "Selman": "SELMN",
+          "Selst": "CELST",
+          "Sister": "SISTR",
+          "Spars": "SPARZ",
+          "Stacy": "STACI",
+          "Tooth": "TOOTH",
+          "Vestrum": "VSTRM",
+          "Zervo": "ZERVO",
+          "grace": "GRAXE"
+        },
+        "RZ1R": {
+          "Anaze": "ANAZE",
+          "Borst": "BORST",
+          "Dajbo": "DAJBO",
+          "Dale": "DAAIL",
+          "Dried": "DREID",
+          "Filter": "FILTR",
+          "Hickey": "HICAY",
+          "Ingram": "INGRM",
+          "Izy": "IZZZY",
+          "Payton": "PEYTN",
+          "Pimal": "PJMAL",
+          "Tooth": "TOOTH",
+          "Zelto": "ZELTO",
+          "Zervo": "ZERVO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 1L",
+      "STAR": "DADES2",
+      "Route": [
+        "KTPA"
+      ],
+      "Altitude": 3000,
+      "Heading": 316,
+      "Speed": 229,
+      "AssignedHeading": 340,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "American 31 zero three": {
+      "Callsign": "AAL3103",
+      "LastAddressed": true,
+      "AircraftType": "A320",
+      "Fixes": {
+        "Jetstream": "JSTRM",
+        "Lagoo": "LAGOO",
+        "ST PETERSBURG": "PIE",
+        "Selman": "SELMN",
+        "Tampa": "KTPA",
+        "Tyner": "TYNER"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "RNAV Y Runway 1L": "RY1L",
+        "RNAV Y Runway 1R": "RY1R",
+        "RNAV Z Runway 1L": "RZ1L",
+        "RNAV Z Runway 1R": "RZ1R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Lagoo": "LAGOO",
+          "ST PETERSBURG": "PIE",
+          "Selman": "SELMN",
+          "Tyner": "TYNER"
+        },
+        "RY1L": {
+          "Fitpa": "FITPA",
+          "ST PETERSBURG": "PIE",
+          "Tyner": "TYNER",
+          "Zerur": "ZERUR",
+          "snork": "SNORK"
+        },
+        "RY1R": {
+          "Anaze": "ANAZE",
+          "LAKELAND": "LAL",
+          "Muwty": "MUWTY",
+          "Zelto": "ZELTO"
+        },
+        "RZ1L": {
+          "Borst": "BORST",
+          "Dicky": "DICKY",
+          "Esue": "ESSUE",
+          "Joiner": "JOYNR",
+          "Orast": "ORAST",
+          "Poser": "POZER",
+          "Selman": "SELMN",
+          "Selst": "CELST",
+          "Sister": "SISTR",
+          "Spars": "SPARZ",
+          "Stacy": "STACI",
+          "Tooth": "TOOTH",
+          "Vestrum": "VSTRM",
+          "Zervo": "ZERVO",
+          "grace": "GRAXE"
+        },
+        "RZ1R": {
+          "Anaze": "ANAZE",
+          "Borst": "BORST",
+          "Dajbo": "DAJBO",
+          "Dale": "DAAIL",
+          "Dried": "DREID",
+          "Filter": "FILTR",
+          "Hickey": "HICAY",
+          "Ingram": "INGRM",
+          "Izy": "IZZZY",
+          "Payton": "PEYTN",
+          "Pimal": "PJMAL",
+          "Tooth": "TOOTH",
+          "Zelto": "ZELTO",
+          "Zervo": "ZERVO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 1L",
+      "STAR": "DADES2",
+      "Route": [
+        "JSTRM",
+        "KTPA"
+      ],
+      "Altitude": 4000,
+      "Heading": 184,
+      "Speed": 208,
+      "AssignedSpeed": 180,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "Delta 27 zero six": {
+      "Callsign": "DAL2706",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Baypo": "BAYPO",
+        "Camjo": "CAMJO",
+        "Ecake": "ECAKE",
+        "Finki": "FINKI",
+        "Tampa": "KTPA",
+        "Wilon": "WILON",
+        "spring": "SPRNG"
+      },
+      "SID": "BAYPO2",
+      "Route": [
+        "FINKI",
+        "BAYPO",
+        "ECAKE",
+        "WILON",
+        "SPRNG",
+        "CAMJO",
+        "HEPAR",
+        "TEEEM",
+        "KBOS"
+      ],
+      "Altitude": 2305,
+      "Heading": 3,
+      "Speed": 224,
+      "State": "departure",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D"
+    },
+    "Envoy 37 59": {
+      "Callsign": "ENY3759",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Tampa": "KTPA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "RNAV Y Runway 1L": "RY1L",
+        "RNAV Y Runway 1R": "RY1R",
+        "RNAV Z Runway 1L": "RZ1L",
+        "RNAV Z Runway 1R": "RZ1R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Lagoo": "LAGOO",
+          "ST PETERSBURG": "PIE",
+          "Selman": "SELMN",
+          "Tyner": "TYNER"
+        },
+        "RY1L": {
+          "Fitpa": "FITPA",
+          "ST PETERSBURG": "PIE",
+          "Tyner": "TYNER",
+          "Zerur": "ZERUR",
+          "snork": "SNORK"
+        },
+        "RY1R": {
+          "Anaze": "ANAZE",
+          "LAKELAND": "LAL",
+          "Muwty": "MUWTY",
+          "Zelto": "ZELTO"
+        },
+        "RZ1L": {
+          "Borst": "BORST",
+          "Dicky": "DICKY",
+          "Esue": "ESSUE",
+          "Joiner": "JOYNR",
+          "Orast": "ORAST",
+          "Poser": "POZER",
+          "Selman": "SELMN",
+          "Selst": "CELST",
+          "Sister": "SISTR",
+          "Spars": "SPARZ",
+          "Stacy": "STACI",
+          "Tooth": "TOOTH",
+          "Vestrum": "VSTRM",
+          "Zervo": "ZERVO",
+          "grace": "GRAXE"
+        },
+        "RZ1R": {
+          "Anaze": "ANAZE",
+          "Borst": "BORST",
+          "Dajbo": "DAJBO",
+          "Dale": "DAAIL",
+          "Dried": "DREID",
+          "Filter": "FILTR",
+          "Hickey": "HICAY",
+          "Ingram": "INGRM",
+          "Izy": "IZZZY",
+          "Payton": "PEYTN",
+          "Pimal": "PJMAL",
+          "Tooth": "TOOTH",
+          "Zelto": "ZELTO",
+          "Zervo": "ZERVO"
+        }
+      },
+      "STAR": "MAATY6",
+      "Route": [
+        "KTPA"
+      ],
+      "Altitude": 2000,
+      "Heading": 7,
+      "Speed": 266,
+      "AssignedHeading": 7,
+      "State": "arrival",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1W",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "Southwest 20 22": {
+      "Callsign": "SWA2022",
+      "AircraftType": "B737",
+      "Fixes": {
+        "Murdo": "MURDO",
+        "Ringy": "RINGY",
+        "SARASOTA": "SRQ",
+        "Sarasota": "KSRQ"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 32": "I32",
+        "RNAV Runway 32": "R32"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three two": "32",
+        "visual runway three two": "32",
+        "visual three two": "32"
+      },
+      "ApproachFixes": {
+        "I32": {
+          "Ringy": "RINGY",
+          "SARASOTA": "SRQ"
+        },
+        "R32": {
+          "Faxed": "FAXID",
+          "Ringy": "RINGY",
+          "SARASOTA": "SRQ",
+          "Sabe": "SABEE",
+          "Zaldi": "ZALDI"
+        }
+      },
+      "AssignedApproach": "ILS Runway 32",
+      "STAR": "LUBBR4",
+      "Route": [
+        "MURDO",
+        "KSRQ"
+      ],
+      "Altitude": 3178,
+      "Heading": 340,
+      "Speed": 199,
+      "AssignedHeading": 340,
+      "AssignedSpeed": 180,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "4",
+        "22"
+      ]
+    },
+    "Southwest 24 19": {
+      "Callsign": "SWA2419",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Cruz": "CRUUZ",
+        "Deside": "DSIDE",
+        "Jetstream": "JSTRM",
+        "Lagoo": "LAGOO",
+        "ST PETERSBURG": "PIE",
+        "Selman": "SELMN",
+        "Tampa": "KTPA",
+        "Tyner": "TYNER"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "RNAV Y Runway 1L": "RY1L",
+        "RNAV Y Runway 1R": "RY1R",
+        "RNAV Z Runway 1L": "RZ1L",
+        "RNAV Z Runway 1R": "RZ1R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Lagoo": "LAGOO",
+          "ST PETERSBURG": "PIE",
+          "Selman": "SELMN",
+          "Tyner": "TYNER"
+        },
+        "RY1L": {
+          "Fitpa": "FITPA",
+          "ST PETERSBURG": "PIE",
+          "Tyner": "TYNER",
+          "Zerur": "ZERUR",
+          "snork": "SNORK"
+        },
+        "RY1R": {
+          "Anaze": "ANAZE",
+          "LAKELAND": "LAL",
+          "Muwty": "MUWTY",
+          "Zelto": "ZELTO"
+        },
+        "RZ1L": {
+          "Borst": "BORST",
+          "Dicky": "DICKY",
+          "Esue": "ESSUE",
+          "Joiner": "JOYNR",
+          "Orast": "ORAST",
+          "Poser": "POZER",
+          "Selman": "SELMN",
+          "Selst": "CELST",
+          "Sister": "SISTR",
+          "Spars": "SPARZ",
+          "Stacy": "STACI",
+          "Tooth": "TOOTH",
+          "Vestrum": "VSTRM",
+          "Zervo": "ZERVO",
+          "grace": "GRAXE"
+        },
+        "RZ1R": {
+          "Anaze": "ANAZE",
+          "Borst": "BORST",
+          "Dajbo": "DAJBO",
+          "Dale": "DAAIL",
+          "Dried": "DREID",
+          "Filter": "FILTR",
+          "Hickey": "HICAY",
+          "Ingram": "INGRM",
+          "Izy": "IZZZY",
+          "Payton": "PEYTN",
+          "Pimal": "PJMAL",
+          "Tooth": "TOOTH",
+          "Zelto": "ZELTO",
+          "Zervo": "ZERVO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 1L",
+      "STAR": "BLFRG3",
+      "Route": [
+        "DSIDE",
+        "JSTRM",
+        "CRUUZ",
+        "KTPA"
+      ],
+      "Altitude": 4000,
+      "Heading": 90,
+      "Speed": 263,
+      "AssignedHeading": 90,
+      "State": "arrival",
+      "ControllerFrequency": "1G",
+      "TrackingController": "1G",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "Southwest 44 43": {
+      "Callsign": "SWA4443",
+      "AircraftType": "B737",
+      "Fixes": {
+        "Lagoo": "LAGOO",
+        "ST PETERSBURG": "PIE",
+        "Selman": "SELMN",
+        "Tampa": "KTPA",
+        "Tyner": "TYNER"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "RNAV Y Runway 1L": "RY1L",
+        "RNAV Y Runway 1R": "RY1R",
+        "RNAV Z Runway 1L": "RZ1L",
+        "RNAV Z Runway 1R": "RZ1R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Lagoo": "LAGOO",
+          "ST PETERSBURG": "PIE",
+          "Selman": "SELMN",
+          "Tyner": "TYNER"
+        },
+        "RY1L": {
+          "Fitpa": "FITPA",
+          "ST PETERSBURG": "PIE",
+          "Tyner": "TYNER",
+          "Zerur": "ZERUR",
+          "snork": "SNORK"
+        },
+        "RY1R": {
+          "Anaze": "ANAZE",
+          "LAKELAND": "LAL",
+          "Muwty": "MUWTY",
+          "Zelto": "ZELTO"
+        },
+        "RZ1L": {
+          "Borst": "BORST",
+          "Dicky": "DICKY",
+          "Esue": "ESSUE",
+          "Joiner": "JOYNR",
+          "Orast": "ORAST",
+          "Poser": "POZER",
+          "Selman": "SELMN",
+          "Selst": "CELST",
+          "Sister": "SISTR",
+          "Spars": "SPARZ",
+          "Stacy": "STACI",
+          "Tooth": "TOOTH",
+          "Vestrum": "VSTRM",
+          "Zervo": "ZERVO",
+          "grace": "GRAXE"
+        },
+        "RZ1R": {
+          "Anaze": "ANAZE",
+          "Borst": "BORST",
+          "Dajbo": "DAJBO",
+          "Dale": "DAAIL",
+          "Dried": "DREID",
+          "Filter": "FILTR",
+          "Hickey": "HICAY",
+          "Ingram": "INGRM",
+          "Izy": "IZZZY",
+          "Payton": "PEYTN",
+          "Pimal": "PJMAL",
+          "Tooth": "TOOTH",
+          "Zelto": "ZELTO",
+          "Zervo": "ZERVO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 1L",
+      "STAR": "MAATY6",
+      "Route": [
+        "KTPA"
+      ],
+      "Altitude": 3063,
+      "Heading": 40,
+      "Speed": 190,
+      "AssignedHeading": 40,
+      "AssignedSpeed": 180,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "Spirit Wings 19 zero five": {
+      "Callsign": "NKS1905",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Dormer": "DORMR",
+        "Fruit": "FROOT",
+        "Pistol": "PSTOL",
+        "Tampa": "KTPA",
+        "sykes": "SYKES"
+      },
+      "SID": "DORMR3",
+      "Route": [
+        "SYKES",
+        "DORMR",
+        "PSTOL",
+        "FROOT",
+        "ROZZI",
+        "KIAH"
+      ],
+      "Altitude": 7722,
+      "Heading": 248,
+      "Speed": 296,
+      "State": "departure",
+      "ControllerFrequency": "1D",
+      "TrackingController": "C25"
+    },
+    "Steel Jet seven 65": {
+      "Callsign": "JTZ765",
+      "AircraftType": "C68A",
+      "Fixes": {
+        "Bass": "CBASS",
+        "Buggo": "BUGGO",
+        "Felom": "FELOM",
+        "Lagoo": "LAGOO",
+        "Matty": "MAATY",
+        "Rooker": "ROOKR",
+        "ST PETERSBURG": "PIE",
+        "Selman": "SELMN",
+        "Tampa": "KTPA",
+        "Tooth": "TOOTH",
+        "Tyner": "TYNER",
+        "blout": "BLOUT"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "RNAV Y Runway 1L": "RY1L",
+        "RNAV Y Runway 1R": "RY1R",
+        "RNAV Z Runway 1L": "RZ1L",
+        "RNAV Z Runway 1R": "RZ1R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Lagoo": "LAGOO",
+          "ST PETERSBURG": "PIE",
+          "Selman": "SELMN",
+          "Tyner": "TYNER"
+        },
+        "RY1L": {
+          "Fitpa": "FITPA",
+          "ST PETERSBURG": "PIE",
+          "Tyner": "TYNER",
+          "Zerur": "ZERUR",
+          "snork": "SNORK"
+        },
+        "RY1R": {
+          "Anaze": "ANAZE",
+          "LAKELAND": "LAL",
+          "Muwty": "MUWTY",
+          "Zelto": "ZELTO"
+        },
+        "RZ1L": {
+          "Borst": "BORST",
+          "Dicky": "DICKY",
+          "Esue": "ESSUE",
+          "Joiner": "JOYNR",
+          "Orast": "ORAST",
+          "Poser": "POZER",
+          "Selman": "SELMN",
+          "Selst": "CELST",
+          "Sister": "SISTR",
+          "Spars": "SPARZ",
+          "Stacy": "STACI",
+          "Tooth": "TOOTH",
+          "Vestrum": "VSTRM",
+          "Zervo": "ZERVO",
+          "grace": "GRAXE"
+        },
+        "RZ1R": {
+          "Anaze": "ANAZE",
+          "Borst": "BORST",
+          "Dajbo": "DAJBO",
+          "Dale": "DAAIL",
+          "Dried": "DREID",
+          "Filter": "FILTR",
+          "Hickey": "HICAY",
+          "Ingram": "INGRM",
+          "Izy": "IZZZY",
+          "Payton": "PEYTN",
+          "Pimal": "PJMAL",
+          "Tooth": "TOOTH",
+          "Zelto": "ZELTO",
+          "Zervo": "ZERVO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 1L",
+      "STAR": "MAATY6",
+      "Route": [
+        "MAATY",
+        "ROOKR",
+        "BLOUT",
+        "CBASS",
+        "TOOTH",
+        "BUGGO",
+        "FELOM",
+        "KTPA"
+      ],
+      "Altitude": 11000,
+      "Heading": 142,
+      "Speed": 301,
+      "AssignedHeading": 142,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "United 13 42": {
+      "Callsign": "UAL1342",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Lagoo": "LAGOO",
+        "ST PETERSBURG": "PIE",
+        "Selman": "SELMN",
+        "Tampa": "KTPA",
+        "Tyner": "TYNER"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "RNAV Y Runway 1L": "RY1L",
+        "RNAV Y Runway 1R": "RY1R",
+        "RNAV Z Runway 1L": "RZ1L",
+        "RNAV Z Runway 1R": "RZ1R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Lagoo": "LAGOO",
+          "ST PETERSBURG": "PIE",
+          "Selman": "SELMN",
+          "Tyner": "TYNER"
+        },
+        "RY1L": {
+          "Fitpa": "FITPA",
+          "ST PETERSBURG": "PIE",
+          "Tyner": "TYNER",
+          "Zerur": "ZERUR",
+          "snork": "SNORK"
+        },
+        "RY1R": {
+          "Anaze": "ANAZE",
+          "LAKELAND": "LAL",
+          "Muwty": "MUWTY",
+          "Zelto": "ZELTO"
+        },
+        "RZ1L": {
+          "Borst": "BORST",
+          "Dicky": "DICKY",
+          "Esue": "ESSUE",
+          "Joiner": "JOYNR",
+          "Orast": "ORAST",
+          "Poser": "POZER",
+          "Selman": "SELMN",
+          "Selst": "CELST",
+          "Sister": "SISTR",
+          "Spars": "SPARZ",
+          "Stacy": "STACI",
+          "Tooth": "TOOTH",
+          "Vestrum": "VSTRM",
+          "Zervo": "ZERVO",
+          "grace": "GRAXE"
+        },
+        "RZ1R": {
+          "Anaze": "ANAZE",
+          "Borst": "BORST",
+          "Dajbo": "DAJBO",
+          "Dale": "DAAIL",
+          "Dried": "DREID",
+          "Filter": "FILTR",
+          "Hickey": "HICAY",
+          "Ingram": "INGRM",
+          "Izy": "IZZZY",
+          "Payton": "PEYTN",
+          "Pimal": "PJMAL",
+          "Tooth": "TOOTH",
+          "Zelto": "ZELTO",
+          "Zervo": "ZERVO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 1L",
+      "STAR": "MAATY6",
+      "Route": [
+        "KTPA"
+      ],
+      "Altitude": 5000,
+      "Heading": 187,
+      "Speed": 236,
+      "AssignedHeading": 187,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "United 21 zero one": {
+      "Callsign": "UAL2101",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Alroe": "ALROE",
+        "Bangs": "BANGZ",
+        "Fivdo": "FIVDO",
+        "Kidle": "KIDLE",
+        "Mahar": "MAHAR",
+        "Murdo": "MURDO",
+        "Ringy": "RINGY",
+        "SARASOTA": "SRQ",
+        "Sarasota": "KSRQ"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 32": "I32",
+        "RNAV Runway 32": "R32"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three two": "32",
+        "visual runway three two": "32",
+        "visual three two": "32"
+      },
+      "ApproachFixes": {
+        "I32": {
+          "Ringy": "RINGY",
+          "SARASOTA": "SRQ"
+        },
+        "R32": {
+          "Faxed": "FAXID",
+          "Ringy": "RINGY",
+          "SARASOTA": "SRQ",
+          "Sabe": "SABEE",
+          "Zaldi": "ZALDI"
+        }
+      },
+      "AssignedApproach": "ILS Runway 32",
+      "STAR": "BANGZ2",
+      "Route": [
+        "BANGZ",
+        "KIDLE",
+        "ALROE",
+        "MAHAR",
+        "FIVDO",
+        "MURDO",
+        "KSRQ"
+      ],
+      "Altitude": 2000,
+      "Heading": 258,
+      "Speed": 193,
+      "AssignedHeading": 270,
+      "AssignedSpeed": 180,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "LAHSORunways": [
+        "4",
+        "22"
+      ]
+    },
+    "United six 83": {
+      "Callsign": "UAL683",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Lagoo": "LAGOO",
+        "Selman": "SELMN",
+        "Tampa": "KTPA",
+        "Tyner": "TYNER"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "RNAV Y Runway 1L": "RY1L",
+        "RNAV Y Runway 1R": "RY1R",
+        "RNAV Z Runway 1L": "RZ1L",
+        "RNAV Z Runway 1R": "RZ1R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Lagoo": "LAGOO",
+          "ST PETERSBURG": "PIE",
+          "Selman": "SELMN",
+          "Tyner": "TYNER"
+        },
+        "RY1L": {
+          "Fitpa": "FITPA",
+          "ST PETERSBURG": "PIE",
+          "Tyner": "TYNER",
+          "Zerur": "ZERUR",
+          "snork": "SNORK"
+        },
+        "RY1R": {
+          "Anaze": "ANAZE",
+          "LAKELAND": "LAL",
+          "Muwty": "MUWTY",
+          "Zelto": "ZELTO"
+        },
+        "RZ1L": {
+          "Borst": "BORST",
+          "Dicky": "DICKY",
+          "Esue": "ESSUE",
+          "Joiner": "JOYNR",
+          "Orast": "ORAST",
+          "Poser": "POZER",
+          "Selman": "SELMN",
+          "Selst": "CELST",
+          "Sister": "SISTR",
+          "Spars": "SPARZ",
+          "Stacy": "STACI",
+          "Tooth": "TOOTH",
+          "Vestrum": "VSTRM",
+          "Zervo": "ZERVO",
+          "grace": "GRAXE"
+        },
+        "RZ1R": {
+          "Anaze": "ANAZE",
+          "Borst": "BORST",
+          "Dajbo": "DAJBO",
+          "Dale": "DAAIL",
+          "Dried": "DREID",
+          "Filter": "FILTR",
+          "Hickey": "HICAY",
+          "Ingram": "INGRM",
+          "Izy": "IZZZY",
+          "Payton": "PEYTN",
+          "Pimal": "PJMAL",
+          "Tooth": "TOOTH",
+          "Zelto": "ZELTO",
+          "Zervo": "ZERVO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 1L",
+      "STAR": "DADES2",
+      "Route": [
+        "LAGOO",
+        "SELMN",
+        "TYNER",
+        "KTPA"
+      ],
+      "Altitude": 3000,
+      "Heading": 9,
+      "Speed": 194,
+      "AssignedSpeed": 180,
+      "State": "cleared approach",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "cessna T two ten four three juliet": {
+      "Callsign": "N2743J/T",
+      "AircraftType": "T210",
+      "Fixes": {
+        "Lakeland Linder": "KLAL",
+        "Peter O Knight": "KTPF"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 36": "R36"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three six": "36",
+        "visual runway three six": "36",
+        "visual three six": "36"
+      },
+      "ApproachFixes": {
+        "R36": {
+          "Humki": "HUMKI",
+          "Jevod": "JEVOD",
+          "LAKELAND": "LAL",
+          "SARASOTA": "SRQ"
+        }
+      },
+      "Route": [
+        "KLAL",
+        "KTPF"
+      ],
+      "Altitude": 2700,
+      "Heading": 22,
+      "Speed": 175,
+      "State": "arrival",
+      "ControllerFrequency": "1L",
+      "TrackingController": "1L",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "4",
+        "22"
+      ]
+    },
+    "citation one sierra brahvo": {
+      "Callsign": "N271SB/T",
+      "AircraftType": "C550",
+      "Fixes": {
+        "Bass": "CBASS",
+        "Buggo": "BUGGO",
+        "Felom": "FELOM",
+        "Lagoo": "LAGOO",
+        "Matty": "MAATY",
+        "Rooker": "ROOKR",
+        "ST PETERSBURG": "PIE",
+        "Selman": "SELMN",
+        "Tampa": "KTPA",
+        "Tooth": "TOOTH",
+        "Tyner": "TYNER",
+        "blout": "BLOUT"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "RNAV Y Runway 1L": "RY1L",
+        "RNAV Y Runway 1R": "RY1R",
+        "RNAV Z Runway 1L": "RZ1L",
+        "RNAV Z Runway 1R": "RZ1R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Lagoo": "LAGOO",
+          "ST PETERSBURG": "PIE",
+          "Selman": "SELMN",
+          "Tyner": "TYNER"
+        },
+        "RY1L": {
+          "Fitpa": "FITPA",
+          "ST PETERSBURG": "PIE",
+          "Tyner": "TYNER",
+          "Zerur": "ZERUR",
+          "snork": "SNORK"
+        },
+        "RY1R": {
+          "Anaze": "ANAZE",
+          "LAKELAND": "LAL",
+          "Muwty": "MUWTY",
+          "Zelto": "ZELTO"
+        },
+        "RZ1L": {
+          "Borst": "BORST",
+          "Dicky": "DICKY",
+          "Esue": "ESSUE",
+          "Joiner": "JOYNR",
+          "Orast": "ORAST",
+          "Poser": "POZER",
+          "Selman": "SELMN",
+          "Selst": "CELST",
+          "Sister": "SISTR",
+          "Spars": "SPARZ",
+          "Stacy": "STACI",
+          "Tooth": "TOOTH",
+          "Vestrum": "VSTRM",
+          "Zervo": "ZERVO",
+          "grace": "GRAXE"
+        },
+        "RZ1R": {
+          "Anaze": "ANAZE",
+          "Borst": "BORST",
+          "Dajbo": "DAJBO",
+          "Dale": "DAAIL",
+          "Dried": "DREID",
+          "Filter": "FILTR",
+          "Hickey": "HICAY",
+          "Ingram": "INGRM",
+          "Izy": "IZZZY",
+          "Payton": "PEYTN",
+          "Pimal": "PJMAL",
+          "Tooth": "TOOTH",
+          "Zelto": "ZELTO",
+          "Zervo": "ZERVO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 1L",
+      "STAR": "MAATY6",
+      "Route": [
+        "MAATY",
+        "ROOKR",
+        "BLOUT",
+        "CBASS",
+        "TOOTH",
+        "BUGGO",
+        "FELOM",
+        "KTPA"
+      ],
+      "Altitude": 5793,
+      "Heading": 190,
+      "Speed": 285,
+      "AssignedHeading": 190,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "hawker eight fifty one zero hotel": {
+      "Callsign": "N1910H/T",
+      "AircraftType": "H25B",
+      "Fixes": {
+        "Arshw": "ARSHW",
+        "Goofs": "GOOFS",
+        "LAKELAND": "LAL",
+        "Lakeland Linder": "KLAL",
+        "Matty": "MAATY",
+        "flyin": "FLYEN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 10": "I10",
+        "RNAV Runway 10": "R10"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one zero": "10",
+        "visual one zero": "10",
+        "visual runway one zero": "10"
+      },
+      "ApproachFixes": {
+        "I10": {
+          "Arshw": "ARSHW",
+          "LAKELAND": "LAL",
+          "flyin": "FLYEN"
+        },
+        "R10": {
+          "Arshw": "ARSHW",
+          "Bomer": "BOMRR",
+          "Guner": "GUUNR",
+          "Sunfin": "SUNFN",
+          "flyin": "FLYEN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 10",
+      "STAR": "MAATY6",
+      "Route": [
+        "MAATY",
+        "GOOFS",
+        "KLAL"
+      ],
+      "Altitude": 5139,
+      "Heading": 121,
+      "Speed": 270,
+      "AssignedHeading": 121,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "5",
+        "23"
+      ]
+    },
+    "november five three eight mike tango": {
+      "Callsign": "N538MT",
+      "AircraftType": "PC12",
+      "Fixes": {
+        "Tampa": "KTPA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "RNAV Y Runway 1L": "RY1L",
+        "RNAV Y Runway 1R": "RY1R",
+        "RNAV Z Runway 1L": "RZ1L",
+        "RNAV Z Runway 1R": "RZ1R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Lagoo": "LAGOO",
+          "ST PETERSBURG": "PIE",
+          "Selman": "SELMN",
+          "Tyner": "TYNER"
+        },
+        "RY1L": {
+          "Fitpa": "FITPA",
+          "ST PETERSBURG": "PIE",
+          "Tyner": "TYNER",
+          "Zerur": "ZERUR",
+          "snork": "SNORK"
+        },
+        "RY1R": {
+          "Anaze": "ANAZE",
+          "LAKELAND": "LAL",
+          "Muwty": "MUWTY",
+          "Zelto": "ZELTO"
+        },
+        "RZ1L": {
+          "Borst": "BORST",
+          "Dicky": "DICKY",
+          "Esue": "ESSUE",
+          "Joiner": "JOYNR",
+          "Orast": "ORAST",
+          "Poser": "POZER",
+          "Selman": "SELMN",
+          "Selst": "CELST",
+          "Sister": "SISTR",
+          "Spars": "SPARZ",
+          "Stacy": "STACI",
+          "Tooth": "TOOTH",
+          "Vestrum": "VSTRM",
+          "Zervo": "ZERVO",
+          "grace": "GRAXE"
+        },
+        "RZ1R": {
+          "Anaze": "ANAZE",
+          "Borst": "BORST",
+          "Dajbo": "DAJBO",
+          "Dale": "DAAIL",
+          "Dried": "DREID",
+          "Filter": "FILTR",
+          "Hickey": "HICAY",
+          "Ingram": "INGRM",
+          "Izy": "IZZZY",
+          "Payton": "PEYTN",
+          "Pimal": "PJMAL",
+          "Tooth": "TOOTH",
+          "Zelto": "ZELTO",
+          "Zervo": "ZERVO"
+        }
+      },
+      "STAR": "BLFRG3",
+      "Route": [
+        "KTPA"
+      ],
+      "Altitude": 4000,
+      "Heading": 270,
+      "Speed": 202,
+      "AssignedHeading": 270,
+      "AssignedSpeed": 180,
+      "State": "arrival",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "november four zulu lima": {
+      "Callsign": "N4ZL",
+      "AircraftType": "C560",
+      "Fixes": {
+        "Lifie": "LYFIE",
+        "Murdo": "MURDO",
+        "Ringy": "RINGY",
+        "SARASOTA": "SRQ",
+        "Sarasota": "KSRQ",
+        "woody": "WUDDY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 32": "I32",
+        "RNAV Runway 32": "R32"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three two": "32",
+        "visual runway three two": "32",
+        "visual three two": "32"
+      },
+      "ApproachFixes": {
+        "I32": {
+          "Ringy": "RINGY",
+          "SARASOTA": "SRQ"
+        },
+        "R32": {
+          "Faxed": "FAXID",
+          "Ringy": "RINGY",
+          "SARASOTA": "SRQ",
+          "Sabe": "SABEE",
+          "Zaldi": "ZALDI"
+        }
+      },
+      "AssignedApproach": "ILS Runway 32",
+      "STAR": "LUBBR4",
+      "Route": [
+        "WUDDY",
+        "LYFIE",
+        "MURDO",
+        "KSRQ"
+      ],
+      "Altitude": 12000,
+      "Heading": 213,
+      "Speed": 301,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "4",
+        "22"
+      ]
+    },
+    "november one niner one zero hotel": {
+      "Callsign": "N1910H",
+      "AircraftType": "H25B",
+      "Fixes": {
+        "Arshw": "ARSHW",
+        "Goofs": "GOOFS",
+        "LAKELAND": "LAL",
+        "Lakeland Linder": "KLAL",
+        "Matty": "MAATY",
+        "flyin": "FLYEN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 10": "I10",
+        "RNAV Runway 10": "R10"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one zero": "10",
+        "visual one zero": "10",
+        "visual runway one zero": "10"
+      },
+      "ApproachFixes": {
+        "I10": {
+          "Arshw": "ARSHW",
+          "LAKELAND": "LAL",
+          "flyin": "FLYEN"
+        },
+        "R10": {
+          "Arshw": "ARSHW",
+          "Bomer": "BOMRR",
+          "Guner": "GUUNR",
+          "Sunfin": "SUNFN",
+          "flyin": "FLYEN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 10",
+      "STAR": "MAATY6",
+      "Route": [
+        "MAATY",
+        "GOOFS",
+        "KLAL"
+      ],
+      "Altitude": 5139,
+      "Heading": 121,
+      "Speed": 270,
+      "AssignedHeading": 121,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "LAHSORunways": [
+        "5",
+        "23"
+      ]
+    },
+    "november three five two seven hotel": {
+      "Callsign": "N3527H",
+      "AircraftType": "M20P",
+      "Fixes": {
+        "Camjo": "CAMJO",
+        "Ended": "ENDED",
+        "Sarasota": "KSRQ",
+        "Wilon": "WILON",
+        "Zephyrhills Municipal": "KZPH",
+        "bring": "BRUNG",
+        "spring": "SPRNG"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 1": "R1"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one": "1",
+        "visual one": "1",
+        "visual runway one": "1"
+      },
+      "ApproachFixes": {
+        "R1": {
+          "Elije": "ELIJE",
+          "Erkaf": "ERKAF",
+          "Iczor": "ICZOR",
+          "Ufsop": "UFSOP"
+        }
+      },
+      "SID": "TIDES1",
+      "Route": [
+        "BRUNG",
+        "ENDED",
+        "WILON",
+        "SPRNG",
+        "CAMJO",
+        "KZPH"
+      ],
+      "Altitude": 7000,
+      "Heading": 10,
+      "Speed": 166,
+      "State": "departure",
+      "ControllerFrequency": "1S",
+      "TrackingController": "C25",
+      "LAHSORunways": [
+        "5",
+        "23"
+      ]
+    },
+    "november two seven four three juliet": {
+      "Callsign": "N2743J",
+      "AircraftType": "T210",
+      "Fixes": {
+        "Lakeland Linder": "KLAL",
+        "Peter O Knight": "KTPF"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 36": "R36"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three six": "36",
+        "visual runway three six": "36",
+        "visual three six": "36"
+      },
+      "ApproachFixes": {
+        "R36": {
+          "Humki": "HUMKI",
+          "Jevod": "JEVOD",
+          "LAKELAND": "LAL",
+          "SARASOTA": "SRQ"
+        }
+      },
+      "Route": [
+        "KLAL",
+        "KTPF"
+      ],
+      "Altitude": 2700,
+      "Heading": 22,
+      "Speed": 175,
+      "State": "arrival",
+      "ControllerFrequency": "1L",
+      "TrackingController": "1L",
+      "LAHSORunways": [
+        "4",
+        "22"
+      ]
+    },
+    "november two seven one sierra brahvo": {
+      "Callsign": "N271SB",
+      "AircraftType": "C550",
+      "Fixes": {
+        "Bass": "CBASS",
+        "Buggo": "BUGGO",
+        "Felom": "FELOM",
+        "Lagoo": "LAGOO",
+        "Matty": "MAATY",
+        "Rooker": "ROOKR",
+        "ST PETERSBURG": "PIE",
+        "Selman": "SELMN",
+        "Tampa": "KTPA",
+        "Tooth": "TOOTH",
+        "Tyner": "TYNER",
+        "blout": "BLOUT"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "RNAV Y Runway 1L": "RY1L",
+        "RNAV Y Runway 1R": "RY1R",
+        "RNAV Z Runway 1L": "RZ1L",
+        "RNAV Z Runway 1R": "RZ1R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Lagoo": "LAGOO",
+          "ST PETERSBURG": "PIE",
+          "Selman": "SELMN",
+          "Tyner": "TYNER"
+        },
+        "RY1L": {
+          "Fitpa": "FITPA",
+          "ST PETERSBURG": "PIE",
+          "Tyner": "TYNER",
+          "Zerur": "ZERUR",
+          "snork": "SNORK"
+        },
+        "RY1R": {
+          "Anaze": "ANAZE",
+          "LAKELAND": "LAL",
+          "Muwty": "MUWTY",
+          "Zelto": "ZELTO"
+        },
+        "RZ1L": {
+          "Borst": "BORST",
+          "Dicky": "DICKY",
+          "Esue": "ESSUE",
+          "Joiner": "JOYNR",
+          "Orast": "ORAST",
+          "Poser": "POZER",
+          "Selman": "SELMN",
+          "Selst": "CELST",
+          "Sister": "SISTR",
+          "Spars": "SPARZ",
+          "Stacy": "STACI",
+          "Tooth": "TOOTH",
+          "Vestrum": "VSTRM",
+          "Zervo": "ZERVO",
+          "grace": "GRAXE"
+        },
+        "RZ1R": {
+          "Anaze": "ANAZE",
+          "Borst": "BORST",
+          "Dajbo": "DAJBO",
+          "Dale": "DAAIL",
+          "Dried": "DREID",
+          "Filter": "FILTR",
+          "Hickey": "HICAY",
+          "Ingram": "INGRM",
+          "Izy": "IZZZY",
+          "Payton": "PEYTN",
+          "Pimal": "PJMAL",
+          "Tooth": "TOOTH",
+          "Zelto": "ZELTO",
+          "Zervo": "ZERVO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 1L",
+      "STAR": "MAATY6",
+      "Route": [
+        "MAATY",
+        "ROOKR",
+        "BLOUT",
+        "CBASS",
+        "TOOTH",
+        "BUGGO",
+        "FELOM",
+        "KTPA"
+      ],
+      "Altitude": 5793,
+      "Heading": 190,
+      "Speed": 285,
+      "AssignedHeading": 190,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "turbo centurion four three juliet": {
+      "Callsign": "N2743J/T",
+      "AircraftType": "T210",
+      "Fixes": {
+        "Lakeland Linder": "KLAL",
+        "Peter O Knight": "KTPF"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 36": "R36"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three six": "36",
+        "visual runway three six": "36",
+        "visual three six": "36"
+      },
+      "ApproachFixes": {
+        "R36": {
+          "Humki": "HUMKI",
+          "Jevod": "JEVOD",
+          "LAKELAND": "LAL",
+          "SARASOTA": "SRQ"
+        }
+      },
+      "Route": [
+        "KLAL",
+        "KTPF"
+      ],
+      "Altitude": 2700,
+      "Heading": 22,
+      "Speed": 175,
+      "State": "arrival",
+      "ControllerFrequency": "1L",
+      "TrackingController": "1L",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "4",
+        "22"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"november two seven four three juliett cross lakeland at or above two thousand seven hundred cleared r Nav runway five approach\"",
+    "[local-stt] normalized words: [november 2 7 4 3 juliett cross lakeland at or above 2 thousand 7 hundred cleared rnav runway 5 approach]",
+    "[local-stt] tokens: 14",
+    "[local-stt]   token[0]: Text=\"november\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"2743\" Type=1 Value=2743",
+    "[local-stt]   token[2]: Text=\"juliett\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"cross\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"lakeland\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"at\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"or\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"above\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"27\" Type=2 Value=27",
+    "[local-stt]   token[9]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"rnav\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"5\" Type=1 Value=5",
+    "[local-stt]   token[13]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 14 tokens, 24 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 14 tokens, 24 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"november two seven four three juliet\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"cessna T two ten four three juliet\" (airline=0.431, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"november two seven four three juliet\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 26 results",
+    "[local-stt]     result 0: \"Envoy 37 59\" (airline=0.642, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Delta 27 zero six\" (airline=0.442, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"United 13 42\" (airline=0.528, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Allegiant one 96\" (airline=0.412, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Southwest 24 19\" (airline=0.491, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"United 13 42\" (airline=0.66, flight=0.00, skip=2)",
+    "[local-stt]     pattern \"airline_only\": scoring rejected \"United 13 42\"",
+    "[local-stt]   pattern \"ga_november\": 2 results",
+    "[local-stt]     result 0: \"november two seven four three juliet\" (airline=0.800, flight=0.750, skip=0)",
+    "[local-stt]     result 1: \"november two seven one sierra brahvo\" (airline=0.800, flight=0.636, skip=0)",
+    "[local-stt]     pattern \"ga_november\": selected \"november two seven four three juliet\" (airline=0.80, flight=0.75, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 6 results",
+    "[local-stt]     result 0: \"november two seven four three juliet\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"cessna T two ten four three juliet\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 2: \"turbo centurion four three juliet\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 3: \"november two seven four three juliet\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 4: \"cessna T two ten four three juliet\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"november two seven four three juliet\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"N2743J\" (spokenKey=\"november two seven four three juliet\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"N2743J\" SpokenKey=\"november two seven four three juliet\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=2700 Fixes=2 Approaches=1 VisualApproaches=3 AssignedApproach=\"\" LAHSORunways=[4 22]",
+    "[local-stt]   fix: \"Peter O Knight\" -\u003e \"KTPF\"",
+    "[local-stt]   fix: \"Lakeland Linder\" -\u003e \"KLAL\"",
+    "[local-stt]   approach: \"RNAV Runway 36\" -\u003e \"R36\"",
+    "[local-stt]   visual approach: \"visual runway three six\" -\u003e \"36\"",
+    "[local-stt]   visual approach: \"visual approach runway three six\" -\u003e \"36\"",
+    "[local-stt]   visual approach: \"visual three six\" -\u003e \"36\"",
+    "[local-stt] command tokens after disregard: 11",
+    "[local-stt]   token[0]: Text=\"cross\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"lakeland\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"at\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"or\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"above\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"27\" Type=2 Value=27",
+    "[local-stt]   token[6]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"rnav\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"5\" Type=1 Value=5",
+    "[local-stt]   token[10]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 11 tokens",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"lakeland\" against 2 fixes",
+    "[local-stt]   extractFix: matched \"lakeland\" -\u003e \"KLAL\" (fuzzy 0.91)",
+    "[local-stt]   matched command: \"CKLAL/A27+\" [cross_fix_at_or_above] (pos=0, conf=0.98, consumed=6, isThen=false)",
+    "[local-stt]   no match at token[0]=\"cross\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"rnav\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"rnav\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"5\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"5\"",
+    "[local-stt]   matched command: \"CR36\" [cleared_approach] (pos=6, conf=0.97, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[6]=\"cleared\", skipping",
+    "[local-stt]   no match at token[1]=\"lakeland\", skipping",
+    "[local-stt]   no match at token[9]=\"5\", skipping",
+    "[local-stt]   no match at token[7]=\"rnav\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"or\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"or\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"above\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"above\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"27\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"27\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"or\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"or\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"above\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"above\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"27\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"27\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"or\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"or\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"above\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"above\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"27\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"27\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"or\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"or\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"above\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"above\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"27\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"27\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"or\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"or\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"above\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"above\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"27\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"27\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"or\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"or\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"above\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"above\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"27\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"27\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"or\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"or\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"above\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"above\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"27\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"27\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"or\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"or\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"above\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"above\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"27\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"27\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"or\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"or\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"above\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"above\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"27\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"27\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"or\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"or\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"above\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"above\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"27\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"27\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"or\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"or\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"above\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"above\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"27\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"27\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"or\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"or\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"above\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"above\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"27\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"27\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"or\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"or\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"above\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"above\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"27\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"27\"",
+    "[local-stt]   no match at token[2]=\"at\", skipping",
+    "[local-stt]   no match at token[10]=\"approach\", skipping",
+    "[local-stt]   no match at token[8]=\"runway\", skipping",
+    "[local-stt]   no match at token[3]=\"or\", skipping",
+    "[local-stt]   no match at token[9]=\"5\", skipping",
+    "[local-stt]   no match at token[4]=\"above\", skipping",
+    "[local-stt]   no match at token[10]=\"approach\", skipping",
+    "[local-stt]   matched command: \"A27\" [standalone_altitude] (pos=5, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[5]=\"27\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"rnav\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"rnav\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"5\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"5\"",
+    "[local-stt]   matched command: \"CR36\" [cleared_approach] (pos=6, conf=0.97, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[6]=\"cleared\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"rnav\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"rnav\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"5\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"5\"",
+    "[local-stt]   matched command: \"CR36\" [cleared_approach] (pos=6, conf=0.97, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[6]=\"cleared\", skipping",
+    "[local-stt]   no match at token[9]=\"5\", skipping",
+    "[local-stt]   no match at token[9]=\"5\", skipping",
+    "[local-stt]   no match at token[10]=\"approach\", skipping",
+    "[local-stt]   no match at token[10]=\"approach\", skipping",
+    "[local-stt]   beam final[0]: score=5.187 pos=11 commands=[CKLAL/A27+ CR36]",
+    "[local-stt]   beam final[1]: score=1.186 pos=11 commands=[CKLAL/A27+]",
+    "[local-stt]   beam final[2]: score=-0.007 pos=11 commands=[A27 CR36]",
+    "[local-stt]   beam final[3]: score=-2.907 pos=11 commands=[CR36]",
+    "[local-stt] ParseCommands: result=[CKLAL/A27+ CR36] (avgConf=0.98)",
+    "[local-stt] parsed commands: [CKLAL/A27+ CR36] (conf=0.98, kinds=1)",
+    "[local-stt] validated commands: [CKLAL/A27+ CR36] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"N2743J CKLAL/A27+ CR36\" (conf=0.98, time=5.77ms) ==="
+  ]
+}

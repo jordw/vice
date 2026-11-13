@@ -1,0 +1,645 @@
+{
+  "time": "2026-11-11T01:43:48.215769163Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Fedex 93 36 descend maintain uh only one thousand expletive",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, uniform, mike, information, Ryman four, Paisley five, Hobo four, Barbecue three, Buzz five, Masey, Freeze, Weston, Cramer, Waylan, Reaba, Miranda, three six left, two zero left, runway, I L S, United three heavy, citation one whiskey victor, november five six one whiskey victor, citation one six golf, november three three one six golf, Fedex 93 36 heavy, Fedex 92 40 heavy, Fedex 42 58 heavy, Fedex 27 73 heavy, Fedex 14 83 heavy, Fedex one 28 heavy, Delta niner 98, Delta 25, American 48, American 38 heavy, Willie, Mixie, L Town, Ready, Maden, Muscle, Hums, Peeky, Stage, Redneck, Buzz, fincher, Tammy, Olas, Zesam, Ryman, Kamen, Carap, speaker, barbecue, Hobruk, LITTLE ROCK, MARVELL, MEMPHIS, WALNUT RIDGE, Rants, MAGNOLIA, Pasley, Plan, Beav, Casot, Hoog, Otis, baker, Leyik, Kists, Lucky, Sokol, MERIDIAN, Nashville International Airport, Mevy, Litter, Sudo, Whole, Faye, SIDON, Frans, Beats, Plied",
+  "whisper_duration_ms": 320.987,
+  "audio_duration_ms": 6472,
+  "processor": "GPU: NVIDIA GeForce RTX 4060 Ti (7939MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "FDX9336",
+  "command": "D110 ED",
+  "reason": "\"only one thousand\" is one one thousand; the repeat confirms",
+  "stt_aircraft": {
+    "American 38 heavy": {
+      "Callsign": "AAL38",
+      "AircraftType": "B772",
+      "Fixes": {
+        "Hums": "HUMMS",
+        "Lucky": "LUKKY",
+        "Plied": "PLIED",
+        "WALNUT RIDGE": "ARG",
+        "Zesam": "ZESAM"
+      },
+      "Route": [
+        "PLIED",
+        "LUKKY",
+        "ARG",
+        "ZESAM",
+        "HUMMS",
+        "HXW",
+        "BWG",
+        "DVK",
+        "KLAX"
+      ],
+      "Altitude": 37000,
+      "Heading": 95,
+      "Speed": 542,
+      "AssignedAltitude": 37000,
+      "State": "overflight",
+      "ControllerFrequency": "27",
+      "TrackingController": "27"
+    },
+    "American 48": {
+      "Callsign": "AAL48",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Beats": "BEATS",
+        "Kists": "KISTS",
+        "LITTLE ROCK": "LIT",
+        "MEMPHIS": "MEM"
+      },
+      "Route": [
+        "BEATS",
+        "KISTS",
+        "MEM",
+        "LIT",
+        "KOMMA",
+        "KLUBB",
+        "DWINE",
+        "IRW",
+        "KLAX"
+      ],
+      "Altitude": 34000,
+      "Heading": 281,
+      "Speed": 401,
+      "AssignedAltitude": 34000,
+      "State": "overflight",
+      "ControllerFrequency": "22",
+      "TrackingController": "22"
+    },
+    "Delta 25": {
+      "Callsign": "DAL25",
+      "AircraftType": "B752",
+      "Fixes": {
+        "Frans": "FRNNS",
+        "LITTLE ROCK": "LIT",
+        "Leyik": "LEYIK",
+        "MARVELL": "UJM"
+      },
+      "Route": [
+        "FRNNS",
+        "LEYIK",
+        "UJM",
+        "LIT",
+        "KOMMA",
+        "KLUBB",
+        "DWINE",
+        "IRW",
+        "KDFW"
+      ],
+      "Altitude": 37951,
+      "Heading": 272,
+      "Speed": 421,
+      "AssignedAltitude": 38000,
+      "State": "overflight",
+      "ControllerFrequency": "22",
+      "TrackingController": "22"
+    },
+    "Delta niner 98": {
+      "Callsign": "DAL998",
+      "AircraftType": "A21N",
+      "Fixes": {
+        "LITTLE ROCK": "LIT",
+        "Muscle": "MUSLE",
+        "Olas": "OLLAS",
+        "SIDON": "SQS",
+        "baker": "BAKRE"
+      },
+      "Route": [
+        "SQS",
+        "BAKRE",
+        "LIT",
+        "OLLAS",
+        "MUSLE",
+        "SUMMO",
+        "ORIXY",
+        "KDTW"
+      ],
+      "Altitude": 38000,
+      "Heading": 358,
+      "Speed": 442,
+      "AssignedAltitude": 38000,
+      "State": "overflight",
+      "ControllerFrequency": "22",
+      "TrackingController": "22"
+    },
+    "Fedex 14 83 heavy": {
+      "Callsign": "FDX1483",
+      "AircraftType": "B77L",
+      "Fixes": {
+        "Hoog": "HOOOG",
+        "Ready": "RDEEE",
+        "Whole": "WHOLL",
+        "barbecue": "BRBBQ",
+        "fincher": "FNCHR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 36L": "I36L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three six left": "36L",
+        "visual runway three six left": "36L",
+        "visual three six left": "36L"
+      },
+      "ApproachFixes": {
+        "I36L": {
+          "Cadus": "CADUS",
+          "Freeze": "FREAZ",
+          "Masey": "MACEE",
+          "Weston": "WSTON"
+        }
+      },
+      "STAR": "BRBBQ3",
+      "Route": [
+        "WHOLL",
+        "HOOOG",
+        "BRBBQ",
+        "FNCHR",
+        "RDEEE",
+        "JESTI",
+        "BEERT",
+        "KMEM"
+      ],
+      "Altitude": 30401,
+      "Heading": 175,
+      "Speed": 452,
+      "AssignedAltitude": 11000,
+      "AssignedSpeed": 290,
+      "State": "arrival",
+      "ControllerFrequency": "27",
+      "TrackingController": "27"
+    },
+    "Fedex 27 73 heavy": {
+      "Callsign": "FDX2773",
+      "AircraftType": "A306",
+      "Fixes": {
+        "Buzz": "BLUZZ",
+        "Casot": "CASOT",
+        "L Town": "LTOWN",
+        "Sudo": "SUDOE",
+        "speaker": "SPKER"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 36L": "I36L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three six left": "36L",
+        "visual runway three six left": "36L",
+        "visual three six left": "36L"
+      },
+      "ApproachFixes": {
+        "I36L": {
+          "Cadus": "CADUS",
+          "Freeze": "FREAZ",
+          "Masey": "MACEE",
+          "Weston": "WSTON"
+        }
+      },
+      "STAR": "BLUZZ5",
+      "Route": [
+        "SUDOE",
+        "CASOT",
+        "SPKER",
+        "BLUZZ",
+        "LTOWN",
+        "DAPLE",
+        "KMEM"
+      ],
+      "Altitude": 34000,
+      "Heading": 213,
+      "Speed": 431,
+      "AssignedAltitude": 11000,
+      "State": "arrival",
+      "ControllerFrequency": "62",
+      "TrackingController": "62"
+    },
+    "Fedex 42 58 heavy": {
+      "Callsign": "FDX4258",
+      "LastAddressed": true,
+      "AircraftType": "B763",
+      "Fixes": {
+        "Beav": "BEAVV",
+        "Hobruk": "HOBRK",
+        "Litter": "LITTR",
+        "Maden": "MADDN",
+        "Tammy": "TAMMY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 36L": "I36L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three six left": "36L",
+        "visual runway three six left": "36L",
+        "visual three six left": "36L"
+      },
+      "ApproachFixes": {
+        "I36L": {
+          "Cadus": "CADUS",
+          "Freeze": "FREAZ",
+          "Masey": "MACEE",
+          "Weston": "WSTON"
+        }
+      },
+      "STAR": "HOBRK4",
+      "Route": [
+        "LITTR",
+        "BEAVV",
+        "HOBRK",
+        "TAMMY",
+        "MADDN",
+        "JAMEA",
+        "TWIKL",
+        "KMEM"
+      ],
+      "Altitude": 32303,
+      "Heading": 73,
+      "Speed": 524,
+      "AssignedAltitude": 11000,
+      "State": "arrival",
+      "ControllerFrequency": "21",
+      "TrackingController": "21"
+    },
+    "Fedex 92 40 heavy": {
+      "Callsign": "FDX9240",
+      "AircraftType": "B763",
+      "Fixes": {
+        "Hobruk": "HOBRK",
+        "Maden": "MADDN",
+        "Mevy": "MEVEE",
+        "Plan": "CPLAN",
+        "Tammy": "TAMMY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 36L": "I36L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three six left": "36L",
+        "visual runway three six left": "36L",
+        "visual three six left": "36L"
+      },
+      "ApproachFixes": {
+        "I36L": {
+          "Cadus": "CADUS",
+          "Freeze": "FREAZ",
+          "Masey": "MACEE",
+          "Weston": "WSTON"
+        }
+      },
+      "STAR": "HOBRK4",
+      "Route": [
+        "MEVEE",
+        "CPLAN",
+        "HOBRK",
+        "TAMMY",
+        "MADDN",
+        "JAMEA",
+        "TWIKL",
+        "KMEM"
+      ],
+      "Altitude": 33000,
+      "Heading": 351,
+      "Speed": 479,
+      "AssignedAltitude": 11000,
+      "State": "arrival",
+      "ControllerFrequency": "44",
+      "TrackingController": "44"
+    },
+    "Fedex 93 36 heavy": {
+      "Callsign": "FDX9336",
+      "AircraftType": "B77L",
+      "Fixes": {
+        "Carap": "CARAP",
+        "Nashville": "KBNA",
+        "Pasley": "PASLY",
+        "Redneck": "RDNEK"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 20L": "I0L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero left": "20L",
+        "visual runway two zero left": "20L",
+        "visual two zero left": "20L"
+      },
+      "ApproachFixes": {
+        "I0L": {
+          "Cramer": "CRAMR",
+          "Jud": "JUUDD",
+          "Miranda": "MRNDA",
+          "Reaba": "REABA",
+          "Waylan": "WAYLN"
+        }
+      },
+      "STAR": "PASLY5",
+      "Route": [
+        "PASLY",
+        "CARAP",
+        "RDNEK",
+        "KBNA"
+      ],
+      "Altitude": 20853,
+      "Heading": 241,
+      "Speed": 358,
+      "AssignedAltitude": 11000,
+      "State": "arrival",
+      "ControllerFrequency": "41",
+      "TrackingController": "41",
+      "LAHSORunways": [
+        "13",
+        "31"
+      ]
+    },
+    "Fedex one 28 heavy": {
+      "Callsign": "FDX128",
+      "AircraftType": "MD11",
+      "Fixes": {
+        "Faye": "FAYEE",
+        "Hobruk": "HOBRK",
+        "Maden": "MADDN",
+        "Otis": "OTIIS",
+        "Tammy": "TAMMY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 36L": "I36L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three six left": "36L",
+        "visual runway three six left": "36L",
+        "visual three six left": "36L"
+      },
+      "ApproachFixes": {
+        "I36L": {
+          "Cadus": "CADUS",
+          "Freeze": "FREAZ",
+          "Masey": "MACEE",
+          "Weston": "WSTON"
+        }
+      },
+      "STAR": "HOBRK4",
+      "Route": [
+        "FAYEE",
+        "OTIIS",
+        "HOBRK",
+        "TAMMY",
+        "MADDN",
+        "JAMEA",
+        "TWIKL",
+        "KMEM"
+      ],
+      "Altitude": 33000,
+      "Heading": 56,
+      "Speed": 494,
+      "AssignedAltitude": 11000,
+      "AssignedHeading": 56,
+      "State": "arrival",
+      "ControllerFrequency": "44",
+      "TrackingController": "44"
+    },
+    "United three heavy": {
+      "Callsign": "UAL3",
+      "AircraftType": "B77W",
+      "Fixes": {
+        "Peeky": "PEKIE",
+        "Rants": "RANTS",
+        "Ryman": "RYYMN",
+        "Sokol": "SOKOL",
+        "Willie": "WILEE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 20L": "I0L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero left": "20L",
+        "visual runway two zero left": "20L",
+        "visual two zero left": "20L"
+      },
+      "ApproachFixes": {
+        "I0L": {
+          "Cramer": "CRAMR",
+          "Jud": "JUUDD",
+          "Miranda": "MRNDA",
+          "Reaba": "REABA",
+          "Waylan": "WAYLN"
+        }
+      },
+      "STAR": "RYYMN4",
+      "Route": [
+        "SOKOL",
+        "RANTS",
+        "RYYMN",
+        "PEKIE",
+        "WILEE",
+        "DRUMZ",
+        "KBNA"
+      ],
+      "Altitude": 24000,
+      "Heading": 110,
+      "Speed": 469,
+      "AssignedAltitude": 24000,
+      "State": "arrival",
+      "ControllerFrequency": "41",
+      "TrackingController": "41",
+      "LAHSORunways": [
+        "13",
+        "31"
+      ]
+    },
+    "citation one six golf": {
+      "Callsign": "N3316G/T",
+      "AircraftType": "C550",
+      "Fixes": {
+        "Frans": "FRNNS",
+        "LITTLE ROCK": "LIT",
+        "Leyik": "LEYIK",
+        "MARVELL": "UJM"
+      },
+      "Route": [
+        "FRNNS",
+        "LEYIK",
+        "UJM",
+        "LIT",
+        "KOMMA",
+        "KLUBB",
+        "DWINE",
+        "IRW",
+        "KDFW"
+      ],
+      "Altitude": 34000,
+      "Heading": 272,
+      "Speed": 356,
+      "AssignedAltitude": 34000,
+      "State": "overflight",
+      "ControllerFrequency": "19",
+      "TrackingController": "19",
+      "AddressingForm": 1
+    },
+    "citation one whiskey victor": {
+      "Callsign": "N561WV/T",
+      "AircraftType": "C550",
+      "Fixes": {
+        "Kamen": "KAMEN",
+        "MAGNOLIA": "MHZ",
+        "MERIDIAN": "MEI",
+        "Mixie": "MIXIE",
+        "Stage": "STAGE"
+      },
+      "Route": [
+        "MEI",
+        "MHZ",
+        "KAMEN",
+        "STAGE",
+        "MIXIE",
+        "BERKE",
+        "EIC",
+        "KDFW"
+      ],
+      "Altitude": 34000,
+      "Heading": 270,
+      "Speed": 355,
+      "AssignedAltitude": 34000,
+      "State": "overflight",
+      "ControllerFrequency": "22",
+      "TrackingController": "22",
+      "AddressingForm": 1
+    },
+    "november five six one whiskey victor": {
+      "Callsign": "N561WV",
+      "AircraftType": "C550",
+      "Fixes": {
+        "Kamen": "KAMEN",
+        "MAGNOLIA": "MHZ",
+        "MERIDIAN": "MEI",
+        "Mixie": "MIXIE",
+        "Stage": "STAGE"
+      },
+      "Route": [
+        "MEI",
+        "MHZ",
+        "KAMEN",
+        "STAGE",
+        "MIXIE",
+        "BERKE",
+        "EIC",
+        "KDFW"
+      ],
+      "Altitude": 34000,
+      "Heading": 270,
+      "Speed": 355,
+      "AssignedAltitude": 34000,
+      "State": "overflight",
+      "ControllerFrequency": "22",
+      "TrackingController": "22"
+    },
+    "november three three one six golf": {
+      "Callsign": "N3316G",
+      "AircraftType": "C550",
+      "Fixes": {
+        "Frans": "FRNNS",
+        "LITTLE ROCK": "LIT",
+        "Leyik": "LEYIK",
+        "MARVELL": "UJM"
+      },
+      "Route": [
+        "FRNNS",
+        "LEYIK",
+        "UJM",
+        "LIT",
+        "KOMMA",
+        "KLUBB",
+        "DWINE",
+        "IRW",
+        "KDFW"
+      ],
+      "Altitude": 34000,
+      "Heading": 272,
+      "Speed": 356,
+      "AssignedAltitude": 34000,
+      "State": "overflight",
+      "ControllerFrequency": "19",
+      "TrackingController": "19"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Fedex 93 36 descend maintain uh only one thousand expletive\"",
+    "[local-stt] normalized words: [fedex 93 36 descend maintain uh only 1 thousand expletive]",
+    "[local-stt] tokens: 9",
+    "[local-stt]   token[0]: Text=\"fedex\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"93\" Type=1 Value=93",
+    "[local-stt]   token[2]: Text=\"36\" Type=1 Value=36",
+    "[local-stt]   token[3]: Text=\"descend\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"uh\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"only\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"10\" Type=2 Value=10",
+    "[local-stt]   token[8]: Text=\"expletive\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 9 tokens, 15 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 9 tokens, 15 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 3 results",
+    "[local-stt]     result 0: \"United three heavy\" (airline=0.456, flight=0.750, skip=0)",
+    "[local-stt]     result 1: \"november three three one six golf\" (airline=0.550, flight=0.783, skip=0)",
+    "[local-stt]     result 2: \"Fedex 93 36 heavy\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Fedex 93 36 heavy\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 22 results",
+    "[local-stt]     result 0: \"Delta niner 98\" (airline=0.467, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"American 48\" (airline=0.442, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"American 38 heavy\" (airline=0.442, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Fedex 93 36 heavy\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Fedex 27 73 heavy\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Fedex one 28 heavy\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"Fedex 93 36 heavy\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Fedex 93 36 heavy\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"Fedex 93 36 heavy\" (airline=0.500, flight=0.700, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Fedex 93 36 heavy\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"FDX9336\" (spokenKey=\"Fedex 93 36 heavy\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"FDX9336\" SpokenKey=\"Fedex 93 36 heavy\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=20853 Fixes=4 Approaches=1 VisualApproaches=3 AssignedApproach=\"\" LAHSORunways=[13 31]",
+    "[local-stt]   fix: \"Redneck\" -\u003e \"RDNEK\"",
+    "[local-stt]   fix: \"Nashville\" -\u003e \"KBNA\"",
+    "[local-stt]   fix: \"Pasley\" -\u003e \"PASLY\"",
+    "[local-stt]   fix: \"Carap\" -\u003e \"CARAP\"",
+    "[local-stt]   approach: \"ILS Runway 20L\" -\u003e \"I0L\"",
+    "[local-stt]   visual approach: \"visual two zero left\" -\u003e \"20L\"",
+    "[local-stt]   visual approach: \"visual runway two zero left\" -\u003e \"20L\"",
+    "[local-stt]   visual approach: \"visual approach runway two zero left\" -\u003e \"20L\"",
+    "[local-stt] command tokens after disregard: 6",
+    "[local-stt]   token[0]: Text=\"descend\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"uh\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"only\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"10\" Type=2 Value=10",
+    "[local-stt]   token[5]: Text=\"expletive\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 6 tokens",
+    "[local-stt]   matched command: \"D10\" [descend_maintain] (pos=0, conf=1.00, consumed=5, isThen=false)",
+    "[local-stt]   no match at token[0]=\"descend\", skipping",
+    "[local-stt]   matched command: \"EXPEDITE\" [expedite_bare] (pos=5, conf=0.89, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[5]=\"expletive\", skipping",
+    "[local-stt]   matched command: \"A10\" [maintain_altitude] (pos=1, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[1]=\"maintain\", skipping",
+    "[local-stt]   matched command: \"EXPEDITE\" [expedite_bare] (pos=5, conf=0.89, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[5]=\"expletive\", skipping",
+    "[local-stt]   skipping filler word: \"uh\"",
+    "[local-stt]   beam final[0]: score=2.868 pos=6 commands=[D10 EXPEDITE]",
+    "[local-stt]   beam final[1]: score=0.089 pos=6 commands=[D10]",
+    "[local-stt]   beam final[2]: score=-0.033 pos=6 commands=[A10 EXPEDITE]",
+    "[local-stt]   beam final[3]: score=-2.812 pos=6 commands=[A10]",
+    "[local-stt] ParseCommands: result=[D10 ED] (avgConf=0.94)",
+    "[local-stt] parsed commands: [D10 ED] (conf=0.94, kinds=1)",
+    "[local-stt] validated commands: [D10 ED] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"FDX9336 D10 ED\" (conf=0.94, time=4.5959ms) ==="
+  ]
+}

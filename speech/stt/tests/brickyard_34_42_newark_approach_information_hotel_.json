@@ -1,0 +1,654 @@
+{
+  "time": "2026-11-13T01:00:26.498710345Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Brickyard 34 42 Newark Approach Information Hotel scar and expect ILS four right reduce speed to two one zero then descend and maintain six thousand",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, hotel, golf, information, Philbo four, Flosi four, Teterboro four, four right, runway, I L S, United niner 41 heavy, United three 53, United 30 34 heavy, United 26 24, United 13 97, Twilight 82, Brickyard 36 91, Brickyard 34 42, piper cherokee six kilo alpha, cherokee six kilo alpha, november eight two six kilo alpha, Lindbergh 45 93, KENNEDY, POTTSTOWN, COLTS NECK, Philbo, Boply, Doin', Tykes, Metro, Mart, Lanna, Griddy, Merser, Kilma, SOLBERG, Republic Airport, Newark Liberty International Airport",
+  "whisper_duration_ms": 412.765,
+  "audio_duration_ms": 6600,
+  "processor": "GPU: NVIDIA GeForce RTX 4090 (24138MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "RPA3442",
+  "command": "ATIS/H EI4R S210 TD60",
+  "stt_aircraft": {
+    "Brickyard 34 42": {
+      "Callsign": "RPA3442",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Doin'": "DOOIN",
+        "Griddy": "GRITY",
+        "Kilma": "KILMA",
+        "Mart": "MARRT",
+        "Merser": "MERSR",
+        "Metro": "METRO",
+        "Newark": "KEWR",
+        "Philbo": "PHLBO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4R": "I4R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four right": "4R",
+        "visual four right": "4R",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4R": {
+          "Doin'": "DOOIN",
+          "Griddy": "GRITY",
+          "Kilma": "KILMA"
+        }
+      },
+      "STAR": "PHLBO4",
+      "Route": [
+        "MERSR",
+        "METRO",
+        "MARRT",
+        "PHLBO",
+        "KEWR"
+      ],
+      "Altitude": 8000,
+      "Heading": 57,
+      "Speed": 297,
+      "State": "arrival",
+      "ControllerFrequency": "4P",
+      "TrackingController": "4P",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "Brickyard 36 91": {
+      "Callsign": "RPA3691",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Doin'": "DOOIN",
+        "Griddy": "GRITY",
+        "Newark": "KEWR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4R": "I4R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four right": "4R",
+        "visual four right": "4R",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4R": {
+          "Doin'": "DOOIN",
+          "Griddy": "GRITY",
+          "Kilma": "KILMA"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "FLOSI4",
+      "Route": [
+        "GRITY",
+        "DOOIN",
+        "KEWR"
+      ],
+      "Altitude": 3000,
+      "Heading": 36,
+      "Speed": 210,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "4P",
+      "TrackingController": "4P",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "Lindbergh 45 93": {
+      "Callsign": "GJS4593",
+      "AircraftType": "CRJ7",
+      "Fixes": {
+        "Doin'": "DOOIN",
+        "Griddy": "GRITY",
+        "Kilma": "KILMA",
+        "Newark": "KEWR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4R": "I4R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four right": "4R",
+        "visual four right": "4R",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4R": {
+          "Doin'": "DOOIN",
+          "Griddy": "GRITY",
+          "Kilma": "KILMA"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "FLOSI4",
+      "Route": [
+        "KEWR"
+      ],
+      "Altitude": 6000,
+      "Heading": 190,
+      "Speed": 288,
+      "AssignedHeading": 190,
+      "State": "arrival",
+      "ControllerFrequency": "4P",
+      "TrackingController": "4P",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "Twilight 82": {
+      "Callsign": "TWY82",
+      "AircraftType": "GLEX",
+      "Fixes": {
+        "Boply": "BOPLY",
+        "Lanna": "LANNA",
+        "POTTSTOWN": "PTW",
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL",
+        "SOLBERG": "SBJ",
+        "Teterboro": "KTEB"
+      },
+      "SID": "TEB4",
+      "Route": [
+        "SBJ",
+        "LANNA",
+        "BOPLY",
+        "PTW",
+        "KPHL"
+      ],
+      "Altitude": 7905,
+      "Heading": 252,
+      "Speed": 275,
+      "State": "departure",
+      "ControllerFrequency": "4P",
+      "TrackingController": "41D"
+    },
+    "United 13 97": {
+      "Callsign": "UAL1397",
+      "LastAddressed": true,
+      "AircraftType": "B39M",
+      "Fixes": {
+        "Doin'": "DOOIN",
+        "Griddy": "GRITY",
+        "Kilma": "KILMA",
+        "Mart": "MARRT",
+        "Newark": "KEWR",
+        "Philbo": "PHLBO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4R": "I4R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four right": "4R",
+        "visual four right": "4R",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4R": {
+          "Doin'": "DOOIN",
+          "Griddy": "GRITY",
+          "Kilma": "KILMA"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "PHLBO4",
+      "Route": [
+        "MARRT",
+        "PHLBO",
+        "KEWR"
+      ],
+      "Altitude": 3623,
+      "Heading": 137,
+      "Speed": 233,
+      "AssignedHeading": 60,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "4P",
+      "TrackingController": "4P",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "United 26 24": {
+      "Callsign": "UAL2624",
+      "AircraftType": "B739",
+      "Fixes": {
+        "Doin'": "DOOIN",
+        "Griddy": "GRITY",
+        "Kilma": "KILMA",
+        "Mart": "MARRT",
+        "Metro": "METRO",
+        "Newark": "KEWR",
+        "Philbo": "PHLBO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4R": "I4R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four right": "4R",
+        "visual four right": "4R",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4R": {
+          "Doin'": "DOOIN",
+          "Griddy": "GRITY",
+          "Kilma": "KILMA"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "PHLBO4",
+      "Route": [
+        "METRO",
+        "MARRT",
+        "PHLBO",
+        "KEWR"
+      ],
+      "Altitude": 6000,
+      "Heading": 92,
+      "Speed": 246,
+      "AssignedHeading": 120,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "4P",
+      "TrackingController": "4P",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "United 30 34 heavy": {
+      "Callsign": "UAL3034",
+      "AircraftType": "B764",
+      "Fixes": {
+        "Doin'": "DOOIN",
+        "Griddy": "GRITY",
+        "Kilma": "KILMA",
+        "Newark": "KEWR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4R": "I4R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four right": "4R",
+        "visual four right": "4R",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4R": {
+          "Doin'": "DOOIN",
+          "Griddy": "GRITY",
+          "Kilma": "KILMA"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "FLOSI4",
+      "Route": [
+        "KEWR"
+      ],
+      "Altitude": 5785,
+      "Heading": 199,
+      "Speed": 283,
+      "AssignedHeading": 220,
+      "State": "arrival",
+      "ControllerFrequency": "4P",
+      "TrackingController": "4P",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "United niner 41 heavy": {
+      "Callsign": "UAL941",
+      "AircraftType": "B763",
+      "Fixes": {
+        "Doin'": "DOOIN",
+        "Griddy": "GRITY",
+        "Kilma": "KILMA",
+        "Newark": "KEWR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4R": "I4R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four right": "4R",
+        "visual four right": "4R",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4R": {
+          "Doin'": "DOOIN",
+          "Griddy": "GRITY",
+          "Kilma": "KILMA"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "FLOSI4",
+      "Route": [
+        "KEWR"
+      ],
+      "Altitude": 4346,
+      "Heading": 160,
+      "Speed": 238,
+      "AssignedHeading": 160,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "4P",
+      "TrackingController": "4P",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "United three 53": {
+      "Callsign": "UAL353",
+      "AircraftType": "A319",
+      "Fixes": {
+        "Doin'": "DOOIN",
+        "Griddy": "GRITY",
+        "Newark": "KEWR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4R": "I4R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four right": "4R",
+        "visual four right": "4R",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4R": {
+          "Doin'": "DOOIN",
+          "Griddy": "GRITY",
+          "Kilma": "KILMA"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "PHLBO4",
+      "Route": [
+        "GRITY",
+        "DOOIN",
+        "KEWR"
+      ],
+      "Altitude": 3000,
+      "Heading": 36,
+      "Speed": 210,
+      "State": "cleared approach",
+      "ControllerFrequency": "4P",
+      "TrackingController": "4P",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "cherokee six kilo alpha": {
+      "Callsign": "N826KA/T",
+      "AircraftType": "P28A",
+      "Fixes": {
+        "COLTS NECK": "COL",
+        "Farmingdale": "KFRG",
+        "KENNEDY": "JFK",
+        "Lehigh Valley": "KABE",
+        "Republic": "KFRG",
+        "SOLBERG": "SBJ",
+        "Tykes": "TYKES"
+      },
+      "Route": [
+        "SBJ",
+        "TYKES",
+        "COL",
+        "JFK",
+        "KFRG",
+        "KFRG"
+      ],
+      "Altitude": 5000,
+      "Heading": 160,
+      "Speed": 131,
+      "AssignedHeading": 160,
+      "State": "overflight",
+      "ControllerFrequency": "4H",
+      "TrackingController": "2G",
+      "AddressingForm": 1
+    },
+    "november eight two six kilo alpha": {
+      "Callsign": "N826KA",
+      "AircraftType": "P28A",
+      "Fixes": {
+        "COLTS NECK": "COL",
+        "Farmingdale": "KFRG",
+        "KENNEDY": "JFK",
+        "Lehigh Valley": "KABE",
+        "Republic": "KFRG",
+        "SOLBERG": "SBJ",
+        "Tykes": "TYKES"
+      },
+      "Route": [
+        "SBJ",
+        "TYKES",
+        "COL",
+        "JFK",
+        "KFRG",
+        "KFRG"
+      ],
+      "Altitude": 5000,
+      "Heading": 160,
+      "Speed": 131,
+      "AssignedHeading": 160,
+      "State": "overflight",
+      "ControllerFrequency": "4H",
+      "TrackingController": "2G"
+    },
+    "piper cherokee six kilo alpha": {
+      "Callsign": "N826KA/T",
+      "AircraftType": "P28A",
+      "Fixes": {
+        "COLTS NECK": "COL",
+        "Farmingdale": "KFRG",
+        "KENNEDY": "JFK",
+        "Lehigh Valley": "KABE",
+        "Republic": "KFRG",
+        "SOLBERG": "SBJ",
+        "Tykes": "TYKES"
+      },
+      "Route": [
+        "SBJ",
+        "TYKES",
+        "COL",
+        "JFK",
+        "KFRG",
+        "KFRG"
+      ],
+      "Altitude": 5000,
+      "Heading": 160,
+      "Speed": 131,
+      "AssignedHeading": 160,
+      "State": "overflight",
+      "ControllerFrequency": "4H",
+      "TrackingController": "2G",
+      "AddressingForm": 1
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Brickyard 34 42 Newark Approach Information Hotel scar and expect ILS four right reduce speed to two one zero then descend and maintain six thousand\"",
+    "[local-stt] normalized words: [brickyard 34 42 newark approach information hotel scar and expect ils 4 right reduce speed to 2 1 0 then descend and maintain 6 thousand]",
+    "[local-stt] tokens: 22",
+    "[local-stt]   token[0]: Text=\"brickyard\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"34\" Type=1 Value=34",
+    "[local-stt]   token[2]: Text=\"42\" Type=1 Value=42",
+    "[local-stt]   token[3]: Text=\"newark\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"information\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"hotel\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"scar\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"and\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"expect\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"ils\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"4\" Type=1 Value=4",
+    "[local-stt]   token[12]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt]   token[13]: Text=\"reduce\" Type=0 Value=-1",
+    "[local-stt]   token[14]: Text=\"speed\" Type=0 Value=-1",
+    "[local-stt]   token[15]: Text=\"to\" Type=0 Value=-1",
+    "[local-stt]   token[16]: Text=\"210\" Type=1 Value=210",
+    "[local-stt]   token[17]: Text=\"then\" Type=0 Value=-1",
+    "[local-stt]   token[18]: Text=\"descend\" Type=0 Value=-1",
+    "[local-stt]   token[19]: Text=\"and\" Type=0 Value=-1",
+    "[local-stt]   token[20]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[21]: Text=\"60\" Type=2 Value=60",
+    "[local-stt] MatchCallsign: 22 tokens, 12 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 22 tokens, 12 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Brickyard 34 42\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Brickyard 34 42\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"Brickyard 34 42\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"United 30 34 heavy\" (airline=0.519, flight=0.700, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Brickyard 34 42\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 18 results",
+    "[local-stt]     result 0: \"United three 53\" (airline=0.519, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"United niner 41 heavy\" (airline=0.519, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"United 30 34 heavy\" (airline=0.519, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"United 13 97\" (airline=0.519, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"United 26 24\" (airline=0.519, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Brickyard 34 42\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"Brickyard 34 42\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Brickyard 34 42\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"Brickyard 34 42\" (airline=0.500, flight=0.700, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Brickyard 34 42\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"RPA3442\" (spokenKey=\"Brickyard 34 42\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"RPA3442\" SpokenKey=\"Brickyard 34 42\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=8000 Fixes=5 Approaches=1 VisualApproaches=3 AssignedApproach=\"\" LAHSORunways=[11 29]",
+    "[local-stt]   fix: \"Mart\" -\u003e \"MARRT\"",
+    "[local-stt]   fix: \"Philbo\" -\u003e \"PHLBO\"",
+    "[local-stt]   fix: \"Newark\" -\u003e \"KEWR\"",
+    "[local-stt]   fix: \"Merser\" -\u003e \"MERSR\"",
+    "[local-stt]   fix: \"Metro\" -\u003e \"METRO\"",
+    "[local-stt]   approach: \"ILS Runway 4R\" -\u003e \"I4R\"",
+    "[local-stt]   visual approach: \"visual runway four right\" -\u003e \"4R\"",
+    "[local-stt]   visual approach: \"visual approach runway four right\" -\u003e \"4R\"",
+    "[local-stt]   visual approach: \"visual four right\" -\u003e \"4R\"",
+    "[local-stt] command tokens after disregard: 19",
+    "[local-stt]   token[0]: Text=\"newark\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"information\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"hotel\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"scar\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"and\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"expect\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"ils\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"4\" Type=1 Value=4",
+    "[local-stt]   token[9]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"reduce\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"speed\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"to\" Type=0 Value=-1",
+    "[local-stt]   token[13]: Text=\"210\" Type=1 Value=210",
+    "[local-stt]   token[14]: Text=\"then\" Type=0 Value=-1",
+    "[local-stt]   token[15]: Text=\"descend\" Type=0 Value=-1",
+    "[local-stt]   token[16]: Text=\"and\" Type=0 Value=-1",
+    "[local-stt]   token[17]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[18]: Text=\"60\" Type=2 Value=60",
+    "[local-stt] ParseCommands: 19 tokens",
+    "[local-stt]   matched command: \"\" [position_id] (pos=0, conf=0.74, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"newark\", skipping",
+    "[local-stt]   matched command: \"ATIS/H\" [atis_information] (pos=2, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[2]=\"information\", skipping",
+    "[local-stt]   matched command: \"\" [position_id] (pos=1, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[1]=\"approach\", skipping",
+    "[local-stt]   no match at token[4]=\"scar\", skipping",
+    "[local-stt]   no match at token[3]=\"hotel\", skipping",
+    "[local-stt]   matched command: \"ATIS/H\" [atis_information] (pos=2, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[2]=\"information\", skipping",
+    "[local-stt]   matched command: \"ATIS/H\" [atis_information] (pos=2, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[2]=\"information\", skipping",
+    "[local-stt]   matched command: \"EI4R\" [expect_approach] (pos=5, conf=1.00, consumed=5, isThen=false)",
+    "[local-stt]   adding 3 fixes from approach I4R to aircraft context",
+    "[local-stt]   skipping filler word: \"and\"",
+    "[local-stt]   no match at token[4]=\"scar\", skipping",
+    "[local-stt]   no match at token[4]=\"scar\", skipping",
+    "[local-stt]   no match at token[4]=\"scar\", skipping",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: looking for STAR=\"PHLBO4\" telephony=\"Philbo four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   matched command: \"S210\" [reduce_speed] (pos=10, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[10]=\"reduce\", skipping",
+    "[local-stt]   matched command: \"EI4R\" [expect_approach] (pos=6, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   adding 3 fixes from approach I4R to aircraft context",
+    "[local-stt]   no match at token[6]=\"expect\", skipping",
+    "[local-stt]   matched command: \"EI4R\" [expect_approach] (pos=5, conf=1.00, consumed=5, isThen=false)",
+    "[local-stt]   adding 3 fixes from approach I4R to aircraft context",
+    "[local-stt]   skipping filler word: \"and\"",
+    "[local-stt]   matched command: \"EI4R\" [expect_approach] (pos=5, conf=1.00, consumed=5, isThen=false)",
+    "[local-stt]   adding 3 fixes from approach I4R to aircraft context",
+    "[local-stt]   skipping filler word: \"and\"",
+    "[local-stt]   found 'then' (or 'the' as then) at position 14",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: looking for STAR=\"PHLBO4\" telephony=\"Philbo four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   matched command: \"S210\" [reduce_speed] (pos=10, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[10]=\"reduce\", skipping",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: looking for STAR=\"PHLBO4\" telephony=\"Philbo four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   matched command: \"S210\" [reduce_speed] (pos=10, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[10]=\"reduce\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"to\" against 8 fixes",
+    "[local-stt]   extractFix: no match found for \"to\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"210\" against 8 fixes",
+    "[local-stt]   extractFix: matched \"210\" -\u003e \"DOOIN\" (fuzzy 0.80)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"to\" against 8 fixes",
+    "[local-stt]   extractFix: no match found for \"to\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"210\" against 8 fixes",
+    "[local-stt]   extractFix: matched \"210\" -\u003e \"DOOIN\" (fuzzy 0.80)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"to\" against 8 fixes",
+    "[local-stt]   extractFix: no match found for \"to\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"210\" against 8 fixes",
+    "[local-stt]   extractFix: matched \"210\" -\u003e \"DOOIN\" (fuzzy 0.80)",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: looking for STAR=\"PHLBO4\" telephony=\"Philbo four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   extractSTAR: looking for STAR=\"PHLBO4\" telephony=\"Philbo four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   extractSTAR: looking for STAR=\"PHLBO4\" telephony=\"Philbo four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   matched command: \"S210\" [speed_only] (pos=11, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[11]=\"speed\", skipping",
+    "[local-stt]   matched command: \"TD60\" [descend_maintain] (pos=15, conf=1.00, consumed=4, isThen=true)",
+    "[local-stt]   no match at token[15]=\"descend\", skipping",
+    "[local-stt]   found 'then' (or 'the' as then) at position 14",
+    "[local-stt]   found 'then' (or 'the' as then) at position 14",
+    "[local-stt]   found 'then' (or 'the' as then) at position 14",
+    "[local-stt]   matched command: \"TD60\" [descend_maintain] (pos=15, conf=1.00, consumed=4, isThen=true)",
+    "[local-stt]   no match at token[15]=\"descend\", skipping",
+    "[local-stt]   matched command: \"TA60\" [maintain_altitude] (pos=16, conf=1.00, consumed=3, isThen=true)",
+    "[local-stt]   skipping filler word: \"and\"",
+    "[local-stt]   matched command: \"TD60\" [descend_maintain] (pos=15, conf=1.00, consumed=4, isThen=true)",
+    "[local-stt]   no match at token[15]=\"descend\", skipping",
+    "[local-stt]   beam final[0]: score=8.968 pos=19 commands=[ATIS/H EI4R S210 TD60]",
+    "[local-stt]   beam final[1]: score=8.968 pos=19 commands=[ATIS/H EI4R S210 TD60]",
+    "[local-stt]   beam final[2]: score=6.665 pos=19 commands=[ATIS/H EI4R S210 TD60]",
+    "[local-stt]   beam final[3]: score=5.469 pos=19 commands=[ATIS/H EI4R S210 TA60]",
+    "[local-stt] ParseCommands: result=[ATIS/H EI4R S210 TD60] (avgConf=1.00)",
+    "[local-stt] parsed commands: [ATIS/H EI4R S210 TD60] (conf=1.00, kinds=101)",
+    "[local-stt] validated commands: [ATIS/H EI4R S210 TD60] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"RPA3442 ATIS/H EI4R S210 TD60\" (conf=1.00, time=7.0916ms) ==="
+  ]
+}

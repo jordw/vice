@@ -1,0 +1,185 @@
+{
+  "time": "2026-11-05T13:20:53.651054263Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Spirit Wings 19 25 at four thousand maintain two one zero knots",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, bravo, information, Williamsport three, two two left, runway, I L S, Spirit Wings 19 25, Alaska three 14, Buzzed, Zavpi, Gimme, BROADWAY, eye-zee-ko, Sweet, Pattern, Penns, Newark Liberty International Airport",
+  "whisper_duration_ms": 158.348,
+  "audio_duration_ms": 4424,
+  "processor": "GPU: NVIDIA GeForce RTX 5070 (11943MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "NKS1925",
+  "command": "TS210",
+  "reason": "at an altitude, then a speed",
+  "stt_aircraft": {
+    "Alaska three 14": {
+      "Callsign": "ASA314",
+      "AircraftType": "B39M",
+      "Fixes": {
+        "BROADWAY": "BWZ",
+        "Newark": "KEWR",
+        "Penns": "PENNS",
+        "Sweet": "SWEET"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22L": "I2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual runway two two left": "22L",
+        "visual two two left": "22L"
+      },
+      "ApproachFixes": {
+        "I2L": {
+          "Buzzed": "BUZZD",
+          "Gimme": "GIMEE",
+          "Pattern": "PATRN",
+          "Zavpi": "ZAVPI",
+          "eye-zee-ko": "IZEKO"
+        }
+      },
+      "STAR": "FQM3",
+      "Route": [
+        "PENNS",
+        "SWEET",
+        "BWZ",
+        "KEWR"
+      ],
+      "Altitude": 11443,
+      "Heading": 124,
+      "Speed": 368,
+      "State": "arrival",
+      "ControllerFrequency": "4W",
+      "TrackingController": "4W",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "Spirit Wings 19 25": {
+      "Callsign": "NKS1925",
+      "LastAddressed": true,
+      "AircraftType": "A320",
+      "Fixes": {
+        "Buzzed": "BUZZD",
+        "Gimme": "GIMEE",
+        "Newark": "KEWR",
+        "Pattern": "PATRN",
+        "Zavpi": "ZAVPI",
+        "eye-zee-ko": "IZEKO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22L": "I2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual runway two two left": "22L",
+        "visual two two left": "22L"
+      },
+      "ApproachFixes": {
+        "I2L": {
+          "Buzzed": "BUZZD",
+          "Gimme": "GIMEE",
+          "Pattern": "PATRN",
+          "Zavpi": "ZAVPI",
+          "eye-zee-ko": "IZEKO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22L",
+      "STAR": "FQM3",
+      "Route": [
+        "KEWR"
+      ],
+      "Altitude": 4426,
+      "Heading": 99,
+      "Speed": 268,
+      "AssignedHeading": 110,
+      "State": "arrival",
+      "ControllerFrequency": "4W",
+      "TrackingController": "4W",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Spirit Wings 19 25 at four thousand maintain two one zero knots\"",
+    "[local-stt] normalized words: [spirit wings 19 25 at 4 thousand maintain 2 1 0 knots]",
+    "[local-stt] tokens: 9",
+    "[local-stt]   token[0]: Text=\"spirit\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"wings\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"19\" Type=1 Value=19",
+    "[local-stt]   token[3]: Text=\"25\" Type=1 Value=25",
+    "[local-stt]   token[4]: Text=\"at\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"40\" Type=2 Value=40",
+    "[local-stt]   token[6]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"210\" Type=1 Value=210",
+    "[local-stt]   token[8]: Text=\"knots\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 9 tokens, 2 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 9 tokens, 2 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Spirit Wings 19 25\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Spirit Wings 19 25\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": 2 results",
+    "[local-stt]     result 0: \"Spirit Wings 19 25\" (airline=0.950, flight=0.950, skip=0)",
+    "[local-stt]     result 1: \"Spirit Wings 19 25\" (airline=0.950, flight=0.950, skip=1)",
+    "[local-stt]     pattern \"ga_suffix\": selected \"Spirit Wings 19 25\" (airline=0.95, flight=0.95, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"Spirit Wings 19 25\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Spirit Wings 19 25\" (airline=0.456, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Spirit Wings 19 25\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 1 results",
+    "[local-stt]     result 0: \"Alaska three 14\" (airline=0.456, flight=0.000, skip=1)",
+    "[local-stt]     pattern \"airline_only\": selected \"Alaska three 14\" (airline=0.46, flight=0.00, skip=1)",
+    "[local-stt]     pattern \"airline_only\": scoring rejected \"Alaska three 14\"",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Spirit Wings 19 25\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 1: \"Spirit Wings 19 25\" (airline=0.500, flight=1.000, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Spirit Wings 19 25\" (airline=0.50, flight=1.00, skip=1)",
+    "[local-stt]   exact callsign \"NKS1925\" (spokenKey=\"Spirit Wings 19 25\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"NKS1925\" SpokenKey=\"Spirit Wings 19 25\" Conf=1.00 Consumed=4",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=4426 Fixes=6 Approaches=1 VisualApproaches=3 AssignedApproach=\"ILS Runway 22L\" LAHSORunways=[11 29]",
+    "[local-stt]   fix: \"Buzzed\" -\u003e \"BUZZD\"",
+    "[local-stt]   fix: \"Newark\" -\u003e \"KEWR\"",
+    "[local-stt]   fix: \"Pattern\" -\u003e \"PATRN\"",
+    "[local-stt]   fix: \"eye-zee-ko\" -\u003e \"IZEKO\"",
+    "[local-stt]   fix: \"Gimme\" -\u003e \"GIMEE\"",
+    "[local-stt]   fix: \"Zavpi\" -\u003e \"ZAVPI\"",
+    "[local-stt]   approach: \"ILS Runway 22L\" -\u003e \"I2L\"",
+    "[local-stt]   visual approach: \"visual runway two two left\" -\u003e \"22L\"",
+    "[local-stt]   visual approach: \"visual approach runway two two left\" -\u003e \"22L\"",
+    "[local-stt]   visual approach: \"visual two two left\" -\u003e \"22L\"",
+    "[local-stt] command tokens after disregard: 5",
+    "[local-stt]   token[0]: Text=\"at\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"40\" Type=2 Value=40",
+    "[local-stt]   token[2]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"210\" Type=1 Value=210",
+    "[local-stt]   token[4]: Text=\"knots\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 5 tokens",
+    "[local-stt]   found 'at {altitude}' pattern at position 0, triggering then",
+    "[local-stt]   matched command: \"S210\" [maintained_speed_question] (pos=2, conf=0.98, consumed=3, isThen=true)",
+    "[local-stt]   matched command: \"TS210\" [maintain_speed] (pos=2, conf=1.00, consumed=2, isThen=true)",
+    "[local-stt]   no match at token[2]=\"maintain\", skipping",
+    "[local-stt]   no match at token[4]=\"knots\", skipping",
+    "[local-stt]   no match at token[3]=\"210\", skipping",
+    "[local-stt]   no match at token[4]=\"knots\", skipping",
+    "[local-stt]   beam final[0]: score=1.742 pos=5 commands=[S210]",
+    "[local-stt]   beam final[1]: score=1.090 pos=5 commands=[TS210]",
+    "[local-stt]   beam final[2]: score=-2.303 pos=5 commands=[]",
+    "[local-stt] ParseCommands: result=[S210] (avgConf=0.98)",
+    "[local-stt] parsed commands: [S210] (conf=0.98, kinds=1)",
+    "[local-stt] validated commands: [S210] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"NKS1925 S210\" (conf=0.98, time=1.0269ms) ==="
+  ]
+}

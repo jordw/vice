@@ -1,0 +1,476 @@
+{
+  "time": "2026-11-06T17:45:15.889794469Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Citation Five Six Seven squawk seven seven two seven",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, bravo, information, Simon one, Maggie three, Kaena five, Book eight, Molokai five, two six left, runway, r-nav, L D A, WestJet 79 63, UPS 28 72 heavy, Southwest eight 67, november five four two four three, november five two five six seven, B E thirty-six seven kebeck delta, bonanza seven kebeck delta, november one seven kebeck delta, Hawaiian seven 55, Hawaiian five 96, Delta 79 30 heavy, Shlay, Jolip, Saki, Bispy, Nobody, KOKO HEAD, Heftel, Cudek, grittle, On ode, Korea, HONOLULU, Bambo, Cecil, Sepge, Shigi, Selic, Lanai Airport, Kalaupapa Airport, MOLOKAI, Daniel K. Inouye International Airport",
+  "whisper_duration_ms": 432.714,
+  "audio_duration_ms": 5064,
+  "processor": "GPU: NVIDIA GeForce RTX 4080 Laptop GPU (11995MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "N52567",
+  "command": "SQ7727",
+  "reason": "trailing three digits with a type word",
+  "stt_aircraft": {
+    "B E thirty-six seven kebeck delta": {
+      "Callsign": "N17QD/T",
+      "AircraftType": "BE36",
+      "Fixes": {
+        "Kalaeloa": "PHJR",
+        "Kalaupapa": "PHLU"
+      },
+      "Altitude": 5500,
+      "Heading": 63,
+      "Speed": 165,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H",
+      "AddressingForm": 1
+    },
+    "Delta 79 30 heavy": {
+      "Callsign": "DAL7930",
+      "AircraftType": "B763",
+      "Fixes": {
+        "Daniel K. Inouye": "PHNL",
+        "Selic": "SELIC"
+      },
+      "CandidateApproaches": {
+        "LDA Runway 26L": "L6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two six left": "26L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "L6L": {
+          "Bispy": "BISPE",
+          "Cecil": "SECIL",
+          "Cudek": "CUDEK",
+          "Heftel": "HEFTL",
+          "Jolip": "JOLIP",
+          "Nobody": "NBODY",
+          "On ode": "ONODE",
+          "Saki": "SAKKI",
+          "Shlay": "SHLAE"
+        },
+        "R6L": {
+          "Cecil": "SECIL",
+          "Ibicu": "IBICU",
+          "Kuhio": "KUHIO",
+          "Nali": "NALII",
+          "Saki": "SAKKI"
+        }
+      },
+      "STAR": "KAENA5",
+      "Route": [
+        "SELIC",
+        "PHNL"
+      ],
+      "Altitude": 8000,
+      "Heading": 115,
+      "Speed": 313,
+      "AssignedHeading": 115,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "Hawaiian five 96": {
+      "Callsign": "HAL596",
+      "AircraftType": "B712",
+      "Fixes": {
+        "Bispy": "BISPE",
+        "Cecil": "SECIL",
+        "Cudek": "CUDEK",
+        "Daniel K. Inouye": "PHNL",
+        "HONOLULU": "HNL",
+        "Heftel": "HEFTL",
+        "Jolip": "JOLIP",
+        "Lihue": "PHLI",
+        "Nobody": "NBODY",
+        "On ode": "ONODE",
+        "Saki": "SAKKI",
+        "Shigi": "SHIGI",
+        "Shlay": "SHLAE"
+      },
+      "CandidateApproaches": {
+        "LDA Runway 26L": "L6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two six left": "26L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "L6L": {
+          "Bispy": "BISPE",
+          "Cecil": "SECIL",
+          "Cudek": "CUDEK",
+          "Heftel": "HEFTL",
+          "Jolip": "JOLIP",
+          "Nobody": "NBODY",
+          "On ode": "ONODE",
+          "Saki": "SAKKI",
+          "Shlay": "SHLAE"
+        },
+        "R6L": {
+          "Cecil": "SECIL",
+          "Ibicu": "IBICU",
+          "Kuhio": "KUHIO",
+          "Nali": "NALII",
+          "Saki": "SAKKI"
+        }
+      },
+      "AssignedApproach": "LDA Runway 26L",
+      "STAR": "BOOKE8",
+      "Route": [
+        "SHIGI",
+        "HNL",
+        "PHNL"
+      ],
+      "Altitude": 8000,
+      "Heading": 112,
+      "Speed": 315,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "Hawaiian seven 55": {
+      "Callsign": "HAL755",
+      "AircraftType": "A21N",
+      "Fixes": {
+        "Daniel K. Inouye": "PHNL",
+        "Korea": "KOLEA",
+        "MOLOKAI": "MKK",
+        "Sepge": "SEPGE"
+      },
+      "SID": "MKK5",
+      "Route": [
+        "MKK",
+        "SEPGE",
+        "KOLEA",
+        "CLUTS",
+        "CEBEN",
+        "CIVIT",
+        "CORTT",
+        "CUNDU",
+        "CREAN",
+        "CINNY",
+        "OAK",
+        "MOGEE",
+        "MACUS",
+        "MCORD",
+        "SLOWN",
+        "FLECC",
+        "KSLC"
+      ],
+      "Altitude": 6994,
+      "Heading": 84,
+      "Speed": 304,
+      "State": "departure",
+      "ControllerFrequency": "1L",
+      "TrackingController": "C03"
+    },
+    "Southwest eight 67": {
+      "Callsign": "SWA867",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Cecil": "SECIL",
+        "Daniel K. Inouye": "PHNL",
+        "Heftel": "HEFTL",
+        "On ode": "ONODE"
+      },
+      "CandidateApproaches": {
+        "LDA Runway 26L": "L6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two six left": "26L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "L6L": {
+          "Bispy": "BISPE",
+          "Cecil": "SECIL",
+          "Cudek": "CUDEK",
+          "Heftel": "HEFTL",
+          "Jolip": "JOLIP",
+          "Nobody": "NBODY",
+          "On ode": "ONODE",
+          "Saki": "SAKKI",
+          "Shlay": "SHLAE"
+        },
+        "R6L": {
+          "Cecil": "SECIL",
+          "Ibicu": "IBICU",
+          "Kuhio": "KUHIO",
+          "Nali": "NALII",
+          "Saki": "SAKKI"
+        }
+      },
+      "AssignedApproach": "LDA Runway 26L",
+      "STAR": "SYMIN1",
+      "Route": [
+        "SECIL",
+        "ONODE",
+        "HEFTL",
+        "PHNL"
+      ],
+      "Altitude": 3697,
+      "Heading": 251,
+      "Speed": 222,
+      "State": "cleared approach",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "UPS 28 72 heavy": {
+      "Callsign": "UPS2872",
+      "AircraftType": "B748",
+      "Fixes": {
+        "Bispy": "BISPE",
+        "Cecil": "SECIL",
+        "Cudek": "CUDEK",
+        "Daniel K. Inouye": "PHNL",
+        "HONOLULU": "HNL",
+        "Heftel": "HEFTL",
+        "Jolip": "JOLIP",
+        "Nobody": "NBODY",
+        "On ode": "ONODE",
+        "Saki": "SAKKI",
+        "Shigi": "SHIGI",
+        "Shlay": "SHLAE"
+      },
+      "CandidateApproaches": {
+        "LDA Runway 26L": "L6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two six left": "26L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "L6L": {
+          "Bispy": "BISPE",
+          "Cecil": "SECIL",
+          "Cudek": "CUDEK",
+          "Heftel": "HEFTL",
+          "Jolip": "JOLIP",
+          "Nobody": "NBODY",
+          "On ode": "ONODE",
+          "Saki": "SAKKI",
+          "Shlay": "SHLAE"
+        },
+        "R6L": {
+          "Cecil": "SECIL",
+          "Ibicu": "IBICU",
+          "Kuhio": "KUHIO",
+          "Nali": "NALII",
+          "Saki": "SAKKI"
+        }
+      },
+      "AssignedApproach": "LDA Runway 26L",
+      "STAR": "BOOKE8",
+      "Route": [
+        "SHIGI",
+        "HNL",
+        "PHNL"
+      ],
+      "Altitude": 10000,
+      "Heading": 113,
+      "Speed": 322,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "WestJet 79 63": {
+      "Callsign": "WJA7963",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Bambo": "BAMBO",
+        "Bispy": "BISPE",
+        "Cecil": "SECIL",
+        "Cudek": "CUDEK",
+        "Daniel K. Inouye": "PHNL",
+        "Heftel": "HEFTL",
+        "Jolip": "JOLIP",
+        "KOKO HEAD": "CKH",
+        "Nobody": "NBODY",
+        "On ode": "ONODE",
+        "Saki": "SAKKI",
+        "Shlay": "SHLAE",
+        "grittle": "GRITL"
+      },
+      "CandidateApproaches": {
+        "LDA Runway 26L": "L6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two six left": "26L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "L6L": {
+          "Bispy": "BISPE",
+          "Cecil": "SECIL",
+          "Cudek": "CUDEK",
+          "Heftel": "HEFTL",
+          "Jolip": "JOLIP",
+          "Nobody": "NBODY",
+          "On ode": "ONODE",
+          "Saki": "SAKKI",
+          "Shlay": "SHLAE"
+        },
+        "R6L": {
+          "Cecil": "SECIL",
+          "Ibicu": "IBICU",
+          "Kuhio": "KUHIO",
+          "Nali": "NALII",
+          "Saki": "SAKKI"
+        }
+      },
+      "AssignedApproach": "LDA Runway 26L",
+      "STAR": "MAGGI3",
+      "Route": [
+        "BAMBO",
+        "GRITL",
+        "CKH",
+        "PHNL"
+      ],
+      "Altitude": 8405,
+      "Heading": 225,
+      "Speed": 275,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "bonanza seven kebeck delta": {
+      "Callsign": "N17QD/T",
+      "AircraftType": "BE36",
+      "Fixes": {
+        "Kalaeloa": "PHJR",
+        "Kalaupapa": "PHLU"
+      },
+      "Altitude": 5500,
+      "Heading": 63,
+      "Speed": 165,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H",
+      "AddressingForm": 1
+    },
+    "november five four two four three": {
+      "Callsign": "N54243",
+      "Fixes": {
+        "Kalaeloa": "PHJR",
+        "Kalaupapa": "PHLU"
+      },
+      "Altitude": 24,
+      "Heading": 271,
+      "Speed": 101,
+      "State": "vfr flight following",
+      "ControllerFrequency": "1H"
+    },
+    "november five two five six seven": {
+      "Callsign": "N52567",
+      "LastAddressed": true,
+      "Fixes": {
+        "Kalaeloa": "PHJR",
+        "Lanai": "PHNY"
+      },
+      "Altitude": 1838,
+      "Heading": 18,
+      "Speed": 198,
+      "State": "vfr flight following",
+      "ControllerFrequency": "1H"
+    },
+    "november one seven kebeck delta": {
+      "Callsign": "N17QD",
+      "AircraftType": "BE36",
+      "Fixes": {
+        "Kalaeloa": "PHJR",
+        "Kalaupapa": "PHLU"
+      },
+      "Altitude": 5500,
+      "Heading": 63,
+      "Speed": 165,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Citation Five Six Seven squawk seven seven two seven\"",
+    "[local-stt] normalized words: [citation 5 6 7 squawk 7 7 2 7]",
+    "[local-stt] tokens: 4",
+    "[local-stt]   token[0]: Text=\"citation\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"567\" Type=1 Value=567",
+    "[local-stt]   token[2]: Text=\"squawk\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"7727\" Type=1 Value=7727",
+    "[local-stt] MatchCallsign: 4 tokens, 11 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 4 tokens, 11 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"Southwest eight 67\" (airline=0.412, flight=0.778, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Southwest eight 67\" (airline=0.41, flight=0.78, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 11 results",
+    "[local-stt]     result 0: \"WestJet 79 63\" (airline=0.512, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Delta 79 30 heavy\" (airline=0.550, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Hawaiian five 96\" (airline=0.583, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Hawaiian seven 55\" (airline=0.583, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Southwest eight 67\" (airline=0.412, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Southwest eight 67\" (airline=0.65, flight=0.00, skip=2)",
+    "[local-stt]     pattern \"airline_only\": scoring rejected \"Southwest eight 67\"",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"november five two five six seven\" (airline=0.500, flight=0.700, skip=0)",
+    "[local-stt]     result 1: \"november five two five six seven\" (airline=0.500, flight=0.700, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"november five two five six seven\" (airline=0.50, flight=0.70, skip=0)",
+    "[local-stt]   best callsign candidate: \"N52567\" (conf=0.84, consumed=2, addressingForm=0, spokenKey=\"november five two five six seven\"; 2 candidates)",
+    "[local-stt] ParseCommands: 2 tokens",
+    "[local-stt]   matched command: \"SQ7727\" [squawk_code] (pos=0, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"squawk\", skipping",
+    "[local-stt]   no match at token[1]=\"7727\", skipping",
+    "[local-stt]   beam final[0]: score=1.196 pos=2 commands=[SQ7727]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=2 commands=[]",
+    "[local-stt] ParseCommands: result=[SQ7727] (avgConf=1.00)",
+    "[local-stt] ParseCommands: 2 tokens",
+    "[local-stt]   matched command: \"SQ7727\" [squawk_code] (pos=0, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"squawk\", skipping",
+    "[local-stt]   no match at token[1]=\"7727\", skipping",
+    "[local-stt]   beam final[0]: score=1.196 pos=2 commands=[SQ7727]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=2 commands=[]",
+    "[local-stt] ParseCommands: result=[SQ7727] (avgConf=1.00)",
+    "[local-stt] callsign match: Callsign=\"N52567\" SpokenKey=\"november five two five six seven\" Conf=0.84 Consumed=2",
+    "[local-stt] aircraft context: State=\"vfr flight following\" Altitude=1838 Fixes=2 Approaches=0 VisualApproaches=0 AssignedApproach=\"\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Lanai\" -\u003e \"PHNY\"",
+    "[local-stt]   fix: \"Kalaeloa\" -\u003e \"PHJR\"",
+    "[local-stt] command tokens after disregard: 2",
+    "[local-stt]   token[0]: Text=\"squawk\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"7727\" Type=1 Value=7727",
+    "[local-stt] ParseCommands: 2 tokens",
+    "[local-stt]   matched command: \"SQ7727\" [squawk_code] (pos=0, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"squawk\", skipping",
+    "[local-stt]   no match at token[1]=\"7727\", skipping",
+    "[local-stt]   beam final[0]: score=1.196 pos=2 commands=[SQ7727]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=2 commands=[]",
+    "[local-stt] ParseCommands: result=[SQ7727] (avgConf=1.00)",
+    "[local-stt] parsed commands: [SQ7727] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [SQ7727] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"N52567 SQ7727\" (conf=0.84, time=1.0835ms) ==="
+  ]
+}

@@ -1,0 +1,451 @@
+{
+  "time": "2026-11-07T09:57:47.192559413Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Alaska seven nine negative aloskay nine two nine turn left heading one eight one zero zero cleared isle has approached roger with zero seven right",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, mike, information, Witty five, Neil seven, Kroto five, Erome, Muffs, Senix, Nerds, Wesol, Hoper, Lithe, Wugsi, Aink, seven left, seven right, runway, zulu, r-nav, I L S, Horizon Air 93 71, Horizon Air 74 36, Alaska niner 29, Alaska 79, Tuli, Wewwo, KENAI, Elias, Andy, Culen, Shanken, Ted Stevens Anchorage International Airport",
+  "whisper_duration_ms": 544.729,
+  "audio_duration_ms": 8520,
+  "processor": "GPU: Apple M4, 10 CPU / 10 GPU cores, 16GB",
+  "whisper_model": "ggml-small.en-jlvatc-q5_0.bin",
+  "callsign": "ASA929",
+  "command": "L100 CI7R",
+  "reason": "negative followed by another callsign; the repeat confirms",
+  "stt_aircraft": {
+    "Alaska 79": {
+      "Callsign": "ASA79",
+      "LastAddressed": true,
+      "AircraftType": "B739",
+      "Fixes": {
+        "Elias": "ELIAS",
+        "KENAI": "ENA",
+        "Shanken": "SHNKN",
+        "Ted Stevens Anchorage": "PANC",
+        "Tuli": "TULLI",
+        "Wewwo": "WEWWO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 7L": "I7L",
+        "ILS Runway 7R": "I7R",
+        "RNAV Z Runway 7R": "R7R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway seven left": "7L",
+        "visual approach runway seven right": "7R",
+        "visual runway seven left": "7L",
+        "visual runway seven right": "7R",
+        "visual seven left": "7L",
+        "visual seven right": "7R"
+      },
+      "ApproachFixes": {
+        "I7L": {
+          "Aink": "AINKK",
+          "KENAI": "ENA",
+          "Wugsi": "WUGSI",
+          "webby": "WEBBI"
+        },
+        "I7R": {
+          "Elias": "ELIAS",
+          "KENAI": "ENA",
+          "Tuli": "TULLI",
+          "Wewwo": "WEWWO"
+        },
+        "R7R": {
+          "Elias": "ELIAS",
+          "Erome": "EROME",
+          "Hoper": "HOPER",
+          "Lithe": "LITHE",
+          "Muffs": "MUFFS",
+          "Nerds": "NURDS",
+          "Senix": "CENIX",
+          "Tuli": "TULLI",
+          "Wesol": "WESOL"
+        }
+      },
+      "AssignedApproach": "ILS Runway 7R",
+      "STAR": "NEELL7",
+      "Route": [
+        "SHNKN",
+        "ELIAS",
+        "PANC"
+      ],
+      "Altitude": 6000,
+      "Heading": 51,
+      "Speed": 297,
+      "AssignedHeading": 100,
+      "State": "cleared approach",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "15",
+        "33",
+        "15",
+        "33"
+      ]
+    },
+    "Alaska niner 29": {
+      "Callsign": "ASA929",
+      "AircraftType": "B39M",
+      "Fixes": {
+        "Culen": "CULEN",
+        "Elias": "ELIAS",
+        "KENAI": "ENA",
+        "Ted Stevens Anchorage": "PANC",
+        "Tuli": "TULLI",
+        "Wewwo": "WEWWO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 7L": "I7L",
+        "ILS Runway 7R": "I7R",
+        "RNAV Z Runway 7R": "R7R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway seven left": "7L",
+        "visual approach runway seven right": "7R",
+        "visual runway seven left": "7L",
+        "visual runway seven right": "7R",
+        "visual seven left": "7L",
+        "visual seven right": "7R"
+      },
+      "ApproachFixes": {
+        "I7L": {
+          "Aink": "AINKK",
+          "KENAI": "ENA",
+          "Wugsi": "WUGSI",
+          "webby": "WEBBI"
+        },
+        "I7R": {
+          "Elias": "ELIAS",
+          "KENAI": "ENA",
+          "Tuli": "TULLI",
+          "Wewwo": "WEWWO"
+        },
+        "R7R": {
+          "Elias": "ELIAS",
+          "Erome": "EROME",
+          "Hoper": "HOPER",
+          "Lithe": "LITHE",
+          "Muffs": "MUFFS",
+          "Nerds": "NURDS",
+          "Senix": "CENIX",
+          "Tuli": "TULLI",
+          "Wesol": "WESOL"
+        }
+      },
+      "AssignedApproach": "ILS Runway 7R",
+      "STAR": "KROTO5",
+      "Route": [
+        "CULEN",
+        "PANC"
+      ],
+      "Altitude": 2555,
+      "Heading": 160,
+      "Speed": 153,
+      "AssignedHeading": 160,
+      "AssignedSpeed": 170,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "15",
+        "33",
+        "15",
+        "33"
+      ]
+    },
+    "Horizon Air 74 36": {
+      "Callsign": "QXE7436",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Culen": "CULEN",
+        "Elias": "ELIAS",
+        "KENAI": "ENA",
+        "Ted Stevens Anchorage": "PANC",
+        "Tuli": "TULLI",
+        "Wewwo": "WEWWO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 7L": "I7L",
+        "ILS Runway 7R": "I7R",
+        "RNAV Z Runway 7R": "R7R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway seven left": "7L",
+        "visual approach runway seven right": "7R",
+        "visual runway seven left": "7L",
+        "visual runway seven right": "7R",
+        "visual seven left": "7L",
+        "visual seven right": "7R"
+      },
+      "ApproachFixes": {
+        "I7L": {
+          "Aink": "AINKK",
+          "KENAI": "ENA",
+          "Wugsi": "WUGSI",
+          "webby": "WEBBI"
+        },
+        "I7R": {
+          "Elias": "ELIAS",
+          "KENAI": "ENA",
+          "Tuli": "TULLI",
+          "Wewwo": "WEWWO"
+        },
+        "R7R": {
+          "Elias": "ELIAS",
+          "Erome": "EROME",
+          "Hoper": "HOPER",
+          "Lithe": "LITHE",
+          "Muffs": "MUFFS",
+          "Nerds": "NURDS",
+          "Senix": "CENIX",
+          "Tuli": "TULLI",
+          "Wesol": "WESOL"
+        }
+      },
+      "AssignedApproach": "ILS Runway 7R",
+      "STAR": "KROTO5",
+      "Route": [
+        "CULEN",
+        "PANC"
+      ],
+      "Altitude": 3236,
+      "Heading": 249,
+      "Speed": 215,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "15",
+        "33",
+        "15",
+        "33"
+      ]
+    },
+    "Horizon Air 93 71": {
+      "Callsign": "QXE9371",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Andy": "ANDDI",
+        "Elias": "ELIAS",
+        "KENAI": "ENA",
+        "Ted Stevens Anchorage": "PANC",
+        "Tuli": "TULLI",
+        "Wewwo": "WEWWO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 7L": "I7L",
+        "ILS Runway 7R": "I7R",
+        "RNAV Z Runway 7R": "R7R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway seven left": "7L",
+        "visual approach runway seven right": "7R",
+        "visual runway seven left": "7L",
+        "visual runway seven right": "7R",
+        "visual seven left": "7L",
+        "visual seven right": "7R"
+      },
+      "ApproachFixes": {
+        "I7L": {
+          "Aink": "AINKK",
+          "KENAI": "ENA",
+          "Wugsi": "WUGSI",
+          "webby": "WEBBI"
+        },
+        "I7R": {
+          "Elias": "ELIAS",
+          "KENAI": "ENA",
+          "Tuli": "TULLI",
+          "Wewwo": "WEWWO"
+        },
+        "R7R": {
+          "Elias": "ELIAS",
+          "Erome": "EROME",
+          "Hoper": "HOPER",
+          "Lithe": "LITHE",
+          "Muffs": "MUFFS",
+          "Nerds": "NURDS",
+          "Senix": "CENIX",
+          "Tuli": "TULLI",
+          "Wesol": "WESOL"
+        }
+      },
+      "AssignedApproach": "ILS Runway 7R",
+      "STAR": "WITTI5",
+      "Route": [
+        "ANDDI",
+        "PANC"
+      ],
+      "Altitude": 4867,
+      "Heading": 250,
+      "Speed": 190,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "15",
+        "33",
+        "15",
+        "33"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Alaska seven nine negative aloskay nine two nine turn left heading one eight one zero zero cleared isle has approached roger with zero seven right\"",
+    "[local-stt] normalized words: [alaska 7 9 negative aloskay 9 2 9 turn left heading 1 8 1 0 0 cleared isle has approached roger with 0 7 right]",
+    "[local-stt] tokens: 17",
+    "[local-stt]   token[0]: Text=\"alaska\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"79\" Type=1 Value=79",
+    "[local-stt]   token[2]: Text=\"negative\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"aloskay\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"929\" Type=1 Value=929",
+    "[local-stt]   token[5]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"left\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"heading\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"18100\" Type=1 Value=18100",
+    "[local-stt]   token[9]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"isle\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"has\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"approached\" Type=0 Value=-1",
+    "[local-stt]   token[13]: Text=\"roger\" Type=0 Value=-1",
+    "[local-stt]   token[14]: Text=\"with\" Type=0 Value=-1",
+    "[local-stt]   token[15]: Text=\"07\" Type=1 Value=7",
+    "[local-stt]   token[16]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 17 tokens, 4 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 17 tokens, 4 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Alaska 79\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Alaska 79\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 3 results",
+    "[local-stt]     result 0: \"Alaska 79\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Alaska niner 29\" (airline=0.431, flight=1.000, skip=2)",
+    "[local-stt]     result 2: \"Alaska niner 29\" (airline=0.879, flight=1.000, skip=3)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Alaska 79\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 10 results",
+    "[local-stt]     result 0: \"Alaska niner 29\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Alaska 79\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Alaska 79\" (airline=0.431, flight=0.000, skip=2)",
+    "[local-stt]     result 3: \"Horizon Air 74 36\" (airline=0.423, flight=0.000, skip=2)",
+    "[local-stt]     result 4: \"Horizon Air 93 71\" (airline=0.423, flight=0.000, skip=2)",
+    "[local-stt]     pattern \"airline_only\": selected \"Alaska 79\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"Alaska 79\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Alaska 79\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"Alaska niner 29\" (airline=0.500, flight=1.000, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Alaska 79\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"ASA79\" (spokenKey=\"Alaska 79\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"ASA79\" SpokenKey=\"Alaska 79\" Conf=1.00 Consumed=2",
+    "[local-stt] aircraft context: State=\"cleared approach\" Altitude=6000 Fixes=6 Approaches=3 VisualApproaches=6 AssignedApproach=\"ILS Runway 7R\" LAHSORunways=[15 33 15 33]",
+    "[local-stt]   fix: \"Ted Stevens Anchorage\" -\u003e \"PANC\"",
+    "[local-stt]   fix: \"Shanken\" -\u003e \"SHNKN\"",
+    "[local-stt]   fix: \"Elias\" -\u003e \"ELIAS\"",
+    "[local-stt]   fix: \"KENAI\" -\u003e \"ENA\"",
+    "[local-stt]   fix: \"Wewwo\" -\u003e \"WEWWO\"",
+    "[local-stt]   fix: \"Tuli\" -\u003e \"TULLI\"",
+    "[local-stt]   approach: \"ILS Runway 7L\" -\u003e \"I7L\"",
+    "[local-stt]   approach: \"RNAV Z Runway 7R\" -\u003e \"R7R\"",
+    "[local-stt]   approach: \"ILS Runway 7R\" -\u003e \"I7R\"",
+    "[local-stt]   visual approach: \"visual runway seven left\" -\u003e \"7L\"",
+    "[local-stt]   visual approach: \"visual approach runway seven left\" -\u003e \"7L\"",
+    "[local-stt]   visual approach: \"visual seven left\" -\u003e \"7L\"",
+    "[local-stt]   visual approach: \"visual runway seven right\" -\u003e \"7R\"",
+    "[local-stt]   visual approach: \"visual approach runway seven right\" -\u003e \"7R\"",
+    "[local-stt]   visual approach: \"visual seven right\" -\u003e \"7R\"",
+    "[local-stt] command tokens after disregard: 15",
+    "[local-stt]   token[0]: Text=\"negative\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"aloskay\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"929\" Type=1 Value=929",
+    "[local-stt]   token[3]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"left\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"heading\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"18100\" Type=1 Value=18100",
+    "[local-stt]   token[7]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"isle\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"has\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"approached\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"roger\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"with\" Type=0 Value=-1",
+    "[local-stt]   token[13]: Text=\"07\" Type=1 Value=7",
+    "[local-stt]   token[14]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 15 tokens",
+    "[local-stt]   no match at token[0]=\"negative\", skipping",
+    "[local-stt]   no match at token[1]=\"aloskay\", skipping",
+    "[local-stt]   no match at token[2]=\"929\", skipping",
+    "[local-stt]   matched command: \"SAYAGAIN/HEADING\" [] (pos=3, conf=0.50, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[3]=\"turn\", skipping",
+    "[local-stt]   no match at token[6]=\"18100\", skipping",
+    "[local-stt]   matched command: \"SAYAGAIN/HEADING\" [] (pos=4, conf=0.50, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[4]=\"left\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"isle\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"isle\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"has\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"has\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"approached\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"approached\"",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"ils\" variant=\"\" runway=\"seven right\" -\u003e \"I7R\" (consumed=7)",
+    "[local-stt]   matched command: \"CI7R\" [cleared_approach] (pos=7, conf=0.99, consumed=8, isThen=false)",
+    "[local-stt]   no match at token[7]=\"cleared\", skipping",
+    "[local-stt]   no match at token[6]=\"18100\", skipping",
+    "[local-stt]   matched command: \"SAYAGAIN/HEADING\" [] (pos=5, conf=0.50, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[5]=\"heading\", skipping",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"ils\" variant=\"\" runway=\"seven right\" -\u003e \"I7R\" (consumed=7)",
+    "[local-stt]   implicit approach match: \"CI7R\" (consumed=7)",
+    "[local-stt]   no match at token[8]=\"isle\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"isle\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"isle\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"has\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"has\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"approached\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"approached\"",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"ils\" variant=\"\" runway=\"seven right\" -\u003e \"I7R\" (consumed=7)",
+    "[local-stt]   matched command: \"CI7R\" [cleared_approach] (pos=7, conf=0.99, consumed=8, isThen=false)",
+    "[local-stt]   no match at token[7]=\"cleared\", skipping",
+    "[local-stt]   no match at token[6]=\"18100\", skipping",
+    "[local-stt]   no match at token[9]=\"has\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"with\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"with\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"07\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"07\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"with\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"with\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"07\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"07\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"with\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"with\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"07\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"07\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"with\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"with\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"07\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"07\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"with\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"with\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"07\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"07\"",
+    "[local-stt]   matched command: \"APPROVED\" [approved] (pos=10, conf=0.92, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[10]=\"approached\", skipping",
+    "[local-stt]   matched command: \"\" [acknowledgment] (pos=11, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   skipping filler word: \"roger\"",
+    "[local-stt]   no match at token[12]=\"with\", skipping",
+    "[local-stt]   no match at token[13]=\"07\", skipping",
+    "[local-stt]   no match at token[14]=\"right\", skipping",
+    "[local-stt]   beam final[0]: score=5.031 pos=15 commands=[SAYAGAIN/HEADING CI7R]",
+    "[local-stt]   beam final[1]: score=2.629 pos=15 commands=[SAYAGAIN/HEADING CI7R]",
+    "[local-stt]   beam final[2]: score=-0.896 pos=15 commands=[SAYAGAIN/HEADING APPROVED]",
+    "[local-stt]   beam final[3]: score=-1.303 pos=15 commands=[SAYAGAIN/HEADING CI7R]",
+    "[local-stt] ParseCommands: result=[SAYAGAIN/HEADING CI7R] (avgConf=0.75)",
+    "[local-stt] parsed commands: [SAYAGAIN/HEADING CI7R] (conf=0.75, kinds=1)",
+    "[local-stt] validated commands: [SAYAGAIN/HEADING CI7R] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"ASA79 SAYAGAIN/HEADING CI7R\" (conf=0.75, time=3.796ms) ==="
+  ]
+}

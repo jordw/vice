@@ -1,0 +1,560 @@
+{
+  "time": "2026-11-05T22:42:45.874899722Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "November Six Four Bravo Echo maintain best forward speed till five DME contact New Haven Tower",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, victor, alpha, information, Sardi one, Long Island seven, two zero, two four, runway, r-nav, I L S, Southwest 12 57, november seven four seven eight mike, cessna one seventy-two three seven delta, skyhawk three seven delta, november six five three seven delta, november six four brahvo echo, Moxy two zero three, Frontier Flight 24 47, Ukege, Soars, Coram, Zizi, CALVERTON, Yazoo, Lily, Riced, Yernu, Gump, Toper, Keyed, HARTFORD, Sardi, Elvis, Sorry, M.J., Long Island MacArthur Airport, Tweed New Haven Airport, Beads",
+  "whisper_duration_ms": 306.576,
+  "audio_duration_ms": 7240,
+  "processor": "GPU: NVIDIA GeForce RTX 3090 (24322MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "N64BE",
+  "command": "SMAX TO",
+  "reason": "a speed until five DME with best forward speed",
+  "stt_aircraft": {
+    "Frontier Flight 24 47": {
+      "Callsign": "FFT2447",
+      "LastAddressed": true,
+      "AircraftType": "A21N",
+      "Fixes": {
+        "Beads": "BEADS",
+        "Islip": "KISP",
+        "M.J.": "EMJAY",
+        "MacArthur": "KISP",
+        "Tibon": "TBONN",
+        "Toper": "TOPRR",
+        "Yazoo": "YAZUU",
+        "Zizi": "ZIZZI"
+      },
+      "SID": "LONGI7",
+      "Route": [
+        "BEADS",
+        "EMJAY",
+        "TOPRR",
+        "YAZUU",
+        "ZIZZI",
+        "TBONN",
+        "CAANO",
+        "PAJET",
+        "ZJAAY",
+        "KALDA",
+        "KDJT"
+      ],
+      "Altitude": 4000,
+      "Heading": 142,
+      "Speed": 267,
+      "AssignedAltitude": 4000,
+      "State": "departure",
+      "ControllerFrequency": "3H",
+      "TrackingController": "B17"
+    },
+    "Moxy two zero three": {
+      "Callsign": "MXY203",
+      "AircraftType": "BCS3",
+      "Fixes": {
+        "Elvis": "ELLVS",
+        "Gump": "GUUMP",
+        "New Haven": "KHVN",
+        "Sorry": "SORRY",
+        "Tweed": "KHVN",
+        "Yernu": "YERNU"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 20": "R20"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero": "20",
+        "visual runway two zero": "20",
+        "visual two zero": "20"
+      },
+      "ApproachFixes": {
+        "R20": {
+          "Elvis": "ELLVS",
+          "Gump": "GUUMP",
+          "HARTFORD": "HFD",
+          "Soars": "SOARS",
+          "Sorry": "SORRY",
+          "Yernu": "YERNU"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 20",
+      "STAR": "SARDI1",
+      "Route": [
+        "SORRY",
+        "GUUMP",
+        "ELLVS",
+        "YERNU",
+        "KHVN"
+      ],
+      "Altitude": 3000,
+      "Heading": 7,
+      "Speed": 172,
+      "AssignedAltitude": 3000,
+      "AssignedSpeed": 180,
+      "State": "arrival",
+      "ControllerFrequency": "3H",
+      "TrackingController": "3H"
+    },
+    "Southwest 12 57": {
+      "Callsign": "SWA1257",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "CALVERTON": "CCC",
+        "Coram": "CORAM",
+        "Islip": "KISP",
+        "Keyed": "KEYED",
+        "Lily": "LILKM",
+        "MacArthur": "KISP",
+        "Ukege": "UKEGE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 24": "I24",
+        "RNAV Runway 24": "R24"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two four": "24",
+        "visual runway two four": "24",
+        "visual two four": "24"
+      },
+      "ApproachFixes": {
+        "I24": {
+          "CALVERTON": "CCC",
+          "Coram": "CORAM",
+          "Ukege": "UKEGE"
+        },
+        "R24": {
+          "CALVERTON": "CCC",
+          "Coram": "CORAM",
+          "Jumum": "JUMUM",
+          "Ukege": "UKEGE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 24",
+      "STAR": "SARDI1",
+      "Route": [
+        "KEYED",
+        "LILKM",
+        "KISP"
+      ],
+      "Altitude": 3000,
+      "Heading": 350,
+      "Speed": 204,
+      "AssignedAltitude": 3000,
+      "AssignedHeading": 350,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "3H",
+      "TrackingController": "3H",
+      "LAHSORunways": [
+        "15L",
+        "33R",
+        "15R",
+        "33L"
+      ]
+    },
+    "cessna one seventy-two three seven delta": {
+      "Callsign": "N6537D/T",
+      "AircraftType": "C172",
+      "Fixes": {
+        "Elvis": "ELLVS",
+        "Gump": "GUUMP",
+        "HARTFORD": "HFD",
+        "Keyed": "KEYED",
+        "Lily": "LILKM",
+        "New Haven": "KHVN",
+        "Riced": "RICED",
+        "Sardi": "SARDI",
+        "Soars": "SOARS",
+        "Sorry": "SORRY",
+        "Tweed": "KHVN",
+        "Yernu": "YERNU"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 20": "R20"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero": "20",
+        "visual runway two zero": "20",
+        "visual two zero": "20"
+      },
+      "ApproachFixes": {
+        "R20": {
+          "Elvis": "ELLVS",
+          "Gump": "GUUMP",
+          "HARTFORD": "HFD",
+          "Soars": "SOARS",
+          "Sorry": "SORRY",
+          "Yernu": "YERNU"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 20",
+      "STAR": "SARDI1",
+      "Route": [
+        "SARDI",
+        "RICED",
+        "KEYED",
+        "LILKM",
+        "KHVN"
+      ],
+      "Altitude": 4000,
+      "Heading": 10,
+      "Speed": 111,
+      "AssignedAltitude": 4000,
+      "AssignedHeading": 10,
+      "State": "arrival",
+      "ControllerFrequency": "3H",
+      "TrackingController": "3H",
+      "AddressingForm": 1
+    },
+    "november seven four seven eight mike": {
+      "Callsign": "N7478M",
+      "AircraftType": "C175",
+      "Fixes": {
+        "Elvis": "ELLVS",
+        "Gump": "GUUMP",
+        "HARTFORD": "HFD",
+        "New Haven": "KHVN",
+        "Soars": "SOARS",
+        "Sorry": "SORRY",
+        "Tweed": "KHVN",
+        "Westfield-Barnes": "KBAF",
+        "Yernu": "YERNU"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 20": "R20"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero": "20",
+        "visual runway two zero": "20",
+        "visual two zero": "20"
+      },
+      "ApproachFixes": {
+        "R20": {
+          "Elvis": "ELLVS",
+          "Gump": "GUUMP",
+          "HARTFORD": "HFD",
+          "Soars": "SOARS",
+          "Sorry": "SORRY",
+          "Yernu": "YERNU"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 20",
+      "Route": [
+        "KHVN"
+      ],
+      "Altitude": 5212,
+      "Heading": 288,
+      "Speed": 130,
+      "AssignedAltitude": 3000,
+      "AssignedHeading": 320,
+      "State": "arrival",
+      "ControllerFrequency": "3O",
+      "TrackingController": "3O"
+    },
+    "november six five three seven delta": {
+      "Callsign": "N6537D",
+      "AircraftType": "C172",
+      "Fixes": {
+        "Elvis": "ELLVS",
+        "Gump": "GUUMP",
+        "HARTFORD": "HFD",
+        "Keyed": "KEYED",
+        "Lily": "LILKM",
+        "New Haven": "KHVN",
+        "Riced": "RICED",
+        "Sardi": "SARDI",
+        "Soars": "SOARS",
+        "Sorry": "SORRY",
+        "Tweed": "KHVN",
+        "Yernu": "YERNU"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 20": "R20"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero": "20",
+        "visual runway two zero": "20",
+        "visual two zero": "20"
+      },
+      "ApproachFixes": {
+        "R20": {
+          "Elvis": "ELLVS",
+          "Gump": "GUUMP",
+          "HARTFORD": "HFD",
+          "Soars": "SOARS",
+          "Sorry": "SORRY",
+          "Yernu": "YERNU"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 20",
+      "STAR": "SARDI1",
+      "Route": [
+        "SARDI",
+        "RICED",
+        "KEYED",
+        "LILKM",
+        "KHVN"
+      ],
+      "Altitude": 4000,
+      "Heading": 10,
+      "Speed": 111,
+      "AssignedAltitude": 4000,
+      "AssignedHeading": 10,
+      "State": "arrival",
+      "ControllerFrequency": "3H",
+      "TrackingController": "3H"
+    },
+    "november six four brahvo echo": {
+      "Callsign": "N64BE",
+      "AircraftType": "SR20",
+      "Fixes": {
+        "Elvis": "ELLVS",
+        "New Haven": "KHVN",
+        "Tweed": "KHVN",
+        "Yernu": "YERNU"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 20": "R20"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero": "20",
+        "visual runway two zero": "20",
+        "visual two zero": "20"
+      },
+      "ApproachFixes": {
+        "R20": {
+          "Elvis": "ELLVS",
+          "Gump": "GUUMP",
+          "HARTFORD": "HFD",
+          "Soars": "SOARS",
+          "Sorry": "SORRY",
+          "Yernu": "YERNU"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 20",
+      "Route": [
+        "ELLVS",
+        "YERNU",
+        "KHVN"
+      ],
+      "Altitude": 2311,
+      "Heading": 194,
+      "Speed": 153,
+      "AssignedAltitude": 4000,
+      "State": "cleared approach",
+      "ControllerFrequency": "3R",
+      "TrackingController": "3R"
+    },
+    "skyhawk three seven delta": {
+      "Callsign": "N6537D/T",
+      "AircraftType": "C172",
+      "Fixes": {
+        "Elvis": "ELLVS",
+        "Gump": "GUUMP",
+        "HARTFORD": "HFD",
+        "Keyed": "KEYED",
+        "Lily": "LILKM",
+        "New Haven": "KHVN",
+        "Riced": "RICED",
+        "Sardi": "SARDI",
+        "Soars": "SOARS",
+        "Sorry": "SORRY",
+        "Tweed": "KHVN",
+        "Yernu": "YERNU"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 20": "R20"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero": "20",
+        "visual runway two zero": "20",
+        "visual two zero": "20"
+      },
+      "ApproachFixes": {
+        "R20": {
+          "Elvis": "ELLVS",
+          "Gump": "GUUMP",
+          "HARTFORD": "HFD",
+          "Soars": "SOARS",
+          "Sorry": "SORRY",
+          "Yernu": "YERNU"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 20",
+      "STAR": "SARDI1",
+      "Route": [
+        "SARDI",
+        "RICED",
+        "KEYED",
+        "LILKM",
+        "KHVN"
+      ],
+      "Altitude": 4000,
+      "Heading": 10,
+      "Speed": 111,
+      "AssignedAltitude": 4000,
+      "AssignedHeading": 10,
+      "State": "arrival",
+      "ControllerFrequency": "3H",
+      "TrackingController": "3H",
+      "AddressingForm": 1
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"November Six Four Bravo Echo maintain best forward speed till five DME contact New Haven Tower\"",
+    "[local-stt] normalized words: [november 6 4 bravo echo maintain best forward speed till 5 dme contact new haven tower]",
+    "[local-stt] tokens: 15",
+    "[local-stt]   token[0]: Text=\"november\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"64\" Type=1 Value=64",
+    "[local-stt]   token[2]: Text=\"bravo\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"echo\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"best\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"forward\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"speed\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"till\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"5\" Type=1 Value=5",
+    "[local-stt]   token[10]: Text=\"dme\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"contact\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"new\" Type=0 Value=-1",
+    "[local-stt]   token[13]: Text=\"haven\" Type=0 Value=-1",
+    "[local-stt]   token[14]: Text=\"tower\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 15 tokens, 8 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 15 tokens, 8 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"november six four brahvo echo\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"november six four brahvo echo\" (airline=0.383, flight=0.850, skip=2)",
+    "[local-stt]     pattern \"airline_flight\": selected \"november six four brahvo echo\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 7 results",
+    "[local-stt]     result 0: \"Southwest 12 57\" (airline=0.491, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Frontier Flight 24 47\" (airline=0.583, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Moxy two zero three\" (airline=0.458, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Southwest 12 57\" (airline=0.437, flight=0.000, skip=2)",
+    "[local-stt]     result 4: \"Frontier Flight 24 47\" (airline=0.550, flight=0.000, skip=2)",
+    "[local-stt]     pattern \"airline_only\": selected \"Frontier Flight 24 47\" (airline=0.58, flight=0.00, skip=0)",
+    "[local-stt]     pattern \"airline_only\": scoring rejected \"Frontier Flight 24 47\"",
+    "[local-stt]   pattern \"ga_november\": 2 results",
+    "[local-stt]     result 0: \"november six four brahvo echo\" (airline=0.800, flight=0.750, skip=0)",
+    "[local-stt]     result 1: \"november six five three seven delta\" (airline=0.800, flight=0.700, skip=0)",
+    "[local-stt]     pattern \"ga_november\": selected \"november six four brahvo echo\" (airline=0.80, flight=0.75, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"november six four brahvo echo\" (airline=0.500, flight=0.942, skip=0)",
+    "[local-stt]     result 1: \"november six four brahvo echo\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"november six four brahvo echo\" (airline=0.50, flight=1.00, skip=1)",
+    "[local-stt]   exact callsign \"N64BE\" (spokenKey=\"november six four brahvo echo\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"N64BE\" SpokenKey=\"november six four brahvo echo\" Conf=1.00 Consumed=4",
+    "[local-stt] aircraft context: State=\"cleared approach\" Altitude=2311 Fixes=4 Approaches=1 VisualApproaches=3 AssignedApproach=\"RNAV Runway 20\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Elvis\" -\u003e \"ELLVS\"",
+    "[local-stt]   fix: \"Yernu\" -\u003e \"YERNU\"",
+    "[local-stt]   fix: \"New Haven\" -\u003e \"KHVN\"",
+    "[local-stt]   fix: \"Tweed\" -\u003e \"KHVN\"",
+    "[local-stt]   approach: \"RNAV Runway 20\" -\u003e \"R20\"",
+    "[local-stt]   visual approach: \"visual approach runway two zero\" -\u003e \"20\"",
+    "[local-stt]   visual approach: \"visual two zero\" -\u003e \"20\"",
+    "[local-stt]   visual approach: \"visual runway two zero\" -\u003e \"20\"",
+    "[local-stt] command tokens after disregard: 11",
+    "[local-stt]   token[0]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"best\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"forward\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"speed\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"till\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"5\" Type=1 Value=5",
+    "[local-stt]   token[6]: Text=\"dme\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"contact\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"new\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"haven\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"tower\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 11 tokens",
+    "[local-stt]   matched command: \"SMAX\" [maximum_speed] (pos=0, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[0]=\"maintain\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"till\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"till\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"5\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"5\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"dme\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"dme\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"till\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"till\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"5\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"5\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"dme\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"dme\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"till\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"till\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"5\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"5\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"dme\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"dme\"",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   matched command: \"SAYAGAIN/SPEED\" [speed_garbled_value] (pos=3, conf=0.82, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[3]=\"speed\", skipping",
+    "[local-stt]   matched command: \"SMAX\" [maximum_speed] (pos=1, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[1]=\"best\", skipping",
+    "[local-stt]   no match at token[6]=\"dme\", skipping",
+    "[local-stt]   no match at token[4]=\"till\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"till\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"till\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"5\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"5\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"dme\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"dme\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"till\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"till\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"5\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"5\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"dme\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"dme\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"till\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"till\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"5\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"5\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"dme\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"dme\"",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   matched command: \"SAYAGAIN/SPEED\" [speed_garbled_value] (pos=3, conf=0.82, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[3]=\"speed\", skipping",
+    "[local-stt]   no match at token[2]=\"forward\", skipping",
+    "[local-stt]   matched command: \"TO\" [contact_facility_tower] (pos=7, conf=0.86, consumed=4, isThen=false)",
+    "[local-stt]   matched command: \"FC\" [contact_garbled_facility] (pos=7, conf=0.74, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[7]=\"contact\", skipping",
+    "[local-stt]   no match at token[6]=\"dme\", skipping",
+    "[local-stt]   no match at token[5]=\"5\", skipping",
+    "[local-stt]   no match at token[4]=\"till\", skipping",
+    "[local-stt]   matched command: \"TO\" [facility_tower] (pos=9, conf=0.74, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[9]=\"haven\", skipping",
+    "[local-stt]   matched command: \"TO\" [facility_tower] (pos=8, conf=0.67, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[8]=\"new\", skipping",
+    "[local-stt]   matched command: \"TO\" [contact_facility_tower] (pos=7, conf=0.86, consumed=4, isThen=false)",
+    "[local-stt]   matched command: \"FC\" [contact_garbled_facility] (pos=7, conf=0.74, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[7]=\"contact\", skipping",
+    "[local-stt]   beam final[0]: score=4.783 pos=11 commands=[SMAX SAYAGAIN/SPEED TO]",
+    "[local-stt]   beam final[1]: score=4.079 pos=11 commands=[SMAX SAYAGAIN/SPEED FC TO]",
+    "[local-stt]   beam final[2]: score=1.882 pos=11 commands=[SMAX SAYAGAIN/SPEED TO]",
+    "[local-stt]   beam final[3]: score=1.284 pos=11 commands=[SMAX SAYAGAIN/SPEED TO]",
+    "[local-stt] ParseCommands: result=[SMAX SAYAGAIN/SPEED TO] (avgConf=0.89)",
+    "[local-stt] parsed commands: [SMAX SAYAGAIN/SPEED TO] (conf=0.89, kinds=1)",
+    "[local-stt] validated commands: [SMAX SAYAGAIN/SPEED TO] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"N64BE SMAX SAYAGAIN/SPEED TO\" (conf=0.89, time=4.8346ms) ==="
+  ]
+}

@@ -1,0 +1,432 @@
+{
+  "time": "2026-11-12T17:57:06.690590632Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Alaska two seven seven radar service is terminated",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, uniform, quebec, information, Alta niner, Yosemite three, Bull three, Laden, Frame, Ocavi, Ipuje, two niner left, two niner right, runway, r-nav, Visual, yankee, I L S, United six 25, SkyWest seven 81 lima, SkyWest six 64 uniform, Horizon Air 47 72, cessna one seventy-two four pahpah golf, skyhawk four pahpah golf, november six two four pahpah golf, november three, Alaska two 77, Zemux, FRIANT, story, Mupt, Taffy, Intel, Alta, Sango, Pond, PALISADES, Meadows Field, Visalia Municipal Airport, Fresno Yosemite International Airport",
+  "whisper_duration_ms": 502.355,
+  "audio_duration_ms": 3656,
+  "processor": "GPU: NVIDIA GeForce RTX 3060 (12329MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "ASA277",
+  "command": "RST",
+  "stt_aircraft": {
+    "Alaska two 77": {
+      "Callsign": "ASA277",
+      "LastAddressed": true,
+      "AircraftType": "B39M",
+      "Fixes": {
+        "Alta": "ALTTA",
+        "Fresno Yosemite": "KFAT",
+        "Sango": "SANGO",
+        "story": "STORI"
+      },
+      "CandidateApproaches": {
+        "ILS Y Runway 29R": "IY9R",
+        "RNAV Runway 29L": "R9L",
+        "RNAV Runway 29R": "R9R",
+        "Visual Runway 29L": "V9L",
+        "Visual Runway 29R": "V9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner left": "29L",
+        "visual approach runway two niner right": "29R",
+        "visual runway two niner left": "29L",
+        "visual runway two niner right": "29R",
+        "visual two niner left": "29L",
+        "visual two niner right": "29R"
+      },
+      "ApproachFixes": {
+        "IY9R": {
+          "Alta": "ALTTA",
+          "FRIANT": "FRA",
+          "Sango": "SANGO",
+          "Zemux": "ZEMUX",
+          "story": "STORI"
+        },
+        "R9L": {
+          "Alta": "ALTTA",
+          "Cumux": "CUMUX",
+          "FRIANT": "FRA",
+          "Frame": "FRAME",
+          "Ipuje": "IPUJE",
+          "Laden": "LATON",
+          "Ocavi": "OCAVI",
+          "Zudab": "ZUDAB"
+        },
+        "R9R": {
+          "Alta": "ALTTA",
+          "FRIANT": "FRA",
+          "Frame": "FRAME",
+          "Laden": "LATON",
+          "Ocavi": "OCAVI",
+          "Sango": "SANGO",
+          "Wilab": "WILAB",
+          "story": "STORI"
+        },
+        "V9L": {
+          "Alta": "ALTTA",
+          "Ipuje": "IPUJE",
+          "Zudab": "ZUDAB"
+        },
+        "V9R": {
+          "Alta": "ALTTA",
+          "Sango": "SANGO",
+          "story": "STORI"
+        }
+      },
+      "AssignedApproach": "Visual Runway 29R",
+      "Route": [
+        "SANGO",
+        "KFAT"
+      ],
+      "Altitude": 3269,
+      "Heading": 191,
+      "Speed": 268,
+      "AssignedHeading": 140,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "Horizon Air 47 72": {
+      "Callsign": "QXE4772",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Alta": "ALTTA",
+        "FRIANT": "FRA",
+        "Fresno Yosemite": "KFAT",
+        "Sango": "SANGO",
+        "Zemux": "ZEMUX",
+        "story": "STORI"
+      },
+      "CandidateApproaches": {
+        "ILS Y Runway 29R": "IY9R",
+        "RNAV Runway 29L": "R9L",
+        "RNAV Runway 29R": "R9R",
+        "Visual Runway 29L": "V9L",
+        "Visual Runway 29R": "V9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner left": "29L",
+        "visual approach runway two niner right": "29R",
+        "visual runway two niner left": "29L",
+        "visual runway two niner right": "29R",
+        "visual two niner left": "29L",
+        "visual two niner right": "29R"
+      },
+      "ApproachFixes": {
+        "IY9R": {
+          "Alta": "ALTTA",
+          "FRIANT": "FRA",
+          "Sango": "SANGO",
+          "Zemux": "ZEMUX",
+          "story": "STORI"
+        },
+        "R9L": {
+          "Alta": "ALTTA",
+          "Cumux": "CUMUX",
+          "FRIANT": "FRA",
+          "Frame": "FRAME",
+          "Ipuje": "IPUJE",
+          "Laden": "LATON",
+          "Ocavi": "OCAVI",
+          "Zudab": "ZUDAB"
+        },
+        "R9R": {
+          "Alta": "ALTTA",
+          "FRIANT": "FRA",
+          "Frame": "FRAME",
+          "Laden": "LATON",
+          "Ocavi": "OCAVI",
+          "Sango": "SANGO",
+          "Wilab": "WILAB",
+          "story": "STORI"
+        },
+        "V9L": {
+          "Alta": "ALTTA",
+          "Ipuje": "IPUJE",
+          "Zudab": "ZUDAB"
+        },
+        "V9R": {
+          "Alta": "ALTTA",
+          "Sango": "SANGO",
+          "story": "STORI"
+        }
+      },
+      "AssignedApproach": "ILS Y Runway 29R",
+      "STAR": "ALTTA9",
+      "Route": [
+        "ALTTA",
+        "KFAT"
+      ],
+      "Altitude": 8000,
+      "Heading": 310,
+      "Speed": 279,
+      "AssignedHeading": 310,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F"
+    },
+    "SkyWest seven 81 lima": {
+      "Callsign": "SKW781L",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Alta": "ALTTA",
+        "FRIANT": "FRA",
+        "Fresno Yosemite": "KFAT",
+        "Intel": "NTELL",
+        "Sango": "SANGO",
+        "Zemux": "ZEMUX",
+        "story": "STORI"
+      },
+      "CandidateApproaches": {
+        "ILS Y Runway 29R": "IY9R",
+        "RNAV Runway 29L": "R9L",
+        "RNAV Runway 29R": "R9R",
+        "Visual Runway 29L": "V9L",
+        "Visual Runway 29R": "V9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner left": "29L",
+        "visual approach runway two niner right": "29R",
+        "visual runway two niner left": "29L",
+        "visual runway two niner right": "29R",
+        "visual two niner left": "29L",
+        "visual two niner right": "29R"
+      },
+      "ApproachFixes": {
+        "IY9R": {
+          "Alta": "ALTTA",
+          "FRIANT": "FRA",
+          "Sango": "SANGO",
+          "Zemux": "ZEMUX",
+          "story": "STORI"
+        },
+        "R9L": {
+          "Alta": "ALTTA",
+          "Cumux": "CUMUX",
+          "FRIANT": "FRA",
+          "Frame": "FRAME",
+          "Ipuje": "IPUJE",
+          "Laden": "LATON",
+          "Ocavi": "OCAVI",
+          "Zudab": "ZUDAB"
+        },
+        "R9R": {
+          "Alta": "ALTTA",
+          "FRIANT": "FRA",
+          "Frame": "FRAME",
+          "Laden": "LATON",
+          "Ocavi": "OCAVI",
+          "Sango": "SANGO",
+          "Wilab": "WILAB",
+          "story": "STORI"
+        },
+        "V9L": {
+          "Alta": "ALTTA",
+          "Ipuje": "IPUJE",
+          "Zudab": "ZUDAB"
+        },
+        "V9R": {
+          "Alta": "ALTTA",
+          "Sango": "SANGO",
+          "story": "STORI"
+        }
+      },
+      "AssignedApproach": "ILS Y Runway 29R",
+      "Route": [
+        "NTELL",
+        "KFAT"
+      ],
+      "Altitude": 6000,
+      "Heading": 80,
+      "Speed": 278,
+      "AssignedHeading": 80,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "SkyWest six 64 uniform": {
+      "Callsign": "SKW664U",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Fresno Yosemite": "KFAT",
+        "PALISADES": "SWR"
+      },
+      "SID": "YOSE3",
+      "Route": [
+        "SWR",
+        "LMT",
+        "MOXEE",
+        "KPDX"
+      ],
+      "Altitude": 7413,
+      "Heading": 292,
+      "Speed": 276,
+      "State": "departure",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "United six 25": {
+      "Callsign": "UAL625",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Fresno Yosemite": "KFAT",
+        "Los Angeles": "KLAX",
+        "Mupt": "MUPTT",
+        "Pond": "PONDD",
+        "Taffy": "TAFTO"
+      },
+      "SID": "BULL3",
+      "Route": [
+        "PONDD",
+        "TAFTO",
+        "MUPTT",
+        "KLAX"
+      ],
+      "Altitude": 22931,
+      "Heading": 140,
+      "Speed": 445,
+      "State": "departure",
+      "ControllerFrequency": "1F",
+      "TrackingController": "C36"
+    },
+    "cessna one seventy-two four pahpah golf": {
+      "Callsign": "N624PG/T",
+      "AircraftType": "C172",
+      "Fixes": {
+        "Mariposa Yosemite": "KMPI",
+        "Meadows": "KBFL"
+      },
+      "Altitude": 7500,
+      "Heading": 170,
+      "Speed": 131,
+      "AssignedHeading": 170,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "AddressingForm": 1
+    },
+    "november six two four pahpah golf": {
+      "Callsign": "N624PG",
+      "AircraftType": "C172",
+      "Fixes": {
+        "Mariposa Yosemite": "KMPI",
+        "Meadows": "KBFL"
+      },
+      "Altitude": 7500,
+      "Heading": 170,
+      "Speed": 131,
+      "AssignedHeading": 170,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F"
+    },
+    "november three": {
+      "Callsign": "N3",
+      "Fixes": {
+        "": "2O6",
+        "Visalia Municipal": "KVIS"
+      },
+      "Altitude": 7500,
+      "Heading": 150,
+      "Speed": 164,
+      "AssignedHeading": 150,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F"
+    },
+    "skyhawk four pahpah golf": {
+      "Callsign": "N624PG/T",
+      "AircraftType": "C172",
+      "Fixes": {
+        "Mariposa Yosemite": "KMPI",
+        "Meadows": "KBFL"
+      },
+      "Altitude": 7500,
+      "Heading": 170,
+      "Speed": 131,
+      "AssignedHeading": 170,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "AddressingForm": 1
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Alaska two seven seven radar service is terminated\"",
+    "[local-stt] normalized words: [alaska 2 7 7 radar service is terminated]",
+    "[local-stt] tokens: 6",
+    "[local-stt]   token[0]: Text=\"alaska\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"277\" Type=1 Value=277",
+    "[local-stt]   token[2]: Text=\"radar\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"service\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"is\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"terminated\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 6 tokens, 9 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 6 tokens, 9 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Alaska two 77\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Alaska two 77\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"Alaska two 77\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Alaska two 77\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 9 results",
+    "[local-stt]     result 0: \"SkyWest seven 81 lima\" (airline=0.437, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"SkyWest six 64 uniform\" (airline=0.437, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Alaska two 77\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Horizon Air 47 72\" (airline=0.448, flight=0.000, skip=2)",
+    "[local-stt]     result 4: \"Alaska two 77\" (airline=0.578, flight=0.000, skip=2)",
+    "[local-stt]     pattern \"airline_only\": selected \"Alaska two 77\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Alaska two 77\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Alaska two 77\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"Alaska two 77\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"ASA277\" (spokenKey=\"Alaska two 77\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"ASA277\" SpokenKey=\"Alaska two 77\" Conf=1.00 Consumed=2",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=3269 Fixes=4 Approaches=5 VisualApproaches=6 AssignedApproach=\"Visual Runway 29R\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Fresno Yosemite\" -\u003e \"KFAT\"",
+    "[local-stt]   fix: \"Sango\" -\u003e \"SANGO\"",
+    "[local-stt]   fix: \"Alta\" -\u003e \"ALTTA\"",
+    "[local-stt]   fix: \"story\" -\u003e \"STORI\"",
+    "[local-stt]   approach: \"Visual Runway 29L\" -\u003e \"V9L\"",
+    "[local-stt]   approach: \"RNAV Runway 29L\" -\u003e \"R9L\"",
+    "[local-stt]   approach: \"RNAV Runway 29R\" -\u003e \"R9R\"",
+    "[local-stt]   approach: \"Visual Runway 29R\" -\u003e \"V9R\"",
+    "[local-stt]   approach: \"ILS Y Runway 29R\" -\u003e \"IY9R\"",
+    "[local-stt]   visual approach: \"visual approach runway two niner right\" -\u003e \"29R\"",
+    "[local-stt]   visual approach: \"visual two niner right\" -\u003e \"29R\"",
+    "[local-stt]   visual approach: \"visual runway two niner left\" -\u003e \"29L\"",
+    "[local-stt]   visual approach: \"visual approach runway two niner left\" -\u003e \"29L\"",
+    "[local-stt]   visual approach: \"visual two niner left\" -\u003e \"29L\"",
+    "[local-stt]   visual approach: \"visual runway two niner right\" -\u003e \"29R\"",
+    "[local-stt] command tokens after disregard: 4",
+    "[local-stt]   token[0]: Text=\"radar\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"service\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"is\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"terminated\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 4 tokens",
+    "[local-stt]   matched command: \"RST\" [radar_services_terminated] (pos=0, conf=0.98, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[0]=\"radar\", skipping",
+    "[local-stt]   no match at token[1]=\"service\", skipping",
+    "[local-stt]   skipping filler word: \"is\"",
+    "[local-stt]   no match at token[3]=\"terminated\", skipping",
+    "[local-stt]   beam final[0]: score=1.742 pos=4 commands=[RST]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=4 commands=[]",
+    "[local-stt] ParseCommands: result=[RST] (avgConf=0.98)",
+    "[local-stt] parsed commands: [RST] (conf=0.98, kinds=1)",
+    "[local-stt] validated commands: [RST] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"ASA277 RST\" (conf=0.98, time=2.6383ms) ==="
+  ]
+}

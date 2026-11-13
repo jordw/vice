@@ -1,0 +1,337 @@
+{
+  "time": "2026-11-11T01:10:24.635960219Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Flexjet 46 expect the ILS runway disregard",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, november, information, Scogs four, Seadog four, Rebella one, slams, tate, AUGUSTA, two niner, runway, r-nav, I L S, Up Jet 87 76, Flexjet 74, Flexjet 46, Flexjet 44, JetBlue 69 65, ExecJet 51 zero seven, Yak, Nelly, Mesh, CALVERTON, Saco, KENNEBUNK, Yantic, scogs, Noble, Pete, Sappy, Jimmy, Sekay, Gorhm, Rubela, Portland International Jetport",
+  "whisper_duration_ms": 331.449,
+  "audio_duration_ms": 4808,
+  "processor": "GPU: NVIDIA GeForce RTX 4070 (12010MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "",
+  "command": "",
+  "reason": "disregard at the end",
+  "stt_aircraft": {
+    "ExecJet 51 zero seven": {
+      "Callsign": "EJA5107",
+      "AircraftType": "C680",
+      "Fixes": {
+        "Mesh": "MESHL",
+        "Portland International Jetport": "KPWM",
+        "Saco": "SAACO",
+        "Sappy": "SAPPE",
+        "Sekay": "CEKAY",
+        "Yak": "YAAKK",
+        "scogs": "SCOGS"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 29": "I29",
+        "RNAV Runway 29": "R29"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner": "29",
+        "visual runway two niner": "29",
+        "visual two niner": "29"
+      },
+      "ApproachFixes": {
+        "I29": {
+          "KENNEBUNK": "ENE",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE"
+        },
+        "R29": {
+          "AUGUSTA": "AUG",
+          "KENNEBUNK": "ENE",
+          "Mesh": "MESHL",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE",
+          "slams": "SLAMZ",
+          "tate": "TAATE"
+        }
+      },
+      "STAR": "SCOGS4",
+      "Route": [
+        "CEKAY",
+        "SCOGS",
+        "SAACO",
+        "MESHL",
+        "YAAKK",
+        "SAPPE",
+        "KPWM"
+      ],
+      "Altitude": 9000,
+      "Heading": 34,
+      "Speed": 292,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "18",
+        "36"
+      ]
+    },
+    "Flexjet 44": {
+      "Callsign": "LXJ44",
+      "AircraftType": "E545",
+      "Fixes": {
+        "Pete": "PEATT",
+        "Portland International Jetport": "KPWM",
+        "Sappy": "SAPPE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 29": "I29",
+        "RNAV Runway 29": "R29"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner": "29",
+        "visual runway two niner": "29",
+        "visual two niner": "29"
+      },
+      "ApproachFixes": {
+        "I29": {
+          "KENNEBUNK": "ENE",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE"
+        },
+        "R29": {
+          "AUGUSTA": "AUG",
+          "KENNEBUNK": "ENE",
+          "Mesh": "MESHL",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE",
+          "slams": "SLAMZ",
+          "tate": "TAATE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 29",
+      "STAR": "SCOGS4",
+      "Route": [
+        "SAPPE",
+        "PEATT",
+        "KPWM"
+      ],
+      "Altitude": 3000,
+      "Heading": 290,
+      "Speed": 238,
+      "AssignedHeading": 290,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "18",
+        "36"
+      ]
+    },
+    "Flexjet 46": {
+      "Callsign": "LXJ46",
+      "LastAddressed": true,
+      "AircraftType": "LJ60",
+      "Fixes": {
+        "Pete": "PEATT",
+        "Portland International Jetport": "KPWM",
+        "Sappy": "SAPPE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 29": "I29",
+        "RNAV Runway 29": "R29"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner": "29",
+        "visual runway two niner": "29",
+        "visual two niner": "29"
+      },
+      "ApproachFixes": {
+        "I29": {
+          "KENNEBUNK": "ENE",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE"
+        },
+        "R29": {
+          "AUGUSTA": "AUG",
+          "KENNEBUNK": "ENE",
+          "Mesh": "MESHL",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE",
+          "slams": "SLAMZ",
+          "tate": "TAATE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 29",
+      "STAR": "CDOGG4",
+      "Route": [
+        "SAPPE",
+        "PEATT",
+        "KPWM"
+      ],
+      "Altitude": 3000,
+      "Heading": 220,
+      "Speed": 254,
+      "AssignedHeading": 220,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "18",
+        "36"
+      ]
+    },
+    "Flexjet 74": {
+      "Callsign": "LXJ74",
+      "AircraftType": "LJ45",
+      "Fixes": {
+        "Pete": "PEATT",
+        "Portland International Jetport": "KPWM"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 29": "I29",
+        "RNAV Runway 29": "R29"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner": "29",
+        "visual runway two niner": "29",
+        "visual two niner": "29"
+      },
+      "ApproachFixes": {
+        "I29": {
+          "KENNEBUNK": "ENE",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE"
+        },
+        "R29": {
+          "AUGUSTA": "AUG",
+          "KENNEBUNK": "ENE",
+          "Mesh": "MESHL",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE",
+          "slams": "SLAMZ",
+          "tate": "TAATE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 29",
+      "STAR": "CDOGG4",
+      "Route": [
+        "PEATT",
+        "KPWM"
+      ],
+      "Altitude": 3000,
+      "Heading": 39,
+      "Speed": 260,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "18",
+        "36"
+      ]
+    },
+    "JetBlue 69 65": {
+      "Callsign": "JBU6965",
+      "AircraftType": "A320",
+      "Fixes": {
+        "CALVERTON": "CCC",
+        "Jimmy": "JJIMY",
+        "Portland International Jetport": "KPWM",
+        "Rubela": "RBELA",
+        "Yantic": "YANTC"
+      },
+      "SID": "RBELA1",
+      "Route": [
+        "RBELA",
+        "JJIMY",
+        "YANTC",
+        "CCC",
+        "KJFK"
+      ],
+      "Altitude": 7902,
+      "Heading": 227,
+      "Speed": 278,
+      "State": "departure",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S"
+    },
+    "Up Jet 87 76": {
+      "Callsign": "WUP8776",
+      "AircraftType": "BE40",
+      "Fixes": {
+        "Bedford": "KBED",
+        "Gorhm": "GORHM",
+        "Hanscom": "KBED",
+        "Jimmy": "JJIMY",
+        "Nelly": "NELIE",
+        "Noble": "NUBLE",
+        "Portland International Jetport": "KPWM",
+        "Rubela": "RBELA"
+      },
+      "SID": "RBELA1",
+      "Route": [
+        "GORHM",
+        "NUBLE",
+        "RBELA",
+        "JJIMY",
+        "NELIE",
+        "KBED"
+      ],
+      "Altitude": 12000,
+      "Heading": 58,
+      "Speed": 359,
+      "State": "departure",
+      "ControllerFrequency": "1S",
+      "TrackingController": "C37"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Flexjet 46 expect the ILS runway disregard\"",
+    "[local-stt] normalized words: [flexjet 46 expect the ils runway disregard]",
+    "[local-stt] tokens: 7",
+    "[local-stt]   token[0]: Text=\"flexjet\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"46\" Type=1 Value=46",
+    "[local-stt]   token[2]: Text=\"expect\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"the\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"ils\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"disregard\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 7 tokens, 6 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 7 tokens, 6 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Flexjet 46\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Flexjet 46\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"Flexjet 46\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Flexjet 44\" (airline=1.000, flight=0.700, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Flexjet 46\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 16 results",
+    "[local-stt]     result 0: \"JetBlue 69 65\" (airline=0.524, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"ExecJet 51 zero seven\" (airline=0.810, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Flexjet 44\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Flexjet 46\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Flexjet 74\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Flexjet 44\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Flexjet 46\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Flexjet 46\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"Flexjet 46\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"LXJ46\" (spokenKey=\"Flexjet 46\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"LXJ46\" SpokenKey=\"Flexjet 46\" Conf=1.00 Consumed=2",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=3000 Fixes=3 Approaches=2 VisualApproaches=3 AssignedApproach=\"ILS Runway 29\" LAHSORunways=[18 36]",
+    "[local-stt]   fix: \"Portland International Jetport\" -\u003e \"KPWM\"",
+    "[local-stt]   fix: \"Sappy\" -\u003e \"SAPPE\"",
+    "[local-stt]   fix: \"Pete\" -\u003e \"PEATT\"",
+    "[local-stt]   approach: \"RNAV Runway 29\" -\u003e \"R29\"",
+    "[local-stt]   approach: \"ILS Runway 29\" -\u003e \"I29\"",
+    "[local-stt]   visual approach: \"visual two niner\" -\u003e \"29\"",
+    "[local-stt]   visual approach: \"visual runway two niner\" -\u003e \"29\"",
+    "[local-stt]   visual approach: \"visual approach runway two niner\" -\u003e \"29\"",
+    "[local-stt] command tokens after disregard: 0",
+    "[local-stt] disregard-only transmission, returning empty",
+    "[local-stt] === DecodeTranscript END: \"\" (disregard, time=0s) ==="
+  ]
+}

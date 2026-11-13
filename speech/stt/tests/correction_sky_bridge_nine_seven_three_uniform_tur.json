@@ -1,0 +1,1009 @@
+{
+  "time": "2026-11-06T00:54:47.877311906Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "correction sky bridge nine seven three uniform turn right heading one nine zero",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, mike, information, 28R.SW.J, Ricky, Little, Chapp, two eight left, three zero, two eight right, runway, r-nav, I L S, Southwest five 37, SkyWest niner 73 uniform, B E thirty-six six foxtrot charlie, bonanza six foxtrot charlie, november four niner six foxtrot charlie, B Three Six Tango niner pahpah echo, Turbo Bonanza niner pahpah echo, november four eight niner pahpah echo, beech barron three six kebeck, barron three six kebeck, barron fifty-five three six kebeck, november three six kebeck, beech barron niner delta x-ray, barron niner delta x-ray, barron fifty-five niner delta x-ray, november three four niner delta x-ray, B E thirty-six six four five, bonanza six four five, november two six four five, American two zero eight, Woody, Hamer, Rusty, chain, Adcock, Olsin, A-toka, Gray, PARIS, , , Noble",
+  "whisper_duration_ms": 2054.641,
+  "audio_duration_ms": 3528,
+  "processor": "GPU: Intel(R) Iris(R) Xe Graphics (3875MB)",
+  "whisper_model": "ggml-base.en-jlvatc-q5_0.bin",
+  "callsign": "SKW973U",
+  "command": "CORRECTION R190",
+  "reason": "transmission opens with correction",
+  "stt_aircraft": {
+    "American two zero eight": {
+      "Callsign": "AAL208",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Academy": "KAAC",
+        "Noble": "NOBLE",
+        "PARIS": "PRX"
+      },
+      "SID": "28R.SW.J",
+      "Route": [
+        "NOBLE",
+        "PRX",
+        "KMOB"
+      ],
+      "Altitude": 10653,
+      "Heading": 190,
+      "Speed": 308,
+      "AssignedHeading": 190,
+      "State": "departure",
+      "ControllerFrequency": "1D",
+      "TrackingController": "E02"
+    },
+    "B E thirty-six six four five": {
+      "Callsign": "N2645/T",
+      "AircraftType": "BE36",
+      "Fixes": {
+        "Academy": "KAAC",
+        "Adcock": "ADCOK",
+        "Gray": "GRAYY",
+        "Rusty": "RUSTY",
+        "Woody": "WOODY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        },
+        "R8L": {
+          "Chapp": "CHAPP",
+          "Little": "LITTL",
+          "Oneta": "ONETA",
+          "Ricky": "RICKY"
+        },
+        "R8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 28R",
+      "Route": [
+        "KAAC"
+      ],
+      "Altitude": 7447,
+      "Heading": 45,
+      "Speed": 209,
+      "AssignedHeading": 150,
+      "AssignedSpeed": 170,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "AddressingForm": 1
+    },
+    "B E thirty-six six foxtrot charlie": {
+      "Callsign": "N496FC/T",
+      "AircraftType": "BE36",
+      "Fixes": {
+        "": "4Y3",
+        "Hamer": "HAMMR",
+        "Olsin": "OLSIN",
+        "chain": "CHAIN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 30": "I30"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three zero": "30",
+        "visual runway three zero": "30",
+        "visual three zero": "30"
+      },
+      "ApproachFixes": {
+        "I30": {
+          "Hamer": "HAMMR",
+          "Olsin": "OLSIN",
+          "chain": "CHAIN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 30",
+      "Altitude": 6000,
+      "Heading": 80,
+      "Speed": 165,
+      "AssignedHeading": 80,
+      "State": "arrival",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J",
+      "AddressingForm": 1
+    },
+    "B Three Six Tango niner pahpah echo": {
+      "Callsign": "N489PE/T",
+      "AircraftType": "B36T",
+      "Fixes": {
+        "Bartles": "KBRT",
+        "Noble": "NOBLE"
+      },
+      "Route": [
+        "NOBLE",
+        "DAL",
+        "KDAL"
+      ],
+      "Altitude": 5432,
+      "Heading": 170,
+      "Speed": 142,
+      "AssignedHeading": 170,
+      "State": "departure",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N",
+      "AddressingForm": 1
+    },
+    "SkyWest niner 73 uniform": {
+      "Callsign": "SKW973U",
+      "AircraftType": "CRJ7",
+      "Fixes": {
+        "Academy": "KAAC",
+        "Adcock": "ADCOK",
+        "Gray": "GRAYY",
+        "Rusty": "RUSTY",
+        "Woody": "WOODY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        },
+        "R8L": {
+          "Chapp": "CHAPP",
+          "Little": "LITTL",
+          "Oneta": "ONETA",
+          "Ricky": "RICKY"
+        },
+        "R8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 28R",
+      "Route": [
+        "KAAC"
+      ],
+      "Altitude": 4000,
+      "Heading": 110,
+      "Speed": 171,
+      "AssignedHeading": 110,
+      "AssignedSpeed": 170,
+      "State": "arrival",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N"
+    },
+    "Southwest five 37": {
+      "Callsign": "SWA537",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Academy": "KAAC",
+        "Adcock": "ADCOK",
+        "Rusty": "RUSTY",
+        "Woody": "WOODY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        },
+        "R8L": {
+          "Chapp": "CHAPP",
+          "Little": "LITTL",
+          "Oneta": "ONETA",
+          "Ricky": "RICKY"
+        },
+        "R8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 28R",
+      "Route": [
+        "ADCOK",
+        "RUSTY",
+        "WOODY",
+        "KAAC"
+      ],
+      "Altitude": 3349,
+      "Heading": 275,
+      "Speed": 237,
+      "State": "arrival",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N"
+    },
+    "Turbo Bonanza niner pahpah echo": {
+      "Callsign": "N489PE/T",
+      "AircraftType": "B36T",
+      "Fixes": {
+        "Bartles": "KBRT",
+        "Noble": "NOBLE"
+      },
+      "Route": [
+        "NOBLE",
+        "DAL",
+        "KDAL"
+      ],
+      "Altitude": 5432,
+      "Heading": 170,
+      "Speed": 142,
+      "AssignedHeading": 170,
+      "State": "departure",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N",
+      "AddressingForm": 1
+    },
+    "barron fifty-five niner delta x-ray": {
+      "Callsign": "N349DX/T",
+      "AircraftType": "BE55",
+      "Fixes": {
+        "A-toka": "ATOKA",
+        "Academy": "KAAC",
+        "Adcock": "ADCOK",
+        "Gray": "GRAYY",
+        "Rusty": "RUSTY",
+        "Woody": "WOODY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        },
+        "R8L": {
+          "Chapp": "CHAPP",
+          "Little": "LITTL",
+          "Oneta": "ONETA",
+          "Ricky": "RICKY"
+        },
+        "R8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 28R",
+      "Route": [
+        "ATOKA",
+        "KAAC"
+      ],
+      "Altitude": 15000,
+      "Heading": 54,
+      "Speed": 208,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "AddressingForm": 1
+    },
+    "barron fifty-five three six kebeck": {
+      "Callsign": "N36Q/T",
+      "AircraftType": "BE55",
+      "Fixes": {
+        "Academy": "KAAC"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        },
+        "R8L": {
+          "Chapp": "CHAPP",
+          "Little": "LITTL",
+          "Oneta": "ONETA",
+          "Ricky": "RICKY"
+        },
+        "R8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        }
+      },
+      "Route": [
+        "KAAC"
+      ],
+      "Altitude": 2100,
+      "Heading": 332,
+      "Speed": 188,
+      "AssignedHeading": 250,
+      "State": "arrival",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J",
+      "AddressingForm": 1
+    },
+    "barron niner delta x-ray": {
+      "Callsign": "N349DX/T",
+      "AircraftType": "BE55",
+      "Fixes": {
+        "A-toka": "ATOKA",
+        "Academy": "KAAC",
+        "Adcock": "ADCOK",
+        "Gray": "GRAYY",
+        "Rusty": "RUSTY",
+        "Woody": "WOODY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        },
+        "R8L": {
+          "Chapp": "CHAPP",
+          "Little": "LITTL",
+          "Oneta": "ONETA",
+          "Ricky": "RICKY"
+        },
+        "R8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 28R",
+      "Route": [
+        "ATOKA",
+        "KAAC"
+      ],
+      "Altitude": 15000,
+      "Heading": 54,
+      "Speed": 208,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "AddressingForm": 1
+    },
+    "barron three six kebeck": {
+      "Callsign": "N36Q/T",
+      "AircraftType": "BE55",
+      "Fixes": {
+        "Academy": "KAAC"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        },
+        "R8L": {
+          "Chapp": "CHAPP",
+          "Little": "LITTL",
+          "Oneta": "ONETA",
+          "Ricky": "RICKY"
+        },
+        "R8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        }
+      },
+      "Route": [
+        "KAAC"
+      ],
+      "Altitude": 2100,
+      "Heading": 332,
+      "Speed": 188,
+      "AssignedHeading": 250,
+      "State": "arrival",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J",
+      "AddressingForm": 1
+    },
+    "beech barron niner delta x-ray": {
+      "Callsign": "N349DX/T",
+      "AircraftType": "BE55",
+      "Fixes": {
+        "A-toka": "ATOKA",
+        "Academy": "KAAC",
+        "Adcock": "ADCOK",
+        "Gray": "GRAYY",
+        "Rusty": "RUSTY",
+        "Woody": "WOODY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        },
+        "R8L": {
+          "Chapp": "CHAPP",
+          "Little": "LITTL",
+          "Oneta": "ONETA",
+          "Ricky": "RICKY"
+        },
+        "R8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 28R",
+      "Route": [
+        "ATOKA",
+        "KAAC"
+      ],
+      "Altitude": 15000,
+      "Heading": 54,
+      "Speed": 208,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "AddressingForm": 1
+    },
+    "beech barron three six kebeck": {
+      "Callsign": "N36Q/T",
+      "AircraftType": "BE55",
+      "Fixes": {
+        "Academy": "KAAC"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        },
+        "R8L": {
+          "Chapp": "CHAPP",
+          "Little": "LITTL",
+          "Oneta": "ONETA",
+          "Ricky": "RICKY"
+        },
+        "R8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        }
+      },
+      "Route": [
+        "KAAC"
+      ],
+      "Altitude": 2100,
+      "Heading": 332,
+      "Speed": 188,
+      "AssignedHeading": 250,
+      "State": "arrival",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J",
+      "AddressingForm": 1
+    },
+    "bonanza six four five": {
+      "Callsign": "N2645/T",
+      "AircraftType": "BE36",
+      "Fixes": {
+        "Academy": "KAAC",
+        "Adcock": "ADCOK",
+        "Gray": "GRAYY",
+        "Rusty": "RUSTY",
+        "Woody": "WOODY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        },
+        "R8L": {
+          "Chapp": "CHAPP",
+          "Little": "LITTL",
+          "Oneta": "ONETA",
+          "Ricky": "RICKY"
+        },
+        "R8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 28R",
+      "Route": [
+        "KAAC"
+      ],
+      "Altitude": 7447,
+      "Heading": 45,
+      "Speed": 209,
+      "AssignedHeading": 150,
+      "AssignedSpeed": 170,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "AddressingForm": 1
+    },
+    "bonanza six foxtrot charlie": {
+      "Callsign": "N496FC/T",
+      "AircraftType": "BE36",
+      "Fixes": {
+        "": "4Y3",
+        "Hamer": "HAMMR",
+        "Olsin": "OLSIN",
+        "chain": "CHAIN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 30": "I30"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three zero": "30",
+        "visual runway three zero": "30",
+        "visual three zero": "30"
+      },
+      "ApproachFixes": {
+        "I30": {
+          "Hamer": "HAMMR",
+          "Olsin": "OLSIN",
+          "chain": "CHAIN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 30",
+      "Altitude": 6000,
+      "Heading": 80,
+      "Speed": 165,
+      "AssignedHeading": 80,
+      "State": "arrival",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J",
+      "AddressingForm": 1
+    },
+    "november four eight niner pahpah echo": {
+      "Callsign": "N489PE",
+      "AircraftType": "B36T",
+      "Fixes": {
+        "Bartles": "KBRT",
+        "Noble": "NOBLE"
+      },
+      "Route": [
+        "NOBLE",
+        "DAL",
+        "KDAL"
+      ],
+      "Altitude": 5432,
+      "Heading": 170,
+      "Speed": 142,
+      "AssignedHeading": 170,
+      "State": "departure",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N"
+    },
+    "november four niner six foxtrot charlie": {
+      "Callsign": "N496FC",
+      "AircraftType": "BE36",
+      "Fixes": {
+        "": "4Y3",
+        "Hamer": "HAMMR",
+        "Olsin": "OLSIN",
+        "chain": "CHAIN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 30": "I30"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three zero": "30",
+        "visual runway three zero": "30",
+        "visual three zero": "30"
+      },
+      "ApproachFixes": {
+        "I30": {
+          "Hamer": "HAMMR",
+          "Olsin": "OLSIN",
+          "chain": "CHAIN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 30",
+      "Altitude": 6000,
+      "Heading": 80,
+      "Speed": 165,
+      "AssignedHeading": 80,
+      "State": "arrival",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J"
+    },
+    "november three four niner delta x-ray": {
+      "Callsign": "N349DX",
+      "AircraftType": "BE55",
+      "Fixes": {
+        "A-toka": "ATOKA",
+        "Academy": "KAAC",
+        "Adcock": "ADCOK",
+        "Gray": "GRAYY",
+        "Rusty": "RUSTY",
+        "Woody": "WOODY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        },
+        "R8L": {
+          "Chapp": "CHAPP",
+          "Little": "LITTL",
+          "Oneta": "ONETA",
+          "Ricky": "RICKY"
+        },
+        "R8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 28R",
+      "Route": [
+        "ATOKA",
+        "KAAC"
+      ],
+      "Altitude": 15000,
+      "Heading": 54,
+      "Speed": 208,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S"
+    },
+    "november three six kebeck": {
+      "Callsign": "N36Q",
+      "LastAddressed": true,
+      "AircraftType": "BE55",
+      "Fixes": {
+        "Academy": "KAAC"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        },
+        "R8L": {
+          "Chapp": "CHAPP",
+          "Little": "LITTL",
+          "Oneta": "ONETA",
+          "Ricky": "RICKY"
+        },
+        "R8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        }
+      },
+      "Route": [
+        "KAAC"
+      ],
+      "Altitude": 2100,
+      "Heading": 332,
+      "Speed": 188,
+      "AssignedHeading": 250,
+      "State": "arrival",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J"
+    },
+    "november two six four five": {
+      "Callsign": "N2645",
+      "AircraftType": "BE36",
+      "Fixes": {
+        "Academy": "KAAC",
+        "Adcock": "ADCOK",
+        "Gray": "GRAYY",
+        "Rusty": "RUSTY",
+        "Woody": "WOODY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        },
+        "R8L": {
+          "Chapp": "CHAPP",
+          "Little": "LITTL",
+          "Oneta": "ONETA",
+          "Ricky": "RICKY"
+        },
+        "R8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 28R",
+      "Route": [
+        "KAAC"
+      ],
+      "Altitude": 7447,
+      "Heading": 45,
+      "Speed": 209,
+      "AssignedHeading": 150,
+      "AssignedSpeed": 170,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"correction sky bridge nine seven three uniform turn right heading one nine zero\"",
+    "[local-stt] normalized words: [correction sky bridge 9 7 3 uniform turn right heading 1 9 0]",
+    "[local-stt] tokens: 9",
+    "[local-stt]   token[0]: Text=\"correction\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"sky\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"bridge\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"973\" Type=1 Value=973",
+    "[local-stt]   token[4]: Text=\"uniform\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"heading\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"190\" Type=1 Value=190",
+    "[local-stt] MatchCallsign: 8 tokens, 20 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 8 tokens, 20 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"SkyWest niner 73 uniform\" (airline=0.867, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"SkyWest niner 73 uniform\" (airline=0.437, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"airline_flight\": selected \"SkyWest niner 73 uniform\" (airline=0.87, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 5 results",
+    "[local-stt]     result 0: \"SkyWest niner 73 uniform\" (airline=0.867, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Southwest five 37\" (airline=0.533, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"American two zero eight\" (airline=0.458, flight=0.000, skip=1)",
+    "[local-stt]     result 3: \"Southwest five 37\" (airline=0.426, flight=0.000, skip=1)",
+    "[local-stt]     result 4: \"SkyWest niner 73 uniform\" (airline=0.437, flight=0.000, skip=1)",
+    "[local-stt]     pattern \"airline_only\": selected \"SkyWest niner 73 uniform\" (airline=0.87, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"SkyWest niner 73 uniform\" (airline=0.500, flight=0.942, skip=0)",
+    "[local-stt]     result 1: \"SkyWest niner 73 uniform\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"SkyWest niner 73 uniform\" (airline=0.500, flight=1.000, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"SkyWest niner 73 uniform\" (airline=0.50, flight=1.00, skip=1)",
+    "[local-stt]   best callsign candidate: \"SKW973U\" (conf=0.97, consumed=4, addressingForm=0, spokenKey=\"SkyWest niner 73 uniform\"; 2 candidates)",
+    "[local-stt] ParseCommands: 4 tokens",
+    "[local-stt]   matched command: \"R190\" [turn_right_heading] (pos=0, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[0]=\"turn\", skipping",
+    "[local-stt]   matched command: \"R190\" [turn_right_heading] (pos=1, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[1]=\"right\", skipping",
+    "[local-stt]   matched command: \"H190\" [heading_only] (pos=2, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[2]=\"heading\", skipping",
+    "[local-stt]   no match at token[3]=\"190\", skipping",
+    "[local-stt]   beam final[0]: score=2.391 pos=4 commands=[R190]",
+    "[local-stt]   beam final[1]: score=-0.509 pos=4 commands=[R190]",
+    "[local-stt]   beam final[2]: score=-3.409 pos=4 commands=[H190]",
+    "[local-stt]   beam final[3]: score=-6.908 pos=4 commands=[]",
+    "[local-stt] ParseCommands: result=[R190] (avgConf=1.00)",
+    "[local-stt] callsign match: Callsign=\"SKW973U\" SpokenKey=\"SkyWest niner 73 uniform\" Conf=0.97 Consumed=4",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=4000 Fixes=5 Approaches=3 VisualApproaches=6 AssignedApproach=\"ILS Runway 28R\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Academy\" -\u003e \"KAAC\"",
+    "[local-stt]   fix: \"Gray\" -\u003e \"GRAYY\"",
+    "[local-stt]   fix: \"Adcock\" -\u003e \"ADCOK\"",
+    "[local-stt]   fix: \"Rusty\" -\u003e \"RUSTY\"",
+    "[local-stt]   fix: \"Woody\" -\u003e \"WOODY\"",
+    "[local-stt]   approach: \"RNAV Runway 28L\" -\u003e \"R8L\"",
+    "[local-stt]   approach: \"RNAV Runway 28R\" -\u003e \"R8R\"",
+    "[local-stt]   approach: \"ILS Runway 28R\" -\u003e \"I8R\"",
+    "[local-stt]   visual approach: \"visual runway two eight right\" -\u003e \"28R\"",
+    "[local-stt]   visual approach: \"visual approach runway two eight right\" -\u003e \"28R\"",
+    "[local-stt]   visual approach: \"visual two eight right\" -\u003e \"28R\"",
+    "[local-stt]   visual approach: \"visual runway two eight left\" -\u003e \"28L\"",
+    "[local-stt]   visual approach: \"visual approach runway two eight left\" -\u003e \"28L\"",
+    "[local-stt]   visual approach: \"visual two eight left\" -\u003e \"28L\"",
+    "[local-stt] command tokens after disregard: 4",
+    "[local-stt]   token[0]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"heading\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"190\" Type=1 Value=190",
+    "[local-stt] ParseCommands: 4 tokens",
+    "[local-stt]   matched command: \"R190\" [turn_right_heading] (pos=0, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[0]=\"turn\", skipping",
+    "[local-stt]   matched command: \"R190\" [turn_right_heading] (pos=1, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[1]=\"right\", skipping",
+    "[local-stt]   matched command: \"H190\" [heading_only] (pos=2, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[2]=\"heading\", skipping",
+    "[local-stt]   no match at token[3]=\"190\", skipping",
+    "[local-stt]   beam final[0]: score=2.391 pos=4 commands=[R190]",
+    "[local-stt]   beam final[1]: score=-0.509 pos=4 commands=[R190]",
+    "[local-stt]   beam final[2]: score=-3.409 pos=4 commands=[H190]",
+    "[local-stt]   beam final[3]: score=-6.908 pos=4 commands=[]",
+    "[local-stt] ParseCommands: result=[R190] (avgConf=1.00)",
+    "[local-stt] parsed commands: [R190] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [R190] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"SKW973U CORRECTION R190\" (conf=0.97, time=6.18ms) ==="
+  ]
+}

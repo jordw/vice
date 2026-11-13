@@ -1,0 +1,795 @@
+{
+  "time": "2026-11-11T05:37:29.788768792Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Flexjet seven zero six ten miles from Passo turn left heading one three zero to suddenly maintain two thousand cleared ILS runway one four Brudge",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, sierra, papa, november, information, Rays three, Matty six, Lubber four, Dades two, Bullfrog three, Bangs two, Fovta, Lizard, Zaplin, Uflix, Jetstream, cobox, Zadsa, Darbs, one three, two three, one niner right, one niner left, one four, runway, r-nav, Approach, Visual, I L S, United five, Sun Country eight 13, Spirit Wings 96 64, Spirit Wings 88 68, Spirit Wings 40 18, Flexjet seven zero six, Frontier Flight five zero eight, ExecJet 53 59, Convoy 52, Ruthie, SARASOTA, Lifie, Fadi, woody, Mera, breaker, Frugal, ST PETERSBURG, Rune, Pasoy, Bucks, Jambob, Deside, Sarasota Bradenton International Airport, Venice Municipal Airport, Tampa International Airport, Wilon, MacDill Air Force Base",
+  "whisper_duration_ms": 368.779,
+  "audio_duration_ms": 10312,
+  "processor": "GPU: NVIDIA GeForce RTX 5060 Laptop GPU (7899MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "LXJ706",
+  "command": "L130 A20 SAYAGAIN/APPROACH",
+  "reason": "a clear approach clearance for a runway the aircraft does not have",
+  "stt_aircraft": {
+    "Convoy 52": {
+      "Callsign": "CNV52",
+      "AircraftType": "B737",
+      "Fixes": {
+        "Deside": "DSIDE",
+        "MacDill Air Force Base": "KMCF"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23": "I23"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three": "23",
+        "visual runway two three": "23",
+        "visual two three": "23"
+      },
+      "STAR": "BLFRG3",
+      "Route": [
+        "DSIDE",
+        "KMCF"
+      ],
+      "Altitude": 4000,
+      "Heading": 324,
+      "Speed": 230,
+      "State": "arrival",
+      "ControllerFrequency": "1L",
+      "TrackingController": "1L"
+    },
+    "ExecJet 53 59": {
+      "Callsign": "EJA5359",
+      "AircraftType": "GLF4",
+      "Fixes": {
+        "Venice Municipal": "KVNC",
+        "Wilon": "WILON"
+      },
+      "Route": [
+        "WILON",
+        "KGNV"
+      ],
+      "Altitude": 2000,
+      "Heading": 140,
+      "Speed": 256,
+      "State": "departure",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S"
+    },
+    "Flexjet seven zero six": {
+      "Callsign": "LXJ706",
+      "AircraftType": "CL30",
+      "Fixes": {
+        "Venice Municipal": "KVNC"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 13": "R13"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one three": "13",
+        "visual one three": "13",
+        "visual runway one three": "13"
+      },
+      "ApproachFixes": {
+        "R13": {
+          "Fovta": "FOVTA",
+          "jivga": "JIVGA"
+        }
+      },
+      "STAR": "RAYZZ3",
+      "Route": [
+        "KVNC"
+      ],
+      "Altitude": 5000,
+      "Heading": 149,
+      "Speed": 221,
+      "AssignedAltitude": 5000,
+      "AssignedSpeed": 200,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "5",
+        "23"
+      ]
+    },
+    "Frontier Flight five zero eight": {
+      "Callsign": "FFT508",
+      "AircraftType": "A321",
+      "Fixes": {
+        "Tampa": "KTPA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 19L": "I9L",
+        "ILS Runway 19R": "I9R",
+        "RNAV Runway 19L": "R9L",
+        "RNAV Runway 19R": "R9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one niner left": "19L",
+        "visual approach runway one niner right": "19R",
+        "visual one niner left": "19L",
+        "visual one niner right": "19R",
+        "visual runway one niner left": "19L",
+        "visual runway one niner right": "19R"
+      },
+      "ApproachFixes": {
+        "I9L": {
+          "Bucks": "BUCCS",
+          "Pomse": "POMSE"
+        },
+        "I9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE"
+        },
+        "R9L": {
+          "Darbs": "DARBS",
+          "Jetstream": "JSTRM",
+          "Lizard": "LZARD",
+          "Pomse": "POMSE",
+          "Uflix": "UFLIX",
+          "Zadsa": "ZADSA",
+          "Zaplin": "ZPLIN",
+          "cobox": "COBOX"
+        },
+        "R9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE",
+          "Zeshy": "ZESHY"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 19R",
+      "STAR": "MAATY6",
+      "Route": [
+        "KTPA"
+      ],
+      "Altitude": 3000,
+      "Heading": 186,
+      "Speed": 223,
+      "State": "cleared approach",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "Spirit Wings 40 18": {
+      "Callsign": "NKS4018",
+      "AircraftType": "A20N",
+      "Fixes": {
+        "Jambob": "JMBOB",
+        "Tampa": "KTPA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 19L": "I9L",
+        "ILS Runway 19R": "I9R",
+        "RNAV Runway 19L": "R9L",
+        "RNAV Runway 19R": "R9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one niner left": "19L",
+        "visual approach runway one niner right": "19R",
+        "visual one niner left": "19L",
+        "visual one niner right": "19R",
+        "visual runway one niner left": "19L",
+        "visual runway one niner right": "19R"
+      },
+      "ApproachFixes": {
+        "I9L": {
+          "Bucks": "BUCCS",
+          "Pomse": "POMSE"
+        },
+        "I9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE"
+        },
+        "R9L": {
+          "Darbs": "DARBS",
+          "Jetstream": "JSTRM",
+          "Lizard": "LZARD",
+          "Pomse": "POMSE",
+          "Uflix": "UFLIX",
+          "Zadsa": "ZADSA",
+          "Zaplin": "ZPLIN",
+          "cobox": "COBOX"
+        },
+        "R9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE",
+          "Zeshy": "ZESHY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 19R",
+      "STAR": "RAYZZ3",
+      "Route": [
+        "JMBOB",
+        "KTPA"
+      ],
+      "Altitude": 2437,
+      "Heading": 188,
+      "Speed": 211,
+      "AssignedAltitude": 4000,
+      "State": "cleared approach",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "Spirit Wings 88 68": {
+      "Callsign": "NKS8868",
+      "AircraftType": "V170",
+      "Fixes": {
+        "Tampa": "KTPA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 19L": "I9L",
+        "ILS Runway 19R": "I9R",
+        "RNAV Runway 19L": "R9L",
+        "RNAV Runway 19R": "R9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one niner left": "19L",
+        "visual approach runway one niner right": "19R",
+        "visual one niner left": "19L",
+        "visual one niner right": "19R",
+        "visual runway one niner left": "19L",
+        "visual runway one niner right": "19R"
+      },
+      "ApproachFixes": {
+        "I9L": {
+          "Bucks": "BUCCS",
+          "Pomse": "POMSE"
+        },
+        "I9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE"
+        },
+        "R9L": {
+          "Darbs": "DARBS",
+          "Jetstream": "JSTRM",
+          "Lizard": "LZARD",
+          "Pomse": "POMSE",
+          "Uflix": "UFLIX",
+          "Zadsa": "ZADSA",
+          "Zaplin": "ZPLIN",
+          "cobox": "COBOX"
+        },
+        "R9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE",
+          "Zeshy": "ZESHY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 19L",
+      "STAR": "DADES2",
+      "Route": [
+        "KTPA"
+      ],
+      "Altitude": 989,
+      "Heading": 189,
+      "Speed": 144,
+      "State": "cleared approach",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "Spirit Wings 96 64": {
+      "Callsign": "NKS9664",
+      "AircraftType": "A21N",
+      "Fixes": {
+        "Tampa": "KTPA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 19L": "I9L",
+        "ILS Runway 19R": "I9R",
+        "RNAV Runway 19L": "R9L",
+        "RNAV Runway 19R": "R9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one niner left": "19L",
+        "visual approach runway one niner right": "19R",
+        "visual one niner left": "19L",
+        "visual one niner right": "19R",
+        "visual runway one niner left": "19L",
+        "visual runway one niner right": "19R"
+      },
+      "ApproachFixes": {
+        "I9L": {
+          "Bucks": "BUCCS",
+          "Pomse": "POMSE"
+        },
+        "I9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE"
+        },
+        "R9L": {
+          "Darbs": "DARBS",
+          "Jetstream": "JSTRM",
+          "Lizard": "LZARD",
+          "Pomse": "POMSE",
+          "Uflix": "UFLIX",
+          "Zadsa": "ZADSA",
+          "Zaplin": "ZPLIN",
+          "cobox": "COBOX"
+        },
+        "R9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE",
+          "Zeshy": "ZESHY"
+        }
+      },
+      "STAR": "BLFRG3",
+      "Route": [
+        "KTPA"
+      ],
+      "Altitude": 11000,
+      "Heading": 331,
+      "Speed": 303,
+      "State": "arrival",
+      "ControllerFrequency": "1G",
+      "TrackingController": "1G",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "Sun Country eight 13": {
+      "Callsign": "SCX813",
+      "LastAddressed": true,
+      "AircraftType": "B738",
+      "Fixes": {
+        "Frugal": "FRUGL",
+        "Pasoy": "PASOE",
+        "Sarasota": "KSRQ"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 14": "I14",
+        "RNAV Runway 14": "R14"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one four": "14",
+        "visual one four": "14",
+        "visual runway one four": "14"
+      },
+      "ApproachFixes": {
+        "I14": {
+          "Frugal": "FRUGL",
+          "Pasoy": "PASOE",
+          "SARASOTA": "SRQ",
+          "ST PETERSBURG": "PIE"
+        },
+        "R14": {
+          "Etigy": "ETIGY",
+          "Frugal": "FRUGL",
+          "Pasoy": "PASOE",
+          "SARASOTA": "SRQ",
+          "ST PETERSBURG": "PIE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 14",
+      "STAR": "BANGZ2",
+      "Route": [
+        "PASOE",
+        "FRUGL",
+        "KSRQ"
+      ],
+      "Altitude": 4901,
+      "Heading": 141,
+      "Speed": 275,
+      "AssignedAltitude": 5000,
+      "State": "cleared approach",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "4",
+        "22"
+      ]
+    },
+    "United five": {
+      "Callsign": "UAL5",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Frugal": "FRUGL",
+        "Lifie": "LYFIE",
+        "Pasoy": "PASOE",
+        "Ruthie": "RUTAE",
+        "SARASOTA": "SRQ",
+        "ST PETERSBURG": "PIE",
+        "Sarasota": "KSRQ",
+        "breaker": "BREKR",
+        "woody": "WUDDY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 14": "I14",
+        "RNAV Runway 14": "R14"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one four": "14",
+        "visual one four": "14",
+        "visual runway one four": "14"
+      },
+      "ApproachFixes": {
+        "I14": {
+          "Frugal": "FRUGL",
+          "Pasoy": "PASOE",
+          "SARASOTA": "SRQ",
+          "ST PETERSBURG": "PIE"
+        },
+        "R14": {
+          "Etigy": "ETIGY",
+          "Frugal": "FRUGL",
+          "Pasoy": "PASOE",
+          "SARASOTA": "SRQ",
+          "ST PETERSBURG": "PIE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 14",
+      "STAR": "LUBBR4",
+      "Route": [
+        "BREKR",
+        "WUDDY",
+        "LYFIE",
+        "RUTAE",
+        "KSRQ"
+      ],
+      "Altitude": 12000,
+      "Heading": 180,
+      "Speed": 295,
+      "State": "arrival",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D",
+      "LAHSORunways": [
+        "4",
+        "22"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Flexjet seven zero six ten miles from Passo turn left heading one three zero to suddenly maintain two thousand cleared ILS runway one four Brudge\"",
+    "[local-stt] normalized words: [flexjet 7 0 6 10 miles from passo turn left heading 1 3 0 to suddenly maintain 2 thousand cleared ils runway 1 4 brudge]",
+    "[local-stt] tokens: 18",
+    "[local-stt]   token[0]: Text=\"flexjet\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"70610\" Type=1 Value=70610",
+    "[local-stt]   token[2]: Text=\"miles\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"from\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"passo\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"left\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"heading\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"130\" Type=1 Value=130",
+    "[local-stt]   token[9]: Text=\"to\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"suddenly\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"20\" Type=2 Value=20",
+    "[local-stt]   token[13]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[14]: Text=\"ils\" Type=0 Value=-1",
+    "[local-stt]   token[15]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[16]: Text=\"14\" Type=1 Value=14",
+    "[local-stt]   token[17]: Text=\"brudge\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 18 tokens, 9 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 18 tokens, 9 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"Flexjet seven zero six\" (airline=1.000, flight=0.907, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Flexjet seven zero six\" (airline=1.00, flight=0.91, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 11 results",
+    "[local-stt]     result 0: \"Frontier Flight five zero eight\" (airline=0.541, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"ExecJet 53 59\" (airline=0.810, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Flexjet seven zero six\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"United five\" (airline=0.437, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Frontier Flight five zero eight\" (airline=0.442, flight=0.000, skip=2)",
+    "[local-stt]     pattern \"airline_only\": selected \"Flexjet seven zero six\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Flexjet seven zero six\" (airline=0.500, flight=0.650, skip=0)",
+    "[local-stt]     result 1: \"Flexjet seven zero six\" (airline=0.500, flight=0.650, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"Flexjet seven zero six\" (airline=0.50, flight=0.65, skip=0)",
+    "[local-stt]   best callsign candidate: \"LXJ706\" (conf=0.98, consumed=2, addressingForm=0, spokenKey=\"Flexjet seven zero six\"; 2 candidates)",
+    "[local-stt] ParseCommands: 16 tokens",
+    "[local-stt]   no match at token[0]=\"miles\", skipping",
+    "[local-stt]   matched command: \"\" [acknowledgment] (pos=1, conf=0.85, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[1]=\"from\", skipping",
+    "[local-stt]   no match at token[2]=\"passo\", skipping",
+    "[local-stt]   no match at token[2]=\"passo\", skipping",
+    "[local-stt]   matched command: \"L130\" [turn_left_heading] (pos=3, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[3]=\"turn\", skipping",
+    "[local-stt]   matched command: \"L130\" [turn_left_heading] (pos=3, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[3]=\"turn\", skipping",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   matched command: \"L130\" [turn_left_heading] (pos=4, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[4]=\"left\", skipping",
+    "[local-stt]   matched command: \"L130\" [turn_left_heading] (pos=4, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[4]=\"left\", skipping",
+    "[local-stt]   no match at token[8]=\"suddenly\", skipping",
+    "[local-stt]   no match at token[8]=\"suddenly\", skipping",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   matched command: \"A20\" [maintain_altitude] (pos=9, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[9]=\"maintain\", skipping",
+    "[local-stt]   matched command: \"A20\" [maintain_altitude] (pos=9, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[9]=\"maintain\", skipping",
+    "[local-stt]   no match at token[8]=\"suddenly\", skipping",
+    "[local-stt]   no match at token[8]=\"suddenly\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"14\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"14\"",
+    "[local-stt]   no match at token[11]=\"cleared\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"14\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"14\"",
+    "[local-stt]   no match at token[11]=\"cleared\", skipping",
+    "[local-stt]   matched command: \"A20\" [standalone_altitude] (pos=10, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[10]=\"20\", skipping",
+    "[local-stt]   matched command: \"A20\" [maintain_altitude] (pos=9, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[9]=\"maintain\", skipping",
+    "[local-stt]   no match at token[12]=\"ils\", skipping",
+    "[local-stt]   no match at token[12]=\"ils\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"14\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"14\"",
+    "[local-stt]   no match at token[11]=\"cleared\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"14\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"14\"",
+    "[local-stt]   no match at token[11]=\"cleared\", skipping",
+    "[local-stt]   no match at token[13]=\"runway\", skipping",
+    "[local-stt]   no match at token[13]=\"runway\", skipping",
+    "[local-stt]   no match at token[12]=\"ils\", skipping",
+    "[local-stt]   no match at token[12]=\"ils\", skipping",
+    "[local-stt]   no match at token[14]=\"14\", skipping",
+    "[local-stt]   no match at token[14]=\"14\", skipping",
+    "[local-stt]   no match at token[13]=\"runway\", skipping",
+    "[local-stt]   no match at token[13]=\"runway\", skipping",
+    "[local-stt]   no match at token[15]=\"brudge\", skipping",
+    "[local-stt]   no match at token[15]=\"brudge\", skipping",
+    "[local-stt]   no match at token[14]=\"14\", skipping",
+    "[local-stt]   no match at token[14]=\"14\", skipping",
+    "[local-stt]   no match at token[15]=\"brudge\", skipping",
+    "[local-stt]   no match at token[15]=\"brudge\", skipping",
+    "[local-stt]   beam final[0]: score=4.022 pos=16 commands=[L130 A20]",
+    "[local-stt]   beam final[1]: score=1.284 pos=16 commands=[L130 A20]",
+    "[local-stt]   beam final[2]: score=1.122 pos=16 commands=[L130 A20]",
+    "[local-stt]   beam final[3]: score=1.122 pos=16 commands=[L130 A20]",
+    "[local-stt] ParseCommands: result=[L130 A20] (avgConf=1.00)",
+    "[local-stt] ParseCommands: 17 tokens",
+    "[local-stt]   no match at token[0]=\"70610\", skipping",
+    "[local-stt]   no match at token[1]=\"miles\", skipping",
+    "[local-stt]   matched command: \"\" [acknowledgment] (pos=2, conf=0.85, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[2]=\"from\", skipping",
+    "[local-stt]   no match at token[3]=\"passo\", skipping",
+    "[local-stt]   no match at token[3]=\"passo\", skipping",
+    "[local-stt]   matched command: \"L130\" [turn_left_heading] (pos=4, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[4]=\"turn\", skipping",
+    "[local-stt]   matched command: \"L130\" [turn_left_heading] (pos=4, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[4]=\"turn\", skipping",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   matched command: \"L130\" [turn_left_heading] (pos=5, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[5]=\"left\", skipping",
+    "[local-stt]   matched command: \"L130\" [turn_left_heading] (pos=5, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[5]=\"left\", skipping",
+    "[local-stt]   no match at token[9]=\"suddenly\", skipping",
+    "[local-stt]   no match at token[9]=\"suddenly\", skipping",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   matched command: \"A20\" [maintain_altitude] (pos=10, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[10]=\"maintain\", skipping",
+    "[local-stt]   matched command: \"A20\" [maintain_altitude] (pos=10, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[10]=\"maintain\", skipping",
+    "[local-stt]   no match at token[9]=\"suddenly\", skipping",
+    "[local-stt]   no match at token[9]=\"suddenly\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"14\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"14\"",
+    "[local-stt]   no match at token[12]=\"cleared\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"14\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"14\"",
+    "[local-stt]   no match at token[12]=\"cleared\", skipping",
+    "[local-stt]   matched command: \"A20\" [standalone_altitude] (pos=11, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[11]=\"20\", skipping",
+    "[local-stt]   matched command: \"A20\" [maintain_altitude] (pos=10, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[10]=\"maintain\", skipping",
+    "[local-stt]   no match at token[13]=\"ils\", skipping",
+    "[local-stt]   no match at token[13]=\"ils\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"14\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"14\"",
+    "[local-stt]   no match at token[12]=\"cleared\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"14\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"14\"",
+    "[local-stt]   no match at token[12]=\"cleared\", skipping",
+    "[local-stt]   no match at token[14]=\"runway\", skipping",
+    "[local-stt]   no match at token[14]=\"runway\", skipping",
+    "[local-stt]   no match at token[13]=\"ils\", skipping",
+    "[local-stt]   no match at token[13]=\"ils\", skipping",
+    "[local-stt]   no match at token[15]=\"14\", skipping",
+    "[local-stt]   no match at token[15]=\"14\", skipping",
+    "[local-stt]   no match at token[14]=\"runway\", skipping",
+    "[local-stt]   no match at token[14]=\"runway\", skipping",
+    "[local-stt]   no match at token[16]=\"brudge\", skipping",
+    "[local-stt]   no match at token[16]=\"brudge\", skipping",
+    "[local-stt]   no match at token[15]=\"14\", skipping",
+    "[local-stt]   no match at token[15]=\"14\", skipping",
+    "[local-stt]   no match at token[16]=\"brudge\", skipping",
+    "[local-stt]   no match at token[16]=\"brudge\", skipping",
+    "[local-stt]   beam final[0]: score=4.022 pos=17 commands=[L130 A20]",
+    "[local-stt]   beam final[1]: score=1.284 pos=17 commands=[L130 A20]",
+    "[local-stt]   beam final[2]: score=1.122 pos=17 commands=[L130 A20]",
+    "[local-stt]   beam final[3]: score=1.122 pos=17 commands=[L130 A20]",
+    "[local-stt] ParseCommands: result=[L130 A20] (avgConf=1.00)",
+    "[local-stt] callsign match: Callsign=\"LXJ706\" SpokenKey=\"Flexjet seven zero six\" Conf=0.98 Consumed=2",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=5000 Fixes=1 Approaches=1 VisualApproaches=3 AssignedApproach=\"\" LAHSORunways=[5 23]",
+    "[local-stt]   fix: \"Venice Municipal\" -\u003e \"KVNC\"",
+    "[local-stt]   approach: \"RNAV Runway 13\" -\u003e \"R13\"",
+    "[local-stt]   visual approach: \"visual runway one three\" -\u003e \"13\"",
+    "[local-stt]   visual approach: \"visual approach runway one three\" -\u003e \"13\"",
+    "[local-stt]   visual approach: \"visual one three\" -\u003e \"13\"",
+    "[local-stt] command tokens after disregard: 16",
+    "[local-stt]   token[0]: Text=\"miles\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"from\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"passo\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"left\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"heading\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"130\" Type=1 Value=130",
+    "[local-stt]   token[7]: Text=\"to\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"suddenly\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"20\" Type=2 Value=20",
+    "[local-stt]   token[11]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"ils\" Type=0 Value=-1",
+    "[local-stt]   token[13]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[14]: Text=\"14\" Type=1 Value=14",
+    "[local-stt]   token[15]: Text=\"brudge\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 16 tokens",
+    "[local-stt]   no match at token[0]=\"miles\", skipping",
+    "[local-stt]   matched command: \"\" [acknowledgment] (pos=1, conf=0.85, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[1]=\"from\", skipping",
+    "[local-stt]   no match at token[2]=\"passo\", skipping",
+    "[local-stt]   no match at token[2]=\"passo\", skipping",
+    "[local-stt]   matched command: \"L130\" [turn_left_heading] (pos=3, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[3]=\"turn\", skipping",
+    "[local-stt]   matched command: \"L130\" [turn_left_heading] (pos=3, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[3]=\"turn\", skipping",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   matched command: \"L130\" [turn_left_heading] (pos=4, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[4]=\"left\", skipping",
+    "[local-stt]   matched command: \"L130\" [turn_left_heading] (pos=4, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[4]=\"left\", skipping",
+    "[local-stt]   no match at token[8]=\"suddenly\", skipping",
+    "[local-stt]   no match at token[8]=\"suddenly\", skipping",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   matched command: \"A20\" [maintain_altitude] (pos=9, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[9]=\"maintain\", skipping",
+    "[local-stt]   matched command: \"A20\" [maintain_altitude] (pos=9, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[9]=\"maintain\", skipping",
+    "[local-stt]   no match at token[8]=\"suddenly\", skipping",
+    "[local-stt]   no match at token[8]=\"suddenly\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"14\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"14\"",
+    "[local-stt]   no match at token[11]=\"cleared\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"14\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"14\"",
+    "[local-stt]   no match at token[11]=\"cleared\", skipping",
+    "[local-stt]   matched command: \"A20\" [standalone_altitude] (pos=10, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[10]=\"20\", skipping",
+    "[local-stt]   matched command: \"A20\" [maintain_altitude] (pos=9, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[9]=\"maintain\", skipping",
+    "[local-stt]   no match at token[12]=\"ils\", skipping",
+    "[local-stt]   no match at token[12]=\"ils\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"14\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"14\"",
+    "[local-stt]   no match at token[11]=\"cleared\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"14\" against 1 fixes",
+    "[local-stt]   extractFix: no match found for \"14\"",
+    "[local-stt]   no match at token[11]=\"cleared\", skipping",
+    "[local-stt]   no match at token[13]=\"runway\", skipping",
+    "[local-stt]   no match at token[13]=\"runway\", skipping",
+    "[local-stt]   no match at token[12]=\"ils\", skipping",
+    "[local-stt]   no match at token[12]=\"ils\", skipping",
+    "[local-stt]   no match at token[14]=\"14\", skipping",
+    "[local-stt]   no match at token[14]=\"14\", skipping",
+    "[local-stt]   no match at token[13]=\"runway\", skipping",
+    "[local-stt]   no match at token[13]=\"runway\", skipping",
+    "[local-stt]   no match at token[15]=\"brudge\", skipping",
+    "[local-stt]   no match at token[15]=\"brudge\", skipping",
+    "[local-stt]   no match at token[14]=\"14\", skipping",
+    "[local-stt]   no match at token[14]=\"14\", skipping",
+    "[local-stt]   no match at token[15]=\"brudge\", skipping",
+    "[local-stt]   no match at token[15]=\"brudge\", skipping",
+    "[local-stt]   beam final[0]: score=4.022 pos=16 commands=[L130 A20]",
+    "[local-stt]   beam final[1]: score=1.284 pos=16 commands=[L130 A20]",
+    "[local-stt]   beam final[2]: score=1.122 pos=16 commands=[L130 A20]",
+    "[local-stt]   beam final[3]: score=1.122 pos=16 commands=[L130 A20]",
+    "[local-stt] ParseCommands: result=[L130 A20] (avgConf=1.00)",
+    "[local-stt] parsed commands: [L130 A20] (conf=1.00, kinds=10001)",
+    "[local-stt] validated commands: [L130 A20] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"LXJ706 L130 A20\" (conf=0.98, time=42.6142ms) ==="
+  ]
+}

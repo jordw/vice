@@ -1,0 +1,338 @@
+{
+  "time": "2026-11-09T16:00:20.556486903Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Delta Four Thirty Three turn right heading one nine zero cleared visual approach runway two",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, quebec, information, Proud two, Castle, Harp, Jotre, Eyrod, Kuz, Froggy, two two, runway, zulu, yankee, x-ray, r-nav, Approach, Visual, I L S, Brickyard 43 49, Delta four 33, Delta 14 zero four, Dans, Donyb, Grecko, Yoman, Proud, LaGuardia Airport",
+  "whisper_duration_ms": 666.181,
+  "audio_duration_ms": 4680,
+  "processor": "GPU: NVIDIA GeForce RTX 3050 (6002MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "DAL433",
+  "command": "R190 SAYAGAIN/APPROACH",
+  "reason": "a clear approach clearance with the runway cut short",
+  "stt_aircraft": {
+    "Brickyard 43 49": {
+      "Callsign": "RPA4349",
+      "AircraftType": "E170",
+      "Fixes": {
+        "Grecko": "GREKO",
+        "LaGuardia": "KLGA",
+        "Proud": "PROUD",
+        "Yoman": "YOMAN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22": "I22",
+        "RNAV X Runway 22": "RX2",
+        "RNAV Y Runway 22": "RY2",
+        "RNAV Z Runway 22": "RZ2"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two": "22",
+        "visual runway two two": "22",
+        "visual two two": "22"
+      },
+      "ApproachFixes": {
+        "I22": {
+          "Grecko": "GREKO",
+          "Yoman": "YOMAN"
+        },
+        "RX2": {
+          "Da-zoo": "DAZOO",
+          "Dans": "DANPS",
+          "Donyb": "DONYB",
+          "Eyrod": "EYROD",
+          "Jotre": "JOTRE",
+          "Kuz": "KUZZZ"
+        },
+        "RY2": {
+          "Froggy": "FROGI",
+          "Grecko": "GREKO"
+        },
+        "RZ2": {
+          "Castle": "CASLE",
+          "Harp": "HAARP",
+          "Kuz": "KUZZZ",
+          "Kylie": "KYLIE",
+          "Parks": "PARGS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22",
+      "STAR": "PROUD2",
+      "Route": [
+        "PROUD",
+        "KLGA"
+      ],
+      "Altitude": 4000,
+      "Heading": 45,
+      "Speed": 276,
+      "AssignedHeading": 45,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "13",
+        "31"
+      ]
+    },
+    "Delta 14 zero four": {
+      "Callsign": "DAL1404",
+      "AircraftType": "BCS3",
+      "Fixes": {
+        "LaGuardia": "KLGA",
+        "Proud": "PROUD"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22": "I22",
+        "RNAV X Runway 22": "RX2",
+        "RNAV Y Runway 22": "RY2",
+        "RNAV Z Runway 22": "RZ2"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two": "22",
+        "visual runway two two": "22",
+        "visual two two": "22"
+      },
+      "ApproachFixes": {
+        "I22": {
+          "Grecko": "GREKO",
+          "Yoman": "YOMAN"
+        },
+        "RX2": {
+          "Da-zoo": "DAZOO",
+          "Dans": "DANPS",
+          "Donyb": "DONYB",
+          "Eyrod": "EYROD",
+          "Jotre": "JOTRE",
+          "Kuz": "KUZZZ"
+        },
+        "RY2": {
+          "Froggy": "FROGI",
+          "Grecko": "GREKO"
+        },
+        "RZ2": {
+          "Castle": "CASLE",
+          "Harp": "HAARP",
+          "Kuz": "KUZZZ",
+          "Kylie": "KYLIE",
+          "Parks": "PARGS"
+        }
+      },
+      "STAR": "PROUD2",
+      "Route": [
+        "PROUD",
+        "KLGA"
+      ],
+      "Altitude": 4000,
+      "Heading": 22,
+      "Speed": 273,
+      "AssignedHeading": 20,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "13",
+        "31"
+      ]
+    },
+    "Delta four 33": {
+      "Callsign": "DAL433",
+      "LastAddressed": true,
+      "AircraftType": "A321",
+      "Fixes": {
+        "Castle": "CASLE",
+        "Da-zoo": "DAZOO",
+        "Dans": "DANPS",
+        "Donyb": "DONYB",
+        "Eyrod": "EYROD",
+        "Froggy": "FROGI",
+        "Grecko": "GREKO",
+        "Harp": "HAARP",
+        "Jotre": "JOTRE",
+        "Kuz": "KUZZZ",
+        "Kylie": "KYLIE",
+        "LaGuardia": "KLGA",
+        "Parks": "PARGS",
+        "Proud": "PROUD",
+        "Yoman": "YOMAN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22": "I22",
+        "RNAV X Runway 22": "RX2",
+        "RNAV Y Runway 22": "RY2",
+        "RNAV Z Runway 22": "RZ2"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two": "22",
+        "visual runway two two": "22",
+        "visual two two": "22"
+      },
+      "ApproachFixes": {
+        "I22": {
+          "Grecko": "GREKO",
+          "Yoman": "YOMAN"
+        },
+        "RX2": {
+          "Da-zoo": "DAZOO",
+          "Dans": "DANPS",
+          "Donyb": "DONYB",
+          "Eyrod": "EYROD",
+          "Jotre": "JOTRE",
+          "Kuz": "KUZZZ"
+        },
+        "RY2": {
+          "Froggy": "FROGI",
+          "Grecko": "GREKO"
+        },
+        "RZ2": {
+          "Castle": "CASLE",
+          "Harp": "HAARP",
+          "Kuz": "KUZZZ",
+          "Kylie": "KYLIE",
+          "Parks": "PARGS"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 22",
+      "STAR": "PROUD2",
+      "Route": [
+        "PROUD",
+        "KLGA"
+      ],
+      "Altitude": 2289,
+      "Heading": 145,
+      "Speed": 196,
+      "AssignedHeading": 10,
+      "AssignedSpeed": 170,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "13",
+        "31"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Delta Four Thirty Three turn right heading one nine zero cleared visual approach runway two\"",
+    "[local-stt] normalized words: [delta 4 33 turn right heading 1 9 0 cleared visual approach runway 2]",
+    "[local-stt] tokens: 11",
+    "[local-stt]   token[0]: Text=\"delta\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"433\" Type=1 Value=433",
+    "[local-stt]   token[2]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"heading\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"190\" Type=1 Value=190",
+    "[local-stt]   token[6]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"visual\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"2\" Type=1 Value=2",
+    "[local-stt] MatchCallsign: 11 tokens, 3 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 11 tokens, 3 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Delta four 33\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Delta four 33\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"Delta four 33\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Brickyard 43 49\" (airline=0.437, flight=0.778, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Delta four 33\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 7 results",
+    "[local-stt]     result 0: \"Delta four 33\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Delta 14 zero four\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Brickyard 43 49\" (airline=0.437, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Brickyard 43 49\" (airline=0.454, flight=0.000, skip=2)",
+    "[local-stt]     result 4: \"Delta four 33\" (airline=0.467, flight=0.000, skip=3)",
+    "[local-stt]     pattern \"airline_only\": selected \"Delta 14 zero four\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Delta four 33\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Delta four 33\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"Delta four 33\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"DAL433\" (spokenKey=\"Delta four 33\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"DAL433\" SpokenKey=\"Delta four 33\" Conf=1.00 Consumed=2",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=2289 Fixes=15 Approaches=4 VisualApproaches=3 AssignedApproach=\"Visual Approach Runway 22\" LAHSORunways=[13 31]",
+    "[local-stt]   fix: \"Jotre\" -\u003e \"JOTRE\"",
+    "[local-stt]   fix: \"Froggy\" -\u003e \"FROGI\"",
+    "[local-stt]   fix: \"Kuz\" -\u003e \"KUZZZ\"",
+    "[local-stt]   fix: \"Eyrod\" -\u003e \"EYROD\"",
+    "[local-stt]   fix: \"Proud\" -\u003e \"PROUD\"",
+    "[local-stt]   fix: \"Grecko\" -\u003e \"GREKO\"",
+    "[local-stt]   fix: \"Dans\" -\u003e \"DANPS\"",
+    "[local-stt]   fix: \"Castle\" -\u003e \"CASLE\"",
+    "[local-stt]   fix: \"Parks\" -\u003e \"PARGS\"",
+    "[local-stt]   fix: \"LaGuardia\" -\u003e \"KLGA\"",
+    "[local-stt]   fix: \"Yoman\" -\u003e \"YOMAN\"",
+    "[local-stt]   fix: \"Donyb\" -\u003e \"DONYB\"",
+    "[local-stt]   fix: \"Da-zoo\" -\u003e \"DAZOO\"",
+    "[local-stt]   fix: \"Harp\" -\u003e \"HAARP\"",
+    "[local-stt]   fix: \"Kylie\" -\u003e \"KYLIE\"",
+    "[local-stt]   approach: \"ILS Runway 22\" -\u003e \"I22\"",
+    "[local-stt]   approach: \"RNAV Y Runway 22\" -\u003e \"RY2\"",
+    "[local-stt]   approach: \"RNAV X Runway 22\" -\u003e \"RX2\"",
+    "[local-stt]   approach: \"RNAV Z Runway 22\" -\u003e \"RZ2\"",
+    "[local-stt]   visual approach: \"visual runway two two\" -\u003e \"22\"",
+    "[local-stt]   visual approach: \"visual approach runway two two\" -\u003e \"22\"",
+    "[local-stt]   visual approach: \"visual two two\" -\u003e \"22\"",
+    "[local-stt] command tokens after disregard: 9",
+    "[local-stt]   token[0]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"heading\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"190\" Type=1 Value=190",
+    "[local-stt]   token[4]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"visual\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"2\" Type=1 Value=2",
+    "[local-stt] ParseCommands: 9 tokens",
+    "[local-stt]   matched command: \"R190\" [turn_right_heading] (pos=0, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[0]=\"turn\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"visual\" against 15 fixes",
+    "[local-stt]   extractFix: no match found for \"visual\"",
+    "[local-stt]   matchGarbledApproach: digits=\"\" dir=- variant=\"\" -\u003e \"I22\" (score=2.6)",
+    "[local-stt]   matched command: \"CI22\" [cleared_approach] (pos=4, conf=0.87, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[4]=\"cleared\", skipping",
+    "[local-stt]   matched command: \"R190\" [turn_right_heading] (pos=1, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[1]=\"right\", skipping",
+    "[local-stt]   no match at token[6]=\"approach\", skipping",
+    "[local-stt]   extractSTAR: looking for STAR=\"PROUD2\" telephony=\"Proud two\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   no match at token[5]=\"visual\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"visual\" against 15 fixes",
+    "[local-stt]   extractFix: no match found for \"visual\"",
+    "[local-stt]   matchGarbledApproach: digits=\"\" dir=- variant=\"\" -\u003e \"I22\" (score=2.6)",
+    "[local-stt]   matched command: \"CI22\" [cleared_approach] (pos=4, conf=0.87, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[4]=\"cleared\", skipping",
+    "[local-stt]   matched command: \"H190\" [heading_only] (pos=2, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[2]=\"heading\", skipping",
+    "[local-stt]   no match at token[7]=\"runway\", skipping",
+    "[local-stt]   no match at token[6]=\"approach\", skipping",
+    "[local-stt]   no match at token[6]=\"approach\", skipping",
+    "[local-stt]   extractSTAR: looking for STAR=\"PROUD2\" telephony=\"Proud two\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   no match at token[5]=\"visual\", skipping",
+    "[local-stt]   no match at token[8]=\"2\", skipping",
+    "[local-stt]   no match at token[7]=\"runway\", skipping",
+    "[local-stt]   no match at token[7]=\"runway\", skipping",
+    "[local-stt]   no match at token[6]=\"approach\", skipping",
+    "[local-stt]   no match at token[8]=\"2\", skipping",
+    "[local-stt]   no match at token[8]=\"2\", skipping",
+    "[local-stt]   no match at token[7]=\"runway\", skipping",
+    "[local-stt]   no match at token[8]=\"2\", skipping",
+    "[local-stt]   beam final[0]: score=3.299 pos=9 commands=[R190 CI22]",
+    "[local-stt]   beam final[1]: score=0.399 pos=9 commands=[R190 CI22]",
+    "[local-stt]   beam final[2]: score=0.089 pos=9 commands=[R190]",
+    "[local-stt]   beam final[3]: score=-2.812 pos=9 commands=[R190]",
+    "[local-stt] ParseCommands: result=[R190 CI22] (avgConf=0.93)",
+    "[local-stt] parsed commands: [R190 CI22] (conf=0.93, kinds=1)",
+    "[local-stt] validated commands: [R190 CI22] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"DAL433 R190 CI22\" (conf=0.93, time=4.5001ms) ==="
+  ]
+}

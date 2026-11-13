@@ -1,0 +1,415 @@
+{
+  "time": "2026-11-12T02:50:17.212760502Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Flexjet niner 83 Portland Approach hello descend maintain three thousand expect the visual approach when i do niner",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, papa, information, Scogs four, Seadog four, slams, tate, two niner, runway, r-nav, Approach, Visual, I L S, Brickyard 73 zero one, Flexjet niner 83, Flexjet eight 74, Flexjet 39, AUGUSTA, Mesh, KENNEBUNK, Pete, Saco, Sappy, scogs, Yak, Yomon, Portland International Jetport",
+  "whisper_duration_ms": 435.84,
+  "audio_duration_ms": 9672,
+  "processor": "GPU: NVIDIA GeForce RTX 4070 (12010MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "LXJ983",
+  "command": "D30 EVA29",
+  "reason": "\"when i do niner\" is runway two niner",
+  "stt_aircraft": {
+    "Brickyard 73 zero one": {
+      "Callsign": "RPA7301",
+      "LastAddressed": true,
+      "AircraftType": "E75S",
+      "Fixes": {
+        "Pete": "PEATT",
+        "Portland International Jetport": "KPWM",
+        "Sappy": "SAPPE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 29": "I29",
+        "RNAV Runway 29": "R29"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner": "29",
+        "visual runway two niner": "29",
+        "visual two niner": "29"
+      },
+      "ApproachFixes": {
+        "I29": {
+          "KENNEBUNK": "ENE",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE"
+        },
+        "R29": {
+          "AUGUSTA": "AUG",
+          "KENNEBUNK": "ENE",
+          "Mesh": "MESHL",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE",
+          "slams": "SLAMZ",
+          "tate": "TAATE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 29",
+      "STAR": "CDOGG4",
+      "Route": [
+        "SAPPE",
+        "PEATT",
+        "KPWM"
+      ],
+      "Altitude": 3899,
+      "Heading": 317,
+      "Speed": 212,
+      "AssignedAltitude": 3000,
+      "AssignedSpeed": 220,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "18",
+        "36"
+      ]
+    },
+    "Flexjet 39": {
+      "Callsign": "LXJ39",
+      "AircraftType": "CL30",
+      "Fixes": {
+        "KENNEBUNK": "ENE",
+        "Pete": "PEATT",
+        "Portland International Jetport": "KPWM",
+        "Sappy": "SAPPE",
+        "Yak": "YAAKK",
+        "Yomon": "YOMON"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 29": "I29",
+        "RNAV Runway 29": "R29"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner": "29",
+        "visual runway two niner": "29",
+        "visual two niner": "29"
+      },
+      "ApproachFixes": {
+        "I29": {
+          "KENNEBUNK": "ENE",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE"
+        },
+        "R29": {
+          "AUGUSTA": "AUG",
+          "KENNEBUNK": "ENE",
+          "Mesh": "MESHL",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE",
+          "slams": "SLAMZ",
+          "tate": "TAATE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 29",
+      "STAR": "CDOGG4",
+      "Route": [
+        "YOMON",
+        "YAAKK",
+        "SAPPE",
+        "KPWM"
+      ],
+      "Altitude": 9000,
+      "Heading": 109,
+      "Speed": 308,
+      "AssignedAltitude": 3000,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "18",
+        "36"
+      ]
+    },
+    "Flexjet eight 74": {
+      "Callsign": "LXJ874",
+      "AircraftType": "LJ45",
+      "Fixes": {
+        "AUGUSTA": "AUG",
+        "KENNEBUNK": "ENE",
+        "Mesh": "MESHL",
+        "Pete": "PEATT",
+        "Portland International Jetport": "KPWM",
+        "Sappy": "SAPPE",
+        "Yak": "YAAKK",
+        "slams": "SLAMZ",
+        "tate": "TAATE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 29": "I29",
+        "RNAV Runway 29": "R29"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner": "29",
+        "visual runway two niner": "29",
+        "visual two niner": "29"
+      },
+      "ApproachFixes": {
+        "I29": {
+          "KENNEBUNK": "ENE",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE"
+        },
+        "R29": {
+          "AUGUSTA": "AUG",
+          "KENNEBUNK": "ENE",
+          "Mesh": "MESHL",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE",
+          "slams": "SLAMZ",
+          "tate": "TAATE"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 29",
+      "STAR": "SCOGS4",
+      "Route": [
+        "YAAKK",
+        "SAPPE",
+        "KPWM"
+      ],
+      "Altitude": 3000,
+      "Heading": 40,
+      "Speed": 259,
+      "AssignedAltitude": 3000,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "18",
+        "36"
+      ]
+    },
+    "Flexjet niner 83": {
+      "Callsign": "LXJ983",
+      "AircraftType": "GLF4",
+      "Fixes": {
+        "Mesh": "MESHL",
+        "Portland International Jetport": "KPWM",
+        "Saco": "SAACO",
+        "Sappy": "SAPPE",
+        "Yak": "YAAKK",
+        "scogs": "SCOGS"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 29": "I29",
+        "RNAV Runway 29": "R29"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner": "29",
+        "visual runway two niner": "29",
+        "visual two niner": "29"
+      },
+      "ApproachFixes": {
+        "I29": {
+          "KENNEBUNK": "ENE",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE"
+        },
+        "R29": {
+          "AUGUSTA": "AUG",
+          "KENNEBUNK": "ENE",
+          "Mesh": "MESHL",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE",
+          "slams": "SLAMZ",
+          "tate": "TAATE"
+        }
+      },
+      "STAR": "SCOGS4",
+      "Route": [
+        "SCOGS",
+        "SAACO",
+        "MESHL",
+        "YAAKK",
+        "SAPPE",
+        "KPWM"
+      ],
+      "Altitude": 9000,
+      "Heading": 43,
+      "Speed": 297,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "18",
+        "36"
+      ]
+    },
+    "JetBlue 37": {
+      "Callsign": "JBU37",
+      "AircraftType": "A320",
+      "Fixes": {
+        "CALVERTON": "CCC",
+        "Gorhm": "GORHM",
+        "Jimmy": "JJIMY",
+        "Noble": "NUBLE",
+        "Portland International Jetport": "KPWM",
+        "Rubela": "RBELA",
+        "Yantic": "YANTC"
+      },
+      "SID": "RBELA1",
+      "Route": [
+        "GORHM",
+        "NUBLE",
+        "RBELA",
+        "JJIMY",
+        "YANTC",
+        "CCC",
+        "KJFK"
+      ],
+      "Altitude": 1071,
+      "Heading": 290,
+      "Speed": 155,
+      "State": "departure",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Flexjet niner 83 Portland Approach hello descend maintain three thousand expect the visual approach when i do niner\"",
+    "[local-stt] normalized words: [flexjet 9 83 portland approach hello descend maintain 3 thousand expect the visual approach when i do 9]",
+    "[local-stt] tokens: 16",
+    "[local-stt]   token[0]: Text=\"flexjet\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"983\" Type=1 Value=983",
+    "[local-stt]   token[2]: Text=\"portland\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"hello\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"descend\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"30\" Type=2 Value=30",
+    "[local-stt]   token[8]: Text=\"expect\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"the\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"visual\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"when\" Type=0 Value=-1",
+    "[local-stt]   token[13]: Text=\"i\" Type=0 Value=-1",
+    "[local-stt]   token[14]: Text=\"do\" Type=0 Value=-1",
+    "[local-stt]   token[15]: Text=\"9\" Type=1 Value=9",
+    "[local-stt] MatchCallsign: 16 tokens, 5 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 16 tokens, 5 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Flexjet niner 83\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Flexjet niner 83\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"Flexjet niner 83\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Flexjet niner 83\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 7 results",
+    "[local-stt]     result 0: \"JetBlue 37\" (airline=0.524, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Flexjet eight 74\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Flexjet 39\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Flexjet niner 83\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"JetBlue 37\" (airline=0.512, flight=0.000, skip=2)",
+    "[local-stt]     pattern \"airline_only\": selected \"Flexjet 39\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Flexjet niner 83\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Flexjet niner 83\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"Flexjet niner 83\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"LXJ983\" (spokenKey=\"Flexjet niner 83\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"LXJ983\" SpokenKey=\"Flexjet niner 83\" Conf=1.00 Consumed=2",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=9000 Fixes=6 Approaches=2 VisualApproaches=3 AssignedApproach=\"\" LAHSORunways=[18 36]",
+    "[local-stt]   fix: \"Portland International Jetport\" -\u003e \"KPWM\"",
+    "[local-stt]   fix: \"scogs\" -\u003e \"SCOGS\"",
+    "[local-stt]   fix: \"Saco\" -\u003e \"SAACO\"",
+    "[local-stt]   fix: \"Mesh\" -\u003e \"MESHL\"",
+    "[local-stt]   fix: \"Yak\" -\u003e \"YAAKK\"",
+    "[local-stt]   fix: \"Sappy\" -\u003e \"SAPPE\"",
+    "[local-stt]   approach: \"ILS Runway 29\" -\u003e \"I29\"",
+    "[local-stt]   approach: \"RNAV Runway 29\" -\u003e \"R29\"",
+    "[local-stt]   visual approach: \"visual runway two niner\" -\u003e \"29\"",
+    "[local-stt]   visual approach: \"visual approach runway two niner\" -\u003e \"29\"",
+    "[local-stt]   visual approach: \"visual two niner\" -\u003e \"29\"",
+    "[local-stt] command tokens after disregard: 14",
+    "[local-stt]   token[0]: Text=\"portland\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"hello\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"descend\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"30\" Type=2 Value=30",
+    "[local-stt]   token[6]: Text=\"expect\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"the\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"visual\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"when\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"i\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"do\" Type=0 Value=-1",
+    "[local-stt]   token[13]: Text=\"9\" Type=1 Value=9",
+    "[local-stt] ParseCommands: 14 tokens",
+    "[local-stt]   matched command: \"\" [position_id] (pos=0, conf=0.74, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"portland\", skipping",
+    "[local-stt]   matched command: \"\" [greeting] (pos=2, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[2]=\"hello\", skipping",
+    "[local-stt]   matched command: \"\" [position_id] (pos=1, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[1]=\"approach\", skipping",
+    "[local-stt]   matched command: \"D30\" [descend_maintain] (pos=3, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[3]=\"descend\", skipping",
+    "[local-stt]   matched command: \"D30\" [descend_maintain] (pos=3, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[3]=\"descend\", skipping",
+    "[local-stt]   matched command: \"\" [greeting] (pos=2, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[2]=\"hello\", skipping",
+    "[local-stt]   matched command: \"\" [greeting] (pos=2, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[2]=\"hello\", skipping",
+    "[local-stt]   matched command: \"SAYAGAIN/APPROACH\" [] (pos=6, conf=0.50, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[6]=\"expect\", skipping",
+    "[local-stt]   matched command: \"SAYAGAIN/APPROACH\" [] (pos=6, conf=0.50, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[6]=\"expect\", skipping",
+    "[local-stt]   matched command: \"A30\" [maintain_altitude] (pos=4, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[4]=\"maintain\", skipping",
+    "[local-stt]   matched command: \"D30\" [descend_maintain] (pos=3, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[3]=\"descend\", skipping",
+    "[local-stt]   extractSTAR: looking for STAR=\"SCOGS4\" telephony=\"Scogs four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   no match at token[8]=\"visual\", skipping",
+    "[local-stt]   extractSTAR: looking for STAR=\"SCOGS4\" telephony=\"Scogs four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   skipping filler word: \"the\"",
+    "[local-stt]   matched command: \"SAYAGAIN/APPROACH\" [] (pos=6, conf=0.50, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[6]=\"expect\", skipping",
+    "[local-stt]   extractSTAR: looking for STAR=\"SCOGS4\" telephony=\"Scogs four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   no match at token[8]=\"visual\", skipping",
+    "[local-stt]   no match at token[9]=\"approach\", skipping",
+    "[local-stt]   extractSTAR: looking for STAR=\"SCOGS4\" telephony=\"Scogs four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   no match at token[8]=\"visual\", skipping",
+    "[local-stt]   extractSTAR: looking for STAR=\"SCOGS4\" telephony=\"Scogs four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   no match at token[8]=\"visual\", skipping",
+    "[local-stt]   no match at token[9]=\"approach\", skipping",
+    "[local-stt]   no match at token[10]=\"when\", skipping",
+    "[local-stt]   no match at token[9]=\"approach\", skipping",
+    "[local-stt]   no match at token[9]=\"approach\", skipping",
+    "[local-stt]   no match at token[10]=\"when\", skipping",
+    "[local-stt]   skipping filler word: \"i\"",
+    "[local-stt]   no match at token[10]=\"when\", skipping",
+    "[local-stt]   no match at token[10]=\"when\", skipping",
+    "[local-stt]   skipping filler word: \"i\"",
+    "[local-stt]   no match at token[12]=\"do\", skipping",
+    "[local-stt]   skipping filler word: \"i\"",
+    "[local-stt]   skipping filler word: \"i\"",
+    "[local-stt]   no match at token[12]=\"do\", skipping",
+    "[local-stt]   no match at token[13]=\"9\", skipping",
+    "[local-stt]   no match at token[12]=\"do\", skipping",
+    "[local-stt]   no match at token[12]=\"do\", skipping",
+    "[local-stt]   no match at token[13]=\"9\", skipping",
+    "[local-stt]   no match at token[13]=\"9\", skipping",
+    "[local-stt]   no match at token[13]=\"9\", skipping",
+    "[local-stt]   beam final[0]: score=3.189 pos=14 commands=[D30 SAYAGAIN/APPROACH]",
+    "[local-stt]   beam final[1]: score=0.887 pos=14 commands=[D30 SAYAGAIN/APPROACH]",
+    "[local-stt]   beam final[2]: score=0.687 pos=14 commands=[D30]",
+    "[local-stt]   beam final[3]: score=0.289 pos=14 commands=[D30 SAYAGAIN/APPROACH]",
+    "[local-stt] ParseCommands: result=[D30 SAYAGAIN/APPROACH] (avgConf=0.75)",
+    "[local-stt] parsed commands: [D30 SAYAGAIN/APPROACH] (conf=0.75, kinds=10101)",
+    "[local-stt] validated commands: [D30 SAYAGAIN/APPROACH] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"LXJ983 D30 SAYAGAIN/APPROACH\" (conf=0.75, time=7.9622ms) ==="
+  ]
+}

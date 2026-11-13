@@ -1,0 +1,1351 @@
+{
+  "time": "2026-11-07T02:48:12.7427235Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Brickyard 69 42 maintain visual separation follow the traffic cleared visual approach runway two three",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, romeo, information, Wings, Bulls, Jabet, Zadum, Football, Buffest, Susky, Zudat, Jedar, Effect, Cozs, Topky, ROCHESTER, Waski, Bulge, two three, runway, zulu, yankee, r-nav, I L S, Approach, Visual, Southwest 46 80, Southwest three 98, Southwest three 78, Brickyard 69 42, Brickyard 61 76, embraer phenom three hundred two five three, phenom three hundred two five three, november six zero two five three, JetBlue 19, Fedex 99 37 heavy, Fedex 69 85 heavy, ExecJet 41 90, Endeavor 80 29, Endeavor 55 45, American 59, Trava, Akuyi, Corvu, BUFFALO, Wozee, Ehman, Clump, DUNKIRK, Beanie, GENESEO, Buffalo Niagara International Airport",
+  "whisper_duration_ms": 537.479,
+  "audio_duration_ms": 6600,
+  "processor": "GPU: NVIDIA GeForce RTX 2060 (12275MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "RPA6942",
+  "command": "VISSEP CVA23",
+  "reason": "follow the traffic",
+  "stt_aircraft": {
+    "American 59": {
+      "Callsign": "AAL59",
+      "AircraftType": "A319",
+      "Fixes": {
+        "Akuyi": "AKUYI",
+        "Berki": "BERKI",
+        "Bills": "BIILS",
+        "Buffalo Niagara": "KBUF",
+        "Buffest": "BUFST",
+        "Bulge": "BULGE",
+        "Bulls": "BUULS",
+        "Clump": "KLUMP",
+        "Corvu": "CORVU",
+        "Cozs": "COZZS",
+        "Effect": "EFFCT",
+        "Football": "FOTBL",
+        "GENESEO": "GEE",
+        "Jabet": "JABET",
+        "Jedar": "JEDAR",
+        "ROCHESTER": "ROC",
+        "Susky": "SUSKE",
+        "Topky": "TOPKE",
+        "Trava": "TRAVA",
+        "Waski": "WASKI",
+        "Wings": "WNNGS",
+        "Zadum": "ZADUM",
+        "Zudat": "ZUDAT"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23": "I23",
+        "RNAV Y Runway 23": "Y23",
+        "RNAV Z Runway 23": "Z23"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three": "23",
+        "visual runway two three": "23",
+        "visual two three": "23"
+      },
+      "ApproachFixes": {
+        "I23": {
+          "Akuyi": "AKUYI",
+          "Clump": "KLUMP",
+          "Corvu": "CORVU",
+          "GENESEO": "GEE",
+          "Trava": "TRAVA"
+        },
+        "Y23": {
+          "Berki": "BERKI",
+          "Bulge": "BULGE",
+          "ROCHESTER": "ROC",
+          "Topky": "TOPKE",
+          "Trava": "TRAVA",
+          "Waski": "WASKI"
+        },
+        "Z23": {
+          "Bills": "BIILS",
+          "Buffest": "BUFST",
+          "Bulls": "BUULS",
+          "Cozs": "COZZS",
+          "Effect": "EFFCT",
+          "Football": "FOTBL",
+          "Jabet": "JABET",
+          "Jedar": "JEDAR",
+          "Susky": "SUSKE",
+          "Trava": "TRAVA",
+          "Wings": "WNNGS",
+          "Zadum": "ZADUM",
+          "Zudat": "ZUDAT"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 23",
+      "Route": [
+        "KBUF"
+      ],
+      "Altitude": 5000,
+      "Heading": 53,
+      "Speed": 184,
+      "AssignedAltitude": 5000,
+      "AssignedHeading": 53,
+      "AssignedSpeed": 160,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "14",
+        "32"
+      ]
+    },
+    "Brickyard 61 76": {
+      "Callsign": "RPA6176",
+      "AircraftType": "E75S",
+      "Fixes": {
+        "BUFFALO": "BUF",
+        "Buffalo Niagara": "KBUF"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23": "I23",
+        "RNAV Y Runway 23": "Y23",
+        "RNAV Z Runway 23": "Z23"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three": "23",
+        "visual runway two three": "23",
+        "visual two three": "23"
+      },
+      "ApproachFixes": {
+        "I23": {
+          "Akuyi": "AKUYI",
+          "Clump": "KLUMP",
+          "Corvu": "CORVU",
+          "GENESEO": "GEE",
+          "Trava": "TRAVA"
+        },
+        "Y23": {
+          "Berki": "BERKI",
+          "Bulge": "BULGE",
+          "ROCHESTER": "ROC",
+          "Topky": "TOPKE",
+          "Trava": "TRAVA",
+          "Waski": "WASKI"
+        },
+        "Z23": {
+          "Bills": "BIILS",
+          "Buffest": "BUFST",
+          "Bulls": "BUULS",
+          "Cozs": "COZZS",
+          "Effect": "EFFCT",
+          "Football": "FOTBL",
+          "Jabet": "JABET",
+          "Jedar": "JEDAR",
+          "Susky": "SUSKE",
+          "Trava": "TRAVA",
+          "Wings": "WNNGS",
+          "Zadum": "ZADUM",
+          "Zudat": "ZUDAT"
+        }
+      },
+      "Route": [
+        "BUF",
+        "KBUF"
+      ],
+      "Altitude": 11287,
+      "Heading": 343,
+      "Speed": 303,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "14",
+        "32"
+      ]
+    },
+    "Brickyard 69 42": {
+      "Callsign": "RPA6942",
+      "LastAddressed": true,
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Akuyi": "AKUYI",
+        "Berki": "BERKI",
+        "Bills": "BIILS",
+        "Buffalo Niagara": "KBUF",
+        "Buffest": "BUFST",
+        "Bulge": "BULGE",
+        "Bulls": "BUULS",
+        "Clump": "KLUMP",
+        "Corvu": "CORVU",
+        "Cozs": "COZZS",
+        "Effect": "EFFCT",
+        "Football": "FOTBL",
+        "GENESEO": "GEE",
+        "Jabet": "JABET",
+        "Jedar": "JEDAR",
+        "ROCHESTER": "ROC",
+        "Susky": "SUSKE",
+        "Topky": "TOPKE",
+        "Trava": "TRAVA",
+        "Waski": "WASKI",
+        "Wings": "WNNGS",
+        "Zadum": "ZADUM",
+        "Zudat": "ZUDAT"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23": "I23",
+        "RNAV Y Runway 23": "Y23",
+        "RNAV Z Runway 23": "Z23"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three": "23",
+        "visual runway two three": "23",
+        "visual two three": "23"
+      },
+      "ApproachFixes": {
+        "I23": {
+          "Akuyi": "AKUYI",
+          "Clump": "KLUMP",
+          "Corvu": "CORVU",
+          "GENESEO": "GEE",
+          "Trava": "TRAVA"
+        },
+        "Y23": {
+          "Berki": "BERKI",
+          "Bulge": "BULGE",
+          "ROCHESTER": "ROC",
+          "Topky": "TOPKE",
+          "Trava": "TRAVA",
+          "Waski": "WASKI"
+        },
+        "Z23": {
+          "Bills": "BIILS",
+          "Buffest": "BUFST",
+          "Bulls": "BUULS",
+          "Cozs": "COZZS",
+          "Effect": "EFFCT",
+          "Football": "FOTBL",
+          "Jabet": "JABET",
+          "Jedar": "JEDAR",
+          "Susky": "SUSKE",
+          "Trava": "TRAVA",
+          "Wings": "WNNGS",
+          "Zadum": "ZADUM",
+          "Zudat": "ZUDAT"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 23",
+      "Route": [
+        "KBUF"
+      ],
+      "Altitude": 4000,
+      "Heading": 290,
+      "Speed": 167,
+      "AssignedAltitude": 4000,
+      "AssignedHeading": 290,
+      "AssignedSpeed": 180,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "14",
+        "32"
+      ]
+    },
+    "Endeavor 55 45": {
+      "Callsign": "EDV5545",
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Beanie": "BENEE",
+        "Buffalo Niagara": "KBUF"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23": "I23",
+        "RNAV Y Runway 23": "Y23",
+        "RNAV Z Runway 23": "Z23"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three": "23",
+        "visual runway two three": "23",
+        "visual two three": "23"
+      },
+      "ApproachFixes": {
+        "I23": {
+          "Akuyi": "AKUYI",
+          "Clump": "KLUMP",
+          "Corvu": "CORVU",
+          "GENESEO": "GEE",
+          "Trava": "TRAVA"
+        },
+        "Y23": {
+          "Berki": "BERKI",
+          "Bulge": "BULGE",
+          "ROCHESTER": "ROC",
+          "Topky": "TOPKE",
+          "Trava": "TRAVA",
+          "Waski": "WASKI"
+        },
+        "Z23": {
+          "Bills": "BIILS",
+          "Buffest": "BUFST",
+          "Bulls": "BUULS",
+          "Cozs": "COZZS",
+          "Effect": "EFFCT",
+          "Football": "FOTBL",
+          "Jabet": "JABET",
+          "Jedar": "JEDAR",
+          "Susky": "SUSKE",
+          "Trava": "TRAVA",
+          "Wings": "WNNGS",
+          "Zadum": "ZADUM",
+          "Zudat": "ZUDAT"
+        }
+      },
+      "Route": [
+        "BENEE",
+        "KBUF"
+      ],
+      "Altitude": 18407,
+      "Heading": 311,
+      "Speed": 304,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "14",
+        "32"
+      ]
+    },
+    "Endeavor 80 29": {
+      "Callsign": "EDV8029",
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Akuyi": "AKUYI",
+        "Berki": "BERKI",
+        "Bills": "BIILS",
+        "Buffalo Niagara": "KBUF",
+        "Buffest": "BUFST",
+        "Bulge": "BULGE",
+        "Bulls": "BUULS",
+        "Clump": "KLUMP",
+        "Corvu": "CORVU",
+        "Cozs": "COZZS",
+        "Effect": "EFFCT",
+        "Football": "FOTBL",
+        "GENESEO": "GEE",
+        "Jabet": "JABET",
+        "Jedar": "JEDAR",
+        "ROCHESTER": "ROC",
+        "Susky": "SUSKE",
+        "Topky": "TOPKE",
+        "Trava": "TRAVA",
+        "Waski": "WASKI",
+        "Wings": "WNNGS",
+        "Zadum": "ZADUM",
+        "Zudat": "ZUDAT"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23": "I23",
+        "RNAV Y Runway 23": "Y23",
+        "RNAV Z Runway 23": "Z23"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three": "23",
+        "visual runway two three": "23",
+        "visual two three": "23"
+      },
+      "ApproachFixes": {
+        "I23": {
+          "Akuyi": "AKUYI",
+          "Clump": "KLUMP",
+          "Corvu": "CORVU",
+          "GENESEO": "GEE",
+          "Trava": "TRAVA"
+        },
+        "Y23": {
+          "Berki": "BERKI",
+          "Bulge": "BULGE",
+          "ROCHESTER": "ROC",
+          "Topky": "TOPKE",
+          "Trava": "TRAVA",
+          "Waski": "WASKI"
+        },
+        "Z23": {
+          "Bills": "BIILS",
+          "Buffest": "BUFST",
+          "Bulls": "BUULS",
+          "Cozs": "COZZS",
+          "Effect": "EFFCT",
+          "Football": "FOTBL",
+          "Jabet": "JABET",
+          "Jedar": "JEDAR",
+          "Susky": "SUSKE",
+          "Trava": "TRAVA",
+          "Wings": "WNNGS",
+          "Zadum": "ZADUM",
+          "Zudat": "ZUDAT"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 23",
+      "Route": [
+        "KBUF"
+      ],
+      "Altitude": 9000,
+      "Heading": 50,
+      "Speed": 296,
+      "AssignedAltitude": 9000,
+      "AssignedHeading": 50,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "14",
+        "32"
+      ]
+    },
+    "ExecJet 41 90": {
+      "Callsign": "EJA4190",
+      "AircraftType": "H25B",
+      "Fixes": {
+        "Buffalo Niagara": "KBUF"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23": "I23",
+        "RNAV Y Runway 23": "Y23",
+        "RNAV Z Runway 23": "Z23"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three": "23",
+        "visual runway two three": "23",
+        "visual two three": "23"
+      },
+      "ApproachFixes": {
+        "I23": {
+          "Akuyi": "AKUYI",
+          "Clump": "KLUMP",
+          "Corvu": "CORVU",
+          "GENESEO": "GEE",
+          "Trava": "TRAVA"
+        },
+        "Y23": {
+          "Berki": "BERKI",
+          "Bulge": "BULGE",
+          "ROCHESTER": "ROC",
+          "Topky": "TOPKE",
+          "Trava": "TRAVA",
+          "Waski": "WASKI"
+        },
+        "Z23": {
+          "Bills": "BIILS",
+          "Buffest": "BUFST",
+          "Bulls": "BUULS",
+          "Cozs": "COZZS",
+          "Effect": "EFFCT",
+          "Football": "FOTBL",
+          "Jabet": "JABET",
+          "Jedar": "JEDAR",
+          "Susky": "SUSKE",
+          "Trava": "TRAVA",
+          "Wings": "WNNGS",
+          "Zadum": "ZADUM",
+          "Zudat": "ZUDAT"
+        }
+      },
+      "Route": [
+        "KBUF"
+      ],
+      "Altitude": 11756,
+      "Heading": 22,
+      "Speed": 340,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "14",
+        "32"
+      ]
+    },
+    "Fedex 69 85 heavy": {
+      "Callsign": "FDX6985",
+      "AircraftType": "B763",
+      "Fixes": {
+        "Akuyi": "AKUYI",
+        "BUFFALO": "BUF",
+        "Berki": "BERKI",
+        "Bills": "BIILS",
+        "Buffalo Niagara": "KBUF",
+        "Buffest": "BUFST",
+        "Bulge": "BULGE",
+        "Bulls": "BUULS",
+        "Clump": "KLUMP",
+        "Corvu": "CORVU",
+        "Cozs": "COZZS",
+        "DUNKIRK": "DKK",
+        "Effect": "EFFCT",
+        "Football": "FOTBL",
+        "GENESEO": "GEE",
+        "Jabet": "JABET",
+        "Jedar": "JEDAR",
+        "ROCHESTER": "ROC",
+        "Susky": "SUSKE",
+        "Topky": "TOPKE",
+        "Trava": "TRAVA",
+        "Waski": "WASKI",
+        "Wings": "WNNGS",
+        "Zadum": "ZADUM",
+        "Zudat": "ZUDAT"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23": "I23",
+        "RNAV Y Runway 23": "Y23",
+        "RNAV Z Runway 23": "Z23"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three": "23",
+        "visual runway two three": "23",
+        "visual two three": "23"
+      },
+      "ApproachFixes": {
+        "I23": {
+          "Akuyi": "AKUYI",
+          "Clump": "KLUMP",
+          "Corvu": "CORVU",
+          "GENESEO": "GEE",
+          "Trava": "TRAVA"
+        },
+        "Y23": {
+          "Berki": "BERKI",
+          "Bulge": "BULGE",
+          "ROCHESTER": "ROC",
+          "Topky": "TOPKE",
+          "Trava": "TRAVA",
+          "Waski": "WASKI"
+        },
+        "Z23": {
+          "Bills": "BIILS",
+          "Buffest": "BUFST",
+          "Bulls": "BUULS",
+          "Cozs": "COZZS",
+          "Effect": "EFFCT",
+          "Football": "FOTBL",
+          "Jabet": "JABET",
+          "Jedar": "JEDAR",
+          "Susky": "SUSKE",
+          "Trava": "TRAVA",
+          "Wings": "WNNGS",
+          "Zadum": "ZADUM",
+          "Zudat": "ZUDAT"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 23",
+      "Route": [
+        "DKK",
+        "BUF",
+        "KBUF"
+      ],
+      "Altitude": 10000,
+      "Heading": 55,
+      "Speed": 310,
+      "AssignedAltitude": 10000,
+      "AssignedHeading": 55,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "14",
+        "32"
+      ]
+    },
+    "Fedex 99 37 heavy": {
+      "Callsign": "FDX9937",
+      "AircraftType": "B763",
+      "Fixes": {
+        "Buffalo Niagara": "KBUF",
+        "Clump": "KLUMP"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23": "I23",
+        "RNAV Y Runway 23": "Y23",
+        "RNAV Z Runway 23": "Z23"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three": "23",
+        "visual runway two three": "23",
+        "visual two three": "23"
+      },
+      "ApproachFixes": {
+        "I23": {
+          "Akuyi": "AKUYI",
+          "Clump": "KLUMP",
+          "Corvu": "CORVU",
+          "GENESEO": "GEE",
+          "Trava": "TRAVA"
+        },
+        "Y23": {
+          "Berki": "BERKI",
+          "Bulge": "BULGE",
+          "ROCHESTER": "ROC",
+          "Topky": "TOPKE",
+          "Trava": "TRAVA",
+          "Waski": "WASKI"
+        },
+        "Z23": {
+          "Bills": "BIILS",
+          "Buffest": "BUFST",
+          "Bulls": "BUULS",
+          "Cozs": "COZZS",
+          "Effect": "EFFCT",
+          "Football": "FOTBL",
+          "Jabet": "JABET",
+          "Jedar": "JEDAR",
+          "Susky": "SUSKE",
+          "Trava": "TRAVA",
+          "Wings": "WNNGS",
+          "Zadum": "ZADUM",
+          "Zudat": "ZUDAT"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 23",
+      "Route": [
+        "KLUMP",
+        "KBUF"
+      ],
+      "Altitude": 2608,
+      "Heading": 263,
+      "Speed": 174,
+      "AssignedAltitude": 4000,
+      "State": "cleared approach",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "14",
+        "32"
+      ]
+    },
+    "JetBlue 19": {
+      "Callsign": "JBU19",
+      "AircraftType": "E190",
+      "Fixes": {
+        "Buffalo Niagara": "KBUF",
+        "Ehman": "EHMAN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23": "I23",
+        "RNAV Y Runway 23": "Y23",
+        "RNAV Z Runway 23": "Z23"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three": "23",
+        "visual runway two three": "23",
+        "visual two three": "23"
+      },
+      "ApproachFixes": {
+        "I23": {
+          "Akuyi": "AKUYI",
+          "Clump": "KLUMP",
+          "Corvu": "CORVU",
+          "GENESEO": "GEE",
+          "Trava": "TRAVA"
+        },
+        "Y23": {
+          "Berki": "BERKI",
+          "Bulge": "BULGE",
+          "ROCHESTER": "ROC",
+          "Topky": "TOPKE",
+          "Trava": "TRAVA",
+          "Waski": "WASKI"
+        },
+        "Z23": {
+          "Bills": "BIILS",
+          "Buffest": "BUFST",
+          "Bulls": "BUULS",
+          "Cozs": "COZZS",
+          "Effect": "EFFCT",
+          "Football": "FOTBL",
+          "Jabet": "JABET",
+          "Jedar": "JEDAR",
+          "Susky": "SUSKE",
+          "Trava": "TRAVA",
+          "Wings": "WNNGS",
+          "Zadum": "ZADUM",
+          "Zudat": "ZUDAT"
+        }
+      },
+      "Route": [
+        "EHMAN",
+        "KBUF"
+      ],
+      "Altitude": 14523,
+      "Heading": 284,
+      "Speed": 311,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "14",
+        "32"
+      ]
+    },
+    "Southwest 46 80": {
+      "Callsign": "SWA4680",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Akuyi": "AKUYI",
+        "BUFFALO": "BUF",
+        "Berki": "BERKI",
+        "Bills": "BIILS",
+        "Buffalo Niagara": "KBUF",
+        "Buffest": "BUFST",
+        "Bulge": "BULGE",
+        "Bulls": "BUULS",
+        "Clump": "KLUMP",
+        "Corvu": "CORVU",
+        "Cozs": "COZZS",
+        "Effect": "EFFCT",
+        "Football": "FOTBL",
+        "GENESEO": "GEE",
+        "Jabet": "JABET",
+        "Jedar": "JEDAR",
+        "ROCHESTER": "ROC",
+        "Susky": "SUSKE",
+        "Topky": "TOPKE",
+        "Trava": "TRAVA",
+        "Waski": "WASKI",
+        "Wings": "WNNGS",
+        "Zadum": "ZADUM",
+        "Zudat": "ZUDAT"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23": "I23",
+        "RNAV Y Runway 23": "Y23",
+        "RNAV Z Runway 23": "Z23"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three": "23",
+        "visual runway two three": "23",
+        "visual two three": "23"
+      },
+      "ApproachFixes": {
+        "I23": {
+          "Akuyi": "AKUYI",
+          "Clump": "KLUMP",
+          "Corvu": "CORVU",
+          "GENESEO": "GEE",
+          "Trava": "TRAVA"
+        },
+        "Y23": {
+          "Berki": "BERKI",
+          "Bulge": "BULGE",
+          "ROCHESTER": "ROC",
+          "Topky": "TOPKE",
+          "Trava": "TRAVA",
+          "Waski": "WASKI"
+        },
+        "Z23": {
+          "Bills": "BIILS",
+          "Buffest": "BUFST",
+          "Bulls": "BUULS",
+          "Cozs": "COZZS",
+          "Effect": "EFFCT",
+          "Football": "FOTBL",
+          "Jabet": "JABET",
+          "Jedar": "JEDAR",
+          "Susky": "SUSKE",
+          "Trava": "TRAVA",
+          "Wings": "WNNGS",
+          "Zadum": "ZADUM",
+          "Zudat": "ZUDAT"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 23",
+      "Route": [
+        "BUF",
+        "KBUF"
+      ],
+      "Altitude": 6000,
+      "Heading": 50,
+      "Speed": 184,
+      "AssignedAltitude": 6000,
+      "AssignedHeading": 50,
+      "AssignedSpeed": 160,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "14",
+        "32"
+      ]
+    },
+    "Southwest three 78": {
+      "Callsign": "SWA378",
+      "AircraftType": "B737",
+      "Fixes": {
+        "Akuyi": "AKUYI",
+        "Berki": "BERKI",
+        "Bills": "BIILS",
+        "Buffalo Niagara": "KBUF",
+        "Buffest": "BUFST",
+        "Bulge": "BULGE",
+        "Bulls": "BUULS",
+        "Clump": "KLUMP",
+        "Corvu": "CORVU",
+        "Cozs": "COZZS",
+        "Effect": "EFFCT",
+        "Football": "FOTBL",
+        "GENESEO": "GEE",
+        "Jabet": "JABET",
+        "Jedar": "JEDAR",
+        "ROCHESTER": "ROC",
+        "Susky": "SUSKE",
+        "Topky": "TOPKE",
+        "Trava": "TRAVA",
+        "Waski": "WASKI",
+        "Wings": "WNNGS",
+        "Zadum": "ZADUM",
+        "Zudat": "ZUDAT"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23": "I23",
+        "RNAV Y Runway 23": "Y23",
+        "RNAV Z Runway 23": "Z23"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three": "23",
+        "visual runway two three": "23",
+        "visual two three": "23"
+      },
+      "ApproachFixes": {
+        "I23": {
+          "Akuyi": "AKUYI",
+          "Clump": "KLUMP",
+          "Corvu": "CORVU",
+          "GENESEO": "GEE",
+          "Trava": "TRAVA"
+        },
+        "Y23": {
+          "Berki": "BERKI",
+          "Bulge": "BULGE",
+          "ROCHESTER": "ROC",
+          "Topky": "TOPKE",
+          "Trava": "TRAVA",
+          "Waski": "WASKI"
+        },
+        "Z23": {
+          "Bills": "BIILS",
+          "Buffest": "BUFST",
+          "Bulls": "BUULS",
+          "Cozs": "COZZS",
+          "Effect": "EFFCT",
+          "Football": "FOTBL",
+          "Jabet": "JABET",
+          "Jedar": "JEDAR",
+          "Susky": "SUSKE",
+          "Trava": "TRAVA",
+          "Wings": "WNNGS",
+          "Zadum": "ZADUM",
+          "Zudat": "ZUDAT"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 23",
+      "Route": [
+        "KBUF"
+      ],
+      "Altitude": 11000,
+      "Heading": 65,
+      "Speed": 301,
+      "AssignedAltitude": 11000,
+      "AssignedHeading": 65,
+      "AssignedSpeed": 230,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "LAHSORunways": [
+        "14",
+        "32"
+      ]
+    },
+    "Southwest three 98": {
+      "Callsign": "SWA398",
+      "AircraftType": "B737",
+      "Fixes": {
+        "Buffalo Niagara": "KBUF",
+        "Clump": "KLUMP"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23": "I23",
+        "RNAV Y Runway 23": "Y23",
+        "RNAV Z Runway 23": "Z23"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three": "23",
+        "visual runway two three": "23",
+        "visual two three": "23"
+      },
+      "ApproachFixes": {
+        "I23": {
+          "Akuyi": "AKUYI",
+          "Clump": "KLUMP",
+          "Corvu": "CORVU",
+          "GENESEO": "GEE",
+          "Trava": "TRAVA"
+        },
+        "Y23": {
+          "Berki": "BERKI",
+          "Bulge": "BULGE",
+          "ROCHESTER": "ROC",
+          "Topky": "TOPKE",
+          "Trava": "TRAVA",
+          "Waski": "WASKI"
+        },
+        "Z23": {
+          "Bills": "BIILS",
+          "Buffest": "BUFST",
+          "Bulls": "BUULS",
+          "Cozs": "COZZS",
+          "Effect": "EFFCT",
+          "Football": "FOTBL",
+          "Jabet": "JABET",
+          "Jedar": "JEDAR",
+          "Susky": "SUSKE",
+          "Trava": "TRAVA",
+          "Wings": "WNNGS",
+          "Zadum": "ZADUM",
+          "Zudat": "ZUDAT"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 23",
+      "Route": [
+        "KLUMP",
+        "KBUF"
+      ],
+      "Altitude": 3855,
+      "Heading": 250,
+      "Speed": 203,
+      "AssignedAltitude": 4000,
+      "State": "cleared approach",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "LAHSORunways": [
+        "14",
+        "32"
+      ]
+    },
+    "embraer phenom three hundred two five three": {
+      "Callsign": "N60253/T",
+      "AircraftType": "E55P",
+      "Fixes": {
+        "Akuyi": "AKUYI",
+        "Berki": "BERKI",
+        "Bills": "BIILS",
+        "Buffalo Niagara": "KBUF",
+        "Buffest": "BUFST",
+        "Bulge": "BULGE",
+        "Bulls": "BUULS",
+        "Clump": "KLUMP",
+        "Corvu": "CORVU",
+        "Cozs": "COZZS",
+        "Effect": "EFFCT",
+        "Football": "FOTBL",
+        "GENESEO": "GEE",
+        "Jabet": "JABET",
+        "Jedar": "JEDAR",
+        "ROCHESTER": "ROC",
+        "Susky": "SUSKE",
+        "Topky": "TOPKE",
+        "Toronto Pearson": "CYYZ",
+        "Trava": "TRAVA",
+        "Waski": "WASKI",
+        "Wings": "WNNGS",
+        "Wozee": "WOZEE",
+        "Zadum": "ZADUM",
+        "Zudat": "ZUDAT"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23": "I23",
+        "RNAV Y Runway 23": "Y23",
+        "RNAV Z Runway 23": "Z23"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three": "23",
+        "visual runway two three": "23",
+        "visual two three": "23"
+      },
+      "ApproachFixes": {
+        "I23": {
+          "Akuyi": "AKUYI",
+          "Clump": "KLUMP",
+          "Corvu": "CORVU",
+          "GENESEO": "GEE",
+          "Trava": "TRAVA"
+        },
+        "Y23": {
+          "Berki": "BERKI",
+          "Bulge": "BULGE",
+          "ROCHESTER": "ROC",
+          "Topky": "TOPKE",
+          "Trava": "TRAVA",
+          "Waski": "WASKI"
+        },
+        "Z23": {
+          "Bills": "BIILS",
+          "Buffest": "BUFST",
+          "Bulls": "BUULS",
+          "Cozs": "COZZS",
+          "Effect": "EFFCT",
+          "Football": "FOTBL",
+          "Jabet": "JABET",
+          "Jedar": "JEDAR",
+          "Susky": "SUSKE",
+          "Trava": "TRAVA",
+          "Wings": "WNNGS",
+          "Zadum": "ZADUM",
+          "Zudat": "ZUDAT"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 23",
+      "Route": [
+        "WOZEE",
+        "KBUF"
+      ],
+      "Altitude": 4214,
+      "Heading": 90,
+      "Speed": 286,
+      "AssignedAltitude": 4000,
+      "AssignedHeading": 90,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "14",
+        "32"
+      ]
+    },
+    "november six zero two five three": {
+      "Callsign": "N60253",
+      "AircraftType": "E55P",
+      "Fixes": {
+        "Akuyi": "AKUYI",
+        "Berki": "BERKI",
+        "Bills": "BIILS",
+        "Buffalo Niagara": "KBUF",
+        "Buffest": "BUFST",
+        "Bulge": "BULGE",
+        "Bulls": "BUULS",
+        "Clump": "KLUMP",
+        "Corvu": "CORVU",
+        "Cozs": "COZZS",
+        "Effect": "EFFCT",
+        "Football": "FOTBL",
+        "GENESEO": "GEE",
+        "Jabet": "JABET",
+        "Jedar": "JEDAR",
+        "ROCHESTER": "ROC",
+        "Susky": "SUSKE",
+        "Topky": "TOPKE",
+        "Toronto Pearson": "CYYZ",
+        "Trava": "TRAVA",
+        "Waski": "WASKI",
+        "Wings": "WNNGS",
+        "Wozee": "WOZEE",
+        "Zadum": "ZADUM",
+        "Zudat": "ZUDAT"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23": "I23",
+        "RNAV Y Runway 23": "Y23",
+        "RNAV Z Runway 23": "Z23"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three": "23",
+        "visual runway two three": "23",
+        "visual two three": "23"
+      },
+      "ApproachFixes": {
+        "I23": {
+          "Akuyi": "AKUYI",
+          "Clump": "KLUMP",
+          "Corvu": "CORVU",
+          "GENESEO": "GEE",
+          "Trava": "TRAVA"
+        },
+        "Y23": {
+          "Berki": "BERKI",
+          "Bulge": "BULGE",
+          "ROCHESTER": "ROC",
+          "Topky": "TOPKE",
+          "Trava": "TRAVA",
+          "Waski": "WASKI"
+        },
+        "Z23": {
+          "Bills": "BIILS",
+          "Buffest": "BUFST",
+          "Bulls": "BUULS",
+          "Cozs": "COZZS",
+          "Effect": "EFFCT",
+          "Football": "FOTBL",
+          "Jabet": "JABET",
+          "Jedar": "JEDAR",
+          "Susky": "SUSKE",
+          "Trava": "TRAVA",
+          "Wings": "WNNGS",
+          "Zadum": "ZADUM",
+          "Zudat": "ZUDAT"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 23",
+      "Route": [
+        "WOZEE",
+        "KBUF"
+      ],
+      "Altitude": 4214,
+      "Heading": 90,
+      "Speed": 286,
+      "AssignedAltitude": 4000,
+      "AssignedHeading": 90,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "LAHSORunways": [
+        "14",
+        "32"
+      ]
+    },
+    "phenom three hundred two five three": {
+      "Callsign": "N60253/T",
+      "AircraftType": "E55P",
+      "Fixes": {
+        "Akuyi": "AKUYI",
+        "Berki": "BERKI",
+        "Bills": "BIILS",
+        "Buffalo Niagara": "KBUF",
+        "Buffest": "BUFST",
+        "Bulge": "BULGE",
+        "Bulls": "BUULS",
+        "Clump": "KLUMP",
+        "Corvu": "CORVU",
+        "Cozs": "COZZS",
+        "Effect": "EFFCT",
+        "Football": "FOTBL",
+        "GENESEO": "GEE",
+        "Jabet": "JABET",
+        "Jedar": "JEDAR",
+        "ROCHESTER": "ROC",
+        "Susky": "SUSKE",
+        "Topky": "TOPKE",
+        "Toronto Pearson": "CYYZ",
+        "Trava": "TRAVA",
+        "Waski": "WASKI",
+        "Wings": "WNNGS",
+        "Wozee": "WOZEE",
+        "Zadum": "ZADUM",
+        "Zudat": "ZUDAT"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23": "I23",
+        "RNAV Y Runway 23": "Y23",
+        "RNAV Z Runway 23": "Z23"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three": "23",
+        "visual runway two three": "23",
+        "visual two three": "23"
+      },
+      "ApproachFixes": {
+        "I23": {
+          "Akuyi": "AKUYI",
+          "Clump": "KLUMP",
+          "Corvu": "CORVU",
+          "GENESEO": "GEE",
+          "Trava": "TRAVA"
+        },
+        "Y23": {
+          "Berki": "BERKI",
+          "Bulge": "BULGE",
+          "ROCHESTER": "ROC",
+          "Topky": "TOPKE",
+          "Trava": "TRAVA",
+          "Waski": "WASKI"
+        },
+        "Z23": {
+          "Bills": "BIILS",
+          "Buffest": "BUFST",
+          "Bulls": "BUULS",
+          "Cozs": "COZZS",
+          "Effect": "EFFCT",
+          "Football": "FOTBL",
+          "Jabet": "JABET",
+          "Jedar": "JEDAR",
+          "Susky": "SUSKE",
+          "Trava": "TRAVA",
+          "Wings": "WNNGS",
+          "Zadum": "ZADUM",
+          "Zudat": "ZUDAT"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 23",
+      "Route": [
+        "WOZEE",
+        "KBUF"
+      ],
+      "Altitude": 4214,
+      "Heading": 90,
+      "Speed": 286,
+      "AssignedAltitude": 4000,
+      "AssignedHeading": 90,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "14",
+        "32"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Brickyard 69 42 maintain visual separation follow the traffic cleared visual approach runway two three\"",
+    "[local-stt] normalized words: [brickyard 69 42 maintain visual separation follow the traffic cleared visual approach runway 2 3]",
+    "[local-stt] tokens: 14",
+    "[local-stt]   token[0]: Text=\"brickyard\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"69\" Type=1 Value=69",
+    "[local-stt]   token[2]: Text=\"42\" Type=1 Value=42",
+    "[local-stt]   token[3]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"visual\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"separation\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"follow\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"the\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"traffic\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"visual\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[13]: Text=\"23\" Type=1 Value=23",
+    "[local-stt] MatchCallsign: 14 tokens, 15 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 14 tokens, 15 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Brickyard 69 42\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Brickyard 69 42\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"Brickyard 69 42\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Brickyard 69 42\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 15 results",
+    "[local-stt]     result 0: \"Endeavor 80 29\" (airline=0.491, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Brickyard 61 76\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Endeavor 55 45\" (airline=0.491, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Brickyard 69 42\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"ExecJet 41 90\" (airline=0.418, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Brickyard 61 76\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"Brickyard 69 42\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Brickyard 69 42\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"Brickyard 69 42\" (airline=0.500, flight=0.700, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Brickyard 69 42\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"RPA6942\" (spokenKey=\"Brickyard 69 42\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"RPA6942\" SpokenKey=\"Brickyard 69 42\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=4000 Fixes=23 Approaches=3 VisualApproaches=3 AssignedApproach=\"Visual Approach Runway 23\" LAHSORunways=[14 32]",
+    "[local-stt]   fix: \"Trava\" -\u003e \"TRAVA\"",
+    "[local-stt]   fix: \"Bulge\" -\u003e \"BULGE\"",
+    "[local-stt]   fix: \"Football\" -\u003e \"FOTBL\"",
+    "[local-stt]   fix: \"Bulls\" -\u003e \"BUULS\"",
+    "[local-stt]   fix: \"Wings\" -\u003e \"WNNGS\"",
+    "[local-stt]   fix: \"Corvu\" -\u003e \"CORVU\"",
+    "[local-stt]   fix: \"Waski\" -\u003e \"WASKI\"",
+    "[local-stt]   fix: \"Berki\" -\u003e \"BERKI\"",
+    "[local-stt]   fix: \"ROCHESTER\" -\u003e \"ROC\"",
+    "[local-stt]   fix: \"Topky\" -\u003e \"TOPKE\"",
+    "[local-stt]   fix: \"Jabet\" -\u003e \"JABET\"",
+    "[local-stt]   fix: \"Jedar\" -\u003e \"JEDAR\"",
+    "[local-stt]   fix: \"Susky\" -\u003e \"SUSKE\"",
+    "[local-stt]   fix: \"Zadum\" -\u003e \"ZADUM\"",
+    "[local-stt]   fix: \"Buffalo Niagara\" -\u003e \"KBUF\"",
+    "[local-stt]   fix: \"Akuyi\" -\u003e \"AKUYI\"",
+    "[local-stt]   fix: \"Clump\" -\u003e \"KLUMP\"",
+    "[local-stt]   fix: \"Cozs\" -\u003e \"COZZS\"",
+    "[local-stt]   fix: \"Effect\" -\u003e \"EFFCT\"",
+    "[local-stt]   fix: \"Zudat\" -\u003e \"ZUDAT\"",
+    "[local-stt]   fix: \"Bills\" -\u003e \"BIILS\"",
+    "[local-stt]   fix: \"Buffest\" -\u003e \"BUFST\"",
+    "[local-stt]   fix: \"GENESEO\" -\u003e \"GEE\"",
+    "[local-stt]   approach: \"RNAV Y Runway 23\" -\u003e \"Y23\"",
+    "[local-stt]   approach: \"ILS Runway 23\" -\u003e \"I23\"",
+    "[local-stt]   approach: \"RNAV Z Runway 23\" -\u003e \"Z23\"",
+    "[local-stt]   visual approach: \"visual runway two three\" -\u003e \"23\"",
+    "[local-stt]   visual approach: \"visual approach runway two three\" -\u003e \"23\"",
+    "[local-stt]   visual approach: \"visual two three\" -\u003e \"23\"",
+    "[local-stt] command tokens after disregard: 11",
+    "[local-stt]   token[0]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"visual\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"separation\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"follow\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"the\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"traffic\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"visual\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"23\" Type=1 Value=23",
+    "[local-stt] ParseCommands: 11 tokens",
+    "[local-stt]   matched command: \"VISSEP\" [visual_separation] (pos=0, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[0]=\"maintain\", skipping",
+    "[local-stt]   no match at token[3]=\"follow\", skipping",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   no match at token[1]=\"visual\", skipping",
+    "[local-stt]   skipping filler word: \"the\"",
+    "[local-stt]   no match at token[2]=\"separation\", skipping",
+    "[local-stt]   no match at token[5]=\"traffic\", skipping",
+    "[local-stt]   no match at token[3]=\"follow\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"visual\" against 23 fixes",
+    "[local-stt]   extractFix: no match found for \"visual\"",
+    "[local-stt]   matchVisualApproach: runway=\"two three\" -\u003e \"23\" (consumed=4)",
+    "[local-stt]   matchVisualApproach: runway=\"two three\" -\u003e \"23\" (consumed=4)",
+    "[local-stt]   matchVisualApproach: runway=\"two three\" -\u003e \"23\" (consumed=4)",
+    "[local-stt]   matchVisualApproach: runway=\"two three\" -\u003e \"23\" (consumed=4)",
+    "[local-stt]   extractApproach: runway match with type disambiguation \"two three\" -\u003e \"I23\" (score=0.61)",
+    "[local-stt]   matched command: \"CVA23\" [cleared_visual] (pos=6, conf=1.00, consumed=5, isThen=false)",
+    "[local-stt]   no match at token[6]=\"cleared\", skipping",
+    "[local-stt]   skipping filler word: \"the\"",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   no match at token[7]=\"visual\", skipping",
+    "[local-stt]   no match at token[5]=\"traffic\", skipping",
+    "[local-stt]   no match at token[8]=\"approach\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"visual\" against 23 fixes",
+    "[local-stt]   extractFix: no match found for \"visual\"",
+    "[local-stt]   matchVisualApproach: runway=\"two three\" -\u003e \"23\" (consumed=4)",
+    "[local-stt]   matchVisualApproach: runway=\"two three\" -\u003e \"23\" (consumed=4)",
+    "[local-stt]   matchVisualApproach: runway=\"two three\" -\u003e \"23\" (consumed=4)",
+    "[local-stt]   matchVisualApproach: runway=\"two three\" -\u003e \"23\" (consumed=4)",
+    "[local-stt]   extractApproach: runway match with type disambiguation \"two three\" -\u003e \"I23\" (score=0.61)",
+    "[local-stt]   matched command: \"CVA23\" [cleared_visual] (pos=6, conf=1.00, consumed=5, isThen=false)",
+    "[local-stt]   no match at token[6]=\"cleared\", skipping",
+    "[local-stt]   no match at token[9]=\"runway\", skipping",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   no match at token[7]=\"visual\", skipping",
+    "[local-stt]   no match at token[10]=\"23\", skipping",
+    "[local-stt]   no match at token[8]=\"approach\", skipping",
+    "[local-stt]   no match at token[9]=\"runway\", skipping",
+    "[local-stt]   no match at token[10]=\"23\", skipping",
+    "[local-stt]   beam final[0]: score=4.783 pos=11 commands=[VISSEP CVA23]",
+    "[local-stt]   beam final[1]: score=0.687 pos=11 commands=[CVA23]",
+    "[local-stt]   beam final[2]: score=-0.509 pos=11 commands=[VISSEP]",
+    "[local-stt]   beam final[3]: score=-4.605 pos=11 commands=[]",
+    "[local-stt] ParseCommands: result=[VISSEP CVA23] (avgConf=1.00)",
+    "[local-stt] parsed commands: [VISSEP CVA23] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [VISSEP CVA23] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"RPA6942 VISSEP CVA23\" (conf=1.00, time=12.2742ms) ==="
+  ]
+}

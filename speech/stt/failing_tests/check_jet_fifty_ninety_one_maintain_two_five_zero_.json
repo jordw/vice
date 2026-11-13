@@ -1,0 +1,217 @@
+{
+  "time": "2026-11-13T04:20:35.020765318Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Check jet fifty ninety one maintain two five zero nine",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, india, information, Mereck, Wendo, Vulcan, Nochim, Moki, wed-eb, Kylee, Eridge, Mopve, Hesga, Isojo, Java, Crimson, two four, runway, zulu, yankee, r-nav, I L S, ExecJet 59 81, American 66, Lowga, Hukev, Spat, VULCAN, Wands, Lymph, Birmingham-Shuttlesworth International Airport",
+  "whisper_duration_ms": 392.596,
+  "audio_duration_ms": 2504,
+  "processor": "GPU: NVIDIA GeForce RTX 4070 (12010MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "EJA5981",
+  "command": "S250",
+  "reason": "knots heard as nine must not make an altitude",
+  "stt_aircraft": {
+    "American 66": {
+      "Callsign": "AAL66",
+      "LastAddressed": true,
+      "AircraftType": "A320",
+      "Fixes": {
+        "Birmingham-Shuttlesworth": "KBHM",
+        "Hukev": "HUKEV",
+        "Lowga": "LOWGA",
+        "Lymph": "LYMPH",
+        "Spat": "SPATT",
+        "VULCAN": "VUZ"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 24": "I24",
+        "RNAV Y Runway 24": "Y24",
+        "RNAV Z Runway 24": "Z24"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two four": "24",
+        "visual runway two four": "24",
+        "visual two four": "24"
+      },
+      "ApproachFixes": {
+        "I24": {
+          "Hukev": "HUKEV",
+          "Lowga": "LOWGA",
+          "Spat": "SPATT",
+          "VULCAN": "VUZ"
+        },
+        "Y24": {
+          "Cuxob": "CUXOB",
+          "Hukev": "HUKEV",
+          "Lowga": "LOWGA",
+          "Spat": "SPATT",
+          "VULCAN": "VUZ"
+        },
+        "Z24": {
+          "Crimson": "CRMSN",
+          "Eridge": "ERIGE",
+          "Hesga": "HESGA",
+          "Hukev": "HUKEV",
+          "Isojo": "ISOJO",
+          "Java": "JAVJA",
+          "Kylee": "KYLEE",
+          "Lowga": "LOWGA",
+          "Mereck": "MREKK",
+          "Moki": "MOKEE",
+          "Mopve": "MOPVE",
+          "Nochim": "NOCIM",
+          "Spat": "SPATT",
+          "Vulcan": "VLKNN",
+          "Wendo": "WENDO",
+          "wed-eb": "WEDEB"
+        }
+      },
+      "AssignedApproach": "ILS Runway 24",
+      "Route": [
+        "LYMPH",
+        "KBHM"
+      ],
+      "Altitude": 10887,
+      "Heading": 63,
+      "Speed": 336,
+      "AssignedHeading": 65,
+      "State": "arrival",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N",
+      "LAHSORunways": [
+        "18",
+        "36"
+      ]
+    },
+    "ExecJet 59 81": {
+      "Callsign": "EJA5981",
+      "AircraftType": "C750",
+      "Fixes": {
+        "Birmingham-Shuttlesworth": "KBHM",
+        "Wands": "WANDS"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 24": "I24",
+        "RNAV Y Runway 24": "Y24",
+        "RNAV Z Runway 24": "Z24"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two four": "24",
+        "visual runway two four": "24",
+        "visual two four": "24"
+      },
+      "ApproachFixes": {
+        "I24": {
+          "Hukev": "HUKEV",
+          "Lowga": "LOWGA",
+          "Spat": "SPATT",
+          "VULCAN": "VUZ"
+        },
+        "Y24": {
+          "Cuxob": "CUXOB",
+          "Hukev": "HUKEV",
+          "Lowga": "LOWGA",
+          "Spat": "SPATT",
+          "VULCAN": "VUZ"
+        },
+        "Z24": {
+          "Crimson": "CRMSN",
+          "Eridge": "ERIGE",
+          "Hesga": "HESGA",
+          "Hukev": "HUKEV",
+          "Isojo": "ISOJO",
+          "Java": "JAVJA",
+          "Kylee": "KYLEE",
+          "Lowga": "LOWGA",
+          "Mereck": "MREKK",
+          "Moki": "MOKEE",
+          "Mopve": "MOPVE",
+          "Nochim": "NOCIM",
+          "Spat": "SPATT",
+          "Vulcan": "VLKNN",
+          "Wendo": "WENDO",
+          "wed-eb": "WEDEB"
+        }
+      },
+      "Route": [
+        "WANDS",
+        "KBHM"
+      ],
+      "Altitude": 8846,
+      "Heading": 360,
+      "Speed": 295,
+      "AssignedAltitude": 3000,
+      "AssignedHeading": 360,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "18",
+        "36"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Check jet fifty ninety one maintain two five zero nine\"",
+    "[local-stt] normalized words: [check jet 50 91 maintain 2 5 0 9]",
+    "[local-stt] tokens: 6",
+    "[local-stt]   token[0]: Text=\"check\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"jet\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"50\" Type=1 Value=50",
+    "[local-stt]   token[3]: Text=\"91\" Type=1 Value=91",
+    "[local-stt]   token[4]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"2509\" Type=1 Value=2509",
+    "[local-stt] MatchCallsign: 6 tokens, 2 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 6 tokens, 2 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"ExecJet 59 81\" (airline=0.562, flight=0.850, skip=0)",
+    "[local-stt]     result 1: \"ExecJet 59 81\" (airline=0.492, flight=0.850, skip=1)",
+    "[local-stt]     pattern \"airline_flight\": selected \"ExecJet 59 81\" (airline=0.56, flight=0.85, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 4 results",
+    "[local-stt]     result 0: \"ExecJet 59 81\" (airline=0.562, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"American 66\" (airline=0.550, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"American 66\" (airline=0.486, flight=0.000, skip=1)",
+    "[local-stt]     result 3: \"ExecJet 59 81\" (airline=0.492, flight=0.000, skip=1)",
+    "[local-stt]     pattern \"airline_only\": selected \"ExecJet 59 81\" (airline=0.56, flight=0.00, skip=0)",
+    "[local-stt]     pattern \"airline_only\": scoring rejected \"ExecJet 59 81\"",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"ExecJet 59 81\" (airline=0.500, flight=0.850, skip=1)",
+    "[local-stt]     result 1: \"ExecJet 59 81\" (airline=0.500, flight=0.850, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"ExecJet 59 81\" (airline=0.50, flight=0.85, skip=1)",
+    "[local-stt]   best callsign candidate: \"EJA5981\" (conf=0.88, consumed=4, addressingForm=0, spokenKey=\"ExecJet 59 81\"; 1 candidates)",
+    "[local-stt] callsign match: Callsign=\"EJA5981\" SpokenKey=\"ExecJet 59 81\" Conf=0.88 Consumed=4",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=8846 Fixes=2 Approaches=3 VisualApproaches=3 AssignedApproach=\"\" LAHSORunways=[18 36]",
+    "[local-stt]   fix: \"Birmingham-Shuttlesworth\" -\u003e \"KBHM\"",
+    "[local-stt]   fix: \"Wands\" -\u003e \"WANDS\"",
+    "[local-stt]   approach: \"ILS Runway 24\" -\u003e \"I24\"",
+    "[local-stt]   approach: \"RNAV Y Runway 24\" -\u003e \"Y24\"",
+    "[local-stt]   approach: \"RNAV Z Runway 24\" -\u003e \"Z24\"",
+    "[local-stt]   visual approach: \"visual runway two four\" -\u003e \"24\"",
+    "[local-stt]   visual approach: \"visual approach runway two four\" -\u003e \"24\"",
+    "[local-stt]   visual approach: \"visual two four\" -\u003e \"24\"",
+    "[local-stt] command tokens after disregard: 2",
+    "[local-stt]   token[0]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"2509\" Type=1 Value=2509",
+    "[local-stt] ParseCommands: 2 tokens",
+    "[local-stt]   matched command: \"S250\" [maintain_speed] (pos=0, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"maintain\", skipping",
+    "[local-stt]   no match at token[1]=\"2509\", skipping",
+    "[local-stt]   beam final[0]: score=1.196 pos=2 commands=[S250]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=2 commands=[]",
+    "[local-stt] ParseCommands: result=[S250] (avgConf=1.00)",
+    "[local-stt] parsed commands: [S250] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [S250] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"EJA5981 S250\" (conf=0.88, time=541.2µs) ==="
+  ]
+}

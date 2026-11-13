@@ -1,0 +1,545 @@
+{
+  "time": "2026-11-07T04:14:37.768916095Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "American Six Seventy Three released to one ninety",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, hotel, information, Utes three, Carter two, drape, Zepog, peddle, Helmet, Hacker, Algie, Plague, Pefno, Hepso, three five, three four right, three four left, runway, zulu, yankee, r-nav, L D A, I L S, Avelo two zero four, Fedex 47 58 heavy, Delta 41 15, American six 73, Quinn, Jazz, flag, Dunlp, Camry, Puter, Syrup, FAIRFIELD, Salt Lake City International Airport",
+  "whisper_duration_ms": 94.752,
+  "audio_duration_ms": 2504,
+  "processor": "GPU: NVIDIA GeForce RTX 5070 Ti (15995MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "AAL673",
+  "command": "S190",
+  "reason": "\"released to\" is reduce speed to; the repeat confirms",
+  "stt_aircraft": {
+    "American six 73": {
+      "Callsign": "AAL673",
+      "LastAddressed": true,
+      "AircraftType": "B738",
+      "Fixes": {
+        "Camry": "CAMRI",
+        "Dunlp": "DUNLP",
+        "FAIRFIELD": "FFU",
+        "Jazz": "JAZZZ",
+        "Puter": "PUTER",
+        "Quinn": "QWENN",
+        "Salt Lake City": "KSLC",
+        "flag": "FLLAG"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 34L": "I4L",
+        "ILS Runway 34R": "I4R",
+        "LDA Runway 35": "X35",
+        "RNAV Runway 35": "R35",
+        "RNAV Y Runway 34R": "R4R",
+        "RNAV Z Runway 34L": "R4L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway three four left": "34L",
+        "visual approach runway three four right": "34R",
+        "visual runway three five": "35",
+        "visual runway three four left": "34L",
+        "visual runway three four right": "34R",
+        "visual three five": "35",
+        "visual three four left": "34L",
+        "visual three four right": "34R"
+      },
+      "ApproachFixes": {
+        "I4L": {
+          "Camry": "CAMRI",
+          "Dunlp": "DUNLP",
+          "FAIRFIELD": "FFU",
+          "Jazz": "JAZZZ",
+          "Puter": "PUTER",
+          "Quinn": "QWENN",
+          "flag": "FLLAG"
+        },
+        "I4R": {
+          "Algie": "ALGIE",
+          "Chevelle": "CHEVL",
+          "FAIRFIELD": "FFU",
+          "Hacker": "HAKKR",
+          "Jazz": "JAZZZ",
+          "Plague": "PLAGE",
+          "Quinn": "QWENN"
+        },
+        "R35": {
+          "FAIRFIELD": "FFU",
+          "Helmet": "HLMET",
+          "Jazz": "JAZZZ",
+          "Kern": "KERNN",
+          "Quinn": "QWENN",
+          "Wheel": "WEEEL",
+          "Zepog": "ZEPOG",
+          "peddle": "PEDLE"
+        },
+        "R4L": {
+          "Camry": "CAMRI",
+          "Dunlp": "DUNLP",
+          "Hepso": "HEPSO",
+          "Jazz": "JAZZZ",
+          "Pefno": "PEFNO",
+          "Puter": "PUTER",
+          "Quinn": "QWENN",
+          "Syrup": "SURYP",
+          "flag": "FLLAG"
+        },
+        "R4R": {
+          "Algie": "ALGIE",
+          "Chevelle": "CHEVL",
+          "FAIRFIELD": "FFU",
+          "Hacker": "HAKKR",
+          "Iruyu": "IRUYU",
+          "Jazz": "JAZZZ",
+          "Plague": "PLAGE",
+          "Quinn": "QWENN"
+        },
+        "X35": {
+          "FAIRFIELD": "FFU",
+          "Helmet": "HLMET",
+          "Jazz": "JAZZZ",
+          "Kern": "KERNN",
+          "Quinn": "QWENN",
+          "Wheel": "WEEEL",
+          "Zepog": "ZEPOG",
+          "drape": "DRAPE",
+          "peddle": "PEDLE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 34L",
+      "STAR": "CARTR2",
+      "Route": [
+        "KSLC"
+      ],
+      "Altitude": 9000,
+      "Heading": 164,
+      "Speed": 236,
+      "AssignedHeading": 164,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "Avelo two zero four": {
+      "Callsign": "VXP204",
+      "AircraftType": "B737",
+      "Fixes": {
+        "Camry": "CAMRI",
+        "Dunlp": "DUNLP",
+        "FAIRFIELD": "FFU",
+        "Jazz": "JAZZZ",
+        "Puter": "PUTER",
+        "Quinn": "QWENN",
+        "Salt Lake City": "KSLC",
+        "flag": "FLLAG"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 34L": "I4L",
+        "ILS Runway 34R": "I4R",
+        "LDA Runway 35": "X35",
+        "RNAV Runway 35": "R35",
+        "RNAV Y Runway 34R": "R4R",
+        "RNAV Z Runway 34L": "R4L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway three four left": "34L",
+        "visual approach runway three four right": "34R",
+        "visual runway three five": "35",
+        "visual runway three four left": "34L",
+        "visual runway three four right": "34R",
+        "visual three five": "35",
+        "visual three four left": "34L",
+        "visual three four right": "34R"
+      },
+      "ApproachFixes": {
+        "I4L": {
+          "Camry": "CAMRI",
+          "Dunlp": "DUNLP",
+          "FAIRFIELD": "FFU",
+          "Jazz": "JAZZZ",
+          "Puter": "PUTER",
+          "Quinn": "QWENN",
+          "flag": "FLLAG"
+        },
+        "I4R": {
+          "Algie": "ALGIE",
+          "Chevelle": "CHEVL",
+          "FAIRFIELD": "FFU",
+          "Hacker": "HAKKR",
+          "Jazz": "JAZZZ",
+          "Plague": "PLAGE",
+          "Quinn": "QWENN"
+        },
+        "R35": {
+          "FAIRFIELD": "FFU",
+          "Helmet": "HLMET",
+          "Jazz": "JAZZZ",
+          "Kern": "KERNN",
+          "Quinn": "QWENN",
+          "Wheel": "WEEEL",
+          "Zepog": "ZEPOG",
+          "peddle": "PEDLE"
+        },
+        "R4L": {
+          "Camry": "CAMRI",
+          "Dunlp": "DUNLP",
+          "Hepso": "HEPSO",
+          "Jazz": "JAZZZ",
+          "Pefno": "PEFNO",
+          "Puter": "PUTER",
+          "Quinn": "QWENN",
+          "Syrup": "SURYP",
+          "flag": "FLLAG"
+        },
+        "R4R": {
+          "Algie": "ALGIE",
+          "Chevelle": "CHEVL",
+          "FAIRFIELD": "FFU",
+          "Hacker": "HAKKR",
+          "Iruyu": "IRUYU",
+          "Jazz": "JAZZZ",
+          "Plague": "PLAGE",
+          "Quinn": "QWENN"
+        },
+        "X35": {
+          "FAIRFIELD": "FFU",
+          "Helmet": "HLMET",
+          "Jazz": "JAZZZ",
+          "Kern": "KERNN",
+          "Quinn": "QWENN",
+          "Wheel": "WEEEL",
+          "Zepog": "ZEPOG",
+          "drape": "DRAPE",
+          "peddle": "PEDLE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 34L",
+      "STAR": "YUTES3",
+      "Route": [
+        "KSLC"
+      ],
+      "Altitude": 12000,
+      "Heading": 164,
+      "Speed": 237,
+      "AssignedAltitude": 12000,
+      "AssignedHeading": 164,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "Delta 41 15": {
+      "Callsign": "DAL4115",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Camry": "CAMRI",
+        "Dunlp": "DUNLP",
+        "FAIRFIELD": "FFU",
+        "Jazz": "JAZZZ",
+        "Puter": "PUTER",
+        "Quinn": "QWENN",
+        "Salt Lake City": "KSLC",
+        "Syrup": "SURYP",
+        "flag": "FLLAG"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 34L": "I4L",
+        "ILS Runway 34R": "I4R",
+        "LDA Runway 35": "X35",
+        "RNAV Runway 35": "R35",
+        "RNAV Y Runway 34R": "R4R",
+        "RNAV Z Runway 34L": "R4L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway three four left": "34L",
+        "visual approach runway three four right": "34R",
+        "visual runway three five": "35",
+        "visual runway three four left": "34L",
+        "visual runway three four right": "34R",
+        "visual three five": "35",
+        "visual three four left": "34L",
+        "visual three four right": "34R"
+      },
+      "ApproachFixes": {
+        "I4L": {
+          "Camry": "CAMRI",
+          "Dunlp": "DUNLP",
+          "FAIRFIELD": "FFU",
+          "Jazz": "JAZZZ",
+          "Puter": "PUTER",
+          "Quinn": "QWENN",
+          "flag": "FLLAG"
+        },
+        "I4R": {
+          "Algie": "ALGIE",
+          "Chevelle": "CHEVL",
+          "FAIRFIELD": "FFU",
+          "Hacker": "HAKKR",
+          "Jazz": "JAZZZ",
+          "Plague": "PLAGE",
+          "Quinn": "QWENN"
+        },
+        "R35": {
+          "FAIRFIELD": "FFU",
+          "Helmet": "HLMET",
+          "Jazz": "JAZZZ",
+          "Kern": "KERNN",
+          "Quinn": "QWENN",
+          "Wheel": "WEEEL",
+          "Zepog": "ZEPOG",
+          "peddle": "PEDLE"
+        },
+        "R4L": {
+          "Camry": "CAMRI",
+          "Dunlp": "DUNLP",
+          "Hepso": "HEPSO",
+          "Jazz": "JAZZZ",
+          "Pefno": "PEFNO",
+          "Puter": "PUTER",
+          "Quinn": "QWENN",
+          "Syrup": "SURYP",
+          "flag": "FLLAG"
+        },
+        "R4R": {
+          "Algie": "ALGIE",
+          "Chevelle": "CHEVL",
+          "FAIRFIELD": "FFU",
+          "Hacker": "HAKKR",
+          "Iruyu": "IRUYU",
+          "Jazz": "JAZZZ",
+          "Plague": "PLAGE",
+          "Quinn": "QWENN"
+        },
+        "X35": {
+          "FAIRFIELD": "FFU",
+          "Helmet": "HLMET",
+          "Jazz": "JAZZZ",
+          "Kern": "KERNN",
+          "Quinn": "QWENN",
+          "Wheel": "WEEEL",
+          "Zepog": "ZEPOG",
+          "drape": "DRAPE",
+          "peddle": "PEDLE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 34L",
+      "STAR": "CARTR2",
+      "Route": [
+        "SURYP",
+        "KSLC"
+      ],
+      "Altitude": 11000,
+      "Heading": 168,
+      "Speed": 235,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "Fedex 47 58 heavy": {
+      "Callsign": "FDX4758",
+      "AircraftType": "B77L",
+      "Fixes": {
+        "Salt Lake City": "KSLC"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 34L": "I4L",
+        "ILS Runway 34R": "I4R",
+        "LDA Runway 35": "X35",
+        "RNAV Runway 35": "R35",
+        "RNAV Y Runway 34R": "R4R",
+        "RNAV Z Runway 34L": "R4L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway three four left": "34L",
+        "visual approach runway three four right": "34R",
+        "visual runway three five": "35",
+        "visual runway three four left": "34L",
+        "visual runway three four right": "34R",
+        "visual three five": "35",
+        "visual three four left": "34L",
+        "visual three four right": "34R"
+      },
+      "ApproachFixes": {
+        "I4L": {
+          "Camry": "CAMRI",
+          "Dunlp": "DUNLP",
+          "FAIRFIELD": "FFU",
+          "Jazz": "JAZZZ",
+          "Puter": "PUTER",
+          "Quinn": "QWENN",
+          "flag": "FLLAG"
+        },
+        "I4R": {
+          "Algie": "ALGIE",
+          "Chevelle": "CHEVL",
+          "FAIRFIELD": "FFU",
+          "Hacker": "HAKKR",
+          "Jazz": "JAZZZ",
+          "Plague": "PLAGE",
+          "Quinn": "QWENN"
+        },
+        "R35": {
+          "FAIRFIELD": "FFU",
+          "Helmet": "HLMET",
+          "Jazz": "JAZZZ",
+          "Kern": "KERNN",
+          "Quinn": "QWENN",
+          "Wheel": "WEEEL",
+          "Zepog": "ZEPOG",
+          "peddle": "PEDLE"
+        },
+        "R4L": {
+          "Camry": "CAMRI",
+          "Dunlp": "DUNLP",
+          "Hepso": "HEPSO",
+          "Jazz": "JAZZZ",
+          "Pefno": "PEFNO",
+          "Puter": "PUTER",
+          "Quinn": "QWENN",
+          "Syrup": "SURYP",
+          "flag": "FLLAG"
+        },
+        "R4R": {
+          "Algie": "ALGIE",
+          "Chevelle": "CHEVL",
+          "FAIRFIELD": "FFU",
+          "Hacker": "HAKKR",
+          "Iruyu": "IRUYU",
+          "Jazz": "JAZZZ",
+          "Plague": "PLAGE",
+          "Quinn": "QWENN"
+        },
+        "X35": {
+          "FAIRFIELD": "FFU",
+          "Helmet": "HLMET",
+          "Jazz": "JAZZZ",
+          "Kern": "KERNN",
+          "Quinn": "QWENN",
+          "Wheel": "WEEEL",
+          "Zepog": "ZEPOG",
+          "drape": "DRAPE",
+          "peddle": "PEDLE"
+        }
+      },
+      "STAR": "YUTES3",
+      "Route": [
+        "KSLC"
+      ],
+      "Altitude": 9000,
+      "Heading": 164,
+      "Speed": 236,
+      "AssignedAltitude": 12000,
+      "AssignedHeading": 164,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"American Six Seventy Three released to one ninety\"",
+    "[local-stt] normalized words: [american 6 73 released to 1 90]",
+    "[local-stt] tokens: 5",
+    "[local-stt]   token[0]: Text=\"american\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"673\" Type=1 Value=673",
+    "[local-stt]   token[2]: Text=\"released\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"to\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"190\" Type=1 Value=190",
+    "[local-stt] MatchCallsign: 5 tokens, 4 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 5 tokens, 4 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"American six 73\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"American six 73\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"American six 73\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"American six 73\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 8 results",
+    "[local-stt]     result 0: \"Delta 41 15\" (airline=0.550, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Fedex 47 58 heavy\" (airline=0.442, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"American six 73\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Avelo two zero four\" (airline=0.595, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Delta 41 15\" (airline=0.658, flight=0.000, skip=2)",
+    "[local-stt]     pattern \"airline_only\": selected \"American six 73\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"American six 73\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"American six 73\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"American six 73\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"AAL673\" (spokenKey=\"American six 73\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"AAL673\" SpokenKey=\"American six 73\" Conf=1.00 Consumed=2",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=9000 Fixes=8 Approaches=6 VisualApproaches=9 AssignedApproach=\"ILS Runway 34L\" LAHSORunways=[14 32 14 32]",
+    "[local-stt]   fix: \"Puter\" -\u003e \"PUTER\"",
+    "[local-stt]   fix: \"Camry\" -\u003e \"CAMRI\"",
+    "[local-stt]   fix: \"Dunlp\" -\u003e \"DUNLP\"",
+    "[local-stt]   fix: \"flag\" -\u003e \"FLLAG\"",
+    "[local-stt]   fix: \"Jazz\" -\u003e \"JAZZZ\"",
+    "[local-stt]   fix: \"Quinn\" -\u003e \"QWENN\"",
+    "[local-stt]   fix: \"Salt Lake City\" -\u003e \"KSLC\"",
+    "[local-stt]   fix: \"FAIRFIELD\" -\u003e \"FFU\"",
+    "[local-stt]   approach: \"RNAV Y Runway 34R\" -\u003e \"R4R\"",
+    "[local-stt]   approach: \"LDA Runway 35\" -\u003e \"X35\"",
+    "[local-stt]   approach: \"RNAV Runway 35\" -\u003e \"R35\"",
+    "[local-stt]   approach: \"RNAV Z Runway 34L\" -\u003e \"R4L\"",
+    "[local-stt]   approach: \"ILS Runway 34L\" -\u003e \"I4L\"",
+    "[local-stt]   approach: \"ILS Runway 34R\" -\u003e \"I4R\"",
+    "[local-stt]   visual approach: \"visual approach runway three five\" -\u003e \"35\"",
+    "[local-stt]   visual approach: \"visual three five\" -\u003e \"35\"",
+    "[local-stt]   visual approach: \"visual runway three four left\" -\u003e \"34L\"",
+    "[local-stt]   visual approach: \"visual approach runway three four left\" -\u003e \"34L\"",
+    "[local-stt]   visual approach: \"visual three four left\" -\u003e \"34L\"",
+    "[local-stt]   visual approach: \"visual approach runway three four right\" -\u003e \"34R\"",
+    "[local-stt]   visual approach: \"visual runway three five\" -\u003e \"35\"",
+    "[local-stt]   visual approach: \"visual runway three four right\" -\u003e \"34R\"",
+    "[local-stt]   visual approach: \"visual three four right\" -\u003e \"34R\"",
+    "[local-stt] command tokens after disregard: 3",
+    "[local-stt]   token[0]: Text=\"released\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"to\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"190\" Type=1 Value=190",
+    "[local-stt] ParseCommands: 3 tokens",
+    "[local-stt]   no match at token[0]=\"released\", skipping",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   no match at token[2]=\"190\", skipping",
+    "[local-stt]   beam final[0]: score=0.000 pos=3 commands=[]",
+    "[local-stt] ParseCommands: no commands found",
+    "[local-stt] parsed commands: [] (conf=0.00, kinds=0)",
+    "[local-stt] validated commands: [] (conf=0.00)",
+    "[local-stt] === DecodeTranscript END: \"AAL673 AGAIN\" (conf=1.00, time=508.6µs) ==="
+  ]
+}

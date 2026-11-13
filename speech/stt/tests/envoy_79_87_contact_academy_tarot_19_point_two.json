@@ -1,0 +1,1020 @@
+{
+  "time": "2026-11-01T15:56:23.492235147Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1072:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Envoy 79 87 contact academy tarot 19 point two",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, bravo, information, 28R.SW.P, 28R.SW.J, 28R.NE.P, Ricky, Little, Chapp, two eight left, three zero, two eight right, two seven, runway, r-nav, I L S, citation niner hotel lima, november niner three niner hotel lima, E-R-J one thirty-five six five five, Embraer E-R-J one thirty-five six five five, november eight four six five five, piper seneca niner brahvo november, seneca niner brahvo november, november seven niner brahvo november, skymaster four alpha hotel, cessna skymaster four alpha hotel, november five seven four alpha hotel, turbo skylane R-G three zulu brahvo, cessna T one eighty-two R-G three zulu brahvo, november four seven three zulu brahvo, mustang two seven november, citation mustang two seven november, november four two two seven november, B E thirty-six seven one yankee, bonanza seven one yankee, november two four seven one yankee, november one one eight tango tango, embraer phenom three hundred niner victor sierra, phenom three hundred niner victor sierra, november one zero niner victor sierra, Cair five 11, Envoy 79 87, ExecJet 20 78, BALL 69, American 23 89, Chapel, Arel, Adcock, Be-jeo, Gray, Hamer, Prior, Woody, chain, Dal, Okc, SPRINGFIELD, Rusty, Olsin, FORT SMITH, MC ALESTER, Shawn, TULSA, , , , Mays, Noble",
+  "whisper_duration_ms": 3804.303,
+  "audio_duration_ms": 4296,
+  "processor": "GPU: Intel(R) Iris(R) Xe Graphics (3875MB)",
+  "whisper_model": "ggml-base.en-jlvatc-q5_0.bin",
+  "callsign": "ENY7987",
+  "command": "TO",
+  "stt_aircraft": {
+    "American 23 89": {
+      "Callsign": "AAL2389",
+      "AircraftType": "A319",
+      "Fixes": {
+        "Academy": "KAAC",
+        "MC ALESTER": "MLC",
+        "Noble": "NOBLE"
+      },
+      "SID": "28R.SW.J",
+      "Route": [
+        "NOBLE",
+        "MLC",
+        "KDAL"
+      ],
+      "Altitude": 13582,
+      "Heading": 260,
+      "Speed": 356,
+      "AssignedHeading": 260,
+      "State": "departure",
+      "ControllerFrequency": "1D",
+      "TrackingController": "E02"
+    },
+    "B E thirty-six seven one yankee": {
+      "Callsign": "N2471Y/T",
+      "AircraftType": "BE36",
+      "Fixes": {
+        "Academy": "KAAC",
+        "Noble": "NOBLE"
+      },
+      "SID": "28R.SW.P",
+      "Route": [
+        "NOBLE",
+        "DAL",
+        "KDAL"
+      ],
+      "Altitude": 5800,
+      "Heading": 180,
+      "Speed": 108,
+      "AssignedHeading": 180,
+      "State": "departure",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J",
+      "AddressingForm": 1
+    },
+    "BALL 69": {
+      "Callsign": "BALL69",
+      "AircraftType": "F5",
+      "Fixes": {
+        "FORT SMITH": "FSM",
+        "Jeske": "KJKE",
+        "Mays": "MAYES"
+      },
+      "Route": [
+        "MAYES",
+        "FSM",
+        "KCLT"
+      ],
+      "Altitude": 17000,
+      "Heading": 80,
+      "Speed": 382,
+      "AssignedHeading": 80,
+      "State": "departure",
+      "ControllerFrequency": "1J",
+      "TrackingController": "E01"
+    },
+    "Cair five 11": {
+      "Callsign": "KAP511",
+      "AircraftType": "P212",
+      "Fixes": {
+        "Arel": "ARREL",
+        "Be-jeo": "BEJEO",
+        "Chapel": "CHAPL",
+        "Jeske": "KJKE",
+        "Prior": "PRIOR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27": "I27"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "I27": {
+          "Arel": "ARREL",
+          "Be-jeo": "BEJEO",
+          "Chapel": "CHAPL"
+        }
+      },
+      "AssignedApproach": "ILS Runway 27",
+      "Route": [
+        "PRIOR",
+        "KJKE",
+        "KJKE"
+      ],
+      "Altitude": 4000,
+      "Heading": 210,
+      "Speed": 169,
+      "AssignedHeading": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N",
+      "LAHSORunways": [
+        "4",
+        "22"
+      ]
+    },
+    "E-R-J one thirty-five six five five": {
+      "Callsign": "N84655/T",
+      "AircraftType": "E135",
+      "Fixes": {
+        "Jeske": "KJKE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27": "I27"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "I27": {
+          "Arel": "ARREL",
+          "Be-jeo": "BEJEO",
+          "Chapel": "CHAPL"
+        }
+      },
+      "Route": [
+        "KJKE"
+      ],
+      "Altitude": 7209,
+      "Heading": 180,
+      "Speed": 270,
+      "AssignedHeading": 180,
+      "State": "arrival",
+      "ControllerFrequency": "1B",
+      "TrackingController": "1B",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "4",
+        "22"
+      ]
+    },
+    "Embraer E-R-J one thirty-five six five five": {
+      "Callsign": "N84655/T",
+      "AircraftType": "E135",
+      "Fixes": {
+        "Jeske": "KJKE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27": "I27"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "I27": {
+          "Arel": "ARREL",
+          "Be-jeo": "BEJEO",
+          "Chapel": "CHAPL"
+        }
+      },
+      "Route": [
+        "KJKE"
+      ],
+      "Altitude": 7209,
+      "Heading": 180,
+      "Speed": 270,
+      "AssignedHeading": 180,
+      "State": "arrival",
+      "ControllerFrequency": "1B",
+      "TrackingController": "1B",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "4",
+        "22"
+      ]
+    },
+    "Envoy 79 87": {
+      "Callsign": "ENY7987",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Academy": "KAAC",
+        "Woody": "WOODY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28L": "R8L",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight left": "28L",
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight left": "28L",
+        "visual runway two eight right": "28R",
+        "visual two eight left": "28L",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        },
+        "R8L": {
+          "Chapp": "CHAPP",
+          "Little": "LITTL",
+          "Oneta": "ONETA",
+          "Ricky": "RICKY"
+        },
+        "R8R": {
+          "Adcock": "ADCOK",
+          "Gray": "GRAYY",
+          "Rusty": "RUSTY",
+          "Woody": "WOODY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 28R",
+      "Route": [
+        "WOODY",
+        "KAAC"
+      ],
+      "Altitude": 3000,
+      "Heading": 275,
+      "Speed": 159,
+      "State": "cleared approach",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S"
+    },
+    "ExecJet 20 78": {
+      "Callsign": "EJA2078",
+      "AircraftType": "GLEX",
+      "Fixes": {
+        "": "4Y3"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 30": "I30"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three zero": "30",
+        "visual runway three zero": "30",
+        "visual three zero": "30"
+      },
+      "ApproachFixes": {
+        "I30": {
+          "Hamer": "HAMMR",
+          "Olsin": "OLSIN",
+          "chain": "CHAIN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 30",
+      "Altitude": 1670,
+      "Heading": 298,
+      "Speed": 161,
+      "State": "cleared approach",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S"
+    },
+    "bonanza seven one yankee": {
+      "Callsign": "N2471Y/T",
+      "AircraftType": "BE36",
+      "Fixes": {
+        "Academy": "KAAC",
+        "Noble": "NOBLE"
+      },
+      "SID": "28R.SW.P",
+      "Route": [
+        "NOBLE",
+        "DAL",
+        "KDAL"
+      ],
+      "Altitude": 5800,
+      "Heading": 180,
+      "Speed": 108,
+      "AssignedHeading": 180,
+      "State": "departure",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J",
+      "AddressingForm": 1
+    },
+    "cessna T one eighty-two R-G three zulu brahvo": {
+      "Callsign": "N473ZB/T",
+      "AircraftType": "C82T",
+      "Fixes": {
+        "": "4Y3",
+        "OKC Will Rogers World": "KOKC",
+        "Okc": "OKC",
+        "Shawn": "SHAWN"
+      },
+      "Route": [
+        "SHAWN",
+        "OKC",
+        "KOKC"
+      ],
+      "Altitude": 4000,
+      "Heading": 240,
+      "Speed": 161,
+      "AssignedHeading": 240,
+      "State": "departure",
+      "ControllerFrequency": "1B",
+      "TrackingController": "E02",
+      "AddressingForm": 1
+    },
+    "cessna skymaster four alpha hotel": {
+      "Callsign": "N574AH/T",
+      "AircraftType": "C337",
+      "Fixes": {
+        "Academy": "KAAC",
+        "MC ALESTER": "MLC",
+        "Mc Alester": "KMLC",
+        "Noble": "NOBLE"
+      },
+      "SID": "28R.SW.P",
+      "Route": [
+        "NOBLE",
+        "MLC",
+        "KMLC"
+      ],
+      "Altitude": 5000,
+      "Heading": 190,
+      "Speed": 160,
+      "AssignedHeading": 190,
+      "State": "departure",
+      "ControllerFrequency": "1J",
+      "TrackingController": "E02",
+      "AddressingForm": 1
+    },
+    "citation mustang two seven november": {
+      "Callsign": "N4227N/T",
+      "AircraftType": "C510",
+      "Fixes": {
+        "Jeske": "KJKE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27": "I27"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "I27": {
+          "Arel": "ARREL",
+          "Be-jeo": "BEJEO",
+          "Chapel": "CHAPL"
+        }
+      },
+      "Route": [
+        "KJKE"
+      ],
+      "Altitude": 4000,
+      "Heading": 90,
+      "Speed": 228,
+      "AssignedHeading": 90,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "4",
+        "22"
+      ]
+    },
+    "citation niner hotel lima": {
+      "Callsign": "N939HL/T",
+      "AircraftType": "C550",
+      "Fixes": {
+        "": "4Y3",
+        "Hamer": "HAMMR",
+        "chain": "CHAIN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 30": "I30"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three zero": "30",
+        "visual runway three zero": "30",
+        "visual three zero": "30"
+      },
+      "ApproachFixes": {
+        "I30": {
+          "Hamer": "HAMMR",
+          "Olsin": "OLSIN",
+          "chain": "CHAIN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 30",
+      "Route": [
+        "CHAIN",
+        "HAMMR"
+      ],
+      "Altitude": 3000,
+      "Heading": 302,
+      "Speed": 212,
+      "State": "cleared approach",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J",
+      "AddressingForm": 1
+    },
+    "embraer phenom three hundred niner victor sierra": {
+      "Callsign": "N109VS/T",
+      "AircraftType": "E55P",
+      "Fixes": {
+        "": "4Y3",
+        "Hamer": "HAMMR",
+        "Olsin": "OLSIN",
+        "chain": "CHAIN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 30": "I30"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three zero": "30",
+        "visual runway three zero": "30",
+        "visual three zero": "30"
+      },
+      "ApproachFixes": {
+        "I30": {
+          "Hamer": "HAMMR",
+          "Olsin": "OLSIN",
+          "chain": "CHAIN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 30",
+      "Altitude": 3000,
+      "Heading": 131,
+      "Speed": 212,
+      "AssignedHeading": 180,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1B",
+      "TrackingController": "1B",
+      "AddressingForm": 1
+    },
+    "mustang two seven november": {
+      "Callsign": "N4227N/T",
+      "AircraftType": "C510",
+      "Fixes": {
+        "Jeske": "KJKE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27": "I27"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "I27": {
+          "Arel": "ARREL",
+          "Be-jeo": "BEJEO",
+          "Chapel": "CHAPL"
+        }
+      },
+      "Route": [
+        "KJKE"
+      ],
+      "Altitude": 4000,
+      "Heading": 90,
+      "Speed": 228,
+      "AssignedHeading": 90,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "4",
+        "22"
+      ]
+    },
+    "november eight four six five five": {
+      "Callsign": "N84655",
+      "AircraftType": "E135",
+      "Fixes": {
+        "Jeske": "KJKE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27": "I27"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "I27": {
+          "Arel": "ARREL",
+          "Be-jeo": "BEJEO",
+          "Chapel": "CHAPL"
+        }
+      },
+      "Route": [
+        "KJKE"
+      ],
+      "Altitude": 7209,
+      "Heading": 180,
+      "Speed": 270,
+      "AssignedHeading": 180,
+      "State": "arrival",
+      "ControllerFrequency": "1B",
+      "TrackingController": "1B",
+      "LAHSORunways": [
+        "4",
+        "22"
+      ]
+    },
+    "november five seven four alpha hotel": {
+      "Callsign": "N574AH",
+      "AircraftType": "C337",
+      "Fixes": {
+        "Academy": "KAAC",
+        "MC ALESTER": "MLC",
+        "Mc Alester": "KMLC",
+        "Noble": "NOBLE"
+      },
+      "SID": "28R.SW.P",
+      "Route": [
+        "NOBLE",
+        "MLC",
+        "KMLC"
+      ],
+      "Altitude": 5000,
+      "Heading": 190,
+      "Speed": 160,
+      "AssignedHeading": 190,
+      "State": "departure",
+      "ControllerFrequency": "1J",
+      "TrackingController": "E02"
+    },
+    "november four seven three zulu brahvo": {
+      "Callsign": "N473ZB",
+      "AircraftType": "C82T",
+      "Fixes": {
+        "": "4Y3",
+        "OKC Will Rogers World": "KOKC",
+        "Okc": "OKC",
+        "Shawn": "SHAWN"
+      },
+      "Route": [
+        "SHAWN",
+        "OKC",
+        "KOKC"
+      ],
+      "Altitude": 4000,
+      "Heading": 240,
+      "Speed": 161,
+      "AssignedHeading": 240,
+      "State": "departure",
+      "ControllerFrequency": "1B",
+      "TrackingController": "E02"
+    },
+    "november four two two seven november": {
+      "Callsign": "N4227N",
+      "AircraftType": "C510",
+      "Fixes": {
+        "Jeske": "KJKE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27": "I27"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "I27": {
+          "Arel": "ARREL",
+          "Be-jeo": "BEJEO",
+          "Chapel": "CHAPL"
+        }
+      },
+      "Route": [
+        "KJKE"
+      ],
+      "Altitude": 4000,
+      "Heading": 90,
+      "Speed": 228,
+      "AssignedHeading": 90,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J",
+      "LAHSORunways": [
+        "4",
+        "22"
+      ]
+    },
+    "november niner three niner hotel lima": {
+      "Callsign": "N939HL",
+      "AircraftType": "C550",
+      "Fixes": {
+        "": "4Y3",
+        "Hamer": "HAMMR",
+        "chain": "CHAIN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 30": "I30"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three zero": "30",
+        "visual runway three zero": "30",
+        "visual three zero": "30"
+      },
+      "ApproachFixes": {
+        "I30": {
+          "Hamer": "HAMMR",
+          "Olsin": "OLSIN",
+          "chain": "CHAIN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 30",
+      "Route": [
+        "CHAIN",
+        "HAMMR"
+      ],
+      "Altitude": 3000,
+      "Heading": 302,
+      "Speed": 212,
+      "State": "cleared approach",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J"
+    },
+    "november one one eight tango tango": {
+      "Callsign": "N118TT",
+      "AircraftType": "M20T",
+      "Fixes": {
+        "Academy": "KAAC",
+        "SPRINGFIELD": "SGF",
+        "Springfield Branson National": "KSGF",
+        "TULSA": "TUL"
+      },
+      "SID": "28R.NE.P",
+      "Route": [
+        "TUL",
+        "SGF",
+        "KSGF"
+      ],
+      "Altitude": 5000,
+      "Heading": 30,
+      "Speed": 200,
+      "AssignedHeading": 30,
+      "State": "departure",
+      "ControllerFrequency": "1B",
+      "TrackingController": "1B"
+    },
+    "november one zero niner victor sierra": {
+      "Callsign": "N109VS",
+      "LastAddressed": true,
+      "AircraftType": "E55P",
+      "Fixes": {
+        "": "4Y3",
+        "Hamer": "HAMMR",
+        "Olsin": "OLSIN",
+        "chain": "CHAIN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 30": "I30"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three zero": "30",
+        "visual runway three zero": "30",
+        "visual three zero": "30"
+      },
+      "ApproachFixes": {
+        "I30": {
+          "Hamer": "HAMMR",
+          "Olsin": "OLSIN",
+          "chain": "CHAIN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 30",
+      "Altitude": 3000,
+      "Heading": 131,
+      "Speed": 212,
+      "AssignedHeading": 180,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1B",
+      "TrackingController": "1B"
+    },
+    "november seven niner brahvo november": {
+      "Callsign": "N79BN",
+      "AircraftType": "PA34",
+      "Fixes": {
+        "Academy": "KAAC",
+        "Dal": "DAL",
+        "Dallas Love": "KDAL",
+        "Love": "KDAL",
+        "Love Field": "KDAL",
+        "Noble": "NOBLE"
+      },
+      "SID": "28R.SW.P",
+      "Route": [
+        "NOBLE",
+        "DAL",
+        "KDAL"
+      ],
+      "Altitude": 8000,
+      "Heading": 190,
+      "Speed": 153,
+      "AssignedHeading": 190,
+      "State": "departure",
+      "ControllerFrequency": "1J",
+      "TrackingController": "E02"
+    },
+    "november two four seven one yankee": {
+      "Callsign": "N2471Y",
+      "AircraftType": "BE36",
+      "Fixes": {
+        "Academy": "KAAC",
+        "Noble": "NOBLE"
+      },
+      "SID": "28R.SW.P",
+      "Route": [
+        "NOBLE",
+        "DAL",
+        "KDAL"
+      ],
+      "Altitude": 5800,
+      "Heading": 180,
+      "Speed": 108,
+      "AssignedHeading": 180,
+      "State": "departure",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J"
+    },
+    "phenom three hundred niner victor sierra": {
+      "Callsign": "N109VS/T",
+      "AircraftType": "E55P",
+      "Fixes": {
+        "": "4Y3",
+        "Hamer": "HAMMR",
+        "Olsin": "OLSIN",
+        "chain": "CHAIN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 30": "I30"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three zero": "30",
+        "visual runway three zero": "30",
+        "visual three zero": "30"
+      },
+      "ApproachFixes": {
+        "I30": {
+          "Hamer": "HAMMR",
+          "Olsin": "OLSIN",
+          "chain": "CHAIN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 30",
+      "Altitude": 3000,
+      "Heading": 131,
+      "Speed": 212,
+      "AssignedHeading": 180,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1B",
+      "TrackingController": "1B",
+      "AddressingForm": 1
+    },
+    "piper seneca niner brahvo november": {
+      "Callsign": "N79BN/T",
+      "AircraftType": "PA34",
+      "Fixes": {
+        "Academy": "KAAC",
+        "Dal": "DAL",
+        "Dallas Love": "KDAL",
+        "Love": "KDAL",
+        "Love Field": "KDAL",
+        "Noble": "NOBLE"
+      },
+      "SID": "28R.SW.P",
+      "Route": [
+        "NOBLE",
+        "DAL",
+        "KDAL"
+      ],
+      "Altitude": 8000,
+      "Heading": 190,
+      "Speed": 153,
+      "AssignedHeading": 190,
+      "State": "departure",
+      "ControllerFrequency": "1J",
+      "TrackingController": "E02",
+      "AddressingForm": 1
+    },
+    "seneca niner brahvo november": {
+      "Callsign": "N79BN/T",
+      "AircraftType": "PA34",
+      "Fixes": {
+        "Academy": "KAAC",
+        "Dal": "DAL",
+        "Dallas Love": "KDAL",
+        "Love": "KDAL",
+        "Love Field": "KDAL",
+        "Noble": "NOBLE"
+      },
+      "SID": "28R.SW.P",
+      "Route": [
+        "NOBLE",
+        "DAL",
+        "KDAL"
+      ],
+      "Altitude": 8000,
+      "Heading": 190,
+      "Speed": 153,
+      "AssignedHeading": 190,
+      "State": "departure",
+      "ControllerFrequency": "1J",
+      "TrackingController": "E02",
+      "AddressingForm": 1
+    },
+    "skymaster four alpha hotel": {
+      "Callsign": "N574AH/T",
+      "AircraftType": "C337",
+      "Fixes": {
+        "Academy": "KAAC",
+        "MC ALESTER": "MLC",
+        "Mc Alester": "KMLC",
+        "Noble": "NOBLE"
+      },
+      "SID": "28R.SW.P",
+      "Route": [
+        "NOBLE",
+        "MLC",
+        "KMLC"
+      ],
+      "Altitude": 5000,
+      "Heading": 190,
+      "Speed": 160,
+      "AssignedHeading": 190,
+      "State": "departure",
+      "ControllerFrequency": "1J",
+      "TrackingController": "E02",
+      "AddressingForm": 1
+    },
+    "turbo skylane R-G three zulu brahvo": {
+      "Callsign": "N473ZB/T",
+      "AircraftType": "C82T",
+      "Fixes": {
+        "": "4Y3",
+        "OKC Will Rogers World": "KOKC",
+        "Okc": "OKC",
+        "Shawn": "SHAWN"
+      },
+      "Route": [
+        "SHAWN",
+        "OKC",
+        "KOKC"
+      ],
+      "Altitude": 4000,
+      "Heading": 240,
+      "Speed": 161,
+      "AssignedHeading": 240,
+      "State": "departure",
+      "ControllerFrequency": "1B",
+      "TrackingController": "E02",
+      "AddressingForm": 1
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Envoy 79 87 contact academy tarot 19 point two\"",
+    "[local-stt] normalized words: [envoy 79 87 contact academy tarot 19 point 2]",
+    "[local-stt] tokens: 9",
+    "[local-stt]   token[0]: Text=\"envoy\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"79\" Type=1 Value=79",
+    "[local-stt]   token[2]: Text=\"87\" Type=1 Value=87",
+    "[local-stt]   token[3]: Text=\"contact\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"academy\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"tarot\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"19\" Type=1 Value=19",
+    "[local-stt]   token[7]: Text=\"point\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"2\" Type=1 Value=2",
+    "[local-stt] MatchCallsign: 9 tokens, 29 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 9 tokens, 29 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Envoy 79 87\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Envoy 79 87\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 5 results",
+    "[local-stt]     result 0: \"seneca niner brahvo november\" (airline=0.578, flight=0.733, skip=0)",
+    "[local-stt]     result 1: \"november seven niner brahvo november\" (airline=0.642, flight=0.733, skip=0)",
+    "[local-stt]     result 2: \"Envoy 79 87\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 3: \"phenom three hundred niner victor sierra\" (airline=0.437, flight=0.820, skip=3)",
+    "[local-stt]     result 4: \"embraer phenom three hundred niner victor sierra\" (airline=0.429, flight=0.820, skip=3)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Envoy 79 87\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 6 results",
+    "[local-stt]     result 0: \"Envoy 79 87\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"American 23 89\" (airline=0.442, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"ExecJet 20 78\" (airline=0.503, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Envoy 79 87\" (airline=0.395, flight=0.000, skip=3)",
+    "[local-stt]     result 4: \"Cair five 11\" (airline=0.518, flight=0.000, skip=3)",
+    "[local-stt]     pattern \"airline_only\": selected \"Envoy 79 87\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"Envoy 79 87\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Envoy 79 87\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"Envoy 79 87\" (airline=0.500, flight=0.700, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Envoy 79 87\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   best callsign candidate: \"ENY7987\" (conf=1.00, consumed=3, addressingForm=0, spokenKey=\"Envoy 79 87\"; 2 candidates)",
+    "[local-stt] ParseCommands: 6 tokens",
+    "[local-stt]   matched command: \"TO\" [contact_facility_tower] (pos=0, conf=0.95, consumed=3, isThen=false)",
+    "[local-stt]   matched command: \"FC\" [frequency_change_with_frequency] (pos=0, conf=0.61, consumed=6, isThen=false)",
+    "[local-stt]   no match at token[0]=\"contact\", skipping",
+    "[local-stt]   no match at token[3]=\"19\", skipping",
+    "[local-stt]   matched command: \"TO\" [facility_tower] (pos=1, conf=0.68, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[1]=\"academy\", skipping",
+    "[local-stt]   no match at token[4]=\"point\", skipping",
+    "[local-stt]   no match at token[3]=\"19\", skipping",
+    "[local-stt]   matched command: \"TO\" [bare_tower_word] (pos=2, conf=0.78, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[2]=\"tarot\", skipping",
+    "[local-stt]   no match at token[5]=\"2\", skipping",
+    "[local-stt]   no match at token[4]=\"point\", skipping",
+    "[local-stt]   no match at token[5]=\"2\", skipping",
+    "[local-stt]   no match at token[5]=\"2\", skipping",
+    "[local-stt]   beam final[0]: score=1.631 pos=6 commands=[TO]",
+    "[local-stt]   beam final[1]: score=0.492 pos=6 commands=[FC]",
+    "[local-stt]   beam final[2]: score=-1.867 pos=6 commands=[TO]",
+    "[local-stt]   beam final[3]: score=-3.572 pos=6 commands=[TO]",
+    "[local-stt] ParseCommands: result=[TO] (avgConf=0.95)",
+    "[local-stt] ParseCommands: 8 tokens",
+    "[local-stt]   no match at token[0]=\"79\", skipping",
+    "[local-stt]   no match at token[1]=\"87\", skipping",
+    "[local-stt]   matched command: \"TO\" [contact_facility_tower] (pos=2, conf=0.95, consumed=3, isThen=false)",
+    "[local-stt]   matched command: \"FC\" [frequency_change_with_frequency] (pos=2, conf=0.61, consumed=6, isThen=false)",
+    "[local-stt]   no match at token[2]=\"contact\", skipping",
+    "[local-stt]   no match at token[5]=\"19\", skipping",
+    "[local-stt]   matched command: \"TO\" [facility_tower] (pos=3, conf=0.68, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[3]=\"academy\", skipping",
+    "[local-stt]   no match at token[6]=\"point\", skipping",
+    "[local-stt]   no match at token[5]=\"19\", skipping",
+    "[local-stt]   matched command: \"TO\" [bare_tower_word] (pos=4, conf=0.78, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[4]=\"tarot\", skipping",
+    "[local-stt]   no match at token[7]=\"2\", skipping",
+    "[local-stt]   no match at token[6]=\"point\", skipping",
+    "[local-stt]   no match at token[7]=\"2\", skipping",
+    "[local-stt]   no match at token[7]=\"2\", skipping",
+    "[local-stt]   beam final[0]: score=1.631 pos=8 commands=[TO]",
+    "[local-stt]   beam final[1]: score=0.492 pos=8 commands=[FC]",
+    "[local-stt]   beam final[2]: score=-1.867 pos=8 commands=[TO]",
+    "[local-stt]   beam final[3]: score=-3.572 pos=8 commands=[TO]",
+    "[local-stt] ParseCommands: result=[TO] (avgConf=0.95)",
+    "[local-stt] callsign match: Callsign=\"ENY7987\" SpokenKey=\"Envoy 79 87\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"cleared approach\" Altitude=3000 Fixes=2 Approaches=3 VisualApproaches=6 AssignedApproach=\"ILS Runway 28R\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Academy\" -\u003e \"KAAC\"",
+    "[local-stt]   fix: \"Woody\" -\u003e \"WOODY\"",
+    "[local-stt]   approach: \"RNAV Runway 28L\" -\u003e \"R8L\"",
+    "[local-stt]   approach: \"RNAV Runway 28R\" -\u003e \"R8R\"",
+    "[local-stt]   approach: \"ILS Runway 28R\" -\u003e \"I8R\"",
+    "[local-stt]   visual approach: \"visual runway two eight left\" -\u003e \"28L\"",
+    "[local-stt]   visual approach: \"visual approach runway two eight left\" -\u003e \"28L\"",
+    "[local-stt]   visual approach: \"visual two eight left\" -\u003e \"28L\"",
+    "[local-stt]   visual approach: \"visual runway two eight right\" -\u003e \"28R\"",
+    "[local-stt]   visual approach: \"visual approach runway two eight right\" -\u003e \"28R\"",
+    "[local-stt]   visual approach: \"visual two eight right\" -\u003e \"28R\"",
+    "[local-stt] command tokens after disregard: 6",
+    "[local-stt]   token[0]: Text=\"contact\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"academy\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"tarot\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"19\" Type=1 Value=19",
+    "[local-stt]   token[4]: Text=\"point\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"2\" Type=1 Value=2",
+    "[local-stt] ParseCommands: 6 tokens",
+    "[local-stt]   matched command: \"TO\" [contact_facility_tower] (pos=0, conf=0.95, consumed=3, isThen=false)",
+    "[local-stt]   matched command: \"FC\" [frequency_change_with_frequency] (pos=0, conf=0.61, consumed=6, isThen=false)",
+    "[local-stt]   no match at token[0]=\"contact\", skipping",
+    "[local-stt]   no match at token[3]=\"19\", skipping",
+    "[local-stt]   matched command: \"TO\" [facility_tower] (pos=1, conf=0.68, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[1]=\"academy\", skipping",
+    "[local-stt]   no match at token[4]=\"point\", skipping",
+    "[local-stt]   no match at token[3]=\"19\", skipping",
+    "[local-stt]   matched command: \"TO\" [bare_tower_word] (pos=2, conf=0.78, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[2]=\"tarot\", skipping",
+    "[local-stt]   no match at token[5]=\"2\", skipping",
+    "[local-stt]   no match at token[4]=\"point\", skipping",
+    "[local-stt]   no match at token[5]=\"2\", skipping",
+    "[local-stt]   no match at token[5]=\"2\", skipping",
+    "[local-stt]   beam final[0]: score=1.631 pos=6 commands=[TO]",
+    "[local-stt]   beam final[1]: score=0.492 pos=6 commands=[FC]",
+    "[local-stt]   beam final[2]: score=-1.867 pos=6 commands=[TO]",
+    "[local-stt]   beam final[3]: score=-3.572 pos=6 commands=[TO]",
+    "[local-stt] ParseCommands: result=[TO] (avgConf=0.95)",
+    "[local-stt] parsed commands: [TO] (conf=0.95, kinds=1)",
+    "[local-stt] validated commands: [TO] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"ENY7987 TO\" (conf=0.95, time=128.7843ms) ==="
+  ]
+}

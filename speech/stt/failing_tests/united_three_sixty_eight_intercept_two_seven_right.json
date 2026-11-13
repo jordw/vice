@@ -1,0 +1,260 @@
+{
+  "time": "2026-11-05T02:17:27.743384779Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "United three sixty eight intercept two seven right",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, whiskey, information, Fight seven, two seven right, runway, I L S, Volaris seven hundred, United three 68, Giant 35 98 heavy, Bonzo, Harry, Welev, Iylek, Joker, Vinnie, Pappy, Vogler, Ernie, Himgo, Vulcan, Chicago O'Hare International Airport",
+  "whisper_duration_ms": 309.482,
+  "audio_duration_ms": 3016,
+  "processor": "GPU: NVIDIA GeForce RTX 5080 Laptop GPU (16003MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "UAL368",
+  "command": "I",
+  "reason": "intercept two seven right is the localizer, not the STAR; the repeat confirms",
+  "stt_aircraft": {
+    "Giant 35 98 heavy": {
+      "Callsign": "GTI3598",
+      "AircraftType": "B77L",
+      "Fixes": {
+        "Bonzo": "BONZO",
+        "Chicago O'Hare": "KORD",
+        "Harry": "HAREE",
+        "Himgo": "HIMGO",
+        "Iylek": "IYLEK",
+        "Joker": "JOKKR",
+        "Sibly": "SIBLY",
+        "Vinnie": "VINYY",
+        "Vogler": "VOGLR",
+        "Vulcan": "VULCN",
+        "Welev": "WELEV"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "I7R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven right": "27R",
+        "visual runway two seven right": "27R",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "I7R": {
+          "Bonzo": "BONZO",
+          "Harry": "HAREE",
+          "Iylek": "IYLEK",
+          "Joker": "JOKKR",
+          "Sibly": "SIBLY",
+          "Vinnie": "VINYY",
+          "Vogler": "VOGLR",
+          "Welev": "WELEV"
+        }
+      },
+      "AssignedApproach": "ILS Runway 27R",
+      "STAR": "FYTTE7",
+      "Route": [
+        "VULCN",
+        "HIMGO",
+        "KORD"
+      ],
+      "Altitude": 7000,
+      "Heading": 93,
+      "Speed": 265,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "4L",
+        "22R"
+      ]
+    },
+    "United three 68": {
+      "Callsign": "UAL368",
+      "LastAddressed": true,
+      "AircraftType": "A21N",
+      "Fixes": {
+        "Bonzo": "BONZO",
+        "Chicago O'Hare": "KORD",
+        "Harry": "HAREE",
+        "Himgo": "HIMGO",
+        "Iylek": "IYLEK",
+        "Joker": "JOKKR",
+        "Sibly": "SIBLY",
+        "Vinnie": "VINYY",
+        "Vogler": "VOGLR",
+        "Welev": "WELEV"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "I7R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven right": "27R",
+        "visual runway two seven right": "27R",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "I7R": {
+          "Bonzo": "BONZO",
+          "Harry": "HAREE",
+          "Iylek": "IYLEK",
+          "Joker": "JOKKR",
+          "Sibly": "SIBLY",
+          "Vinnie": "VINYY",
+          "Vogler": "VOGLR",
+          "Welev": "WELEV"
+        }
+      },
+      "AssignedApproach": "ILS Runway 27R",
+      "STAR": "FYTTE7",
+      "Route": [
+        "HIMGO",
+        "KORD"
+      ],
+      "Altitude": 4000,
+      "Heading": 211,
+      "Speed": 232,
+      "AssignedHeading": 270,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "4L",
+        "22R"
+      ]
+    },
+    "Volaris seven hundred": {
+      "Callsign": "VOI700",
+      "AircraftType": "A21N",
+      "Fixes": {
+        "Bonzo": "BONZO",
+        "Chicago O'Hare": "KORD",
+        "Ernie": "ERNNY",
+        "Harry": "HAREE",
+        "Iylek": "IYLEK",
+        "Joker": "JOKKR",
+        "Pappy": "PAPPI",
+        "Sibly": "SIBLY",
+        "Vinnie": "VINYY",
+        "Vogler": "VOGLR",
+        "Welev": "WELEV"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "I7R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven right": "27R",
+        "visual runway two seven right": "27R",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "I7R": {
+          "Bonzo": "BONZO",
+          "Harry": "HAREE",
+          "Iylek": "IYLEK",
+          "Joker": "JOKKR",
+          "Sibly": "SIBLY",
+          "Vinnie": "VINYY",
+          "Vogler": "VOGLR",
+          "Welev": "WELEV"
+        }
+      },
+      "AssignedApproach": "ILS Runway 27R",
+      "Route": [
+        "ERNNY",
+        "PAPPI",
+        "KORD"
+      ],
+      "Altitude": 5000,
+      "Heading": 180,
+      "Speed": 233,
+      "AssignedHeading": 180,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "4L",
+        "22R"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"United three sixty eight intercept two seven right\"",
+    "[local-stt] normalized words: [united 3 68 intercept 2 7 right]",
+    "[local-stt] tokens: 5",
+    "[local-stt]   token[0]: Text=\"united\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"368\" Type=1 Value=368",
+    "[local-stt]   token[2]: Text=\"intercept\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"27\" Type=1 Value=27",
+    "[local-stt]   token[4]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 5 tokens, 3 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 5 tokens, 3 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"United three 68\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"United three 68\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"United three 68\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Giant 35 98 heavy\" (airline=0.589, flight=0.750, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"United three 68\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 5 results",
+    "[local-stt]     result 0: \"Giant 35 98 heavy\" (airline=0.589, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"United three 68\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Giant 35 98 heavy\" (airline=0.644, flight=0.000, skip=2)",
+    "[local-stt]     result 3: \"United three 68\" (airline=0.620, flight=0.000, skip=2)",
+    "[local-stt]     result 4: \"Volaris seven hundred\" (airline=0.418, flight=0.000, skip=2)",
+    "[local-stt]     pattern \"airline_only\": selected \"United three 68\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"United three 68\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"United three 68\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"United three 68\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"UAL368\" (spokenKey=\"United three 68\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"UAL368\" SpokenKey=\"United three 68\" Conf=1.00 Consumed=2",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=4000 Fixes=10 Approaches=1 VisualApproaches=3 AssignedApproach=\"ILS Runway 27R\" LAHSORunways=[4L 22R]",
+    "[local-stt]   fix: \"Chicago O'Hare\" -\u003e \"KORD\"",
+    "[local-stt]   fix: \"Vinnie\" -\u003e \"VINYY\"",
+    "[local-stt]   fix: \"Welev\" -\u003e \"WELEV\"",
+    "[local-stt]   fix: \"Sibly\" -\u003e \"SIBLY\"",
+    "[local-stt]   fix: \"Himgo\" -\u003e \"HIMGO\"",
+    "[local-stt]   fix: \"Vogler\" -\u003e \"VOGLR\"",
+    "[local-stt]   fix: \"Joker\" -\u003e \"JOKKR\"",
+    "[local-stt]   fix: \"Iylek\" -\u003e \"IYLEK\"",
+    "[local-stt]   fix: \"Harry\" -\u003e \"HAREE\"",
+    "[local-stt]   fix: \"Bonzo\" -\u003e \"BONZO\"",
+    "[local-stt]   approach: \"ILS Runway 27R\" -\u003e \"I7R\"",
+    "[local-stt]   visual approach: \"visual two seven right\" -\u003e \"27R\"",
+    "[local-stt]   visual approach: \"visual runway two seven right\" -\u003e \"27R\"",
+    "[local-stt]   visual approach: \"visual approach runway two seven right\" -\u003e \"27R\"",
+    "[local-stt] command tokens after disregard: 3",
+    "[local-stt]   token[0]: Text=\"intercept\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"27\" Type=1 Value=27",
+    "[local-stt]   token[2]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 3 tokens",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"27\" against 10 fixes",
+    "[local-stt]   extractFix: no match found for \"27\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"27\" against 10 fixes",
+    "[local-stt]   extractFix: no match found for \"27\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"27\" against 10 fixes",
+    "[local-stt]   extractFix: no match found for \"27\"",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: looking for STAR=\"FYTTE7\" telephony=\"Fight seven\"",
+    "[local-stt]   extractSTAR: fuzzy match \"two seven\" -\u003e \"FYTTE7\" (score=0.80)",
+    "[local-stt]   matched command: \"RSTAR\" [resume_star] (pos=0, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"intercept\", skipping",
+    "[local-stt]   no match at token[2]=\"right\", skipping",
+    "[local-stt]   no match at token[1]=\"27\", skipping",
+    "[local-stt]   no match at token[2]=\"right\", skipping",
+    "[local-stt]   beam final[0]: score=1.196 pos=3 commands=[RSTAR]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=3 commands=[]",
+    "[local-stt] ParseCommands: result=[RSTAR] (avgConf=1.00)",
+    "[local-stt] parsed commands: [RSTAR] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [RSTAR] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"UAL368 RSTAR\" (conf=1.00, time=1.0628ms) ==="
+  ]
+}

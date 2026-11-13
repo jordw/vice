@@ -1,0 +1,352 @@
+{
+  "time": "2026-11-06T02:48:28.511033846Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "American 19 65 KADEK Philly approach on one two five point four",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, tango, information, Pat's four, Philly four, Wikav, B-dawk, Jimms, Jepug, Kusle, Albeck, three five, two seven right, runway, r-nav, I L S, Brickyard 44 81, Piedmont 59 31, Frontier Flight 20 60, American 19 65, Menge, Martin, Enzew, KENNEDY, Mkord, Hannah, Peaceout, Luigi, R-roll, Chapman, Ditch, Philadelphia International Airport",
+  "whisper_duration_ms": 930.792,
+  "audio_duration_ms": 4424,
+  "processor": "GPU: NVIDIA GeForce GTX 1660 SUPER (6180MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "AAL1965",
+  "command": "FC",
+  "reason": "contact heard as KADEK; the repeat confirms",
+  "stt_aircraft": {
+    "American 19 65": {
+      "Callsign": "AAL1965",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Chapman": "CHPMN",
+        "Enzew": "ENZEW",
+        "Jalto": "JALTO",
+        "Martin": "MRTIN",
+        "Menge": "MENGE",
+        "Mkord": "MKORD",
+        "Peaceout": "PSOUT",
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "27R",
+        "RNAV Runway 35": "G35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway two seven right": "27R",
+        "visual runway three five": "35",
+        "visual runway two seven right": "27R",
+        "visual three five": "35",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "27R": {
+          "Enzew": "ENZEW",
+          "Jalto": "JALTO",
+          "Martin": "MRTIN",
+          "Menge": "MENGE"
+        },
+        "G35": {
+          "Albeck": "ALBEK",
+          "B-dawk": "BDAWK",
+          "Cemek": "CEMEK",
+          "Harlu": "HARLU",
+          "Jepug": "JEPUG",
+          "Jimms": "JIIMS",
+          "Kusle": "KUSLE",
+          "Wikav": "WIKAV"
+        }
+      },
+      "AssignedApproach": "ILS Runway 27R",
+      "STAR": "PAATS4",
+      "Route": [
+        "CHPMN",
+        "PSOUT",
+        "MKORD",
+        "KPHL"
+      ],
+      "Altitude": 6000,
+      "Heading": 52,
+      "Speed": 251,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "17",
+        "35",
+        "8",
+        "26",
+        "9L",
+        "27R"
+      ]
+    },
+    "Brickyard 44 81": {
+      "Callsign": "RPA4481",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Ditch": "DITCH",
+        "Hannah": "HNNAH",
+        "KENNEDY": "JFK",
+        "Luigi": "LUIGI",
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL"
+      },
+      "SID": "PHL4",
+      "Route": [
+        "DITCH",
+        "LUIGI",
+        "HNNAH",
+        "JFK",
+        "KBOS"
+      ],
+      "Altitude": 6597,
+      "Heading": 230,
+      "Speed": 254,
+      "State": "departure",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "Frontier Flight 20 60": {
+      "Callsign": "FFT2060",
+      "AircraftType": "A21N",
+      "Fixes": {
+        "Chapman": "CHPMN",
+        "Enzew": "ENZEW",
+        "Jalto": "JALTO",
+        "Martin": "MRTIN",
+        "Menge": "MENGE",
+        "Mkord": "MKORD",
+        "Peaceout": "PSOUT",
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "27R",
+        "RNAV Runway 35": "G35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway two seven right": "27R",
+        "visual runway three five": "35",
+        "visual runway two seven right": "27R",
+        "visual three five": "35",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "27R": {
+          "Enzew": "ENZEW",
+          "Jalto": "JALTO",
+          "Martin": "MRTIN",
+          "Menge": "MENGE"
+        },
+        "G35": {
+          "Albeck": "ALBEK",
+          "B-dawk": "BDAWK",
+          "Cemek": "CEMEK",
+          "Harlu": "HARLU",
+          "Jepug": "JEPUG",
+          "Jimms": "JIIMS",
+          "Kusle": "KUSLE",
+          "Wikav": "WIKAV"
+        }
+      },
+      "AssignedApproach": "ILS Runway 27R",
+      "STAR": "PAATS4",
+      "Route": [
+        "CHPMN",
+        "PSOUT",
+        "MKORD",
+        "KPHL"
+      ],
+      "Altitude": 6000,
+      "Heading": 59,
+      "Speed": 249,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "17",
+        "35",
+        "8",
+        "26",
+        "9L",
+        "27R"
+      ]
+    },
+    "Piedmont 59 31": {
+      "Callsign": "PDT5931",
+      "LastAddressed": true,
+      "AircraftType": "E145",
+      "Fixes": {
+        "Chapman": "CHPMN",
+        "Enzew": "ENZEW",
+        "Jalto": "JALTO",
+        "Martin": "MRTIN",
+        "Menge": "MENGE",
+        "Mkord": "MKORD",
+        "Peaceout": "PSOUT",
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL",
+        "R-roll": "RROLL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "27R",
+        "RNAV Runway 35": "G35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway two seven right": "27R",
+        "visual runway three five": "35",
+        "visual runway two seven right": "27R",
+        "visual three five": "35",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "27R": {
+          "Enzew": "ENZEW",
+          "Jalto": "JALTO",
+          "Martin": "MRTIN",
+          "Menge": "MENGE"
+        },
+        "G35": {
+          "Albeck": "ALBEK",
+          "B-dawk": "BDAWK",
+          "Cemek": "CEMEK",
+          "Harlu": "HARLU",
+          "Jepug": "JEPUG",
+          "Jimms": "JIIMS",
+          "Kusle": "KUSLE",
+          "Wikav": "WIKAV"
+        }
+      },
+      "AssignedApproach": "ILS Runway 27R",
+      "STAR": "PAATS4",
+      "Route": [
+        "RROLL",
+        "CHPMN",
+        "PSOUT",
+        "MKORD",
+        "KPHL"
+      ],
+      "Altitude": 7084,
+      "Heading": 82,
+      "Speed": 297,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "17",
+        "35",
+        "8",
+        "26",
+        "9L",
+        "27R"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"American 19 65 KADEK Philly approach on one two five point four\"",
+    "[local-stt] normalized words: [american 19 65 kadek philly approach on 1 2 5 point 4]",
+    "[local-stt] tokens: 10",
+    "[local-stt]   token[0]: Text=\"american\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"19\" Type=1 Value=19",
+    "[local-stt]   token[2]: Text=\"65\" Type=1 Value=65",
+    "[local-stt]   token[3]: Text=\"kadek\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"philly\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"on\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"125\" Type=1 Value=125",
+    "[local-stt]   token[8]: Text=\"point\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"4\" Type=1 Value=4",
+    "[local-stt] MatchCallsign: 10 tokens, 4 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 10 tokens, 4 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"American 19 65\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"American 19 65\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"American 19 65\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"American 19 65\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 8 results",
+    "[local-stt]     result 0: \"American 19 65\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Frontier Flight 20 60\" (airline=0.500, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Piedmont 59 31\" (airline=0.583, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Brickyard 44 81\" (airline=0.648, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Frontier Flight 20 60\" (airline=0.442, flight=0.000, skip=3)",
+    "[local-stt]     pattern \"airline_only\": selected \"American 19 65\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"American 19 65\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"American 19 65\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"American 19 65\" (airline=0.500, flight=0.700, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"American 19 65\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"AAL1965\" (spokenKey=\"American 19 65\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"AAL1965\" SpokenKey=\"American 19 65\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=6000 Fixes=9 Approaches=2 VisualApproaches=6 AssignedApproach=\"ILS Runway 27R\" LAHSORunways=[17 35 8 26 9L 27R]",
+    "[local-stt]   fix: \"Martin\" -\u003e \"MRTIN\"",
+    "[local-stt]   fix: \"Menge\" -\u003e \"MENGE\"",
+    "[local-stt]   fix: \"Philly\" -\u003e \"KPHL\"",
+    "[local-stt]   fix: \"Chapman\" -\u003e \"CHPMN\"",
+    "[local-stt]   fix: \"Mkord\" -\u003e \"MKORD\"",
+    "[local-stt]   fix: \"Enzew\" -\u003e \"ENZEW\"",
+    "[local-stt]   fix: \"Jalto\" -\u003e \"JALTO\"",
+    "[local-stt]   fix: \"Philadelphia\" -\u003e \"KPHL\"",
+    "[local-stt]   fix: \"Peaceout\" -\u003e \"PSOUT\"",
+    "[local-stt]   approach: \"ILS Runway 27R\" -\u003e \"27R\"",
+    "[local-stt]   approach: \"RNAV Runway 35\" -\u003e \"G35\"",
+    "[local-stt]   visual approach: \"visual two seven right\" -\u003e \"27R\"",
+    "[local-stt]   visual approach: \"visual runway three five\" -\u003e \"35\"",
+    "[local-stt]   visual approach: \"visual approach runway three five\" -\u003e \"35\"",
+    "[local-stt]   visual approach: \"visual three five\" -\u003e \"35\"",
+    "[local-stt]   visual approach: \"visual runway two seven right\" -\u003e \"27R\"",
+    "[local-stt]   visual approach: \"visual approach runway two seven right\" -\u003e \"27R\"",
+    "[local-stt] command tokens after disregard: 7",
+    "[local-stt]   token[0]: Text=\"kadek\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"philly\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"on\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"125\" Type=1 Value=125",
+    "[local-stt]   token[5]: Text=\"point\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"4\" Type=1 Value=4",
+    "[local-stt] ParseCommands: 7 tokens",
+    "[local-stt]   matched command: \"\" [position_id] (pos=0, conf=0.67, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[0]=\"kadek\", skipping",
+    "[local-stt]   no match at token[3]=\"on\", skipping",
+    "[local-stt]   matched command: \"\" [position_id] (pos=1, conf=0.74, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[1]=\"philly\", skipping",
+    "[local-stt]   no match at token[4]=\"125\", skipping",
+    "[local-stt]   no match at token[3]=\"on\", skipping",
+    "[local-stt]   matched command: \"\" [position_id] (pos=2, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[2]=\"approach\", skipping",
+    "[local-stt]   no match at token[5]=\"point\", skipping",
+    "[local-stt]   no match at token[4]=\"125\", skipping",
+    "[local-stt]   no match at token[3]=\"on\", skipping",
+    "[local-stt]   no match at token[3]=\"on\", skipping",
+    "[local-stt]   no match at token[6]=\"4\", skipping",
+    "[local-stt]   no match at token[5]=\"point\", skipping",
+    "[local-stt]   no match at token[4]=\"125\", skipping",
+    "[local-stt]   no match at token[4]=\"125\", skipping",
+    "[local-stt]   no match at token[6]=\"4\", skipping",
+    "[local-stt]   no match at token[5]=\"point\", skipping",
+    "[local-stt]   no match at token[5]=\"point\", skipping",
+    "[local-stt]   no match at token[6]=\"4\", skipping",
+    "[local-stt]   no match at token[6]=\"4\", skipping",
+    "[local-stt]   beam final[0]: score=0.598 pos=7 commands=[]",
+    "[local-stt]   beam final[1]: score=-1.705 pos=7 commands=[]",
+    "[local-stt]   beam final[2]: score=-4.007 pos=7 commands=[]",
+    "[local-stt]   beam final[3]: score=-6.908 pos=7 commands=[]",
+    "[local-stt] ParseCommands: matched but no commands to issue",
+    "[local-stt] parsed commands: [] (conf=1.00, kinds=100)",
+    "[local-stt] validated commands: [] (conf=0.00)",
+    "[local-stt] informational-only transmission, returning empty",
+    "[local-stt] === DecodeTranscript END: \"\" (conf=1.00, time=5.5612ms) ==="
+  ]
+}

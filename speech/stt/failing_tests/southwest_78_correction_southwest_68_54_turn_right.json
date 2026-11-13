@@ -1,0 +1,847 @@
+{
+  "time": "2026-11-10T01:49:31.968820344Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Southwest 78 correction Southwest 68 54 turn right heading to actually disregard",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, alpha, information, Snakepit two, Smoke three, Jacks two, Gibbs four, Cozart, Coyle, Musky, Pukai, Trak, Miller, Gobge, Stewer, knight, two three right, two three left, runway, zulu, yankee, r-nav, I L S, United 21, Southwest 71 43, Southwest 68 54, Spirit Wings 46 68, American 96 38 heavy, American six 79, American three 47, American 25, Checkered, Driver, Race in, Pacer, peyton, Clang, Ramey, Bird, Larry, Sibov, Zosar, Indianapolis International Airport",
+  "whisper_duration_ms": 521.907,
+  "audio_duration_ms": 4424,
+  "processor": "GPU: NVIDIA GeForce RTX 3060 (12329MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "",
+  "command": "",
+  "reason": "correction then disregard",
+  "stt_aircraft": {
+    "American 25": {
+      "Callsign": "AAL25",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Checkered": "CKERD",
+        "Clang": "CLANG",
+        "Driver": "DRVVR",
+        "Indianapolis": "KIND",
+        "Indy": "KIND",
+        "Race in": "RACEN",
+        "Zosar": "ZOSAR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23L": "I3L",
+        "ILS Runway 23R": "I3R",
+        "RNAV Y Runway 23L": "R3L",
+        "RNAV Y Runway 23R": "R3R",
+        "RNAV Z Runway 23L": "Z3L",
+        "RNAV Z Runway 23R": "Z3R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three left": "23L",
+        "visual approach runway two three right": "23R",
+        "visual runway two three left": "23L",
+        "visual runway two three right": "23R",
+        "visual two three left": "23L",
+        "visual two three right": "23R"
+      },
+      "ApproachFixes": {
+        "I3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "I3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "R3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "R3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "Z3L": {
+          "Bird": "BBIRD",
+          "Gobge": "GOBGE",
+          "Larry": "LLARY",
+          "Miller": "MIILR",
+          "Pacer": "PACRR",
+          "Pukai": "PUKAE",
+          "Stewer": "STEWR",
+          "Trak": "TRAAK",
+          "knight": "KNIGT"
+        },
+        "Z3R": {
+          "Checkered": "CKERD",
+          "Coyle": "COYLE",
+          "Cozart": "COZRT",
+          "Driver": "DRVVR",
+          "Miller": "MIILR",
+          "Musky": "MUSKE",
+          "Race in": "RACEN",
+          "Trak": "TRAAK",
+          "peyton": "PETYN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 23R",
+      "STAR": "SMUKE3",
+      "Route": [
+        "ZOSAR",
+        "KIND"
+      ],
+      "Altitude": 5550,
+      "Heading": 41,
+      "Speed": 243,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "American 96 38 heavy": {
+      "Callsign": "AAL9638",
+      "AircraftType": "B788",
+      "Fixes": {
+        "Bird": "BBIRD",
+        "Indianapolis": "KIND",
+        "Indy": "KIND",
+        "Pacer": "PACRR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23L": "I3L",
+        "ILS Runway 23R": "I3R",
+        "RNAV Y Runway 23L": "R3L",
+        "RNAV Y Runway 23R": "R3R",
+        "RNAV Z Runway 23L": "Z3L",
+        "RNAV Z Runway 23R": "Z3R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three left": "23L",
+        "visual approach runway two three right": "23R",
+        "visual runway two three left": "23L",
+        "visual runway two three right": "23R",
+        "visual two three left": "23L",
+        "visual two three right": "23R"
+      },
+      "ApproachFixes": {
+        "I3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "I3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "R3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "R3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "Z3L": {
+          "Bird": "BBIRD",
+          "Gobge": "GOBGE",
+          "Larry": "LLARY",
+          "Miller": "MIILR",
+          "Pacer": "PACRR",
+          "Pukai": "PUKAE",
+          "Stewer": "STEWR",
+          "Trak": "TRAAK",
+          "knight": "KNIGT"
+        },
+        "Z3R": {
+          "Checkered": "CKERD",
+          "Coyle": "COYLE",
+          "Cozart": "COZRT",
+          "Driver": "DRVVR",
+          "Miller": "MIILR",
+          "Musky": "MUSKE",
+          "Race in": "RACEN",
+          "Trak": "TRAAK",
+          "peyton": "PETYN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 23L",
+      "STAR": "SNKPT2",
+      "Route": [
+        "BBIRD",
+        "PACRR",
+        "KIND"
+      ],
+      "Altitude": 4538,
+      "Heading": 237,
+      "Speed": 160,
+      "AssignedSpeed": 170,
+      "State": "cleared approach",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "American six 79": {
+      "Callsign": "AAL679",
+      "AircraftType": "MD82",
+      "Fixes": {
+        "Bird": "BBIRD",
+        "Indianapolis": "KIND",
+        "Indy": "KIND",
+        "Larry": "LLARY",
+        "Pacer": "PACRR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23L": "I3L",
+        "ILS Runway 23R": "I3R",
+        "RNAV Y Runway 23L": "R3L",
+        "RNAV Y Runway 23R": "R3R",
+        "RNAV Z Runway 23L": "Z3L",
+        "RNAV Z Runway 23R": "Z3R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three left": "23L",
+        "visual approach runway two three right": "23R",
+        "visual runway two three left": "23L",
+        "visual runway two three right": "23R",
+        "visual two three left": "23L",
+        "visual two three right": "23R"
+      },
+      "ApproachFixes": {
+        "I3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "I3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "R3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "R3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "Z3L": {
+          "Bird": "BBIRD",
+          "Gobge": "GOBGE",
+          "Larry": "LLARY",
+          "Miller": "MIILR",
+          "Pacer": "PACRR",
+          "Pukai": "PUKAE",
+          "Stewer": "STEWR",
+          "Trak": "TRAAK",
+          "knight": "KNIGT"
+        },
+        "Z3R": {
+          "Checkered": "CKERD",
+          "Coyle": "COYLE",
+          "Cozart": "COZRT",
+          "Driver": "DRVVR",
+          "Miller": "MIILR",
+          "Musky": "MUSKE",
+          "Race in": "RACEN",
+          "Trak": "TRAAK",
+          "peyton": "PETYN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 23L",
+      "STAR": "SNKPT2",
+      "Route": [
+        "LLARY",
+        "BBIRD",
+        "PACRR",
+        "KIND"
+      ],
+      "Altitude": 8227,
+      "Heading": 238,
+      "Speed": 252,
+      "State": "cleared approach",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "American three 47": {
+      "Callsign": "AAL347",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Checkered": "CKERD",
+        "Clang": "CLANG",
+        "Driver": "DRVVR",
+        "Indianapolis": "KIND",
+        "Indy": "KIND",
+        "Race in": "RACEN",
+        "Sibov": "CIBOV",
+        "Zosar": "ZOSAR",
+        "peyton": "PETYN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23L": "I3L",
+        "ILS Runway 23R": "I3R",
+        "RNAV Y Runway 23L": "R3L",
+        "RNAV Y Runway 23R": "R3R",
+        "RNAV Z Runway 23L": "Z3L",
+        "RNAV Z Runway 23R": "Z3R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three left": "23L",
+        "visual approach runway two three right": "23R",
+        "visual runway two three left": "23L",
+        "visual runway two three right": "23R",
+        "visual two three left": "23L",
+        "visual two three right": "23R"
+      },
+      "ApproachFixes": {
+        "I3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "I3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "R3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "R3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "Z3L": {
+          "Bird": "BBIRD",
+          "Gobge": "GOBGE",
+          "Larry": "LLARY",
+          "Miller": "MIILR",
+          "Pacer": "PACRR",
+          "Pukai": "PUKAE",
+          "Stewer": "STEWR",
+          "Trak": "TRAAK",
+          "knight": "KNIGT"
+        },
+        "Z3R": {
+          "Checkered": "CKERD",
+          "Coyle": "COYLE",
+          "Cozart": "COZRT",
+          "Driver": "DRVVR",
+          "Miller": "MIILR",
+          "Musky": "MUSKE",
+          "Race in": "RACEN",
+          "Trak": "TRAAK",
+          "peyton": "PETYN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 23R",
+      "STAR": "JAKKS2",
+      "Route": [
+        "CIBOV",
+        "PETYN",
+        "ZOSAR",
+        "KIND"
+      ],
+      "Altitude": 12889,
+      "Heading": 143,
+      "Speed": 382,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "Southwest 68 54": {
+      "Callsign": "SWA6854",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Checkered": "CKERD",
+        "Clang": "CLANG",
+        "Driver": "DRVVR",
+        "Indianapolis": "KIND",
+        "Indy": "KIND",
+        "Race in": "RACEN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23L": "I3L",
+        "ILS Runway 23R": "I3R",
+        "RNAV Y Runway 23L": "R3L",
+        "RNAV Y Runway 23R": "R3R",
+        "RNAV Z Runway 23L": "Z3L",
+        "RNAV Z Runway 23R": "Z3R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three left": "23L",
+        "visual approach runway two three right": "23R",
+        "visual runway two three left": "23L",
+        "visual runway two three right": "23R",
+        "visual two three left": "23L",
+        "visual two three right": "23R"
+      },
+      "ApproachFixes": {
+        "I3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "I3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "R3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "R3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "Z3L": {
+          "Bird": "BBIRD",
+          "Gobge": "GOBGE",
+          "Larry": "LLARY",
+          "Miller": "MIILR",
+          "Pacer": "PACRR",
+          "Pukai": "PUKAE",
+          "Stewer": "STEWR",
+          "Trak": "TRAAK",
+          "knight": "KNIGT"
+        },
+        "Z3R": {
+          "Checkered": "CKERD",
+          "Coyle": "COYLE",
+          "Cozart": "COZRT",
+          "Driver": "DRVVR",
+          "Miller": "MIILR",
+          "Musky": "MUSKE",
+          "Race in": "RACEN",
+          "Trak": "TRAAK",
+          "peyton": "PETYN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 23R",
+      "STAR": "SMUKE3",
+      "Route": [
+        "KIND"
+      ],
+      "Altitude": 4000,
+      "Heading": 154,
+      "Speed": 239,
+      "AssignedHeading": 200,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "Southwest 71 43": {
+      "Callsign": "SWA7143",
+      "AircraftType": "B737",
+      "Fixes": {
+        "Bird": "BBIRD",
+        "Clang": "CLANG",
+        "Indianapolis": "KIND",
+        "Indy": "KIND",
+        "Larry": "LLARY",
+        "Pacer": "PACRR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23L": "I3L",
+        "ILS Runway 23R": "I3R",
+        "RNAV Y Runway 23L": "R3L",
+        "RNAV Y Runway 23R": "R3R",
+        "RNAV Z Runway 23L": "Z3L",
+        "RNAV Z Runway 23R": "Z3R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three left": "23L",
+        "visual approach runway two three right": "23R",
+        "visual runway two three left": "23L",
+        "visual runway two three right": "23R",
+        "visual two three left": "23L",
+        "visual two three right": "23R"
+      },
+      "ApproachFixes": {
+        "I3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "I3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "R3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "R3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "Z3L": {
+          "Bird": "BBIRD",
+          "Gobge": "GOBGE",
+          "Larry": "LLARY",
+          "Miller": "MIILR",
+          "Pacer": "PACRR",
+          "Pukai": "PUKAE",
+          "Stewer": "STEWR",
+          "Trak": "TRAAK",
+          "knight": "KNIGT"
+        },
+        "Z3R": {
+          "Checkered": "CKERD",
+          "Coyle": "COYLE",
+          "Cozart": "COZRT",
+          "Driver": "DRVVR",
+          "Miller": "MIILR",
+          "Musky": "MUSKE",
+          "Race in": "RACEN",
+          "Trak": "TRAAK",
+          "peyton": "PETYN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 23L",
+      "STAR": "GIIBS4",
+      "Route": [
+        "KIND"
+      ],
+      "Altitude": 3000,
+      "Heading": 260,
+      "Speed": 187,
+      "AssignedHeading": 260,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "Spirit Wings 46 68": {
+      "Callsign": "NKS4668",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Bird": "BBIRD",
+        "Clang": "CLANG",
+        "Indianapolis": "KIND",
+        "Indy": "KIND",
+        "Larry": "LLARY",
+        "Pacer": "PACRR",
+        "Ramey": "RAMEY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23L": "I3L",
+        "ILS Runway 23R": "I3R",
+        "RNAV Y Runway 23L": "R3L",
+        "RNAV Y Runway 23R": "R3R",
+        "RNAV Z Runway 23L": "Z3L",
+        "RNAV Z Runway 23R": "Z3R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three left": "23L",
+        "visual approach runway two three right": "23R",
+        "visual runway two three left": "23L",
+        "visual runway two three right": "23R",
+        "visual two three left": "23L",
+        "visual two three right": "23R"
+      },
+      "ApproachFixes": {
+        "I3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "I3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "R3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "R3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "Z3L": {
+          "Bird": "BBIRD",
+          "Gobge": "GOBGE",
+          "Larry": "LLARY",
+          "Miller": "MIILR",
+          "Pacer": "PACRR",
+          "Pukai": "PUKAE",
+          "Stewer": "STEWR",
+          "Trak": "TRAAK",
+          "knight": "KNIGT"
+        },
+        "Z3R": {
+          "Checkered": "CKERD",
+          "Coyle": "COYLE",
+          "Cozart": "COZRT",
+          "Driver": "DRVVR",
+          "Miller": "MIILR",
+          "Musky": "MUSKE",
+          "Race in": "RACEN",
+          "Trak": "TRAAK",
+          "peyton": "PETYN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 23L",
+      "STAR": "GIIBS4",
+      "Route": [
+        "RAMEY",
+        "KIND"
+      ],
+      "Altitude": 5678,
+      "Heading": 37,
+      "Speed": 242,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "United 21": {
+      "Callsign": "UAL21",
+      "AircraftType": "B739",
+      "Fixes": {
+        "Checkered": "CKERD",
+        "Clang": "CLANG",
+        "Driver": "DRVVR",
+        "Indianapolis": "KIND",
+        "Indy": "KIND",
+        "Race in": "RACEN",
+        "Zosar": "ZOSAR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 23L": "I3L",
+        "ILS Runway 23R": "I3R",
+        "RNAV Y Runway 23L": "R3L",
+        "RNAV Y Runway 23R": "R3R",
+        "RNAV Z Runway 23L": "Z3L",
+        "RNAV Z Runway 23R": "Z3R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two three left": "23L",
+        "visual approach runway two three right": "23R",
+        "visual runway two three left": "23L",
+        "visual runway two three right": "23R",
+        "visual two three left": "23L",
+        "visual two three right": "23R"
+      },
+      "ApproachFixes": {
+        "I3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "I3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "R3L": {
+          "Bird": "BBIRD",
+          "Clang": "CLANG",
+          "Larry": "LLARY",
+          "Pacer": "PACRR"
+        },
+        "R3R": {
+          "Checkered": "CKERD",
+          "Clang": "CLANG",
+          "Driver": "DRVVR",
+          "Race in": "RACEN"
+        },
+        "Z3L": {
+          "Bird": "BBIRD",
+          "Gobge": "GOBGE",
+          "Larry": "LLARY",
+          "Miller": "MIILR",
+          "Pacer": "PACRR",
+          "Pukai": "PUKAE",
+          "Stewer": "STEWR",
+          "Trak": "TRAAK",
+          "knight": "KNIGT"
+        },
+        "Z3R": {
+          "Checkered": "CKERD",
+          "Coyle": "COYLE",
+          "Cozart": "COZRT",
+          "Driver": "DRVVR",
+          "Miller": "MIILR",
+          "Musky": "MUSKE",
+          "Race in": "RACEN",
+          "Trak": "TRAAK",
+          "peyton": "PETYN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 23R",
+      "STAR": "JAKKS2",
+      "Route": [
+        "ZOSAR",
+        "KIND"
+      ],
+      "Altitude": 4100,
+      "Heading": 48,
+      "Speed": 249,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Southwest 78 correction Southwest 68 54 turn right heading to actually disregard\"",
+    "[local-stt] normalized words: [southwest 78 correction southwest 68 54 turn right heading to actually disregard]",
+    "[local-stt] tokens: 12",
+    "[local-stt]   token[0]: Text=\"southwest\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"78\" Type=1 Value=78",
+    "[local-stt]   token[2]: Text=\"correction\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"southwest\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"68\" Type=1 Value=68",
+    "[local-stt]   token[5]: Text=\"54\" Type=1 Value=54",
+    "[local-stt]   token[6]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"heading\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"to\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"actually\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"disregard\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 12 tokens, 8 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 12 tokens, 8 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"Southwest 68 54\" (airline=0.433, flight=1.000, skip=2)",
+    "[local-stt]     result 1: \"Southwest 68 54\" (airline=1.000, flight=1.000, skip=3)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Southwest 68 54\" (airline=1.00, flight=1.00, skip=3)",
+    "[local-stt]   pattern \"airline_only\": 12 results",
+    "[local-stt]     result 0: \"United 21\" (airline=0.611, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Southwest 68 54\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Southwest 71 43\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"American 25\" (airline=0.575, flight=0.000, skip=2)",
+    "[local-stt]     result 4: \"American three 47\" (airline=0.575, flight=0.000, skip=2)",
+    "[local-stt]     pattern \"airline_only\": selected \"Southwest 68 54\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 1 results",
+    "[local-stt]     result 0: \"Spirit Wings 46 68\" (airline=0.500, flight=0.700, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Spirit Wings 46 68\" (airline=0.50, flight=0.70, skip=2)",
+    "[local-stt]   exact callsign \"SWA6854\" (spokenKey=\"Southwest 68 54\", skip=3): resolved",
+    "[local-stt] callsign match: Callsign=\"SWA6854\" SpokenKey=\"Southwest 68 54\" Conf=0.92 Consumed=6",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=4000 Fixes=6 Approaches=6 VisualApproaches=6 AssignedApproach=\"ILS Runway 23R\" LAHSORunways=[14 32 14 32]",
+    "[local-stt]   fix: \"Indy\" -\u003e \"KIND\"",
+    "[local-stt]   fix: \"Clang\" -\u003e \"CLANG\"",
+    "[local-stt]   fix: \"Race in\" -\u003e \"RACEN\"",
+    "[local-stt]   fix: \"Driver\" -\u003e \"DRVVR\"",
+    "[local-stt]   fix: \"Checkered\" -\u003e \"CKERD\"",
+    "[local-stt]   fix: \"Indianapolis\" -\u003e \"KIND\"",
+    "[local-stt]   approach: \"ILS Runway 23L\" -\u003e \"I3L\"",
+    "[local-stt]   approach: \"RNAV Z Runway 23L\" -\u003e \"Z3L\"",
+    "[local-stt]   approach: \"RNAV Y Runway 23R\" -\u003e \"R3R\"",
+    "[local-stt]   approach: \"ILS Runway 23R\" -\u003e \"I3R\"",
+    "[local-stt]   approach: \"RNAV Z Runway 23R\" -\u003e \"Z3R\"",
+    "[local-stt]   approach: \"RNAV Y Runway 23L\" -\u003e \"R3L\"",
+    "[local-stt]   visual approach: \"visual runway two three left\" -\u003e \"23L\"",
+    "[local-stt]   visual approach: \"visual approach runway two three left\" -\u003e \"23L\"",
+    "[local-stt]   visual approach: \"visual two three left\" -\u003e \"23L\"",
+    "[local-stt]   visual approach: \"visual runway two three right\" -\u003e \"23R\"",
+    "[local-stt]   visual approach: \"visual approach runway two three right\" -\u003e \"23R\"",
+    "[local-stt]   visual approach: \"visual two three right\" -\u003e \"23R\"",
+    "[local-stt] command tokens after disregard: 0",
+    "[local-stt] disregard-only transmission, returning empty",
+    "[local-stt] === DecodeTranscript END: \"\" (disregard, time=542.8µs) ==="
+  ]
+}

@@ -1,0 +1,522 @@
+{
+  "time": "2026-11-06T02:09:05.912936603Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "United Thirty Seven caution wake turbulence contact tower",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, lima, information, Flosi four, two two left, runway, I L S, United niner 63 heavy, United seven 13 heavy, United 37, United 15 18, United 14 72, Spirit Wings 16 59, Jazz 88 84, Lindbergh 45 15, ExecJet two 50, Buzzed, Zavpi, Hokir, Gimme, Philbo, eye-zee-ko, Shaff, SPARTA, Pattern, Newark Liberty International Airport",
+  "whisper_duration_ms": 326.916,
+  "audio_duration_ms": 2888,
+  "processor": "GPU: NVIDIA GeForce RTX 4090 (24138MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "UAL37",
+  "command": "CWT TO",
+  "stt_aircraft": {
+    "ExecJet two 50": {
+      "Callsign": "EJA250",
+      "AircraftType": "CL60",
+      "Fixes": {
+        "Buzzed": "BUZZD",
+        "Gimme": "GIMEE",
+        "Newark": "KEWR",
+        "Pattern": "PATRN",
+        "Zavpi": "ZAVPI",
+        "eye-zee-ko": "IZEKO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22L": "I2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual runway two two left": "22L",
+        "visual two two left": "22L"
+      },
+      "ApproachFixes": {
+        "I2L": {
+          "Buzzed": "BUZZD",
+          "Gimme": "GIMEE",
+          "Pattern": "PATRN",
+          "Zavpi": "ZAVPI",
+          "eye-zee-ko": "IZEKO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22L",
+      "Route": [
+        "KEWR"
+      ],
+      "Altitude": 5000,
+      "Heading": 150,
+      "Speed": 191,
+      "AssignedHeading": 150,
+      "AssignedSpeed": 180,
+      "State": "arrival",
+      "ControllerFrequency": "4A",
+      "TrackingController": "4A",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "Jazz 88 84": {
+      "Callsign": "JZA8884",
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Buzzed": "BUZZD",
+        "Gimme": "GIMEE",
+        "Hokir": "HOKIR",
+        "Newark": "KEWR",
+        "Pattern": "PATRN",
+        "Philbo": "PHLBO",
+        "SPARTA": "SAX",
+        "Zavpi": "ZAVPI",
+        "eye-zee-ko": "IZEKO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22L": "I2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual runway two two left": "22L",
+        "visual two two left": "22L"
+      },
+      "ApproachFixes": {
+        "I2L": {
+          "Buzzed": "BUZZD",
+          "Gimme": "GIMEE",
+          "Pattern": "PATRN",
+          "Zavpi": "ZAVPI",
+          "eye-zee-ko": "IZEKO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22L",
+      "STAR": "FLOSI4",
+      "Route": [
+        "SAX",
+        "PHLBO",
+        "HOKIR",
+        "KEWR"
+      ],
+      "Altitude": 5169,
+      "Heading": 150,
+      "Speed": 192,
+      "AssignedHeading": 150,
+      "AssignedSpeed": 180,
+      "State": "arrival",
+      "ControllerFrequency": "4A",
+      "TrackingController": "4A",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "Lindbergh 45 15": {
+      "Callsign": "GJS4515",
+      "AircraftType": "CRJ7",
+      "Fixes": {
+        "Buzzed": "BUZZD",
+        "Gimme": "GIMEE",
+        "Newark": "KEWR",
+        "Pattern": "PATRN",
+        "Zavpi": "ZAVPI",
+        "eye-zee-ko": "IZEKO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22L": "I2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual runway two two left": "22L",
+        "visual two two left": "22L"
+      },
+      "ApproachFixes": {
+        "I2L": {
+          "Buzzed": "BUZZD",
+          "Gimme": "GIMEE",
+          "Pattern": "PATRN",
+          "Zavpi": "ZAVPI",
+          "eye-zee-ko": "IZEKO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22L",
+      "Route": [
+        "KEWR"
+      ],
+      "Altitude": 5423,
+      "Heading": 360,
+      "Speed": 223,
+      "AssignedHeading": 360,
+      "State": "arrival",
+      "ControllerFrequency": "4A",
+      "TrackingController": "4A",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "Spirit Wings 16 59": {
+      "Callsign": "NKS1659",
+      "AircraftType": "A21N",
+      "Fixes": {
+        "Buzzed": "BUZZD",
+        "Gimme": "GIMEE",
+        "Newark": "KEWR",
+        "Pattern": "PATRN",
+        "Zavpi": "ZAVPI",
+        "eye-zee-ko": "IZEKO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22L": "I2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual runway two two left": "22L",
+        "visual two two left": "22L"
+      },
+      "ApproachFixes": {
+        "I2L": {
+          "Buzzed": "BUZZD",
+          "Gimme": "GIMEE",
+          "Pattern": "PATRN",
+          "Zavpi": "ZAVPI",
+          "eye-zee-ko": "IZEKO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22L",
+      "Route": [
+        "KEWR"
+      ],
+      "Altitude": 5000,
+      "Heading": 80,
+      "Speed": 205,
+      "AssignedHeading": 80,
+      "AssignedSpeed": 180,
+      "State": "arrival",
+      "ControllerFrequency": "4A",
+      "TrackingController": "4A",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "United 14 72": {
+      "Callsign": "UAL1472",
+      "AircraftType": "B39M",
+      "Fixes": {
+        "Buzzed": "BUZZD",
+        "Gimme": "GIMEE",
+        "Newark": "KEWR",
+        "Pattern": "PATRN",
+        "Zavpi": "ZAVPI",
+        "eye-zee-ko": "IZEKO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22L": "I2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual runway two two left": "22L",
+        "visual two two left": "22L"
+      },
+      "ApproachFixes": {
+        "I2L": {
+          "Buzzed": "BUZZD",
+          "Gimme": "GIMEE",
+          "Pattern": "PATRN",
+          "Zavpi": "ZAVPI",
+          "eye-zee-ko": "IZEKO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22L",
+      "Route": [
+        "KEWR"
+      ],
+      "Altitude": 4000,
+      "Heading": 170,
+      "Speed": 195,
+      "AssignedHeading": 170,
+      "AssignedSpeed": 190,
+      "State": "arrival",
+      "ControllerFrequency": "4A",
+      "TrackingController": "4A",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "United 15 18": {
+      "Callsign": "UAL1518",
+      "AircraftType": "B39M",
+      "Fixes": {
+        "Buzzed": "BUZZD",
+        "Gimme": "GIMEE",
+        "Newark": "KEWR",
+        "Pattern": "PATRN",
+        "Zavpi": "ZAVPI",
+        "eye-zee-ko": "IZEKO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22L": "I2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual runway two two left": "22L",
+        "visual two two left": "22L"
+      },
+      "ApproachFixes": {
+        "I2L": {
+          "Buzzed": "BUZZD",
+          "Gimme": "GIMEE",
+          "Pattern": "PATRN",
+          "Zavpi": "ZAVPI",
+          "eye-zee-ko": "IZEKO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22L",
+      "Route": [
+        "KEWR"
+      ],
+      "Altitude": 5000,
+      "Heading": 50,
+      "Speed": 203,
+      "AssignedHeading": 50,
+      "AssignedSpeed": 180,
+      "State": "arrival",
+      "ControllerFrequency": "4A",
+      "TrackingController": "4A",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "United 37": {
+      "Callsign": "UAL37",
+      "AircraftType": "B752",
+      "Fixes": {
+        "Buzzed": "BUZZD",
+        "Gimme": "GIMEE",
+        "Hokir": "HOKIR",
+        "Newark": "KEWR",
+        "Pattern": "PATRN",
+        "Philbo": "PHLBO",
+        "SPARTA": "SAX",
+        "Zavpi": "ZAVPI",
+        "eye-zee-ko": "IZEKO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22L": "I2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual runway two two left": "22L",
+        "visual two two left": "22L"
+      },
+      "ApproachFixes": {
+        "I2L": {
+          "Buzzed": "BUZZD",
+          "Gimme": "GIMEE",
+          "Pattern": "PATRN",
+          "Zavpi": "ZAVPI",
+          "eye-zee-ko": "IZEKO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22L",
+      "STAR": "FLOSI4",
+      "Route": [
+        "SAX",
+        "PHLBO",
+        "HOKIR",
+        "KEWR"
+      ],
+      "Altitude": 3000,
+      "Heading": 190,
+      "Speed": 185,
+      "AssignedHeading": 190,
+      "AssignedSpeed": 180,
+      "State": "cleared approach",
+      "ControllerFrequency": "4A",
+      "TrackingController": "4A",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "United niner 63 heavy": {
+      "Callsign": "UAL963",
+      "LastAddressed": true,
+      "AircraftType": "B764",
+      "Fixes": {
+        "Buzzed": "BUZZD",
+        "Gimme": "GIMEE",
+        "Hokir": "HOKIR",
+        "Newark": "KEWR",
+        "Pattern": "PATRN",
+        "Philbo": "PHLBO",
+        "SPARTA": "SAX",
+        "Zavpi": "ZAVPI",
+        "eye-zee-ko": "IZEKO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22L": "I2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual runway two two left": "22L",
+        "visual two two left": "22L"
+      },
+      "ApproachFixes": {
+        "I2L": {
+          "Buzzed": "BUZZD",
+          "Gimme": "GIMEE",
+          "Pattern": "PATRN",
+          "Zavpi": "ZAVPI",
+          "eye-zee-ko": "IZEKO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22L",
+      "STAR": "FLOSI4",
+      "Route": [
+        "SAX",
+        "PHLBO",
+        "HOKIR",
+        "KEWR"
+      ],
+      "Altitude": 7000,
+      "Heading": 213,
+      "Speed": 254,
+      "State": "arrival",
+      "ControllerFrequency": "4A",
+      "TrackingController": "4A",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "United seven 13 heavy": {
+      "Callsign": "UAL713",
+      "AircraftType": "B789",
+      "Fixes": {
+        "Buzzed": "BUZZD",
+        "Gimme": "GIMEE",
+        "Newark": "KEWR",
+        "Pattern": "PATRN",
+        "Zavpi": "ZAVPI",
+        "eye-zee-ko": "IZEKO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22L": "I2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual runway two two left": "22L",
+        "visual two two left": "22L"
+      },
+      "ApproachFixes": {
+        "I2L": {
+          "Buzzed": "BUZZD",
+          "Gimme": "GIMEE",
+          "Pattern": "PATRN",
+          "Zavpi": "ZAVPI",
+          "eye-zee-ko": "IZEKO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22L",
+      "Route": [
+        "KEWR"
+      ],
+      "Altitude": 4116,
+      "Heading": 160,
+      "Speed": 187,
+      "AssignedHeading": 160,
+      "AssignedSpeed": 180,
+      "State": "arrival",
+      "ControllerFrequency": "4A",
+      "TrackingController": "4A",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"United Thirty Seven caution wake turbulence contact tower\"",
+    "[local-stt] normalized words: [united 37 caution wake turbulence contact tower]",
+    "[local-stt] tokens: 7",
+    "[local-stt]   token[0]: Text=\"united\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"37\" Type=1 Value=37",
+    "[local-stt]   token[2]: Text=\"caution\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"wake\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"turbulence\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"contact\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"tower\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 7 tokens, 9 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 7 tokens, 9 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"United 37\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"United 37\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"United 37\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"United 37\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 22 results",
+    "[local-stt]     result 0: \"Lindbergh 45 15\" (airline=0.537, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"United 14 72\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"United niner 63 heavy\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"United 37\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"United 15 18\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"United 14 72\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"United 37\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"United 37\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"United 37\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"UAL37\" (spokenKey=\"United 37\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"UAL37\" SpokenKey=\"United 37\" Conf=1.00 Consumed=2",
+    "[local-stt] aircraft context: State=\"cleared approach\" Altitude=3000 Fixes=9 Approaches=1 VisualApproaches=3 AssignedApproach=\"ILS Runway 22L\" LAHSORunways=[11 29]",
+    "[local-stt]   fix: \"Buzzed\" -\u003e \"BUZZD\"",
+    "[local-stt]   fix: \"SPARTA\" -\u003e \"SAX\"",
+    "[local-stt]   fix: \"Hokir\" -\u003e \"HOKIR\"",
+    "[local-stt]   fix: \"eye-zee-ko\" -\u003e \"IZEKO\"",
+    "[local-stt]   fix: \"Newark\" -\u003e \"KEWR\"",
+    "[local-stt]   fix: \"Philbo\" -\u003e \"PHLBO\"",
+    "[local-stt]   fix: \"Pattern\" -\u003e \"PATRN\"",
+    "[local-stt]   fix: \"Gimme\" -\u003e \"GIMEE\"",
+    "[local-stt]   fix: \"Zavpi\" -\u003e \"ZAVPI\"",
+    "[local-stt]   approach: \"ILS Runway 22L\" -\u003e \"I2L\"",
+    "[local-stt]   visual approach: \"visual runway two two left\" -\u003e \"22L\"",
+    "[local-stt]   visual approach: \"visual approach runway two two left\" -\u003e \"22L\"",
+    "[local-stt]   visual approach: \"visual two two left\" -\u003e \"22L\"",
+    "[local-stt] command tokens after disregard: 5",
+    "[local-stt]   token[0]: Text=\"caution\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"wake\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"turbulence\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"contact\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"tower\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 5 tokens",
+    "[local-stt]   matched command: \"CWT\" [caution_wake_turbulence] (pos=0, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[0]=\"caution\", skipping",
+    "[local-stt]   matched command: \"TO\" [contact_tower] (pos=3, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[3]=\"contact\", skipping",
+    "[local-stt]   no match at token[1]=\"wake\", skipping",
+    "[local-stt]   no match at token[4]=\"tower\", skipping",
+    "[local-stt]   no match at token[2]=\"turbulence\", skipping",
+    "[local-stt]   matched command: \"TO\" [contact_tower] (pos=3, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[3]=\"contact\", skipping",
+    "[local-stt]   no match at token[4]=\"tower\", skipping",
+    "[local-stt]   beam final[0]: score=2.989 pos=5 commands=[CWT TO]",
+    "[local-stt]   beam final[1]: score=-0.509 pos=5 commands=[CWT]",
+    "[local-stt]   beam final[2]: score=-1.107 pos=5 commands=[TO]",
+    "[local-stt]   beam final[3]: score=-4.605 pos=5 commands=[]",
+    "[local-stt] ParseCommands: result=[CWT TO] (avgConf=1.00)",
+    "[local-stt] parsed commands: [CWT TO] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [CWT TO] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"UAL37 CWT TO\" (conf=1.00, time=2.6359ms) ==="
+  ]
+}

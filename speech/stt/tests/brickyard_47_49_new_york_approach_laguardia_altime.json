@@ -1,0 +1,638 @@
+{
+  "time": "2026-11-09T15:34:08.712632335Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Brickyard 47 49, New York Approach LaGuardia Altimeter two niner ninet correction three zero two eight expect vectors ILS runway two two approach",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, papa, information, Proud two, Milton four, Castle, Harp, Jotre, Eyrod, Kuz, Dans, Donyb, Froggy, two two, runway, zulu, yankee, x-ray, r-nav, I L S, United five 98, Southwest 36 44, Brickyard 47 49, JetBlue six 98, Endeavor 46 82, Delta seven 51, Delta three 79, Renew, Grecko, Jersey, Yoman, Korry, Minks, Proud, Dreams, Dep-d, Brand, Tykes, Harlem, Apple, LaGuardia Airport",
+  "whisper_duration_ms": 482.644,
+  "audio_duration_ms": 8776,
+  "processor": "GPU: NVIDIA GeForce RTX 4070 (12226MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "RPA4749",
+  "command": "EI22",
+  "reason": "correction of an altimeter setting",
+  "stt_aircraft": {
+    "Brickyard 47 49": {
+      "Callsign": "RPA4749",
+      "AircraftType": "E170",
+      "Fixes": {
+        "Apple": "APPLE",
+        "Brand": "BRAND",
+        "Dep-d": "DEPDY",
+        "Grecko": "GREKO",
+        "Jersey": "JERZY",
+        "Korry": "KORRY",
+        "LaGuardia": "KLGA",
+        "Minks": "MINKS",
+        "Proud": "PROUD",
+        "Renew": "RENUE",
+        "Tykes": "TYKES",
+        "Yoman": "YOMAN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22": "I22",
+        "RNAV X Runway 22": "RX2",
+        "RNAV Y Runway 22": "RY2",
+        "RNAV Z Runway 22": "RZ2"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two": "22",
+        "visual runway two two": "22",
+        "visual two two": "22"
+      },
+      "ApproachFixes": {
+        "I22": {
+          "Grecko": "GREKO",
+          "Yoman": "YOMAN"
+        },
+        "RX2": {
+          "Da-zoo": "DAZOO",
+          "Dans": "DANPS",
+          "Donyb": "DONYB",
+          "Eyrod": "EYROD",
+          "Jotre": "JOTRE",
+          "Kuz": "KUZZZ"
+        },
+        "RY2": {
+          "Froggy": "FROGI",
+          "Grecko": "GREKO"
+        },
+        "RZ2": {
+          "Castle": "CASLE",
+          "Harp": "HAARP",
+          "Kuz": "KUZZZ",
+          "Kylie": "KYLIE",
+          "Parks": "PARGS"
+        }
+      },
+      "STAR": "PROUD2",
+      "Route": [
+        "BRAND",
+        "KORRY",
+        "DEPDY",
+        "TYKES",
+        "MINKS",
+        "JERZY",
+        "RENUE",
+        "APPLE",
+        "PROUD",
+        "KLGA"
+      ],
+      "Altitude": 13000,
+      "Heading": 56,
+      "Speed": 313,
+      "State": "arrival",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D",
+      "LAHSORunways": [
+        "13",
+        "31"
+      ]
+    },
+    "Delta seven 51": {
+      "Callsign": "DAL751",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Apple": "APPLE",
+        "Dreams": "DREMS",
+        "Harlem": "HARLM",
+        "LaGuardia": "KLGA",
+        "Proud": "PROUD"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22": "I22",
+        "RNAV X Runway 22": "RX2",
+        "RNAV Y Runway 22": "RY2",
+        "RNAV Z Runway 22": "RZ2"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two": "22",
+        "visual runway two two": "22",
+        "visual two two": "22"
+      },
+      "ApproachFixes": {
+        "I22": {
+          "Grecko": "GREKO",
+          "Yoman": "YOMAN"
+        },
+        "RX2": {
+          "Da-zoo": "DAZOO",
+          "Dans": "DANPS",
+          "Donyb": "DONYB",
+          "Eyrod": "EYROD",
+          "Jotre": "JOTRE",
+          "Kuz": "KUZZZ"
+        },
+        "RY2": {
+          "Froggy": "FROGI",
+          "Grecko": "GREKO"
+        },
+        "RZ2": {
+          "Castle": "CASLE",
+          "Harp": "HAARP",
+          "Kuz": "KUZZZ",
+          "Kylie": "KYLIE",
+          "Parks": "PARGS"
+        }
+      },
+      "STAR": "MIP4",
+      "Route": [
+        "HARLM",
+        "DREMS",
+        "APPLE",
+        "PROUD",
+        "KLGA"
+      ],
+      "Altitude": 10000,
+      "Heading": 123,
+      "Speed": 317,
+      "State": "arrival",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D",
+      "LAHSORunways": [
+        "13",
+        "31"
+      ]
+    },
+    "Delta three 79": {
+      "Callsign": "DAL379",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Apple": "APPLE",
+        "Grecko": "GREKO",
+        "LaGuardia": "KLGA",
+        "Proud": "PROUD",
+        "Yoman": "YOMAN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22": "I22",
+        "RNAV X Runway 22": "RX2",
+        "RNAV Y Runway 22": "RY2",
+        "RNAV Z Runway 22": "RZ2"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two": "22",
+        "visual runway two two": "22",
+        "visual two two": "22"
+      },
+      "ApproachFixes": {
+        "I22": {
+          "Grecko": "GREKO",
+          "Yoman": "YOMAN"
+        },
+        "RX2": {
+          "Da-zoo": "DAZOO",
+          "Dans": "DANPS",
+          "Donyb": "DONYB",
+          "Eyrod": "EYROD",
+          "Jotre": "JOTRE",
+          "Kuz": "KUZZZ"
+        },
+        "RY2": {
+          "Froggy": "FROGI",
+          "Grecko": "GREKO"
+        },
+        "RZ2": {
+          "Castle": "CASLE",
+          "Harp": "HAARP",
+          "Kuz": "KUZZZ",
+          "Kylie": "KYLIE",
+          "Parks": "PARGS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22",
+      "STAR": "PROUD2",
+      "Route": [
+        "APPLE",
+        "PROUD",
+        "KLGA"
+      ],
+      "Altitude": 4659,
+      "Heading": 42,
+      "Speed": 277,
+      "State": "arrival",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "13",
+        "31"
+      ]
+    },
+    "Endeavor 46 82": {
+      "Callsign": "EDV4682",
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Apple": "APPLE",
+        "Grecko": "GREKO",
+        "LaGuardia": "KLGA",
+        "Proud": "PROUD",
+        "Yoman": "YOMAN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22": "I22",
+        "RNAV X Runway 22": "RX2",
+        "RNAV Y Runway 22": "RY2",
+        "RNAV Z Runway 22": "RZ2"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two": "22",
+        "visual runway two two": "22",
+        "visual two two": "22"
+      },
+      "ApproachFixes": {
+        "I22": {
+          "Grecko": "GREKO",
+          "Yoman": "YOMAN"
+        },
+        "RX2": {
+          "Da-zoo": "DAZOO",
+          "Dans": "DANPS",
+          "Donyb": "DONYB",
+          "Eyrod": "EYROD",
+          "Jotre": "JOTRE",
+          "Kuz": "KUZZZ"
+        },
+        "RY2": {
+          "Froggy": "FROGI",
+          "Grecko": "GREKO"
+        },
+        "RZ2": {
+          "Castle": "CASLE",
+          "Harp": "HAARP",
+          "Kuz": "KUZZZ",
+          "Kylie": "KYLIE",
+          "Parks": "PARGS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22",
+      "STAR": "MIP4",
+      "Route": [
+        "APPLE",
+        "PROUD",
+        "KLGA"
+      ],
+      "Altitude": 7000,
+      "Heading": 50,
+      "Speed": 285,
+      "State": "arrival",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D",
+      "LAHSORunways": [
+        "13",
+        "31"
+      ]
+    },
+    "JetBlue six 98": {
+      "Callsign": "JBU698",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Apple": "APPLE",
+        "Grecko": "GREKO",
+        "Jersey": "JERZY",
+        "LaGuardia": "KLGA",
+        "Minks": "MINKS",
+        "Proud": "PROUD",
+        "Renew": "RENUE",
+        "Tykes": "TYKES",
+        "Yoman": "YOMAN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22": "I22",
+        "RNAV X Runway 22": "RX2",
+        "RNAV Y Runway 22": "RY2",
+        "RNAV Z Runway 22": "RZ2"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two": "22",
+        "visual runway two two": "22",
+        "visual two two": "22"
+      },
+      "ApproachFixes": {
+        "I22": {
+          "Grecko": "GREKO",
+          "Yoman": "YOMAN"
+        },
+        "RX2": {
+          "Da-zoo": "DAZOO",
+          "Dans": "DANPS",
+          "Donyb": "DONYB",
+          "Eyrod": "EYROD",
+          "Jotre": "JOTRE",
+          "Kuz": "KUZZZ"
+        },
+        "RY2": {
+          "Froggy": "FROGI",
+          "Grecko": "GREKO"
+        },
+        "RZ2": {
+          "Castle": "CASLE",
+          "Harp": "HAARP",
+          "Kuz": "KUZZZ",
+          "Kylie": "KYLIE",
+          "Parks": "PARGS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22",
+      "STAR": "PROUD2",
+      "Route": [
+        "TYKES",
+        "MINKS",
+        "JERZY",
+        "RENUE",
+        "APPLE",
+        "PROUD",
+        "KLGA"
+      ],
+      "Altitude": 10000,
+      "Heading": 52,
+      "Speed": 355,
+      "AssignedSpeed": 300,
+      "State": "arrival",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D",
+      "LAHSORunways": [
+        "13",
+        "31"
+      ]
+    },
+    "Southwest 36 44": {
+      "Callsign": "SWA3644",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Apple": "APPLE",
+        "Dep-d": "DEPDY",
+        "Grecko": "GREKO",
+        "Jersey": "JERZY",
+        "LaGuardia": "KLGA",
+        "Minks": "MINKS",
+        "Proud": "PROUD",
+        "Renew": "RENUE",
+        "Tykes": "TYKES",
+        "Yoman": "YOMAN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22": "I22",
+        "RNAV X Runway 22": "RX2",
+        "RNAV Y Runway 22": "RY2",
+        "RNAV Z Runway 22": "RZ2"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two": "22",
+        "visual runway two two": "22",
+        "visual two two": "22"
+      },
+      "ApproachFixes": {
+        "I22": {
+          "Grecko": "GREKO",
+          "Yoman": "YOMAN"
+        },
+        "RX2": {
+          "Da-zoo": "DAZOO",
+          "Dans": "DANPS",
+          "Donyb": "DONYB",
+          "Eyrod": "EYROD",
+          "Jotre": "JOTRE",
+          "Kuz": "KUZZZ"
+        },
+        "RY2": {
+          "Froggy": "FROGI",
+          "Grecko": "GREKO"
+        },
+        "RZ2": {
+          "Castle": "CASLE",
+          "Harp": "HAARP",
+          "Kuz": "KUZZZ",
+          "Kylie": "KYLIE",
+          "Parks": "PARGS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22",
+      "STAR": "PROUD2",
+      "Route": [
+        "DEPDY",
+        "TYKES",
+        "MINKS",
+        "JERZY",
+        "RENUE",
+        "APPLE",
+        "PROUD",
+        "KLGA"
+      ],
+      "Altitude": 10000,
+      "Heading": 56,
+      "Speed": 297,
+      "State": "arrival",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D",
+      "LAHSORunways": [
+        "13",
+        "31"
+      ]
+    },
+    "United five 98": {
+      "Callsign": "UAL598",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Apple": "APPLE",
+        "Dreams": "DREMS",
+        "LaGuardia": "KLGA",
+        "Proud": "PROUD"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22": "I22",
+        "RNAV X Runway 22": "RX2",
+        "RNAV Y Runway 22": "RY2",
+        "RNAV Z Runway 22": "RZ2"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two": "22",
+        "visual runway two two": "22",
+        "visual two two": "22"
+      },
+      "ApproachFixes": {
+        "I22": {
+          "Grecko": "GREKO",
+          "Yoman": "YOMAN"
+        },
+        "RX2": {
+          "Da-zoo": "DAZOO",
+          "Dans": "DANPS",
+          "Donyb": "DONYB",
+          "Eyrod": "EYROD",
+          "Jotre": "JOTRE",
+          "Kuz": "KUZZZ"
+        },
+        "RY2": {
+          "Froggy": "FROGI",
+          "Grecko": "GREKO"
+        },
+        "RZ2": {
+          "Castle": "CASLE",
+          "Harp": "HAARP",
+          "Kuz": "KUZZZ",
+          "Kylie": "KYLIE",
+          "Parks": "PARGS"
+        }
+      },
+      "STAR": "MIP4",
+      "Route": [
+        "DREMS",
+        "APPLE",
+        "PROUD",
+        "KLGA"
+      ],
+      "Altitude": 8295,
+      "Heading": 150,
+      "Speed": 310,
+      "AssignedHeading": 150,
+      "State": "arrival",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D",
+      "LAHSORunways": [
+        "13",
+        "31"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Brickyard 47 49, New York Approach LaGuardia Altimeter two niner ninet correction three zero two eight expect vectors ILS runway two two approach\"",
+    "[local-stt] normalized words: [brickyard 47 49 new york approach laguardia altimeter 2 9 ninet correction 3 0 2 8 expect vectors ils runway 2 2 approach]",
+    "[local-stt] tokens: 18",
+    "[local-stt]   token[0]: Text=\"brickyard\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"47\" Type=1 Value=47",
+    "[local-stt]   token[2]: Text=\"49\" Type=1 Value=49",
+    "[local-stt]   token[3]: Text=\"new\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"york\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"laguardia\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"altimeter\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"29\" Type=1 Value=29",
+    "[local-stt]   token[9]: Text=\"ninet\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"correction\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"3028\" Type=1 Value=3028",
+    "[local-stt]   token[12]: Text=\"expect\" Type=0 Value=-1",
+    "[local-stt]   token[13]: Text=\"vectors\" Type=0 Value=-1",
+    "[local-stt]   token[14]: Text=\"ils\" Type=0 Value=-1",
+    "[local-stt]   token[15]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[16]: Text=\"22\" Type=1 Value=22",
+    "[local-stt]   token[17]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 18 tokens, 7 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 18 tokens, 7 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Brickyard 47 49\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Brickyard 47 49\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"Delta three 79\" (airline=0.437, flight=0.722, skip=0)",
+    "[local-stt]     result 1: \"Brickyard 47 49\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Brickyard 47 49\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 12 results",
+    "[local-stt]     result 0: \"Delta three 79\" (airline=0.437, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Endeavor 46 82\" (airline=0.491, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"JetBlue six 98\" (airline=0.418, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Brickyard 47 49\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"United five 98\" (airline=0.519, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Brickyard 47 49\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"Brickyard 47 49\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Brickyard 47 49\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"Brickyard 47 49\" (airline=0.500, flight=0.700, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Brickyard 47 49\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"RPA4749\" (spokenKey=\"Brickyard 47 49\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"RPA4749\" SpokenKey=\"Brickyard 47 49\" Conf=1.00 Consumed=3",
+    "[local-stt] MatchCallsign: 7 tokens, 7 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 7 tokens, 7 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"airline_flight\": no results",
+    "[local-stt]   pattern \"airline_only\": 19 results",
+    "[local-stt]     result 0: \"Delta seven 51\" (airline=0.578, flight=0.000, skip=1)",
+    "[local-stt]     result 1: \"Delta three 79\" (airline=0.578, flight=0.000, skip=1)",
+    "[local-stt]     result 2: \"Endeavor 46 82\" (airline=0.575, flight=0.000, skip=1)",
+    "[local-stt]     result 3: \"JetBlue six 98\" (airline=0.437, flight=0.000, skip=1)",
+    "[local-stt]     result 4: \"Brickyard 47 49\" (airline=0.426, flight=0.000, skip=1)",
+    "[local-stt]     pattern \"airline_only\": selected \"Endeavor 46 82\" (airline=0.60, flight=0.00, skip=2)",
+    "[local-stt]     pattern \"airline_only\": scoring rejected \"Endeavor 46 82\"",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": no results",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=13000 Fixes=10 Approaches=4 VisualApproaches=3 AssignedApproach=\"\" LAHSORunways=[13 31]",
+    "[local-stt]   fix: \"Brand\" -\u003e \"BRAND\"",
+    "[local-stt]   fix: \"Dep-d\" -\u003e \"DEPDY\"",
+    "[local-stt]   fix: \"Minks\" -\u003e \"MINKS\"",
+    "[local-stt]   fix: \"Jersey\" -\u003e \"JERZY\"",
+    "[local-stt]   fix: \"Renew\" -\u003e \"RENUE\"",
+    "[local-stt]   fix: \"Proud\" -\u003e \"PROUD\"",
+    "[local-stt]   fix: \"LaGuardia\" -\u003e \"KLGA\"",
+    "[local-stt]   fix: \"Korry\" -\u003e \"KORRY\"",
+    "[local-stt]   fix: \"Tykes\" -\u003e \"TYKES\"",
+    "[local-stt]   fix: \"Apple\" -\u003e \"APPLE\"",
+    "[local-stt]   approach: \"RNAV Y Runway 22\" -\u003e \"RY2\"",
+    "[local-stt]   approach: \"ILS Runway 22\" -\u003e \"I22\"",
+    "[local-stt]   approach: \"RNAV X Runway 22\" -\u003e \"RX2\"",
+    "[local-stt]   approach: \"RNAV Z Runway 22\" -\u003e \"RZ2\"",
+    "[local-stt]   visual approach: \"visual runway two two\" -\u003e \"22\"",
+    "[local-stt]   visual approach: \"visual approach runway two two\" -\u003e \"22\"",
+    "[local-stt]   visual approach: \"visual two two\" -\u003e \"22\"",
+    "[local-stt]   correction: preserving command keyword \"maintain\" for corrected value",
+    "[local-stt] command tokens after disregard: 8",
+    "[local-stt]   token[0]: Text=\"maintain\" Type=0 Value=0",
+    "[local-stt]   token[1]: Text=\"3028\" Type=1 Value=3028",
+    "[local-stt]   token[2]: Text=\"expect\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"vectors\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"ils\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"22\" Type=1 Value=22",
+    "[local-stt]   token[7]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 8 tokens",
+    "[local-stt]   matched command: \"S302\" [maintain_speed] (pos=0, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"maintain\", skipping",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"ils\" variant=\"\" runway=\"two two\" -\u003e \"I22\" (consumed=3)",
+    "[local-stt]   matched command: \"EI22\" [expect_approach] (pos=2, conf=0.99, consumed=5, isThen=false)",
+    "[local-stt]   adding 2 fixes from approach I22 to aircraft context",
+    "[local-stt]   no match at token[2]=\"expect\", skipping",
+    "[local-stt]   no match at token[1]=\"3028\", skipping",
+    "[local-stt]   no match at token[7]=\"approach\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 10 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 10 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"22\" against 10 fixes",
+    "[local-stt]   extractFix: no match found for \"22\"",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: looking for STAR=\"PROUD2\" telephony=\"Proud two\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   extractSTAR: looking for STAR=\"PROUD2\" telephony=\"Proud two\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   extractSTAR: looking for STAR=\"PROUD2\" telephony=\"Proud two\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"ils\" variant=\"\" runway=\"two two\" -\u003e \"I22\" (consumed=3)",
+    "[local-stt]   matched command: \"EI22\" [vectors_approach] (pos=3, conf=0.99, consumed=4, isThen=false)",
+    "[local-stt]   adding 2 fixes from approach I22 to aircraft context",
+    "[local-stt]   no match at token[3]=\"vectors\", skipping",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"ils\" variant=\"\" runway=\"two two\" -\u003e \"I22\" (consumed=3)",
+    "[local-stt]   matched command: \"EI22\" [expect_approach] (pos=2, conf=0.99, consumed=5, isThen=false)",
+    "[local-stt]   adding 2 fixes from approach I22 to aircraft context",
+    "[local-stt]   no match at token[2]=\"expect\", skipping",
+    "[local-stt]   no match at token[7]=\"approach\", skipping",
+    "[local-stt]   no match at token[7]=\"approach\", skipping",
+    "[local-stt]   matched command: \"\" [position_id] (pos=4, conf=0.64, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[4]=\"ils\", skipping",
+    "[local-stt]   beam final[0]: score=4.134 pos=8 commands=[S302 EI22]",
+    "[local-stt]   beam final[1]: score=1.233 pos=8 commands=[S302 EI22]",
+    "[local-stt]   beam final[2]: score=0.635 pos=8 commands=[EI22]",
+    "[local-stt]   beam final[3]: score=-2.812 pos=8 commands=[S302]",
+    "[local-stt] ParseCommands: result=[S302 EI22] (avgConf=0.99)",
+    "[local-stt] parsed commands: [S302 EI22] (conf=0.99, kinds=1)",
+    "[local-stt] validated commands: [S302 EI22] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"RPA4749 S302 EI22\" (conf=0.99, time=4.5594ms) ==="
+  ]
+}

@@ -1,0 +1,1125 @@
+{
+  "time": "2026-11-03T05:12:35.379065017Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1072:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "SkyWest Forty Eight Forty Four flight level three three zero",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, sierra, information, Utes two, Pit two, Carter one, Zions one, Rugged three, Seagull one, Tuktee, Gorps, Pries, Ivocy, Uduzu, Fands, Ufemy, Camdi, Bekay, Lawva, Dily, beehive, Jicu, Ruff, Yawva, Weber, OGDEN, Lagoon, Toomey, Iron, Echo, one seven, one six right, one six left, runway, zulu, r-nav, I L S, Southwest 99 74, Southwest 87 30, Southwest 80 27, Southwest 26 12, Southwest 24 46, SkyWest 93 90, SkyWest 74 94, SkyWest six 18 pahpah, SkyWest 58 15, SkyWest 48 44, SkyWest three 38 golf, Delta 83 20, Delta 75 11, Delta seven 34 heavy, Delta 70 77, Delta 27, Delta 11 37, spike, FAIRFIELD, Salt Lake City International Airport, Lacker, Yutes, draper, Leahy, Stew, Carter, squaw, Jamn, Spane, BOISE, ENOCH, BRIGHAM CITY, knoll, DELTA, sign, Goshu, TWIN FALLS, Urnuw, Kranc, HAYDEN, BONNEVILLE, Bever, Pimy, CHEROKEE, Helper, Zions, Dryad, Loduy, MEEKER, Oofda, Bobby, pretty, Gitlin, Flec, ROCK SPRINGS",
+  "whisper_duration_ms": 337.494,
+  "audio_duration_ms": 4040,
+  "processor": "GPU: NVIDIA GeForce RTX 4070 SUPER (11997MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "SKW4844",
+  "command": "A330",
+  "reason": "flight level is not a heading",
+  "stt_aircraft": {
+    "Delta 11 37": {
+      "Callsign": "DAL1137",
+      "AircraftType": "A321",
+      "Fixes": {
+        "BRIGHAM CITY": "LHO",
+        "Bobby": "BOBRT",
+        "Carter": "CARTR",
+        "Kranc": "KRANC",
+        "ROCK SPRINGS": "OCS"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 16L": "I6L",
+        "ILS Runway 16R": "I6R",
+        "ILS Runway 17": "I17",
+        "RNAV Z Runway 16L": "R6L",
+        "RNAV Z Runway 16R": "R6R",
+        "RNAV Z Runway 17": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one seven": "17",
+        "visual approach runway one six left": "16L",
+        "visual approach runway one six right": "16R",
+        "visual one seven": "17",
+        "visual one six left": "16L",
+        "visual one six right": "16R",
+        "visual runway one seven": "17",
+        "visual runway one six left": "16L",
+        "visual runway one six right": "16R"
+      },
+      "ApproachFixes": {
+        "I17": {
+          "Echo": "EKKHO",
+          "Gorps": "GORPS",
+          "Ivocy": "IVOCY",
+          "OGDEN": "OGD",
+          "Pries": "PRYES",
+          "Tiful": "TIFUL",
+          "Tuktee": "TUKTE",
+          "Uduzu": "UDUZU",
+          "Weber": "WEBER"
+        },
+        "I6L": {
+          "Echo": "EKKHO",
+          "Iron": "IRRON",
+          "Lagoon": "LGOON",
+          "OGDEN": "OGD",
+          "Toomey": "TOOME",
+          "Weber": "WEBER",
+          "Yip": "YYIPP"
+        },
+        "I6R": {
+          "Bunker": "BNKER",
+          "Echo": "EKKHO",
+          "Fands": "FANDS",
+          "OGDEN": "OGD",
+          "Ruff": "RRUFF",
+          "Ufemy": "UFEMY",
+          "Weber": "WEBER",
+          "beehive": "BHIVE"
+        },
+        "R6L": {
+          "Echo": "EKKHO",
+          "Iron": "IRRON",
+          "Lagoon": "LGOON",
+          "Weber": "WEBER",
+          "Yawva": "YAWVA",
+          "Yip": "YYIPP"
+        },
+        "R6R": {
+          "Bekay": "BEKAY",
+          "Bunker": "BNKER",
+          "Camdi": "CAMDI",
+          "Dily": "DILEE",
+          "Echo": "EKKHO",
+          "Jicu": "JICCU",
+          "Lawva": "LAWVA",
+          "Ruff": "RRUFF",
+          "Weber": "WEBER",
+          "beehive": "BHIVE"
+        },
+        "RZ7": {
+          "Echo": "EKKHO",
+          "Gorps": "GORPS",
+          "Ivocy": "IVOCY",
+          "Pries": "PRYES",
+          "Tiful": "TIFUL",
+          "Uduzu": "UDUZU",
+          "Weber": "WEBER"
+        }
+      },
+      "STAR": "CARTR1",
+      "Route": [
+        "OCS",
+        "BOBRT",
+        "KRANC",
+        "LHO",
+        "CARTR",
+        "KSLC"
+      ],
+      "Altitude": 34000,
+      "Heading": 256,
+      "Speed": 434,
+      "AssignedAltitude": 34000,
+      "State": "arrival",
+      "ControllerFrequency": "44",
+      "TrackingController": "44",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "Delta 27": {
+      "Callsign": "DAL27",
+      "AircraftType": "B753",
+      "Fixes": {
+        "BONNEVILLE": "BVL",
+        "Flec": "FLECC",
+        "Yutes": "YUTES",
+        "knoll": "KNOLE",
+        "squaw": "SKWAH"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 16L": "I6L",
+        "ILS Runway 16R": "I6R",
+        "ILS Runway 17": "I17",
+        "RNAV Z Runway 16L": "R6L",
+        "RNAV Z Runway 16R": "R6R",
+        "RNAV Z Runway 17": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one seven": "17",
+        "visual approach runway one six left": "16L",
+        "visual approach runway one six right": "16R",
+        "visual one seven": "17",
+        "visual one six left": "16L",
+        "visual one six right": "16R",
+        "visual runway one seven": "17",
+        "visual runway one six left": "16L",
+        "visual runway one six right": "16R"
+      },
+      "ApproachFixes": {
+        "I17": {
+          "Echo": "EKKHO",
+          "Gorps": "GORPS",
+          "Ivocy": "IVOCY",
+          "OGDEN": "OGD",
+          "Pries": "PRYES",
+          "Tiful": "TIFUL",
+          "Tuktee": "TUKTE",
+          "Uduzu": "UDUZU",
+          "Weber": "WEBER"
+        },
+        "I6L": {
+          "Echo": "EKKHO",
+          "Iron": "IRRON",
+          "Lagoon": "LGOON",
+          "OGDEN": "OGD",
+          "Toomey": "TOOME",
+          "Weber": "WEBER",
+          "Yip": "YYIPP"
+        },
+        "I6R": {
+          "Bunker": "BNKER",
+          "Echo": "EKKHO",
+          "Fands": "FANDS",
+          "OGDEN": "OGD",
+          "Ruff": "RRUFF",
+          "Ufemy": "UFEMY",
+          "Weber": "WEBER",
+          "beehive": "BHIVE"
+        },
+        "R6L": {
+          "Echo": "EKKHO",
+          "Iron": "IRRON",
+          "Lagoon": "LGOON",
+          "Weber": "WEBER",
+          "Yawva": "YAWVA",
+          "Yip": "YYIPP"
+        },
+        "R6R": {
+          "Bekay": "BEKAY",
+          "Bunker": "BNKER",
+          "Camdi": "CAMDI",
+          "Dily": "DILEE",
+          "Echo": "EKKHO",
+          "Jicu": "JICCU",
+          "Lawva": "LAWVA",
+          "Ruff": "RRUFF",
+          "Weber": "WEBER",
+          "beehive": "BHIVE"
+        },
+        "RZ7": {
+          "Echo": "EKKHO",
+          "Gorps": "GORPS",
+          "Ivocy": "IVOCY",
+          "Pries": "PRYES",
+          "Tiful": "TIFUL",
+          "Uduzu": "UDUZU",
+          "Weber": "WEBER"
+        }
+      },
+      "STAR": "YUTES2",
+      "Route": [
+        "FLECC",
+        "BVL",
+        "KNOLE",
+        "SKWAH",
+        "YUTES",
+        "KSLC"
+      ],
+      "Altitude": 35000,
+      "Heading": 52,
+      "Speed": 461,
+      "AssignedAltitude": 35000,
+      "State": "arrival",
+      "ControllerFrequency": "44",
+      "TrackingController": "44",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "Delta 70 77": {
+      "Callsign": "DAL7077",
+      "AircraftType": "BCS1",
+      "Fixes": {
+        "ENOCH": "EHK",
+        "Gitlin": "GITLN",
+        "Lacker": "LAKRR",
+        "Loduy": "LODUY",
+        "Salt Lake City": "KSLC",
+        "Urnuw": "URNUW"
+      },
+      "SID": "ZIONZ1",
+      "Route": [
+        "GITLN",
+        "LODUY",
+        "URNUW",
+        "EHK",
+        "LAKRR",
+        "ZZYZX",
+        "HAKMN",
+        "KRLIE",
+        "ZELMA",
+        "BLKWL",
+        "LVELL",
+        "KSAN"
+      ],
+      "Altitude": 19609,
+      "Heading": 179,
+      "Speed": 399,
+      "AssignedAltitude": 38000,
+      "State": "departure",
+      "ControllerFrequency": "44",
+      "TrackingController": "44"
+    },
+    "Delta 75 11": {
+      "Callsign": "DAL7511",
+      "AircraftType": "B738",
+      "Fixes": {
+        "BRIGHAM CITY": "LHO",
+        "Bobby": "BOBRT",
+        "Carter": "CARTR",
+        "Kranc": "KRANC",
+        "Salt Lake City": "KSLC"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 16L": "I6L",
+        "ILS Runway 16R": "I6R",
+        "ILS Runway 17": "I17",
+        "RNAV Z Runway 16L": "R6L",
+        "RNAV Z Runway 16R": "R6R",
+        "RNAV Z Runway 17": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one seven": "17",
+        "visual approach runway one six left": "16L",
+        "visual approach runway one six right": "16R",
+        "visual one seven": "17",
+        "visual one six left": "16L",
+        "visual one six right": "16R",
+        "visual runway one seven": "17",
+        "visual runway one six left": "16L",
+        "visual runway one six right": "16R"
+      },
+      "ApproachFixes": {
+        "I17": {
+          "Echo": "EKKHO",
+          "Gorps": "GORPS",
+          "Ivocy": "IVOCY",
+          "OGDEN": "OGD",
+          "Pries": "PRYES",
+          "Tiful": "TIFUL",
+          "Tuktee": "TUKTE",
+          "Uduzu": "UDUZU",
+          "Weber": "WEBER"
+        },
+        "I6L": {
+          "Echo": "EKKHO",
+          "Iron": "IRRON",
+          "Lagoon": "LGOON",
+          "OGDEN": "OGD",
+          "Toomey": "TOOME",
+          "Weber": "WEBER",
+          "Yip": "YYIPP"
+        },
+        "I6R": {
+          "Bunker": "BNKER",
+          "Echo": "EKKHO",
+          "Fands": "FANDS",
+          "OGDEN": "OGD",
+          "Ruff": "RRUFF",
+          "Ufemy": "UFEMY",
+          "Weber": "WEBER",
+          "beehive": "BHIVE"
+        },
+        "R6L": {
+          "Echo": "EKKHO",
+          "Iron": "IRRON",
+          "Lagoon": "LGOON",
+          "Weber": "WEBER",
+          "Yawva": "YAWVA",
+          "Yip": "YYIPP"
+        },
+        "R6R": {
+          "Bekay": "BEKAY",
+          "Bunker": "BNKER",
+          "Camdi": "CAMDI",
+          "Dily": "DILEE",
+          "Echo": "EKKHO",
+          "Jicu": "JICCU",
+          "Lawva": "LAWVA",
+          "Ruff": "RRUFF",
+          "Weber": "WEBER",
+          "beehive": "BHIVE"
+        },
+        "RZ7": {
+          "Echo": "EKKHO",
+          "Gorps": "GORPS",
+          "Ivocy": "IVOCY",
+          "Pries": "PRYES",
+          "Tiful": "TIFUL",
+          "Uduzu": "UDUZU",
+          "Weber": "WEBER"
+        }
+      },
+      "STAR": "CARTR1",
+      "Route": [
+        "BOBRT",
+        "KRANC",
+        "LHO",
+        "CARTR",
+        "KSLC"
+      ],
+      "Altitude": 36000,
+      "Heading": 274,
+      "Speed": 397,
+      "AssignedAltitude": 36000,
+      "State": "arrival",
+      "ControllerFrequency": "44",
+      "TrackingController": "44",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "Delta 83 20": {
+      "Callsign": "DAL8320",
+      "AircraftType": "BCS3",
+      "Fixes": {
+        "Oofda": "UFFDA"
+      },
+      "SID": "RUGGD3",
+      "Route": [
+        "UFFDA",
+        "KMSP"
+      ],
+      "Altitude": 34000,
+      "Heading": 54,
+      "Speed": 462,
+      "AssignedAltitude": 34000,
+      "State": "departure",
+      "ControllerFrequency": "44",
+      "TrackingController": "D17"
+    },
+    "Delta seven 34 heavy": {
+      "Callsign": "DAL734",
+      "AircraftType": "B763",
+      "Fixes": {
+        "HAYDEN": "CHE",
+        "Salt Lake City": "KSLC",
+        "pretty": "PERTY"
+      },
+      "SID": "RUGGD3",
+      "Route": [
+        "PERTY",
+        "CHE",
+        "GLD",
+        "HYS",
+        "WEITT",
+        "MEMFS",
+        "HUTCC",
+        "KNSAW",
+        "RUSSA",
+        "KATL"
+      ],
+      "Altitude": 30183,
+      "Heading": 86,
+      "Speed": 467,
+      "AssignedAltitude": 34000,
+      "State": "departure",
+      "ControllerFrequency": "44",
+      "TrackingController": "44"
+    },
+    "SkyWest 48 44": {
+      "Callsign": "SKW4844",
+      "LastAddressed": true,
+      "AircraftType": "E75L",
+      "Fixes": {
+        "MEEKER": "EKR",
+        "Salt Lake City": "KSLC"
+      },
+      "SID": "RUGGD3",
+      "Route": [
+        "EKR",
+        "ROLLS",
+        "KOKC"
+      ],
+      "Altitude": 31073,
+      "Heading": 91,
+      "Speed": 464,
+      "AssignedAltitude": 33000,
+      "State": "departure",
+      "ControllerFrequency": "44",
+      "TrackingController": "44"
+    },
+    "SkyWest 58 15": {
+      "Callsign": "SKW5815",
+      "AircraftType": "CRJ7",
+      "Fixes": {
+        "ENOCH": "EHK",
+        "Harry Reid": "KLAS",
+        "Loduy": "LODUY",
+        "Salt Lake City": "KSLC",
+        "Stew": "STEWW",
+        "Urnuw": "URNUW"
+      },
+      "SID": "ZIONZ1",
+      "Route": [
+        "LODUY",
+        "URNUW",
+        "EHK",
+        "STEWW",
+        "KLAS"
+      ],
+      "Altitude": 24033,
+      "Heading": 178,
+      "Speed": 415,
+      "AssignedAltitude": 36000,
+      "State": "departure",
+      "ControllerFrequency": "44",
+      "TrackingController": "44"
+    },
+    "SkyWest 74 94": {
+      "Callsign": "SKW7494",
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "MEEKER": "EKR"
+      },
+      "SID": "RUGGD3",
+      "Route": [
+        "EKR",
+        "ROLLS",
+        "KOKC"
+      ],
+      "Altitude": 28000,
+      "Heading": 91,
+      "Speed": 444,
+      "AssignedAltitude": 33000,
+      "State": "departure",
+      "ControllerFrequency": "44",
+      "TrackingController": "44"
+    },
+    "SkyWest 93 90": {
+      "Callsign": "SKW9390",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "ENOCH": "EHK",
+        "Gitlin": "GITLN",
+        "Loduy": "LODUY",
+        "Salt Lake City": "KSLC",
+        "Urnuw": "URNUW",
+        "Zions": "ZIONZ"
+      },
+      "SID": "ZIONZ1",
+      "Route": [
+        "ZIONZ",
+        "GITLN",
+        "LODUY",
+        "URNUW",
+        "EHK",
+        "STEWW",
+        "KLAS"
+      ],
+      "Altitude": 16116,
+      "Heading": 169,
+      "Speed": 374,
+      "AssignedAltitude": 36000,
+      "State": "departure",
+      "ControllerFrequency": "44",
+      "TrackingController": "44"
+    },
+    "SkyWest six 18 pahpah": {
+      "Callsign": "SKW618P",
+      "AircraftType": "CRJ7",
+      "Fixes": {
+        "BOISE": "BOI",
+        "Dryad": "DRYAD",
+        "Salt Lake City": "KSLC",
+        "TWIN FALLS": "TWF"
+      },
+      "SID": "CGULL1",
+      "Route": [
+        "DRYAD",
+        "TWF",
+        "BOI",
+        "DSD",
+        "KRDM"
+      ],
+      "Altitude": 25407,
+      "Heading": 294,
+      "Speed": 384,
+      "AssignedAltitude": 35000,
+      "State": "departure",
+      "ControllerFrequency": "44",
+      "TrackingController": "S16"
+    },
+    "SkyWest three 38 golf": {
+      "Callsign": "SKW338G",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "ROCK SPRINGS": "OCS",
+        "Salt Lake City": "KSLC"
+      },
+      "SID": "RUGGD3",
+      "Route": [
+        "OCS",
+        "TST",
+        "ONL",
+        "KOMA"
+      ],
+      "Altitude": 29000,
+      "Heading": 58,
+      "Speed": 458,
+      "AssignedAltitude": 34000,
+      "State": "departure",
+      "ControllerFrequency": "44",
+      "TrackingController": "44"
+    },
+    "Southwest 24 46": {
+      "Callsign": "SWA2446",
+      "AircraftType": "B737",
+      "Fixes": {
+        "FAIRFIELD": "FFU",
+        "Goshu": "GOSHU",
+        "Helper": "HELPR",
+        "Leahy": "LEEHY",
+        "Spane": "SPANE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 16L": "I6L",
+        "ILS Runway 16R": "I6R",
+        "ILS Runway 17": "I17",
+        "RNAV Z Runway 16L": "R6L",
+        "RNAV Z Runway 16R": "R6R",
+        "RNAV Z Runway 17": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one seven": "17",
+        "visual approach runway one six left": "16L",
+        "visual approach runway one six right": "16R",
+        "visual one seven": "17",
+        "visual one six left": "16L",
+        "visual one six right": "16R",
+        "visual runway one seven": "17",
+        "visual runway one six left": "16L",
+        "visual runway one six right": "16R"
+      },
+      "ApproachFixes": {
+        "I17": {
+          "Echo": "EKKHO",
+          "Gorps": "GORPS",
+          "Ivocy": "IVOCY",
+          "OGDEN": "OGD",
+          "Pries": "PRYES",
+          "Tiful": "TIFUL",
+          "Tuktee": "TUKTE",
+          "Uduzu": "UDUZU",
+          "Weber": "WEBER"
+        },
+        "I6L": {
+          "Echo": "EKKHO",
+          "Iron": "IRRON",
+          "Lagoon": "LGOON",
+          "OGDEN": "OGD",
+          "Toomey": "TOOME",
+          "Weber": "WEBER",
+          "Yip": "YYIPP"
+        },
+        "I6R": {
+          "Bunker": "BNKER",
+          "Echo": "EKKHO",
+          "Fands": "FANDS",
+          "OGDEN": "OGD",
+          "Ruff": "RRUFF",
+          "Ufemy": "UFEMY",
+          "Weber": "WEBER",
+          "beehive": "BHIVE"
+        },
+        "R6L": {
+          "Echo": "EKKHO",
+          "Iron": "IRRON",
+          "Lagoon": "LGOON",
+          "Weber": "WEBER",
+          "Yawva": "YAWVA",
+          "Yip": "YYIPP"
+        },
+        "R6R": {
+          "Bekay": "BEKAY",
+          "Bunker": "BNKER",
+          "Camdi": "CAMDI",
+          "Dily": "DILEE",
+          "Echo": "EKKHO",
+          "Jicu": "JICCU",
+          "Lawva": "LAWVA",
+          "Ruff": "RRUFF",
+          "Weber": "WEBER",
+          "beehive": "BHIVE"
+        },
+        "RZ7": {
+          "Echo": "EKKHO",
+          "Gorps": "GORPS",
+          "Ivocy": "IVOCY",
+          "Pries": "PRYES",
+          "Tiful": "TIFUL",
+          "Uduzu": "UDUZU",
+          "Weber": "WEBER"
+        }
+      },
+      "STAR": "PITTT2",
+      "Route": [
+        "HELPR",
+        "GOSHU",
+        "SPANE",
+        "LEEHY",
+        "FFU",
+        "DRYVE",
+        "PITTT",
+        "KSLC"
+      ],
+      "Altitude": 30330,
+      "Heading": 287,
+      "Speed": 417,
+      "AssignedAltitude": 15000,
+      "State": "arrival",
+      "ControllerFrequency": "44",
+      "TrackingController": "QQQ1K",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "Southwest 26 12": {
+      "Callsign": "SWA2612",
+      "AircraftType": "B737",
+      "Fixes": {
+        "BRIGHAM CITY": "LHO",
+        "Bobby": "BOBRT",
+        "CHEROKEE": "CKW",
+        "Kranc": "KRANC",
+        "sign": "SSIGN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 16L": "I6L",
+        "ILS Runway 16R": "I6R",
+        "ILS Runway 17": "I17",
+        "RNAV Z Runway 16L": "R6L",
+        "RNAV Z Runway 16R": "R6R",
+        "RNAV Z Runway 17": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one seven": "17",
+        "visual approach runway one six left": "16L",
+        "visual approach runway one six right": "16R",
+        "visual one seven": "17",
+        "visual one six left": "16L",
+        "visual one six right": "16R",
+        "visual runway one seven": "17",
+        "visual runway one six left": "16L",
+        "visual runway one six right": "16R"
+      },
+      "ApproachFixes": {
+        "I17": {
+          "Echo": "EKKHO",
+          "Gorps": "GORPS",
+          "Ivocy": "IVOCY",
+          "OGDEN": "OGD",
+          "Pries": "PRYES",
+          "Tiful": "TIFUL",
+          "Tuktee": "TUKTE",
+          "Uduzu": "UDUZU",
+          "Weber": "WEBER"
+        },
+        "I6L": {
+          "Echo": "EKKHO",
+          "Iron": "IRRON",
+          "Lagoon": "LGOON",
+          "OGDEN": "OGD",
+          "Toomey": "TOOME",
+          "Weber": "WEBER",
+          "Yip": "YYIPP"
+        },
+        "I6R": {
+          "Bunker": "BNKER",
+          "Echo": "EKKHO",
+          "Fands": "FANDS",
+          "OGDEN": "OGD",
+          "Ruff": "RRUFF",
+          "Ufemy": "UFEMY",
+          "Weber": "WEBER",
+          "beehive": "BHIVE"
+        },
+        "R6L": {
+          "Echo": "EKKHO",
+          "Iron": "IRRON",
+          "Lagoon": "LGOON",
+          "Weber": "WEBER",
+          "Yawva": "YAWVA",
+          "Yip": "YYIPP"
+        },
+        "R6R": {
+          "Bekay": "BEKAY",
+          "Bunker": "BNKER",
+          "Camdi": "CAMDI",
+          "Dily": "DILEE",
+          "Echo": "EKKHO",
+          "Jicu": "JICCU",
+          "Lawva": "LAWVA",
+          "Ruff": "RRUFF",
+          "Weber": "WEBER",
+          "beehive": "BHIVE"
+        },
+        "RZ7": {
+          "Echo": "EKKHO",
+          "Gorps": "GORPS",
+          "Ivocy": "IVOCY",
+          "Pries": "PRYES",
+          "Tiful": "TIFUL",
+          "Uduzu": "UDUZU",
+          "Weber": "WEBER"
+        }
+      },
+      "STAR": "CARTR1",
+      "Route": [
+        "CKW",
+        "SSIGN",
+        "BOBRT",
+        "KRANC",
+        "LHO",
+        "CARTR",
+        "KSLC"
+      ],
+      "Altitude": 33000,
+      "Heading": 277,
+      "Speed": 410,
+      "AssignedAltitude": 33000,
+      "State": "arrival",
+      "ControllerFrequency": "44",
+      "TrackingController": "44",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "Southwest 80 27": {
+      "Callsign": "SWA8027",
+      "AircraftType": "B737",
+      "Fixes": {
+        "BONNEVILLE": "BVL",
+        "Flec": "FLECC",
+        "Sacramento": "KSMF"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 16L": "I6L",
+        "ILS Runway 16R": "I6R",
+        "ILS Runway 17": "I17",
+        "RNAV Z Runway 16L": "R6L",
+        "RNAV Z Runway 16R": "R6R",
+        "RNAV Z Runway 17": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one seven": "17",
+        "visual approach runway one six left": "16L",
+        "visual approach runway one six right": "16R",
+        "visual one seven": "17",
+        "visual one six left": "16L",
+        "visual one six right": "16R",
+        "visual runway one seven": "17",
+        "visual runway one six left": "16L",
+        "visual runway one six right": "16R"
+      },
+      "ApproachFixes": {
+        "I17": {
+          "Echo": "EKKHO",
+          "Gorps": "GORPS",
+          "Ivocy": "IVOCY",
+          "OGDEN": "OGD",
+          "Pries": "PRYES",
+          "Tiful": "TIFUL",
+          "Tuktee": "TUKTE",
+          "Uduzu": "UDUZU",
+          "Weber": "WEBER"
+        },
+        "I6L": {
+          "Echo": "EKKHO",
+          "Iron": "IRRON",
+          "Lagoon": "LGOON",
+          "OGDEN": "OGD",
+          "Toomey": "TOOME",
+          "Weber": "WEBER",
+          "Yip": "YYIPP"
+        },
+        "I6R": {
+          "Bunker": "BNKER",
+          "Echo": "EKKHO",
+          "Fands": "FANDS",
+          "OGDEN": "OGD",
+          "Ruff": "RRUFF",
+          "Ufemy": "UFEMY",
+          "Weber": "WEBER",
+          "beehive": "BHIVE"
+        },
+        "R6L": {
+          "Echo": "EKKHO",
+          "Iron": "IRRON",
+          "Lagoon": "LGOON",
+          "Weber": "WEBER",
+          "Yawva": "YAWVA",
+          "Yip": "YYIPP"
+        },
+        "R6R": {
+          "Bekay": "BEKAY",
+          "Bunker": "BNKER",
+          "Camdi": "CAMDI",
+          "Dily": "DILEE",
+          "Echo": "EKKHO",
+          "Jicu": "JICCU",
+          "Lawva": "LAWVA",
+          "Ruff": "RRUFF",
+          "Weber": "WEBER",
+          "beehive": "BHIVE"
+        },
+        "RZ7": {
+          "Echo": "EKKHO",
+          "Gorps": "GORPS",
+          "Ivocy": "IVOCY",
+          "Pries": "PRYES",
+          "Tiful": "TIFUL",
+          "Uduzu": "UDUZU",
+          "Weber": "WEBER"
+        }
+      },
+      "STAR": "YUTES2",
+      "Route": [
+        "FLECC",
+        "BVL",
+        "KNOLE",
+        "SKWAH",
+        "YUTES",
+        "KSLC"
+      ],
+      "Altitude": 35000,
+      "Heading": 54,
+      "Speed": 477,
+      "AssignedAltitude": 35000,
+      "State": "arrival",
+      "ControllerFrequency": "44",
+      "TrackingController": "44",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    },
+    "Southwest 87 30": {
+      "Callsign": "SWA8730",
+      "AircraftType": "B737",
+      "Fixes": {
+        "Pimy": "PIMIE"
+      },
+      "Route": [
+        "PIMIE",
+        "RVF",
+        "COUTS",
+        "CYYC"
+      ],
+      "Altitude": 35000,
+      "Heading": 352,
+      "Speed": 414,
+      "AssignedAltitude": 35000,
+      "AssignedSpeed": 250,
+      "State": "overflight",
+      "ControllerFrequency": "44",
+      "TrackingController": "44"
+    },
+    "Southwest 99 74": {
+      "Callsign": "SWA9974",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Bever": "BEVRR",
+        "DELTA": "DTA",
+        "Jamn": "JAMMN",
+        "draper": "DRAPR",
+        "spike": "SPIEK"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 16L": "I6L",
+        "ILS Runway 16R": "I6R",
+        "ILS Runway 17": "I17",
+        "RNAV Z Runway 16L": "R6L",
+        "RNAV Z Runway 16R": "R6R",
+        "RNAV Z Runway 17": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one seven": "17",
+        "visual approach runway one six left": "16L",
+        "visual approach runway one six right": "16R",
+        "visual one seven": "17",
+        "visual one six left": "16L",
+        "visual one six right": "16R",
+        "visual runway one seven": "17",
+        "visual runway one six left": "16L",
+        "visual runway one six right": "16R"
+      },
+      "ApproachFixes": {
+        "I17": {
+          "Echo": "EKKHO",
+          "Gorps": "GORPS",
+          "Ivocy": "IVOCY",
+          "OGDEN": "OGD",
+          "Pries": "PRYES",
+          "Tiful": "TIFUL",
+          "Tuktee": "TUKTE",
+          "Uduzu": "UDUZU",
+          "Weber": "WEBER"
+        },
+        "I6L": {
+          "Echo": "EKKHO",
+          "Iron": "IRRON",
+          "Lagoon": "LGOON",
+          "OGDEN": "OGD",
+          "Toomey": "TOOME",
+          "Weber": "WEBER",
+          "Yip": "YYIPP"
+        },
+        "I6R": {
+          "Bunker": "BNKER",
+          "Echo": "EKKHO",
+          "Fands": "FANDS",
+          "OGDEN": "OGD",
+          "Ruff": "RRUFF",
+          "Ufemy": "UFEMY",
+          "Weber": "WEBER",
+          "beehive": "BHIVE"
+        },
+        "R6L": {
+          "Echo": "EKKHO",
+          "Iron": "IRRON",
+          "Lagoon": "LGOON",
+          "Weber": "WEBER",
+          "Yawva": "YAWVA",
+          "Yip": "YYIPP"
+        },
+        "R6R": {
+          "Bekay": "BEKAY",
+          "Bunker": "BNKER",
+          "Camdi": "CAMDI",
+          "Dily": "DILEE",
+          "Echo": "EKKHO",
+          "Jicu": "JICCU",
+          "Lawva": "LAWVA",
+          "Ruff": "RRUFF",
+          "Weber": "WEBER",
+          "beehive": "BHIVE"
+        },
+        "RZ7": {
+          "Echo": "EKKHO",
+          "Gorps": "GORPS",
+          "Ivocy": "IVOCY",
+          "Pries": "PRYES",
+          "Tiful": "TIFUL",
+          "Uduzu": "UDUZU",
+          "Weber": "WEBER"
+        }
+      },
+      "STAR": "PITTT2",
+      "Route": [
+        "BEVRR",
+        "DTA",
+        "JAMMN",
+        "DRAPR",
+        "SPIEK",
+        "HEIRY",
+        "PITTT",
+        "KSLC"
+      ],
+      "Altitude": 23008,
+      "Heading": 9,
+      "Speed": 392,
+      "AssignedAltitude": 17000,
+      "State": "arrival",
+      "ControllerFrequency": "44",
+      "TrackingController": "QQQ1K",
+      "LAHSORunways": [
+        "14",
+        "32",
+        "14",
+        "32"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"SkyWest Forty Eight Forty Four flight level three three zero\"",
+    "[local-stt] normalized words: [skywest 48 44 flight level 3 3 0]",
+    "[local-stt] tokens: 4",
+    "[local-stt]   token[0]: Text=\"skywest\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"48\" Type=1 Value=48",
+    "[local-stt]   token[2]: Text=\"44\" Type=1 Value=44",
+    "[local-stt]   token[3]: Text=\"FL330\" Type=2 Value=330",
+    "[local-stt] MatchCallsign: 4 tokens, 17 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 4 tokens, 17 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"SkyWest 48 44\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"SkyWest 48 44\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"SkyWest 48 44\" (airline=1.000, flight=0.889, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"SkyWest 48 44\" (airline=1.00, flight=0.89, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 17 results",
+    "[local-stt]     result 0: \"SkyWest 74 94\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Southwest 87 30\" (airline=0.661, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"SkyWest six 18 pahpah\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"SkyWest three 38 golf\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"SkyWest 58 15\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"SkyWest three 38 golf\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"SkyWest 48 44\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"SkyWest 48 44\" (airline=0.500, flight=0.650, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"SkyWest 48 44\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   best callsign candidate: \"SKW4844\" (conf=1.00, consumed=3, addressingForm=0, spokenKey=\"SkyWest 48 44\"; 3 candidates)",
+    "[local-stt] ParseCommands: 1 tokens",
+    "[local-stt]   matched command: \"A330\" [standalone_altitude] (pos=0, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[0]=\"FL330\", skipping",
+    "[local-stt]   beam final[0]: score=0.598 pos=1 commands=[A330]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=1 commands=[]",
+    "[local-stt] ParseCommands: result=[A330] (avgConf=1.00)",
+    "[local-stt] ParseCommands: 0 tokens",
+    "[local-stt] ParseCommands: 3 tokens",
+    "[local-stt]   no match at token[0]=\"48\", skipping",
+    "[local-stt]   no match at token[1]=\"44\", skipping",
+    "[local-stt]   matched command: \"A330\" [standalone_altitude] (pos=2, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[2]=\"FL330\", skipping",
+    "[local-stt]   beam final[0]: score=0.598 pos=3 commands=[A330]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=3 commands=[]",
+    "[local-stt] ParseCommands: result=[A330] (avgConf=1.00)",
+    "[local-stt] callsign match: Callsign=\"SKW4844\" SpokenKey=\"SkyWest 48 44\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"departure\" Altitude=31073 Fixes=2 Approaches=0 VisualApproaches=0 AssignedApproach=\"\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Salt Lake City\" -\u003e \"KSLC\"",
+    "[local-stt]   fix: \"MEEKER\" -\u003e \"EKR\"",
+    "[local-stt] command tokens after disregard: 1",
+    "[local-stt]   token[0]: Text=\"FL330\" Type=2 Value=330",
+    "[local-stt] ParseCommands: 1 tokens",
+    "[local-stt]   matched command: \"A330\" [standalone_altitude] (pos=0, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[0]=\"FL330\", skipping",
+    "[local-stt]   beam final[0]: score=0.598 pos=1 commands=[A330]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=1 commands=[]",
+    "[local-stt] ParseCommands: result=[A330] (avgConf=1.00)",
+    "[local-stt] parsed commands: [A330] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [A330] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"SKW4844 A330\" (conf=1.00, time=1.0446ms) ==="
+  ]
+}

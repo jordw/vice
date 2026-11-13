@@ -1,0 +1,820 @@
+{
+  "time": "2026-11-10T03:55:13.715192876Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Delta Seventy Fifteen cleared for visual runway two six left",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, whiskey, india, information, Rounders four, Rockstar four, Cocktail four, Chow four, Raider two, Nights four, Gidget four, Huxar, BOULDER CITY, Dicksa, Larry, Shand, Crudy, Shanq, Cedar, wopma, Codno, Trey, Roamin, one left, two six left, runway, r-nav, zulu, yankee, I L S, Approach, Visual, United two 69, Southwest niner 45, Southwest seven 21, Southwest 35 zero four, Southwest 33 zero six, Southwest two 81, SkyWest two 69 foxtrot, november three four four three seven, november two five one one, KLM 65 81 heavy, Frontier Flight 78 53, Delta 70 15, Kodse, PALMDALE, Geo, Hogog, Redquin, Carlos, HECTOR, Gadget, Feyla, Bishop, Rockstar, Envy, Haylin, Skee, Tattoo, Topaz, Arrow, Burbon, Beauty, Pehty, Deon, Huxley, Ewans, Wolf, Silver, Hayden, Preeno, Knits, Radar, , Laughlin Bullhead International Airport, Kybad, Gruden, Harry Reid International Airport",
+  "whisper_duration_ms": 152.869,
+  "audio_duration_ms": 3656,
+  "processor": "GPU: AMD Radeon RX 9070 XT (16304MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "DAL7015",
+  "command": "CVA26L",
+  "stt_aircraft": {
+    "Delta 70 15": {
+      "Callsign": "DAL7015",
+      "AircraftType": "B752",
+      "Fixes": {
+        "BOULDER CITY": "BLD",
+        "Bishop": "BISHP",
+        "Burbon": "BERBN",
+        "Dicksa": "DICSA",
+        "Harry Reid": "KLAS",
+        "Hogog": "HOGOG",
+        "Huxar": "HUXAR",
+        "Kodse": "KODSE",
+        "Larry": "LARRE",
+        "Preeno": "PRINO",
+        "Reelin": "RELIN",
+        "Shand": "SHAND"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Y Runway 26L": "Y6L",
+        "ILS Z Runway 26L": "Z6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway two six left": "26L",
+        "visual one left": "1L",
+        "visual runway one left": "1L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Cedar": "CEDAX",
+          "Codno": "CODNO",
+          "Crudy": "KRUDY",
+          "Nodiy": "NODIY",
+          "Roamin": "ROAMN",
+          "Shanq": "SHANQ",
+          "Trey": "TRREY",
+          "wopma": "WOPMA"
+        },
+        "R6L": {
+          "Bishop": "BISHP",
+          "Burbon": "BERBN",
+          "Larry": "LARRE",
+          "Preeno": "PRINO",
+          "Reelin": "RELIN",
+          "Shand": "SHAND"
+        },
+        "Y6L": {
+          "Bishop": "BISHP",
+          "Burbon": "BERBN",
+          "Hogog": "HOGOG",
+          "Huxar": "HUXAR",
+          "Kodse": "KODSE",
+          "Reelin": "RELIN"
+        },
+        "Z6L": {
+          "BOULDER CITY": "BLD",
+          "Dicksa": "DICSA",
+          "Larry": "LARRE",
+          "Preeno": "PRINO",
+          "Reelin": "RELIN",
+          "Shand": "SHAND"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 26L",
+      "STAR": "CHOWW4",
+      "Route": [
+        "PRINO",
+        "KLAS"
+      ],
+      "Altitude": 8320,
+      "Heading": 220,
+      "Speed": 284,
+      "State": "arrival",
+      "ControllerFrequency": "1K",
+      "TrackingController": "1K",
+      "LAHSORunways": [
+        "8L",
+        "26R",
+        "8R",
+        "26L",
+        "1L",
+        "19R",
+        "1R",
+        "19L"
+      ]
+    },
+    "Frontier Flight 78 53": {
+      "Callsign": "FFT7853",
+      "AircraftType": "A319",
+      "Fixes": {
+        "Feyla": "FEYLA",
+        "Gruden": "GRUDN",
+        "Harry Reid": "KLAS",
+        "Radar": "RADYR",
+        "Silver": "SLVRR"
+      },
+      "SID": "RADYR2",
+      "Route": [
+        "GRUDN",
+        "RADYR",
+        "SLVRR",
+        "FEYLA",
+        "KONT"
+      ],
+      "Altitude": 10527,
+      "Heading": 191,
+      "Speed": 320,
+      "State": "departure",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D"
+    },
+    "KLM 65 81 heavy": {
+      "Callsign": "KLM6581",
+      "AircraftType": "B772",
+      "Fixes": {
+        "Arrow": "AIRRO",
+        "Bethel": "BETHL",
+        "Gadget": "GIDGT",
+        "Geo": "GEEOO",
+        "Harry Reid": "KLAS",
+        "Hayden": "HAIDN",
+        "Kybad": "KYBAD",
+        "Verkin": "VERKN"
+      },
+      "SID": "GIDGT4",
+      "Route": [
+        "KYBAD",
+        "HAIDN",
+        "AIRRO",
+        "GIDGT",
+        "GEEOO",
+        "BETHL",
+        "VERKN",
+        "MLF",
+        "RODBO",
+        "PIDSO",
+        "EHAM"
+      ],
+      "Altitude": 3713,
+      "Heading": 68,
+      "Speed": 191,
+      "State": "departure",
+      "ControllerFrequency": "1M",
+      "TrackingController": "1M"
+    },
+    "SkyWest two 69 foxtrot": {
+      "Callsign": "SKW269F",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "HECTOR": "HEC",
+        "Harry Reid": "KLAS",
+        "PALMDALE": "PMD",
+        "Radar": "RADYR",
+        "Silver": "SLVRR",
+        "Topaz": "TOPAC"
+      },
+      "SID": "RADYR2",
+      "Route": [
+        "RADYR",
+        "SLVRR",
+        "TOPAC",
+        "HEC",
+        "PMD",
+        "MQO",
+        "KSBP"
+      ],
+      "Altitude": 14759,
+      "Heading": 174,
+      "Speed": 356,
+      "State": "departure",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D"
+    },
+    "Southwest 33 zero six": {
+      "Callsign": "SWA3306",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Ewans": "IWANS",
+        "Harry Reid": "KLAS",
+        "Knits": "NIITZ",
+        "Skee": "SSKEE"
+      },
+      "SID": "NIITZ4",
+      "Route": [
+        "NIITZ",
+        "IWANS",
+        "SSKEE",
+        "ABQ",
+        "MIERA",
+        "TXO",
+        "KVLIP",
+        "FUZ",
+        "MLU",
+        "MHZ",
+        "ORRKK",
+        "KATL"
+      ],
+      "Altitude": 15472,
+      "Heading": 95,
+      "Speed": 381,
+      "State": "departure",
+      "ControllerFrequency": "1M",
+      "TrackingController": "C07"
+    },
+    "Southwest 35 zero four": {
+      "Callsign": "SWA3504",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "BOULDER CITY": "BLD",
+        "Bishop": "BISHP",
+        "Burbon": "BERBN",
+        "Dicksa": "DICSA",
+        "Harry Reid": "KLAS",
+        "Haylin": "HAYLN",
+        "Hogog": "HOGOG",
+        "Huxar": "HUXAR",
+        "Huxley": "HUXLY",
+        "Kodse": "KODSE",
+        "Larry": "LARRE",
+        "Preeno": "PRINO",
+        "Reelin": "RELIN",
+        "Shand": "SHAND"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Y Runway 26L": "Y6L",
+        "ILS Z Runway 26L": "Z6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway two six left": "26L",
+        "visual one left": "1L",
+        "visual runway one left": "1L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Cedar": "CEDAX",
+          "Codno": "CODNO",
+          "Crudy": "KRUDY",
+          "Nodiy": "NODIY",
+          "Roamin": "ROAMN",
+          "Shanq": "SHANQ",
+          "Trey": "TRREY",
+          "wopma": "WOPMA"
+        },
+        "R6L": {
+          "Bishop": "BISHP",
+          "Burbon": "BERBN",
+          "Larry": "LARRE",
+          "Preeno": "PRINO",
+          "Reelin": "RELIN",
+          "Shand": "SHAND"
+        },
+        "Y6L": {
+          "Bishop": "BISHP",
+          "Burbon": "BERBN",
+          "Hogog": "HOGOG",
+          "Huxar": "HUXAR",
+          "Kodse": "KODSE",
+          "Reelin": "RELIN"
+        },
+        "Z6L": {
+          "BOULDER CITY": "BLD",
+          "Dicksa": "DICSA",
+          "Larry": "LARRE",
+          "Preeno": "PRINO",
+          "Reelin": "RELIN",
+          "Shand": "SHAND"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 26L",
+      "STAR": "RKSTR4",
+      "Route": [
+        "HUXLY",
+        "HAYLN",
+        "PRINO",
+        "KLAS"
+      ],
+      "Altitude": 13324,
+      "Heading": 296,
+      "Speed": 308,
+      "State": "arrival",
+      "ControllerFrequency": "1L",
+      "TrackingController": "1L",
+      "LAHSORunways": [
+        "8L",
+        "26R",
+        "8R",
+        "26L",
+        "1L",
+        "19R",
+        "1R",
+        "19L"
+      ]
+    },
+    "Southwest niner 45": {
+      "Callsign": "SWA945",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Harry Reid": "KLAS",
+        "Pehty": "PEHTY",
+        "Rockstar": "RKSTR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Y Runway 26L": "Y6L",
+        "ILS Z Runway 26L": "Z6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway two six left": "26L",
+        "visual one left": "1L",
+        "visual runway one left": "1L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Cedar": "CEDAX",
+          "Codno": "CODNO",
+          "Crudy": "KRUDY",
+          "Nodiy": "NODIY",
+          "Roamin": "ROAMN",
+          "Shanq": "SHANQ",
+          "Trey": "TRREY",
+          "wopma": "WOPMA"
+        },
+        "R6L": {
+          "Bishop": "BISHP",
+          "Burbon": "BERBN",
+          "Larry": "LARRE",
+          "Preeno": "PRINO",
+          "Reelin": "RELIN",
+          "Shand": "SHAND"
+        },
+        "Y6L": {
+          "Bishop": "BISHP",
+          "Burbon": "BERBN",
+          "Hogog": "HOGOG",
+          "Huxar": "HUXAR",
+          "Kodse": "KODSE",
+          "Reelin": "RELIN"
+        },
+        "Z6L": {
+          "BOULDER CITY": "BLD",
+          "Dicksa": "DICSA",
+          "Larry": "LARRE",
+          "Preeno": "PRINO",
+          "Reelin": "RELIN",
+          "Shand": "SHAND"
+        }
+      },
+      "STAR": "RKSTR4",
+      "Route": [
+        "PEHTY",
+        "RKSTR",
+        "KLAS"
+      ],
+      "Altitude": 16559,
+      "Heading": 270,
+      "Speed": 344,
+      "State": "arrival",
+      "ControllerFrequency": "1L",
+      "TrackingController": "1L",
+      "LAHSORunways": [
+        "8L",
+        "26R",
+        "8R",
+        "26L",
+        "1L",
+        "19R",
+        "1R",
+        "19L"
+      ]
+    },
+    "Southwest seven 21": {
+      "Callsign": "SWA721",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "BOULDER CITY": "BLD",
+        "Bishop": "BISHP",
+        "Burbon": "BERBN",
+        "Deon": "DEEON",
+        "Dicksa": "DICSA",
+        "Envy": "ENNVY",
+        "Harry Reid": "KLAS",
+        "Hogog": "HOGOG",
+        "Huxar": "HUXAR",
+        "Kodse": "KODSE",
+        "Larry": "LARRE",
+        "Preeno": "PRINO",
+        "Redquin": "REDQN",
+        "Reelin": "RELIN",
+        "Shand": "SHAND"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Y Runway 26L": "Y6L",
+        "ILS Z Runway 26L": "Z6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway two six left": "26L",
+        "visual one left": "1L",
+        "visual runway one left": "1L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Cedar": "CEDAX",
+          "Codno": "CODNO",
+          "Crudy": "KRUDY",
+          "Nodiy": "NODIY",
+          "Roamin": "ROAMN",
+          "Shanq": "SHANQ",
+          "Trey": "TRREY",
+          "wopma": "WOPMA"
+        },
+        "R6L": {
+          "Bishop": "BISHP",
+          "Burbon": "BERBN",
+          "Larry": "LARRE",
+          "Preeno": "PRINO",
+          "Reelin": "RELIN",
+          "Shand": "SHAND"
+        },
+        "Y6L": {
+          "Bishop": "BISHP",
+          "Burbon": "BERBN",
+          "Hogog": "HOGOG",
+          "Huxar": "HUXAR",
+          "Kodse": "KODSE",
+          "Reelin": "RELIN"
+        },
+        "Z6L": {
+          "BOULDER CITY": "BLD",
+          "Dicksa": "DICSA",
+          "Larry": "LARRE",
+          "Preeno": "PRINO",
+          "Reelin": "RELIN",
+          "Shand": "SHAND"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 26L",
+      "STAR": "COKTL4",
+      "Route": [
+        "DEEON",
+        "ENNVY",
+        "REDQN",
+        "BERBN",
+        "KLAS"
+      ],
+      "Altitude": 17697,
+      "Heading": 103,
+      "Speed": 339,
+      "State": "arrival",
+      "ControllerFrequency": "1G",
+      "TrackingController": "1G",
+      "LAHSORunways": [
+        "8L",
+        "26R",
+        "8R",
+        "26L",
+        "1L",
+        "19R",
+        "1R",
+        "19L"
+      ]
+    },
+    "Southwest two 81": {
+      "Callsign": "SWA281",
+      "AircraftType": "B737",
+      "Fixes": {
+        "BOULDER CITY": "BLD",
+        "Bishop": "BISHP",
+        "Burbon": "BERBN",
+        "Carlos": "KRLOZ",
+        "Dicksa": "DICSA",
+        "Harry Reid": "KLAS",
+        "Hogog": "HOGOG",
+        "Huxar": "HUXAR",
+        "Kodse": "KODSE",
+        "Larry": "LARRE",
+        "Preeno": "PRINO",
+        "Reelin": "RELIN",
+        "Shand": "SHAND",
+        "Tattoo": "TATUU",
+        "Wolf": "WOLPH"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Y Runway 26L": "Y6L",
+        "ILS Z Runway 26L": "Z6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway two six left": "26L",
+        "visual one left": "1L",
+        "visual runway one left": "1L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Cedar": "CEDAX",
+          "Codno": "CODNO",
+          "Crudy": "KRUDY",
+          "Nodiy": "NODIY",
+          "Roamin": "ROAMN",
+          "Shanq": "SHANQ",
+          "Trey": "TRREY",
+          "wopma": "WOPMA"
+        },
+        "R6L": {
+          "Bishop": "BISHP",
+          "Burbon": "BERBN",
+          "Larry": "LARRE",
+          "Preeno": "PRINO",
+          "Reelin": "RELIN",
+          "Shand": "SHAND"
+        },
+        "Y6L": {
+          "Bishop": "BISHP",
+          "Burbon": "BERBN",
+          "Hogog": "HOGOG",
+          "Huxar": "HUXAR",
+          "Kodse": "KODSE",
+          "Reelin": "RELIN"
+        },
+        "Z6L": {
+          "BOULDER CITY": "BLD",
+          "Dicksa": "DICSA",
+          "Larry": "LARRE",
+          "Preeno": "PRINO",
+          "Reelin": "RELIN",
+          "Shand": "SHAND"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 26L",
+      "STAR": "CHOWW4",
+      "Route": [
+        "WOLPH",
+        "TATUU",
+        "KRLOZ",
+        "PRINO",
+        "KLAS"
+      ],
+      "Altitude": 14268,
+      "Heading": 222,
+      "Speed": 303,
+      "State": "arrival",
+      "ControllerFrequency": "1K",
+      "TrackingController": "1K",
+      "LAHSORunways": [
+        "8L",
+        "26R",
+        "8R",
+        "26L",
+        "1L",
+        "19R",
+        "1R",
+        "19L"
+      ]
+    },
+    "United two 69": {
+      "Callsign": "UAL269",
+      "AircraftType": "B739",
+      "Fixes": {
+        "BOULDER CITY": "BLD",
+        "Beauty": "BUETY",
+        "Bishop": "BISHP",
+        "Burbon": "BERBN",
+        "Dicksa": "DICSA",
+        "Envy": "ENNVY",
+        "Harry Reid": "KLAS",
+        "Hogog": "HOGOG",
+        "Huxar": "HUXAR",
+        "Kodse": "KODSE",
+        "Larry": "LARRE",
+        "Preeno": "PRINO",
+        "Redquin": "REDQN",
+        "Reelin": "RELIN",
+        "Shand": "SHAND"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Y Runway 26L": "Y6L",
+        "ILS Z Runway 26L": "Z6L",
+        "RNAV Runway 26L": "R6L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway two six left": "26L",
+        "visual one left": "1L",
+        "visual runway one left": "1L",
+        "visual runway two six left": "26L",
+        "visual two six left": "26L"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Cedar": "CEDAX",
+          "Codno": "CODNO",
+          "Crudy": "KRUDY",
+          "Nodiy": "NODIY",
+          "Roamin": "ROAMN",
+          "Shanq": "SHANQ",
+          "Trey": "TRREY",
+          "wopma": "WOPMA"
+        },
+        "R6L": {
+          "Bishop": "BISHP",
+          "Burbon": "BERBN",
+          "Larry": "LARRE",
+          "Preeno": "PRINO",
+          "Reelin": "RELIN",
+          "Shand": "SHAND"
+        },
+        "Y6L": {
+          "Bishop": "BISHP",
+          "Burbon": "BERBN",
+          "Hogog": "HOGOG",
+          "Huxar": "HUXAR",
+          "Kodse": "KODSE",
+          "Reelin": "RELIN"
+        },
+        "Z6L": {
+          "BOULDER CITY": "BLD",
+          "Dicksa": "DICSA",
+          "Larry": "LARRE",
+          "Preeno": "PRINO",
+          "Reelin": "RELIN",
+          "Shand": "SHAND"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 26L",
+      "STAR": "RNDRZ4",
+      "Route": [
+        "BUETY",
+        "ENNVY",
+        "REDQN",
+        "BERBN",
+        "KLAS"
+      ],
+      "Altitude": 16003,
+      "Heading": 19,
+      "Speed": 338,
+      "State": "arrival",
+      "ControllerFrequency": "1G",
+      "TrackingController": "1G",
+      "LAHSORunways": [
+        "8L",
+        "26R",
+        "8R",
+        "26L",
+        "1L",
+        "19R",
+        "1R",
+        "19L"
+      ]
+    },
+    "november three four four three seven": {
+      "Callsign": "N34437",
+      "Fixes": {
+        "": "0L7",
+        "Boulder City Municipal": "KBVU"
+      },
+      "Altitude": 6092,
+      "Heading": 254,
+      "Speed": 218,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F"
+    },
+    "november two five one one": {
+      "Callsign": "N2511",
+      "LastAddressed": true,
+      "Fixes": {
+        "Boulder City Municipal": "KBVU",
+        "Laughlin Bullhead": "KIFP"
+      },
+      "Altitude": 5481,
+      "Heading": 154,
+      "Speed": 228,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Delta Seventy Fifteen cleared for visual runway two six left\"",
+    "[local-stt] normalized words: [delta 70 15 cleared for visual runway 2 6 left]",
+    "[local-stt] tokens: 9",
+    "[local-stt]   token[0]: Text=\"delta\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"70\" Type=1 Value=70",
+    "[local-stt]   token[2]: Text=\"15\" Type=1 Value=15",
+    "[local-stt]   token[3]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"for\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"visual\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"26\" Type=1 Value=26",
+    "[local-stt]   token[8]: Text=\"left\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 9 tokens, 12 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 9 tokens, 12 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Delta 70 15\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Delta 70 15\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 5 results",
+    "[local-stt]     result 0: \"Delta 70 15\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Southwest seven 21\" (airline=0.437, flight=0.750, skip=0)",
+    "[local-stt]     result 2: \"Frontier Flight 78 53\" (airline=0.442, flight=0.700, skip=0)",
+    "[local-stt]     result 3: \"United two 69\" (airline=0.540, flight=0.911, skip=3)",
+    "[local-stt]     result 4: \"SkyWest two 69 foxtrot\" (airline=0.429, flight=0.867, skip=3)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Delta 70 15\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 19 results",
+    "[local-stt]     result 0: \"Southwest 35 zero four\" (airline=0.437, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Southwest niner 45\" (airline=0.437, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Frontier Flight 78 53\" (airline=0.442, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Delta 70 15\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Southwest two 81\" (airline=0.437, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Delta 70 15\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"Delta 70 15\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Delta 70 15\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"Delta 70 15\" (airline=0.500, flight=0.700, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Delta 70 15\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"DAL7015\" (spokenKey=\"Delta 70 15\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"DAL7015\" SpokenKey=\"Delta 70 15\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=8320 Fixes=12 Approaches=4 VisualApproaches=6 AssignedApproach=\"Visual Approach Runway 26L\" LAHSORunways=[8L 26R 8R 26L 1L 19R 1R 19L]",
+    "[local-stt]   fix: \"Harry Reid\" -\u003e \"KLAS\"",
+    "[local-stt]   fix: \"Preeno\" -\u003e \"PRINO\"",
+    "[local-stt]   fix: \"Burbon\" -\u003e \"BERBN\"",
+    "[local-stt]   fix: \"Hogog\" -\u003e \"HOGOG\"",
+    "[local-stt]   fix: \"BOULDER CITY\" -\u003e \"BLD\"",
+    "[local-stt]   fix: \"Larry\" -\u003e \"LARRE\"",
+    "[local-stt]   fix: \"Shand\" -\u003e \"SHAND\"",
+    "[local-stt]   fix: \"Bishop\" -\u003e \"BISHP\"",
+    "[local-stt]   fix: \"Kodse\" -\u003e \"KODSE\"",
+    "[local-stt]   fix: \"Huxar\" -\u003e \"HUXAR\"",
+    "[local-stt]   fix: \"Reelin\" -\u003e \"RELIN\"",
+    "[local-stt]   fix: \"Dicksa\" -\u003e \"DICSA\"",
+    "[local-stt]   approach: \"ILS Runway 1L\" -\u003e \"I1L\"",
+    "[local-stt]   approach: \"RNAV Runway 26L\" -\u003e \"R6L\"",
+    "[local-stt]   approach: \"ILS Z Runway 26L\" -\u003e \"Z6L\"",
+    "[local-stt]   approach: \"ILS Y Runway 26L\" -\u003e \"Y6L\"",
+    "[local-stt]   visual approach: \"visual two six left\" -\u003e \"26L\"",
+    "[local-stt]   visual approach: \"visual runway one left\" -\u003e \"1L\"",
+    "[local-stt]   visual approach: \"visual approach runway one left\" -\u003e \"1L\"",
+    "[local-stt]   visual approach: \"visual one left\" -\u003e \"1L\"",
+    "[local-stt]   visual approach: \"visual runway two six left\" -\u003e \"26L\"",
+    "[local-stt]   visual approach: \"visual approach runway two six left\" -\u003e \"26L\"",
+    "[local-stt] command tokens after disregard: 6",
+    "[local-stt]   token[0]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"for\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"visual\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"26\" Type=1 Value=26",
+    "[local-stt]   token[5]: Text=\"left\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 6 tokens",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"for\" against 12 fixes",
+    "[local-stt]   extractFix: no match found for \"for\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"visual\" against 12 fixes",
+    "[local-stt]   extractFix: no match found for \"visual\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 12 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractApproach: runway match with type disambiguation \"two six left\" -\u003e \"Z6L\" (score=0.56)",
+    "[local-stt]   extractApproach: runway match with type disambiguation \"two six left\" -\u003e \"Z6L\" (score=0.56)",
+    "[local-stt]   matched command: \"CZ6L\" [cleared_approach] (pos=0, conf=0.96, consumed=6, isThen=false)",
+    "[local-stt]   no match at token[0]=\"cleared\", skipping",
+    "[local-stt]   no match at token[1]=\"for\", skipping",
+    "[local-stt]   extractSTAR: looking for STAR=\"CHOWW4\" telephony=\"Chow four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   extractSTAR: looking for STAR=\"CHOWW4\" telephony=\"Chow four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   no match at token[2]=\"visual\", skipping",
+    "[local-stt]   no match at token[3]=\"runway\", skipping",
+    "[local-stt]   no match at token[4]=\"26\", skipping",
+    "[local-stt]   no match at token[5]=\"left\", skipping",
+    "[local-stt]   beam final[0]: score=3.364 pos=6 commands=[CZ6L]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=6 commands=[]",
+    "[local-stt] ParseCommands: result=[CZ6L] (avgConf=0.96)",
+    "[local-stt] parsed commands: [CZ6L] (conf=0.96, kinds=1)",
+    "[local-stt] validated commands: [CZ6L] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"DAL7015 CZ6L\" (conf=0.96, time=2.0531ms) ==="
+  ]
+}

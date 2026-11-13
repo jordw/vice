@@ -1,0 +1,364 @@
+{
+  "time": "2026-11-11T05:48:32.044710213Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Blue Streak 35 58 lowest practical speed cleared vis cleared ILS runway two niner approach",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, oscar, information, Seadog four, Rebella one, slams, Mesh, tate, AUGUSTA, two niner, runway, r-nav, I L S, Up Jet 87 76, Up Jet 67 29, Flexjet three 69, Blue Streak 35 58, Blue Streak 12 92, Noble, Gorhm, Nelly, Yak, KENNEBUNK, Jimmy, Yomon, Pete, Sappy, Rubela, Portland International Jetport",
+  "whisper_duration_ms": 312.363,
+  "audio_duration_ms": 8136,
+  "processor": "GPU: NVIDIA GeForce RTX 4070 (12010MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "JIA3558",
+  "command": "SMIN CI29",
+  "reason": "self-corrected approach type",
+  "stt_aircraft": {
+    "Blue Streak 12 92": {
+      "Callsign": "JIA1292",
+      "AircraftType": "CRJ7",
+      "Fixes": {
+        "Pete": "PEATT",
+        "Portland International Jetport": "KPWM",
+        "Sappy": "SAPPE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 29": "I29",
+        "RNAV Runway 29": "R29"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner": "29",
+        "visual runway two niner": "29",
+        "visual two niner": "29"
+      },
+      "ApproachFixes": {
+        "I29": {
+          "KENNEBUNK": "ENE",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE"
+        },
+        "R29": {
+          "AUGUSTA": "AUG",
+          "KENNEBUNK": "ENE",
+          "Mesh": "MESHL",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE",
+          "slams": "SLAMZ",
+          "tate": "TAATE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 29",
+      "STAR": "CDOGG4",
+      "Route": [
+        "SAPPE",
+        "PEATT",
+        "KPWM"
+      ],
+      "Altitude": 3000,
+      "Heading": 290,
+      "Speed": 236,
+      "AssignedAltitude": 3000,
+      "AssignedHeading": 290,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "18",
+        "36"
+      ]
+    },
+    "Blue Streak 35 58": {
+      "Callsign": "JIA3558",
+      "AircraftType": "CRJ7",
+      "Fixes": {
+        "Pete": "PEATT",
+        "Portland International Jetport": "KPWM"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 29": "I29",
+        "RNAV Runway 29": "R29"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner": "29",
+        "visual runway two niner": "29",
+        "visual two niner": "29"
+      },
+      "ApproachFixes": {
+        "I29": {
+          "KENNEBUNK": "ENE",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE"
+        },
+        "R29": {
+          "AUGUSTA": "AUG",
+          "KENNEBUNK": "ENE",
+          "Mesh": "MESHL",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE",
+          "slams": "SLAMZ",
+          "tate": "TAATE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 29",
+      "STAR": "CDOGG4",
+      "Route": [
+        "PEATT",
+        "KPWM"
+      ],
+      "Altitude": 3000,
+      "Heading": 291,
+      "Speed": 163,
+      "AssignedAltitude": 3000,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "18",
+        "36"
+      ]
+    },
+    "Flexjet three 69": {
+      "Callsign": "LXJ369",
+      "AircraftType": "CL60",
+      "Fixes": {
+        "KENNEBUNK": "ENE",
+        "Pete": "PEATT",
+        "Portland International Jetport": "KPWM",
+        "Sappy": "SAPPE",
+        "Yak": "YAAKK",
+        "Yomon": "YOMON"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 29": "I29",
+        "RNAV Runway 29": "R29"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner": "29",
+        "visual runway two niner": "29",
+        "visual two niner": "29"
+      },
+      "ApproachFixes": {
+        "I29": {
+          "KENNEBUNK": "ENE",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE"
+        },
+        "R29": {
+          "AUGUSTA": "AUG",
+          "KENNEBUNK": "ENE",
+          "Mesh": "MESHL",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE",
+          "slams": "SLAMZ",
+          "tate": "TAATE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 29",
+      "STAR": "CDOGG4",
+      "Route": [
+        "YOMON",
+        "YAAKK",
+        "SAPPE",
+        "KPWM"
+      ],
+      "Altitude": 7424,
+      "Heading": 107,
+      "Speed": 306,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "18",
+        "36"
+      ]
+    },
+    "Up Jet 67 29": {
+      "Callsign": "WUP6729",
+      "LastAddressed": true,
+      "AircraftType": "E55P",
+      "Fixes": {
+        "Bedford": "KBED",
+        "Gorhm": "GORHM",
+        "Hanscom": "KBED",
+        "Jimmy": "JJIMY",
+        "Nelly": "NELIE",
+        "Noble": "NUBLE",
+        "Portland International Jetport": "KPWM",
+        "Rubela": "RBELA"
+      },
+      "SID": "RBELA1",
+      "Route": [
+        "RBELA",
+        "JJIMY",
+        "NELIE",
+        "GORHM",
+        "NUBLE",
+        "RBELA",
+        "JJIMY",
+        "NELIE",
+        "KBED"
+      ],
+      "Altitude": 3225,
+      "Heading": 249,
+      "Speed": 204,
+      "State": "departure",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S"
+    },
+    "Up Jet 87 76": {
+      "Callsign": "WUP8776",
+      "AircraftType": "BE40",
+      "Fixes": {
+        "Bedford": "KBED",
+        "Hanscom": "KBED"
+      },
+      "SID": "RBELA1",
+      "Route": [
+        "KBED"
+      ],
+      "Altitude": 12000,
+      "Heading": 345,
+      "Speed": 343,
+      "State": "departure",
+      "ControllerFrequency": "1S",
+      "TrackingController": "C37"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Blue Streak 35 58 lowest practical speed cleared vis cleared ILS runway two niner approach\"",
+    "[local-stt] normalized words: [blue streak 35 58 lowest practical speed cleared vis cleared ils runway 2 9 approach]",
+    "[local-stt] tokens: 14",
+    "[local-stt]   token[0]: Text=\"blue\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"streak\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"35\" Type=1 Value=35",
+    "[local-stt]   token[3]: Text=\"58\" Type=1 Value=58",
+    "[local-stt]   token[4]: Text=\"lowest\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"practical\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"speed\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"vis\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"ils\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"29\" Type=1 Value=29",
+    "[local-stt]   token[13]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 14 tokens, 5 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 14 tokens, 5 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Blue Streak 35 58\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Blue Streak 35 58\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"Blue Streak 35 58\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Blue Streak 35 58\" (airline=0.472, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Blue Streak 35 58\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 6 results",
+    "[local-stt]     result 0: \"Flexjet three 69\" (airline=0.595, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Blue Streak 35 58\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Blue Streak 12 92\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Flexjet three 69\" (airline=0.437, flight=0.000, skip=1)",
+    "[local-stt]     result 4: \"Blue Streak 35 58\" (airline=0.472, flight=0.000, skip=1)",
+    "[local-stt]     pattern \"airline_only\": selected \"Blue Streak 12 92\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Blue Streak 35 58\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 1: \"Blue Streak 35 58\" (airline=0.500, flight=1.000, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Blue Streak 35 58\" (airline=0.50, flight=1.00, skip=1)",
+    "[local-stt]   exact callsign \"JIA3558\" (spokenKey=\"Blue Streak 35 58\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"JIA3558\" SpokenKey=\"Blue Streak 35 58\" Conf=1.00 Consumed=4",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=3000 Fixes=2 Approaches=2 VisualApproaches=3 AssignedApproach=\"ILS Runway 29\" LAHSORunways=[18 36]",
+    "[local-stt]   fix: \"Pete\" -\u003e \"PEATT\"",
+    "[local-stt]   fix: \"Portland International Jetport\" -\u003e \"KPWM\"",
+    "[local-stt]   approach: \"RNAV Runway 29\" -\u003e \"R29\"",
+    "[local-stt]   approach: \"ILS Runway 29\" -\u003e \"I29\"",
+    "[local-stt]   visual approach: \"visual runway two niner\" -\u003e \"29\"",
+    "[local-stt]   visual approach: \"visual approach runway two niner\" -\u003e \"29\"",
+    "[local-stt]   visual approach: \"visual two niner\" -\u003e \"29\"",
+    "[local-stt] command tokens after disregard: 10",
+    "[local-stt]   token[0]: Text=\"lowest\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"practical\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"speed\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"vis\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"ils\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"29\" Type=1 Value=29",
+    "[local-stt]   token[9]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 10 tokens",
+    "[local-stt]   matched command: \"SMIN\" [slowest_practical] (pos=0, conf=0.98, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[0]=\"lowest\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"vis\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"vis\"",
+    "[local-stt]   matchVisualApproach: runway=\"two niner\" -\u003e \"29\" (consumed=5)",
+    "[local-stt]   matchVisualApproach: runway=\"two niner\" -\u003e \"29\" (consumed=5)",
+    "[local-stt]   matchVisualApproach: runway=\"two niner\" -\u003e \"29\" (consumed=5)",
+    "[local-stt]   matchVisualApproach: runway=\"two niner\" -\u003e \"29\" (consumed=5)",
+    "[local-stt]   matchGarbledApproach: digits=\"\" dir=- variant=\"\" -\u003e \"I29\" (score=2.5)",
+    "[local-stt]   matched command: \"CVA29\" [cleared_visual] (pos=3, conf=1.00, consumed=6, isThen=false)",
+    "[local-stt]   matched command: \"CI29\" [cleared_approach] (pos=3, conf=0.87, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[3]=\"cleared\", skipping",
+    "[local-stt]   no match at token[1]=\"practical\", skipping",
+    "[local-stt]   no match at token[9]=\"approach\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"29\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"29\"",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"ils\" variant=\"\" runway=\"two niner\" -\u003e \"I29\" (consumed=3)",
+    "[local-stt]   no match at token[5]=\"cleared\", skipping",
+    "[local-stt]   extractSTAR: looking for STAR=\"CDOGG4\" telephony=\"Seadog four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   no match at token[4]=\"vis\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"cleared\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"cleared\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"cleared\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"cleared\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"cleared\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"cleared\"",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: looking for STAR=\"CDOGG4\" telephony=\"Seadog four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   no match at token[2]=\"speed\", skipping",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"ils\" variant=\"\" runway=\"two niner\" -\u003e \"I29\" (consumed=3)",
+    "[local-stt]   implicit approach match: \"CI29\" (consumed=4)",
+    "[local-stt]   no match at token[6]=\"ils\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"29\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"29\"",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"ils\" variant=\"\" runway=\"two niner\" -\u003e \"I29\" (consumed=3)",
+    "[local-stt]   matched command: \"CI29\" [cleared_approach] (pos=5, conf=0.99, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[5]=\"cleared\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"vis\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"vis\"",
+    "[local-stt]   matchVisualApproach: runway=\"two niner\" -\u003e \"29\" (consumed=5)",
+    "[local-stt]   matchVisualApproach: runway=\"two niner\" -\u003e \"29\" (consumed=5)",
+    "[local-stt]   matchVisualApproach: runway=\"two niner\" -\u003e \"29\" (consumed=5)",
+    "[local-stt]   matchVisualApproach: runway=\"two niner\" -\u003e \"29\" (consumed=5)",
+    "[local-stt]   matchGarbledApproach: digits=\"\" dir=- variant=\"\" -\u003e \"I29\" (score=2.5)",
+    "[local-stt]   matched command: \"CVA29\" [cleared_visual] (pos=3, conf=1.00, consumed=6, isThen=false)",
+    "[local-stt]   matched command: \"CI29\" [cleared_approach] (pos=3, conf=0.87, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[3]=\"cleared\", skipping",
+    "[local-stt]   no match at token[7]=\"runway\", skipping",
+    "[local-stt]   no match at token[9]=\"approach\", skipping",
+    "[local-stt]   no match at token[8]=\"29\", skipping",
+    "[local-stt]   no match at token[9]=\"approach\", skipping",
+    "[local-stt]   beam final[0]: score=5.329 pos=10 commands=[SMIN CVA29]",
+    "[local-stt]   beam final[1]: score=2.945 pos=10 commands=[SMIN CI29 CI29]",
+    "[local-stt]   beam final[2]: score=2.545 pos=10 commands=[SMIN CI29]",
+    "[local-stt]   beam final[3]: score=1.780 pos=10 commands=[SMIN CI29]",
+    "[local-stt] ParseCommands: result=[SMIN CVA29] (avgConf=0.99)",
+    "[local-stt] parsed commands: [SMIN CVA29] (conf=0.99, kinds=1)",
+    "[local-stt] validated commands: [SMIN CVA29] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"JIA3558 SMIN CVA29\" (conf=0.99, time=5.3021ms) ==="
+  ]
+}

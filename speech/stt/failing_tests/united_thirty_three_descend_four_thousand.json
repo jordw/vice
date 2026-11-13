@@ -1,0 +1,839 @@
+{
+  "time": "2026-11-01T20:27:38.469223135Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1072:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "United Thirty Three descend four thousand",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, golf, bravo, alpha, information, Ping one, Hider one, Eagle six, Bruiser one, Zepper two, Forpee one, Wilup, Tago, Pours, Andy, Frank, L T Col, Green, Hawaii, Ibobe, swirl, PHOENIX, first, Freeman, Nave, Ball, three, eight, seven right, runway, Visual, V O R, zulu, yankee, r-nav, I L S, United two 94, United 16, Southwest niner 49, Southwest 61 71, Sun Country four 71, november four one zero one five, november three six five six seven, november two niner five whiskey tango, november one two niner two, Lufthansa one alpha zulu heavy, American 70, American 53, American 33, American 31, Jamil, Talman, Falgo, I like, Pigskin, Teslee, Hikid, F-ball, ALBUQUERQUE, fix a, Kneel, Sarte, Balty, Obase, N'Sea, Resta, ST JOHNS, Queney, Vistle, Alice, Cager, Hiney, Bidwill, Maysa, Laluz, Gino, Totie, Legacy, Wazzup, Zeper, Forpay, Casa Grande Municipal Airport, Payson Airport, Scottsdale Airport, Phoenix Deer Valley Airport, Sparky, Phoenix Sky Harbor International Airport",
+  "whisper_duration_ms": 247.089,
+  "audio_duration_ms": 2888,
+  "processor": "GPU: NVIDIA GeForce RTX 3080 Ti (12084MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "AAL33",
+  "command": "D40",
+  "reason": "wrong airline spoken, number exact; next transmission confirms AAL33",
+  "stt_aircraft": {
+    "American 31": {
+      "Callsign": "AAL31",
+      "AircraftType": "A321",
+      "Fixes": {
+        "Phoenix": "KPHX",
+        "Sky Harbor": "KPHX",
+        "Wazzup": "WAZUP"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 7R": "I7R",
+        "ILS Runway 8": "I8",
+        "Visual Runway 7R ": "V7R",
+        "Visual Runway 8": "V08"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway eight": "8",
+        "visual approach runway seven right": "7R",
+        "visual eight": "8",
+        "visual runway eight": "8",
+        "visual runway seven right": "7R",
+        "visual seven right": "7R"
+      },
+      "ApproachFixes": {
+        "I7R": {
+          "Alice": "ALLIS",
+          "Balty": "BALTE",
+          "Cager": "CAGOR",
+          "Falgo": "FALGO",
+          "Teslee": "TESLE",
+          "Totie": "TOTIE",
+          "fix a": "FFIXA"
+        },
+        "I8": {
+          "Alice": "ALLIS",
+          "Hikid": "HIKID",
+          "I like": "ILIKE",
+          "Jamil": "JAMIL",
+          "Sarte": "SARTE",
+          "Wazzup": "WAZUP"
+        },
+        "V08": {
+          "Hikid": "HIKID",
+          "I like": "ILIKE",
+          "Jamil": "JAMIL",
+          "Sarte": "SARTE",
+          "Wazzup": "WAZUP"
+        },
+        "V7R": {
+          "Alogee": "ALOGE",
+          "Balty": "BALTE",
+          "Cager": "CAGOR",
+          "Falgo": "FALGO",
+          "Teslee": "TESLE",
+          "Totie": "TOTIE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 8",
+      "STAR": "BRUSR1",
+      "Route": [
+        "WAZUP",
+        "KPHX"
+      ],
+      "Altitude": 3067,
+      "Heading": 151,
+      "Speed": 214,
+      "State": "cleared approach",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1A"
+    },
+    "American 33": {
+      "Callsign": "AAL33",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Alice": "ALLIS",
+        "Balty": "BALTE",
+        "Cager": "CAGOR",
+        "Falgo": "FALGO",
+        "Kneel": "NEELE",
+        "Legacy": "LGACY",
+        "Phoenix": "KPHX",
+        "Sky Harbor": "KPHX",
+        "Teslee": "TESLE",
+        "Totie": "TOTIE",
+        "Vistle": "VISTL",
+        "fix a": "FFIXA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 7R": "I7R",
+        "ILS Runway 8": "I8",
+        "Visual Runway 7R ": "V7R",
+        "Visual Runway 8": "V08"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway eight": "8",
+        "visual approach runway seven right": "7R",
+        "visual eight": "8",
+        "visual runway eight": "8",
+        "visual runway seven right": "7R",
+        "visual seven right": "7R"
+      },
+      "ApproachFixes": {
+        "I7R": {
+          "Alice": "ALLIS",
+          "Balty": "BALTE",
+          "Cager": "CAGOR",
+          "Falgo": "FALGO",
+          "Teslee": "TESLE",
+          "Totie": "TOTIE",
+          "fix a": "FFIXA"
+        },
+        "I8": {
+          "Alice": "ALLIS",
+          "Hikid": "HIKID",
+          "I like": "ILIKE",
+          "Jamil": "JAMIL",
+          "Sarte": "SARTE",
+          "Wazzup": "WAZUP"
+        },
+        "V08": {
+          "Hikid": "HIKID",
+          "I like": "ILIKE",
+          "Jamil": "JAMIL",
+          "Sarte": "SARTE",
+          "Wazzup": "WAZUP"
+        },
+        "V7R": {
+          "Alogee": "ALOGE",
+          "Balty": "BALTE",
+          "Cager": "CAGOR",
+          "Falgo": "FALGO",
+          "Teslee": "TESLE",
+          "Totie": "TOTIE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 7R",
+      "STAR": "PINNG1",
+      "Route": [
+        "LGACY",
+        "VISTL",
+        "NEELE",
+        "KPHX"
+      ],
+      "Altitude": 5000,
+      "Heading": 296,
+      "Speed": 271,
+      "AssignedHeading": 296,
+      "State": "arrival",
+      "ControllerFrequency": "1Q",
+      "TrackingController": "1Q"
+    },
+    "American 53": {
+      "Callsign": "AAL53",
+      "AircraftType": "A321",
+      "Fixes": {
+        "Phoenix": "KPHX",
+        "Sky Harbor": "KPHX",
+        "Totie": "TOTIE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 7R": "I7R",
+        "ILS Runway 8": "I8",
+        "Visual Runway 7R ": "V7R",
+        "Visual Runway 8": "V08"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway eight": "8",
+        "visual approach runway seven right": "7R",
+        "visual eight": "8",
+        "visual runway eight": "8",
+        "visual runway seven right": "7R",
+        "visual seven right": "7R"
+      },
+      "ApproachFixes": {
+        "I7R": {
+          "Alice": "ALLIS",
+          "Balty": "BALTE",
+          "Cager": "CAGOR",
+          "Falgo": "FALGO",
+          "Teslee": "TESLE",
+          "Totie": "TOTIE",
+          "fix a": "FFIXA"
+        },
+        "I8": {
+          "Alice": "ALLIS",
+          "Hikid": "HIKID",
+          "I like": "ILIKE",
+          "Jamil": "JAMIL",
+          "Sarte": "SARTE",
+          "Wazzup": "WAZUP"
+        },
+        "V08": {
+          "Hikid": "HIKID",
+          "I like": "ILIKE",
+          "Jamil": "JAMIL",
+          "Sarte": "SARTE",
+          "Wazzup": "WAZUP"
+        },
+        "V7R": {
+          "Alogee": "ALOGE",
+          "Balty": "BALTE",
+          "Cager": "CAGOR",
+          "Falgo": "FALGO",
+          "Teslee": "TESLE",
+          "Totie": "TOTIE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 7R",
+      "STAR": "HYDRR1",
+      "Route": [
+        "TOTIE",
+        "KPHX"
+      ],
+      "Altitude": 4348,
+      "Heading": 82,
+      "Speed": 210,
+      "State": "cleared approach",
+      "ControllerFrequency": "1Q",
+      "TrackingController": "1Q"
+    },
+    "American 70": {
+      "Callsign": "AAL70",
+      "AircraftType": "B738",
+      "Fixes": {
+        "ALBUQUERQUE": "ABQ",
+        "Forpay": "FORPE",
+        "Laluz": "LALUZ",
+        "Phoenix": "KPHX",
+        "ST JOHNS": "SJN",
+        "Sky Harbor": "KPHX",
+        "Sparky": "SPRKY"
+      },
+      "SID": "FORPE1",
+      "Route": [
+        "SPRKY",
+        "FORPE",
+        "LALUZ",
+        "SJN",
+        "ABQ",
+        "GCK",
+        "SLN",
+        "AGENT",
+        "KIDER",
+        "IRK",
+        "KORD"
+      ],
+      "Altitude": 4684,
+      "Heading": 80,
+      "Speed": 215,
+      "State": "departure",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S"
+    },
+    "Lufthansa one alpha zulu heavy": {
+      "Callsign": "DLH1AZ",
+      "AircraftType": "B748",
+      "Fixes": {
+        "Alice": "ALLIS",
+        "Gino": "GEENO",
+        "Hikid": "HIKID",
+        "Hiney": "HINEY",
+        "I like": "ILIKE",
+        "Jamil": "JAMIL",
+        "Obase": "OBASE",
+        "Phoenix": "KPHX",
+        "Queney": "QUENY",
+        "Sarte": "SARTE",
+        "Sky Harbor": "KPHX",
+        "Wazzup": "WAZUP"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 7R": "I7R",
+        "ILS Runway 8": "I8",
+        "Visual Runway 7R ": "V7R",
+        "Visual Runway 8": "V08"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway eight": "8",
+        "visual approach runway seven right": "7R",
+        "visual eight": "8",
+        "visual runway eight": "8",
+        "visual runway seven right": "7R",
+        "visual seven right": "7R"
+      },
+      "ApproachFixes": {
+        "I7R": {
+          "Alice": "ALLIS",
+          "Balty": "BALTE",
+          "Cager": "CAGOR",
+          "Falgo": "FALGO",
+          "Teslee": "TESLE",
+          "Totie": "TOTIE",
+          "fix a": "FFIXA"
+        },
+        "I8": {
+          "Alice": "ALLIS",
+          "Hikid": "HIKID",
+          "I like": "ILIKE",
+          "Jamil": "JAMIL",
+          "Sarte": "SARTE",
+          "Wazzup": "WAZUP"
+        },
+        "V08": {
+          "Hikid": "HIKID",
+          "I like": "ILIKE",
+          "Jamil": "JAMIL",
+          "Sarte": "SARTE",
+          "Wazzup": "WAZUP"
+        },
+        "V7R": {
+          "Alogee": "ALOGE",
+          "Balty": "BALTE",
+          "Cager": "CAGOR",
+          "Falgo": "FALGO",
+          "Teslee": "TESLE",
+          "Totie": "TOTIE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 8",
+      "STAR": "EAGUL6",
+      "Route": [
+        "GEENO",
+        "QUENY",
+        "HINEY",
+        "OBASE",
+        "KPHX"
+      ],
+      "Altitude": 13456,
+      "Heading": 226,
+      "Speed": 301,
+      "State": "arrival",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1A"
+    },
+    "Southwest 61 71": {
+      "Callsign": "SWA6171",
+      "LastAddressed": true,
+      "AircraftType": "B737",
+      "Fixes": {
+        "Maysa": "MAYSA",
+        "Phoenix": "KPHX",
+        "Resta": "RRSTA",
+        "Sky Harbor": "KPHX",
+        "Zeper": "ZEPER"
+      },
+      "SID": "ZEPER2",
+      "Route": [
+        "ZEPER",
+        "MAYSA",
+        "RRSTA",
+        "DOVEE",
+        "SOTOO",
+        "HOUZZ",
+        "FUULL",
+        "SKANN",
+        "RUSME",
+        "KSFO"
+      ],
+      "Altitude": 9146,
+      "Heading": 294,
+      "Speed": 306,
+      "State": "departure",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S"
+    },
+    "Southwest niner 49": {
+      "Callsign": "SWA949",
+      "AircraftType": "B737",
+      "Fixes": {
+        "Alice": "ALLIS",
+        "Bidwill": "BDWIL",
+        "F-ball": "FBALL",
+        "Hikid": "HIKID",
+        "I like": "ILIKE",
+        "Jamil": "JAMIL",
+        "N'Sea": "ENSEA",
+        "Phoenix": "KPHX",
+        "Pigskin": "PGSKN",
+        "Sarte": "SARTE",
+        "Sky Harbor": "KPHX",
+        "Talman": "TLMAN",
+        "Wazzup": "WAZUP"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 7R": "I7R",
+        "ILS Runway 8": "I8",
+        "Visual Runway 7R ": "V7R",
+        "Visual Runway 8": "V08"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway eight": "8",
+        "visual approach runway seven right": "7R",
+        "visual eight": "8",
+        "visual runway eight": "8",
+        "visual runway seven right": "7R",
+        "visual seven right": "7R"
+      },
+      "ApproachFixes": {
+        "I7R": {
+          "Alice": "ALLIS",
+          "Balty": "BALTE",
+          "Cager": "CAGOR",
+          "Falgo": "FALGO",
+          "Teslee": "TESLE",
+          "Totie": "TOTIE",
+          "fix a": "FFIXA"
+        },
+        "I8": {
+          "Alice": "ALLIS",
+          "Hikid": "HIKID",
+          "I like": "ILIKE",
+          "Jamil": "JAMIL",
+          "Sarte": "SARTE",
+          "Wazzup": "WAZUP"
+        },
+        "V08": {
+          "Hikid": "HIKID",
+          "I like": "ILIKE",
+          "Jamil": "JAMIL",
+          "Sarte": "SARTE",
+          "Wazzup": "WAZUP"
+        },
+        "V7R": {
+          "Alogee": "ALOGE",
+          "Balty": "BALTE",
+          "Cager": "CAGOR",
+          "Falgo": "FALGO",
+          "Teslee": "TESLE",
+          "Totie": "TOTIE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 8",
+      "STAR": "BRUSR1",
+      "Route": [
+        "BDWIL",
+        "ENSEA",
+        "FBALL",
+        "PGSKN",
+        "TLMAN",
+        "JAMIL",
+        "KPHX"
+      ],
+      "Altitude": 12140,
+      "Heading": 175,
+      "Speed": 291,
+      "State": "arrival",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1A"
+    },
+    "Sun Country four 71": {
+      "Callsign": "SCX471",
+      "AircraftType": "B738",
+      "Fixes": {
+        "ALBUQUERQUE": "ABQ",
+        "Forpay": "FORPE",
+        "Laluz": "LALUZ",
+        "Phoenix": "KPHX",
+        "ST JOHNS": "SJN",
+        "Sky Harbor": "KPHX"
+      },
+      "SID": "FORPE1",
+      "Route": [
+        "FORPE",
+        "LALUZ",
+        "SJN",
+        "ABQ",
+        "CIM",
+        "LAA",
+        "GLD",
+        "ONL",
+        "FSD",
+        "SSWAN",
+        "KMSP"
+      ],
+      "Altitude": 9703,
+      "Heading": 57,
+      "Speed": 295,
+      "State": "departure",
+      "ControllerFrequency": "1S",
+      "TrackingController": "C38"
+    },
+    "United 16": {
+      "Callsign": "UAL16",
+      "AircraftType": "B739",
+      "Fixes": {
+        "Alice": "ALLIS",
+        "Hikid": "HIKID",
+        "Hiney": "HINEY",
+        "I like": "ILIKE",
+        "Jamil": "JAMIL",
+        "Obase": "OBASE",
+        "Phoenix": "KPHX",
+        "Sarte": "SARTE",
+        "Sky Harbor": "KPHX",
+        "Wazzup": "WAZUP"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 7R": "I7R",
+        "ILS Runway 8": "I8",
+        "Visual Runway 7R ": "V7R",
+        "Visual Runway 8": "V08"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway eight": "8",
+        "visual approach runway seven right": "7R",
+        "visual eight": "8",
+        "visual runway eight": "8",
+        "visual runway seven right": "7R",
+        "visual seven right": "7R"
+      },
+      "ApproachFixes": {
+        "I7R": {
+          "Alice": "ALLIS",
+          "Balty": "BALTE",
+          "Cager": "CAGOR",
+          "Falgo": "FALGO",
+          "Teslee": "TESLE",
+          "Totie": "TOTIE",
+          "fix a": "FFIXA"
+        },
+        "I8": {
+          "Alice": "ALLIS",
+          "Hikid": "HIKID",
+          "I like": "ILIKE",
+          "Jamil": "JAMIL",
+          "Sarte": "SARTE",
+          "Wazzup": "WAZUP"
+        },
+        "V08": {
+          "Hikid": "HIKID",
+          "I like": "ILIKE",
+          "Jamil": "JAMIL",
+          "Sarte": "SARTE",
+          "Wazzup": "WAZUP"
+        },
+        "V7R": {
+          "Alogee": "ALOGE",
+          "Balty": "BALTE",
+          "Cager": "CAGOR",
+          "Falgo": "FALGO",
+          "Teslee": "TESLE",
+          "Totie": "TOTIE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 8",
+      "STAR": "EAGUL6",
+      "Route": [
+        "HINEY",
+        "OBASE",
+        "KPHX"
+      ],
+      "Altitude": 8561,
+      "Heading": 223,
+      "Speed": 239,
+      "State": "arrival",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1A"
+    },
+    "United two 94": {
+      "Callsign": "UAL294",
+      "AircraftType": "B739",
+      "Fixes": {
+        "Balty": "BALTE",
+        "Cager": "CAGOR",
+        "Phoenix": "KPHX",
+        "Sky Harbor": "KPHX",
+        "Totie": "TOTIE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 7R": "I7R",
+        "ILS Runway 8": "I8",
+        "Visual Runway 7R ": "V7R",
+        "Visual Runway 8": "V08"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway eight": "8",
+        "visual approach runway seven right": "7R",
+        "visual eight": "8",
+        "visual runway eight": "8",
+        "visual runway seven right": "7R",
+        "visual seven right": "7R"
+      },
+      "ApproachFixes": {
+        "I7R": {
+          "Alice": "ALLIS",
+          "Balty": "BALTE",
+          "Cager": "CAGOR",
+          "Falgo": "FALGO",
+          "Teslee": "TESLE",
+          "Totie": "TOTIE",
+          "fix a": "FFIXA"
+        },
+        "I8": {
+          "Alice": "ALLIS",
+          "Hikid": "HIKID",
+          "I like": "ILIKE",
+          "Jamil": "JAMIL",
+          "Sarte": "SARTE",
+          "Wazzup": "WAZUP"
+        },
+        "V08": {
+          "Hikid": "HIKID",
+          "I like": "ILIKE",
+          "Jamil": "JAMIL",
+          "Sarte": "SARTE",
+          "Wazzup": "WAZUP"
+        },
+        "V7R": {
+          "Alogee": "ALOGE",
+          "Balty": "BALTE",
+          "Cager": "CAGOR",
+          "Falgo": "FALGO",
+          "Teslee": "TESLE",
+          "Totie": "TOTIE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 7R",
+      "STAR": "HYDRR1",
+      "Route": [
+        "CAGOR",
+        "BALTE",
+        "TOTIE",
+        "KPHX"
+      ],
+      "Altitude": 7350,
+      "Heading": 66,
+      "Speed": 273,
+      "State": "cleared approach",
+      "ControllerFrequency": "1Q",
+      "TrackingController": "1Q"
+    },
+    "november four one zero one five": {
+      "Callsign": "N41015",
+      "Fixes": {
+        "Casa Grande Municipal": "KCGZ",
+        "Chandler Municipal": "KCHD"
+      },
+      "Altitude": 4315,
+      "Heading": 143,
+      "Speed": 96,
+      "State": "vfr flight following",
+      "ControllerFrequency": "1A"
+    },
+    "november one two niner two": {
+      "Callsign": "N1292",
+      "Fixes": {
+        "Falcon": "KFFZ",
+        "Phoenix Deer Valley": "KDVT"
+      },
+      "Altitude": 2453,
+      "Heading": 342,
+      "Speed": 74,
+      "State": "vfr flight following",
+      "ControllerFrequency": "1A"
+    },
+    "november three six five six seven": {
+      "Callsign": "N36567",
+      "Fixes": {
+        "Payson": "KPAN",
+        "Phoenix Goodyear": "KGYR"
+      },
+      "Altitude": 9005,
+      "Heading": 54,
+      "Speed": 104,
+      "State": "vfr flight following",
+      "ControllerFrequency": "1A"
+    },
+    "november two niner five whiskey tango": {
+      "Callsign": "N295WT",
+      "Fixes": {
+        "Phoenix Goodyear": "KGYR",
+        "Scottsdale": "KSDL"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 3": "RD3",
+        "RNAV Y Runway 3": "RY3",
+        "RNAV Z Runway 3": "RZ3",
+        "VOR Runway 3": "VORA3"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three": "3",
+        "visual runway three": "3",
+        "visual three": "3"
+      },
+      "ApproachFixes": {
+        "RD3": {
+          "Cacto": "CACTO",
+          "Pours": "POURS",
+          "Tago": "TAGOC",
+          "Wilup": "WILUP"
+        },
+        "RE3": {
+          "Ilele": "ILELE",
+          "PHOENIX": "PXR",
+          "Zirik": "ZIRIK"
+        },
+        "RY3": {
+          "Andy": "ANNDD",
+          "Frank": "FRNNK",
+          "Green": "MREEN",
+          "Hawaii": "HAWAI",
+          "Ibobe": "IBOBE",
+          "L T Col": "LTCOL",
+          "Ruth": "RUTHH",
+          "graham": "GRYHM",
+          "swirl": "SWIRL"
+        },
+        "RZ3": {
+          "Ball": "BBALL",
+          "Freeman": "FRMAN",
+          "Jimun": "JIMUN",
+          "Nave": "NAAVE",
+          "first": "FURST"
+        },
+        "VORA3": {
+          "Cacya": "CACYA",
+          "Gelts": "GELTS",
+          "PHOENIX": "PXR"
+        }
+      },
+      "Altitude": 3122,
+      "Heading": 52,
+      "Speed": 110,
+      "State": "vfr flight following",
+      "ControllerFrequency": "1A"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"United Thirty Three descend four thousand\"",
+    "[local-stt] normalized words: [united 33 descend 4 thousand]",
+    "[local-stt] tokens: 4",
+    "[local-stt]   token[0]: Text=\"united\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"33\" Type=1 Value=33",
+    "[local-stt]   token[2]: Text=\"descend\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"40\" Type=2 Value=40",
+    "[local-stt] MatchCallsign: 4 tokens, 14 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 4 tokens, 14 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 3 results",
+    "[local-stt]     result 0: \"American 53\" (airline=0.361, flight=0.700, skip=0)",
+    "[local-stt]     result 1: \"American 31\" (airline=0.361, flight=0.700, skip=0)",
+    "[local-stt]     result 2: \"American 33\" (airline=0.361, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"American 33\" (airline=0.36, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 20 results",
+    "[local-stt]     result 0: \"American 31\" (airline=0.361, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Southwest niner 49\" (airline=0.611, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Lufthansa one alpha zulu heavy\" (airline=0.519, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"American 70\" (airline=0.361, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Southwest 61 71\" (airline=0.611, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"United 16\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"American 33\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"American 33\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"American 33\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   best callsign candidate: \"AAL33\" (conf=0.92, consumed=2, addressingForm=0, spokenKey=\"American 33\"; 2 candidates)",
+    "[local-stt] ParseCommands: 2 tokens",
+    "[local-stt]   matched command: \"D40\" [descend] (pos=0, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"descend\", skipping",
+    "[local-stt]   matched command: \"A40\" [standalone_altitude] (pos=1, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[1]=\"40\", skipping",
+    "[local-stt]   beam final[0]: score=1.196 pos=2 commands=[D40]",
+    "[local-stt]   beam final[1]: score=-1.705 pos=2 commands=[A40]",
+    "[local-stt]   beam final[2]: score=-4.605 pos=2 commands=[]",
+    "[local-stt] ParseCommands: result=[D40] (avgConf=1.00)",
+    "[local-stt] ParseCommands: 3 tokens",
+    "[local-stt]   no match at token[0]=\"33\", skipping",
+    "[local-stt]   matched command: \"D40\" [descend] (pos=1, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[1]=\"descend\", skipping",
+    "[local-stt]   matched command: \"A40\" [standalone_altitude] (pos=2, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[2]=\"40\", skipping",
+    "[local-stt]   beam final[0]: score=1.196 pos=3 commands=[D40]",
+    "[local-stt]   beam final[1]: score=-1.705 pos=3 commands=[A40]",
+    "[local-stt]   beam final[2]: score=-4.605 pos=3 commands=[]",
+    "[local-stt] ParseCommands: result=[D40] (avgConf=1.00)",
+    "[local-stt] callsign match: Callsign=\"AAL33\" SpokenKey=\"American 33\" Conf=0.92 Consumed=2",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=5000 Fixes=12 Approaches=4 VisualApproaches=6 AssignedApproach=\"ILS Runway 7R\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Sky Harbor\" -\u003e \"KPHX\"",
+    "[local-stt]   fix: \"Legacy\" -\u003e \"LGACY\"",
+    "[local-stt]   fix: \"Kneel\" -\u003e \"NEELE\"",
+    "[local-stt]   fix: \"Alice\" -\u003e \"ALLIS\"",
+    "[local-stt]   fix: \"fix a\" -\u003e \"FFIXA\"",
+    "[local-stt]   fix: \"Teslee\" -\u003e \"TESLE\"",
+    "[local-stt]   fix: \"Falgo\" -\u003e \"FALGO\"",
+    "[local-stt]   fix: \"Phoenix\" -\u003e \"KPHX\"",
+    "[local-stt]   fix: \"Vistle\" -\u003e \"VISTL\"",
+    "[local-stt]   fix: \"Cager\" -\u003e \"CAGOR\"",
+    "[local-stt]   fix: \"Balty\" -\u003e \"BALTE\"",
+    "[local-stt]   fix: \"Totie\" -\u003e \"TOTIE\"",
+    "[local-stt]   approach: \"Visual Runway 7R \" -\u003e \"V7R\"",
+    "[local-stt]   approach: \"ILS Runway 7R\" -\u003e \"I7R\"",
+    "[local-stt]   approach: \"ILS Runway 8\" -\u003e \"I8\"",
+    "[local-stt]   approach: \"Visual Runway 8\" -\u003e \"V08\"",
+    "[local-stt]   visual approach: \"visual approach runway seven right\" -\u003e \"7R\"",
+    "[local-stt]   visual approach: \"visual seven right\" -\u003e \"7R\"",
+    "[local-stt]   visual approach: \"visual runway eight\" -\u003e \"8\"",
+    "[local-stt]   visual approach: \"visual approach runway eight\" -\u003e \"8\"",
+    "[local-stt]   visual approach: \"visual eight\" -\u003e \"8\"",
+    "[local-stt]   visual approach: \"visual runway seven right\" -\u003e \"7R\"",
+    "[local-stt] command tokens after disregard: 2",
+    "[local-stt]   token[0]: Text=\"descend\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"40\" Type=2 Value=40",
+    "[local-stt] ParseCommands: 2 tokens",
+    "[local-stt]   matched command: \"D40\" [descend] (pos=0, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"descend\", skipping",
+    "[local-stt]   matched command: \"A40\" [standalone_altitude] (pos=1, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[1]=\"40\", skipping",
+    "[local-stt]   beam final[0]: score=1.196 pos=2 commands=[D40]",
+    "[local-stt]   beam final[1]: score=-1.705 pos=2 commands=[A40]",
+    "[local-stt]   beam final[2]: score=-4.605 pos=2 commands=[]",
+    "[local-stt] ParseCommands: result=[D40] (avgConf=1.00)",
+    "[local-stt] parsed commands: [D40] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [D40] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"AAL33 D40\" (conf=0.92, time=2.0635ms) ==="
+  ]
+}

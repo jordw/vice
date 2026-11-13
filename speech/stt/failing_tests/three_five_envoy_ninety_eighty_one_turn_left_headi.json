@@ -1,0 +1,1122 @@
+{
+  "time": "2026-11-04T00:21:43.996667721Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "three five Envoy Ninety Eighty One turn left heading zero six zero cleared ILS runway one zero left approach",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, echo, bravo, information, Windy three, Veck five, Turtle six, Shane two, Fight seven, Ernie eight, Nuelg, Farm, Jolon, DUPAGE, two zero left, niner left, niner center, one zero center, runway, r-nav, I L S, United 92 heavy, Key Lime 93 36, Jazz one 82, Lindbergh 97 zero eight, Lindbergh 72 40, Envoy 98 81, ExecJet 99 23, Delta 76, Wisconsin 43 75, American four 87, American 26 zero three, Doggy, Rudea, Trixie, Sharn, Ilium, Pepaw, Vander, Killa, s, Couper, John, Bairy, Bamb, Jorjo, Monks, Koss, Kurk, Rino, Fran, Pink, Nordl, Vulcan, Henry, Pappy, NORTHBROOK, Easel, Mueller, Kayto, Gibns, Tubes, Turtle, Ernie, Fiyer, Meeth, Sickler, Clouseau, Dupage Airport, Chicago O'Hare International Airport",
+  "whisper_duration_ms": 599.694,
+  "audio_duration_ms": 8392,
+  "processor": "GPU: NVIDIA GeForce RTX 3060 (12113MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "ENY9881",
+  "command": "L060 SAYAGAIN/APPROACH",
+  "reason": "a clear approach clearance for a runway the aircraft does not have; must not clear another runway",
+  "stt_aircraft": {
+    "American 26 zero three": {
+      "Callsign": "AAL2603",
+      "LastAddressed": true,
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Bairy": "BAIRY",
+        "Chicago O'Hare": "KORD",
+        "Clouseau": "CLUSO",
+        "Couper": "COUPR",
+        "Gibns": "GIBNS",
+        "Jorjo": "JORJO",
+        "Kayto": "KAYTO",
+        "Killa": "KYLAA",
+        "Monks": "MONKZ",
+        "Pepaw": "PEPAW",
+        "Pink": "PINKK",
+        "Possum": "POSSM",
+        "Ray": "RAYYY",
+        "Rudea": "RRUDA",
+        "Sharn": "SHARN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 10C": "I0C",
+        "ILS Runway 9C": "I9C",
+        "ILS Runway 9L": "I9L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway niner center": "9C",
+        "visual approach runway niner left": "9L",
+        "visual approach runway one zero center": "10C",
+        "visual niner center": "9C",
+        "visual niner left": "9L",
+        "visual one zero center": "10C",
+        "visual runway niner center": "9C",
+        "visual runway niner left": "9L",
+        "visual runway one zero center": "10C"
+      },
+      "ApproachFixes": {
+        "I0C": {
+          "Bairy": "BAIRY",
+          "Couper": "COUPR",
+          "Gibns": "GIBNS",
+          "Killa": "KYLAA",
+          "Pepaw": "PEPAW",
+          "Ray": "RAYYY",
+          "Rudea": "RRUDA",
+          "Sharn": "SHARN"
+        },
+        "I9C": {
+          "Easel": "EZELL",
+          "Fran": "FFRAN",
+          "Gibns": "GIBNS",
+          "Koss": "KOOSS",
+          "Meeth": "MIETH",
+          "Mueller": "MUELL",
+          "Nordl": "NORDL",
+          "Sickler": "SIKLR"
+        },
+        "I9L": {
+          "Doggy": "DOOGY",
+          "Gibns": "GIBNS",
+          "Ilium": "ILIUM",
+          "John": "JHONN",
+          "Trixie": "TRYXI",
+          "Vander": "VNDER",
+          "Zenah": "ZENAH",
+          "s": "ESSSS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 10C",
+      "STAR": "VEECK5",
+      "Route": [
+        "CLUSO",
+        "KAYTO",
+        "PINKK",
+        "MONKZ",
+        "JORJO",
+        "POSSM",
+        "KORD"
+      ],
+      "Altitude": 7000,
+      "Heading": 330,
+      "Speed": 282,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "4R",
+        "22L",
+        "4L",
+        "22R",
+        "4L",
+        "22R"
+      ]
+    },
+    "American four 87": {
+      "Callsign": "AAL487",
+      "AircraftType": "A321",
+      "Fixes": {
+        "Chicago O'Hare": "KORD",
+        "Easel": "EZELL",
+        "Fran": "FFRAN",
+        "Meeth": "MIETH",
+        "Mueller": "MUELL",
+        "Sickler": "SIKLR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 10C": "I0C",
+        "ILS Runway 9C": "I9C",
+        "ILS Runway 9L": "I9L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway niner center": "9C",
+        "visual approach runway niner left": "9L",
+        "visual approach runway one zero center": "10C",
+        "visual niner center": "9C",
+        "visual niner left": "9L",
+        "visual one zero center": "10C",
+        "visual runway niner center": "9C",
+        "visual runway niner left": "9L",
+        "visual runway one zero center": "10C"
+      },
+      "ApproachFixes": {
+        "I0C": {
+          "Bairy": "BAIRY",
+          "Couper": "COUPR",
+          "Gibns": "GIBNS",
+          "Killa": "KYLAA",
+          "Pepaw": "PEPAW",
+          "Ray": "RAYYY",
+          "Rudea": "RRUDA",
+          "Sharn": "SHARN"
+        },
+        "I9C": {
+          "Easel": "EZELL",
+          "Fran": "FFRAN",
+          "Gibns": "GIBNS",
+          "Koss": "KOOSS",
+          "Meeth": "MIETH",
+          "Mueller": "MUELL",
+          "Nordl": "NORDL",
+          "Sickler": "SIKLR"
+        },
+        "I9L": {
+          "Doggy": "DOOGY",
+          "Gibns": "GIBNS",
+          "Ilium": "ILIUM",
+          "John": "JHONN",
+          "Trixie": "TRYXI",
+          "Vander": "VNDER",
+          "Zenah": "ZENAH",
+          "s": "ESSSS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 9C",
+      "STAR": "FYTTE7",
+      "Route": [
+        "SIKLR",
+        "MUELL",
+        "FFRAN",
+        "MIETH",
+        "EZELL",
+        "KORD"
+      ],
+      "Altitude": 6000,
+      "Heading": 93,
+      "Speed": 273,
+      "State": "arrival",
+      "ControllerFrequency": "1Y",
+      "TrackingController": "1Y",
+      "LAHSORunways": [
+        "4R",
+        "22L",
+        "4L",
+        "22R",
+        "4L",
+        "22R"
+      ]
+    },
+    "Delta 76": {
+      "Callsign": "DAL76",
+      "AircraftType": "BCS3",
+      "Fixes": {
+        "Chicago O'Hare": "KORD",
+        "Easel": "EZELL",
+        "Meeth": "MIETH"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 10C": "I0C",
+        "ILS Runway 9C": "I9C",
+        "ILS Runway 9L": "I9L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway niner center": "9C",
+        "visual approach runway niner left": "9L",
+        "visual approach runway one zero center": "10C",
+        "visual niner center": "9C",
+        "visual niner left": "9L",
+        "visual one zero center": "10C",
+        "visual runway niner center": "9C",
+        "visual runway niner left": "9L",
+        "visual runway one zero center": "10C"
+      },
+      "ApproachFixes": {
+        "I0C": {
+          "Bairy": "BAIRY",
+          "Couper": "COUPR",
+          "Gibns": "GIBNS",
+          "Killa": "KYLAA",
+          "Pepaw": "PEPAW",
+          "Ray": "RAYYY",
+          "Rudea": "RRUDA",
+          "Sharn": "SHARN"
+        },
+        "I9C": {
+          "Easel": "EZELL",
+          "Fran": "FFRAN",
+          "Gibns": "GIBNS",
+          "Koss": "KOOSS",
+          "Meeth": "MIETH",
+          "Mueller": "MUELL",
+          "Nordl": "NORDL",
+          "Sickler": "SIKLR"
+        },
+        "I9L": {
+          "Doggy": "DOOGY",
+          "Gibns": "GIBNS",
+          "Ilium": "ILIUM",
+          "John": "JHONN",
+          "Trixie": "TRYXI",
+          "Vander": "VNDER",
+          "Zenah": "ZENAH",
+          "s": "ESSSS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 9C",
+      "STAR": "FYTTE7",
+      "Route": [
+        "MIETH",
+        "EZELL",
+        "KORD"
+      ],
+      "Altitude": 4302,
+      "Heading": 93,
+      "Speed": 266,
+      "State": "cleared approach",
+      "ControllerFrequency": "1Y",
+      "TrackingController": "1Y",
+      "LAHSORunways": [
+        "4R",
+        "22L",
+        "4L",
+        "22R",
+        "4L",
+        "22R"
+      ]
+    },
+    "Envoy 98 81": {
+      "Callsign": "ENY9881",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Bamb": "BAMBB",
+        "Chicago O'Hare": "KORD",
+        "Doggy": "DOOGY",
+        "Ernie": "ERNNY",
+        "Gibns": "GIBNS",
+        "Ilium": "ILIUM",
+        "John": "JHONN",
+        "Kurk": "KURKK",
+        "Pappy": "PAPPI",
+        "Trixie": "TRYXI",
+        "Tubes": "TUBEZ",
+        "Vander": "VNDER",
+        "Vulcan": "VULCN",
+        "Zenah": "ZENAH",
+        "s": "ESSSS"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 10C": "I0C",
+        "ILS Runway 9C": "I9C",
+        "ILS Runway 9L": "I9L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway niner center": "9C",
+        "visual approach runway niner left": "9L",
+        "visual approach runway one zero center": "10C",
+        "visual niner center": "9C",
+        "visual niner left": "9L",
+        "visual one zero center": "10C",
+        "visual runway niner center": "9C",
+        "visual runway niner left": "9L",
+        "visual runway one zero center": "10C"
+      },
+      "ApproachFixes": {
+        "I0C": {
+          "Bairy": "BAIRY",
+          "Couper": "COUPR",
+          "Gibns": "GIBNS",
+          "Killa": "KYLAA",
+          "Pepaw": "PEPAW",
+          "Ray": "RAYYY",
+          "Rudea": "RRUDA",
+          "Sharn": "SHARN"
+        },
+        "I9C": {
+          "Easel": "EZELL",
+          "Fran": "FFRAN",
+          "Gibns": "GIBNS",
+          "Koss": "KOOSS",
+          "Meeth": "MIETH",
+          "Mueller": "MUELL",
+          "Nordl": "NORDL",
+          "Sickler": "SIKLR"
+        },
+        "I9L": {
+          "Doggy": "DOOGY",
+          "Gibns": "GIBNS",
+          "Ilium": "ILIUM",
+          "John": "JHONN",
+          "Trixie": "TRYXI",
+          "Vander": "VNDER",
+          "Zenah": "ZENAH",
+          "s": "ESSSS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 9L",
+      "STAR": "ERNNY8",
+      "Route": [
+        "ERNNY",
+        "PAPPI",
+        "TUBEZ",
+        "VULCN",
+        "KURKK",
+        "BAMBB",
+        "KORD"
+      ],
+      "Altitude": 5000,
+      "Heading": 180,
+      "Speed": 272,
+      "AssignedHeading": 180,
+      "State": "arrival",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J",
+      "LAHSORunways": [
+        "4R",
+        "22L",
+        "4L",
+        "22R",
+        "4L",
+        "22R"
+      ]
+    },
+    "ExecJet 99 23": {
+      "Callsign": "EJA9923",
+      "AircraftType": "C560",
+      "Fixes": {
+        "Dupage": "KDPA",
+        "Fiyer": "FIYER",
+        "NORTHBROOK": "OBK"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 20L": "R0L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero left": "20L",
+        "visual runway two zero left": "20L",
+        "visual two zero left": "20L"
+      },
+      "ApproachFixes": {
+        "R0L": {
+          "DUPAGE": "DPA",
+          "Farm": "FARMM",
+          "Jolon": "JOLON",
+          "Nuelg": "NUELG",
+          "Zogub": "ZOGUB",
+          "pecky": "PECBI"
+        }
+      },
+      "Route": [
+        "FIYER",
+        "OBK",
+        "KDPA"
+      ],
+      "Altitude": 4000,
+      "Heading": 259,
+      "Speed": 272,
+      "State": "arrival",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1P",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "15",
+        "33"
+      ]
+    },
+    "Jazz one 82": {
+      "Callsign": "JZA182",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Chicago O'Hare": "KORD"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 10C": "I0C",
+        "ILS Runway 9C": "I9C",
+        "ILS Runway 9L": "I9L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway niner center": "9C",
+        "visual approach runway niner left": "9L",
+        "visual approach runway one zero center": "10C",
+        "visual niner center": "9C",
+        "visual niner left": "9L",
+        "visual one zero center": "10C",
+        "visual runway niner center": "9C",
+        "visual runway niner left": "9L",
+        "visual runway one zero center": "10C"
+      },
+      "ApproachFixes": {
+        "I0C": {
+          "Bairy": "BAIRY",
+          "Couper": "COUPR",
+          "Gibns": "GIBNS",
+          "Killa": "KYLAA",
+          "Pepaw": "PEPAW",
+          "Ray": "RAYYY",
+          "Rudea": "RRUDA",
+          "Sharn": "SHARN"
+        },
+        "I9C": {
+          "Easel": "EZELL",
+          "Fran": "FFRAN",
+          "Gibns": "GIBNS",
+          "Koss": "KOOSS",
+          "Meeth": "MIETH",
+          "Mueller": "MUELL",
+          "Nordl": "NORDL",
+          "Sickler": "SIKLR"
+        },
+        "I9L": {
+          "Doggy": "DOOGY",
+          "Gibns": "GIBNS",
+          "Ilium": "ILIUM",
+          "John": "JHONN",
+          "Trixie": "TRYXI",
+          "Vander": "VNDER",
+          "Zenah": "ZENAH",
+          "s": "ESSSS"
+        }
+      },
+      "STAR": "WYNDE3",
+      "Route": [
+        "KORD"
+      ],
+      "Altitude": 5000,
+      "Heading": 270,
+      "Speed": 269,
+      "AssignedHeading": 270,
+      "State": "arrival",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J",
+      "LAHSORunways": [
+        "4R",
+        "22L",
+        "4L",
+        "22R",
+        "4L",
+        "22R"
+      ]
+    },
+    "Key Lime 93 36": {
+      "Callsign": "LYM9336",
+      "AircraftType": "E145",
+      "Fixes": {
+        "Bamb": "BAMBB",
+        "Chicago O'Hare": "KORD",
+        "Easel": "EZELL",
+        "Fran": "FFRAN",
+        "Gibns": "GIBNS",
+        "Koss": "KOOSS",
+        "Kurk": "KURKK",
+        "Meeth": "MIETH",
+        "Mueller": "MUELL",
+        "Muskegon County": "KMKG",
+        "Nordl": "NORDL",
+        "Sickler": "SIKLR",
+        "Vulcan": "VULCN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 10C": "I0C",
+        "ILS Runway 9C": "I9C",
+        "ILS Runway 9L": "I9L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway niner center": "9C",
+        "visual approach runway niner left": "9L",
+        "visual approach runway one zero center": "10C",
+        "visual niner center": "9C",
+        "visual niner left": "9L",
+        "visual one zero center": "10C",
+        "visual runway niner center": "9C",
+        "visual runway niner left": "9L",
+        "visual runway one zero center": "10C"
+      },
+      "ApproachFixes": {
+        "I0C": {
+          "Bairy": "BAIRY",
+          "Couper": "COUPR",
+          "Gibns": "GIBNS",
+          "Killa": "KYLAA",
+          "Pepaw": "PEPAW",
+          "Ray": "RAYYY",
+          "Rudea": "RRUDA",
+          "Sharn": "SHARN"
+        },
+        "I9C": {
+          "Easel": "EZELL",
+          "Fran": "FFRAN",
+          "Gibns": "GIBNS",
+          "Koss": "KOOSS",
+          "Meeth": "MIETH",
+          "Mueller": "MUELL",
+          "Nordl": "NORDL",
+          "Sickler": "SIKLR"
+        },
+        "I9L": {
+          "Doggy": "DOOGY",
+          "Gibns": "GIBNS",
+          "Ilium": "ILIUM",
+          "John": "JHONN",
+          "Trixie": "TRYXI",
+          "Vander": "VNDER",
+          "Zenah": "ZENAH",
+          "s": "ESSSS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 9C",
+      "STAR": "WYNDE3",
+      "Route": [
+        "VULCN",
+        "KURKK",
+        "BAMBB",
+        "KORD"
+      ],
+      "Altitude": 6000,
+      "Heading": 221,
+      "Speed": 225,
+      "AssignedSpeed": 200,
+      "State": "arrival",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J",
+      "LAHSORunways": [
+        "4R",
+        "22L",
+        "4L",
+        "22R",
+        "4L",
+        "22R"
+      ]
+    },
+    "Lindbergh 72 40": {
+      "Callsign": "GJS7240",
+      "AircraftType": "CRJ7",
+      "Fixes": {
+        "Chicago O'Hare": "KORD"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 10C": "I0C",
+        "ILS Runway 9C": "I9C",
+        "ILS Runway 9L": "I9L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway niner center": "9C",
+        "visual approach runway niner left": "9L",
+        "visual approach runway one zero center": "10C",
+        "visual niner center": "9C",
+        "visual niner left": "9L",
+        "visual one zero center": "10C",
+        "visual runway niner center": "9C",
+        "visual runway niner left": "9L",
+        "visual runway one zero center": "10C"
+      },
+      "ApproachFixes": {
+        "I0C": {
+          "Bairy": "BAIRY",
+          "Couper": "COUPR",
+          "Gibns": "GIBNS",
+          "Killa": "KYLAA",
+          "Pepaw": "PEPAW",
+          "Ray": "RAYYY",
+          "Rudea": "RRUDA",
+          "Sharn": "SHARN"
+        },
+        "I9C": {
+          "Easel": "EZELL",
+          "Fran": "FFRAN",
+          "Gibns": "GIBNS",
+          "Koss": "KOOSS",
+          "Meeth": "MIETH",
+          "Mueller": "MUELL",
+          "Nordl": "NORDL",
+          "Sickler": "SIKLR"
+        },
+        "I9L": {
+          "Doggy": "DOOGY",
+          "Gibns": "GIBNS",
+          "Ilium": "ILIUM",
+          "John": "JHONN",
+          "Trixie": "TRYXI",
+          "Vander": "VNDER",
+          "Zenah": "ZENAH",
+          "s": "ESSSS"
+        }
+      },
+      "STAR": "ERNNY8",
+      "Route": [
+        "KORD"
+      ],
+      "Altitude": 7000,
+      "Heading": 221,
+      "Speed": 284,
+      "State": "arrival",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J",
+      "LAHSORunways": [
+        "4R",
+        "22L",
+        "4L",
+        "22R",
+        "4L",
+        "22R"
+      ]
+    },
+    "Lindbergh 97 zero eight": {
+      "Callsign": "GJS9708",
+      "AircraftType": "CRJ7",
+      "Fixes": {
+        "Bairy": "BAIRY",
+        "Chicago O'Hare": "KORD",
+        "Couper": "COUPR",
+        "Gibns": "GIBNS",
+        "Henry": "HIHRY",
+        "Jorjo": "JORJO",
+        "Killa": "KYLAA",
+        "Monks": "MONKZ",
+        "Pepaw": "PEPAW",
+        "Ray": "RAYYY",
+        "Rino": "RINNO",
+        "Rudea": "RRUDA",
+        "Sharn": "SHARN",
+        "Tony": "TONIE",
+        "Turtle": "TRTLL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 10C": "I0C",
+        "ILS Runway 9C": "I9C",
+        "ILS Runway 9L": "I9L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway niner center": "9C",
+        "visual approach runway niner left": "9L",
+        "visual approach runway one zero center": "10C",
+        "visual niner center": "9C",
+        "visual niner left": "9L",
+        "visual one zero center": "10C",
+        "visual runway niner center": "9C",
+        "visual runway niner left": "9L",
+        "visual runway one zero center": "10C"
+      },
+      "ApproachFixes": {
+        "I0C": {
+          "Bairy": "BAIRY",
+          "Couper": "COUPR",
+          "Gibns": "GIBNS",
+          "Killa": "KYLAA",
+          "Pepaw": "PEPAW",
+          "Ray": "RAYYY",
+          "Rudea": "RRUDA",
+          "Sharn": "SHARN"
+        },
+        "I9C": {
+          "Easel": "EZELL",
+          "Fran": "FFRAN",
+          "Gibns": "GIBNS",
+          "Koss": "KOOSS",
+          "Meeth": "MIETH",
+          "Mueller": "MUELL",
+          "Nordl": "NORDL",
+          "Sickler": "SIKLR"
+        },
+        "I9L": {
+          "Doggy": "DOOGY",
+          "Gibns": "GIBNS",
+          "Ilium": "ILIUM",
+          "John": "JHONN",
+          "Trixie": "TRYXI",
+          "Vander": "VNDER",
+          "Zenah": "ZENAH",
+          "s": "ESSSS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 10C",
+      "STAR": "TRTLL6",
+      "Route": [
+        "TRTLL",
+        "HIHRY",
+        "RINNO",
+        "JORJO",
+        "MONKZ",
+        "TONIE",
+        "KORD"
+      ],
+      "Altitude": 5000,
+      "Heading": 360,
+      "Speed": 271,
+      "AssignedHeading": 360,
+      "State": "arrival",
+      "ControllerFrequency": "1X",
+      "TrackingController": "1X",
+      "LAHSORunways": [
+        "4R",
+        "22L",
+        "4L",
+        "22R",
+        "4L",
+        "22R"
+      ]
+    },
+    "United 92 heavy": {
+      "Callsign": "UAL92",
+      "AircraftType": "B772",
+      "Fixes": {
+        "Chicago O'Hare": "KORD",
+        "Easel": "EZELL",
+        "Fran": "FFRAN",
+        "Gibns": "GIBNS",
+        "Koss": "KOOSS",
+        "Meeth": "MIETH",
+        "Mueller": "MUELL",
+        "Nordl": "NORDL",
+        "Sickler": "SIKLR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 10C": "I0C",
+        "ILS Runway 9C": "I9C",
+        "ILS Runway 9L": "I9L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway niner center": "9C",
+        "visual approach runway niner left": "9L",
+        "visual approach runway one zero center": "10C",
+        "visual niner center": "9C",
+        "visual niner left": "9L",
+        "visual one zero center": "10C",
+        "visual runway niner center": "9C",
+        "visual runway niner left": "9L",
+        "visual runway one zero center": "10C"
+      },
+      "ApproachFixes": {
+        "I0C": {
+          "Bairy": "BAIRY",
+          "Couper": "COUPR",
+          "Gibns": "GIBNS",
+          "Killa": "KYLAA",
+          "Pepaw": "PEPAW",
+          "Ray": "RAYYY",
+          "Rudea": "RRUDA",
+          "Sharn": "SHARN"
+        },
+        "I9C": {
+          "Easel": "EZELL",
+          "Fran": "FFRAN",
+          "Gibns": "GIBNS",
+          "Koss": "KOOSS",
+          "Meeth": "MIETH",
+          "Mueller": "MUELL",
+          "Nordl": "NORDL",
+          "Sickler": "SIKLR"
+        },
+        "I9L": {
+          "Doggy": "DOOGY",
+          "Gibns": "GIBNS",
+          "Ilium": "ILIUM",
+          "John": "JHONN",
+          "Trixie": "TRYXI",
+          "Vander": "VNDER",
+          "Zenah": "ZENAH",
+          "s": "ESSSS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 9C",
+      "STAR": "SHAIN2",
+      "Route": [
+        "KORD"
+      ],
+      "Altitude": 6000,
+      "Heading": 72,
+      "Speed": 271,
+      "AssignedHeading": 72,
+      "State": "arrival",
+      "ControllerFrequency": "1Z",
+      "TrackingController": "1Z",
+      "LAHSORunways": [
+        "4R",
+        "22L",
+        "4L",
+        "22R",
+        "4L",
+        "22R"
+      ]
+    },
+    "Wisconsin 43 75": {
+      "Callsign": "AWI4375",
+      "AircraftType": "CRJ2",
+      "Fixes": {
+        "Chicago O'Hare": "KORD"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 10C": "I0C",
+        "ILS Runway 9C": "I9C",
+        "ILS Runway 9L": "I9L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway niner center": "9C",
+        "visual approach runway niner left": "9L",
+        "visual approach runway one zero center": "10C",
+        "visual niner center": "9C",
+        "visual niner left": "9L",
+        "visual one zero center": "10C",
+        "visual runway niner center": "9C",
+        "visual runway niner left": "9L",
+        "visual runway one zero center": "10C"
+      },
+      "ApproachFixes": {
+        "I0C": {
+          "Bairy": "BAIRY",
+          "Couper": "COUPR",
+          "Gibns": "GIBNS",
+          "Killa": "KYLAA",
+          "Pepaw": "PEPAW",
+          "Ray": "RAYYY",
+          "Rudea": "RRUDA",
+          "Sharn": "SHARN"
+        },
+        "I9C": {
+          "Easel": "EZELL",
+          "Fran": "FFRAN",
+          "Gibns": "GIBNS",
+          "Koss": "KOOSS",
+          "Meeth": "MIETH",
+          "Mueller": "MUELL",
+          "Nordl": "NORDL",
+          "Sickler": "SIKLR"
+        },
+        "I9L": {
+          "Doggy": "DOOGY",
+          "Gibns": "GIBNS",
+          "Ilium": "ILIUM",
+          "John": "JHONN",
+          "Trixie": "TRYXI",
+          "Vander": "VNDER",
+          "Zenah": "ZENAH",
+          "s": "ESSSS"
+        }
+      },
+      "STAR": "ERNNY8",
+      "Route": [
+        "KORD"
+      ],
+      "Altitude": 10000,
+      "Heading": 261,
+      "Speed": 295,
+      "AssignedHeading": 261,
+      "State": "arrival",
+      "ControllerFrequency": "1J",
+      "TrackingController": "1J",
+      "LAHSORunways": [
+        "4R",
+        "22L",
+        "4L",
+        "22R",
+        "4L",
+        "22R"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"three five Envoy Ninety Eighty One turn left heading zero six zero cleared ILS runway one zero left approach\"",
+    "[local-stt] normalized words: [3 5 envoy 90 81 turn left heading 0 6 0 cleared ils runway 1 0 left approach]",
+    "[local-stt] tokens: 14",
+    "[local-stt]   token[0]: Text=\"35\" Type=1 Value=35",
+    "[local-stt]   token[1]: Text=\"envoy\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"90\" Type=1 Value=90",
+    "[local-stt]   token[3]: Text=\"81\" Type=1 Value=81",
+    "[local-stt]   token[4]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"left\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"heading\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"060\" Type=1 Value=60",
+    "[local-stt]   token[8]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"ils\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"10\" Type=1 Value=10",
+    "[local-stt]   token[12]: Text=\"left\" Type=0 Value=-1",
+    "[local-stt]   token[13]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 14 tokens, 11 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 14 tokens, 11 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"airline_flight\": 3 results",
+    "[local-stt]     result 0: \"Envoy 98 81\" (airline=0.905, flight=0.850, skip=0)",
+    "[local-stt]     result 1: \"Envoy 98 81\" (airline=1.000, flight=0.850, skip=1)",
+    "[local-stt]     result 2: \"Lindbergh 97 zero eight\" (airline=0.437, flight=0.850, skip=1)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Envoy 98 81\" (airline=1.00, flight=0.85, skip=1)",
+    "[local-stt]   pattern \"airline_only\": 11 results",
+    "[local-stt]     result 0: \"Envoy 98 81\" (airline=0.905, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Envoy 98 81\" (airline=1.000, flight=0.000, skip=1)",
+    "[local-stt]     result 2: \"Key Lime 93 36\" (airline=0.511, flight=0.000, skip=1)",
+    "[local-stt]     result 3: \"Lindbergh 97 zero eight\" (airline=0.437, flight=0.000, skip=1)",
+    "[local-stt]     result 4: \"ExecJet 99 23\" (airline=0.503, flight=0.000, skip=1)",
+    "[local-stt]     pattern \"airline_only\": selected \"Envoy 98 81\" (airline=1.00, flight=0.00, skip=1)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 4 results",
+    "[local-stt]     result 0: \"Lindbergh 97 zero eight\" (airline=0.500, flight=0.850, skip=1)",
+    "[local-stt]     result 1: \"Envoy 98 81\" (airline=0.500, flight=0.850, skip=1)",
+    "[local-stt]     result 2: \"Envoy 98 81\" (airline=0.500, flight=0.850, skip=2)",
+    "[local-stt]     result 3: \"Lindbergh 97 zero eight\" (airline=0.500, flight=0.850, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Envoy 98 81\" (airline=0.50, flight=0.85, skip=1)",
+    "[local-stt]   best callsign candidate: \"ENY9881\" (conf=0.87, consumed=4, addressingForm=0, spokenKey=\"Envoy 98 81\"; 2 candidates)",
+    "[local-stt] ParseCommands: 10 tokens",
+    "[local-stt]   matched command: \"L060\" [turn_left_heading] (pos=0, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[0]=\"turn\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 15 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 15 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"10\" against 15 fixes",
+    "[local-stt]   extractFix: no match found for \"10\"",
+    "[local-stt]   matchApproachByTypeAndNumber: runway mismatch, falling back to assigned approach \"I9L\" (type=\"ils\" dir=L)",
+    "[local-stt]   matched command: \"CI9L\" [cleared_approach] (pos=4, conf=0.97, consumed=5, isThen=false)",
+    "[local-stt]   no match at token[4]=\"cleared\", skipping",
+    "[local-stt]   matched command: \"L060\" [turn_left_heading] (pos=1, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[1]=\"left\", skipping",
+    "[local-stt]   no match at token[9]=\"approach\", skipping",
+    "[local-stt]   no match at token[5]=\"ils\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 15 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 15 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"10\" against 15 fixes",
+    "[local-stt]   extractFix: no match found for \"10\"",
+    "[local-stt]   matchApproachByTypeAndNumber: runway mismatch, falling back to assigned approach \"I9L\" (type=\"ils\" dir=L)",
+    "[local-stt]   matched command: \"CI9L\" [cleared_approach] (pos=4, conf=0.97, consumed=5, isThen=false)",
+    "[local-stt]   no match at token[4]=\"cleared\", skipping",
+    "[local-stt]   matched command: \"H060\" [heading_only] (pos=2, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[2]=\"heading\", skipping",
+    "[local-stt]   no match at token[9]=\"approach\", skipping",
+    "[local-stt]   no match at token[6]=\"runway\", skipping",
+    "[local-stt]   no match at token[5]=\"ils\", skipping",
+    "[local-stt]   no match at token[7]=\"10\", skipping",
+    "[local-stt]   no match at token[6]=\"runway\", skipping",
+    "[local-stt]   no match at token[8]=\"left\", skipping",
+    "[local-stt]   no match at token[7]=\"10\", skipping",
+    "[local-stt]   no match at token[9]=\"approach\", skipping",
+    "[local-stt]   no match at token[8]=\"left\", skipping",
+    "[local-stt]   no match at token[9]=\"approach\", skipping",
+    "[local-stt]   beam final[0]: score=5.218 pos=10 commands=[L060 CI9L]",
+    "[local-stt]   beam final[1]: score=2.318 pos=10 commands=[L060 CI9L]",
+    "[local-stt]   beam final[2]: score=0.089 pos=10 commands=[L060]",
+    "[local-stt]   beam final[3]: score=-2.812 pos=10 commands=[L060]",
+    "[local-stt] ParseCommands: result=[L060 CI9L] (avgConf=0.98)",
+    "[local-stt] ParseCommands: 12 tokens",
+    "[local-stt]   no match at token[0]=\"90\", skipping",
+    "[local-stt]   no match at token[1]=\"81\", skipping",
+    "[local-stt]   matched command: \"L060\" [turn_left_heading] (pos=2, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[2]=\"turn\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 15 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 15 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"10\" against 15 fixes",
+    "[local-stt]   extractFix: no match found for \"10\"",
+    "[local-stt]   matchApproachByTypeAndNumber: runway mismatch, falling back to assigned approach \"I9L\" (type=\"ils\" dir=L)",
+    "[local-stt]   matched command: \"CI9L\" [cleared_approach] (pos=6, conf=0.97, consumed=5, isThen=false)",
+    "[local-stt]   no match at token[6]=\"cleared\", skipping",
+    "[local-stt]   matched command: \"L060\" [turn_left_heading] (pos=3, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[3]=\"left\", skipping",
+    "[local-stt]   no match at token[11]=\"approach\", skipping",
+    "[local-stt]   no match at token[7]=\"ils\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 15 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 15 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"10\" against 15 fixes",
+    "[local-stt]   extractFix: no match found for \"10\"",
+    "[local-stt]   matchApproachByTypeAndNumber: runway mismatch, falling back to assigned approach \"I9L\" (type=\"ils\" dir=L)",
+    "[local-stt]   matched command: \"CI9L\" [cleared_approach] (pos=6, conf=0.97, consumed=5, isThen=false)",
+    "[local-stt]   no match at token[6]=\"cleared\", skipping",
+    "[local-stt]   matched command: \"H060\" [heading_only] (pos=4, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[4]=\"heading\", skipping",
+    "[local-stt]   no match at token[11]=\"approach\", skipping",
+    "[local-stt]   no match at token[8]=\"runway\", skipping",
+    "[local-stt]   no match at token[7]=\"ils\", skipping",
+    "[local-stt]   no match at token[9]=\"10\", skipping",
+    "[local-stt]   no match at token[8]=\"runway\", skipping",
+    "[local-stt]   no match at token[10]=\"left\", skipping",
+    "[local-stt]   no match at token[9]=\"10\", skipping",
+    "[local-stt]   no match at token[11]=\"approach\", skipping",
+    "[local-stt]   no match at token[10]=\"left\", skipping",
+    "[local-stt]   no match at token[11]=\"approach\", skipping",
+    "[local-stt]   beam final[0]: score=5.218 pos=12 commands=[L060 CI9L]",
+    "[local-stt]   beam final[1]: score=2.318 pos=12 commands=[L060 CI9L]",
+    "[local-stt]   beam final[2]: score=0.089 pos=12 commands=[L060]",
+    "[local-stt]   beam final[3]: score=-2.812 pos=12 commands=[L060]",
+    "[local-stt] ParseCommands: result=[L060 CI9L] (avgConf=0.98)",
+    "[local-stt] callsign match: Callsign=\"ENY9881\" SpokenKey=\"Envoy 98 81\" Conf=0.87 Consumed=4",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=5000 Fixes=15 Approaches=3 VisualApproaches=9 AssignedApproach=\"ILS Runway 9L\" LAHSORunways=[4R 22L 4L 22R 4L 22R]",
+    "[local-stt]   fix: \"Zenah\" -\u003e \"ZENAH\"",
+    "[local-stt]   fix: \"Chicago O'Hare\" -\u003e \"KORD\"",
+    "[local-stt]   fix: \"Kurk\" -\u003e \"KURKK\"",
+    "[local-stt]   fix: \"Gibns\" -\u003e \"GIBNS\"",
+    "[local-stt]   fix: \"Ilium\" -\u003e \"ILIUM\"",
+    "[local-stt]   fix: \"Pappy\" -\u003e \"PAPPI\"",
+    "[local-stt]   fix: \"Bamb\" -\u003e \"BAMBB\"",
+    "[local-stt]   fix: \"John\" -\u003e \"JHONN\"",
+    "[local-stt]   fix: \"s\" -\u003e \"ESSSS\"",
+    "[local-stt]   fix: \"Vander\" -\u003e \"VNDER\"",
+    "[local-stt]   fix: \"Ernie\" -\u003e \"ERNNY\"",
+    "[local-stt]   fix: \"Tubes\" -\u003e \"TUBEZ\"",
+    "[local-stt]   fix: \"Vulcan\" -\u003e \"VULCN\"",
+    "[local-stt]   fix: \"Trixie\" -\u003e \"TRYXI\"",
+    "[local-stt]   fix: \"Doggy\" -\u003e \"DOOGY\"",
+    "[local-stt]   approach: \"ILS Runway 10C\" -\u003e \"I0C\"",
+    "[local-stt]   approach: \"ILS Runway 9C\" -\u003e \"I9C\"",
+    "[local-stt]   approach: \"ILS Runway 9L\" -\u003e \"I9L\"",
+    "[local-stt]   visual approach: \"visual one zero center\" -\u003e \"10C\"",
+    "[local-stt]   visual approach: \"visual approach runway niner center\" -\u003e \"9C\"",
+    "[local-stt]   visual approach: \"visual niner center\" -\u003e \"9C\"",
+    "[local-stt]   visual approach: \"visual runway one zero center\" -\u003e \"10C\"",
+    "[local-stt]   visual approach: \"visual runway niner center\" -\u003e \"9C\"",
+    "[local-stt]   visual approach: \"visual runway niner left\" -\u003e \"9L\"",
+    "[local-stt]   visual approach: \"visual approach runway niner left\" -\u003e \"9L\"",
+    "[local-stt]   visual approach: \"visual niner left\" -\u003e \"9L\"",
+    "[local-stt]   visual approach: \"visual approach runway one zero center\" -\u003e \"10C\"",
+    "[local-stt] command tokens after disregard: 10",
+    "[local-stt]   token[0]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"left\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"heading\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"060\" Type=1 Value=60",
+    "[local-stt]   token[4]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"ils\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"10\" Type=1 Value=10",
+    "[local-stt]   token[8]: Text=\"left\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 10 tokens",
+    "[local-stt]   matched command: \"L060\" [turn_left_heading] (pos=0, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[0]=\"turn\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 15 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 15 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"10\" against 15 fixes",
+    "[local-stt]   extractFix: no match found for \"10\"",
+    "[local-stt]   matchApproachByTypeAndNumber: runway mismatch, falling back to assigned approach \"I9L\" (type=\"ils\" dir=L)",
+    "[local-stt]   matched command: \"CI9L\" [cleared_approach] (pos=4, conf=0.97, consumed=5, isThen=false)",
+    "[local-stt]   no match at token[4]=\"cleared\", skipping",
+    "[local-stt]   matched command: \"L060\" [turn_left_heading] (pos=1, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[1]=\"left\", skipping",
+    "[local-stt]   no match at token[9]=\"approach\", skipping",
+    "[local-stt]   no match at token[5]=\"ils\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 15 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 15 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"10\" against 15 fixes",
+    "[local-stt]   extractFix: no match found for \"10\"",
+    "[local-stt]   matchApproachByTypeAndNumber: runway mismatch, falling back to assigned approach \"I9L\" (type=\"ils\" dir=L)",
+    "[local-stt]   matched command: \"CI9L\" [cleared_approach] (pos=4, conf=0.97, consumed=5, isThen=false)",
+    "[local-stt]   no match at token[4]=\"cleared\", skipping",
+    "[local-stt]   matched command: \"H060\" [heading_only] (pos=2, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[2]=\"heading\", skipping",
+    "[local-stt]   no match at token[9]=\"approach\", skipping",
+    "[local-stt]   no match at token[6]=\"runway\", skipping",
+    "[local-stt]   no match at token[5]=\"ils\", skipping",
+    "[local-stt]   no match at token[7]=\"10\", skipping",
+    "[local-stt]   no match at token[6]=\"runway\", skipping",
+    "[local-stt]   no match at token[8]=\"left\", skipping",
+    "[local-stt]   no match at token[7]=\"10\", skipping",
+    "[local-stt]   no match at token[9]=\"approach\", skipping",
+    "[local-stt]   no match at token[8]=\"left\", skipping",
+    "[local-stt]   no match at token[9]=\"approach\", skipping",
+    "[local-stt]   beam final[0]: score=5.218 pos=10 commands=[L060 CI9L]",
+    "[local-stt]   beam final[1]: score=2.318 pos=10 commands=[L060 CI9L]",
+    "[local-stt]   beam final[2]: score=0.089 pos=10 commands=[L060]",
+    "[local-stt]   beam final[3]: score=-2.812 pos=10 commands=[L060]",
+    "[local-stt] ParseCommands: result=[L060 CI9L] (avgConf=0.98)",
+    "[local-stt] parsed commands: [L060 CI9L] (conf=0.98, kinds=1)",
+    "[local-stt] validated commands: [L060 CI9L] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"ENY9881 L060 CI9L\" (conf=0.86, time=13.4107ms) ==="
+  ]
+}

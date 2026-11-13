@@ -1,0 +1,355 @@
+{
+  "time": "2026-11-04T00:34:44.314947579Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Southwest 36 37 climb and maintain one five thousand or correction one three thousand",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, victor, information, Wheelie seven, Gaboo one, Sabre three, word, Treks, Blurg, R-force, apale, myope, jovsa, Squatch, smurf, lips, lamas, sukey, poimm, angs, lady, bird, camdy, Odine, Hegvo, Zilker, three six left, three one, three six right, runway, RNP, r-nav, I L S, Southwest 36 37, embraer phenom one hundred six brahvo uniform, phenom one hundred six brahvo uniform, november four four six brahvo uniform, ExecJet 88 66, Delta 41 zero four, zedku, shoe, bald, scute, bowties, tonxu, tune, Chevy, are you ok, music, saber, Marks, hodal, bitter, Munch, craze, San Marcos Regional Airport, Austin Bergstrom International Airport",
+  "whisper_duration_ms": 186.261,
+  "audio_duration_ms": 5960,
+  "processor": "GPU: NVIDIA GeForce RTX 5070 Ti (15995MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "SWA3637",
+  "command": "C130",
+  "reason": "correction of an altitude",
+  "stt_aircraft": {
+    "Delta 41 zero four": {
+      "Callsign": "DAL4104",
+      "AircraftType": "B739",
+      "Fixes": {
+        "Austin Bergstrom": "KAUS",
+        "bald": "BALLD",
+        "bitter": "BITER",
+        "bowties": "BOWTZ",
+        "finnley": "FNNLY",
+        "music": "MUSEC",
+        "scute": "SCUTE",
+        "shoe": "SSHOE",
+        "tune": "TOONE",
+        "zedku": "ZEDKU"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 36L": "I6L",
+        "ILS Runway 36R": "I6R",
+        "RNAV RNP Runway 36L": "R6L",
+        "RNAV RNP Runway 36R": "R6R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three six left": "36L",
+        "visual approach runway three six right": "36R",
+        "visual runway three six left": "36L",
+        "visual runway three six right": "36R",
+        "visual three six left": "36L",
+        "visual three six right": "36R"
+      },
+      "ApproachFixes": {
+        "I6L": {
+          "bird": "BIIRD",
+          "camdy": "CAMDY",
+          "fun": "FUNNN",
+          "jovsa": "JOVSA",
+          "lamas": "LAMAS"
+        },
+        "I6R": {
+          "bald": "BALLD",
+          "finnley": "FNNLY",
+          "shoe": "SSHOE",
+          "zedku": "ZEDKU"
+        },
+        "R6L": {
+          "Hegvo": "HEGVO",
+          "Odine": "ODINE",
+          "Squatch": "SQWCH",
+          "Zilker": "ZILKR",
+          "angs": "ANGGS",
+          "bird": "BIIRD",
+          "bowties": "BOWTZ",
+          "camdy": "CAMDY",
+          "fun": "FUNNN",
+          "lady": "LAIDY",
+          "lamas": "LAMAS",
+          "lips": "LIPSS",
+          "poimm": "POIMM",
+          "smurf": "SMRFF",
+          "sukey": "SUKEY"
+        },
+        "R6R": {
+          "Blurg": "BLURG",
+          "R-force": "RFRCE",
+          "Treks": "TREKS",
+          "angs": "ANGGS",
+          "apale": "APALE",
+          "bald": "BALLD",
+          "bowties": "BOWTZ",
+          "finnley": "FNNLY",
+          "lady": "LAIDY",
+          "lips": "LIPSS",
+          "myope": "MYOPE",
+          "poimm": "POIMM",
+          "shoe": "SSHOE",
+          "smurf": "SMRFF",
+          "word": "WRRDD"
+        }
+      },
+      "AssignedApproach": "ILS Runway 36R",
+      "STAR": "WLEEE7",
+      "Route": [
+        "BITER",
+        "MUSEC",
+        "TOONE",
+        "BOWTZ",
+        "SCUTE",
+        "KAUS"
+      ],
+      "Altitude": 7189,
+      "Heading": 250,
+      "Speed": 279,
+      "AssignedHeading": 250,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "ExecJet 88 66": {
+      "Callsign": "EJA8866",
+      "LastAddressed": true,
+      "AircraftType": "C560",
+      "Fixes": {
+        "San Marcos": "KHYI",
+        "are you ok": "RUYOK",
+        "hodal": "HODAL",
+        "tonxu": "TONXU"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 31": "R31"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one": "31",
+        "visual runway three one": "31",
+        "visual three one": "31"
+      },
+      "ApproachFixes": {
+        "R31": {
+          "are you ok": "RUYOK",
+          "hodal": "HODAL",
+          "tonxu": "TONXU"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 31",
+      "STAR": "GABOO1",
+      "Route": [
+        "KHYI"
+      ],
+      "Altitude": 9199,
+      "Heading": 194,
+      "Speed": 287,
+      "AssignedHeading": 194,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "8",
+        "26",
+        "17",
+        "35"
+      ]
+    },
+    "Southwest 25 78": {
+      "Callsign": "SWA2578",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Austin Bergstrom": "KAUS",
+        "Chevy": "CHEVE",
+        "Munch": "MUNCH",
+        "saber": "SAYBR"
+      },
+      "SID": "SAYBR3",
+      "Route": [
+        "MUNCH",
+        "SAYBR",
+        "CHEVE",
+        "KDAL"
+      ],
+      "Altitude": 1161,
+      "Heading": 15,
+      "Speed": 161,
+      "State": "departure",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "Southwest 36 37": {
+      "Callsign": "SWA3637",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Austin Bergstrom": "KAUS",
+        "Chevy": "CHEVE",
+        "Munch": "MUNCH",
+        "saber": "SAYBR"
+      },
+      "SID": "SAYBR3",
+      "Route": [
+        "MUNCH",
+        "SAYBR",
+        "CHEVE",
+        "KDAL"
+      ],
+      "Altitude": 8325,
+      "Heading": 35,
+      "Speed": 289,
+      "State": "departure",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "embraer phenom one hundred six brahvo uniform": {
+      "Callsign": "N446BU/T",
+      "AircraftType": "E50P",
+      "Fixes": {
+        "": "5C1",
+        "Easterwood": "KCLL",
+        "Marks": "MARCS",
+        "craze": "CRAYS"
+      },
+      "Route": [
+        "CRAYS",
+        "MARCS"
+      ],
+      "Altitude": 6000,
+      "Heading": 180,
+      "Speed": 281,
+      "AssignedHeading": 180,
+      "State": "overflight",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "AddressingForm": 1
+    },
+    "november four four six brahvo uniform": {
+      "Callsign": "N446BU",
+      "AircraftType": "E50P",
+      "Fixes": {
+        "": "5C1",
+        "Easterwood": "KCLL",
+        "Marks": "MARCS",
+        "craze": "CRAYS"
+      },
+      "Route": [
+        "CRAYS",
+        "MARCS"
+      ],
+      "Altitude": 6000,
+      "Heading": 180,
+      "Speed": 281,
+      "AssignedHeading": 180,
+      "State": "overflight",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "phenom one hundred six brahvo uniform": {
+      "Callsign": "N446BU/T",
+      "AircraftType": "E50P",
+      "Fixes": {
+        "": "5C1",
+        "Easterwood": "KCLL",
+        "Marks": "MARCS",
+        "craze": "CRAYS"
+      },
+      "Route": [
+        "CRAYS",
+        "MARCS"
+      ],
+      "Altitude": 6000,
+      "Heading": 180,
+      "Speed": 281,
+      "AssignedHeading": 180,
+      "State": "overflight",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "AddressingForm": 1
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Southwest 36 37 climb and maintain one five thousand or correction one three thousand\"",
+    "[local-stt] normalized words: [southwest 36 37 climb and maintain 1 5 thousand or correction 1 3 thousand]",
+    "[local-stt] tokens: 10",
+    "[local-stt]   token[0]: Text=\"southwest\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"36\" Type=1 Value=36",
+    "[local-stt]   token[2]: Text=\"37\" Type=1 Value=37",
+    "[local-stt]   token[3]: Text=\"climb\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"and\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"150\" Type=2 Value=150",
+    "[local-stt]   token[7]: Text=\"or\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"correction\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"130\" Type=2 Value=130",
+    "[local-stt] MatchCallsign: 10 tokens, 7 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 10 tokens, 7 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Southwest 36 37\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Southwest 36 37\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"Southwest 36 37\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Southwest 36 37\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 4 results",
+    "[local-stt]     result 0: \"Southwest 36 37\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Southwest 25 78\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Delta 41 zero four\" (airline=0.437, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Delta 41 zero four\" (airline=0.467, flight=0.000, skip=3)",
+    "[local-stt]     pattern \"airline_only\": selected \"Southwest 25 78\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"Southwest 36 37\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Southwest 36 37\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"Southwest 36 37\" (airline=0.500, flight=0.700, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Southwest 36 37\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"SWA3637\" (spokenKey=\"Southwest 36 37\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"SWA3637\" SpokenKey=\"Southwest 36 37\" Conf=1.00 Consumed=3",
+    "[local-stt] MatchCallsign: 1 tokens, 7 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 1 tokens, 7 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": no results",
+    "[local-stt]   pattern \"airline_only\": no results",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": no results",
+    "[local-stt] aircraft context: State=\"departure\" Altitude=8325 Fixes=4 Approaches=0 VisualApproaches=0 AssignedApproach=\"\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Austin Bergstrom\" -\u003e \"KAUS\"",
+    "[local-stt]   fix: \"Munch\" -\u003e \"MUNCH\"",
+    "[local-stt]   fix: \"saber\" -\u003e \"SAYBR\"",
+    "[local-stt]   fix: \"Chevy\" -\u003e \"CHEVE\"",
+    "[local-stt] command tokens after disregard: 5",
+    "[local-stt]   token[0]: Text=\"climb\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"and\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"150\" Type=2 Value=150",
+    "[local-stt]   token[4]: Text=\"130\" Type=2 Value=130",
+    "[local-stt] ParseCommands: 5 tokens",
+    "[local-stt]   matched command: \"C150\" [climb_maintain] (pos=0, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[0]=\"climb\", skipping",
+    "[local-stt]   no match at token[4]=\"130\", skipping",
+    "[local-stt]   matched command: \"A150\" [maintain_altitude] (pos=1, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   skipping filler word: \"and\"",
+    "[local-stt]   no match at token[4]=\"130\", skipping",
+    "[local-stt]   matched command: \"A150\" [maintain_altitude] (pos=2, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[2]=\"maintain\", skipping",
+    "[local-stt]   no match at token[4]=\"130\", skipping",
+    "[local-stt]   matched command: \"A150\" [standalone_altitude] (pos=3, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[3]=\"150\", skipping",
+    "[local-stt]   no match at token[4]=\"130\", skipping",
+    "[local-stt]   beam final[0]: score=2.391 pos=5 commands=[C150]",
+    "[local-stt]   beam final[1]: score=-1.107 pos=5 commands=[A150]",
+    "[local-stt]   beam final[2]: score=-1.107 pos=5 commands=[A150]",
+    "[local-stt]   beam final[3]: score=-4.007 pos=5 commands=[A150]",
+    "[local-stt] ParseCommands: result=[C150] (avgConf=1.00)",
+    "[local-stt] parsed commands: [C150] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [C150] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"SWA3637 C150\" (conf=1.00, time=1.5101ms) ==="
+  ]
+}

@@ -1,0 +1,1602 @@
+{
+  "time": "2026-11-13T03:10:53.656306562Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Lindbergh 64  correction four nine Victor Foxtrot fly heading zero nine zero",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, quebec, information, one eight right, two zero, one eight, one eight left, runway, Localizer, Approach, Visual, r-nav, I L S, Commute Air 64 92, Commute Air 32 43, SkyWest 97 65, november six five five six x-ray, citation five pahpah sierra, november five four five pahpah sierra, citation niner victor foxtrot, november four five niner victor foxtrot, embraer legacy zero sierra alpha, legacy six hundred zero sierra alpha, november two five zero sierra alpha, citation seven six one, citation ten seven six one, citation X seven six one, november two one seven six one, embraer phenom three hundred one seven zero, phenom three hundred one seven zero, november two one one seven zero, Grumman Tiger one victor foxtrot, Grumman Cheetah one victor foxtrot, november two zero one victor foxtrot, Lindbergh 52 81, Endeavor 64 68, Show Me 91 19, Show Me 28 71, Show Me 17 33, Zutgy, Ugime, Zisti, Debay, Zivep, Feker, Cotton, Ondo, Kiyet, Hagur, Bisby, Nivly, Jupes, ROCKET, ROME, BIGBEE, CHOO CHOO, , Fayetteville Municipal Airport, Huntsville International Airport",
+  "whisper_duration_ms": 225.235,
+  "audio_duration_ms": 3912,
+  "processor": "GPU: NVIDIA GeForce RTX 5070 Ti (16211MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "N459VF",
+  "command": "H090",
+  "reason": "correction to a different callsign",
+  "stt_aircraft": {
+    "Commute Air 32 43": {
+      "Callsign": "UCA3243",
+      "AircraftType": "E145",
+      "Fixes": {
+        "BIGBEE": "IGB",
+        "Huntsville": "KHSV"
+      },
+      "Route": [
+        "IGB",
+        "KIAH",
+        "KIAH"
+      ],
+      "Altitude": 2864,
+      "Heading": 185,
+      "Speed": 226,
+      "State": "departure",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "Commute Air 64 92": {
+      "Callsign": "UCA6492",
+      "AircraftType": "E145",
+      "Fixes": {
+        "Huntsville": "KHSV",
+        "ROME": "RMG"
+      },
+      "Route": [
+        "RMG",
+        "KIAD",
+        "KIAD"
+      ],
+      "Altitude": 7549,
+      "Heading": 94,
+      "Speed": 285,
+      "State": "departure",
+      "ControllerFrequency": "1W",
+      "TrackingController": "T12"
+    },
+    "Endeavor 64 68": {
+      "Callsign": "EDV6468",
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Huntsville": "KHSV"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 18L": "I18L",
+        "ILS Runway 18R": "I18R",
+        "Localizer Runway 18L": "L18L",
+        "Localizer Runway 18R": "L18R",
+        "RNAV Runway 18L": "R18L",
+        "RNAV Runway 18R": "R18R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight left": "18L",
+        "visual approach runway one eight right": "18R",
+        "visual one eight left": "18L",
+        "visual one eight right": "18R",
+        "visual runway one eight left": "18L",
+        "visual runway one eight right": "18R"
+      },
+      "ApproachFixes": {
+        "I18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "ROCKET": "RQZ"
+        },
+        "I18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ"
+        },
+        "L18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO",
+          "ROCKET": "RQZ"
+        },
+        "L18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ",
+          "Zisti": "ZISTI"
+        },
+        "R18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO"
+        },
+        "R18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "Zisti": "ZISTI"
+        }
+      },
+      "Route": [
+        "KHSV",
+        "KHSV"
+      ],
+      "Altitude": 11000,
+      "Heading": 275,
+      "Speed": 333,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "Grumman Cheetah one victor foxtrot": {
+      "Callsign": "N201VF/T",
+      "AircraftType": "AA5",
+      "Fixes": {
+        "Fayetteville Municipal": "KFYM"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 20": "R20"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero": "20",
+        "visual runway two zero": "20",
+        "visual two zero": "20"
+      },
+      "ApproachFixes": {
+        "R20": {
+          "Nivly": "NIVLE",
+          "Ondo": "ONDOW",
+          "Ugime": "UGIME",
+          "Zutgy": "ZUTGY"
+        }
+      },
+      "Route": [
+        "KFYM",
+        "KFYM"
+      ],
+      "Altitude": 7000,
+      "Heading": 63,
+      "Speed": 123,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "AddressingForm": 1
+    },
+    "Grumman Tiger one victor foxtrot": {
+      "Callsign": "N201VF/T",
+      "AircraftType": "AA5",
+      "Fixes": {
+        "Fayetteville Municipal": "KFYM"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 20": "R20"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero": "20",
+        "visual runway two zero": "20",
+        "visual two zero": "20"
+      },
+      "ApproachFixes": {
+        "R20": {
+          "Nivly": "NIVLE",
+          "Ondo": "ONDOW",
+          "Ugime": "UGIME",
+          "Zutgy": "ZUTGY"
+        }
+      },
+      "Route": [
+        "KFYM",
+        "KFYM"
+      ],
+      "Altitude": 7000,
+      "Heading": 63,
+      "Speed": 123,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "AddressingForm": 1
+    },
+    "Lindbergh 52 81": {
+      "Callsign": "GJS5281",
+      "AircraftType": "CRJ7",
+      "Fixes": {
+        "Feker": "FEKER",
+        "Hagur": "HAGUR",
+        "Huntsville": "KHSV",
+        "ROCKET": "RQZ",
+        "Zisti": "ZISTI"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 18L": "I18L",
+        "ILS Runway 18R": "I18R",
+        "Localizer Runway 18L": "L18L",
+        "Localizer Runway 18R": "L18R",
+        "RNAV Runway 18L": "R18L",
+        "RNAV Runway 18R": "R18R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight left": "18L",
+        "visual approach runway one eight right": "18R",
+        "visual one eight left": "18L",
+        "visual one eight right": "18R",
+        "visual runway one eight left": "18L",
+        "visual runway one eight right": "18R"
+      },
+      "ApproachFixes": {
+        "I18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "ROCKET": "RQZ"
+        },
+        "I18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ"
+        },
+        "L18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO",
+          "ROCKET": "RQZ"
+        },
+        "L18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ",
+          "Zisti": "ZISTI"
+        },
+        "R18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO"
+        },
+        "R18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "Zisti": "ZISTI"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 18R",
+      "Route": [
+        "KHSV",
+        "KHSV"
+      ],
+      "Altitude": 7000,
+      "Heading": 276,
+      "Speed": 276,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "Show Me 17 33": {
+      "Callsign": "BVN1733",
+      "AircraftType": "C208",
+      "Fixes": {
+        "Huntsville": "KHSV"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 18L": "I18L",
+        "ILS Runway 18R": "I18R",
+        "Localizer Runway 18L": "L18L",
+        "Localizer Runway 18R": "L18R",
+        "RNAV Runway 18L": "R18L",
+        "RNAV Runway 18R": "R18R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight left": "18L",
+        "visual approach runway one eight right": "18R",
+        "visual one eight left": "18L",
+        "visual one eight right": "18R",
+        "visual runway one eight left": "18L",
+        "visual runway one eight right": "18R"
+      },
+      "ApproachFixes": {
+        "I18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "ROCKET": "RQZ"
+        },
+        "I18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ"
+        },
+        "L18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO",
+          "ROCKET": "RQZ"
+        },
+        "L18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ",
+          "Zisti": "ZISTI"
+        },
+        "R18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO"
+        },
+        "R18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "Zisti": "ZISTI"
+        }
+      },
+      "Route": [
+        "KHSV",
+        "KHSV"
+      ],
+      "Altitude": 5000,
+      "Heading": 80,
+      "Speed": 159,
+      "AssignedHeading": 80,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W"
+    },
+    "Show Me 28 71": {
+      "Callsign": "BVN2871",
+      "AircraftType": "C208",
+      "Fixes": {
+        "Bisby": "BISBE",
+        "Cotton": "COTIN",
+        "Debay": "DEBAY",
+        "Huntsville": "KHSV",
+        "ROCKET": "RQZ"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 18L": "I18L",
+        "ILS Runway 18R": "I18R",
+        "Localizer Runway 18L": "L18L",
+        "Localizer Runway 18R": "L18R",
+        "RNAV Runway 18L": "R18L",
+        "RNAV Runway 18R": "R18R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight left": "18L",
+        "visual approach runway one eight right": "18R",
+        "visual one eight left": "18L",
+        "visual one eight right": "18R",
+        "visual runway one eight left": "18L",
+        "visual runway one eight right": "18R"
+      },
+      "ApproachFixes": {
+        "I18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "ROCKET": "RQZ"
+        },
+        "I18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ"
+        },
+        "L18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO",
+          "ROCKET": "RQZ"
+        },
+        "L18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ",
+          "Zisti": "ZISTI"
+        },
+        "R18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO"
+        },
+        "R18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "Zisti": "ZISTI"
+        }
+      },
+      "AssignedApproach": "ILS Runway 18L",
+      "Route": [
+        "KHSV",
+        "KHSV"
+      ],
+      "Altitude": 5000,
+      "Heading": 130,
+      "Speed": 163,
+      "AssignedHeading": 130,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W"
+    },
+    "Show Me 91 19": {
+      "Callsign": "BVN9119",
+      "AircraftType": "C208",
+      "Fixes": {
+        "Huntsville": "KHSV"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 18L": "I18L",
+        "ILS Runway 18R": "I18R",
+        "Localizer Runway 18L": "L18L",
+        "Localizer Runway 18R": "L18R",
+        "RNAV Runway 18L": "R18L",
+        "RNAV Runway 18R": "R18R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight left": "18L",
+        "visual approach runway one eight right": "18R",
+        "visual one eight left": "18L",
+        "visual one eight right": "18R",
+        "visual runway one eight left": "18L",
+        "visual runway one eight right": "18R"
+      },
+      "ApproachFixes": {
+        "I18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "ROCKET": "RQZ"
+        },
+        "I18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ"
+        },
+        "L18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO",
+          "ROCKET": "RQZ"
+        },
+        "L18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ",
+          "Zisti": "ZISTI"
+        },
+        "R18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO"
+        },
+        "R18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "Zisti": "ZISTI"
+        }
+      },
+      "Route": [
+        "KHSV",
+        "KHSV"
+      ],
+      "Altitude": 11000,
+      "Heading": 90,
+      "Speed": 162,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W"
+    },
+    "SkyWest 97 65": {
+      "Callsign": "SKW9765",
+      "LastAddressed": true,
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Huntsville": "KHSV"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 18L": "I18L",
+        "ILS Runway 18R": "I18R",
+        "Localizer Runway 18L": "L18L",
+        "Localizer Runway 18R": "L18R",
+        "RNAV Runway 18L": "R18L",
+        "RNAV Runway 18R": "R18R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight left": "18L",
+        "visual approach runway one eight right": "18R",
+        "visual one eight left": "18L",
+        "visual one eight right": "18R",
+        "visual runway one eight left": "18L",
+        "visual runway one eight right": "18R"
+      },
+      "ApproachFixes": {
+        "I18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "ROCKET": "RQZ"
+        },
+        "I18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ"
+        },
+        "L18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO",
+          "ROCKET": "RQZ"
+        },
+        "L18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ",
+          "Zisti": "ZISTI"
+        },
+        "R18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO"
+        },
+        "R18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "Zisti": "ZISTI"
+        }
+      },
+      "Route": [
+        "KHSV",
+        "KHSV"
+      ],
+      "Altitude": 8659,
+      "Heading": 91,
+      "Speed": 252,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W"
+    },
+    "citation X seven six one": {
+      "Callsign": "N21761/T",
+      "AircraftType": "C750",
+      "Fixes": {
+        "Bisby": "BISBE",
+        "Cotton": "COTIN",
+        "Debay": "DEBAY",
+        "Huntsville": "KHSV",
+        "Nashville": "KBNA",
+        "ROCKET": "RQZ"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 18L": "I18L",
+        "ILS Runway 18R": "I18R",
+        "Localizer Runway 18L": "L18L",
+        "Localizer Runway 18R": "L18R",
+        "RNAV Runway 18L": "R18L",
+        "RNAV Runway 18R": "R18R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight left": "18L",
+        "visual approach runway one eight right": "18R",
+        "visual one eight left": "18L",
+        "visual one eight right": "18R",
+        "visual runway one eight left": "18L",
+        "visual runway one eight right": "18R"
+      },
+      "ApproachFixes": {
+        "I18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "ROCKET": "RQZ"
+        },
+        "I18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ"
+        },
+        "L18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO",
+          "ROCKET": "RQZ"
+        },
+        "L18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ",
+          "Zisti": "ZISTI"
+        },
+        "R18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO"
+        },
+        "R18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "Zisti": "ZISTI"
+        }
+      },
+      "AssignedApproach": "ILS Runway 18L",
+      "Route": [
+        "KHSV",
+        "KHSV"
+      ],
+      "Altitude": 8000,
+      "Heading": 275,
+      "Speed": 283,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "AddressingForm": 1
+    },
+    "citation five pahpah sierra": {
+      "Callsign": "N545PS/T",
+      "AircraftType": "C550",
+      "Fixes": {
+        "Atlanta": "KATL",
+        "CHOO CHOO": "GQO",
+        "Hartsfield": "KATL",
+        "Redstone Army": "KHUA"
+      },
+      "Route": [
+        "GQO",
+        "KATL",
+        "KATL"
+      ],
+      "Altitude": 3938,
+      "Heading": 175,
+      "Speed": 232,
+      "State": "departure",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "AddressingForm": 1
+    },
+    "citation niner victor foxtrot": {
+      "Callsign": "N459VF/T",
+      "AircraftType": "C550",
+      "Fixes": {
+        "Bisby": "BISBE",
+        "Cotton": "COTIN",
+        "Debay": "DEBAY",
+        "Huntsville": "KHSV",
+        "Northwest Alabama": "KMSL",
+        "ROCKET": "RQZ"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 18L": "I18L",
+        "ILS Runway 18R": "I18R",
+        "Localizer Runway 18L": "L18L",
+        "Localizer Runway 18R": "L18R",
+        "RNAV Runway 18L": "R18L",
+        "RNAV Runway 18R": "R18R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight left": "18L",
+        "visual approach runway one eight right": "18R",
+        "visual one eight left": "18L",
+        "visual one eight right": "18R",
+        "visual runway one eight left": "18L",
+        "visual runway one eight right": "18R"
+      },
+      "ApproachFixes": {
+        "I18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "ROCKET": "RQZ"
+        },
+        "I18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ"
+        },
+        "L18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO",
+          "ROCKET": "RQZ"
+        },
+        "L18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ",
+          "Zisti": "ZISTI"
+        },
+        "R18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO"
+        },
+        "R18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "Zisti": "ZISTI"
+        }
+      },
+      "AssignedApproach": "ILS Runway 18L",
+      "Route": [
+        "KHSV",
+        "KHSV"
+      ],
+      "Altitude": 6000,
+      "Heading": 150,
+      "Speed": 289,
+      "AssignedHeading": 150,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "AddressingForm": 1
+    },
+    "citation seven six one": {
+      "Callsign": "N21761/T",
+      "AircraftType": "C750",
+      "Fixes": {
+        "Bisby": "BISBE",
+        "Cotton": "COTIN",
+        "Debay": "DEBAY",
+        "Huntsville": "KHSV",
+        "Nashville": "KBNA",
+        "ROCKET": "RQZ"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 18L": "I18L",
+        "ILS Runway 18R": "I18R",
+        "Localizer Runway 18L": "L18L",
+        "Localizer Runway 18R": "L18R",
+        "RNAV Runway 18L": "R18L",
+        "RNAV Runway 18R": "R18R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight left": "18L",
+        "visual approach runway one eight right": "18R",
+        "visual one eight left": "18L",
+        "visual one eight right": "18R",
+        "visual runway one eight left": "18L",
+        "visual runway one eight right": "18R"
+      },
+      "ApproachFixes": {
+        "I18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "ROCKET": "RQZ"
+        },
+        "I18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ"
+        },
+        "L18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO",
+          "ROCKET": "RQZ"
+        },
+        "L18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ",
+          "Zisti": "ZISTI"
+        },
+        "R18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO"
+        },
+        "R18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "Zisti": "ZISTI"
+        }
+      },
+      "AssignedApproach": "ILS Runway 18L",
+      "Route": [
+        "KHSV",
+        "KHSV"
+      ],
+      "Altitude": 8000,
+      "Heading": 275,
+      "Speed": 283,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "AddressingForm": 1
+    },
+    "citation ten seven six one": {
+      "Callsign": "N21761/T",
+      "AircraftType": "C750",
+      "Fixes": {
+        "Bisby": "BISBE",
+        "Cotton": "COTIN",
+        "Debay": "DEBAY",
+        "Huntsville": "KHSV",
+        "Nashville": "KBNA",
+        "ROCKET": "RQZ"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 18L": "I18L",
+        "ILS Runway 18R": "I18R",
+        "Localizer Runway 18L": "L18L",
+        "Localizer Runway 18R": "L18R",
+        "RNAV Runway 18L": "R18L",
+        "RNAV Runway 18R": "R18R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight left": "18L",
+        "visual approach runway one eight right": "18R",
+        "visual one eight left": "18L",
+        "visual one eight right": "18R",
+        "visual runway one eight left": "18L",
+        "visual runway one eight right": "18R"
+      },
+      "ApproachFixes": {
+        "I18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "ROCKET": "RQZ"
+        },
+        "I18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ"
+        },
+        "L18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO",
+          "ROCKET": "RQZ"
+        },
+        "L18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ",
+          "Zisti": "ZISTI"
+        },
+        "R18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO"
+        },
+        "R18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "Zisti": "ZISTI"
+        }
+      },
+      "AssignedApproach": "ILS Runway 18L",
+      "Route": [
+        "KHSV",
+        "KHSV"
+      ],
+      "Altitude": 8000,
+      "Heading": 275,
+      "Speed": 283,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "AddressingForm": 1
+    },
+    "embraer legacy zero sierra alpha": {
+      "Callsign": "N250SA/T",
+      "AircraftType": "E545",
+      "Fixes": {
+        "Birmingham-Shuttlesworth": "KBHM",
+        "Huntsville": "KHSV"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 18L": "I18L",
+        "ILS Runway 18R": "I18R",
+        "Localizer Runway 18L": "L18L",
+        "Localizer Runway 18R": "L18R",
+        "RNAV Runway 18L": "R18L",
+        "RNAV Runway 18R": "R18R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight left": "18L",
+        "visual approach runway one eight right": "18R",
+        "visual one eight left": "18L",
+        "visual one eight right": "18R",
+        "visual runway one eight left": "18L",
+        "visual runway one eight right": "18R"
+      },
+      "ApproachFixes": {
+        "I18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "ROCKET": "RQZ"
+        },
+        "I18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ"
+        },
+        "L18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO",
+          "ROCKET": "RQZ"
+        },
+        "L18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ",
+          "Zisti": "ZISTI"
+        },
+        "R18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO"
+        },
+        "R18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "Zisti": "ZISTI"
+        }
+      },
+      "Route": [
+        "KHSV",
+        "KHSV"
+      ],
+      "Altitude": 8000,
+      "Heading": 91,
+      "Speed": 290,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "AddressingForm": 1
+    },
+    "embraer phenom three hundred one seven zero": {
+      "Callsign": "N21170/T",
+      "AircraftType": "E55P",
+      "Fixes": {
+        "": "5M0",
+        "Birmingham-Shuttlesworth": "KBHM",
+        "Jupes": "JUPES",
+        "Kiyet": "KIYET",
+        "Zivep": "ZIVEP"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 18": "R18"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight": "18",
+        "visual one eight": "18",
+        "visual runway one eight": "18"
+      },
+      "ApproachFixes": {
+        "R18": {
+          "Jupes": "JUPES",
+          "Kiyet": "KIYET",
+          "Zivep": "ZIVEP"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 18",
+      "Route": [
+        "JUPES",
+        "KIYET",
+        "ZIVEP"
+      ],
+      "Altitude": 3000,
+      "Heading": 55,
+      "Speed": 269,
+      "State": "cleared approach",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "AddressingForm": 1
+    },
+    "legacy six hundred zero sierra alpha": {
+      "Callsign": "N250SA/T",
+      "AircraftType": "E545",
+      "Fixes": {
+        "Birmingham-Shuttlesworth": "KBHM",
+        "Huntsville": "KHSV"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 18L": "I18L",
+        "ILS Runway 18R": "I18R",
+        "Localizer Runway 18L": "L18L",
+        "Localizer Runway 18R": "L18R",
+        "RNAV Runway 18L": "R18L",
+        "RNAV Runway 18R": "R18R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight left": "18L",
+        "visual approach runway one eight right": "18R",
+        "visual one eight left": "18L",
+        "visual one eight right": "18R",
+        "visual runway one eight left": "18L",
+        "visual runway one eight right": "18R"
+      },
+      "ApproachFixes": {
+        "I18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "ROCKET": "RQZ"
+        },
+        "I18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ"
+        },
+        "L18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO",
+          "ROCKET": "RQZ"
+        },
+        "L18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ",
+          "Zisti": "ZISTI"
+        },
+        "R18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO"
+        },
+        "R18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "Zisti": "ZISTI"
+        }
+      },
+      "Route": [
+        "KHSV",
+        "KHSV"
+      ],
+      "Altitude": 8000,
+      "Heading": 91,
+      "Speed": 290,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "AddressingForm": 1
+    },
+    "november five four five pahpah sierra": {
+      "Callsign": "N545PS",
+      "AircraftType": "C550",
+      "Fixes": {
+        "Atlanta": "KATL",
+        "CHOO CHOO": "GQO",
+        "Hartsfield": "KATL",
+        "Redstone Army": "KHUA"
+      },
+      "Route": [
+        "GQO",
+        "KATL",
+        "KATL"
+      ],
+      "Altitude": 3938,
+      "Heading": 175,
+      "Speed": 232,
+      "State": "departure",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "november four five niner victor foxtrot": {
+      "Callsign": "N459VF",
+      "AircraftType": "C550",
+      "Fixes": {
+        "Bisby": "BISBE",
+        "Cotton": "COTIN",
+        "Debay": "DEBAY",
+        "Huntsville": "KHSV",
+        "Northwest Alabama": "KMSL",
+        "ROCKET": "RQZ"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 18L": "I18L",
+        "ILS Runway 18R": "I18R",
+        "Localizer Runway 18L": "L18L",
+        "Localizer Runway 18R": "L18R",
+        "RNAV Runway 18L": "R18L",
+        "RNAV Runway 18R": "R18R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight left": "18L",
+        "visual approach runway one eight right": "18R",
+        "visual one eight left": "18L",
+        "visual one eight right": "18R",
+        "visual runway one eight left": "18L",
+        "visual runway one eight right": "18R"
+      },
+      "ApproachFixes": {
+        "I18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "ROCKET": "RQZ"
+        },
+        "I18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ"
+        },
+        "L18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO",
+          "ROCKET": "RQZ"
+        },
+        "L18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ",
+          "Zisti": "ZISTI"
+        },
+        "R18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO"
+        },
+        "R18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "Zisti": "ZISTI"
+        }
+      },
+      "AssignedApproach": "ILS Runway 18L",
+      "Route": [
+        "KHSV",
+        "KHSV"
+      ],
+      "Altitude": 6000,
+      "Heading": 150,
+      "Speed": 289,
+      "AssignedHeading": 150,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W"
+    },
+    "november six five five six x-ray": {
+      "Callsign": "N6556X",
+      "Fixes": {
+        "Fayetteville Municipal": "KFYM",
+        "Nivly": "NIVLE",
+        "Ondo": "ONDOW"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 20": "R20"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero": "20",
+        "visual runway two zero": "20",
+        "visual two zero": "20"
+      },
+      "ApproachFixes": {
+        "R20": {
+          "Nivly": "NIVLE",
+          "Ondo": "ONDOW",
+          "Ugime": "UGIME",
+          "Zutgy": "ZUTGY"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 20",
+      "Route": [
+        "NIVLE",
+        "ONDOW",
+        "KFYM"
+      ],
+      "Altitude": 5000,
+      "Heading": 337,
+      "Speed": 115,
+      "ControllerFrequency": "1E"
+    },
+    "november two five zero sierra alpha": {
+      "Callsign": "N250SA",
+      "AircraftType": "E545",
+      "Fixes": {
+        "Birmingham-Shuttlesworth": "KBHM",
+        "Huntsville": "KHSV"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 18L": "I18L",
+        "ILS Runway 18R": "I18R",
+        "Localizer Runway 18L": "L18L",
+        "Localizer Runway 18R": "L18R",
+        "RNAV Runway 18L": "R18L",
+        "RNAV Runway 18R": "R18R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight left": "18L",
+        "visual approach runway one eight right": "18R",
+        "visual one eight left": "18L",
+        "visual one eight right": "18R",
+        "visual runway one eight left": "18L",
+        "visual runway one eight right": "18R"
+      },
+      "ApproachFixes": {
+        "I18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "ROCKET": "RQZ"
+        },
+        "I18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ"
+        },
+        "L18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO",
+          "ROCKET": "RQZ"
+        },
+        "L18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ",
+          "Zisti": "ZISTI"
+        },
+        "R18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO"
+        },
+        "R18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "Zisti": "ZISTI"
+        }
+      },
+      "Route": [
+        "KHSV",
+        "KHSV"
+      ],
+      "Altitude": 8000,
+      "Heading": 91,
+      "Speed": 290,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W"
+    },
+    "november two one one seven zero": {
+      "Callsign": "N21170",
+      "AircraftType": "E55P",
+      "Fixes": {
+        "": "5M0",
+        "Birmingham-Shuttlesworth": "KBHM",
+        "Jupes": "JUPES",
+        "Kiyet": "KIYET",
+        "Zivep": "ZIVEP"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 18": "R18"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight": "18",
+        "visual one eight": "18",
+        "visual runway one eight": "18"
+      },
+      "ApproachFixes": {
+        "R18": {
+          "Jupes": "JUPES",
+          "Kiyet": "KIYET",
+          "Zivep": "ZIVEP"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 18",
+      "Route": [
+        "JUPES",
+        "KIYET",
+        "ZIVEP"
+      ],
+      "Altitude": 3000,
+      "Heading": 55,
+      "Speed": 269,
+      "State": "cleared approach",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W"
+    },
+    "november two one seven six one": {
+      "Callsign": "N21761",
+      "AircraftType": "C750",
+      "Fixes": {
+        "Bisby": "BISBE",
+        "Cotton": "COTIN",
+        "Debay": "DEBAY",
+        "Huntsville": "KHSV",
+        "Nashville": "KBNA",
+        "ROCKET": "RQZ"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 18L": "I18L",
+        "ILS Runway 18R": "I18R",
+        "Localizer Runway 18L": "L18L",
+        "Localizer Runway 18R": "L18R",
+        "RNAV Runway 18L": "R18L",
+        "RNAV Runway 18R": "R18R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight left": "18L",
+        "visual approach runway one eight right": "18R",
+        "visual one eight left": "18L",
+        "visual one eight right": "18R",
+        "visual runway one eight left": "18L",
+        "visual runway one eight right": "18R"
+      },
+      "ApproachFixes": {
+        "I18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "ROCKET": "RQZ"
+        },
+        "I18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ"
+        },
+        "L18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO",
+          "ROCKET": "RQZ"
+        },
+        "L18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "ROCKET": "RQZ",
+          "Zisti": "ZISTI"
+        },
+        "R18L": {
+          "Bisby": "BISBE",
+          "Cotton": "COTIN",
+          "Debay": "DEBAY",
+          "Fekso": "FEKSO"
+        },
+        "R18R": {
+          "Feker": "FEKER",
+          "Hagur": "HAGUR",
+          "Zisti": "ZISTI"
+        }
+      },
+      "AssignedApproach": "ILS Runway 18L",
+      "Route": [
+        "KHSV",
+        "KHSV"
+      ],
+      "Altitude": 8000,
+      "Heading": 275,
+      "Speed": 283,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "november two zero one victor foxtrot": {
+      "Callsign": "N201VF",
+      "AircraftType": "AA5",
+      "Fixes": {
+        "Fayetteville Municipal": "KFYM"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 20": "R20"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero": "20",
+        "visual runway two zero": "20",
+        "visual two zero": "20"
+      },
+      "ApproachFixes": {
+        "R20": {
+          "Nivly": "NIVLE",
+          "Ondo": "ONDOW",
+          "Ugime": "UGIME",
+          "Zutgy": "ZUTGY"
+        }
+      },
+      "Route": [
+        "KFYM",
+        "KFYM"
+      ],
+      "Altitude": 7000,
+      "Heading": 63,
+      "Speed": 123,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W"
+    },
+    "phenom three hundred one seven zero": {
+      "Callsign": "N21170/T",
+      "AircraftType": "E55P",
+      "Fixes": {
+        "": "5M0",
+        "Birmingham-Shuttlesworth": "KBHM",
+        "Jupes": "JUPES",
+        "Kiyet": "KIYET",
+        "Zivep": "ZIVEP"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 18": "R18"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight": "18",
+        "visual one eight": "18",
+        "visual runway one eight": "18"
+      },
+      "ApproachFixes": {
+        "R18": {
+          "Jupes": "JUPES",
+          "Kiyet": "KIYET",
+          "Zivep": "ZIVEP"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 18",
+      "Route": [
+        "JUPES",
+        "KIYET",
+        "ZIVEP"
+      ],
+      "Altitude": 3000,
+      "Heading": 55,
+      "Speed": 269,
+      "State": "cleared approach",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "AddressingForm": 1
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Lindbergh 64  correction four nine Victor Foxtrot fly heading zero nine zero\"",
+    "[local-stt] normalized words: [lindbergh 64 correction 4 9 victor foxtrot fly heading 0 9 0]",
+    "[local-stt] tokens: 9",
+    "[local-stt]   token[0]: Text=\"lindbergh\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"64\" Type=1 Value=64",
+    "[local-stt]   token[2]: Text=\"correction\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"49\" Type=1 Value=49",
+    "[local-stt]   token[4]: Text=\"victor\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"foxtrot\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"fly\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"heading\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"090\" Type=1 Value=90",
+    "[local-stt] MatchCallsign: 9 tokens, 26 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 9 tokens, 26 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 4 results",
+    "[local-stt]     result 0: \"Commute Air 64 92\" (airline=0.418, flight=0.867, skip=0)",
+    "[local-stt]     result 1: \"Endeavor 64 68\" (airline=0.648, flight=0.867, skip=0)",
+    "[local-stt]     result 2: \"november four five niner victor foxtrot\" (airline=0.447, flight=0.940, skip=2)",
+    "[local-stt]     result 3: \"citation niner victor foxtrot\" (airline=0.738, flight=0.940, skip=2)",
+    "[local-stt]     pattern \"airline_flight\": selected \"citation niner victor foxtrot\" (airline=0.74, flight=0.94, skip=2)",
+    "[local-stt]   pattern \"airline_only\": 12 results",
+    "[local-stt]     result 0: \"Endeavor 64 68\" (airline=0.648, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Commute Air 32 43\" (airline=0.418, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Lindbergh 52 81\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"SkyWest 97 65\" (airline=0.418, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Commute Air 64 92\" (airline=0.418, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Lindbergh 52 81\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"november four five niner victor foxtrot\" (airline=0.500, flight=0.880, skip=2)",
+    "[local-stt]     result 1: \"citation niner victor foxtrot\" (airline=0.500, flight=0.880, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"november four five niner victor foxtrot\" (airline=0.50, flight=0.88, skip=2)",
+    "[local-stt]   best callsign candidate: \"GJS5281\" (conf=0.90, consumed=1, addressingForm=0, spokenKey=\"Lindbergh 52 81\"; 3 candidates)",
+    "[local-stt] ParseCommands: 8 tokens",
+    "[local-stt]   no match at token[0]=\"64\", skipping",
+    "[local-stt]   no match at token[1]=\"correction\", skipping",
+    "[local-stt]   no match at token[2]=\"49\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"foxtrot\" against 5 fixes",
+    "[local-stt]   extractFix: no match found for \"foxtrot\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"fly\" against 5 fixes",
+    "[local-stt]   extractFix: no match found for \"fly\"",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   no match at token[3]=\"victor\", skipping",
+    "[local-stt]   no match at token[4]=\"foxtrot\", skipping",
+    "[local-stt]   matched command: \"H090\" [fly_heading] (pos=5, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[5]=\"fly\", skipping",
+    "[local-stt]   matched command: \"H090\" [heading_only] (pos=6, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[6]=\"heading\", skipping",
+    "[local-stt]   no match at token[7]=\"090\", skipping",
+    "[local-stt]   beam final[0]: score=1.794 pos=8 commands=[H090]",
+    "[local-stt]   beam final[1]: score=-1.107 pos=8 commands=[H090]",
+    "[local-stt]   beam final[2]: score=-4.605 pos=8 commands=[]",
+    "[local-stt] ParseCommands: result=[H090] (avgConf=1.00)",
+    "[local-stt] callsign match: Callsign=\"GJS5281\" SpokenKey=\"Lindbergh 52 81\" Conf=0.90 Consumed=1",
+    "[local-stt] MatchCallsign: 6 tokens, 26 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 6 tokens, 26 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 3 results",
+    "[local-stt]     result 0: \"november four five niner victor foxtrot\" (airline=0.514, flight=0.850, skip=1)",
+    "[local-stt]     result 1: \"citation niner victor foxtrot\" (airline=0.639, flight=0.850, skip=1)",
+    "[local-stt]     result 2: \"november two zero one victor foxtrot\" (airline=0.514, flight=0.850, skip=1)",
+    "[local-stt]     pattern \"airline_flight\": selected \"citation niner victor foxtrot\" (airline=0.64, flight=0.85, skip=1)",
+    "[local-stt]   pattern \"airline_only\": 16 results",
+    "[local-stt]     result 0: \"Show Me 17 33\" (airline=0.472, flight=0.000, skip=1)",
+    "[local-stt]     result 1: \"Commute Air 64 92\" (airline=0.540, flight=0.000, skip=1)",
+    "[local-stt]     result 2: \"Endeavor 64 68\" (airline=0.528, flight=0.000, skip=1)",
+    "[local-stt]     result 3: \"Commute Air 32 43\" (airline=0.540, flight=0.000, skip=1)",
+    "[local-stt]     result 4: \"Lindbergh 52 81\" (airline=0.519, flight=0.000, skip=1)",
+    "[local-stt]     pattern \"airline_only\": selected \"Commute Air 32 43\" (airline=0.54, flight=0.00, skip=1)",
+    "[local-stt]     pattern \"airline_only\": scoring rejected \"Commute Air 32 43\"",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"november four five niner victor foxtrot\" (airline=0.500, flight=0.940, skip=0)",
+    "[local-stt]     result 1: \"citation niner victor foxtrot\" (airline=0.500, flight=0.940, skip=0)",
+    "[local-stt]     pattern \"flight_only\": selected \"november four five niner victor foxtrot\" (airline=0.50, flight=0.94, skip=0)",
+    "[local-stt]   best callsign candidate: \"N459VF\" (conf=0.89, consumed=3, addressingForm=0, spokenKey=\"november four five niner victor foxtrot\"; 2 candidates)",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=7000 Fixes=5 Approaches=6 VisualApproaches=6 AssignedApproach=\"Visual Approach Runway 18R\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Huntsville\" -\u003e \"KHSV\"",
+    "[local-stt]   fix: \"ROCKET\" -\u003e \"RQZ\"",
+    "[local-stt]   fix: \"Hagur\" -\u003e \"HAGUR\"",
+    "[local-stt]   fix: \"Feker\" -\u003e \"FEKER\"",
+    "[local-stt]   fix: \"Zisti\" -\u003e \"ZISTI\"",
+    "[local-stt]   approach: \"RNAV Runway 18L\" -\u003e \"R18L\"",
+    "[local-stt]   approach: \"ILS Runway 18L\" -\u003e \"I18L\"",
+    "[local-stt]   approach: \"Localizer Runway 18L\" -\u003e \"L18L\"",
+    "[local-stt]   approach: \"ILS Runway 18R\" -\u003e \"I18R\"",
+    "[local-stt]   approach: \"RNAV Runway 18R\" -\u003e \"R18R\"",
+    "[local-stt]   approach: \"Localizer Runway 18R\" -\u003e \"L18R\"",
+    "[local-stt]   visual approach: \"visual one eight right\" -\u003e \"18R\"",
+    "[local-stt]   visual approach: \"visual runway one eight left\" -\u003e \"18L\"",
+    "[local-stt]   visual approach: \"visual approach runway one eight left\" -\u003e \"18L\"",
+    "[local-stt]   visual approach: \"visual one eight left\" -\u003e \"18L\"",
+    "[local-stt]   visual approach: \"visual runway one eight right\" -\u003e \"18R\"",
+    "[local-stt]   visual approach: \"visual approach runway one eight right\" -\u003e \"18R\"",
+    "[local-stt] command tokens after disregard: 6",
+    "[local-stt]   token[0]: Text=\"49\" Type=1 Value=49",
+    "[local-stt]   token[1]: Text=\"victor\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"foxtrot\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"fly\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"heading\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"090\" Type=1 Value=90",
+    "[local-stt] ParseCommands: 6 tokens",
+    "[local-stt]   no match at token[0]=\"49\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"foxtrot\" against 5 fixes",
+    "[local-stt]   extractFix: no match found for \"foxtrot\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"fly\" against 5 fixes",
+    "[local-stt]   extractFix: no match found for \"fly\"",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   no match at token[1]=\"victor\", skipping",
+    "[local-stt]   no match at token[2]=\"foxtrot\", skipping",
+    "[local-stt]   matched command: \"H090\" [fly_heading] (pos=3, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[3]=\"fly\", skipping",
+    "[local-stt]   matched command: \"H090\" [heading_only] (pos=4, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[4]=\"heading\", skipping",
+    "[local-stt]   no match at token[5]=\"090\", skipping",
+    "[local-stt]   beam final[0]: score=1.794 pos=6 commands=[H090]",
+    "[local-stt]   beam final[1]: score=-1.107 pos=6 commands=[H090]",
+    "[local-stt]   beam final[2]: score=-4.605 pos=6 commands=[]",
+    "[local-stt] ParseCommands: result=[H090] (avgConf=1.00)",
+    "[local-stt] parsed commands: [H090] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [H090] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"GJS5281 H090\" (conf=0.90, time=6.1066ms) ==="
+  ]
+}

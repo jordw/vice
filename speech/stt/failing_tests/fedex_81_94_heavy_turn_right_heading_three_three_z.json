@@ -1,0 +1,767 @@
+{
+  "time": "2026-11-13T03:06:59.535919651Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Fedex 81 94 heavy turn right heading three three zero follow the traffic cleared visual bridge runway three six right speed one seven seven",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, zulu, information, Vanze three, Mona four, Buzz five, Jamko, Buddy, Alide, GILMORE, Owafo, MARVELL, Masey, Freeze, Weston, niner, three six left, three six right, runway, r-nav, I L S, Approach, Visual, Brickyard 90 70, Brickyard 47 zero niner, Fedex 81 94 heavy, Fedex 62 48, Fedex 27 26, American 42 38, MEMPHIS, Ihtem, HOLLY SPRINGS, Digle, McGhee, Clark, Dinky, Hadan, Frederick W. Smith International Airport",
+  "whisper_duration_ms": 1006.391,
+  "audio_duration_ms": 6472,
+  "processor": "GPU: NVIDIA GeForce GTX 1660 SUPER (6180MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "FDX8194",
+  "command": "R330 CVA36R S170",
+  "reason": "approach heard as bridge",
+  "stt_aircraft": {
+    "American 42 38": {
+      "Callsign": "AAL4238",
+      "AircraftType": "A21N",
+      "Fixes": {
+        "Frederick W. Smith": "KMEM",
+        "HOLLY SPRINGS": "HLI",
+        "Hadan": "HADAN",
+        "Ihtem": "IHTEM",
+        "MARVELL": "UJM",
+        "MEMPHIS": "MEM",
+        "McGhee": "MCGHE",
+        "Owafo": "OWAFO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 36L": "I6L",
+        "ILS Runway 36R": "I6R",
+        "ILS Runway 9": "I9",
+        "RNAV Runway 36L": "R6L",
+        "RNAV Runway 36R": "R6R",
+        "RNAV Runway 9": "R9"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway niner": "9",
+        "visual approach runway three six left": "36L",
+        "visual approach runway three six right": "36R",
+        "visual niner": "9",
+        "visual runway niner": "9",
+        "visual runway three six left": "36L",
+        "visual runway three six right": "36R",
+        "visual three six left": "36L",
+        "visual three six right": "36R"
+      },
+      "ApproachFixes": {
+        "I6L": {
+          "Cadus": "CADUS",
+          "Freeze": "FREAZ",
+          "Masey": "MACEE",
+          "Weston": "WSTON"
+        },
+        "I6R": {
+          "Hadan": "HADAN",
+          "McGhee": "MCGHE"
+        },
+        "I9": {
+          "Buddy": "BUDEE",
+          "Falix": "FALIX"
+        },
+        "R6L": {
+          "Cadus": "CADUS",
+          "Freeze": "FREAZ",
+          "HOLLY SPRINGS": "HLI",
+          "Ihtem": "IHTEM",
+          "MARVELL": "UJM",
+          "MEMPHIS": "MEM",
+          "Masey": "MACEE",
+          "Owafo": "OWAFO"
+        },
+        "R6R": {
+          "HOLLY SPRINGS": "HLI",
+          "Hadan": "HADAN",
+          "Ihtem": "IHTEM",
+          "MARVELL": "UJM",
+          "MEMPHIS": "MEM",
+          "McGhee": "MCGHE",
+          "Owafo": "OWAFO"
+        },
+        "R9": {
+          "Alide": "ALIDE",
+          "Buddy": "BUDEE",
+          "Falix": "FALIX",
+          "GILMORE": "GQE",
+          "Jamko": "JAMKO",
+          "MARVELL": "UJM",
+          "MEMPHIS": "MEM"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 36R",
+      "STAR": "VANZE3",
+      "Route": [
+        "KMEM"
+      ],
+      "Altitude": 2392,
+      "Heading": 270,
+      "Speed": 205,
+      "AssignedAltitude": 4000,
+      "AssignedHeading": 270,
+      "AssignedSpeed": 190,
+      "State": "arrival",
+      "ControllerFrequency": "1M",
+      "TrackingController": "1M",
+      "LAHSORunways": [
+        "18C",
+        "36C"
+      ]
+    },
+    "Brickyard 47 zero niner": {
+      "Callsign": "RPA4709",
+      "AircraftType": "E170",
+      "Fixes": {
+        "Clark": "CLARK",
+        "Digle": "DIGLE",
+        "Dinky": "DINKE",
+        "Frederick W. Smith": "KMEM"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 36L": "I6L",
+        "ILS Runway 36R": "I6R",
+        "ILS Runway 9": "I9",
+        "RNAV Runway 36L": "R6L",
+        "RNAV Runway 36R": "R6R",
+        "RNAV Runway 9": "R9"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway niner": "9",
+        "visual approach runway three six left": "36L",
+        "visual approach runway three six right": "36R",
+        "visual niner": "9",
+        "visual runway niner": "9",
+        "visual runway three six left": "36L",
+        "visual runway three six right": "36R",
+        "visual three six left": "36L",
+        "visual three six right": "36R"
+      },
+      "ApproachFixes": {
+        "I6L": {
+          "Cadus": "CADUS",
+          "Freeze": "FREAZ",
+          "Masey": "MACEE",
+          "Weston": "WSTON"
+        },
+        "I6R": {
+          "Hadan": "HADAN",
+          "McGhee": "MCGHE"
+        },
+        "I9": {
+          "Buddy": "BUDEE",
+          "Falix": "FALIX"
+        },
+        "R6L": {
+          "Cadus": "CADUS",
+          "Freeze": "FREAZ",
+          "HOLLY SPRINGS": "HLI",
+          "Ihtem": "IHTEM",
+          "MARVELL": "UJM",
+          "MEMPHIS": "MEM",
+          "Masey": "MACEE",
+          "Owafo": "OWAFO"
+        },
+        "R6R": {
+          "HOLLY SPRINGS": "HLI",
+          "Hadan": "HADAN",
+          "Ihtem": "IHTEM",
+          "MARVELL": "UJM",
+          "MEMPHIS": "MEM",
+          "McGhee": "MCGHE",
+          "Owafo": "OWAFO"
+        },
+        "R9": {
+          "Alide": "ALIDE",
+          "Buddy": "BUDEE",
+          "Falix": "FALIX",
+          "GILMORE": "GQE",
+          "Jamko": "JAMKO",
+          "MARVELL": "UJM",
+          "MEMPHIS": "MEM"
+        }
+      },
+      "STAR": "BLUZZ5",
+      "Route": [
+        "CLARK",
+        "DIGLE",
+        "DINKE",
+        "KMEM"
+      ],
+      "Altitude": 10439,
+      "Heading": 227,
+      "Speed": 299,
+      "State": "arrival",
+      "ControllerFrequency": "1M",
+      "TrackingController": "1M",
+      "LAHSORunways": [
+        "18C",
+        "36C"
+      ]
+    },
+    "Brickyard 90 70": {
+      "Callsign": "RPA9070",
+      "AircraftType": "E170",
+      "Fixes": {
+        "Frederick W. Smith": "KMEM"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 36L": "I6L",
+        "ILS Runway 36R": "I6R",
+        "ILS Runway 9": "I9",
+        "RNAV Runway 36L": "R6L",
+        "RNAV Runway 36R": "R6R",
+        "RNAV Runway 9": "R9"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway niner": "9",
+        "visual approach runway three six left": "36L",
+        "visual approach runway three six right": "36R",
+        "visual niner": "9",
+        "visual runway niner": "9",
+        "visual runway three six left": "36L",
+        "visual runway three six right": "36R",
+        "visual three six left": "36L",
+        "visual three six right": "36R"
+      },
+      "ApproachFixes": {
+        "I6L": {
+          "Cadus": "CADUS",
+          "Freeze": "FREAZ",
+          "Masey": "MACEE",
+          "Weston": "WSTON"
+        },
+        "I6R": {
+          "Hadan": "HADAN",
+          "McGhee": "MCGHE"
+        },
+        "I9": {
+          "Buddy": "BUDEE",
+          "Falix": "FALIX"
+        },
+        "R6L": {
+          "Cadus": "CADUS",
+          "Freeze": "FREAZ",
+          "HOLLY SPRINGS": "HLI",
+          "Ihtem": "IHTEM",
+          "MARVELL": "UJM",
+          "MEMPHIS": "MEM",
+          "Masey": "MACEE",
+          "Owafo": "OWAFO"
+        },
+        "R6R": {
+          "HOLLY SPRINGS": "HLI",
+          "Hadan": "HADAN",
+          "Ihtem": "IHTEM",
+          "MARVELL": "UJM",
+          "MEMPHIS": "MEM",
+          "McGhee": "MCGHE",
+          "Owafo": "OWAFO"
+        },
+        "R9": {
+          "Alide": "ALIDE",
+          "Buddy": "BUDEE",
+          "Falix": "FALIX",
+          "GILMORE": "GQE",
+          "Jamko": "JAMKO",
+          "MARVELL": "UJM",
+          "MEMPHIS": "MEM"
+        }
+      },
+      "STAR": "VANZE3",
+      "Route": [
+        "KMEM"
+      ],
+      "Altitude": 4132,
+      "Heading": 180,
+      "Speed": 210,
+      "AssignedHeading": 180,
+      "AssignedSpeed": 190,
+      "State": "arrival",
+      "ControllerFrequency": "1M",
+      "TrackingController": "1M",
+      "LAHSORunways": [
+        "18C",
+        "36C"
+      ]
+    },
+    "Fedex 27 26": {
+      "Callsign": "FDX2726",
+      "AircraftType": "B752",
+      "Fixes": {
+        "Dinky": "DINKE",
+        "Frederick W. Smith": "KMEM",
+        "HOLLY SPRINGS": "HLI",
+        "Hadan": "HADAN",
+        "Ihtem": "IHTEM",
+        "MARVELL": "UJM",
+        "MEMPHIS": "MEM",
+        "McGhee": "MCGHE",
+        "Owafo": "OWAFO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 36L": "I6L",
+        "ILS Runway 36R": "I6R",
+        "ILS Runway 9": "I9",
+        "RNAV Runway 36L": "R6L",
+        "RNAV Runway 36R": "R6R",
+        "RNAV Runway 9": "R9"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway niner": "9",
+        "visual approach runway three six left": "36L",
+        "visual approach runway three six right": "36R",
+        "visual niner": "9",
+        "visual runway niner": "9",
+        "visual runway three six left": "36L",
+        "visual runway three six right": "36R",
+        "visual three six left": "36L",
+        "visual three six right": "36R"
+      },
+      "ApproachFixes": {
+        "I6L": {
+          "Cadus": "CADUS",
+          "Freeze": "FREAZ",
+          "Masey": "MACEE",
+          "Weston": "WSTON"
+        },
+        "I6R": {
+          "Hadan": "HADAN",
+          "McGhee": "MCGHE"
+        },
+        "I9": {
+          "Buddy": "BUDEE",
+          "Falix": "FALIX"
+        },
+        "R6L": {
+          "Cadus": "CADUS",
+          "Freeze": "FREAZ",
+          "HOLLY SPRINGS": "HLI",
+          "Ihtem": "IHTEM",
+          "MARVELL": "UJM",
+          "MEMPHIS": "MEM",
+          "Masey": "MACEE",
+          "Owafo": "OWAFO"
+        },
+        "R6R": {
+          "HOLLY SPRINGS": "HLI",
+          "Hadan": "HADAN",
+          "Ihtem": "IHTEM",
+          "MARVELL": "UJM",
+          "MEMPHIS": "MEM",
+          "McGhee": "MCGHE",
+          "Owafo": "OWAFO"
+        },
+        "R9": {
+          "Alide": "ALIDE",
+          "Buddy": "BUDEE",
+          "Falix": "FALIX",
+          "GILMORE": "GQE",
+          "Jamko": "JAMKO",
+          "MARVELL": "UJM",
+          "MEMPHIS": "MEM"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 36R",
+      "STAR": "BLUZZ5",
+      "Route": [
+        "DINKE",
+        "KMEM"
+      ],
+      "Altitude": 7266,
+      "Heading": 180,
+      "Speed": 221,
+      "AssignedSpeed": 190,
+      "State": "arrival",
+      "ControllerFrequency": "1M",
+      "TrackingController": "1M",
+      "LAHSORunways": [
+        "18C",
+        "36C"
+      ]
+    },
+    "Fedex 62 48": {
+      "Callsign": "FDX6248",
+      "AircraftType": "B752",
+      "Fixes": {
+        "Dinky": "DINKE",
+        "Frederick W. Smith": "KMEM",
+        "HOLLY SPRINGS": "HLI",
+        "Hadan": "HADAN",
+        "Ihtem": "IHTEM",
+        "MARVELL": "UJM",
+        "MEMPHIS": "MEM",
+        "McGhee": "MCGHE",
+        "Owafo": "OWAFO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 36L": "I6L",
+        "ILS Runway 36R": "I6R",
+        "ILS Runway 9": "I9",
+        "RNAV Runway 36L": "R6L",
+        "RNAV Runway 36R": "R6R",
+        "RNAV Runway 9": "R9"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway niner": "9",
+        "visual approach runway three six left": "36L",
+        "visual approach runway three six right": "36R",
+        "visual niner": "9",
+        "visual runway niner": "9",
+        "visual runway three six left": "36L",
+        "visual runway three six right": "36R",
+        "visual three six left": "36L",
+        "visual three six right": "36R"
+      },
+      "ApproachFixes": {
+        "I6L": {
+          "Cadus": "CADUS",
+          "Freeze": "FREAZ",
+          "Masey": "MACEE",
+          "Weston": "WSTON"
+        },
+        "I6R": {
+          "Hadan": "HADAN",
+          "McGhee": "MCGHE"
+        },
+        "I9": {
+          "Buddy": "BUDEE",
+          "Falix": "FALIX"
+        },
+        "R6L": {
+          "Cadus": "CADUS",
+          "Freeze": "FREAZ",
+          "HOLLY SPRINGS": "HLI",
+          "Ihtem": "IHTEM",
+          "MARVELL": "UJM",
+          "MEMPHIS": "MEM",
+          "Masey": "MACEE",
+          "Owafo": "OWAFO"
+        },
+        "R6R": {
+          "HOLLY SPRINGS": "HLI",
+          "Hadan": "HADAN",
+          "Ihtem": "IHTEM",
+          "MARVELL": "UJM",
+          "MEMPHIS": "MEM",
+          "McGhee": "MCGHE",
+          "Owafo": "OWAFO"
+        },
+        "R9": {
+          "Alide": "ALIDE",
+          "Buddy": "BUDEE",
+          "Falix": "FALIX",
+          "GILMORE": "GQE",
+          "Jamko": "JAMKO",
+          "MARVELL": "UJM",
+          "MEMPHIS": "MEM"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 36R",
+      "STAR": "BLUZZ5",
+      "Route": [
+        "DINKE",
+        "KMEM"
+      ],
+      "Altitude": 2000,
+      "Heading": 179,
+      "Speed": 200,
+      "AssignedSpeed": 190,
+      "State": "arrival",
+      "ControllerFrequency": "1M",
+      "TrackingController": "1M",
+      "LAHSORunways": [
+        "18C",
+        "36C"
+      ]
+    },
+    "Fedex 81 94 heavy": {
+      "Callsign": "FDX8194",
+      "LastAddressed": true,
+      "AircraftType": "A306",
+      "Fixes": {
+        "Frederick W. Smith": "KMEM",
+        "HOLLY SPRINGS": "HLI",
+        "Hadan": "HADAN",
+        "Ihtem": "IHTEM",
+        "MARVELL": "UJM",
+        "MEMPHIS": "MEM",
+        "McGhee": "MCGHE",
+        "Owafo": "OWAFO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 36L": "I6L",
+        "ILS Runway 36R": "I6R",
+        "ILS Runway 9": "I9",
+        "RNAV Runway 36L": "R6L",
+        "RNAV Runway 36R": "R6R",
+        "RNAV Runway 9": "R9"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway niner": "9",
+        "visual approach runway three six left": "36L",
+        "visual approach runway three six right": "36R",
+        "visual niner": "9",
+        "visual runway niner": "9",
+        "visual runway three six left": "36L",
+        "visual runway three six right": "36R",
+        "visual three six left": "36L",
+        "visual three six right": "36R"
+      },
+      "ApproachFixes": {
+        "I6L": {
+          "Cadus": "CADUS",
+          "Freeze": "FREAZ",
+          "Masey": "MACEE",
+          "Weston": "WSTON"
+        },
+        "I6R": {
+          "Hadan": "HADAN",
+          "McGhee": "MCGHE"
+        },
+        "I9": {
+          "Buddy": "BUDEE",
+          "Falix": "FALIX"
+        },
+        "R6L": {
+          "Cadus": "CADUS",
+          "Freeze": "FREAZ",
+          "HOLLY SPRINGS": "HLI",
+          "Ihtem": "IHTEM",
+          "MARVELL": "UJM",
+          "MEMPHIS": "MEM",
+          "Masey": "MACEE",
+          "Owafo": "OWAFO"
+        },
+        "R6R": {
+          "HOLLY SPRINGS": "HLI",
+          "Hadan": "HADAN",
+          "Ihtem": "IHTEM",
+          "MARVELL": "UJM",
+          "MEMPHIS": "MEM",
+          "McGhee": "MCGHE",
+          "Owafo": "OWAFO"
+        },
+        "R9": {
+          "Alide": "ALIDE",
+          "Buddy": "BUDEE",
+          "Falix": "FALIX",
+          "GILMORE": "GQE",
+          "Jamko": "JAMKO",
+          "MARVELL": "UJM",
+          "MEMPHIS": "MEM"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 36R",
+      "STAR": "MONAA4",
+      "Route": [
+        "KMEM"
+      ],
+      "Altitude": 2000,
+      "Heading": 269,
+      "Speed": 206,
+      "AssignedHeading": 270,
+      "AssignedSpeed": 190,
+      "State": "arrival",
+      "ControllerFrequency": "1M",
+      "TrackingController": "1M",
+      "LAHSORunways": [
+        "18C",
+        "36C"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Fedex 81 94 heavy turn right heading three three zero follow the traffic cleared visual bridge runway three six right speed one seven seven\"",
+    "[local-stt] normalized words: [fedex 81 94 heavy turn right heading 3 3 0 follow the traffic cleared visual bridge runway 3 6 right speed 1 7 7]",
+    "[local-stt] tokens: 19",
+    "[local-stt]   token[0]: Text=\"fedex\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"81\" Type=1 Value=81",
+    "[local-stt]   token[2]: Text=\"94\" Type=1 Value=94",
+    "[local-stt]   token[3]: Text=\"heavy\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"heading\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"330\" Type=1 Value=330",
+    "[local-stt]   token[8]: Text=\"follow\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"the\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"traffic\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"visual\" Type=0 Value=-1",
+    "[local-stt]   token[13]: Text=\"bridge\" Type=0 Value=-1",
+    "[local-stt]   token[14]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[15]: Text=\"36\" Type=1 Value=36",
+    "[local-stt]   token[16]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt]   token[17]: Text=\"speed\" Type=0 Value=-1",
+    "[local-stt]   token[18]: Text=\"177\" Type=1 Value=177",
+    "[local-stt] MatchCallsign: 19 tokens, 6 aircraft",
+    "[local-stt]   detected \"heavy\" in callsign region, filtering to 1 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 4 tokens, 1 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Fedex 81 94 heavy\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Fedex 81 94 heavy\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"Fedex 81 94 heavy\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Fedex 81 94 heavy\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 2 results",
+    "[local-stt]     result 0: \"Fedex 81 94 heavy\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Fedex 81 94 heavy\" (airline=0.467, flight=0.000, skip=3)",
+    "[local-stt]     pattern \"airline_only\": selected \"Fedex 81 94 heavy\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"Fedex 81 94 heavy\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Fedex 81 94 heavy\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"Fedex 81 94 heavy\" (airline=0.500, flight=0.700, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Fedex 81 94 heavy\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"FDX8194\" (spokenKey=\"Fedex 81 94 heavy\", skip=0): resolved",
+    "[local-stt] matchCallsignWithPatterns: 3 tokens, 6 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"Fedex 81 94 heavy\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Fedex 81 94 heavy\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 4 results",
+    "[local-stt]     result 0: \"Fedex 81 94 heavy\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Fedex 27 26\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Fedex 62 48\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"American 42 38\" (airline=0.442, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Fedex 27 26\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"Fedex 81 94 heavy\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Fedex 81 94 heavy\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"Fedex 81 94 heavy\" (airline=0.500, flight=0.700, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Fedex 81 94 heavy\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"FDX8194\" (spokenKey=\"Fedex 81 94 heavy\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"FDX8194\" SpokenKey=\"Fedex 81 94 heavy\" Conf=1.00 Consumed=4",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=2000 Fixes=8 Approaches=6 VisualApproaches=9 AssignedApproach=\"Visual Approach Runway 36R\" LAHSORunways=[18C 36C]",
+    "[local-stt]   fix: \"MARVELL\" -\u003e \"UJM\"",
+    "[local-stt]   fix: \"Owafo\" -\u003e \"OWAFO\"",
+    "[local-stt]   fix: \"Frederick W. Smith\" -\u003e \"KMEM\"",
+    "[local-stt]   fix: \"Hadan\" -\u003e \"HADAN\"",
+    "[local-stt]   fix: \"McGhee\" -\u003e \"MCGHE\"",
+    "[local-stt]   fix: \"HOLLY SPRINGS\" -\u003e \"HLI\"",
+    "[local-stt]   fix: \"Ihtem\" -\u003e \"IHTEM\"",
+    "[local-stt]   fix: \"MEMPHIS\" -\u003e \"MEM\"",
+    "[local-stt]   approach: \"ILS Runway 36L\" -\u003e \"I6L\"",
+    "[local-stt]   approach: \"RNAV Runway 36L\" -\u003e \"R6L\"",
+    "[local-stt]   approach: \"ILS Runway 36R\" -\u003e \"I6R\"",
+    "[local-stt]   approach: \"RNAV Runway 36R\" -\u003e \"R6R\"",
+    "[local-stt]   approach: \"RNAV Runway 9\" -\u003e \"R9\"",
+    "[local-stt]   approach: \"ILS Runway 9\" -\u003e \"I9\"",
+    "[local-stt]   visual approach: \"visual approach runway three six left\" -\u003e \"36L\"",
+    "[local-stt]   visual approach: \"visual three six left\" -\u003e \"36L\"",
+    "[local-stt]   visual approach: \"visual runway three six right\" -\u003e \"36R\"",
+    "[local-stt]   visual approach: \"visual three six right\" -\u003e \"36R\"",
+    "[local-stt]   visual approach: \"visual runway niner\" -\u003e \"9\"",
+    "[local-stt]   visual approach: \"visual approach runway niner\" -\u003e \"9\"",
+    "[local-stt]   visual approach: \"visual niner\" -\u003e \"9\"",
+    "[local-stt]   visual approach: \"visual approach runway three six right\" -\u003e \"36R\"",
+    "[local-stt]   visual approach: \"visual runway three six left\" -\u003e \"36L\"",
+    "[local-stt] command tokens after disregard: 15",
+    "[local-stt]   token[0]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"heading\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"330\" Type=1 Value=330",
+    "[local-stt]   token[4]: Text=\"follow\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"the\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"traffic\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"visual\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"bridge\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"36\" Type=1 Value=36",
+    "[local-stt]   token[12]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt]   token[13]: Text=\"speed\" Type=0 Value=-1",
+    "[local-stt]   token[14]: Text=\"177\" Type=1 Value=177",
+    "[local-stt] ParseCommands: 15 tokens",
+    "[local-stt]   matched command: \"R330\" [turn_right_heading] (pos=0, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[0]=\"turn\", skipping",
+    "[local-stt]   no match at token[4]=\"follow\", skipping",
+    "[local-stt]   matched command: \"R330\" [turn_right_heading] (pos=1, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[1]=\"right\", skipping",
+    "[local-stt]   skipping filler word: \"the\"",
+    "[local-stt]   no match at token[4]=\"follow\", skipping",
+    "[local-stt]   matched command: \"H330\" [heading_only] (pos=2, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[2]=\"heading\", skipping",
+    "[local-stt]   no match at token[6]=\"traffic\", skipping",
+    "[local-stt]   skipping filler word: \"the\"",
+    "[local-stt]   no match at token[4]=\"follow\", skipping",
+    "[local-stt]   no match at token[3]=\"330\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"visual\" against 8 fixes",
+    "[local-stt]   extractFix: no match found for \"visual\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bridge\" against 8 fixes",
+    "[local-stt]   extractFix: no match found for \"bridge\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 8 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   matchVisualApproach: runway=\"three six right\" -\u003e \"36R\" (consumed=5)",
+    "[local-stt]   matchVisualApproach: runway=\"three six right\" -\u003e \"36R\" (consumed=5)",
+    "[local-stt]   matchVisualApproach: runway=\"three six right\" -\u003e \"36R\" (consumed=5)",
+    "[local-stt]   matchVisualApproach: runway=\"three six right\" -\u003e \"36R\" (consumed=5)",
+    "[local-stt]   extractApproach: runway match with type disambiguation \"three six right\" -\u003e \"I6R\" (score=0.62)",
+    "[local-stt]   matched command: \"CVA36R\" [cleared_visual] (pos=7, conf=1.00, consumed=6, isThen=false)",
+    "[local-stt]   no match at token[7]=\"cleared\", skipping",
+    "[local-stt]   no match at token[6]=\"traffic\", skipping",
+    "[local-stt]   skipping filler word: \"the\"",
+    "[local-stt]   no match at token[4]=\"follow\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"177\" against 8 fixes",
+    "[local-stt]   extractFix: no match found for \"177\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"177\" against 8 fixes",
+    "[local-stt]   extractFix: no match found for \"177\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"177\" against 8 fixes",
+    "[local-stt]   extractFix: no match found for \"177\"",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: looking for STAR=\"MONAA4\" telephony=\"Mona four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   matched command: \"S170\" [speed_only] (pos=13, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[13]=\"speed\", skipping",
+    "[local-stt]   extractSTAR: looking for STAR=\"MONAA4\" telephony=\"Mona four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   extractSTAR: looking for STAR=\"MONAA4\" telephony=\"Mona four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   extractSTAR: looking for STAR=\"MONAA4\" telephony=\"Mona four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   no match at token[8]=\"visual\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"visual\" against 8 fixes",
+    "[local-stt]   extractFix: no match found for \"visual\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bridge\" against 8 fixes",
+    "[local-stt]   extractFix: no match found for \"bridge\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 8 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   matchVisualApproach: runway=\"three six right\" -\u003e \"36R\" (consumed=5)",
+    "[local-stt]   matchVisualApproach: runway=\"three six right\" -\u003e \"36R\" (consumed=5)",
+    "[local-stt]   matchVisualApproach: runway=\"three six right\" -\u003e \"36R\" (consumed=5)",
+    "[local-stt]   matchVisualApproach: runway=\"three six right\" -\u003e \"36R\" (consumed=5)",
+    "[local-stt]   extractApproach: runway match with type disambiguation \"three six right\" -\u003e \"I6R\" (score=0.62)",
+    "[local-stt]   matched command: \"CVA36R\" [cleared_visual] (pos=7, conf=1.00, consumed=6, isThen=false)",
+    "[local-stt]   no match at token[7]=\"cleared\", skipping",
+    "[local-stt]   no match at token[6]=\"traffic\", skipping",
+    "[local-stt]   no match at token[14]=\"177\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"177\" against 8 fixes",
+    "[local-stt]   extractFix: no match found for \"177\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"177\" against 8 fixes",
+    "[local-stt]   extractFix: no match found for \"177\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"177\" against 8 fixes",
+    "[local-stt]   extractFix: no match found for \"177\"",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: looking for STAR=\"MONAA4\" telephony=\"Mona four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   matched command: \"S170\" [speed_only] (pos=13, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[13]=\"speed\", skipping",
+    "[local-stt]   no match at token[9]=\"bridge\", skipping",
+    "[local-stt]   no match at token[14]=\"177\", skipping",
+    "[local-stt]   beam final[0]: score=7.174 pos=15 commands=[R330 CVA36R S170]",
+    "[local-stt]   beam final[1]: score=4.274 pos=15 commands=[R330 CVA36R S170]",
+    "[local-stt]   beam final[2]: score=3.676 pos=15 commands=[R330 CVA36R]",
+    "[local-stt]   beam final[3]: score=0.775 pos=15 commands=[R330 CVA36R]",
+    "[local-stt] ParseCommands: result=[R330 CVA36R S170] (avgConf=1.00)",
+    "[local-stt] parsed commands: [R330 CVA36R S170] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [R330 CVA36R S170] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"FDX8194 R330 CVA36R S170\" (conf=1.00, time=14.592ms) ==="
+  ]
+}

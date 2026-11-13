@@ -1,0 +1,695 @@
+{
+  "time": "2026-11-10T13:59:37.458350525Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Brickyard 56 42 to Parc Cameron heading zero four zero",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, golf, information, Pucky one, Parch four, Cameron five, Veru, Aroke, Repre, four left, four right, runway, V O R, yankee, r-nav, I L S, Brickyard 57 13, Brickyard 56 42, JetBlue two 97, Itarrow six 10 heavy, Fedex seven 64 heavy, Ethiopian five 14 heavy, Endeavor 52 18, Delta 18 33, Air France eight heavy, Ebee, Cameron, Zetal, John F. Kennedy International Airport",
+  "whisper_duration_ms": 441.75,
+  "audio_duration_ms": 3784,
+  "processor": "GPU: NVIDIA GeForce RTX 4060 Ti (7949MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "RPA5642",
+  "command": "DCAMRN/H040",
+  "reason": "depart heard as \"to Parc\"",
+  "stt_aircraft": {
+    "Air France eight heavy": {
+      "Callsign": "AFR8",
+      "AircraftType": "B77W",
+      "Fixes": {
+        "Ebee": "EBBEE",
+        "J F K": "KJFK",
+        "Kennedy": "KJFK",
+        "Zetal": "ZETAL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4L": "I4L",
+        "ILS Runway 4R": "I4R",
+        "RNAV Y Runway 4L": "R4L",
+        "RNAV Y Runway 4R": "R4R",
+        "VOR Runway 4 Right": "V4"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four left": "4L",
+        "visual approach runway four right": "4R",
+        "visual four left": "4L",
+        "visual four right": "4R",
+        "visual runway four left": "4L",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4L": {
+          "Aroke": "AROKE",
+          "Crystal": "KRSTL"
+        },
+        "I4R": {
+          "Ebee": "EBBEE",
+          "Zetal": "ZETAL"
+        },
+        "R4L": {
+          "Crystal": "KRSTL",
+          "Repre": "REPRE"
+        },
+        "R4R": {
+          "Ebee": "EBBEE",
+          "Veru": "VERRU"
+        },
+        "V4": {
+          "Bebke": "BEBKE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "PARCH4",
+      "Route": [
+        "KJFK"
+      ],
+      "Altitude": 3000,
+      "Heading": 235,
+      "Speed": 261,
+      "AssignedHeading": 235,
+      "State": "arrival",
+      "ControllerFrequency": "2A",
+      "TrackingController": "2A",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13R",
+        "31L",
+        "13L",
+        "31R"
+      ]
+    },
+    "Brickyard 56 42": {
+      "Callsign": "RPA5642",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Cameron": "CAMRN",
+        "Ebee": "EBBEE",
+        "J F K": "KJFK",
+        "Kennedy": "KJFK",
+        "Zetal": "ZETAL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4L": "I4L",
+        "ILS Runway 4R": "I4R",
+        "RNAV Y Runway 4L": "R4L",
+        "RNAV Y Runway 4R": "R4R",
+        "VOR Runway 4 Right": "V4"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four left": "4L",
+        "visual approach runway four right": "4R",
+        "visual four left": "4L",
+        "visual four right": "4R",
+        "visual runway four left": "4L",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4L": {
+          "Aroke": "AROKE",
+          "Crystal": "KRSTL"
+        },
+        "I4R": {
+          "Ebee": "EBBEE",
+          "Zetal": "ZETAL"
+        },
+        "R4L": {
+          "Crystal": "KRSTL",
+          "Repre": "REPRE"
+        },
+        "R4R": {
+          "Ebee": "EBBEE",
+          "Veru": "VERRU"
+        },
+        "V4": {
+          "Bebke": "BEBKE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "CAMRN5",
+      "Route": [
+        "CAMRN",
+        "KJFK"
+      ],
+      "Altitude": 10495,
+      "Heading": 42,
+      "Speed": 331,
+      "State": "arrival",
+      "ControllerFrequency": "2A",
+      "TrackingController": "2A",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13R",
+        "31L",
+        "13L",
+        "31R"
+      ]
+    },
+    "Brickyard 57 13": {
+      "Callsign": "RPA5713",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Ebee": "EBBEE",
+        "J F K": "KJFK",
+        "Kennedy": "KJFK",
+        "Zetal": "ZETAL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4L": "I4L",
+        "ILS Runway 4R": "I4R",
+        "RNAV Y Runway 4L": "R4L",
+        "RNAV Y Runway 4R": "R4R",
+        "VOR Runway 4 Right": "V4"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four left": "4L",
+        "visual approach runway four right": "4R",
+        "visual four left": "4L",
+        "visual four right": "4R",
+        "visual runway four left": "4L",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4L": {
+          "Aroke": "AROKE",
+          "Crystal": "KRSTL"
+        },
+        "I4R": {
+          "Ebee": "EBBEE",
+          "Zetal": "ZETAL"
+        },
+        "R4L": {
+          "Crystal": "KRSTL",
+          "Repre": "REPRE"
+        },
+        "R4R": {
+          "Ebee": "EBBEE",
+          "Veru": "VERRU"
+        },
+        "V4": {
+          "Bebke": "BEBKE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "CAMRN5",
+      "Route": [
+        "KJFK"
+      ],
+      "Altitude": 2000,
+      "Heading": 300,
+      "Speed": 238,
+      "AssignedHeading": 300,
+      "State": "arrival",
+      "ControllerFrequency": "2A",
+      "TrackingController": "2A",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13R",
+        "31L",
+        "13L",
+        "31R"
+      ]
+    },
+    "Delta 18 33": {
+      "Callsign": "DAL1833",
+      "AircraftType": "A21N",
+      "Fixes": {
+        "Ebee": "EBBEE",
+        "J F K": "KJFK",
+        "Kennedy": "KJFK",
+        "Zetal": "ZETAL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4L": "I4L",
+        "ILS Runway 4R": "I4R",
+        "RNAV Y Runway 4L": "R4L",
+        "RNAV Y Runway 4R": "R4R",
+        "VOR Runway 4 Right": "V4"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four left": "4L",
+        "visual approach runway four right": "4R",
+        "visual four left": "4L",
+        "visual four right": "4R",
+        "visual runway four left": "4L",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4L": {
+          "Aroke": "AROKE",
+          "Crystal": "KRSTL"
+        },
+        "I4R": {
+          "Ebee": "EBBEE",
+          "Zetal": "ZETAL"
+        },
+        "R4L": {
+          "Crystal": "KRSTL",
+          "Repre": "REPRE"
+        },
+        "R4R": {
+          "Ebee": "EBBEE",
+          "Veru": "VERRU"
+        },
+        "V4": {
+          "Bebke": "BEBKE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "CAMRN5",
+      "Route": [
+        "ZETAL",
+        "EBBEE",
+        "KJFK"
+      ],
+      "Altitude": 2000,
+      "Heading": 31,
+      "Speed": 232,
+      "State": "cleared approach",
+      "ControllerFrequency": "2A",
+      "TrackingController": "2A",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13R",
+        "31L",
+        "13L",
+        "31R"
+      ]
+    },
+    "Endeavor 52 18": {
+      "Callsign": "EDV5218",
+      "LastAddressed": true,
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Ebee": "EBBEE",
+        "J F K": "KJFK",
+        "Kennedy": "KJFK",
+        "Zetal": "ZETAL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4L": "I4L",
+        "ILS Runway 4R": "I4R",
+        "RNAV Y Runway 4L": "R4L",
+        "RNAV Y Runway 4R": "R4R",
+        "VOR Runway 4 Right": "V4"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four left": "4L",
+        "visual approach runway four right": "4R",
+        "visual four left": "4L",
+        "visual four right": "4R",
+        "visual runway four left": "4L",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4L": {
+          "Aroke": "AROKE",
+          "Crystal": "KRSTL"
+        },
+        "I4R": {
+          "Ebee": "EBBEE",
+          "Zetal": "ZETAL"
+        },
+        "R4L": {
+          "Crystal": "KRSTL",
+          "Repre": "REPRE"
+        },
+        "R4R": {
+          "Ebee": "EBBEE",
+          "Veru": "VERRU"
+        },
+        "V4": {
+          "Bebke": "BEBKE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "PUCKY1",
+      "Route": [
+        "KJFK"
+      ],
+      "Altitude": 2045,
+      "Heading": 315,
+      "Speed": 233,
+      "AssignedHeading": 10,
+      "State": "cleared approach",
+      "ControllerFrequency": "2A",
+      "TrackingController": "2A",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13R",
+        "31L",
+        "13L",
+        "31R"
+      ]
+    },
+    "Ethiopian five 14 heavy": {
+      "Callsign": "ETH514",
+      "AircraftType": "B788",
+      "Fixes": {
+        "Ebee": "EBBEE",
+        "J F K": "KJFK",
+        "Kennedy": "KJFK",
+        "Zetal": "ZETAL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4L": "I4L",
+        "ILS Runway 4R": "I4R",
+        "RNAV Y Runway 4L": "R4L",
+        "RNAV Y Runway 4R": "R4R",
+        "VOR Runway 4 Right": "V4"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four left": "4L",
+        "visual approach runway four right": "4R",
+        "visual four left": "4L",
+        "visual four right": "4R",
+        "visual runway four left": "4L",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4L": {
+          "Aroke": "AROKE",
+          "Crystal": "KRSTL"
+        },
+        "I4R": {
+          "Ebee": "EBBEE",
+          "Zetal": "ZETAL"
+        },
+        "R4L": {
+          "Crystal": "KRSTL",
+          "Repre": "REPRE"
+        },
+        "R4R": {
+          "Ebee": "EBBEE",
+          "Veru": "VERRU"
+        },
+        "V4": {
+          "Bebke": "BEBKE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "PARCH4",
+      "Route": [
+        "KJFK"
+      ],
+      "Altitude": 3000,
+      "Heading": 235,
+      "Speed": 264,
+      "AssignedHeading": 235,
+      "State": "arrival",
+      "ControllerFrequency": "2A",
+      "TrackingController": "2A",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13R",
+        "31L",
+        "13L",
+        "31R"
+      ]
+    },
+    "Fedex seven 64 heavy": {
+      "Callsign": "FDX764",
+      "AircraftType": "B763",
+      "Fixes": {
+        "Cameron": "CAMRN",
+        "Ebee": "EBBEE",
+        "J F K": "KJFK",
+        "Kennedy": "KJFK",
+        "Zetal": "ZETAL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4L": "I4L",
+        "ILS Runway 4R": "I4R",
+        "RNAV Y Runway 4L": "R4L",
+        "RNAV Y Runway 4R": "R4R",
+        "VOR Runway 4 Right": "V4"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four left": "4L",
+        "visual approach runway four right": "4R",
+        "visual four left": "4L",
+        "visual four right": "4R",
+        "visual runway four left": "4L",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4L": {
+          "Aroke": "AROKE",
+          "Crystal": "KRSTL"
+        },
+        "I4R": {
+          "Ebee": "EBBEE",
+          "Zetal": "ZETAL"
+        },
+        "R4L": {
+          "Crystal": "KRSTL",
+          "Repre": "REPRE"
+        },
+        "R4R": {
+          "Ebee": "EBBEE",
+          "Veru": "VERRU"
+        },
+        "V4": {
+          "Bebke": "BEBKE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "CAMRN5",
+      "Route": [
+        "CAMRN",
+        "KJFK"
+      ],
+      "Altitude": 6755,
+      "Heading": 37,
+      "Speed": 296,
+      "State": "arrival",
+      "ControllerFrequency": "2A",
+      "TrackingController": "2A",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13R",
+        "31L",
+        "13L",
+        "31R"
+      ]
+    },
+    "Itarrow six 10 heavy": {
+      "Callsign": "ITY610",
+      "AircraftType": "A339",
+      "Fixes": {
+        "Ebee": "EBBEE",
+        "J F K": "KJFK",
+        "Kennedy": "KJFK",
+        "Zetal": "ZETAL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4L": "I4L",
+        "ILS Runway 4R": "I4R",
+        "RNAV Y Runway 4L": "R4L",
+        "RNAV Y Runway 4R": "R4R",
+        "VOR Runway 4 Right": "V4"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four left": "4L",
+        "visual approach runway four right": "4R",
+        "visual four left": "4L",
+        "visual four right": "4R",
+        "visual runway four left": "4L",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4L": {
+          "Aroke": "AROKE",
+          "Crystal": "KRSTL"
+        },
+        "I4R": {
+          "Ebee": "EBBEE",
+          "Zetal": "ZETAL"
+        },
+        "R4L": {
+          "Crystal": "KRSTL",
+          "Repre": "REPRE"
+        },
+        "R4R": {
+          "Ebee": "EBBEE",
+          "Veru": "VERRU"
+        },
+        "V4": {
+          "Bebke": "BEBKE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "PARCH4",
+      "Route": [
+        "KJFK"
+      ],
+      "Altitude": 3000,
+      "Heading": 300,
+      "Speed": 248,
+      "AssignedHeading": 300,
+      "State": "arrival",
+      "ControllerFrequency": "2A",
+      "TrackingController": "2A",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13R",
+        "31L",
+        "13L",
+        "31R"
+      ]
+    },
+    "JetBlue two 97": {
+      "Callsign": "JBU297",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Ebee": "EBBEE",
+        "J F K": "KJFK",
+        "Kennedy": "KJFK",
+        "Zetal": "ZETAL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 4L": "I4L",
+        "ILS Runway 4R": "I4R",
+        "RNAV Y Runway 4L": "R4L",
+        "RNAV Y Runway 4R": "R4R",
+        "VOR Runway 4 Right": "V4"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four left": "4L",
+        "visual approach runway four right": "4R",
+        "visual four left": "4L",
+        "visual four right": "4R",
+        "visual runway four left": "4L",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "I4L": {
+          "Aroke": "AROKE",
+          "Crystal": "KRSTL"
+        },
+        "I4R": {
+          "Ebee": "EBBEE",
+          "Zetal": "ZETAL"
+        },
+        "R4L": {
+          "Crystal": "KRSTL",
+          "Repre": "REPRE"
+        },
+        "R4R": {
+          "Ebee": "EBBEE",
+          "Veru": "VERRU"
+        },
+        "V4": {
+          "Bebke": "BEBKE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 4R",
+      "STAR": "CAMRN5",
+      "Route": [
+        "KJFK"
+      ],
+      "Altitude": 3000,
+      "Heading": 40,
+      "Speed": 247,
+      "AssignedHeading": 40,
+      "State": "arrival",
+      "ControllerFrequency": "2A",
+      "TrackingController": "2A",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13R",
+        "31L",
+        "13L",
+        "31R"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Brickyard 56 42 to Parc Cameron heading zero four zero\"",
+    "[local-stt] normalized words: [brickyard 56 42 to parc cameron heading 0 4 0]",
+    "[local-stt] tokens: 8",
+    "[local-stt]   token[0]: Text=\"brickyard\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"56\" Type=1 Value=56",
+    "[local-stt]   token[2]: Text=\"42\" Type=1 Value=42",
+    "[local-stt]   token[3]: Text=\"to\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"parc\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"cameron\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"heading\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"040\" Type=1 Value=40",
+    "[local-stt] MatchCallsign: 8 tokens, 9 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 8 tokens, 9 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Brickyard 56 42\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Brickyard 56 42\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"Ethiopian five 14 heavy\" (airline=0.481, flight=0.750, skip=0)",
+    "[local-stt]     result 1: \"Brickyard 56 42\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Brickyard 56 42\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 11 results",
+    "[local-stt]     result 0: \"Delta 18 33\" (airline=0.437, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Endeavor 52 18\" (airline=0.491, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"JetBlue two 97\" (airline=0.418, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Itarrow six 10 heavy\" (airline=0.476, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Air France eight heavy\" (airline=0.463, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Brickyard 56 42\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"Brickyard 56 42\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Brickyard 56 42\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"Brickyard 56 42\" (airline=0.500, flight=0.700, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Brickyard 56 42\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"RPA5642\" (spokenKey=\"Brickyard 56 42\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"RPA5642\" SpokenKey=\"Brickyard 56 42\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=10495 Fixes=5 Approaches=5 VisualApproaches=6 AssignedApproach=\"ILS Runway 4R\" LAHSORunways=[13L 31R 13R 31L 13L 31R]",
+    "[local-stt]   fix: \"Kennedy\" -\u003e \"KJFK\"",
+    "[local-stt]   fix: \"J F K\" -\u003e \"KJFK\"",
+    "[local-stt]   fix: \"Cameron\" -\u003e \"CAMRN\"",
+    "[local-stt]   fix: \"Zetal\" -\u003e \"ZETAL\"",
+    "[local-stt]   fix: \"Ebee\" -\u003e \"EBBEE\"",
+    "[local-stt]   approach: \"RNAV Y Runway 4L\" -\u003e \"R4L\"",
+    "[local-stt]   approach: \"ILS Runway 4L\" -\u003e \"I4L\"",
+    "[local-stt]   approach: \"VOR Runway 4 Right\" -\u003e \"V4\"",
+    "[local-stt]   approach: \"RNAV Y Runway 4R\" -\u003e \"R4R\"",
+    "[local-stt]   approach: \"ILS Runway 4R\" -\u003e \"I4R\"",
+    "[local-stt]   visual approach: \"visual four right\" -\u003e \"4R\"",
+    "[local-stt]   visual approach: \"visual runway four left\" -\u003e \"4L\"",
+    "[local-stt]   visual approach: \"visual approach runway four left\" -\u003e \"4L\"",
+    "[local-stt]   visual approach: \"visual four left\" -\u003e \"4L\"",
+    "[local-stt]   visual approach: \"visual runway four right\" -\u003e \"4R\"",
+    "[local-stt]   visual approach: \"visual approach runway four right\" -\u003e \"4R\"",
+    "[local-stt] command tokens after disregard: 5",
+    "[local-stt]   token[0]: Text=\"to\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"parc\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"cameron\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"heading\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"040\" Type=1 Value=40",
+    "[local-stt] ParseCommands: 5 tokens",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   no match at token[1]=\"parc\", skipping",
+    "[local-stt]   no match at token[2]=\"cameron\", skipping",
+    "[local-stt]   matched command: \"H040\" [heading_only] (pos=3, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[3]=\"heading\", skipping",
+    "[local-stt]   no match at token[4]=\"040\", skipping",
+    "[local-stt]   beam final[0]: score=1.196 pos=5 commands=[H040]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=5 commands=[]",
+    "[local-stt] ParseCommands: result=[H040] (avgConf=1.00)",
+    "[local-stt] parsed commands: [H040] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [H040] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"RPA5642 H040\" (conf=1.00, time=1.008ms) ==="
+  ]
+}

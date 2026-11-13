@@ -1,0 +1,281 @@
+{
+  "time": "2026-11-05T19:57:52.147048577Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "november three four lima charlie maintain mach point six or less",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, uniform, information, Parker seven, Quewed, Gilge, Snack, Cavey, Ready, Tumie, one eight, runway, I L S, E-R-J one thirty-five four lima charlie, Embraer E-R-J one thirty-five four lima charlie, november three four lima charlie, JetBlue two 31, American 61, Thack, Mahony, Paykin, Tidunn, Parker, school, Susan, Yeold, scarza, Wilum, Flask, Mahaf, Charlotte Douglas International Airport",
+  "whisper_duration_ms": 414.038,
+  "audio_duration_ms": 4680,
+  "processor": "GPU: NVIDIA GeForce RTX 4060 Ti (7939MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "N34LC",
+  "command": "M60-",
+  "stt_aircraft": {
+    "American 61": {
+      "Callsign": "AAL61",
+      "AircraftType": "A319",
+      "Fixes": {
+        "Charlotte Douglas": "KCLT",
+        "Parker": "PARQR",
+        "Paykin": "PAYKN",
+        "Susan": "SUZNN",
+        "Thack": "THACK",
+        "Wilum": "WILUM"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 18": "I8"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight": "18",
+        "visual one eight": "18",
+        "visual runway one eight": "18"
+      },
+      "ApproachFixes": {
+        "I8": {
+          "Cavey": "CAVVI",
+          "Eagle": "EGUUL",
+          "Gilge": "GILGE",
+          "Quewed": "QUWED",
+          "Ready": "READY",
+          "Snack": "SNAKK",
+          "Tumie": "TUMIE"
+        }
+      },
+      "STAR": "PARQR7",
+      "Route": [
+        "WILUM",
+        "SUZNN",
+        "PARQR",
+        "PAYKN",
+        "THACK",
+        "KCLT"
+      ],
+      "Altitude": 26757,
+      "Heading": 200,
+      "Speed": 398,
+      "AssignedAltitude": 34000,
+      "AssignedSpeed": 270,
+      "State": "arrival",
+      "ControllerFrequency": "43",
+      "TrackingController": "43"
+    },
+    "E-R-J one thirty-five four lima charlie": {
+      "Callsign": "N34LC/T",
+      "AircraftType": "E135",
+      "Fixes": {
+        "Flask": "FLASK",
+        "Mahony": "MHONY",
+        "Tidunn": "TDUNN",
+        "Yeold": "YEOLD",
+        "school": "SCHUL"
+      },
+      "Route": [
+        "FLASK",
+        "YEOLD",
+        "SCHUL",
+        "TDUNN",
+        "MHONY",
+        "KATL"
+      ],
+      "Altitude": 30000,
+      "Heading": 226,
+      "Speed": 400,
+      "AssignedAltitude": 24000,
+      "State": "overflight",
+      "ControllerFrequency": "43",
+      "TrackingController": "43",
+      "AddressingForm": 1
+    },
+    "Embraer E-R-J one thirty-five four lima charlie": {
+      "Callsign": "N34LC/T",
+      "AircraftType": "E135",
+      "Fixes": {
+        "Flask": "FLASK",
+        "Mahony": "MHONY",
+        "Tidunn": "TDUNN",
+        "Yeold": "YEOLD",
+        "school": "SCHUL"
+      },
+      "Route": [
+        "FLASK",
+        "YEOLD",
+        "SCHUL",
+        "TDUNN",
+        "MHONY",
+        "KATL"
+      ],
+      "Altitude": 30000,
+      "Heading": 226,
+      "Speed": 400,
+      "AssignedAltitude": 24000,
+      "State": "overflight",
+      "ControllerFrequency": "43",
+      "TrackingController": "43",
+      "AddressingForm": 1
+    },
+    "JetBlue two 31": {
+      "Callsign": "JBU231",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Mahaf": "MAHAF",
+        "Parker": "PARQR",
+        "Susan": "SUZNN",
+        "Wilum": "WILUM",
+        "scarza": "SCRZA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 18": "I8"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight": "18",
+        "visual one eight": "18",
+        "visual runway one eight": "18"
+      },
+      "ApproachFixes": {
+        "I8": {
+          "Cavey": "CAVVI",
+          "Eagle": "EGUUL",
+          "Gilge": "GILGE",
+          "Quewed": "QUWED",
+          "Ready": "READY",
+          "Snack": "SNAKK",
+          "Tumie": "TUMIE"
+        }
+      },
+      "STAR": "PARQR7",
+      "Route": [
+        "MAHAF",
+        "SCRZA",
+        "WILUM",
+        "SUZNN",
+        "PARQR",
+        "PAYKN",
+        "THACK",
+        "CEDOX",
+        "KCLT"
+      ],
+      "Altitude": 33000,
+      "Heading": 150,
+      "Speed": 495,
+      "AssignedAltitude": 33000,
+      "State": "arrival",
+      "ControllerFrequency": "43",
+      "TrackingController": "43"
+    },
+    "november three four lima charlie": {
+      "Callsign": "N34LC",
+      "LastAddressed": true,
+      "AircraftType": "E135",
+      "Fixes": {
+        "Flask": "FLASK",
+        "Mahony": "MHONY",
+        "Tidunn": "TDUNN",
+        "Yeold": "YEOLD",
+        "school": "SCHUL"
+      },
+      "Route": [
+        "FLASK",
+        "YEOLD",
+        "SCHUL",
+        "TDUNN",
+        "MHONY",
+        "KATL"
+      ],
+      "Altitude": 30000,
+      "Heading": 226,
+      "Speed": 400,
+      "AssignedAltitude": 24000,
+      "State": "overflight",
+      "ControllerFrequency": "43",
+      "TrackingController": "43"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"november three four lima charlie maintain mach point six or less\"",
+    "[local-stt] normalized words: [november 3 4 lima charlie maintain mach point 6 or less]",
+    "[local-stt] tokens: 10",
+    "[local-stt]   token[0]: Text=\"november\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"34\" Type=1 Value=34",
+    "[local-stt]   token[2]: Text=\"lima\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"charlie\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"mach\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"point\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"6\" Type=1 Value=6",
+    "[local-stt]   token[8]: Text=\"or\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"less\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 10 tokens, 5 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 10 tokens, 5 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"november three four lima charlie\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"november three four lima charlie\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 5 results",
+    "[local-stt]     result 0: \"november three four lima charlie\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Embraer E-R-J one thirty-five four lima charlie\" (airline=0.780, flight=1.000, skip=0)",
+    "[local-stt]     result 2: \"E-R-J one thirty-five four lima charlie\" (airline=0.442, flight=1.000, skip=0)",
+    "[local-stt]     result 3: \"november three four lima charlie\" (airline=0.458, flight=0.850, skip=2)",
+    "[local-stt]     result 4: \"Embraer E-R-J one thirty-five four lima charlie\" (airline=0.595, flight=0.850, skip=2)",
+    "[local-stt]     pattern \"airline_flight\": selected \"november three four lima charlie\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 4 results",
+    "[local-stt]     result 0: \"JetBlue two 31\" (airline=0.601, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"American 61\" (airline=0.597, flight=0.000, skip=2)",
+    "[local-stt]     result 2: \"American 61\" (airline=0.601, flight=0.000, skip=3)",
+    "[local-stt]     result 3: \"JetBlue two 31\" (airline=0.524, flight=0.000, skip=3)",
+    "[local-stt]     pattern \"airline_only\": selected \"American 61\" (airline=0.60, flight=0.00, skip=3)",
+    "[local-stt]     pattern \"airline_only\": scoring rejected \"American 61\"",
+    "[local-stt]   pattern \"ga_november\": 1 results",
+    "[local-stt]     result 0: \"november three four lima charlie\" (airline=0.800, flight=0.750, skip=0)",
+    "[local-stt]     pattern \"ga_november\": selected \"november three four lima charlie\" (airline=0.80, flight=0.75, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 6 results",
+    "[local-stt]     result 0: \"november three four lima charlie\" (airline=0.500, flight=0.942, skip=0)",
+    "[local-stt]     result 1: \"Embraer E-R-J one thirty-five four lima charlie\" (airline=0.500, flight=0.942, skip=0)",
+    "[local-stt]     result 2: \"E-R-J one thirty-five four lima charlie\" (airline=0.500, flight=0.942, skip=0)",
+    "[local-stt]     result 3: \"november three four lima charlie\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 4: \"Embraer E-R-J one thirty-five four lima charlie\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"november three four lima charlie\" (airline=0.50, flight=1.00, skip=1)",
+    "[local-stt]   exact callsign \"N34LC\" (spokenKey=\"november three four lima charlie\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"N34LC\" SpokenKey=\"november three four lima charlie\" Conf=1.00 Consumed=4",
+    "[local-stt] aircraft context: State=\"overflight\" Altitude=30000 Fixes=5 Approaches=0 VisualApproaches=0 AssignedApproach=\"\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Tidunn\" -\u003e \"TDUNN\"",
+    "[local-stt]   fix: \"Mahony\" -\u003e \"MHONY\"",
+    "[local-stt]   fix: \"Flask\" -\u003e \"FLASK\"",
+    "[local-stt]   fix: \"Yeold\" -\u003e \"YEOLD\"",
+    "[local-stt]   fix: \"school\" -\u003e \"SCHUL\"",
+    "[local-stt] command tokens after disregard: 6",
+    "[local-stt]   token[0]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"mach\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"point\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"6\" Type=1 Value=6",
+    "[local-stt]   token[4]: Text=\"or\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"less\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 6 tokens",
+    "[local-stt]   matched command: \"M60-\" [mach_or_less] (pos=0, conf=1.00, consumed=6, isThen=false)",
+    "[local-stt]   matched command: \"M60\" [maintain_mach] (pos=0, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[0]=\"maintain\", skipping",
+    "[local-stt]   no match at token[4]=\"or\", skipping",
+    "[local-stt]   matched command: \"M60-\" [mach_or_less] (pos=1, conf=1.00, consumed=5, isThen=false)",
+    "[local-stt]   matched command: \"M60\" [mach_only] (pos=1, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[1]=\"mach\", skipping",
+    "[local-stt]   no match at token[5]=\"less\", skipping",
+    "[local-stt]   no match at token[4]=\"or\", skipping",
+    "[local-stt]   no match at token[5]=\"less\", skipping",
+    "[local-stt]   beam final[0]: score=3.587 pos=6 commands=[M60-]",
+    "[local-stt]   beam final[1]: score=2.286 pos=6 commands=[M60]",
+    "[local-stt]   beam final[2]: score=0.687 pos=6 commands=[M60-]",
+    "[local-stt]   beam final[3]: score=-0.614 pos=6 commands=[M60]",
+    "[local-stt] ParseCommands: result=[M60-] (avgConf=1.00)",
+    "[local-stt] parsed commands: [M60-] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [M60-] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"N34LC M60-\" (conf=1.00, time=2.2464ms) ==="
+  ]
+}

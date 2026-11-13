@@ -1,0 +1,544 @@
+{
+  "time": "2026-11-10T23:41:10.738053739Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "November five paapa hotel airport twelve o'clock report field in sight",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, quebec, kilo, information, Matty six, Lubber four, Dades two, Bullfrog three, Gandy eight, Dormer three, Fadi, Mera, Zaplin, Uflix, cobox, Zadsa, Darbs, one niner right, one niner left, one four, runway, r-nav, I L S, Southwest eight 35, Southwest 75 21, Spirit Wings 54 21, Spirit Wings 30 97, citation five pahpah hotel, november eight seven five pahpah hotel, JetBlue 11 70, SARASOTA, Pasoy, ST PETERSBURG, Ruthie, Lisa F, Lifie, Guzda, Jackball, woody, Bucks, Jetstream, Lizard, breaker, Pomse, Deside, Nayty, Dades, Rune, Teky, Rozi, Tampa International Airport, Sarasota Bradenton International Airport, Sabe",
+  "whisper_duration_ms": 244.449,
+  "audio_duration_ms": 3912,
+  "processor": "GPU: NVIDIA GeForce RTX 5060 Laptop GPU (7899MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "N875PH",
+  "command": "AP",
+  "reason": "a clock position with no distance must not invent miles",
+  "stt_aircraft": {
+    "JetBlue 11 70": {
+      "Callsign": "JBU1170",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Sabe": "SABEE",
+        "Tampa": "KTPA",
+        "Teky": "TEEKY"
+      },
+      "SID": "GANDY8",
+      "Route": [
+        "SABEE",
+        "TEEKY",
+        "KFLL"
+      ],
+      "Altitude": 4419,
+      "Heading": 165,
+      "Speed": 228,
+      "AssignedAltitude": 10000,
+      "State": "departure",
+      "ControllerFrequency": "1G",
+      "TrackingController": "1G"
+    },
+    "Southwest 75 21": {
+      "Callsign": "SWA7521",
+      "AircraftType": "B737",
+      "Fixes": {
+        "Bucks": "BUCCS",
+        "Deside": "DSIDE",
+        "Guzda": "GUZDA",
+        "Jetstream": "JSTRM",
+        "Lisa F": "LISAF",
+        "Pomse": "POMSE",
+        "Tampa": "KTPA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 19L": "I9L",
+        "ILS Runway 19R": "I9R",
+        "RNAV Runway 19L": "R9L",
+        "RNAV Runway 19R": "R9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one niner left": "19L",
+        "visual approach runway one niner right": "19R",
+        "visual one niner left": "19L",
+        "visual one niner right": "19R",
+        "visual runway one niner left": "19L",
+        "visual runway one niner right": "19R"
+      },
+      "ApproachFixes": {
+        "I9L": {
+          "Bucks": "BUCCS",
+          "Pomse": "POMSE"
+        },
+        "I9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE"
+        },
+        "R9L": {
+          "Darbs": "DARBS",
+          "Jetstream": "JSTRM",
+          "Lizard": "LZARD",
+          "Pomse": "POMSE",
+          "Uflix": "UFLIX",
+          "Zadsa": "ZADSA",
+          "Zaplin": "ZPLIN",
+          "cobox": "COBOX"
+        },
+        "R9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE",
+          "Zeshy": "ZESHY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 19L",
+      "STAR": "BLFRG3",
+      "Route": [
+        "DSIDE",
+        "JSTRM",
+        "GUZDA",
+        "LISAF",
+        "KTPA"
+      ],
+      "Altitude": 6569,
+      "Heading": 360,
+      "Speed": 276,
+      "AssignedAltitude": 6000,
+      "AssignedHeading": 360,
+      "State": "arrival",
+      "ControllerFrequency": "1G",
+      "TrackingController": "1G",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "Southwest eight 35": {
+      "Callsign": "SWA835",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Pomse": "POMSE",
+        "Tampa": "KTPA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 19L": "I9L",
+        "ILS Runway 19R": "I9R",
+        "RNAV Runway 19L": "R9L",
+        "RNAV Runway 19R": "R9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one niner left": "19L",
+        "visual approach runway one niner right": "19R",
+        "visual one niner left": "19L",
+        "visual one niner right": "19R",
+        "visual runway one niner left": "19L",
+        "visual runway one niner right": "19R"
+      },
+      "ApproachFixes": {
+        "I9L": {
+          "Bucks": "BUCCS",
+          "Pomse": "POMSE"
+        },
+        "I9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE"
+        },
+        "R9L": {
+          "Darbs": "DARBS",
+          "Jetstream": "JSTRM",
+          "Lizard": "LZARD",
+          "Pomse": "POMSE",
+          "Uflix": "UFLIX",
+          "Zadsa": "ZADSA",
+          "Zaplin": "ZPLIN",
+          "cobox": "COBOX"
+        },
+        "R9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE",
+          "Zeshy": "ZESHY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 19L",
+      "STAR": "MAATY6",
+      "Route": [
+        "POMSE",
+        "KTPA"
+      ],
+      "Altitude": 2740,
+      "Heading": 188,
+      "Speed": 236,
+      "AssignedAltitude": 5000,
+      "State": "cleared approach",
+      "ControllerFrequency": "1G",
+      "TrackingController": "1G",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "Spirit Wings 30 97": {
+      "Callsign": "NKS3097",
+      "AircraftType": "A321",
+      "Fixes": {
+        "Bucks": "BUCCS",
+        "Dades": "DADES",
+        "Jackball": "JKBAL",
+        "Lizard": "LZARD",
+        "Pomse": "POMSE",
+        "Tampa": "KTPA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 19L": "I9L",
+        "ILS Runway 19R": "I9R",
+        "RNAV Runway 19L": "R9L",
+        "RNAV Runway 19R": "R9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one niner left": "19L",
+        "visual approach runway one niner right": "19R",
+        "visual one niner left": "19L",
+        "visual one niner right": "19R",
+        "visual runway one niner left": "19L",
+        "visual runway one niner right": "19R"
+      },
+      "ApproachFixes": {
+        "I9L": {
+          "Bucks": "BUCCS",
+          "Pomse": "POMSE"
+        },
+        "I9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE"
+        },
+        "R9L": {
+          "Darbs": "DARBS",
+          "Jetstream": "JSTRM",
+          "Lizard": "LZARD",
+          "Pomse": "POMSE",
+          "Uflix": "UFLIX",
+          "Zadsa": "ZADSA",
+          "Zaplin": "ZPLIN",
+          "cobox": "COBOX"
+        },
+        "R9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE",
+          "Zeshy": "ZESHY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 19L",
+      "STAR": "DADES2",
+      "Route": [
+        "DADES",
+        "LZARD",
+        "JKBAL",
+        "KTPA"
+      ],
+      "Altitude": 5000,
+      "Heading": 240,
+      "Speed": 262,
+      "AssignedAltitude": 5000,
+      "AssignedHeading": 240,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "Spirit Wings 54 21": {
+      "Callsign": "NKS5421",
+      "AircraftType": "A20N",
+      "Fixes": {
+        "Nayty": "NAITE",
+        "Rozi": "ROZZI"
+      },
+      "SID": "DORMR3",
+      "Route": [
+        "ROZZI",
+        "NAITE",
+        "REDFN",
+        "FATSO",
+        "HRV",
+        "PEBBY",
+        "AEX",
+        "PNUTS",
+        "KDFW"
+      ],
+      "Altitude": 10000,
+      "Heading": 300,
+      "Speed": 291,
+      "AssignedAltitude": 10000,
+      "State": "departure",
+      "ControllerFrequency": "1G",
+      "TrackingController": "C24"
+    },
+    "citation five pahpah hotel": {
+      "Callsign": "N875PH/T",
+      "AircraftType": "C550",
+      "Fixes": {
+        "Frugal": "FRUGL",
+        "Kissimmee Gateway": "KISM",
+        "Lifie": "LYFIE",
+        "Pasoy": "PASOE",
+        "Rune": "RUNNE",
+        "Ruthie": "RUTAE",
+        "SARASOTA": "SRQ",
+        "ST PETERSBURG": "PIE",
+        "Sarasota": "KSRQ",
+        "breaker": "BREKR",
+        "woody": "WUDDY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 14": "I14",
+        "RNAV Runway 14": "R14"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one four": "14",
+        "visual one four": "14",
+        "visual runway one four": "14"
+      },
+      "ApproachFixes": {
+        "I14": {
+          "Frugal": "FRUGL",
+          "Pasoy": "PASOE",
+          "SARASOTA": "SRQ",
+          "ST PETERSBURG": "PIE"
+        },
+        "R14": {
+          "Etigy": "ETIGY",
+          "Frugal": "FRUGL",
+          "Pasoy": "PASOE",
+          "SARASOTA": "SRQ",
+          "ST PETERSBURG": "PIE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 14",
+      "STAR": "LUBBR4",
+      "Route": [
+        "RUNNE",
+        "BREKR",
+        "WUDDY",
+        "LYFIE",
+        "RUTAE",
+        "KSRQ"
+      ],
+      "Altitude": 3000,
+      "Heading": 180,
+      "Speed": 262,
+      "AssignedAltitude": 3000,
+      "AssignedHeading": 180,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "4",
+        "22"
+      ]
+    },
+    "november eight seven five pahpah hotel": {
+      "Callsign": "N875PH",
+      "AircraftType": "C550",
+      "Fixes": {
+        "Frugal": "FRUGL",
+        "Kissimmee Gateway": "KISM",
+        "Lifie": "LYFIE",
+        "Pasoy": "PASOE",
+        "Rune": "RUNNE",
+        "Ruthie": "RUTAE",
+        "SARASOTA": "SRQ",
+        "ST PETERSBURG": "PIE",
+        "Sarasota": "KSRQ",
+        "breaker": "BREKR",
+        "woody": "WUDDY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 14": "I14",
+        "RNAV Runway 14": "R14"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one four": "14",
+        "visual one four": "14",
+        "visual runway one four": "14"
+      },
+      "ApproachFixes": {
+        "I14": {
+          "Frugal": "FRUGL",
+          "Pasoy": "PASOE",
+          "SARASOTA": "SRQ",
+          "ST PETERSBURG": "PIE"
+        },
+        "R14": {
+          "Etigy": "ETIGY",
+          "Frugal": "FRUGL",
+          "Pasoy": "PASOE",
+          "SARASOTA": "SRQ",
+          "ST PETERSBURG": "PIE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 14",
+      "STAR": "LUBBR4",
+      "Route": [
+        "RUNNE",
+        "BREKR",
+        "WUDDY",
+        "LYFIE",
+        "RUTAE",
+        "KSRQ"
+      ],
+      "Altitude": 3000,
+      "Heading": 180,
+      "Speed": 262,
+      "AssignedAltitude": 3000,
+      "AssignedHeading": 180,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "4",
+        "22"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"November five paapa hotel airport twelve o'clock report field in sight\"",
+    "[local-stt] normalized words: [november 5 paapa hotel airport 12 oclock report field in sight]",
+    "[local-stt] tokens: 11",
+    "[local-stt]   token[0]: Text=\"november\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"5\" Type=1 Value=5",
+    "[local-stt]   token[2]: Text=\"paapa\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"hotel\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"airport\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"12\" Type=1 Value=12",
+    "[local-stt]   token[6]: Text=\"oclock\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"report\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"field\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"in\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"sight\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 11 tokens, 7 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 11 tokens, 7 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 3 results",
+    "[local-stt]     result 0: \"Southwest eight 35\" (airline=0.491, flight=0.850, skip=0)",
+    "[local-stt]     result 1: \"Southwest 75 21\" (airline=0.491, flight=0.750, skip=0)",
+    "[local-stt]     result 2: \"citation five pahpah hotel\" (airline=0.442, flight=0.850, skip=2)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Southwest eight 35\" (airline=0.49, flight=0.85, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 6 results",
+    "[local-stt]     result 0: \"JetBlue 11 70\" (airline=0.601, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Southwest eight 35\" (airline=0.491, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Southwest 75 21\" (airline=0.491, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"JetBlue 11 70\" (airline=0.565, flight=0.000, skip=3)",
+    "[local-stt]     result 4: \"Southwest eight 35\" (airline=0.644, flight=0.000, skip=3)",
+    "[local-stt]     pattern \"airline_only\": selected \"Southwest 75 21\" (airline=0.64, flight=0.00, skip=3)",
+    "[local-stt]     pattern \"airline_only\": scoring rejected \"Southwest 75 21\"",
+    "[local-stt]   pattern \"ga_november\": 1 results",
+    "[local-stt]     result 0: \"november eight seven five pahpah hotel\" (airline=0.800, flight=0.750, skip=0)",
+    "[local-stt]     pattern \"ga_november\": selected \"november eight seven five pahpah hotel\" (airline=0.80, flight=0.75, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": no results",
+    "[local-stt]   best callsign candidate: \"N875PH\" (conf=0.91, consumed=2, addressingForm=0, spokenKey=\"november eight seven five pahpah hotel\"; 2 candidates)",
+    "[local-stt] ParseCommands: 9 tokens",
+    "[local-stt]   no match at token[0]=\"paapa\", skipping",
+    "[local-stt]   no match at token[1]=\"hotel\", skipping",
+    "[local-stt]   matched command: \"AP\" [airport_in_sight_report] (pos=2, conf=0.74, consumed=7, isThen=false)",
+    "[local-stt]   no match at token[2]=\"airport\", skipping",
+    "[local-stt]   no match at token[3]=\"12\", skipping",
+    "[local-stt]   no match at token[4]=\"oclock\", skipping",
+    "[local-stt]   matched command: \"AP\" [airport_in_sight_report] (pos=5, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[5]=\"report\", skipping",
+    "[local-stt]   no match at token[6]=\"field\", skipping",
+    "[local-stt]   no match at token[7]=\"in\", skipping",
+    "[local-stt]   no match at token[8]=\"sight\", skipping",
+    "[local-stt]   beam final[0]: score=2.066 pos=9 commands=[AP]",
+    "[local-stt]   beam final[1]: score=0.089 pos=9 commands=[AP]",
+    "[local-stt]   beam final[2]: score=-4.605 pos=9 commands=[]",
+    "[local-stt] ParseCommands: result=[AP] (avgConf=0.74)",
+    "[local-stt] ParseCommands: 9 tokens",
+    "[local-stt]   no match at token[0]=\"paapa\", skipping",
+    "[local-stt]   no match at token[1]=\"hotel\", skipping",
+    "[local-stt]   matched command: \"AP\" [airport_in_sight_report] (pos=2, conf=0.74, consumed=7, isThen=false)",
+    "[local-stt]   no match at token[2]=\"airport\", skipping",
+    "[local-stt]   no match at token[3]=\"12\", skipping",
+    "[local-stt]   no match at token[4]=\"oclock\", skipping",
+    "[local-stt]   matched command: \"AP\" [airport_in_sight_report] (pos=5, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[5]=\"report\", skipping",
+    "[local-stt]   no match at token[6]=\"field\", skipping",
+    "[local-stt]   no match at token[7]=\"in\", skipping",
+    "[local-stt]   no match at token[8]=\"sight\", skipping",
+    "[local-stt]   beam final[0]: score=2.066 pos=9 commands=[AP]",
+    "[local-stt]   beam final[1]: score=0.089 pos=9 commands=[AP]",
+    "[local-stt]   beam final[2]: score=-4.605 pos=9 commands=[]",
+    "[local-stt] ParseCommands: result=[AP] (avgConf=0.74)",
+    "[local-stt] callsign match: Callsign=\"N875PH\" SpokenKey=\"november eight seven five pahpah hotel\" Conf=0.91 Consumed=2",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=3000 Fixes=11 Approaches=2 VisualApproaches=3 AssignedApproach=\"ILS Runway 14\" LAHSORunways=[4 22]",
+    "[local-stt]   fix: \"Rune\" -\u003e \"RUNNE\"",
+    "[local-stt]   fix: \"breaker\" -\u003e \"BREKR\"",
+    "[local-stt]   fix: \"woody\" -\u003e \"WUDDY\"",
+    "[local-stt]   fix: \"Lifie\" -\u003e \"LYFIE\"",
+    "[local-stt]   fix: \"ST PETERSBURG\" -\u003e \"PIE\"",
+    "[local-stt]   fix: \"Pasoy\" -\u003e \"PASOE\"",
+    "[local-stt]   fix: \"Frugal\" -\u003e \"FRUGL\"",
+    "[local-stt]   fix: \"SARASOTA\" -\u003e \"SRQ\"",
+    "[local-stt]   fix: \"Sarasota\" -\u003e \"KSRQ\"",
+    "[local-stt]   fix: \"Kissimmee Gateway\" -\u003e \"KISM\"",
+    "[local-stt]   fix: \"Ruthie\" -\u003e \"RUTAE\"",
+    "[local-stt]   approach: \"ILS Runway 14\" -\u003e \"I14\"",
+    "[local-stt]   approach: \"RNAV Runway 14\" -\u003e \"R14\"",
+    "[local-stt]   visual approach: \"visual runway one four\" -\u003e \"14\"",
+    "[local-stt]   visual approach: \"visual approach runway one four\" -\u003e \"14\"",
+    "[local-stt]   visual approach: \"visual one four\" -\u003e \"14\"",
+    "[local-stt] command tokens after disregard: 9",
+    "[local-stt]   token[0]: Text=\"paapa\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"hotel\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"airport\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"12\" Type=1 Value=12",
+    "[local-stt]   token[4]: Text=\"oclock\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"report\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"field\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"in\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"sight\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 9 tokens",
+    "[local-stt]   no match at token[0]=\"paapa\", skipping",
+    "[local-stt]   no match at token[1]=\"hotel\", skipping",
+    "[local-stt]   matched command: \"AP\" [airport_in_sight_report] (pos=2, conf=0.74, consumed=7, isThen=false)",
+    "[local-stt]   no match at token[2]=\"airport\", skipping",
+    "[local-stt]   no match at token[3]=\"12\", skipping",
+    "[local-stt]   no match at token[4]=\"oclock\", skipping",
+    "[local-stt]   matched command: \"AP\" [airport_in_sight_report] (pos=5, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[5]=\"report\", skipping",
+    "[local-stt]   no match at token[6]=\"field\", skipping",
+    "[local-stt]   no match at token[7]=\"in\", skipping",
+    "[local-stt]   no match at token[8]=\"sight\", skipping",
+    "[local-stt]   beam final[0]: score=2.066 pos=9 commands=[AP]",
+    "[local-stt]   beam final[1]: score=0.089 pos=9 commands=[AP]",
+    "[local-stt]   beam final[2]: score=-4.605 pos=9 commands=[]",
+    "[local-stt] ParseCommands: result=[AP] (avgConf=0.74)",
+    "[local-stt] parsed commands: [AP] (conf=0.74, kinds=1)",
+    "[local-stt] validated commands: [AP] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"N875PH AP\" (conf=0.67, time=6.6015ms) ==="
+  ]
+}

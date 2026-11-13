@@ -1,0 +1,602 @@
+{
+  "time": "2026-11-06T02:35:54.134260186Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Blue Streak 55 zero eight cleared direct Modena and do not exceed two five zero knots",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, tango, information, Pat's four, Jim's four, Bojid four, Philly four, Wikav, B-dawk, Jepug, Kusle, Albeck, three five, two seven right, runway, r-nav, I L S, Piedmont 60 33, Blue Streak 55 78, Blue Streak 55 zero eight, Lindbergh 45 63, Delta 11 hundred, American 22 36, American 17 65, American 15 26, Menge, Ferus, Martin, Vayre, Eyrie, Enzew, Outlet, Hifal, Brennan, Mkord, Dummer, Bojid, Flirt, Peaceout, Zirman, Float, School, Pensy, Chapman, R-roll, Bunts, Jimms, POTTSTOWN, MODENA, Philadelphia International Airport",
+  "whisper_duration_ms": 956.209,
+  "audio_duration_ms": 4808,
+  "processor": "GPU: NVIDIA GeForce GTX 1660 SUPER (6180MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "JIA5508",
+  "command": "DMXE S250-",
+  "stt_aircraft": {
+    "American 15 26": {
+      "Callsign": "AAL1526",
+      "AircraftType": "A319",
+      "Fixes": {
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "27R",
+        "RNAV Runway 35": "G35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway two seven right": "27R",
+        "visual runway three five": "35",
+        "visual runway two seven right": "27R",
+        "visual three five": "35",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "27R": {
+          "Enzew": "ENZEW",
+          "Jalto": "JALTO",
+          "Martin": "MRTIN",
+          "Menge": "MENGE"
+        },
+        "G35": {
+          "Albeck": "ALBEK",
+          "B-dawk": "BDAWK",
+          "Cemek": "CEMEK",
+          "Harlu": "HARLU",
+          "Jepug": "JEPUG",
+          "Jimms": "JIIMS",
+          "Kusle": "KUSLE",
+          "Wikav": "WIKAV"
+        }
+      },
+      "STAR": "PAATS4",
+      "Route": [
+        "KPHL"
+      ],
+      "Altitude": 8757,
+      "Heading": 36,
+      "Speed": 303,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "17",
+        "35",
+        "8",
+        "26",
+        "9L",
+        "27R"
+      ]
+    },
+    "American 17 65": {
+      "Callsign": "AAL1765",
+      "AircraftType": "A21N",
+      "Fixes": {
+        "Chapman": "CHPMN",
+        "Enzew": "ENZEW",
+        "Jalto": "JALTO",
+        "Jimms": "JIIMS",
+        "Martin": "MRTIN",
+        "Menge": "MENGE",
+        "Mkord": "MKORD",
+        "Peaceout": "PSOUT",
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL",
+        "Zirman": "ZMRMN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "27R",
+        "RNAV Runway 35": "G35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway two seven right": "27R",
+        "visual runway three five": "35",
+        "visual runway two seven right": "27R",
+        "visual three five": "35",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "27R": {
+          "Enzew": "ENZEW",
+          "Jalto": "JALTO",
+          "Martin": "MRTIN",
+          "Menge": "MENGE"
+        },
+        "G35": {
+          "Albeck": "ALBEK",
+          "B-dawk": "BDAWK",
+          "Cemek": "CEMEK",
+          "Harlu": "HARLU",
+          "Jepug": "JEPUG",
+          "Jimms": "JIIMS",
+          "Kusle": "KUSLE",
+          "Wikav": "WIKAV"
+        }
+      },
+      "AssignedApproach": "ILS Runway 27R",
+      "STAR": "JIIMS4",
+      "Route": [
+        "JIIMS",
+        "ZMRMN",
+        "CHPMN",
+        "PSOUT",
+        "MKORD",
+        "KPHL"
+      ],
+      "Altitude": 6000,
+      "Heading": 260,
+      "Speed": 214,
+      "AssignedHeading": 260,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "17",
+        "35",
+        "8",
+        "26",
+        "9L",
+        "27R"
+      ]
+    },
+    "American 22 36": {
+      "Callsign": "AAL2236",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Bojid": "BOJID",
+        "Enzew": "ENZEW",
+        "Eyrie": "EYRIE",
+        "Ferus": "FERUS",
+        "Hifal": "HIFAL",
+        "Jalto": "JALTO",
+        "Martin": "MRTIN",
+        "Menge": "MENGE",
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL",
+        "School": "SCOOL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "27R",
+        "RNAV Runway 35": "G35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway two seven right": "27R",
+        "visual runway three five": "35",
+        "visual runway two seven right": "27R",
+        "visual three five": "35",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "27R": {
+          "Enzew": "ENZEW",
+          "Jalto": "JALTO",
+          "Martin": "MRTIN",
+          "Menge": "MENGE"
+        },
+        "G35": {
+          "Albeck": "ALBEK",
+          "B-dawk": "BDAWK",
+          "Cemek": "CEMEK",
+          "Harlu": "HARLU",
+          "Jepug": "JEPUG",
+          "Jimms": "JIIMS",
+          "Kusle": "KUSLE",
+          "Wikav": "WIKAV"
+        }
+      },
+      "AssignedApproach": "ILS Runway 27R",
+      "STAR": "BOJID4",
+      "Route": [
+        "SCOOL",
+        "BOJID",
+        "HIFAL",
+        "EYRIE",
+        "FERUS",
+        "KPHL"
+      ],
+      "Altitude": 6000,
+      "Heading": 108,
+      "Speed": 239,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N",
+      "LAHSORunways": [
+        "17",
+        "35",
+        "8",
+        "26",
+        "9L",
+        "27R"
+      ]
+    },
+    "Blue Streak 55 78": {
+      "Callsign": "JIA5578",
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Bojid": "BOJID",
+        "Enzew": "ENZEW",
+        "Eyrie": "EYRIE",
+        "Ferus": "FERUS",
+        "Hifal": "HIFAL",
+        "Jalto": "JALTO",
+        "Martin": "MRTIN",
+        "Menge": "MENGE",
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL",
+        "School": "SCOOL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "27R",
+        "RNAV Runway 35": "G35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway two seven right": "27R",
+        "visual runway three five": "35",
+        "visual runway two seven right": "27R",
+        "visual three five": "35",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "27R": {
+          "Enzew": "ENZEW",
+          "Jalto": "JALTO",
+          "Martin": "MRTIN",
+          "Menge": "MENGE"
+        },
+        "G35": {
+          "Albeck": "ALBEK",
+          "B-dawk": "BDAWK",
+          "Cemek": "CEMEK",
+          "Harlu": "HARLU",
+          "Jepug": "JEPUG",
+          "Jimms": "JIIMS",
+          "Kusle": "KUSLE",
+          "Wikav": "WIKAV"
+        }
+      },
+      "AssignedApproach": "ILS Runway 27R",
+      "STAR": "BOJID4",
+      "Route": [
+        "SCOOL",
+        "BOJID",
+        "HIFAL",
+        "EYRIE",
+        "FERUS",
+        "KPHL"
+      ],
+      "Altitude": 6000,
+      "Heading": 108,
+      "Speed": 284,
+      "State": "arrival",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N",
+      "LAHSORunways": [
+        "17",
+        "35",
+        "8",
+        "26",
+        "9L",
+        "27R"
+      ]
+    },
+    "Blue Streak 55 zero eight": {
+      "Callsign": "JIA5508",
+      "LastAddressed": true,
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Brennan": "BRNAN",
+        "Flirt": "FLIRT",
+        "MODENA": "MXE",
+        "Pensy": "PENSY",
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL"
+      },
+      "SID": "PHL4",
+      "Route": [
+        "MXE",
+        "PENSY",
+        "FLIRT",
+        "BRNAN",
+        "PSYKO",
+        "BUBAA",
+        "KIND"
+      ],
+      "Altitude": 6720,
+      "Heading": 325,
+      "Speed": 278,
+      "AssignedHeading": 210,
+      "State": "departure",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "Delta 11 hundred": {
+      "Callsign": "DAL1100",
+      "AircraftType": "A321",
+      "Fixes": {
+        "Chapman": "CHPMN",
+        "Enzew": "ENZEW",
+        "Jalto": "JALTO",
+        "Martin": "MRTIN",
+        "Menge": "MENGE",
+        "Mkord": "MKORD",
+        "Peaceout": "PSOUT",
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL",
+        "R-roll": "RROLL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "27R",
+        "RNAV Runway 35": "G35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway two seven right": "27R",
+        "visual runway three five": "35",
+        "visual runway two seven right": "27R",
+        "visual three five": "35",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "27R": {
+          "Enzew": "ENZEW",
+          "Jalto": "JALTO",
+          "Martin": "MRTIN",
+          "Menge": "MENGE"
+        },
+        "G35": {
+          "Albeck": "ALBEK",
+          "B-dawk": "BDAWK",
+          "Cemek": "CEMEK",
+          "Harlu": "HARLU",
+          "Jepug": "JEPUG",
+          "Jimms": "JIIMS",
+          "Kusle": "KUSLE",
+          "Wikav": "WIKAV"
+        }
+      },
+      "AssignedApproach": "ILS Runway 27R",
+      "STAR": "PAATS4",
+      "Route": [
+        "RROLL",
+        "CHPMN",
+        "PSOUT",
+        "MKORD",
+        "KPHL"
+      ],
+      "Altitude": 6336,
+      "Heading": 82,
+      "Speed": 291,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "17",
+        "35",
+        "8",
+        "26",
+        "9L",
+        "27R"
+      ]
+    },
+    "Lindbergh 45 63": {
+      "Callsign": "GJS4563",
+      "AircraftType": "CRJ7",
+      "Fixes": {
+        "Chapman": "CHPMN",
+        "Enzew": "ENZEW",
+        "Jalto": "JALTO",
+        "Martin": "MRTIN",
+        "Menge": "MENGE",
+        "Mkord": "MKORD",
+        "Peaceout": "PSOUT",
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "27R",
+        "RNAV Runway 35": "G35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway two seven right": "27R",
+        "visual runway three five": "35",
+        "visual runway two seven right": "27R",
+        "visual three five": "35",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "27R": {
+          "Enzew": "ENZEW",
+          "Jalto": "JALTO",
+          "Martin": "MRTIN",
+          "Menge": "MENGE"
+        },
+        "G35": {
+          "Albeck": "ALBEK",
+          "B-dawk": "BDAWK",
+          "Cemek": "CEMEK",
+          "Harlu": "HARLU",
+          "Jepug": "JEPUG",
+          "Jimms": "JIIMS",
+          "Kusle": "KUSLE",
+          "Wikav": "WIKAV"
+        }
+      },
+      "AssignedApproach": "ILS Runway 27R",
+      "STAR": "PAATS4",
+      "Route": [
+        "CHPMN",
+        "PSOUT",
+        "MKORD",
+        "KPHL"
+      ],
+      "Altitude": 6000,
+      "Heading": 44,
+      "Speed": 293,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "17",
+        "35",
+        "8",
+        "26",
+        "9L",
+        "27R"
+      ]
+    },
+    "Piedmont 60 33": {
+      "Callsign": "PDT6033",
+      "AircraftType": "E145",
+      "Fixes": {
+        "Dummer": "DUMMR",
+        "Float": "FLOAT",
+        "Herda": "HERDA",
+        "Morto": "MORTO",
+        "Outlet": "OUTLT",
+        "POTTSTOWN": "PTW",
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL",
+        "RAVINE": "RAV",
+        "Rashe": "RASHE",
+        "State College": "KUNV",
+        "Vayre": "VAYRE"
+      },
+      "SID": "PHL4",
+      "Route": [
+        "PTW",
+        "FLOAT",
+        "DUMMR",
+        "OUTLT",
+        "VAYRE",
+        "RAV",
+        "MORTO",
+        "HERDA",
+        "RASHE",
+        "KUNV"
+      ],
+      "Altitude": 4618,
+      "Heading": 343,
+      "Speed": 228,
+      "State": "departure",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Blue Streak 55 zero eight cleared direct Modena and do not exceed two five zero knots\"",
+    "[local-stt] normalized words: [blue streak 55 0 8 cleared direct modena and do not exceed 2 5 0 knots]",
+    "[local-stt] tokens: 12",
+    "[local-stt]   token[0]: Text=\"blue\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"streak\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"5508\" Type=1 Value=5508",
+    "[local-stt]   token[3]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"direct\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"modena\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"and\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"do\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"not\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"exceed\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"250\" Type=1 Value=250",
+    "[local-stt]   token[11]: Text=\"knots\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 12 tokens, 8 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 12 tokens, 8 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Blue Streak 55 zero eight\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Blue Streak 55 zero eight\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 4 results",
+    "[local-stt]     result 0: \"Blue Streak 55 zero eight\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Blue Streak 55 78\" (airline=1.000, flight=0.867, skip=0)",
+    "[local-stt]     result 2: \"Blue Streak 55 78\" (airline=0.472, flight=0.867, skip=1)",
+    "[local-stt]     result 3: \"Blue Streak 55 zero eight\" (airline=0.472, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Blue Streak 55 zero eight\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 24 results",
+    "[local-stt]     result 0: \"American 22 36\" (airline=0.458, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Delta 11 hundred\" (airline=0.483, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Blue Streak 55 78\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Lindbergh 45 63\" (airline=0.574, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"American 15 26\" (airline=0.458, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Blue Streak 55 zero eight\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 6 results",
+    "[local-stt]     result 0: \"Blue Streak 55 78\" (airline=0.500, flight=0.867, skip=0)",
+    "[local-stt]     result 1: \"Blue Streak 55 zero eight\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 2: \"Blue Streak 55 78\" (airline=0.500, flight=0.867, skip=1)",
+    "[local-stt]     result 3: \"Blue Streak 55 zero eight\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 4: \"Blue Streak 55 78\" (airline=0.500, flight=0.867, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Blue Streak 55 zero eight\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"JIA5508\" (spokenKey=\"Blue Streak 55 zero eight\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"JIA5508\" SpokenKey=\"Blue Streak 55 zero eight\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"departure\" Altitude=6720 Fixes=6 Approaches=0 VisualApproaches=0 AssignedApproach=\"\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Philly\" -\u003e \"KPHL\"",
+    "[local-stt]   fix: \"Philadelphia\" -\u003e \"KPHL\"",
+    "[local-stt]   fix: \"MODENA\" -\u003e \"MXE\"",
+    "[local-stt]   fix: \"Pensy\" -\u003e \"PENSY\"",
+    "[local-stt]   fix: \"Flirt\" -\u003e \"FLIRT\"",
+    "[local-stt]   fix: \"Brennan\" -\u003e \"BRNAN\"",
+    "[local-stt] command tokens after disregard: 9",
+    "[local-stt]   token[0]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"direct\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"modena\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"and\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"do\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"not\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"exceed\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"250\" Type=1 Value=250",
+    "[local-stt]   token[8]: Text=\"knots\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 9 tokens",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"modena\" against 6 fixes",
+    "[local-stt]   extractFix: matched \"modena\" -\u003e \"MXE\" (fuzzy 1.00)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"direct\" against 6 fixes",
+    "[local-stt]   extractFix: matched \"direct\" -\u003e \"MXE\" (fuzzy 0.80)",
+    "[local-stt]   matched command: \"DMXE\" [cleared_direct_fix_explicit] (pos=0, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[0]=\"cleared\", skipping",
+    "[local-stt]   matched command: \"S250-\" [do_not_exceed] (pos=3, conf=1.00, consumed=5, isThen=false)",
+    "[local-stt]   skipping filler word: \"and\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"modena\" against 6 fixes",
+    "[local-stt]   extractFix: matched \"modena\" -\u003e \"MXE\" (fuzzy 1.00)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"modena\" against 6 fixes",
+    "[local-stt]   extractFix: matched \"modena\" -\u003e \"MXE\" (fuzzy 1.00)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"modena\" against 6 fixes",
+    "[local-stt]   extractFix: matched \"modena\" -\u003e \"MXE\" (fuzzy 1.00)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"modena\" against 6 fixes",
+    "[local-stt]   extractFix: matched \"modena\" -\u003e \"MXE\" (fuzzy 1.00)",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"modena\" against 6 fixes",
+    "[local-stt]   extractFix: matched \"modena\" -\u003e \"MXE\" (fuzzy 1.00)",
+    "[local-stt]   matched command: \"DMXE\" [direct_fix] (pos=1, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[1]=\"direct\", skipping",
+    "[local-stt]   no match at token[8]=\"knots\", skipping",
+    "[local-stt]   matched command: \"S250-\" [do_not_exceed] (pos=4, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[4]=\"do\", skipping",
+    "[local-stt]   matched command: \"S250-\" [do_not_exceed] (pos=3, conf=1.00, consumed=5, isThen=false)",
+    "[local-stt]   skipping filler word: \"and\"",
+    "[local-stt]   no match at token[2]=\"modena\", skipping",
+    "[local-stt]   no match at token[8]=\"knots\", skipping",
+    "[local-stt]   no match at token[8]=\"knots\", skipping",
+    "[local-stt]   no match at token[5]=\"not\", skipping",
+    "[local-stt]   matched command: \"EXPEDITE\" [expedite_bare] (pos=6, conf=0.80, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[6]=\"exceed\", skipping",
+    "[local-stt]   no match at token[7]=\"250\", skipping",
+    "[local-stt]   no match at token[8]=\"knots\", skipping",
+    "[local-stt]   beam final[0]: score=4.185 pos=9 commands=[DMXE S250-]",
+    "[local-stt]   beam final[1]: score=4.185 pos=9 commands=[DMXE S250-]",
+    "[local-stt]   beam final[2]: score=1.284 pos=9 commands=[DMXE S250-]",
+    "[local-stt]   beam final[3]: score=-0.132 pos=9 commands=[DMXE EXPEDITE]",
+    "[local-stt] ParseCommands: result=[DMXE S250-] (avgConf=1.00)",
+    "[local-stt] parsed commands: [DMXE S250-] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [DMXE S250-] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"JIA5508 DMXE S250-\" (conf=1.00, time=5.725ms) ==="
+  ]
+}

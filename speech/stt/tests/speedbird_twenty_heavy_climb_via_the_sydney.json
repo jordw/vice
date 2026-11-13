@@ -1,0 +1,562 @@
+{
+  "time": "2026-11-04T00:42:21.422247873Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Speedbird Twenty heavy climb via the Sydney",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, whiskey, information, Wheelie seven, Susie six, Gaboo one, Alexey four, word, Treks, Blurg, R-force, apale, myope, Squatch, lips, sukey, poimm, angs, lady, Odine, Hegvo, Zilker, lamas, jovsa, bird, camdy, three six left, three one, three six right, runway, RNP, Approach, Visual, r-nav, I L S, United 77 27, Southwest 93 93, Southwest 93 13, ExecJet 88 66, Delta 41 zero four, Speedbird 20 heavy, scute, bowties, bald, zenzi, tune, smurf, tonxu, finnley, Asher, music, mare, are you ok, zedku, Jay-Jo, bitter, hoof, hodal, shoe, Alexi, San Marcos Regional Airport, Austin Bergstrom International Airport, Hook",
+  "whisper_duration_ms": 145.057,
+  "audio_duration_ms": 2632,
+  "processor": "GPU: NVIDIA GeForce RTX 5070 Ti (15995MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "BAW20",
+  "command": "CVS",
+  "stt_aircraft": {
+    "Delta 41 zero four": {
+      "Callsign": "DAL4104",
+      "AircraftType": "B739",
+      "Fixes": {
+        "Austin Bergstrom": "KAUS",
+        "finnley": "FNNLY",
+        "shoe": "SSHOE",
+        "zedku": "ZEDKU"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 36L": "I6L",
+        "ILS Runway 36R": "I6R",
+        "RNAV RNP Runway 36L": "R6L",
+        "RNAV RNP Runway 36R": "R6R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three six left": "36L",
+        "visual approach runway three six right": "36R",
+        "visual runway three six left": "36L",
+        "visual runway three six right": "36R",
+        "visual three six left": "36L",
+        "visual three six right": "36R"
+      },
+      "ApproachFixes": {
+        "I6L": {
+          "bird": "BIIRD",
+          "camdy": "CAMDY",
+          "fun": "FUNNN",
+          "jovsa": "JOVSA",
+          "lamas": "LAMAS"
+        },
+        "I6R": {
+          "bald": "BALLD",
+          "finnley": "FNNLY",
+          "shoe": "SSHOE",
+          "zedku": "ZEDKU"
+        },
+        "R6L": {
+          "Hegvo": "HEGVO",
+          "Odine": "ODINE",
+          "Squatch": "SQWCH",
+          "Zilker": "ZILKR",
+          "angs": "ANGGS",
+          "bird": "BIIRD",
+          "bowties": "BOWTZ",
+          "camdy": "CAMDY",
+          "fun": "FUNNN",
+          "lady": "LAIDY",
+          "lamas": "LAMAS",
+          "lips": "LIPSS",
+          "poimm": "POIMM",
+          "smurf": "SMRFF",
+          "sukey": "SUKEY"
+        },
+        "R6R": {
+          "Blurg": "BLURG",
+          "R-force": "RFRCE",
+          "Treks": "TREKS",
+          "angs": "ANGGS",
+          "apale": "APALE",
+          "bald": "BALLD",
+          "bowties": "BOWTZ",
+          "finnley": "FNNLY",
+          "lady": "LAIDY",
+          "lips": "LIPSS",
+          "myope": "MYOPE",
+          "poimm": "POIMM",
+          "shoe": "SSHOE",
+          "smurf": "SMRFF",
+          "word": "WRRDD"
+        }
+      },
+      "AssignedApproach": "ILS Runway 36R",
+      "STAR": "WLEEE7",
+      "Route": [
+        "SSHOE",
+        "ZEDKU",
+        "FNNLY",
+        "KAUS"
+      ],
+      "Altitude": 2500,
+      "Heading": 358,
+      "Speed": 173,
+      "State": "cleared approach",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "ExecJet 88 66": {
+      "Callsign": "EJA8866",
+      "AircraftType": "C560",
+      "Fixes": {
+        "San Marcos": "KHYI",
+        "are you ok": "RUYOK",
+        "hodal": "HODAL",
+        "tonxu": "TONXU"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 31": "R31"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one": "31",
+        "visual runway three one": "31",
+        "visual three one": "31"
+      },
+      "ApproachFixes": {
+        "R31": {
+          "are you ok": "RUYOK",
+          "hodal": "HODAL",
+          "tonxu": "TONXU"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 31",
+      "STAR": "GABOO1",
+      "Route": [
+        "KHYI"
+      ],
+      "Altitude": 6000,
+      "Heading": 160,
+      "Speed": 278,
+      "AssignedHeading": 160,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "8",
+        "26",
+        "17",
+        "35"
+      ]
+    },
+    "Southwest 93 13": {
+      "Callsign": "SWA9313",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Austin Bergstrom": "KAUS"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 36L": "I6L",
+        "ILS Runway 36R": "I6R",
+        "RNAV RNP Runway 36L": "R6L",
+        "RNAV RNP Runway 36R": "R6R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three six left": "36L",
+        "visual approach runway three six right": "36R",
+        "visual runway three six left": "36L",
+        "visual runway three six right": "36R",
+        "visual three six left": "36L",
+        "visual three six right": "36R"
+      },
+      "ApproachFixes": {
+        "I6L": {
+          "bird": "BIIRD",
+          "camdy": "CAMDY",
+          "fun": "FUNNN",
+          "jovsa": "JOVSA",
+          "lamas": "LAMAS"
+        },
+        "I6R": {
+          "bald": "BALLD",
+          "finnley": "FNNLY",
+          "shoe": "SSHOE",
+          "zedku": "ZEDKU"
+        },
+        "R6L": {
+          "Hegvo": "HEGVO",
+          "Odine": "ODINE",
+          "Squatch": "SQWCH",
+          "Zilker": "ZILKR",
+          "angs": "ANGGS",
+          "bird": "BIIRD",
+          "bowties": "BOWTZ",
+          "camdy": "CAMDY",
+          "fun": "FUNNN",
+          "lady": "LAIDY",
+          "lamas": "LAMAS",
+          "lips": "LIPSS",
+          "poimm": "POIMM",
+          "smurf": "SMRFF",
+          "sukey": "SUKEY"
+        },
+        "R6R": {
+          "Blurg": "BLURG",
+          "R-force": "RFRCE",
+          "Treks": "TREKS",
+          "angs": "ANGGS",
+          "apale": "APALE",
+          "bald": "BALLD",
+          "bowties": "BOWTZ",
+          "finnley": "FNNLY",
+          "lady": "LAIDY",
+          "lips": "LIPSS",
+          "myope": "MYOPE",
+          "poimm": "POIMM",
+          "shoe": "SSHOE",
+          "smurf": "SMRFF",
+          "word": "WRRDD"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 36R",
+      "STAR": "WLEEE7",
+      "Route": [
+        "KAUS"
+      ],
+      "Altitude": 5000,
+      "Heading": 298,
+      "Speed": 271,
+      "State": "cleared approach",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "Southwest 93 93": {
+      "Callsign": "SWA9393",
+      "AircraftType": "B737",
+      "Fixes": {
+        "Austin Bergstrom": "KAUS",
+        "bald": "BALLD",
+        "finnley": "FNNLY",
+        "hoof": "HHOOF",
+        "mare": "MMARE",
+        "shoe": "SSHOE",
+        "smurf": "SMRFF",
+        "zedku": "ZEDKU"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 36L": "I6L",
+        "ILS Runway 36R": "I6R",
+        "RNAV RNP Runway 36L": "R6L",
+        "RNAV RNP Runway 36R": "R6R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three six left": "36L",
+        "visual approach runway three six right": "36R",
+        "visual runway three six left": "36L",
+        "visual runway three six right": "36R",
+        "visual three six left": "36L",
+        "visual three six right": "36R"
+      },
+      "ApproachFixes": {
+        "I6L": {
+          "bird": "BIIRD",
+          "camdy": "CAMDY",
+          "fun": "FUNNN",
+          "jovsa": "JOVSA",
+          "lamas": "LAMAS"
+        },
+        "I6R": {
+          "bald": "BALLD",
+          "finnley": "FNNLY",
+          "shoe": "SSHOE",
+          "zedku": "ZEDKU"
+        },
+        "R6L": {
+          "Hegvo": "HEGVO",
+          "Odine": "ODINE",
+          "Squatch": "SQWCH",
+          "Zilker": "ZILKR",
+          "angs": "ANGGS",
+          "bird": "BIIRD",
+          "bowties": "BOWTZ",
+          "camdy": "CAMDY",
+          "fun": "FUNNN",
+          "lady": "LAIDY",
+          "lamas": "LAMAS",
+          "lips": "LIPSS",
+          "poimm": "POIMM",
+          "smurf": "SMRFF",
+          "sukey": "SUKEY"
+        },
+        "R6R": {
+          "Blurg": "BLURG",
+          "R-force": "RFRCE",
+          "Treks": "TREKS",
+          "angs": "ANGGS",
+          "apale": "APALE",
+          "bald": "BALLD",
+          "bowties": "BOWTZ",
+          "finnley": "FNNLY",
+          "lady": "LAIDY",
+          "lips": "LIPSS",
+          "myope": "MYOPE",
+          "poimm": "POIMM",
+          "shoe": "SSHOE",
+          "smurf": "SMRFF",
+          "word": "WRRDD"
+        }
+      },
+      "AssignedApproach": "ILS Runway 36R",
+      "STAR": "SEWZY6",
+      "Route": [
+        "HHOOF",
+        "MMARE",
+        "SMRFF",
+        "KAUS"
+      ],
+      "Altitude": 6723,
+      "Heading": 198,
+      "Speed": 278,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "Speedbird 20 heavy": {
+      "Callsign": "BAW20",
+      "LastAddressed": true,
+      "AircraftType": "B789",
+      "Fixes": {
+        "Alexi": "ILEXY",
+        "Asher": "ASHRR",
+        "Austin Bergstrom": "KAUS",
+        "Hook": "HOOKK",
+        "Jay-Jo": "JAYJO",
+        "zenzi": "ZENZI"
+      },
+      "SID": "ILEXI4",
+      "Route": [
+        "HOOKK",
+        "ILEXY",
+        "JAYJO",
+        "ASHRR",
+        "ZENZI",
+        "LFK",
+        "SUTTN",
+        "TOZZI",
+        "CARIN",
+        "MEM",
+        "IIU",
+        "EWC",
+        "SYR",
+        "CABCI",
+        "MIILS",
+        "ELSIR",
+        "EGLL"
+      ],
+      "Altitude": 4445,
+      "Heading": 69,
+      "Speed": 223,
+      "State": "departure",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "United 77 27": {
+      "Callsign": "UAL7727",
+      "AircraftType": "B739",
+      "Fixes": {
+        "Austin Bergstrom": "KAUS",
+        "George Bush Intercontinental": "KIAH",
+        "bitter": "BITER",
+        "bowties": "BOWTZ",
+        "music": "MUSEC",
+        "scute": "SCUTE",
+        "tune": "TOONE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 36L": "I6L",
+        "ILS Runway 36R": "I6R",
+        "RNAV RNP Runway 36L": "R6L",
+        "RNAV RNP Runway 36R": "R6R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three six left": "36L",
+        "visual approach runway three six right": "36R",
+        "visual runway three six left": "36L",
+        "visual runway three six right": "36R",
+        "visual three six left": "36L",
+        "visual three six right": "36R"
+      },
+      "ApproachFixes": {
+        "I6L": {
+          "bird": "BIIRD",
+          "camdy": "CAMDY",
+          "fun": "FUNNN",
+          "jovsa": "JOVSA",
+          "lamas": "LAMAS"
+        },
+        "I6R": {
+          "bald": "BALLD",
+          "finnley": "FNNLY",
+          "shoe": "SSHOE",
+          "zedku": "ZEDKU"
+        },
+        "R6L": {
+          "Hegvo": "HEGVO",
+          "Odine": "ODINE",
+          "Squatch": "SQWCH",
+          "Zilker": "ZILKR",
+          "angs": "ANGGS",
+          "bird": "BIIRD",
+          "bowties": "BOWTZ",
+          "camdy": "CAMDY",
+          "fun": "FUNNN",
+          "lady": "LAIDY",
+          "lamas": "LAMAS",
+          "lips": "LIPSS",
+          "poimm": "POIMM",
+          "smurf": "SMRFF",
+          "sukey": "SUKEY"
+        },
+        "R6R": {
+          "Blurg": "BLURG",
+          "R-force": "RFRCE",
+          "Treks": "TREKS",
+          "angs": "ANGGS",
+          "apale": "APALE",
+          "bald": "BALLD",
+          "bowties": "BOWTZ",
+          "finnley": "FNNLY",
+          "lady": "LAIDY",
+          "lips": "LIPSS",
+          "myope": "MYOPE",
+          "poimm": "POIMM",
+          "shoe": "SSHOE",
+          "smurf": "SMRFF",
+          "word": "WRRDD"
+        }
+      },
+      "STAR": "WLEEE7",
+      "Route": [
+        "BITER",
+        "MUSEC",
+        "TOONE",
+        "BOWTZ",
+        "SCUTE",
+        "KAUS"
+      ],
+      "Altitude": 12000,
+      "Heading": 285,
+      "Speed": 316,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Speedbird Twenty heavy climb via the Sydney\"",
+    "[local-stt] normalized words: [speedbird 20 heavy climb via the sydney]",
+    "[local-stt] tokens: 7",
+    "[local-stt]   token[0]: Text=\"speedbird\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"20\" Type=1 Value=20",
+    "[local-stt]   token[2]: Text=\"heavy\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"climb\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"via\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"the\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"sydney\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 7 tokens, 6 aircraft",
+    "[local-stt]   detected \"heavy\" in callsign region, filtering to 1 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 3 tokens, 1 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Speedbird 20 heavy\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Speedbird 20 heavy\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"Speedbird 20 heavy\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Speedbird 20 heavy\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 2 results",
+    "[local-stt]     result 0: \"Speedbird 20 heavy\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Speedbird 20 heavy\" (airline=0.437, flight=0.000, skip=2)",
+    "[local-stt]     pattern \"airline_only\": selected \"Speedbird 20 heavy\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Speedbird 20 heavy\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Speedbird 20 heavy\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"Speedbird 20 heavy\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"BAW20\" (spokenKey=\"Speedbird 20 heavy\", skip=0): resolved",
+    "[local-stt] matchCallsignWithPatterns: 2 tokens, 6 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"Speedbird 20 heavy\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Speedbird 20 heavy\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 6 results",
+    "[local-stt]     result 0: \"Speedbird 20 heavy\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Southwest 93 13\" (airline=0.533, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"ExecJet 88 66\" (airline=0.503, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"United 77 27\" (airline=0.519, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Delta 41 zero four\" (airline=0.437, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Speedbird 20 heavy\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Speedbird 20 heavy\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Speedbird 20 heavy\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"Speedbird 20 heavy\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"BAW20\" (spokenKey=\"Speedbird 20 heavy\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"BAW20\" SpokenKey=\"Speedbird 20 heavy\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"departure\" Altitude=4445 Fixes=6 Approaches=0 VisualApproaches=0 AssignedApproach=\"\" LAHSORunways=[]",
+    "[local-stt]   fix: \"zenzi\" -\u003e \"ZENZI\"",
+    "[local-stt]   fix: \"Austin Bergstrom\" -\u003e \"KAUS\"",
+    "[local-stt]   fix: \"Hook\" -\u003e \"HOOKK\"",
+    "[local-stt]   fix: \"Alexi\" -\u003e \"ILEXY\"",
+    "[local-stt]   fix: \"Jay-Jo\" -\u003e \"JAYJO\"",
+    "[local-stt]   fix: \"Asher\" -\u003e \"ASHRR\"",
+    "[local-stt] command tokens after disregard: 4",
+    "[local-stt]   token[0]: Text=\"climb\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"via\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"the\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"sydney\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 4 tokens",
+    "[local-stt]   extractSID: looking for SID=\"ILEXI4\" telephony=\"Alexey four\"",
+    "[local-stt]   extractSID: no match found",
+    "[local-stt]   extractSID: looking for SID=\"ILEXI4\" telephony=\"Alexey four\"",
+    "[local-stt]   extractSID: no match found",
+    "[local-stt]   extractSID: looking for SID=\"ILEXI4\" telephony=\"Alexey four\"",
+    "[local-stt]   extractSID: no match found",
+    "[local-stt]   extractSID: looking for SID=\"ILEXI4\" telephony=\"Alexey four\"",
+    "[local-stt]   extractSID: no match found",
+    "[local-stt]   extractSID: looking for SID=\"ILEXI4\" telephony=\"Alexey four\"",
+    "[local-stt]   extractSID: no match found",
+    "[local-stt]   extractSID: looking for SID=\"ILEXI4\" telephony=\"Alexey four\"",
+    "[local-stt]   extractSID: no match found",
+    "[local-stt]   extractSID: looking for SID=\"ILEXI4\" telephony=\"Alexey four\"",
+    "[local-stt]   extractSID: no match found",
+    "[local-stt]   extractSID: looking for SID=\"ILEXI4\" telephony=\"Alexey four\"",
+    "[local-stt]   extractSID: no match found",
+    "[local-stt]   extractSID: looking for SID=\"ILEXI4\" telephony=\"Alexey four\"",
+    "[local-stt]   extractSID: no match found",
+    "[local-stt]   extractSID: looking for SID=\"ILEXI4\" telephony=\"Alexey four\"",
+    "[local-stt]   extractSID: no match found",
+    "[local-stt]   extractSID: looking for SID=\"ILEXI4\" telephony=\"Alexey four\"",
+    "[local-stt]   extractSID: no match found",
+    "[local-stt]   extractSID: looking for SID=\"ILEXI4\" telephony=\"Alexey four\"",
+    "[local-stt]   extractSID: no match found",
+    "[local-stt]   extractSID: looking for SID=\"ILEXI4\" telephony=\"Alexey four\"",
+    "[local-stt]   extractSID: no match found",
+    "[local-stt]   extractSID: looking for SID=\"ILEXI4\" telephony=\"Alexey four\"",
+    "[local-stt]   extractSID: no match found",
+    "[local-stt]   extractSID: looking for SID=\"ILEXI4\" telephony=\"Alexey four\"",
+    "[local-stt]   extractSID: no match found",
+    "[local-stt]   extractSID: looking for SID=\"ILEXI4\" telephony=\"Alexey four\"",
+    "[local-stt]   extractSID: no match found",
+    "[local-stt]   extractSID: looking for SID=\"ILEXI4\" telephony=\"Alexey four\"",
+    "[local-stt]   extractSID: no match found",
+    "[local-stt]   no match at token[0]=\"climb\", skipping",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   no match at token[1]=\"via\", skipping",
+    "[local-stt]   skipping filler word: \"the\"",
+    "[local-stt]   no match at token[3]=\"sydney\", skipping",
+    "[local-stt]   beam final[0]: score=0.000 pos=4 commands=[]",
+    "[local-stt] ParseCommands: no commands found",
+    "[local-stt] parsed commands: [] (conf=0.00, kinds=0)",
+    "[local-stt] validated commands: [] (conf=0.00)",
+    "[local-stt] === DecodeTranscript END: \"BAW20 AGAIN\" (conf=1.00, time=533.1µs) ==="
+  ]
+}

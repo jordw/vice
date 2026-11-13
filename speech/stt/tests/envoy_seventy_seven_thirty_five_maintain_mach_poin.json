@@ -1,0 +1,554 @@
+{
+  "time": "2026-11-08T02:49:23.182303863Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Envoy seventy seven thirty five maintain mach point seven six or greater",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, uniform, alpha, information, Seever four, Riffle three, golfs, Atrec, Inwood, Drake, Rivet, Zing, Penny, Bossy, one seven left, one seven center, runway, I L S, United 42, United two 99, United one 83, Southwest one 18, Envoy 77 35, Delta 71 heavy, Delta 51, Delta 30 heavy, American 94 zero three heavy, American eight zero niner, American 53, American three 24, American 17, Aces, Fakey, Them, Yeah but, riffle, switch, Nuss, Sailor, Dimple, Just, Bridge, Neck, Axe, A-toka, Litter, beegee, TULSA, SPRINGFIELD, Chimley, Seever, Leather, BONHAM, RANGER, OKC Will Rogers World Airport, RICH MOUNTAIN, FORT SMITH, Dwine, MC ALESTER, Please, Dallas Fort Worth International Airport, Proud",
+  "whisper_duration_ms": 424.288,
+  "audio_duration_ms": 3528,
+  "processor": "GPU: NVIDIA GeForce GTX 1660 SUPER (6180MB)",
+  "whisper_model": "ggml-small.en-jlvatc-q5_0.bin",
+  "callsign": "ENY7735",
+  "command": "M76+",
+  "stt_aircraft": {
+    "American 17": {
+      "Callsign": "AAL17",
+      "AircraftType": "A321",
+      "Fixes": {
+        "Leather": "LETHR",
+        "Neck": "NECKK",
+        "Proud": "PROWD",
+        "Sailor": "SAYLR",
+        "Seever": "SEEVR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 17C": "I7C",
+        "ILS Runway 17L": "I7L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one seven center": "17C",
+        "visual approach runway one seven left": "17L",
+        "visual one seven center": "17C",
+        "visual one seven left": "17L",
+        "visual runway one seven center": "17C",
+        "visual runway one seven left": "17L"
+      },
+      "ApproachFixes": {
+        "I7C": {
+          "Bossy": "BOSSI",
+          "Jiffy": "JIFFY",
+          "Penny": "PENNY",
+          "Zing": "ZINGG"
+        },
+        "I7L": {
+          "Drake": "DRAAK",
+          "G. Bush": "GBUSH",
+          "Inwood": "INWOD",
+          "Rivet": "RIVET"
+        }
+      },
+      "STAR": "SEEVR4",
+      "Route": [
+        "PROWD",
+        "LETHR",
+        "NECKK",
+        "SAYLR",
+        "SEEVR",
+        "BRDJE",
+        "NUSSS",
+        "YAHBT",
+        "KDFW"
+      ],
+      "Altitude": 24000,
+      "Heading": 251,
+      "Speed": 391,
+      "AssignedAltitude": 24000,
+      "State": "arrival",
+      "ControllerFrequency": "42",
+      "TrackingController": "42",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13L",
+        "31R"
+      ]
+    },
+    "American 53": {
+      "Callsign": "AAL53",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Chimley": "CHMLI",
+        "Just": "JUSST",
+        "Please": "PLEZE",
+        "Them": "THEMM",
+        "switch": "SWTCH"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 17C": "I7C",
+        "ILS Runway 17L": "I7L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one seven center": "17C",
+        "visual approach runway one seven left": "17L",
+        "visual one seven center": "17C",
+        "visual one seven left": "17L",
+        "visual runway one seven center": "17C",
+        "visual runway one seven left": "17L"
+      },
+      "ApproachFixes": {
+        "I7C": {
+          "Bossy": "BOSSI",
+          "Jiffy": "JIFFY",
+          "Penny": "PENNY",
+          "Zing": "ZINGG"
+        },
+        "I7L": {
+          "Drake": "DRAAK",
+          "G. Bush": "GBUSH",
+          "Inwood": "INWOD",
+          "Rivet": "RIVET"
+        }
+      },
+      "STAR": "SEEVR4",
+      "Route": [
+        "PLEZE",
+        "CHMLI",
+        "JUSST",
+        "SWTCH",
+        "THEMM",
+        "SEEVR",
+        "BRDJE",
+        "NUSSS",
+        "YAHBT",
+        "KDFW"
+      ],
+      "Altitude": 34000,
+      "Heading": 224,
+      "Speed": 439,
+      "AssignedAltitude": 34000,
+      "State": "arrival",
+      "ControllerFrequency": "42",
+      "TrackingController": "42",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13L",
+        "31R"
+      ]
+    },
+    "American 94 zero three heavy": {
+      "Callsign": "AAL9403",
+      "AircraftType": "B772",
+      "Fixes": {
+        "D F W": "KDFW",
+        "Dallas Fort Worth": "KDFW",
+        "MC ALESTER": "MLC",
+        "SPRINGFIELD": "SGF"
+      },
+      "Route": [
+        "MLC",
+        "SGF",
+        "KORD"
+      ],
+      "Altitude": 25239,
+      "Heading": 26,
+      "Speed": 441,
+      "AssignedAltitude": 35000,
+      "State": "overflight",
+      "ControllerFrequency": "50",
+      "TrackingController": "50"
+    },
+    "American eight zero niner": {
+      "Callsign": "AAL809",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Leather": "LETHR",
+        "Neck": "NECKK",
+        "Proud": "PROWD",
+        "Sailor": "SAYLR",
+        "Seever": "SEEVR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 17C": "I7C",
+        "ILS Runway 17L": "I7L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one seven center": "17C",
+        "visual approach runway one seven left": "17L",
+        "visual one seven center": "17C",
+        "visual one seven left": "17L",
+        "visual runway one seven center": "17C",
+        "visual runway one seven left": "17L"
+      },
+      "ApproachFixes": {
+        "I7C": {
+          "Bossy": "BOSSI",
+          "Jiffy": "JIFFY",
+          "Penny": "PENNY",
+          "Zing": "ZINGG"
+        },
+        "I7L": {
+          "Drake": "DRAAK",
+          "G. Bush": "GBUSH",
+          "Inwood": "INWOD",
+          "Rivet": "RIVET"
+        }
+      },
+      "STAR": "SEEVR4",
+      "Route": [
+        "PROWD",
+        "LETHR",
+        "NECKK",
+        "SAYLR",
+        "SEEVR",
+        "BRDJE",
+        "NUSSS",
+        "YAHBT",
+        "KDFW"
+      ],
+      "Altitude": 34000,
+      "Heading": 250,
+      "Speed": 415,
+      "AssignedAltitude": 34000,
+      "State": "arrival",
+      "ControllerFrequency": "42",
+      "TrackingController": "42",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13L",
+        "31R"
+      ]
+    },
+    "American three 24": {
+      "Callsign": "AAL324",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Bridge": "BRDJE",
+        "D F W": "KDFW",
+        "Dallas Fort Worth": "KDFW",
+        "Nuss": "NUSSS",
+        "Seever": "SEEVR",
+        "Yeah but": "YAHBT"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 17C": "I7C",
+        "ILS Runway 17L": "I7L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one seven center": "17C",
+        "visual approach runway one seven left": "17L",
+        "visual one seven center": "17C",
+        "visual one seven left": "17L",
+        "visual runway one seven center": "17C",
+        "visual runway one seven left": "17L"
+      },
+      "ApproachFixes": {
+        "I7C": {
+          "Bossy": "BOSSI",
+          "Jiffy": "JIFFY",
+          "Penny": "PENNY",
+          "Zing": "ZINGG"
+        },
+        "I7L": {
+          "Drake": "DRAAK",
+          "G. Bush": "GBUSH",
+          "Inwood": "INWOD",
+          "Rivet": "RIVET"
+        }
+      },
+      "STAR": "SEEVR4",
+      "Route": [
+        "SEEVR",
+        "BRDJE",
+        "NUSSS",
+        "YAHBT",
+        "KDFW"
+      ],
+      "Altitude": 20087,
+      "Heading": 221,
+      "Speed": 342,
+      "AssignedAltitude": 24000,
+      "AssignedSpeed": 250,
+      "State": "arrival",
+      "ControllerFrequency": "42",
+      "TrackingController": "42",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13L",
+        "31R"
+      ]
+    },
+    "Delta 30 heavy": {
+      "Callsign": "DAL30",
+      "AircraftType": "A359",
+      "Fixes": {
+        "Dwine": "DWINE",
+        "TULSA": "TUL"
+      },
+      "Route": [
+        "DWINE",
+        "TUL",
+        "KMSP"
+      ],
+      "Altitude": 33000,
+      "Heading": 9,
+      "Speed": 488,
+      "AssignedAltitude": 33000,
+      "State": "overflight",
+      "ControllerFrequency": "48",
+      "TrackingController": "48"
+    },
+    "Delta 51": {
+      "Callsign": "DAL51",
+      "AircraftType": "B752",
+      "Fixes": {
+        "FORT SMITH": "FSM",
+        "beegee": "BEGEE"
+      },
+      "Route": [
+        "FSM",
+        "BEGEE",
+        "MEMFS",
+        "KATL"
+      ],
+      "Altitude": 31000,
+      "Heading": 84,
+      "Speed": 501,
+      "AssignedAltitude": 31000,
+      "State": "overflight",
+      "ControllerFrequency": "50",
+      "TrackingController": "50"
+    },
+    "Delta 71 heavy": {
+      "Callsign": "DAL71",
+      "AircraftType": "A359",
+      "Fixes": {
+        "Litter": "LITTR",
+        "RICH MOUNTAIN": "PGO"
+      },
+      "Route": [
+        "PGO",
+        "LITTR",
+        "KATL"
+      ],
+      "Altitude": 33000,
+      "Heading": 71,
+      "Speed": 529,
+      "AssignedAltitude": 33000,
+      "State": "overflight",
+      "ControllerFrequency": "48",
+      "TrackingController": "48"
+    },
+    "Envoy 77 35": {
+      "Callsign": "ENY7735",
+      "LastAddressed": true,
+      "AircraftType": "E75L",
+      "Fixes": {
+        "D F W": "KDFW",
+        "Dallas Fort Worth": "KDFW",
+        "FORT SMITH": "FSM",
+        "MC ALESTER": "MLC",
+        "Springfield Branson National": "KSGF"
+      },
+      "Route": [
+        "MLC",
+        "FSM",
+        "KSGF"
+      ],
+      "Altitude": 27371,
+      "Heading": 26,
+      "Speed": 462,
+      "AssignedAltitude": 35000,
+      "AssignedSpeed": "M76",
+      "State": "overflight",
+      "ControllerFrequency": "48",
+      "TrackingController": "48"
+    },
+    "Southwest one 18": {
+      "Callsign": "SWA118",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Aces": "AACES",
+        "Dimple": "DIMPL",
+        "Dwine": "DWINE",
+        "Fakey": "FAKEY",
+        "OKC Will Rogers World": "KOKC",
+        "riffle": "RIFFL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 17L": "I7L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one seven left": "17L",
+        "visual one seven left": "17L",
+        "visual runway one seven left": "17L"
+      },
+      "ApproachFixes": {
+        "I7L": {
+          "Atrec": "ATREC",
+          "Hangs": "HANGS",
+          "golfs": "GOLFS"
+        }
+      },
+      "STAR": "RIFFL3",
+      "Route": [
+        "DWINE",
+        "DIMPL",
+        "RIFFL",
+        "FAKEY",
+        "AACES",
+        "KOKC"
+      ],
+      "Altitude": 23992,
+      "Heading": 277,
+      "Speed": 359,
+      "AssignedAltitude": 30000,
+      "State": "arrival",
+      "ControllerFrequency": "50",
+      "TrackingController": "OOO1W"
+    },
+    "United 42": {
+      "Callsign": "UAL42",
+      "AircraftType": "B39M",
+      "Fixes": {
+        "Axe": "AXXEE",
+        "BONHAM": "BYP",
+        "TULSA": "TUL"
+      },
+      "Route": [
+        "BYP",
+        "AXXEE",
+        "TUL",
+        "BUM",
+        "KORD"
+      ],
+      "Altitude": 35000,
+      "Heading": 42,
+      "Speed": 494,
+      "AssignedAltitude": 35000,
+      "State": "overflight",
+      "ControllerFrequency": "50",
+      "TrackingController": "50"
+    },
+    "United one 83": {
+      "Callsign": "UAL183",
+      "AircraftType": "B739",
+      "Fixes": {
+        "A-toka": "ATOKA",
+        "Dwine": "DWINE",
+        "RANGER": "FUZ"
+      },
+      "Route": [
+        "DWINE",
+        "ATOKA",
+        "FUZ",
+        "KIAH"
+      ],
+      "Altitude": 30000,
+      "Heading": 204,
+      "Speed": 428,
+      "AssignedAltitude": 30000,
+      "State": "overflight",
+      "ControllerFrequency": "50",
+      "TrackingController": "50"
+    },
+    "United two 99": {
+      "Callsign": "UAL299",
+      "AircraftType": "A21N",
+      "Fixes": {
+        "George Bush Intercontinental": "KIAH",
+        "RANGER": "FUZ"
+      },
+      "Route": [
+        "FUZ",
+        "KIAH"
+      ],
+      "Altitude": 32000,
+      "Heading": 202,
+      "Speed": 433,
+      "AssignedAltitude": 32000,
+      "State": "overflight",
+      "ControllerFrequency": "50",
+      "TrackingController": "50"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Envoy seventy seven thirty five maintain mach point seven six or greater\"",
+    "[local-stt] normalized words: [envoy 77 35 maintain mach point 7 6 or greater]",
+    "[local-stt] tokens: 9",
+    "[local-stt]   token[0]: Text=\"envoy\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"77\" Type=1 Value=77",
+    "[local-stt]   token[2]: Text=\"35\" Type=1 Value=35",
+    "[local-stt]   token[3]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"mach\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"point\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"76\" Type=1 Value=76",
+    "[local-stt]   token[7]: Text=\"or\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"greater\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 9 tokens, 13 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 9 tokens, 13 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Envoy 77 35\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Envoy 77 35\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"Envoy 77 35\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Envoy 77 35\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 26 results",
+    "[local-stt]     result 0: \"Delta 71 heavy\" (airline=0.467, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Delta 30 heavy\" (airline=0.467, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Southwest one 18\" (airline=0.437, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"American 53\" (airline=0.442, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"United two 99\" (airline=0.456, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Envoy 77 35\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"Envoy 77 35\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Envoy 77 35\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"Envoy 77 35\" (airline=0.500, flight=0.700, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Envoy 77 35\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"ENY7735\" (spokenKey=\"Envoy 77 35\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"ENY7735\" SpokenKey=\"Envoy 77 35\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"overflight\" Altitude=27371 Fixes=5 Approaches=0 VisualApproaches=0 AssignedApproach=\"\" LAHSORunways=[]",
+    "[local-stt]   fix: \"D F W\" -\u003e \"KDFW\"",
+    "[local-stt]   fix: \"MC ALESTER\" -\u003e \"MLC\"",
+    "[local-stt]   fix: \"FORT SMITH\" -\u003e \"FSM\"",
+    "[local-stt]   fix: \"Springfield Branson National\" -\u003e \"KSGF\"",
+    "[local-stt]   fix: \"Dallas Fort Worth\" -\u003e \"KDFW\"",
+    "[local-stt] command tokens after disregard: 6",
+    "[local-stt]   token[0]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"mach\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"point\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"76\" Type=1 Value=76",
+    "[local-stt]   token[4]: Text=\"or\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"greater\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 6 tokens",
+    "[local-stt]   matched command: \"M76+\" [mach_or_greater] (pos=0, conf=1.00, consumed=6, isThen=false)",
+    "[local-stt]   matched command: \"M76\" [maintain_mach] (pos=0, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[0]=\"maintain\", skipping",
+    "[local-stt]   no match at token[4]=\"or\", skipping",
+    "[local-stt]   matched command: \"M76+\" [mach_or_greater] (pos=1, conf=1.00, consumed=5, isThen=false)",
+    "[local-stt]   matched command: \"M76\" [mach_only] (pos=1, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[1]=\"mach\", skipping",
+    "[local-stt]   no match at token[5]=\"greater\", skipping",
+    "[local-stt]   no match at token[4]=\"or\", skipping",
+    "[local-stt]   no match at token[5]=\"greater\", skipping",
+    "[local-stt]   beam final[0]: score=3.587 pos=6 commands=[M76+]",
+    "[local-stt]   beam final[1]: score=2.286 pos=6 commands=[M76]",
+    "[local-stt]   beam final[2]: score=0.687 pos=6 commands=[M76+]",
+    "[local-stt]   beam final[3]: score=-0.614 pos=6 commands=[M76]",
+    "[local-stt] ParseCommands: result=[M76+] (avgConf=1.00)",
+    "[local-stt] parsed commands: [M76+] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [M76+] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"ENY7735 M76+\" (conf=1.00, time=2.5704ms) ==="
+  ]
+}

@@ -1,0 +1,993 @@
+{
+  "time": "2026-11-02T20:48:47.066255022Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:668:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "exit jet forty six forty four cleared visual approach runway one zero left contact Fort Lauderdale Executive Tower",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, tango, mike, hotel, foxtrot, information, Vice two, Sandbar three, Olahs three, Frogs five, Cuda three, Bonefish three, Bahia three, Hurricane four, Folz three, Haxam, VIRGINIA KEY, Juled, Jarno, Woodip, copra, chrome, Bozzy, Paboy, Vicuv, Bracey, Froth, Fender, Havoc, worppe, Fogso, Blame, Bezer, Bunker, Vanuy, Jepy, Ogihi, Yely, Siol, Warrior, gamvy, Holid, FORT LAUDERDALE, eight left, niner right, eight right, one zero right, one zero left, niner left, niner, one two, runway, zulu, yankee, r-nav, Localizer, I L S, UPS three 43 heavy, Flexjet two 88, Lan Chile six 26, JetBlue 63 56, ExecJet 46 44, ExecJet 39 42, ExecJet 33 48, ExecJet 15 22, Speedbird 39 41 heavy, Air France 36 delta tango heavy, American one 23, piano, Okane, Gloria, Sized, DOLPHIN, Wanar, Manny, Bills, Ines, Bahia, Kpasa, Bepac, Blimy, Dahlia, grit, Kera, pyros, Serif, Gucci, Summers, Niblet, Costio, Leg, Hulky, Pads, Frogz, Black, Loker, Fende, Gozzer, live, Raben, Ollas, Morea, Twinkle, enver, Jamas, Hurcin, Cuda, Bnfsh, Folz, Deals, Fort Lauderdale Hollywood International Airport, Fort Lauderdale Executive Airport, Miami Executive Airport, Jones, Miami-Opa Locka Executive Airport, Miami International Airport, Mark, Salt",
+  "whisper_duration_ms": 361.868,
+  "audio_duration_ms": 5576,
+  "processor": "GPU: NVIDIA GeForce RTX 5070 Ti (16211MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "EJA4644",
+  "command": "SAYAGAIN/APPROACH TO",
+  "reason": "a clear approach clearance for a runway the aircraft does not have; must not be a direct-to",
+  "stt_aircraft": {
+    "Air France 36 delta tango heavy": {
+      "Callsign": "AFR36DT",
+      "LastAddressed": true,
+      "AircraftType": "A332",
+      "Fixes": {
+        "Folz": "FOLZZ",
+        "Gozzer": "GOZZR",
+        "Mark": "MARCK",
+        "Miami": "KMIA",
+        "Summers": "SUMRS"
+      },
+      "SID": "FOLZZ3",
+      "Route": [
+        "MARCK",
+        "FOLZZ",
+        "GOZZR",
+        "SUMRS",
+        "KANUX",
+        "SAVON",
+        "JIMAC",
+        "BALOO",
+        "JSY",
+        "LFPG"
+      ],
+      "Altitude": 5309,
+      "Heading": 54,
+      "Speed": 267,
+      "State": "departure",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D"
+    },
+    "American one 23": {
+      "Callsign": "AAL123",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Deals": "DEALZ",
+        "Gnarl": "GNARL",
+        "Hurcin": "HURCN",
+        "Jones": "JOENZ",
+        "Miami": "KMIA",
+        "Niblet": "NIBLT",
+        "Salt": "CSALT",
+        "Theuu": "THEUU",
+        "live": "LIIVV",
+        "smells": "SMELZ"
+      },
+      "SID": "HURCN4",
+      "Route": [
+        "CSALT",
+        "DEALZ",
+        "LIIVV",
+        "NIBLT",
+        "JOENZ",
+        "HURCN",
+        "THEUU",
+        "GNARL",
+        "SMELZ",
+        "PATOY",
+        "DEANR",
+        "MICES",
+        "JAWJA",
+        "DEEDA",
+        "VLKNN",
+        "GETME",
+        "BEATS",
+        "DITZL",
+        "VISQA",
+        "CRELL",
+        "FAM",
+        "SLVER",
+        "STL",
+        "IRK",
+        "OVR",
+        "ONL",
+        "RAP",
+        "BIL",
+        "EPH",
+        "KSEA"
+      ],
+      "Altitude": 2663,
+      "Heading": 91,
+      "Speed": 208,
+      "State": "departure",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D"
+    },
+    "ExecJet 15 22": {
+      "Callsign": "EJA1522",
+      "AircraftType": "C560",
+      "Fixes": {
+        "Bepac": "BEPAC",
+        "Cuda": "CUUDA",
+        "Loker": "LOKKR",
+        "Okane": "OKANE",
+        "Opa Locka": "KOPF",
+        "Sazbo": "SAZBO",
+        "Serif": "SERIF",
+        "Sized": "SIZED",
+        "Wanar": "WANAR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 12": "I12",
+        "ILS Runway 9L": "I9L",
+        "RNAV Runway 12": "R12",
+        "RNAV Runway 9L": "R9L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway niner left": "9L",
+        "visual approach runway one two": "12",
+        "visual niner left": "9L",
+        "visual one two": "12",
+        "visual runway niner left": "9L",
+        "visual runway one two": "12"
+      },
+      "ApproachFixes": {
+        "I12": {
+          "Jarno": "JARNO",
+          "Zikna": "ZIKNA"
+        },
+        "I9L": {
+          "Okane": "OKANE",
+          "Sazbo": "SAZBO",
+          "Sized": "SIZED"
+        },
+        "R12": {
+          "Jarno": "JARNO",
+          "Woodip": "WUDIP",
+          "Zikna": "ZIKNA"
+        },
+        "R9L": {
+          "Okane": "OKANE",
+          "Sazbo": "SAZBO",
+          "Sized": "SIZED",
+          "Zolta": "ZOLTA"
+        }
+      },
+      "AssignedApproach": "ILS Runway 9L",
+      "STAR": "CUUDA3",
+      "Route": [
+        "CUUDA",
+        "LOKKR",
+        "SERIF",
+        "BEPAC",
+        "WANAR",
+        "KOPF"
+      ],
+      "Altitude": 11181,
+      "Heading": 208,
+      "Speed": 310,
+      "State": "arrival",
+      "ControllerFrequency": "1R",
+      "TrackingController": "1R",
+      "LAHSORunways": [
+        "9L",
+        "27R",
+        "9R",
+        "27L",
+        "12",
+        "30"
+      ]
+    },
+    "ExecJet 33 48": {
+      "Callsign": "EJA3348",
+      "AircraftType": "GLEX",
+      "Fixes": {
+        "Black": "BLAAK",
+        "Hurcin": "HURCN",
+        "Jones": "JOENZ",
+        "Kpasa": "KPASA",
+        "Opa Locka": "KOPF",
+        "pyros": "PYROS"
+      },
+      "SID": "HURCN4",
+      "Route": [
+        "JOENZ",
+        "HURCN",
+        "BLAAK",
+        "PYROS",
+        "KPASA",
+        "DOFFY",
+        "CAMJO",
+        "VXV",
+        "ROYYZ",
+        "HEVAN",
+        "POKTE",
+        "BONNT",
+        "KMDW"
+      ],
+      "Altitude": 5442,
+      "Heading": 330,
+      "Speed": 277,
+      "AssignedHeading": 330,
+      "State": "departure",
+      "ControllerFrequency": "1Z",
+      "TrackingController": "1Z"
+    },
+    "ExecJet 39 42": {
+      "Callsign": "EJA3942",
+      "AircraftType": "GLEX",
+      "Fixes": {
+        "Frogz": "FROGZ",
+        "Jamas": "JAMAS",
+        "Miami Executive": "KTMB",
+        "Tamiami": "KTMB"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 9R": "I9R",
+        "RNAV Runway 9L": "R9L",
+        "RNAV Runway 9R": "R9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway niner left": "9L",
+        "visual approach runway niner right": "9R",
+        "visual niner left": "9L",
+        "visual niner right": "9R",
+        "visual runway niner left": "9L",
+        "visual runway niner right": "9R"
+      },
+      "ApproachFixes": {
+        "I9R": {
+          "Layden": "LAYDN",
+          "VIRGINIA KEY": "VKZ"
+        },
+        "R9L": {
+          "DOLPHIN": "DHP",
+          "Fogso": "FOGSO",
+          "Hasdu": "HASDU",
+          "Jogno": "JOGNO",
+          "Juled": "JULED",
+          "VIRGINIA KEY": "VKZ"
+        },
+        "R9R": {
+          "DOLPHIN": "DHP",
+          "Fogso": "FOGSO",
+          "Haxam": "HAXAM",
+          "Layden": "LAYDN",
+          "VIRGINIA KEY": "VKZ"
+        }
+      },
+      "STAR": "FROGZ5",
+      "Route": [
+        "JAMAS",
+        "FROGZ",
+        "KTMB"
+      ],
+      "Altitude": 21000,
+      "Heading": 122,
+      "Speed": 411,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "13",
+        "31",
+        "13",
+        "31"
+      ]
+    },
+    "ExecJet 46 44": {
+      "Callsign": "EJA4644",
+      "AircraftType": "C750",
+      "Fixes": {
+        "Fort Lauderdale Executive": "KFXE",
+        "Pads": "PADDS",
+        "enver": "ENVER"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 9": "I9",
+        "RNAV Runway 9": "R9"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway niner": "9",
+        "visual niner": "9",
+        "visual runway niner": "9"
+      },
+      "ApproachFixes": {
+        "I9": {
+          "Pads": "PADDS",
+          "enver": "ENVER"
+        },
+        "R9": {
+          "Pads": "PADDS",
+          "Tube": "TRUBE",
+          "enver": "ENVER"
+        }
+      },
+      "AssignedApproach": "ILS Runway 9",
+      "STAR": "OLAHS3",
+      "Route": [
+        "KFXE"
+      ],
+      "Altitude": 3000,
+      "Heading": 299,
+      "Speed": 273,
+      "State": "arrival",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D",
+      "LAHSORunways": [
+        "13",
+        "31"
+      ]
+    },
+    "Flexjet two 88": {
+      "Callsign": "LXJ288",
+      "AircraftType": "CL35",
+      "Fixes": {
+        "Ollas": "OLAHS",
+        "Opa Locka": "KOPF"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 12": "I12",
+        "ILS Runway 9L": "I9L",
+        "RNAV Runway 12": "R12",
+        "RNAV Runway 9L": "R9L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway niner left": "9L",
+        "visual approach runway one two": "12",
+        "visual niner left": "9L",
+        "visual one two": "12",
+        "visual runway niner left": "9L",
+        "visual runway one two": "12"
+      },
+      "ApproachFixes": {
+        "I12": {
+          "Jarno": "JARNO",
+          "Zikna": "ZIKNA"
+        },
+        "I9L": {
+          "Okane": "OKANE",
+          "Sazbo": "SAZBO",
+          "Sized": "SIZED"
+        },
+        "R12": {
+          "Jarno": "JARNO",
+          "Woodip": "WUDIP",
+          "Zikna": "ZIKNA"
+        },
+        "R9L": {
+          "Okane": "OKANE",
+          "Sazbo": "SAZBO",
+          "Sized": "SIZED",
+          "Zolta": "ZOLTA"
+        }
+      },
+      "STAR": "OLAHS3",
+      "Route": [
+        "OLAHS",
+        "KOPF"
+      ],
+      "Altitude": 11000,
+      "Heading": 291,
+      "Speed": 331,
+      "State": "arrival",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D",
+      "LAHSORunways": [
+        "9L",
+        "27R",
+        "9R",
+        "27L",
+        "12",
+        "30"
+      ]
+    },
+    "JetBlue 63 56": {
+      "Callsign": "JBU6356",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Bahia": "BHHIA",
+        "Fort Lauderdale": "KFLL",
+        "Hulky": "HULKY",
+        "Kera": "KERRA",
+        "Twinkle": "TWNKL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 10L": "I0L",
+        "ILS Runway 10R": "I0R",
+        "RNAV Runway 10R": "R0R",
+        "RNAV Y Runway 10L": "RY0L",
+        "RNAV Z Runway 10L": "RZ0L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one zero left": "10L",
+        "visual approach runway one zero right": "10R",
+        "visual one zero left": "10L",
+        "visual one zero right": "10R",
+        "visual runway one zero left": "10L",
+        "visual runway one zero right": "10R"
+      },
+      "ApproachFixes": {
+        "I0L": {
+          "FORT LAUDERDALE": "FLL",
+          "Holid": "HOLID",
+          "Nova": "NOVAE",
+          "Warrior": "WAROR",
+          "gamvy": "GAMVE"
+        },
+        "I0R": {
+          "Bezer": "BEZER",
+          "Blame": "BLAIM",
+          "Bunker": "BUNKR",
+          "FORT LAUDERDALE": "FLL",
+          "Lori": "LORII"
+        },
+        "R0R": {
+          "Bezer": "BEZER",
+          "Blame": "BLAIM",
+          "Bunker": "BUNKR",
+          "FORT LAUDERDALE": "FLL",
+          "Lori": "LORII",
+          "Zalal": "ZALAL"
+        },
+        "RY0L": {
+          "Holid": "HOLID",
+          "Jepy": "IJEPY",
+          "Nova": "NOVAE",
+          "Ogihi": "OGIHI",
+          "Siol": "SIYOL",
+          "Vanuy": "VANUY",
+          "Warrior": "WAROR",
+          "Yely": "YELUY",
+          "gamvy": "GAMVE"
+        },
+        "RZ0L": {
+          "FORT LAUDERDALE": "FLL",
+          "Holid": "HOLID",
+          "Nova": "NOVAE",
+          "Paki": "PAKEE",
+          "Warrior": "WAROR",
+          "gamvy": "GAMVE"
+        }
+      },
+      "STAR": "BHHIA3",
+      "Route": [
+        "TWNKL",
+        "HULKY",
+        "KERRA",
+        "BHHIA",
+        "KFLL"
+      ],
+      "Altitude": 14617,
+      "Heading": 41,
+      "Speed": 359,
+      "State": "arrival",
+      "ControllerFrequency": "1R",
+      "TrackingController": "1R"
+    },
+    "Lan Chile six 26": {
+      "Callsign": "LAN626",
+      "AircraftType": "A319",
+      "Fixes": {
+        "Ines": "INESS",
+        "Leg": "LLEGG",
+        "Miami": "KMIA",
+        "Morea": "MOREA",
+        "grit": "GRITT"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 12": "I12",
+        "ILS Runway 8R": "I8R",
+        "ILS Runway 9": "I9",
+        "Localizer Runway 8L": "L8L",
+        "RNAV Runway 9": "R9",
+        "RNAV Y Runway 12": "RY12",
+        "RNAV Y Runway 8L": "RY8L",
+        "RNAV Y Runway 8R": "RY8R",
+        "RNAV Z Runway 12": "RZ12",
+        "RNAV Z Runway 8L": "RZ8L",
+        "RNAV Z Runway 8R": "RZ8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway eight left": "8L",
+        "visual approach runway eight right": "8R",
+        "visual approach runway niner": "9",
+        "visual approach runway one two": "12",
+        "visual eight left": "8L",
+        "visual eight right": "8R",
+        "visual niner": "9",
+        "visual one two": "12",
+        "visual runway eight left": "8L",
+        "visual runway eight right": "8R",
+        "visual runway niner": "9",
+        "visual runway one two": "12"
+      },
+      "ApproachFixes": {
+        "I12": {
+          "DOLPHIN": "DHP",
+          "Gloria": "GLRIA",
+          "Vepco": "VEPCO",
+          "piano": "PIANA"
+        },
+        "I8R": {
+          "Bozzy": "BOZZE",
+          "Lawn": "LAWNN",
+          "chrome": "KROME",
+          "copra": "COPRA"
+        },
+        "I9": {
+          "Ines": "INESS",
+          "Leg": "LLEGG",
+          "grit": "GRITT"
+        },
+        "L8L": {
+          "Licey": "LICEY",
+          "Paboy": "PABOY"
+        },
+        "R9": {
+          "Ines": "INESS",
+          "Leg": "LLEGG",
+          "Wukvu": "WUKVU",
+          "grit": "GRITT"
+        },
+        "RY12": {
+          "Fender": "FENDR",
+          "Gloria": "GLRIA",
+          "Havoc": "HAVOC",
+          "Vepco": "VEPCO",
+          "piano": "PIANA"
+        },
+        "RY8L": {
+          "Bracey": "BRACY",
+          "Froth": "FROTH",
+          "Kacde": "KACDE",
+          "Vicuv": "VICUV"
+        },
+        "RY8R": {
+          "Bozzy": "BOZZE",
+          "Lawn": "LAWNN",
+          "chrome": "KROME",
+          "copra": "COPRA"
+        },
+        "RZ12": {
+          "Fogso": "FOGSO",
+          "Gloria": "GLRIA",
+          "Vepco": "VEPCO",
+          "piano": "PIANA",
+          "worppe": "WORPP"
+        },
+        "RZ8L": {
+          "Bracey": "BRACY",
+          "Froth": "FROTH",
+          "Kacde": "KACDE",
+          "Vicuv": "VICUV"
+        },
+        "RZ8R": {
+          "Bozzy": "BOZZE",
+          "Lawn": "LAWNN",
+          "chrome": "KROME",
+          "copra": "COPRA"
+        }
+      },
+      "AssignedApproach": "ILS Runway 9",
+      "STAR": "SNDBR3",
+      "Route": [
+        "MOREA",
+        "LLEGG",
+        "KMIA"
+      ],
+      "Altitude": 14007,
+      "Heading": 20,
+      "Speed": 310,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1A",
+      "LAHSORunways": [
+        "8L",
+        "26R",
+        "8R",
+        "26L",
+        "9",
+        "27",
+        "12",
+        "30",
+        "12",
+        "30",
+        "12",
+        "30"
+      ]
+    },
+    "Speedbird 39 41 heavy": {
+      "Callsign": "BAW3941",
+      "AircraftType": "B772",
+      "Fixes": {
+        "Blimy": "BLYMY",
+        "Bnfsh": "BNFSH",
+        "Chum": "CHUUM",
+        "DOLPHIN": "DHP",
+        "Fende": "FENDE",
+        "Gloria": "GLRIA",
+        "Gucci": "GUCCI",
+        "Kpone": "KPONE",
+        "Madonna": "MDONA",
+        "Manny": "RMANI",
+        "Miami": "KMIA",
+        "Vepco": "VEPCO",
+        "piano": "PIANA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 12": "I12",
+        "ILS Runway 8R": "I8R",
+        "ILS Runway 9": "I9",
+        "Localizer Runway 8L": "L8L",
+        "RNAV Runway 9": "R9",
+        "RNAV Y Runway 12": "RY12",
+        "RNAV Y Runway 8L": "RY8L",
+        "RNAV Y Runway 8R": "RY8R",
+        "RNAV Z Runway 12": "RZ12",
+        "RNAV Z Runway 8L": "RZ8L",
+        "RNAV Z Runway 8R": "RZ8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway eight left": "8L",
+        "visual approach runway eight right": "8R",
+        "visual approach runway niner": "9",
+        "visual approach runway one two": "12",
+        "visual eight left": "8L",
+        "visual eight right": "8R",
+        "visual niner": "9",
+        "visual one two": "12",
+        "visual runway eight left": "8L",
+        "visual runway eight right": "8R",
+        "visual runway niner": "9",
+        "visual runway one two": "12"
+      },
+      "ApproachFixes": {
+        "I12": {
+          "DOLPHIN": "DHP",
+          "Gloria": "GLRIA",
+          "Vepco": "VEPCO",
+          "piano": "PIANA"
+        },
+        "I8R": {
+          "Bozzy": "BOZZE",
+          "Lawn": "LAWNN",
+          "chrome": "KROME",
+          "copra": "COPRA"
+        },
+        "I9": {
+          "Ines": "INESS",
+          "Leg": "LLEGG",
+          "grit": "GRITT"
+        },
+        "L8L": {
+          "Licey": "LICEY",
+          "Paboy": "PABOY"
+        },
+        "R9": {
+          "Ines": "INESS",
+          "Leg": "LLEGG",
+          "Wukvu": "WUKVU",
+          "grit": "GRITT"
+        },
+        "RY12": {
+          "Fender": "FENDR",
+          "Gloria": "GLRIA",
+          "Havoc": "HAVOC",
+          "Vepco": "VEPCO",
+          "piano": "PIANA"
+        },
+        "RY8L": {
+          "Bracey": "BRACY",
+          "Froth": "FROTH",
+          "Kacde": "KACDE",
+          "Vicuv": "VICUV"
+        },
+        "RY8R": {
+          "Bozzy": "BOZZE",
+          "Lawn": "LAWNN",
+          "chrome": "KROME",
+          "copra": "COPRA"
+        },
+        "RZ12": {
+          "Fogso": "FOGSO",
+          "Gloria": "GLRIA",
+          "Vepco": "VEPCO",
+          "piano": "PIANA",
+          "worppe": "WORPP"
+        },
+        "RZ8L": {
+          "Bracey": "BRACY",
+          "Froth": "FROTH",
+          "Kacde": "KACDE",
+          "Vicuv": "VICUV"
+        },
+        "RZ8R": {
+          "Bozzy": "BOZZE",
+          "Lawn": "LAWNN",
+          "chrome": "KROME",
+          "copra": "COPRA"
+        }
+      },
+      "AssignedApproach": "ILS Runway 12",
+      "STAR": "BNFSH3",
+      "Route": [
+        "BNFSH",
+        "FENDE",
+        "GUCCI",
+        "BLYMY",
+        "RMANI",
+        "MDONA",
+        "KPONE",
+        "CHUUM",
+        "KMIA"
+      ],
+      "Altitude": 13435,
+      "Heading": 240,
+      "Speed": 306,
+      "State": "arrival",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N",
+      "LAHSORunways": [
+        "8L",
+        "26R",
+        "8R",
+        "26L",
+        "9",
+        "27",
+        "12",
+        "30",
+        "12",
+        "30",
+        "12",
+        "30"
+      ]
+    },
+    "UPS three 43 heavy": {
+      "Callsign": "UPS343",
+      "AircraftType": "B763",
+      "Fixes": {
+        "Bills": "BILZZ",
+        "Costio": "CSTIO",
+        "Dahlia": "DAHLA",
+        "Ines": "INESS",
+        "Leg": "LLEGG",
+        "Miami": "KMIA",
+        "grit": "GRITT"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 12": "I12",
+        "ILS Runway 8R": "I8R",
+        "ILS Runway 9": "I9",
+        "Localizer Runway 8L": "L8L",
+        "RNAV Runway 9": "R9",
+        "RNAV Y Runway 12": "RY12",
+        "RNAV Y Runway 8L": "RY8L",
+        "RNAV Y Runway 8R": "RY8R",
+        "RNAV Z Runway 12": "RZ12",
+        "RNAV Z Runway 8L": "RZ8L",
+        "RNAV Z Runway 8R": "RZ8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway eight left": "8L",
+        "visual approach runway eight right": "8R",
+        "visual approach runway niner": "9",
+        "visual approach runway one two": "12",
+        "visual eight left": "8L",
+        "visual eight right": "8R",
+        "visual niner": "9",
+        "visual one two": "12",
+        "visual runway eight left": "8L",
+        "visual runway eight right": "8R",
+        "visual runway niner": "9",
+        "visual runway one two": "12"
+      },
+      "ApproachFixes": {
+        "I12": {
+          "DOLPHIN": "DHP",
+          "Gloria": "GLRIA",
+          "Vepco": "VEPCO",
+          "piano": "PIANA"
+        },
+        "I8R": {
+          "Bozzy": "BOZZE",
+          "Lawn": "LAWNN",
+          "chrome": "KROME",
+          "copra": "COPRA"
+        },
+        "I9": {
+          "Ines": "INESS",
+          "Leg": "LLEGG",
+          "grit": "GRITT"
+        },
+        "L8L": {
+          "Licey": "LICEY",
+          "Paboy": "PABOY"
+        },
+        "R9": {
+          "Ines": "INESS",
+          "Leg": "LLEGG",
+          "Wukvu": "WUKVU",
+          "grit": "GRITT"
+        },
+        "RY12": {
+          "Fender": "FENDR",
+          "Gloria": "GLRIA",
+          "Havoc": "HAVOC",
+          "Vepco": "VEPCO",
+          "piano": "PIANA"
+        },
+        "RY8L": {
+          "Bracey": "BRACY",
+          "Froth": "FROTH",
+          "Kacde": "KACDE",
+          "Vicuv": "VICUV"
+        },
+        "RY8R": {
+          "Bozzy": "BOZZE",
+          "Lawn": "LAWNN",
+          "chrome": "KROME",
+          "copra": "COPRA"
+        },
+        "RZ12": {
+          "Fogso": "FOGSO",
+          "Gloria": "GLRIA",
+          "Vepco": "VEPCO",
+          "piano": "PIANA",
+          "worppe": "WORPP"
+        },
+        "RZ8L": {
+          "Bracey": "BRACY",
+          "Froth": "FROTH",
+          "Kacde": "KACDE",
+          "Vicuv": "VICUV"
+        },
+        "RZ8R": {
+          "Bozzy": "BOZZE",
+          "Lawn": "LAWNN",
+          "chrome": "KROME",
+          "copra": "COPRA"
+        }
+      },
+      "AssignedApproach": "ILS Runway 9",
+      "STAR": "VIICE2",
+      "Route": [
+        "CSTIO",
+        "DAHLA",
+        "BILZZ",
+        "KMIA"
+      ],
+      "Altitude": 9017,
+      "Heading": 304,
+      "Speed": 285,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1A",
+      "LAHSORunways": [
+        "8L",
+        "26R",
+        "8R",
+        "26L",
+        "9",
+        "27",
+        "12",
+        "30",
+        "12",
+        "30",
+        "12",
+        "30"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"exit jet forty six forty four cleared visual approach runway one zero left contact Fort Lauderdale Executive Tower\"",
+    "[local-stt] normalized words: [exit jet 46 44 cleared visual approach runway 1 0 left contact fort lauderdale executive tower]",
+    "[local-stt] tokens: 15",
+    "[local-stt]   token[0]: Text=\"exit\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"jet\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"46\" Type=1 Value=46",
+    "[local-stt]   token[3]: Text=\"44\" Type=1 Value=44",
+    "[local-stt]   token[4]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"visual\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"10\" Type=1 Value=10",
+    "[local-stt]   token[9]: Text=\"left\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"contact\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"fort\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"lauderdale\" Type=0 Value=-1",
+    "[local-stt]   token[13]: Text=\"executive\" Type=0 Value=-1",
+    "[local-stt]   token[14]: Text=\"tower\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 15 tokens, 11 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 15 tokens, 11 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"ExecJet 46 44\" (airline=0.676, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"ExecJet 46 44\" (airline=0.492, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"airline_flight\": selected \"ExecJet 46 44\" (airline=0.68, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 17 results",
+    "[local-stt]     result 0: \"ExecJet 46 44\" (airline=0.676, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"ExecJet 39 42\" (airline=0.676, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"ExecJet 33 48\" (airline=0.676, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Speedbird 39 41 heavy\" (airline=0.454, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"JetBlue 63 56\" (airline=0.595, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"ExecJet 46 44\" (airline=0.68, flight=0.00, skip=0)",
+    "[local-stt]     pattern \"airline_only\": scoring rejected \"ExecJet 46 44\"",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"ExecJet 46 44\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 1: \"ExecJet 46 44\" (airline=0.500, flight=1.000, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"ExecJet 46 44\" (airline=0.50, flight=1.00, skip=1)",
+    "[local-stt]   best callsign candidate: \"EJA4644\" (conf=0.94, consumed=4, addressingForm=0, spokenKey=\"ExecJet 46 44\"; 1 candidates)",
+    "[local-stt] callsign match: Callsign=\"EJA4644\" SpokenKey=\"ExecJet 46 44\" Conf=0.94 Consumed=4",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=3000 Fixes=3 Approaches=2 VisualApproaches=3 AssignedApproach=\"ILS Runway 9\" LAHSORunways=[13 31]",
+    "[local-stt]   fix: \"Fort Lauderdale Executive\" -\u003e \"KFXE\"",
+    "[local-stt]   fix: \"enver\" -\u003e \"ENVER\"",
+    "[local-stt]   fix: \"Pads\" -\u003e \"PADDS\"",
+    "[local-stt]   approach: \"ILS Runway 9\" -\u003e \"I9\"",
+    "[local-stt]   approach: \"RNAV Runway 9\" -\u003e \"R9\"",
+    "[local-stt]   visual approach: \"visual runway niner\" -\u003e \"9\"",
+    "[local-stt]   visual approach: \"visual approach runway niner\" -\u003e \"9\"",
+    "[local-stt]   visual approach: \"visual niner\" -\u003e \"9\"",
+    "[local-stt] command tokens after disregard: 11",
+    "[local-stt]   token[0]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"visual\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"10\" Type=1 Value=10",
+    "[local-stt]   token[5]: Text=\"left\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"contact\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"fort\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"lauderdale\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"executive\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"tower\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 11 tokens",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"visual\" against 3 fixes",
+    "[local-stt]   extractFix: no match found for \"visual\"",
+    "[local-stt]   matchGarbledApproach: digits=\"\" dir=- variant=\"\" -\u003e \"I9\" (score=2.6)",
+    "[local-stt]   matched command: \"CI9\" [cleared_approach] (pos=0, conf=0.87, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"cleared\", skipping",
+    "[local-stt]   matched command: \"\" [position_id] (pos=2, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[2]=\"approach\", skipping",
+    "[local-stt]   extractSTAR: looking for STAR=\"OLAHS3\" telephony=\"Olahs three\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   matched command: \"\" [position_id] (pos=1, conf=0.74, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[1]=\"visual\", skipping",
+    "[local-stt]   no match at token[3]=\"runway\", skipping",
+    "[local-stt]   no match at token[3]=\"runway\", skipping",
+    "[local-stt]   no match at token[3]=\"runway\", skipping",
+    "[local-stt]   matched command: \"\" [position_id] (pos=2, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[2]=\"approach\", skipping",
+    "[local-stt]   no match at token[4]=\"10\", skipping",
+    "[local-stt]   no match at token[4]=\"10\", skipping",
+    "[local-stt]   no match at token[4]=\"10\", skipping",
+    "[local-stt]   no match at token[3]=\"runway\", skipping",
+    "[local-stt]   no match at token[5]=\"left\", skipping",
+    "[local-stt]   no match at token[5]=\"left\", skipping",
+    "[local-stt]   no match at token[5]=\"left\", skipping",
+    "[local-stt]   no match at token[4]=\"10\", skipping",
+    "[local-stt]   matched command: \"TO\" [contact_facility_tower] (pos=6, conf=0.79, consumed=5, isThen=false)",
+    "[local-stt]   matched command: \"TO\" [contact_garbled_tower] (pos=6, conf=0.74, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[6]=\"contact\", skipping",
+    "[local-stt]   matched command: \"TO\" [contact_facility_tower] (pos=6, conf=0.79, consumed=5, isThen=false)",
+    "[local-stt]   matched command: \"TO\" [contact_garbled_tower] (pos=6, conf=0.74, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[6]=\"contact\", skipping",
+    "[local-stt]   matched command: \"TO\" [contact_facility_tower] (pos=6, conf=0.79, consumed=5, isThen=false)",
+    "[local-stt]   matched command: \"TO\" [contact_garbled_tower] (pos=6, conf=0.74, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[6]=\"contact\", skipping",
+    "[local-stt]   no match at token[5]=\"left\", skipping",
+    "[local-stt]   matched command: \"TO\" [facility_tower] (pos=8, conf=0.67, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[8]=\"lauderdale\", skipping",
+    "[local-stt]   beam final[0]: score=3.299 pos=11 commands=[CI9 TO]",
+    "[local-stt]   beam final[1]: score=2.596 pos=11 commands=[CI9 TO TO]",
+    "[local-stt]   beam final[2]: score=0.399 pos=11 commands=[CI9 TO]",
+    "[local-stt]   beam final[3]: score=0.089 pos=11 commands=[TO]",
+    "[local-stt] ParseCommands: result=[CI9 TO] (avgConf=0.83)",
+    "[local-stt] parsed commands: [CI9 TO] (conf=0.83, kinds=101)",
+    "[local-stt] validated commands: [CI9 TO] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"EJA4644 CI9 TO\" (conf=0.77, time=6.175ms) ==="
+  ]
+}

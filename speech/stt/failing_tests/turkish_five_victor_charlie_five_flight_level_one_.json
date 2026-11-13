@@ -1,0 +1,1054 @@
+{
+  "time": "2026-11-12T21:13:15.400224515Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Turkish five Victor Charlie Five flight level one four zero",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, romeo, information, VETIK2G, DUZLA2L, Odvas, Berev, Futna, three one left, three one right, runway, V O R, zulu, yankee, RNP, Localizer, I L S, Turkish five whiskey charlie, Turkish 18 34, Swiss niner 12 sierra, Scandinavian 60 romeo, Ryanair 10 kebeck whiskey, Sun Turk 68 52, Sun Turk 45 45, Malev six zero niner, Malev one 57, Lot seven foxtrot pahpah, Eurowings seven 70, Eurowings five juliet, Austrian seven 41, Aegean five 36, Jozep, Ulpax, Nicra, Ofena, Atico, Vetik, Duzla, Budapest Liszt Ferenc",
+  "whisper_duration_ms": 219.568,
+  "audio_duration_ms": 3272,
+  "processor": "GPU: AMD  Radeon RX 7800 XT (16368MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "THY5WC",
+  "command": "A140",
+  "reason": "flight level without a verb",
+  "stt_aircraft": {
+    "Aegean five 36": {
+      "Callsign": "AEE536",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Atico": "ATICO",
+        "Budapest Liszt Ferenc": "LHBP",
+        "Nicra": "NICRA",
+        "Ofena": "OFENA"
+      },
+      "CandidateApproaches": {
+        "ILS runway 31L": "I31L",
+        "ILS runway 31R": "I31R",
+        "Localizer runway 31L": "L31L",
+        "Localizer runway 31R": "L31R",
+        "RNP Y runway 31R": "RY31R",
+        "RNP Z runway 31R": "RZ31R",
+        "RNP runway 31L": "R31L",
+        "VOR Runway 31R": "V31R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one left": "31L",
+        "visual approach runway three one right": "31R",
+        "visual runway three one left": "31L",
+        "visual runway three one right": "31R",
+        "visual three one left": "31L",
+        "visual three one right": "31R"
+      },
+      "ApproachFixes": {
+        "I31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "I31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "L31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "L31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "R31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "RY31R": {
+          "Berev": "BEREV",
+          "Odvas": "ODVAS"
+        },
+        "RZ31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        }
+      },
+      "AssignedApproach": "ILS runway 31R",
+      "Route": [
+        "ATICO",
+        "LHBP"
+      ],
+      "Altitude": 6000,
+      "Heading": 49,
+      "Speed": 220,
+      "AssignedSpeed": 200,
+      "State": "arrival",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1A"
+    },
+    "Austrian seven 41": {
+      "Callsign": "AUA741",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Atico": "ATICO",
+        "Budapest Liszt Ferenc": "LHBP",
+        "Nicra": "NICRA",
+        "Ofena": "OFENA"
+      },
+      "CandidateApproaches": {
+        "ILS runway 31L": "I31L",
+        "ILS runway 31R": "I31R",
+        "Localizer runway 31L": "L31L",
+        "Localizer runway 31R": "L31R",
+        "RNP Y runway 31R": "RY31R",
+        "RNP Z runway 31R": "RZ31R",
+        "RNP runway 31L": "R31L",
+        "VOR Runway 31R": "V31R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one left": "31L",
+        "visual approach runway three one right": "31R",
+        "visual runway three one left": "31L",
+        "visual runway three one right": "31R",
+        "visual three one left": "31L",
+        "visual three one right": "31R"
+      },
+      "ApproachFixes": {
+        "I31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "I31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "L31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "L31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "R31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "RY31R": {
+          "Berev": "BEREV",
+          "Odvas": "ODVAS"
+        },
+        "RZ31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        }
+      },
+      "AssignedApproach": "ILS runway 31R",
+      "Route": [
+        "ATICO",
+        "LHBP"
+      ],
+      "Altitude": 4000,
+      "Heading": 112,
+      "Speed": 262,
+      "AssignedSpeed": 240,
+      "State": "arrival",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1A"
+    },
+    "Eurowings five juliet": {
+      "Callsign": "EWG5J",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Budapest Liszt Ferenc": "LHBP"
+      },
+      "CandidateApproaches": {
+        "ILS runway 31L": "I31L",
+        "ILS runway 31R": "I31R",
+        "Localizer runway 31L": "L31L",
+        "Localizer runway 31R": "L31R",
+        "RNP Y runway 31R": "RY31R",
+        "RNP Z runway 31R": "RZ31R",
+        "RNP runway 31L": "R31L",
+        "VOR Runway 31R": "V31R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one left": "31L",
+        "visual approach runway three one right": "31R",
+        "visual runway three one left": "31L",
+        "visual runway three one right": "31R",
+        "visual three one left": "31L",
+        "visual three one right": "31R"
+      },
+      "ApproachFixes": {
+        "I31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "I31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "L31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "L31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "R31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "RY31R": {
+          "Berev": "BEREV",
+          "Odvas": "ODVAS"
+        },
+        "RZ31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        }
+      },
+      "AssignedApproach": "ILS runway 31R",
+      "Route": [
+        "LHBP"
+      ],
+      "Altitude": 4000,
+      "Heading": 130,
+      "Speed": 251,
+      "AssignedHeading": 130,
+      "State": "arrival",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1A"
+    },
+    "Eurowings seven 70": {
+      "Callsign": "EWG770",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Atico": "ATICO",
+        "Budapest Liszt Ferenc": "LHBP",
+        "Nicra": "NICRA",
+        "Ofena": "OFENA"
+      },
+      "CandidateApproaches": {
+        "ILS runway 31L": "I31L",
+        "ILS runway 31R": "I31R",
+        "Localizer runway 31L": "L31L",
+        "Localizer runway 31R": "L31R",
+        "RNP Y runway 31R": "RY31R",
+        "RNP Z runway 31R": "RZ31R",
+        "RNP runway 31L": "R31L",
+        "VOR Runway 31R": "V31R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one left": "31L",
+        "visual approach runway three one right": "31R",
+        "visual runway three one left": "31L",
+        "visual runway three one right": "31R",
+        "visual three one left": "31L",
+        "visual three one right": "31R"
+      },
+      "ApproachFixes": {
+        "I31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "I31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "L31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "L31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "R31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "RY31R": {
+          "Berev": "BEREV",
+          "Odvas": "ODVAS"
+        },
+        "RZ31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        }
+      },
+      "AssignedApproach": "ILS runway 31R",
+      "Route": [
+        "ATICO",
+        "LHBP"
+      ],
+      "Altitude": 4000,
+      "Heading": 127,
+      "Speed": 210,
+      "AssignedSpeed": 190,
+      "State": "arrival",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1A"
+    },
+    "Finnair 37 88": {
+      "Callsign": "FIN3788",
+      "AircraftType": "AT72",
+      "Fixes": {
+        "Atico": "ATICO",
+        "Budapest Liszt Ferenc": "LHBP",
+        "Lahor": "LAHOR",
+        "Lucla": "LUCLA",
+        "Nicra": "NICRA",
+        "Ofena": "OFENA",
+        "Ulpax": "ULPAX"
+      },
+      "CandidateApproaches": {
+        "ILS runway 31L": "I31L",
+        "ILS runway 31R": "I31R",
+        "Localizer runway 31L": "L31L",
+        "Localizer runway 31R": "L31R",
+        "RNP Y runway 31R": "RY31R",
+        "RNP Z runway 31R": "RZ31R",
+        "RNP runway 31L": "R31L",
+        "VOR Runway 31R": "V31R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one left": "31L",
+        "visual approach runway three one right": "31R",
+        "visual runway three one left": "31L",
+        "visual runway three one right": "31R",
+        "visual three one left": "31L",
+        "visual three one right": "31R"
+      },
+      "ApproachFixes": {
+        "I31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "I31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "L31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "L31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "R31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "RY31R": {
+          "Berev": "BEREV",
+          "Odvas": "ODVAS"
+        },
+        "RZ31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        }
+      },
+      "AssignedApproach": "ILS runway 31R",
+      "Route": [
+        "LAHOR",
+        "LUCLA",
+        "ULPAX",
+        "NICRA",
+        "LHBP"
+      ],
+      "Altitude": 14000,
+      "Heading": 185,
+      "Speed": 279,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "Lot seven foxtrot pahpah": {
+      "Callsign": "LOT7FP",
+      "AircraftType": "E190",
+      "Fixes": {
+        "Atico": "ATICO",
+        "Budapest Liszt Ferenc": "LHBP",
+        "Nicra": "NICRA",
+        "Ofena": "OFENA"
+      },
+      "CandidateApproaches": {
+        "ILS runway 31L": "I31L",
+        "ILS runway 31R": "I31R",
+        "Localizer runway 31L": "L31L",
+        "Localizer runway 31R": "L31R",
+        "RNP Y runway 31R": "RY31R",
+        "RNP Z runway 31R": "RZ31R",
+        "RNP runway 31L": "R31L",
+        "VOR Runway 31R": "V31R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one left": "31L",
+        "visual approach runway three one right": "31R",
+        "visual runway three one left": "31L",
+        "visual runway three one right": "31R",
+        "visual three one left": "31L",
+        "visual three one right": "31R"
+      },
+      "ApproachFixes": {
+        "I31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "I31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "L31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "L31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "R31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "RY31R": {
+          "Berev": "BEREV",
+          "Odvas": "ODVAS"
+        },
+        "RZ31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        }
+      },
+      "AssignedApproach": "ILS runway 31R",
+      "Route": [
+        "NICRA",
+        "LHBP"
+      ],
+      "Altitude": 6000,
+      "Heading": 130,
+      "Speed": 258,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "Malev one 57": {
+      "Callsign": "MAH157",
+      "AircraftType": "B736",
+      "Fixes": {
+        "Budapest Liszt Ferenc": "LHBP"
+      },
+      "CandidateApproaches": {
+        "ILS runway 31L": "I31L",
+        "ILS runway 31R": "I31R",
+        "Localizer runway 31L": "L31L",
+        "Localizer runway 31R": "L31R",
+        "RNP Y runway 31R": "RY31R",
+        "RNP Z runway 31R": "RZ31R",
+        "RNP runway 31L": "R31L",
+        "VOR Runway 31R": "V31R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one left": "31L",
+        "visual approach runway three one right": "31R",
+        "visual runway three one left": "31L",
+        "visual runway three one right": "31R",
+        "visual three one left": "31L",
+        "visual three one right": "31R"
+      },
+      "ApproachFixes": {
+        "I31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "I31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "L31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "L31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "R31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "RY31R": {
+          "Berev": "BEREV",
+          "Odvas": "ODVAS"
+        },
+        "RZ31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        }
+      },
+      "AssignedApproach": "ILS runway 31R",
+      "Route": [
+        "LHBP"
+      ],
+      "Altitude": 4000,
+      "Heading": 296,
+      "Speed": 225,
+      "State": "cleared approach",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "Malev six zero niner": {
+      "Callsign": "MAH609",
+      "LastAddressed": true,
+      "AircraftType": "B736",
+      "Fixes": {
+        "Atico": "ATICO",
+        "Budapest Liszt Ferenc": "LHBP",
+        "Nicra": "NICRA",
+        "Ofena": "OFENA",
+        "Ulpax": "ULPAX"
+      },
+      "CandidateApproaches": {
+        "ILS runway 31L": "I31L",
+        "ILS runway 31R": "I31R",
+        "Localizer runway 31L": "L31L",
+        "Localizer runway 31R": "L31R",
+        "RNP Y runway 31R": "RY31R",
+        "RNP Z runway 31R": "RZ31R",
+        "RNP runway 31L": "R31L",
+        "VOR Runway 31R": "V31R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one left": "31L",
+        "visual approach runway three one right": "31R",
+        "visual runway three one left": "31L",
+        "visual runway three one right": "31R",
+        "visual three one left": "31L",
+        "visual three one right": "31R"
+      },
+      "ApproachFixes": {
+        "I31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "I31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "L31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "L31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "R31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "RY31R": {
+          "Berev": "BEREV",
+          "Odvas": "ODVAS"
+        },
+        "RZ31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        }
+      },
+      "AssignedApproach": "ILS runway 31R",
+      "Route": [
+        "ULPAX",
+        "NICRA",
+        "LHBP"
+      ],
+      "Altitude": 13942,
+      "Heading": 126,
+      "Speed": 335,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "Ryanair 10 kebeck whiskey": {
+      "Callsign": "RYR10QW",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Atico": "ATICO",
+        "Budapest Liszt Ferenc": "LHBP",
+        "Jozep": "JOZEP",
+        "Nicra": "NICRA",
+        "Ofena": "OFENA"
+      },
+      "CandidateApproaches": {
+        "ILS runway 31L": "I31L",
+        "ILS runway 31R": "I31R",
+        "Localizer runway 31L": "L31L",
+        "Localizer runway 31R": "L31R",
+        "RNP Y runway 31R": "RY31R",
+        "RNP Z runway 31R": "RZ31R",
+        "RNP runway 31L": "R31L",
+        "VOR Runway 31R": "V31R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one left": "31L",
+        "visual approach runway three one right": "31R",
+        "visual runway three one left": "31L",
+        "visual runway three one right": "31R",
+        "visual three one left": "31L",
+        "visual three one right": "31R"
+      },
+      "ApproachFixes": {
+        "I31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "I31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "L31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "L31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "R31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "RY31R": {
+          "Berev": "BEREV",
+          "Odvas": "ODVAS"
+        },
+        "RZ31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        }
+      },
+      "AssignedApproach": "ILS runway 31R",
+      "Route": [
+        "JOZEP",
+        "ATICO",
+        "LHBP"
+      ],
+      "Altitude": 12000,
+      "Heading": 22,
+      "Speed": 315,
+      "State": "arrival",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1A"
+    },
+    "Scandinavian 60 romeo": {
+      "Callsign": "SAS60R",
+      "AircraftType": "AT76",
+      "Fixes": {
+        "Atico": "ATICO",
+        "Budapest Liszt Ferenc": "LHBP",
+        "Nicra": "NICRA",
+        "Ofena": "OFENA"
+      },
+      "CandidateApproaches": {
+        "ILS runway 31L": "I31L",
+        "ILS runway 31R": "I31R",
+        "Localizer runway 31L": "L31L",
+        "Localizer runway 31R": "L31R",
+        "RNP Y runway 31R": "RY31R",
+        "RNP Z runway 31R": "RZ31R",
+        "RNP runway 31L": "R31L",
+        "VOR Runway 31R": "V31R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one left": "31L",
+        "visual approach runway three one right": "31R",
+        "visual runway three one left": "31L",
+        "visual runway three one right": "31R",
+        "visual three one left": "31L",
+        "visual three one right": "31R"
+      },
+      "ApproachFixes": {
+        "I31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "I31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "L31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "L31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "R31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "RY31R": {
+          "Berev": "BEREV",
+          "Odvas": "ODVAS"
+        },
+        "RZ31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        }
+      },
+      "AssignedApproach": "ILS runway 31R",
+      "Route": [
+        "LHBP"
+      ],
+      "Altitude": 6000,
+      "Heading": 127,
+      "Speed": 258,
+      "AssignedHeading": 127,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "Sun Turk 45 45": {
+      "Callsign": "PGT4545",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Atico": "ATICO",
+        "Budapest Liszt Ferenc": "LHBP",
+        "Nicra": "NICRA",
+        "Ofena": "OFENA"
+      },
+      "CandidateApproaches": {
+        "ILS runway 31L": "I31L",
+        "ILS runway 31R": "I31R",
+        "Localizer runway 31L": "L31L",
+        "Localizer runway 31R": "L31R",
+        "RNP Y runway 31R": "RY31R",
+        "RNP Z runway 31R": "RZ31R",
+        "RNP runway 31L": "R31L",
+        "VOR Runway 31R": "V31R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one left": "31L",
+        "visual approach runway three one right": "31R",
+        "visual runway three one left": "31L",
+        "visual runway three one right": "31R",
+        "visual three one left": "31L",
+        "visual three one right": "31R"
+      },
+      "ApproachFixes": {
+        "I31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "I31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "L31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "L31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "R31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "RY31R": {
+          "Berev": "BEREV",
+          "Odvas": "ODVAS"
+        },
+        "RZ31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        }
+      },
+      "AssignedApproach": "ILS runway 31R",
+      "Route": [
+        "LHBP"
+      ],
+      "Altitude": 4000,
+      "Heading": 220,
+      "Speed": 203,
+      "AssignedHeading": 220,
+      "AssignedSpeed": 200,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "Sun Turk 68 52": {
+      "Callsign": "PGT6852",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Atico": "ATICO",
+        "Budapest Liszt Ferenc": "LHBP",
+        "Nicra": "NICRA",
+        "Ofena": "OFENA",
+        "Ulpax": "ULPAX"
+      },
+      "CandidateApproaches": {
+        "ILS runway 31L": "I31L",
+        "ILS runway 31R": "I31R",
+        "Localizer runway 31L": "L31L",
+        "Localizer runway 31R": "L31R",
+        "RNP Y runway 31R": "RY31R",
+        "RNP Z runway 31R": "RZ31R",
+        "RNP runway 31L": "R31L",
+        "VOR Runway 31R": "V31R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one left": "31L",
+        "visual approach runway three one right": "31R",
+        "visual runway three one left": "31L",
+        "visual runway three one right": "31R",
+        "visual three one left": "31L",
+        "visual three one right": "31R"
+      },
+      "ApproachFixes": {
+        "I31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "I31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "L31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "L31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        },
+        "R31L": {
+          "Atico": "ATICO",
+          "Futna": "FUTNA",
+          "Nicra": "NICRA"
+        },
+        "RY31R": {
+          "Berev": "BEREV",
+          "Odvas": "ODVAS"
+        },
+        "RZ31R": {
+          "Atico": "ATICO",
+          "Nicra": "NICRA",
+          "Ofena": "OFENA"
+        }
+      },
+      "AssignedApproach": "ILS runway 31R",
+      "Route": [
+        "ULPAX",
+        "NICRA",
+        "LHBP"
+      ],
+      "Altitude": 6000,
+      "Heading": 305,
+      "Speed": 253,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "Swiss niner 12 sierra": {
+      "Callsign": "SWR912S",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Budapest Liszt Ferenc": "LHBP",
+        "Duzla": "DUZLA"
+      },
+      "SID": "DUZLA2L",
+      "Route": [
+        "DUZLA",
+        "LSZH"
+      ],
+      "Altitude": 1729,
+      "Heading": 305,
+      "Speed": 176,
+      "State": "departure",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1A"
+    },
+    "Turkish 18 34": {
+      "Callsign": "THY1834",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Budapest Liszt Ferenc": "LHBP",
+        "Vetik": "VETIK"
+      },
+      "SID": "VETIK2G",
+      "Route": [
+        "VETIK",
+        "LTFM"
+      ],
+      "Altitude": 7000,
+      "Heading": 313,
+      "Speed": 258,
+      "State": "departure",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "Turkish five whiskey charlie": {
+      "Callsign": "THY5WC",
+      "AircraftType": "B739",
+      "Fixes": {
+        "Budapest Liszt Ferenc": "LHBP",
+        "Vetik": "VETIK"
+      },
+      "SID": "VETIK2G",
+      "Route": [
+        "VETIK",
+        "LTFM"
+      ],
+      "Altitude": 7000,
+      "Heading": 35,
+      "Speed": 274,
+      "State": "departure",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Turkish five Victor Charlie Five flight level one four zero\"",
+    "[local-stt] normalized words: [turkish 5 victor charlie 5 flight level 1 4 0]",
+    "[local-stt] tokens: 6",
+    "[local-stt]   token[0]: Text=\"turkish\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"5\" Type=1 Value=5",
+    "[local-stt]   token[2]: Text=\"victor\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"charlie\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"5\" Type=1 Value=5",
+    "[local-stt]   token[5]: Text=\"FL140\" Type=2 Value=140",
+    "[local-stt] MatchCallsign: 6 tokens, 15 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 6 tokens, 15 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"airline_flight\": no results",
+    "[local-stt]   pattern \"airline_only\": 29 results",
+    "[local-stt]     result 0: \"Eurowings seven 70\" (airline=0.672, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Turkish five whiskey charlie\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Ryanair 10 kebeck whiskey\" (airline=0.524, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Austrian seven 41\" (airline=0.613, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Eurowings five juliet\" (airline=0.672, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Turkish 18 34\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": no results",
+    "[local-stt]   best callsign candidate: \"THY1834\" (conf=0.90, consumed=1, addressingForm=0, spokenKey=\"Turkish 18 34\"; 1 candidates)",
+    "[local-stt] callsign match: Callsign=\"THY1834\" SpokenKey=\"Turkish 18 34\" Conf=0.90 Consumed=1",
+    "[local-stt] aircraft context: State=\"departure\" Altitude=7000 Fixes=2 Approaches=0 VisualApproaches=0 AssignedApproach=\"\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Budapest Liszt Ferenc\" -\u003e \"LHBP\"",
+    "[local-stt]   fix: \"Vetik\" -\u003e \"VETIK\"",
+    "[local-stt] command tokens after disregard: 5",
+    "[local-stt]   token[0]: Text=\"5\" Type=1 Value=5",
+    "[local-stt]   token[1]: Text=\"victor\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"charlie\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"5\" Type=1 Value=5",
+    "[local-stt]   token[4]: Text=\"FL140\" Type=2 Value=140",
+    "[local-stt] ParseCommands: 5 tokens",
+    "[local-stt]   no match at token[0]=\"5\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"charlie\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"charlie\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"5\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"5\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"FL140\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"FL140\"",
+    "[local-stt]   extractSID: looking for SID=\"VETIK2G\" telephony=\"VETIK2G\"",
+    "[local-stt]   extractSID: no match found",
+    "[local-stt]   extractSID: looking for SID=\"VETIK2G\" telephony=\"VETIK2G\"",
+    "[local-stt]   extractSID: no match found",
+    "[local-stt]   extractSID: looking for SID=\"VETIK2G\" telephony=\"VETIK2G\"",
+    "[local-stt]   extractSID: no match found",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   extractSTAR: no STAR assigned and no generic match",
+    "[local-stt]   no match at token[1]=\"victor\", skipping",
+    "[local-stt]   no match at token[2]=\"charlie\", skipping",
+    "[local-stt]   no match at token[3]=\"5\", skipping",
+    "[local-stt]   matched command: \"A140\" [standalone_altitude] (pos=4, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[4]=\"FL140\", skipping",
+    "[local-stt]   beam final[0]: score=0.598 pos=5 commands=[A140]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=5 commands=[]",
+    "[local-stt] ParseCommands: result=[A140] (avgConf=1.00)",
+    "[local-stt] parsed commands: [A140] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [A140] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"THY1834 A140\" (conf=0.90, time=1.5044ms) ==="
+  ]
+}

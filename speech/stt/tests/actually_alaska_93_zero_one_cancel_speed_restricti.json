@@ -1,0 +1,547 @@
+{
+  "time": "2026-10-31T22:52:38.051303093Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1072:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "actually alaska 93 zero one cancel speed restriction",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, papa, golf, information, Lucky one, Comics two, Chaser two, Padres two, Seaward two, Hupko, Gasmy, POGGI, Orpue, Ocabi, obime, Misty, Ledak, Hibko, two niner, three six, two seven, runway, DME, V O R, yankee, mike, Localizer, Visual, Hotel, TACAN, Hi, zulu, r-nav, Southwest 10 zero zero, SkyWest 39 32, SkyWest 23 79, Convoy 18, Alaska 93 zero one, Alaska seven 89, Okain, Vai-Da, chaser, Skate, Lindy, Pend, Chicken, Lucky, Madow, Folpi, Catdog, Taco, Hofmann, Jeeves, Seaward, Wotuv, Jade, Sijhi, Aztec, Padrz, Sojas, Klo-min, Sayae, Jack, Gwyn, Hogak, X-mans, Carsner, Kernel, Winfield, North Island Naval Air Station-Halsey Field, San Diego International Airport",
+  "whisper_duration_ms": 364.846,
+  "audio_duration_ms": 3400,
+  "processor": "GPU: NVIDIA GeForce RTX 4070 SUPER (11997MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "ASA9301",
+  "command": "S",
+  "stt_aircraft": {
+    "Alaska 93 zero one": {
+      "Callsign": "ASA9301",
+      "LastAddressed": true,
+      "AircraftType": "B739",
+      "Fixes": {
+        "Carsner": "CRSNR",
+        "Catdog": "CATDG",
+        "Jade": "AJADE",
+        "Klo-min": "KLOMN",
+        "San Diego": "KSAN",
+        "Sayae": "SAYAE",
+        "Sijhi": "CIJHI",
+        "Taco": "TOKOE",
+        "X-mans": "XMANS"
+      },
+      "CandidateApproaches": {
+        "Localizer Runway 27": "L27",
+        "RNAV M Runway 27": "RM7",
+        "RNAV Y Runway 27": "RY7",
+        "RNAV Z Runway 27": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "L27": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RM7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        },
+        "RY7": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RZ7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        }
+      },
+      "AssignedApproach": "RNAV Z Runway 27",
+      "STAR": "COMIX2",
+      "Route": [
+        "XMANS",
+        "KLOMN",
+        "AJADE",
+        "CATDG",
+        "CRSNR",
+        "SAYAE",
+        "CIJHI",
+        "TOKOE",
+        "KSAN"
+      ],
+      "Altitude": 9791,
+      "Heading": 135,
+      "Speed": 264,
+      "State": "cleared approach",
+      "ControllerFrequency": "5N",
+      "TrackingController": "5N"
+    },
+    "Alaska seven 89": {
+      "Callsign": "ASA789",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Carsner": "CRSNR",
+        "San Diego": "KSAN",
+        "Sayae": "SAYAE",
+        "Sijhi": "CIJHI",
+        "Taco": "TOKOE"
+      },
+      "CandidateApproaches": {
+        "Localizer Runway 27": "L27",
+        "RNAV M Runway 27": "RM7",
+        "RNAV Y Runway 27": "RY7",
+        "RNAV Z Runway 27": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "L27": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RM7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        },
+        "RY7": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RZ7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        }
+      },
+      "AssignedApproach": "RNAV Z Runway 27",
+      "STAR": "COMIX2",
+      "Route": [
+        "CRSNR",
+        "SAYAE",
+        "CIJHI",
+        "TOKOE",
+        "KSAN"
+      ],
+      "Altitude": 4903,
+      "Heading": 114,
+      "Speed": 226,
+      "State": "cleared approach",
+      "ControllerFrequency": "5N",
+      "TrackingController": "5N"
+    },
+    "Convoy 18": {
+      "Callsign": "CNV18",
+      "AircraftType": "B737",
+      "Fixes": {
+        "Folpi": "FOLPI",
+        "Hogak": "HOGAK",
+        "North Island Naval Air Station-Halsey": "KNZY",
+        "Pend": "PENDD",
+        "Sojas": "SOJAS",
+        "Wotuv": "WOTUV"
+      },
+      "CandidateApproaches": {
+        "Hi TACAN Runway 29": "H29",
+        "Hi TACAN Runway 36": "H36",
+        "Hotel Visual Runway 29": "HV",
+        "RNAV Runway 29": "R29",
+        "RNAV Y Runway 36": "RY36",
+        "RNAV Z Runway 36": "RZ36",
+        "TACAN Runway 29": "T29",
+        "TACAN Runway 36": "T36",
+        "VOR DME Runway 29": "V29"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three six": "36",
+        "visual approach runway two niner": "29",
+        "visual runway three six": "36",
+        "visual runway two niner": "29",
+        "visual three six": "36",
+        "visual two niner": "29"
+      },
+      "ApproachFixes": {
+        "H29": {
+          "Misty": "MYSTY",
+          "Ocabi": "OCABI",
+          "Orpue": "ORPUE",
+          "Ortee": "ORTEE",
+          "Osbue": "OSBUE",
+          "Skate": "SKATE",
+          "obime": "OBIME"
+        },
+        "H36": {
+          "Hupko": "HUPKO",
+          "Misty": "MYSTY",
+          "Skate": "SKATE",
+          "Wasir": "WASIR",
+          "Zolok": "ZOLOK",
+          "obime": "OBIME"
+        },
+        "R29": {
+          "Hibko": "HIBKO",
+          "Hutek": "HUTEK",
+          "Ledak": "LEDAC",
+          "Novo": "NOVOE",
+          "Orrad": "ORRAD",
+          "Skate": "SKATE",
+          "Weleg": "WELEG",
+          "chaser": "CHASR"
+        },
+        "RY36": {
+          "Catch": "CATCC",
+          "Gasmy": "GASME",
+          "Skate": "SKATE",
+          "Zoban": "ZOBAN"
+        },
+        "RZ36": {
+          "Folpi": "FOLPI",
+          "Hogak": "HOGAK",
+          "Pend": "PENDD",
+          "Skate": "SKATE",
+          "Sojas": "SOJAS",
+          "Wotuv": "WOTUV",
+          "chaser": "CHASR"
+        },
+        "T29": {
+          "Ocabi": "OCABI",
+          "Orpue": "ORPUE",
+          "Ortee": "ORTEE",
+          "Osbue": "OSBUE",
+          "Skate": "SKATE",
+          "obime": "OBIME"
+        },
+        "T36": {
+          "Hupko": "HUPKO",
+          "Skate": "SKATE",
+          "Wasir": "WASIR",
+          "Zolok": "ZOLOK",
+          "obime": "OBIME"
+        },
+        "V29": {
+          "POGGI": "PGY",
+          "Zapud": "ZAPUD",
+          "Zeker": "ZEKIR"
+        }
+      },
+      "AssignedApproach": "RNAV Z Runway 36",
+      "STAR": "CHASR2",
+      "Route": [
+        "HOGAK",
+        "SOJAS",
+        "WOTUV",
+        "FOLPI",
+        "PENDD",
+        "KNZY"
+      ],
+      "Altitude": 5276,
+      "Heading": 246,
+      "Speed": 270,
+      "State": "cleared approach",
+      "ControllerFrequency": "5E",
+      "TrackingController": "5E",
+      "LAHSORunways": [
+        "18",
+        "36",
+        "11",
+        "29"
+      ]
+    },
+    "SkyWest 23 79": {
+      "Callsign": "SKW2379",
+      "AircraftType": "CRJ7",
+      "Fixes": {
+        "Gwyn": "GYWNN",
+        "Los Angeles": "KLAX",
+        "Madow": "MADOW",
+        "Padrz": "PADRZ",
+        "SEAL BEACH": "SLI",
+        "San Diego": "KSAN",
+        "Seaward": "CWARD",
+        "Winfield": "WNFLD"
+      },
+      "SID": "CWARD2",
+      "Route": [
+        "WNFLD",
+        "GYWNN",
+        "PADRZ",
+        "CWARD",
+        "MADOW",
+        "SLI",
+        "KLAX"
+      ],
+      "Altitude": 3066,
+      "Heading": 290,
+      "Speed": 232,
+      "AssignedAltitude": 1500,
+      "State": "departure",
+      "ControllerFrequency": "5W",
+      "TrackingController": "5W"
+    },
+    "SkyWest 39 32": {
+      "Callsign": "SKW3932",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Aztec": "AZTEK",
+        "Carsner": "CRSNR",
+        "Catdog": "CATDG",
+        "Jack": "JACKK",
+        "Jade": "AJADE",
+        "Jeeves": "JEEVS",
+        "Klo-min": "KLOMN",
+        "Lindy": "LYNDI",
+        "Lucky": "LUCKI",
+        "Okain": "OKAIN",
+        "San Diego": "KSAN",
+        "Sayae": "SAYAE",
+        "Sijhi": "CIJHI",
+        "Taco": "TOKOE",
+        "Vai-Da": "VYDDA"
+      },
+      "CandidateApproaches": {
+        "Localizer Runway 27": "L27",
+        "RNAV M Runway 27": "RM7",
+        "RNAV Y Runway 27": "RY7",
+        "RNAV Z Runway 27": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "L27": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RM7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        },
+        "RY7": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RZ7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        }
+      },
+      "AssignedApproach": "RNAV Z Runway 27",
+      "STAR": "LUCKI1",
+      "Route": [
+        "JACKK",
+        "AZTEK",
+        "JEEVS",
+        "LUCKI",
+        "LYNDI",
+        "KSAN"
+      ],
+      "Altitude": 13494,
+      "Heading": 252,
+      "Speed": 328,
+      "State": "arrival",
+      "ControllerFrequency": "5E",
+      "TrackingController": "5E"
+    },
+    "Southwest 10 zero zero": {
+      "Callsign": "SWA1000",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Chicken": "CHKNN",
+        "Gwyn": "GYWNN",
+        "Hofmann": "HFMNN",
+        "Kernel": "KERNL",
+        "Misen": "MISEN",
+        "Padrz": "PADRZ",
+        "San Diego": "KSAN",
+        "Sebby": "SEBBY",
+        "Yelah": "YELAH"
+      },
+      "SID": "PADRZ2",
+      "Route": [
+        "KERNL",
+        "GYWNN",
+        "PADRZ",
+        "HFMNN",
+        "CHKNN",
+        "SEBBY",
+        "YELAH",
+        "MISEN",
+        "KLAS"
+      ],
+      "Altitude": 7836,
+      "Heading": 294,
+      "Speed": 287,
+      "AssignedAltitude": 1500,
+      "State": "departure",
+      "ControllerFrequency": "5W",
+      "TrackingController": "5W"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"actually alaska 93 zero one cancel speed restriction\"",
+    "[local-stt] normalized words: [actually alaska 93 0 1 cancel speed restriction]",
+    "[local-stt] tokens: 6",
+    "[local-stt]   token[0]: Text=\"actually\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"alaska\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"9301\" Type=1 Value=9301",
+    "[local-stt]   token[3]: Text=\"cancel\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"speed\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"restriction\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 6 tokens, 6 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 6 tokens, 6 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"Alaska 93 zero one\" (airline=0.575, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Alaska 93 zero one\" (airline=1.000, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Alaska 93 zero one\" (airline=1.00, flight=1.00, skip=1)",
+    "[local-stt]   pattern \"airline_only\": 14 results",
+    "[local-stt]     result 0: \"Convoy 18\" (airline=0.528, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Alaska 93 zero one\" (airline=0.575, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Alaska seven 89\" (airline=0.575, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Southwest 10 zero zero\" (airline=0.426, flight=0.000, skip=1)",
+    "[local-stt]     result 4: \"Alaska 93 zero one\" (airline=1.000, flight=0.000, skip=1)",
+    "[local-stt]     pattern \"airline_only\": selected \"Alaska seven 89\" (airline=1.00, flight=0.00, skip=1)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"Alaska 93 zero one\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Alaska 93 zero one\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"Alaska 93 zero one\" (airline=0.500, flight=1.000, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Alaska 93 zero one\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   best callsign candidate: \"ASA9301\" (conf=0.92, consumed=3, addressingForm=0, spokenKey=\"Alaska 93 zero one\"; 2 candidates)",
+    "[local-stt] ParseCommands: 3 tokens",
+    "[local-stt]   matched command: \"S\" [cancel_speed_restriction] (pos=0, conf=0.98, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[0]=\"cancel\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"restriction\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"restriction\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"restriction\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"restriction\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"restriction\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"restriction\"",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: looking for STAR=\"COMIX2\" telephony=\"Comics two\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   no match at token[1]=\"speed\", skipping",
+    "[local-stt]   no match at token[2]=\"restriction\", skipping",
+    "[local-stt]   beam final[0]: score=1.742 pos=3 commands=[S]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=3 commands=[]",
+    "[local-stt] ParseCommands: result=[S] (avgConf=0.98)",
+    "[local-stt] callsign match: Callsign=\"ASA9301\" SpokenKey=\"Alaska 93 zero one\" Conf=0.92 Consumed=3",
+    "[local-stt] aircraft context: State=\"cleared approach\" Altitude=9791 Fixes=9 Approaches=4 VisualApproaches=3 AssignedApproach=\"RNAV Z Runway 27\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Carsner\" -\u003e \"CRSNR\"",
+    "[local-stt]   fix: \"Sayae\" -\u003e \"SAYAE\"",
+    "[local-stt]   fix: \"Taco\" -\u003e \"TOKOE\"",
+    "[local-stt]   fix: \"Jade\" -\u003e \"AJADE\"",
+    "[local-stt]   fix: \"Catdog\" -\u003e \"CATDG\"",
+    "[local-stt]   fix: \"Sijhi\" -\u003e \"CIJHI\"",
+    "[local-stt]   fix: \"San Diego\" -\u003e \"KSAN\"",
+    "[local-stt]   fix: \"X-mans\" -\u003e \"XMANS\"",
+    "[local-stt]   fix: \"Klo-min\" -\u003e \"KLOMN\"",
+    "[local-stt]   approach: \"Localizer Runway 27\" -\u003e \"L27\"",
+    "[local-stt]   approach: \"RNAV M Runway 27\" -\u003e \"RM7\"",
+    "[local-stt]   approach: \"RNAV Y Runway 27\" -\u003e \"RY7\"",
+    "[local-stt]   approach: \"RNAV Z Runway 27\" -\u003e \"RZ7\"",
+    "[local-stt]   visual approach: \"visual runway two seven\" -\u003e \"27\"",
+    "[local-stt]   visual approach: \"visual approach runway two seven\" -\u003e \"27\"",
+    "[local-stt]   visual approach: \"visual two seven\" -\u003e \"27\"",
+    "[local-stt] command tokens after disregard: 3",
+    "[local-stt]   token[0]: Text=\"cancel\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"speed\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"restriction\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 3 tokens",
+    "[local-stt]   matched command: \"S\" [cancel_speed_restriction] (pos=0, conf=0.98, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[0]=\"cancel\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"restriction\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"restriction\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"restriction\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"restriction\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"restriction\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"restriction\"",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: looking for STAR=\"COMIX2\" telephony=\"Comics two\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   no match at token[1]=\"speed\", skipping",
+    "[local-stt]   no match at token[2]=\"restriction\", skipping",
+    "[local-stt]   beam final[0]: score=1.742 pos=3 commands=[S]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=3 commands=[]",
+    "[local-stt] ParseCommands: result=[S] (avgConf=0.98)",
+    "[local-stt] parsed commands: [S] (conf=0.98, kinds=1)",
+    "[local-stt] validated commands: [S] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"ASA9301 S\" (conf=0.90, time=2.5007ms) ==="
+  ]
+}

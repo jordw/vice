@@ -1,0 +1,976 @@
+{
+  "time": "2026-11-08T07:04:39.002990508Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "United three eighty expect the two visual two five left",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, victor, uniform, romeo, information, Goats two, Piggin three, Hero three, Effie, trusty, Dyers, Lemon, Hukem, snake, Sager, Calit, Clip, Minnie, Clever, Wemdo, Febta, Ehvox, Amele, Dekert, Bonvy, Jward, Ezkel, Lucig, Dirty, Mercy, brook, Livin, Palace, brea, Decor, skull, two six right, three zero, two four right, two zero right, two five left, runway, Visual, zulu, yankee, r-nav, L D A, I L S, WestJet seven 73, WestJet 53 31, United three 80, Southwest 42 36, commander one fourteen eight tango lima, Commander eight tango lima, november niner five eight tango lima, piper cherokee zero charlie tango, cherokee zero charlie tango, november five two zero charlie tango, embraer phenom one hundred seven two alpha, phenom one hundred seven two alpha, november two zero seven two alpha, Outdo, height, Tornado, Sea-view, Fueler, Dynamo, Tarok, Krain, circus, Honda, gate, Wunar, snack, Kenzo, Judo, Witz, clipper, Buffy, Salom, SEAL BEACH, Zapp, BLYTHE, Mids, Show, Avery, Balbo, I-K, scatter, fun, Matbal, Dana, kraus, Faye, Tesea, Los Angeles International Airport, Peeler, John Wayne Orange County International Airport, Long Beach International Airport",
+  "whisper_duration_ms": 525.316,
+  "audio_duration_ms": 5320,
+  "processor": "GPU: AMD Radeon RX 6650 XT (8176MB)",
+  "whisper_model": "ggml-base.en-jlvatc-q5_0.bin",
+  "callsign": "UAL380",
+  "command": "EVA25L",
+  "stt_aircraft": {
+    "Commander eight tango lima": {
+      "Callsign": "N958TL/T",
+      "AircraftType": "AC11",
+      "Fixes": {
+        "Balbo": "BALBO",
+        "Dana": "DANAH",
+        "John Wayne Orange County": "KSNA",
+        "Mids": "MIDDS",
+        "SEAL BEACH": "SLI",
+        "San Diego": "KSAN",
+        "kraus": "KRAUZ"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 20R": "I0R",
+        "LDA Runway 20R": "D0R",
+        "RNAV Z Runway 20R": "Z0R",
+        "Visual Runway 20R": "VR"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero right": "20R",
+        "visual runway two zero right": "20R",
+        "visual two zero right": "20R"
+      },
+      "ApproachFixes": {
+        "D0R": {
+          "Effie": "EFFIE",
+          "Gauer": "GAUER",
+          "trusty": "TUSTI"
+        },
+        "I0R": {
+          "Hukem": "HUKEM",
+          "Lemon": "LEMON",
+          "SEAL BEACH": "SLI",
+          "Sager": "SAGER",
+          "snake": "SNAKE"
+        },
+        "VR": {
+          "Dyers": "DYERS",
+          "Hukem": "HUKEM",
+          "Lemon": "LEMON",
+          "Sager": "SAGER",
+          "snake": "SNAKE"
+        },
+        "Z0R": {
+          "Amele": "AMELE",
+          "Bonvy": "BONVY",
+          "Calit": "CALIT",
+          "Clever": "KLEVR",
+          "Clip": "KLIPP",
+          "Dekert": "DEKRT",
+          "Ehvox": "EHVOX",
+          "Febta": "FEBTA",
+          "Jward": "JWARD",
+          "Minnie": "MNNIE",
+          "Wemdo": "WEMDO",
+          "Zetov": "ZETOV"
+        }
+      },
+      "Route": [
+        "DANAH",
+        "KRAUZ",
+        "BALBO",
+        "MIDDS",
+        "SLI",
+        "KSNA"
+      ],
+      "Altitude": 6000,
+      "Heading": 305,
+      "Speed": 169,
+      "State": "arrival",
+      "ControllerFrequency": "4Y",
+      "TrackingController": "4S",
+      "AddressingForm": 1
+    },
+    "Southwest 42 36": {
+      "Callsign": "SWA4236",
+      "AircraftType": "B737",
+      "Fixes": {
+        "Avery": "AVRRY",
+        "BLYTHE": "BLH",
+        "John Wayne Orange County": "KSNA",
+        "Matbal": "MTBAL",
+        "Peeler": "PEELR",
+        "Salom": "SALOM"
+      },
+      "SID": "PIGGN3",
+      "Route": [
+        "PEELR",
+        "MTBAL",
+        "AVRRY",
+        "BLH",
+        "SALOM",
+        "KOFFA",
+        "TFD",
+        "KTUS"
+      ],
+      "Altitude": 14000,
+      "Heading": 80,
+      "Speed": 367,
+      "State": "departure",
+      "ControllerFrequency": "4Y",
+      "TrackingController": "C31"
+    },
+    "United three 80": {
+      "Callsign": "UAL380",
+      "LastAddressed": true,
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Buffy": "BUFIE",
+        "Dynamo": "DYMMO",
+        "Fueler": "FUELR",
+        "Gigi": "GIGII",
+        "Honda": "HUNDA",
+        "Judo": "JUDOH",
+        "Kenzo": "KENZO",
+        "Krain": "KRAIN",
+        "Los Angeles": "KLAX",
+        "Outdo": "OUTDO",
+        "SEAL BEACH": "SLI",
+        "Sea-view": "SEAVU",
+        "Show": "SHHOW",
+        "Tarok": "TAROC",
+        "Tornado": "TRNDO",
+        "Witz": "WITZZ",
+        "Wunar": "WUNAR",
+        "Zapp": "ZAPPP",
+        "circus": "CRCUS",
+        "clipper": "CLPUR",
+        "fun": "PHUNN",
+        "gate": "GAATE",
+        "height": "HIGHT",
+        "snack": "SNNAK"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 24R": "I4R",
+        "ILS Runway 25L": "I5L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two five left": "25L",
+        "visual approach runway two four right": "24R",
+        "visual runway two five left": "25L",
+        "visual runway two four right": "24R",
+        "visual two five left": "25L",
+        "visual two four right": "24R"
+      },
+      "ApproachFixes": {
+        "I4R": {
+          "Decor": "DECOR",
+          "Livin": "LIVVN",
+          "Mercy": "MERCE",
+          "Palace": "PALAC",
+          "Sea-view": "SEAVU",
+          "brea": "BREEA",
+          "brook": "BROUK",
+          "circus": "CRCUS",
+          "kobe": "KOBEE",
+          "skull": "SKOLL"
+        },
+        "I5L": {
+          "Dynamo": "DYMMO",
+          "Fueler": "FUELR",
+          "Gigi": "GIGII",
+          "Honda": "HUNDA",
+          "Judo": "JUDOH",
+          "Kenzo": "KENZO",
+          "Krain": "KRAIN",
+          "Outdo": "OUTDO",
+          "Sea-view": "SEAVU",
+          "Tarok": "TAROC",
+          "Tornado": "TRNDO",
+          "Witz": "WITZZ",
+          "Wunar": "WUNAR",
+          "circus": "CRCUS",
+          "clipper": "CLPUR",
+          "gate": "GAATE",
+          "height": "HIGHT",
+          "snack": "SNNAK"
+        }
+      },
+      "AssignedApproach": "ILS Runway 25L",
+      "STAR": "GOATZ2",
+      "Route": [
+        "PHUNN",
+        "SHHOW",
+        "ZAPPP",
+        "BUFIE",
+        "SLI",
+        "TRNDO",
+        "KLAX"
+      ],
+      "Altitude": 15605,
+      "Heading": 81,
+      "Speed": 362,
+      "State": "arrival",
+      "ControllerFrequency": "4Y",
+      "TrackingController": "4Y"
+    },
+    "WestJet 53 31": {
+      "Callsign": "WJA5331",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "John Wayne Orange County": "KSNA",
+        "Tesea": "TESEA",
+        "scatter": "SCTRR"
+      },
+      "SID": "HHERO3",
+      "Route": [
+        "TESEA",
+        "SCTRR",
+        "SNS",
+        "SAC",
+        "LMT",
+        "SEA",
+        "PAE",
+        "CYVR"
+      ],
+      "Altitude": 14000,
+      "Heading": 305,
+      "Speed": 359,
+      "State": "departure",
+      "ControllerFrequency": "4Y",
+      "TrackingController": "C31"
+    },
+    "WestJet seven 73": {
+      "Callsign": "WJA773",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Faye": "FAYHE",
+        "I-K": "IKAYE",
+        "John Wayne Orange County": "KSNA",
+        "Tesea": "TESEA",
+        "scatter": "SCTRR"
+      },
+      "SID": "HHERO3",
+      "Route": [
+        "FAYHE",
+        "IKAYE",
+        "TESEA",
+        "SCTRR",
+        "SNS",
+        "SAC",
+        "LMT",
+        "SEA",
+        "PAE",
+        "CYVR"
+      ],
+      "Altitude": 14000,
+      "Heading": 297,
+      "Speed": 354,
+      "State": "departure",
+      "ControllerFrequency": "4Y",
+      "TrackingController": "4Y"
+    },
+    "cherokee zero charlie tango": {
+      "Callsign": "N520CT/T",
+      "AircraftType": "P28A",
+      "Fixes": {
+        "Balbo": "BALBO",
+        "Long Beach": "KLGB",
+        "Mids": "MIDDS",
+        "SEAL BEACH": "SLI",
+        "San Diego": "KSAN",
+        "kraus": "KRAUZ"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 30": "I30",
+        "RNAV Runway 26R": "R26R",
+        "RNAV Y Runway 30": "RY30",
+        "RNAV Z Runway 30": "R30"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three zero": "30",
+        "visual approach runway two six right": "26R",
+        "visual runway three zero": "30",
+        "visual runway two six right": "26R",
+        "visual three zero": "30",
+        "visual two six right": "26R"
+      },
+      "ApproachFixes": {
+        "I30": {
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS",
+          "SEAL BEACH": "SLI"
+        },
+        "R26R": {
+          "Bucas": "BUCAS",
+          "Cassie": "CASIV",
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Jilan": "JILAN",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        },
+        "R30": {
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        },
+        "RY30": {
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        }
+      },
+      "Route": [
+        "KRAUZ",
+        "BALBO",
+        "MIDDS",
+        "SLI",
+        "KLGB"
+      ],
+      "Altitude": 6000,
+      "Heading": 307,
+      "Speed": 123,
+      "State": "arrival",
+      "ControllerFrequency": "4Y",
+      "TrackingController": "4S",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "12",
+        "30",
+        "8L",
+        "26R",
+        "8R",
+        "26L"
+      ]
+    },
+    "commander one fourteen eight tango lima": {
+      "Callsign": "N958TL/T",
+      "AircraftType": "AC11",
+      "Fixes": {
+        "Balbo": "BALBO",
+        "Dana": "DANAH",
+        "John Wayne Orange County": "KSNA",
+        "Mids": "MIDDS",
+        "SEAL BEACH": "SLI",
+        "San Diego": "KSAN",
+        "kraus": "KRAUZ"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 20R": "I0R",
+        "LDA Runway 20R": "D0R",
+        "RNAV Z Runway 20R": "Z0R",
+        "Visual Runway 20R": "VR"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero right": "20R",
+        "visual runway two zero right": "20R",
+        "visual two zero right": "20R"
+      },
+      "ApproachFixes": {
+        "D0R": {
+          "Effie": "EFFIE",
+          "Gauer": "GAUER",
+          "trusty": "TUSTI"
+        },
+        "I0R": {
+          "Hukem": "HUKEM",
+          "Lemon": "LEMON",
+          "SEAL BEACH": "SLI",
+          "Sager": "SAGER",
+          "snake": "SNAKE"
+        },
+        "VR": {
+          "Dyers": "DYERS",
+          "Hukem": "HUKEM",
+          "Lemon": "LEMON",
+          "Sager": "SAGER",
+          "snake": "SNAKE"
+        },
+        "Z0R": {
+          "Amele": "AMELE",
+          "Bonvy": "BONVY",
+          "Calit": "CALIT",
+          "Clever": "KLEVR",
+          "Clip": "KLIPP",
+          "Dekert": "DEKRT",
+          "Ehvox": "EHVOX",
+          "Febta": "FEBTA",
+          "Jward": "JWARD",
+          "Minnie": "MNNIE",
+          "Wemdo": "WEMDO",
+          "Zetov": "ZETOV"
+        }
+      },
+      "Route": [
+        "DANAH",
+        "KRAUZ",
+        "BALBO",
+        "MIDDS",
+        "SLI",
+        "KSNA"
+      ],
+      "Altitude": 6000,
+      "Heading": 305,
+      "Speed": 169,
+      "State": "arrival",
+      "ControllerFrequency": "4Y",
+      "TrackingController": "4S",
+      "AddressingForm": 1
+    },
+    "embraer phenom one hundred seven two alpha": {
+      "Callsign": "N2072A/T",
+      "AircraftType": "E50P",
+      "Fixes": {
+        "Long Beach": "KLGB"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 30": "I30",
+        "RNAV Runway 26R": "R26R",
+        "RNAV Y Runway 30": "RY30",
+        "RNAV Z Runway 30": "R30"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three zero": "30",
+        "visual approach runway two six right": "26R",
+        "visual runway three zero": "30",
+        "visual runway two six right": "26R",
+        "visual three zero": "30",
+        "visual two six right": "26R"
+      },
+      "ApproachFixes": {
+        "I30": {
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS",
+          "SEAL BEACH": "SLI"
+        },
+        "R26R": {
+          "Bucas": "BUCAS",
+          "Cassie": "CASIV",
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Jilan": "JILAN",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        },
+        "R30": {
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        },
+        "RY30": {
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        }
+      },
+      "Route": [
+        "KLGB"
+      ],
+      "Altitude": 10000,
+      "Heading": 283,
+      "Speed": 295,
+      "AssignedHeading": 283,
+      "State": "arrival",
+      "ControllerFrequency": "4Y",
+      "TrackingController": "4Y",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "12",
+        "30",
+        "8L",
+        "26R",
+        "8R",
+        "26L"
+      ]
+    },
+    "november five two zero charlie tango": {
+      "Callsign": "N520CT",
+      "AircraftType": "P28A",
+      "Fixes": {
+        "Balbo": "BALBO",
+        "Long Beach": "KLGB",
+        "Mids": "MIDDS",
+        "SEAL BEACH": "SLI",
+        "San Diego": "KSAN",
+        "kraus": "KRAUZ"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 30": "I30",
+        "RNAV Runway 26R": "R26R",
+        "RNAV Y Runway 30": "RY30",
+        "RNAV Z Runway 30": "R30"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three zero": "30",
+        "visual approach runway two six right": "26R",
+        "visual runway three zero": "30",
+        "visual runway two six right": "26R",
+        "visual three zero": "30",
+        "visual two six right": "26R"
+      },
+      "ApproachFixes": {
+        "I30": {
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS",
+          "SEAL BEACH": "SLI"
+        },
+        "R26R": {
+          "Bucas": "BUCAS",
+          "Cassie": "CASIV",
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Jilan": "JILAN",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        },
+        "R30": {
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        },
+        "RY30": {
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        }
+      },
+      "Route": [
+        "KRAUZ",
+        "BALBO",
+        "MIDDS",
+        "SLI",
+        "KLGB"
+      ],
+      "Altitude": 6000,
+      "Heading": 307,
+      "Speed": 123,
+      "State": "arrival",
+      "ControllerFrequency": "4Y",
+      "TrackingController": "4S",
+      "LAHSORunways": [
+        "12",
+        "30",
+        "8L",
+        "26R",
+        "8R",
+        "26L"
+      ]
+    },
+    "november niner five eight tango lima": {
+      "Callsign": "N958TL",
+      "AircraftType": "AC11",
+      "Fixes": {
+        "Balbo": "BALBO",
+        "Dana": "DANAH",
+        "John Wayne Orange County": "KSNA",
+        "Mids": "MIDDS",
+        "SEAL BEACH": "SLI",
+        "San Diego": "KSAN",
+        "kraus": "KRAUZ"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 20R": "I0R",
+        "LDA Runway 20R": "D0R",
+        "RNAV Z Runway 20R": "Z0R",
+        "Visual Runway 20R": "VR"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero right": "20R",
+        "visual runway two zero right": "20R",
+        "visual two zero right": "20R"
+      },
+      "ApproachFixes": {
+        "D0R": {
+          "Effie": "EFFIE",
+          "Gauer": "GAUER",
+          "trusty": "TUSTI"
+        },
+        "I0R": {
+          "Hukem": "HUKEM",
+          "Lemon": "LEMON",
+          "SEAL BEACH": "SLI",
+          "Sager": "SAGER",
+          "snake": "SNAKE"
+        },
+        "VR": {
+          "Dyers": "DYERS",
+          "Hukem": "HUKEM",
+          "Lemon": "LEMON",
+          "Sager": "SAGER",
+          "snake": "SNAKE"
+        },
+        "Z0R": {
+          "Amele": "AMELE",
+          "Bonvy": "BONVY",
+          "Calit": "CALIT",
+          "Clever": "KLEVR",
+          "Clip": "KLIPP",
+          "Dekert": "DEKRT",
+          "Ehvox": "EHVOX",
+          "Febta": "FEBTA",
+          "Jward": "JWARD",
+          "Minnie": "MNNIE",
+          "Wemdo": "WEMDO",
+          "Zetov": "ZETOV"
+        }
+      },
+      "Route": [
+        "DANAH",
+        "KRAUZ",
+        "BALBO",
+        "MIDDS",
+        "SLI",
+        "KSNA"
+      ],
+      "Altitude": 6000,
+      "Heading": 305,
+      "Speed": 169,
+      "State": "arrival",
+      "ControllerFrequency": "4Y",
+      "TrackingController": "4S"
+    },
+    "november two zero seven two alpha": {
+      "Callsign": "N2072A",
+      "AircraftType": "E50P",
+      "Fixes": {
+        "Long Beach": "KLGB"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 30": "I30",
+        "RNAV Runway 26R": "R26R",
+        "RNAV Y Runway 30": "RY30",
+        "RNAV Z Runway 30": "R30"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three zero": "30",
+        "visual approach runway two six right": "26R",
+        "visual runway three zero": "30",
+        "visual runway two six right": "26R",
+        "visual three zero": "30",
+        "visual two six right": "26R"
+      },
+      "ApproachFixes": {
+        "I30": {
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS",
+          "SEAL BEACH": "SLI"
+        },
+        "R26R": {
+          "Bucas": "BUCAS",
+          "Cassie": "CASIV",
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Jilan": "JILAN",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        },
+        "R30": {
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        },
+        "RY30": {
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        }
+      },
+      "Route": [
+        "KLGB"
+      ],
+      "Altitude": 10000,
+      "Heading": 283,
+      "Speed": 295,
+      "AssignedHeading": 283,
+      "State": "arrival",
+      "ControllerFrequency": "4Y",
+      "TrackingController": "4Y",
+      "LAHSORunways": [
+        "12",
+        "30",
+        "8L",
+        "26R",
+        "8R",
+        "26L"
+      ]
+    },
+    "phenom one hundred seven two alpha": {
+      "Callsign": "N2072A/T",
+      "AircraftType": "E50P",
+      "Fixes": {
+        "Long Beach": "KLGB"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 30": "I30",
+        "RNAV Runway 26R": "R26R",
+        "RNAV Y Runway 30": "RY30",
+        "RNAV Z Runway 30": "R30"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three zero": "30",
+        "visual approach runway two six right": "26R",
+        "visual runway three zero": "30",
+        "visual runway two six right": "26R",
+        "visual three zero": "30",
+        "visual two six right": "26R"
+      },
+      "ApproachFixes": {
+        "I30": {
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS",
+          "SEAL BEACH": "SLI"
+        },
+        "R26R": {
+          "Bucas": "BUCAS",
+          "Cassie": "CASIV",
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Jilan": "JILAN",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        },
+        "R30": {
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        },
+        "RY30": {
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        }
+      },
+      "Route": [
+        "KLGB"
+      ],
+      "Altitude": 10000,
+      "Heading": 283,
+      "Speed": 295,
+      "AssignedHeading": 283,
+      "State": "arrival",
+      "ControllerFrequency": "4Y",
+      "TrackingController": "4Y",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "12",
+        "30",
+        "8L",
+        "26R",
+        "8R",
+        "26L"
+      ]
+    },
+    "piper cherokee zero charlie tango": {
+      "Callsign": "N520CT/T",
+      "AircraftType": "P28A",
+      "Fixes": {
+        "Balbo": "BALBO",
+        "Long Beach": "KLGB",
+        "Mids": "MIDDS",
+        "SEAL BEACH": "SLI",
+        "San Diego": "KSAN",
+        "kraus": "KRAUZ"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 30": "I30",
+        "RNAV Runway 26R": "R26R",
+        "RNAV Y Runway 30": "RY30",
+        "RNAV Z Runway 30": "R30"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three zero": "30",
+        "visual approach runway two six right": "26R",
+        "visual runway three zero": "30",
+        "visual runway two six right": "26R",
+        "visual three zero": "30",
+        "visual two six right": "26R"
+      },
+      "ApproachFixes": {
+        "I30": {
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS",
+          "SEAL BEACH": "SLI"
+        },
+        "R26R": {
+          "Bucas": "BUCAS",
+          "Cassie": "CASIV",
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Jilan": "JILAN",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        },
+        "R30": {
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        },
+        "RY30": {
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        }
+      },
+      "Route": [
+        "KRAUZ",
+        "BALBO",
+        "MIDDS",
+        "SLI",
+        "KLGB"
+      ],
+      "Altitude": 6000,
+      "Heading": 307,
+      "Speed": 123,
+      "State": "arrival",
+      "ControllerFrequency": "4Y",
+      "TrackingController": "4S",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "12",
+        "30",
+        "8L",
+        "26R",
+        "8R",
+        "26L"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"United three eighty expect the two visual two five left\"",
+    "[local-stt] normalized words: [united 3 80 expect the 2 visual 2 5 left]",
+    "[local-stt] tokens: 8",
+    "[local-stt]   token[0]: Text=\"united\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"380\" Type=1 Value=380",
+    "[local-stt]   token[2]: Text=\"expect\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"the\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"2\" Type=1 Value=2",
+    "[local-stt]   token[5]: Text=\"visual\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"25\" Type=1 Value=25",
+    "[local-stt]   token[7]: Text=\"left\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 8 tokens, 13 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 8 tokens, 13 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"United three 80\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"United three 80\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 15 results",
+    "[local-stt]     result 0: \"United three 80\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"embraer phenom one hundred seven two alpha\" (airline=0.586, flight=0.760, skip=2)",
+    "[local-stt]     result 2: \"piper cherokee zero charlie tango\" (airline=0.578, flight=0.733, skip=2)",
+    "[local-stt]     result 3: \"november two zero seven two alpha\" (airline=0.528, flight=0.760, skip=2)",
+    "[local-stt]     result 4: \"phenom one hundred seven two alpha\" (airline=0.389, flight=0.760, skip=2)",
+    "[local-stt]     pattern \"airline_flight\": selected \"United three 80\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 12 results",
+    "[local-stt]     result 0: \"Southwest 42 36\" (airline=0.611, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"WestJet 53 31\" (airline=0.540, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"United three 80\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"WestJet seven 73\" (airline=0.540, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Southwest 42 36\" (airline=0.352, flight=0.000, skip=2)",
+    "[local-stt]     pattern \"airline_only\": selected \"United three 80\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"United three 80\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"United three 80\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"United three 80\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"UAL380\" (spokenKey=\"United three 80\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"UAL380\" SpokenKey=\"United three 80\" Conf=1.00 Consumed=2",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=15605 Fixes=24 Approaches=2 VisualApproaches=6 AssignedApproach=\"ILS Runway 25L\" LAHSORunways=[]",
+    "[local-stt]   fix: \"snack\" -\u003e \"SNNAK\"",
+    "[local-stt]   fix: \"Dynamo\" -\u003e \"DYMMO\"",
+    "[local-stt]   fix: \"Zapp\" -\u003e \"ZAPPP\"",
+    "[local-stt]   fix: \"gate\" -\u003e \"GAATE\"",
+    "[local-stt]   fix: \"Gigi\" -\u003e \"GIGII\"",
+    "[local-stt]   fix: \"Fueler\" -\u003e \"FUELR\"",
+    "[local-stt]   fix: \"Outdo\" -\u003e \"OUTDO\"",
+    "[local-stt]   fix: \"Wunar\" -\u003e \"WUNAR\"",
+    "[local-stt]   fix: \"Show\" -\u003e \"SHHOW\"",
+    "[local-stt]   fix: \"Tornado\" -\u003e \"TRNDO\"",
+    "[local-stt]   fix: \"Honda\" -\u003e \"HUNDA\"",
+    "[local-stt]   fix: \"Krain\" -\u003e \"KRAIN\"",
+    "[local-stt]   fix: \"height\" -\u003e \"HIGHT\"",
+    "[local-stt]   fix: \"fun\" -\u003e \"PHUNN\"",
+    "[local-stt]   fix: \"Witz\" -\u003e \"WITZZ\"",
+    "[local-stt]   fix: \"Kenzo\" -\u003e \"KENZO\"",
+    "[local-stt]   fix: \"circus\" -\u003e \"CRCUS\"",
+    "[local-stt]   fix: \"Tarok\" -\u003e \"TAROC\"",
+    "[local-stt]   fix: \"Sea-view\" -\u003e \"SEAVU\"",
+    "[local-stt]   fix: \"Los Angeles\" -\u003e \"KLAX\"",
+    "[local-stt]   fix: \"Buffy\" -\u003e \"BUFIE\"",
+    "[local-stt]   fix: \"SEAL BEACH\" -\u003e \"SLI\"",
+    "[local-stt]   fix: \"clipper\" -\u003e \"CLPUR\"",
+    "[local-stt]   fix: \"Judo\" -\u003e \"JUDOH\"",
+    "[local-stt]   approach: \"ILS Runway 24R\" -\u003e \"I4R\"",
+    "[local-stt]   approach: \"ILS Runway 25L\" -\u003e \"I5L\"",
+    "[local-stt]   visual approach: \"visual approach runway two five left\" -\u003e \"25L\"",
+    "[local-stt]   visual approach: \"visual two five left\" -\u003e \"25L\"",
+    "[local-stt]   visual approach: \"visual runway two four right\" -\u003e \"24R\"",
+    "[local-stt]   visual approach: \"visual approach runway two four right\" -\u003e \"24R\"",
+    "[local-stt]   visual approach: \"visual two four right\" -\u003e \"24R\"",
+    "[local-stt]   visual approach: \"visual runway two five left\" -\u003e \"25L\"",
+    "[local-stt] command tokens after disregard: 6",
+    "[local-stt]   token[0]: Text=\"expect\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"the\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"2\" Type=1 Value=2",
+    "[local-stt]   token[3]: Text=\"visual\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"25\" Type=1 Value=25",
+    "[local-stt]   token[5]: Text=\"left\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 6 tokens",
+    "[local-stt]   extractApproach: no type match, falling back to assigned approach \"I5L\" (dir=L)",
+    "[local-stt]   matched command: \"EI5L\" [expect_approach] (pos=0, conf=0.95, consumed=6, isThen=false)",
+    "[local-stt]   adding 18 fixes from approach I5L to aircraft context",
+    "[local-stt]   no match at token[0]=\"expect\", skipping",
+    "[local-stt]   skipping filler word: \"the\"",
+    "[local-stt]   no match at token[2]=\"2\", skipping",
+    "[local-stt]   extractSTAR: looking for STAR=\"GOATZ2\" telephony=\"Goats two\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   no match at token[3]=\"visual\", skipping",
+    "[local-stt]   no match at token[4]=\"25\", skipping",
+    "[local-stt]   no match at token[5]=\"left\", skipping",
+    "[local-stt]   beam final[0]: score=3.299 pos=6 commands=[EI5L]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=6 commands=[]",
+    "[local-stt] ParseCommands: result=[EI5L] (avgConf=0.95)",
+    "[local-stt] parsed commands: [EI5L] (conf=0.95, kinds=1)",
+    "[local-stt] validated commands: [EI5L] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"UAL380 EI5L\" (conf=0.95, time=2.5003ms) ==="
+  ]
+}

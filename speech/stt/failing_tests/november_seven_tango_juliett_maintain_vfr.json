@@ -1,0 +1,863 @@
+{
+  "time": "2026-11-02T14:04:44.428525057Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1072:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "november seven tango juliett maintain VFR",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, whiskey, delta, information, Pat's four, Jim's four, Bojid four, Philly four, Wikav, B-dawk, Jimms, Jepug, Kusle, Albeck, three five, two seven right, runway, r-nav, I L S, Piedmont 60 81, Piedmont 60 31, Piedmont 60 28, citation niner kebeck sierra, longitude niner kebeck sierra, citation longitude niner kebeck sierra, november eight seven niner kebeck sierra, cessna one seventy-two seven charlie zulu, skyhawk seven charlie zulu, november seven eight seven charlie zulu, november seven seven seven tango juliet, B E thirty-six eight two one, bonanza eight two one, november five eight two one, november four seven foxtrot mike, citation zero tango yankee, november four one zero tango yankee, Blue Streak 55 25, Blue Streak 54 zero seven, Frontier Flight 25 zero six, ExecJet 63 zero four, HAMPTON, midst, Schlep, PHILIPSBURG, Menge, Wavey, RAVINE, MODENA, Martin, EAST TEXAS, Jimmy, Sara, Turnbull, DUPONT, ATLANTIC CITY, Enzew, hikes, Blare, Doylestown Airport, COYLE, Phillips Army Air Field, YARDLEY, Philadelphia International Airport, POTTSTOWN",
+  "whisper_duration_ms": 501.185,
+  "audio_duration_ms": 6216,
+  "processor": "GPU: NVIDIA GeForce RTX 4070 Laptop GPU (7948MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "",
+  "command": "",
+  "reason": "maintain VFR needs no action",
+  "stt_aircraft": {
+    "B E thirty-six eight two one": {
+      "Callsign": "N5821/T",
+      "AircraftType": "BE36",
+      "Fixes": {
+        "ATLANTIC CITY": "ACY",
+        "Atlantic City": "KACY",
+        "COYLE": "CYN",
+        "Lehigh Valley": "KABE"
+      },
+      "Route": [
+        "CYN",
+        "ACY",
+        "KACY"
+      ],
+      "Altitude": 5000,
+      "Heading": 160,
+      "Speed": 165,
+      "State": "overflight",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N",
+      "AddressingForm": 1
+    },
+    "Blue Streak 54 zero seven": {
+      "Callsign": "JIA5407",
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "27R",
+        "RNAV Runway 35": "G35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway two seven right": "27R",
+        "visual runway three five": "35",
+        "visual runway two seven right": "27R",
+        "visual three five": "35",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "27R": {
+          "Enzew": "ENZEW",
+          "Jalto": "JALTO",
+          "Martin": "MRTIN",
+          "Menge": "MENGE"
+        },
+        "G35": {
+          "Albeck": "ALBEK",
+          "B-dawk": "BDAWK",
+          "Cemek": "CEMEK",
+          "Harlu": "HARLU",
+          "Jepug": "JEPUG",
+          "Jimms": "JIIMS",
+          "Kusle": "KUSLE",
+          "Wikav": "WIKAV"
+        }
+      },
+      "STAR": "PAATS4",
+      "Route": [
+        "KPHL"
+      ],
+      "Altitude": 10000,
+      "Heading": 31,
+      "Speed": 318,
+      "AssignedHeading": 31,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "17",
+        "35",
+        "8",
+        "26",
+        "9L",
+        "27R"
+      ]
+    },
+    "Blue Streak 55 25": {
+      "Callsign": "JIA5525",
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "27R",
+        "RNAV Runway 35": "G35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway two seven right": "27R",
+        "visual runway three five": "35",
+        "visual runway two seven right": "27R",
+        "visual three five": "35",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "27R": {
+          "Enzew": "ENZEW",
+          "Jalto": "JALTO",
+          "Martin": "MRTIN",
+          "Menge": "MENGE"
+        },
+        "G35": {
+          "Albeck": "ALBEK",
+          "B-dawk": "BDAWK",
+          "Cemek": "CEMEK",
+          "Harlu": "HARLU",
+          "Jepug": "JEPUG",
+          "Jimms": "JIIMS",
+          "Kusle": "KUSLE",
+          "Wikav": "WIKAV"
+        }
+      },
+      "STAR": "BOJID4",
+      "Route": [
+        "KPHL"
+      ],
+      "Altitude": 8000,
+      "Heading": 135,
+      "Speed": 306,
+      "AssignedHeading": 135,
+      "State": "arrival",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N",
+      "LAHSORunways": [
+        "17",
+        "35",
+        "8",
+        "26",
+        "9L",
+        "27R"
+      ]
+    },
+    "ExecJet 63 zero four": {
+      "Callsign": "EJA6304",
+      "AircraftType": "CL35",
+      "Fixes": {
+        "EAST TEXAS": "ETX",
+        "Jenkins Airport": "15N",
+        "Lehigh Valley": "KABE",
+        "POTTSTOWN": "PTW",
+        "hikes": "HIKES"
+      },
+      "Route": [
+        "PTW",
+        "HIKES",
+        "ETX",
+        "KABE"
+      ],
+      "Altitude": 11000,
+      "Heading": 18,
+      "Speed": 355,
+      "State": "overflight",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "Frontier Flight 25 zero six": {
+      "Callsign": "FFT2506",
+      "AircraftType": "A20N",
+      "Fixes": {
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "27R",
+        "RNAV Runway 35": "G35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway two seven right": "27R",
+        "visual runway three five": "35",
+        "visual runway two seven right": "27R",
+        "visual three five": "35",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "27R": {
+          "Enzew": "ENZEW",
+          "Jalto": "JALTO",
+          "Martin": "MRTIN",
+          "Menge": "MENGE"
+        },
+        "G35": {
+          "Albeck": "ALBEK",
+          "B-dawk": "BDAWK",
+          "Cemek": "CEMEK",
+          "Harlu": "HARLU",
+          "Jepug": "JEPUG",
+          "Jimms": "JIIMS",
+          "Kusle": "KUSLE",
+          "Wikav": "WIKAV"
+        }
+      },
+      "AssignedApproach": "ILS Runway 27R",
+      "STAR": "JIIMS4",
+      "Route": [
+        "KPHL"
+      ],
+      "Altitude": 523,
+      "Heading": 267,
+      "Speed": 143,
+      "State": "cleared approach",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "17",
+        "35",
+        "8",
+        "26",
+        "9L",
+        "27R"
+      ]
+    },
+    "Piedmont 60 28": {
+      "Callsign": "PDT6028",
+      "AircraftType": "E145",
+      "Fixes": {
+        "PHILIPSBURG": "PSB",
+        "POTTSTOWN": "PTW",
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL",
+        "RAVINE": "RAV",
+        "Sara": "SARAA",
+        "midst": "MIDST"
+      },
+      "SID": "PHL4",
+      "Route": [
+        "PTW",
+        "SARAA",
+        "RAV",
+        "PSB",
+        "MIDST",
+        "TYSUN",
+        "KMSN"
+      ],
+      "Altitude": 5000,
+      "Heading": 265,
+      "Speed": 242,
+      "State": "departure",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "Piedmont 60 31": {
+      "Callsign": "PDT6031",
+      "AircraftType": "E145",
+      "Fixes": {
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "27R",
+        "RNAV Runway 35": "G35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway two seven right": "27R",
+        "visual runway three five": "35",
+        "visual runway two seven right": "27R",
+        "visual three five": "35",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "27R": {
+          "Enzew": "ENZEW",
+          "Jalto": "JALTO",
+          "Martin": "MRTIN",
+          "Menge": "MENGE"
+        },
+        "G35": {
+          "Albeck": "ALBEK",
+          "B-dawk": "BDAWK",
+          "Cemek": "CEMEK",
+          "Harlu": "HARLU",
+          "Jepug": "JEPUG",
+          "Jimms": "JIIMS",
+          "Kusle": "KUSLE",
+          "Wikav": "WIKAV"
+        }
+      },
+      "STAR": "BOJID4",
+      "Route": [
+        "KPHL"
+      ],
+      "Altitude": 8000,
+      "Heading": 135,
+      "Speed": 301,
+      "State": "arrival",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N",
+      "LAHSORunways": [
+        "17",
+        "35",
+        "8",
+        "26",
+        "9L",
+        "27R"
+      ]
+    },
+    "Piedmont 60 81": {
+      "Callsign": "PDT6081",
+      "AircraftType": "E145",
+      "Fixes": {
+        "COYLE": "CYN",
+        "HAMPTON": "HTO",
+        "Jimmy": "JIMEE",
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL",
+        "Schlep": "SHLEP",
+        "Wavey": "WAVEY"
+      },
+      "SID": "PHL4",
+      "Route": [
+        "CYN",
+        "JIMEE",
+        "WAVEY",
+        "SHLEP",
+        "HTO",
+        "KPVD"
+      ],
+      "Altitude": 5000,
+      "Heading": 97,
+      "Speed": 297,
+      "State": "departure",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "bonanza eight two one": {
+      "Callsign": "N5821/T",
+      "AircraftType": "BE36",
+      "Fixes": {
+        "ATLANTIC CITY": "ACY",
+        "Atlantic City": "KACY",
+        "COYLE": "CYN",
+        "Lehigh Valley": "KABE"
+      },
+      "Route": [
+        "CYN",
+        "ACY",
+        "KACY"
+      ],
+      "Altitude": 5000,
+      "Heading": 160,
+      "Speed": 165,
+      "State": "overflight",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N",
+      "AddressingForm": 1
+    },
+    "cessna one seventy-two seven charlie zulu": {
+      "Callsign": "N787CZ/T",
+      "AircraftType": "C172",
+      "Fixes": {
+        "Blare": "BLARE",
+        "DUPONT": "DQO",
+        "Delaware Coastal": "KGED",
+        "EAST TEXAS": "ETX",
+        "Lehigh Valley": "KABE",
+        "MODENA": "MXE",
+        "POTTSTOWN": "PTW",
+        "hikes": "HIKES"
+      },
+      "Route": [
+        "BLARE",
+        "DQO",
+        "MXE",
+        "PTW",
+        "HIKES",
+        "ETX",
+        "KABE"
+      ],
+      "Altitude": 9000,
+      "Heading": 343,
+      "Speed": 117,
+      "State": "overflight",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "AddressingForm": 1
+    },
+    "citation longitude niner kebeck sierra": {
+      "Callsign": "N879QS/T",
+      "AircraftType": "C700",
+      "Fixes": {
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL",
+        "Turnbull": "TRNBL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "27R",
+        "RNAV Runway 35": "G35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway two seven right": "27R",
+        "visual runway three five": "35",
+        "visual runway two seven right": "27R",
+        "visual three five": "35",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "27R": {
+          "Enzew": "ENZEW",
+          "Jalto": "JALTO",
+          "Martin": "MRTIN",
+          "Menge": "MENGE"
+        },
+        "G35": {
+          "Albeck": "ALBEK",
+          "B-dawk": "BDAWK",
+          "Cemek": "CEMEK",
+          "Harlu": "HARLU",
+          "Jepug": "JEPUG",
+          "Jimms": "JIIMS",
+          "Kusle": "KUSLE",
+          "Wikav": "WIKAV"
+        }
+      },
+      "STAR": "JIIMS4",
+      "Route": [
+        "TRNBL",
+        "KPHL"
+      ],
+      "Altitude": 9000,
+      "Heading": 284,
+      "Speed": 247,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "17",
+        "35",
+        "8",
+        "26",
+        "9L",
+        "27R"
+      ]
+    },
+    "citation niner kebeck sierra": {
+      "Callsign": "N879QS/T",
+      "AircraftType": "C700",
+      "Fixes": {
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL",
+        "Turnbull": "TRNBL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "27R",
+        "RNAV Runway 35": "G35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway two seven right": "27R",
+        "visual runway three five": "35",
+        "visual runway two seven right": "27R",
+        "visual three five": "35",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "27R": {
+          "Enzew": "ENZEW",
+          "Jalto": "JALTO",
+          "Martin": "MRTIN",
+          "Menge": "MENGE"
+        },
+        "G35": {
+          "Albeck": "ALBEK",
+          "B-dawk": "BDAWK",
+          "Cemek": "CEMEK",
+          "Harlu": "HARLU",
+          "Jepug": "JEPUG",
+          "Jimms": "JIIMS",
+          "Kusle": "KUSLE",
+          "Wikav": "WIKAV"
+        }
+      },
+      "STAR": "JIIMS4",
+      "Route": [
+        "TRNBL",
+        "KPHL"
+      ],
+      "Altitude": 9000,
+      "Heading": 284,
+      "Speed": 247,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "17",
+        "35",
+        "8",
+        "26",
+        "9L",
+        "27R"
+      ]
+    },
+    "citation zero tango yankee": {
+      "Callsign": "N410TY/T",
+      "AircraftType": "C550",
+      "Fixes": {
+        "Monmouth Executive": "KBLM",
+        "Reading Regional Airport (Carl A Spaatz Field)": "KRDG",
+        "YARDLEY": "ARD"
+      },
+      "Route": [
+        "ARD",
+        "KBLM",
+        "KBLM"
+      ],
+      "Altitude": 5000,
+      "Heading": 87,
+      "Speed": 293,
+      "State": "overflight",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N",
+      "AddressingForm": 1
+    },
+    "longitude niner kebeck sierra": {
+      "Callsign": "N879QS/T",
+      "AircraftType": "C700",
+      "Fixes": {
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL",
+        "Turnbull": "TRNBL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "27R",
+        "RNAV Runway 35": "G35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway two seven right": "27R",
+        "visual runway three five": "35",
+        "visual runway two seven right": "27R",
+        "visual three five": "35",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "27R": {
+          "Enzew": "ENZEW",
+          "Jalto": "JALTO",
+          "Martin": "MRTIN",
+          "Menge": "MENGE"
+        },
+        "G35": {
+          "Albeck": "ALBEK",
+          "B-dawk": "BDAWK",
+          "Cemek": "CEMEK",
+          "Harlu": "HARLU",
+          "Jepug": "JEPUG",
+          "Jimms": "JIIMS",
+          "Kusle": "KUSLE",
+          "Wikav": "WIKAV"
+        }
+      },
+      "STAR": "JIIMS4",
+      "Route": [
+        "TRNBL",
+        "KPHL"
+      ],
+      "Altitude": 9000,
+      "Heading": 284,
+      "Speed": 247,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "17",
+        "35",
+        "8",
+        "26",
+        "9L",
+        "27R"
+      ]
+    },
+    "november eight seven niner kebeck sierra": {
+      "Callsign": "N879QS",
+      "AircraftType": "C700",
+      "Fixes": {
+        "Philadelphia": "KPHL",
+        "Philly": "KPHL",
+        "Turnbull": "TRNBL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 27R": "27R",
+        "RNAV Runway 35": "G35"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five": "35",
+        "visual approach runway two seven right": "27R",
+        "visual runway three five": "35",
+        "visual runway two seven right": "27R",
+        "visual three five": "35",
+        "visual two seven right": "27R"
+      },
+      "ApproachFixes": {
+        "27R": {
+          "Enzew": "ENZEW",
+          "Jalto": "JALTO",
+          "Martin": "MRTIN",
+          "Menge": "MENGE"
+        },
+        "G35": {
+          "Albeck": "ALBEK",
+          "B-dawk": "BDAWK",
+          "Cemek": "CEMEK",
+          "Harlu": "HARLU",
+          "Jepug": "JEPUG",
+          "Jimms": "JIIMS",
+          "Kusle": "KUSLE",
+          "Wikav": "WIKAV"
+        }
+      },
+      "STAR": "JIIMS4",
+      "Route": [
+        "TRNBL",
+        "KPHL"
+      ],
+      "Altitude": 9000,
+      "Heading": 284,
+      "Speed": 247,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "17",
+        "35",
+        "8",
+        "26",
+        "9L",
+        "27R"
+      ]
+    },
+    "november five eight two one": {
+      "Callsign": "N5821",
+      "AircraftType": "BE36",
+      "Fixes": {
+        "ATLANTIC CITY": "ACY",
+        "Atlantic City": "KACY",
+        "COYLE": "CYN",
+        "Lehigh Valley": "KABE"
+      },
+      "Route": [
+        "CYN",
+        "ACY",
+        "KACY"
+      ],
+      "Altitude": 5000,
+      "Heading": 160,
+      "Speed": 165,
+      "State": "overflight",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N"
+    },
+    "november four one zero tango yankee": {
+      "Callsign": "N410TY",
+      "AircraftType": "C550",
+      "Fixes": {
+        "Monmouth Executive": "KBLM",
+        "Reading Regional Airport (Carl A Spaatz Field)": "KRDG",
+        "YARDLEY": "ARD"
+      },
+      "Route": [
+        "ARD",
+        "KBLM",
+        "KBLM"
+      ],
+      "Altitude": 5000,
+      "Heading": 87,
+      "Speed": 293,
+      "State": "overflight",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N"
+    },
+    "november four seven foxtrot mike": {
+      "Callsign": "N47FM",
+      "Fixes": {
+        "Allentown Queen City Municipal": "KXLL",
+        "Phillips Army": "KAPG"
+      },
+      "Altitude": 6500,
+      "Heading": 221,
+      "Speed": 140,
+      "State": "vfr flight following",
+      "ControllerFrequency": "1N"
+    },
+    "november seven eight seven charlie zulu": {
+      "Callsign": "N787CZ",
+      "AircraftType": "C172",
+      "Fixes": {
+        "Blare": "BLARE",
+        "DUPONT": "DQO",
+        "Delaware Coastal": "KGED",
+        "EAST TEXAS": "ETX",
+        "Lehigh Valley": "KABE",
+        "MODENA": "MXE",
+        "POTTSTOWN": "PTW",
+        "hikes": "HIKES"
+      },
+      "Route": [
+        "BLARE",
+        "DQO",
+        "MXE",
+        "PTW",
+        "HIKES",
+        "ETX",
+        "KABE"
+      ],
+      "Altitude": 9000,
+      "Heading": 343,
+      "Speed": 117,
+      "State": "overflight",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S"
+    },
+    "november seven seven seven tango juliet": {
+      "Callsign": "N777TJ",
+      "LastAddressed": true,
+      "Fixes": {
+        "Doylestown": "KDYL",
+        "Wilmington": "KILG"
+      },
+      "Altitude": 1000,
+      "Heading": 56,
+      "Speed": 179,
+      "State": "vfr flight following",
+      "ControllerFrequency": "1N"
+    },
+    "skyhawk seven charlie zulu": {
+      "Callsign": "N787CZ/T",
+      "AircraftType": "C172",
+      "Fixes": {
+        "Blare": "BLARE",
+        "DUPONT": "DQO",
+        "Delaware Coastal": "KGED",
+        "EAST TEXAS": "ETX",
+        "Lehigh Valley": "KABE",
+        "MODENA": "MXE",
+        "POTTSTOWN": "PTW",
+        "hikes": "HIKES"
+      },
+      "Route": [
+        "BLARE",
+        "DQO",
+        "MXE",
+        "PTW",
+        "HIKES",
+        "ETX",
+        "KABE"
+      ],
+      "Altitude": 9000,
+      "Heading": 343,
+      "Speed": 117,
+      "State": "overflight",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "AddressingForm": 1
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"november seven tango juliett maintain VFR\"",
+    "[local-stt] normalized words: [november 7 tango juliett maintain vfr]",
+    "[local-stt] tokens: 6",
+    "[local-stt]   token[0]: Text=\"november\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"7\" Type=1 Value=7",
+    "[local-stt]   token[2]: Text=\"tango\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"juliett\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"vfr\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 6 tokens, 21 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 6 tokens, 21 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"november seven seven seven tango juliet\" (airline=1.000, flight=0.850, skip=0)",
+    "[local-stt]     result 1: \"november seven seven seven tango juliet\" (airline=0.550, flight=0.850, skip=2)",
+    "[local-stt]     pattern \"airline_flight\": selected \"november seven seven seven tango juliet\" (airline=1.00, flight=0.85, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 17 results",
+    "[local-stt]     result 0: \"ExecJet 63 zero four\" (airline=0.512, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Blue Streak 54 zero seven\" (airline=0.458, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Piedmont 60 31\" (airline=0.500, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Piedmont 60 81\" (airline=0.500, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Frontier Flight 25 zero six\" (airline=0.583, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Blue Streak 54 zero seven\" (airline=0.62, flight=0.00, skip=3)",
+    "[local-stt]     pattern \"airline_only\": scoring rejected \"Blue Streak 54 zero seven\"",
+    "[local-stt]   pattern \"ga_november\": 4 results",
+    "[local-stt]     result 0: \"november eight seven niner kebeck sierra\" (airline=0.800, flight=0.750, skip=0)",
+    "[local-stt]     result 1: \"november four seven foxtrot mike\" (airline=0.800, flight=0.750, skip=0)",
+    "[local-stt]     result 2: \"november seven seven seven tango juliet\" (airline=0.800, flight=0.750, skip=0)",
+    "[local-stt]     result 3: \"november seven eight seven charlie zulu\" (airline=0.800, flight=0.750, skip=0)",
+    "[local-stt]     pattern \"ga_november\": selected \"november four seven foxtrot mike\" (airline=0.80, flight=0.75, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 1 results",
+    "[local-stt]     result 0: \"november seven seven seven tango juliet\" (airline=0.500, flight=0.700, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"november seven seven seven tango juliet\" (airline=0.50, flight=0.70, skip=1)",
+    "[local-stt]   best callsign candidate: \"N777TJ\" (conf=0.97, consumed=4, addressingForm=0, spokenKey=\"november seven seven seven tango juliet\"; 2 candidates)",
+    "[local-stt] ParseCommands: 2 tokens",
+    "[local-stt]   matched command: \"SAYAGAIN/SPEED\" [] (pos=0, conf=0.50, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[0]=\"maintain\", skipping",
+    "[local-stt]   no match at token[1]=\"vfr\", skipping",
+    "[local-stt]   no match at token[1]=\"vfr\", skipping",
+    "[local-stt]   beam final[0]: score=0.100 pos=2 commands=[SAYAGAIN/SPEED]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=2 commands=[]",
+    "[local-stt] ParseCommands: result=[SAYAGAIN/SPEED] (avgConf=0.50)",
+    "[local-stt] ParseCommands: 4 tokens",
+    "[local-stt]   matched command: \"SAYAGAIN/ALTITUDE\" [] (pos=0, conf=0.50, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[0]=\"tango\", skipping",
+    "[local-stt]   no match at token[3]=\"vfr\", skipping",
+    "[local-stt]   no match at token[1]=\"juliett\", skipping",
+    "[local-stt]   matched command: \"SAYAGAIN/SPEED\" [] (pos=2, conf=0.50, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[2]=\"maintain\", skipping",
+    "[local-stt]   no match at token[3]=\"vfr\", skipping",
+    "[local-stt]   no match at token[3]=\"vfr\", skipping",
+    "[local-stt]   beam final[0]: score=0.300 pos=4 commands=[SAYAGAIN/ALTITUDE]",
+    "[local-stt]   beam final[1]: score=-2.203 pos=4 commands=[SAYAGAIN/SPEED]",
+    "[local-stt]   beam final[2]: score=-4.605 pos=4 commands=[]",
+    "[local-stt] ParseCommands: result=[SAYAGAIN/ALTITUDE] (avgConf=0.50)",
+    "[local-stt] callsign match: Callsign=\"N777TJ\" SpokenKey=\"november seven seven seven tango juliet\" Conf=0.97 Consumed=4",
+    "[local-stt] aircraft context: State=\"vfr flight following\" Altitude=1000 Fixes=2 Approaches=0 VisualApproaches=0 AssignedApproach=\"\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Doylestown\" -\u003e \"KDYL\"",
+    "[local-stt]   fix: \"Wilmington\" -\u003e \"KILG\"",
+    "[local-stt] command tokens after disregard: 2",
+    "[local-stt]   token[0]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"vfr\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 2 tokens",
+    "[local-stt]   matched command: \"SAYAGAIN/SPEED\" [] (pos=0, conf=0.50, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[0]=\"maintain\", skipping",
+    "[local-stt]   no match at token[1]=\"vfr\", skipping",
+    "[local-stt]   no match at token[1]=\"vfr\", skipping",
+    "[local-stt]   beam final[0]: score=0.100 pos=2 commands=[SAYAGAIN/SPEED]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=2 commands=[]",
+    "[local-stt] ParseCommands: result=[SAYAGAIN/SPEED] (avgConf=0.50)",
+    "[local-stt] parsed commands: [SAYAGAIN/SPEED] (conf=0.50, kinds=1)",
+    "[local-stt] validated commands: [SAYAGAIN/SPEED] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"N777TJ SAYAGAIN/SPEED\" (conf=0.48, time=6.0031ms) ==="
+  ]
+}

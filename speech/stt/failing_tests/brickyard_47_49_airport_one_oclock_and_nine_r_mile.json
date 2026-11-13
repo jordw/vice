@@ -1,0 +1,411 @@
+{
+  "time": "2026-11-09T15:54:24.66444949Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Brickyard 47 49 Airport one o'clock and nine r' miles",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, quebec, information, Proud two, Milton four, Froggy, Castle, Harp, Jotre, Eyrod, Kuz, Dans, Donyb, two two, runway, zulu, yankee, x-ray, r-nav, I L S, Brickyard 47 49, Brickyard 46 84, Delta seven 51, Delta 24 12, Delta 21 95, Grecko, Yoman, Proud, LaGuardia Airport",
+  "whisper_duration_ms": 667.885,
+  "audio_duration_ms": 4424,
+  "processor": "GPU: NVIDIA GeForce RTX 3050 (6002MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "RPA4749",
+  "command": "AP/1/9",
+  "reason": "nine r' miles is niner miles",
+  "stt_aircraft": {
+    "Brickyard 46 84": {
+      "Callsign": "RPA4684",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Grecko": "GREKO",
+        "LaGuardia": "KLGA",
+        "Proud": "PROUD",
+        "Yoman": "YOMAN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22": "I22",
+        "RNAV X Runway 22": "RX2",
+        "RNAV Y Runway 22": "RY2",
+        "RNAV Z Runway 22": "RZ2"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two": "22",
+        "visual runway two two": "22",
+        "visual two two": "22"
+      },
+      "ApproachFixes": {
+        "I22": {
+          "Grecko": "GREKO",
+          "Yoman": "YOMAN"
+        },
+        "RX2": {
+          "Da-zoo": "DAZOO",
+          "Dans": "DANPS",
+          "Donyb": "DONYB",
+          "Eyrod": "EYROD",
+          "Jotre": "JOTRE",
+          "Kuz": "KUZZZ"
+        },
+        "RY2": {
+          "Froggy": "FROGI",
+          "Grecko": "GREKO"
+        },
+        "RZ2": {
+          "Castle": "CASLE",
+          "Harp": "HAARP",
+          "Kuz": "KUZZZ",
+          "Kylie": "KYLIE",
+          "Parks": "PARGS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22",
+      "STAR": "MIP4",
+      "Route": [
+        "PROUD",
+        "KLGA"
+      ],
+      "Altitude": 3566,
+      "Heading": 45,
+      "Speed": 232,
+      "AssignedHeading": 45,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "13",
+        "31"
+      ]
+    },
+    "Brickyard 47 49": {
+      "Callsign": "RPA4749",
+      "AircraftType": "E170",
+      "Fixes": {
+        "Grecko": "GREKO",
+        "LaGuardia": "KLGA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22": "I22",
+        "RNAV X Runway 22": "RX2",
+        "RNAV Y Runway 22": "RY2",
+        "RNAV Z Runway 22": "RZ2"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two": "22",
+        "visual runway two two": "22",
+        "visual two two": "22"
+      },
+      "ApproachFixes": {
+        "I22": {
+          "Grecko": "GREKO",
+          "Yoman": "YOMAN"
+        },
+        "RX2": {
+          "Da-zoo": "DAZOO",
+          "Dans": "DANPS",
+          "Donyb": "DONYB",
+          "Eyrod": "EYROD",
+          "Jotre": "JOTRE",
+          "Kuz": "KUZZZ"
+        },
+        "RY2": {
+          "Froggy": "FROGI",
+          "Grecko": "GREKO"
+        },
+        "RZ2": {
+          "Castle": "CASLE",
+          "Harp": "HAARP",
+          "Kuz": "KUZZZ",
+          "Kylie": "KYLIE",
+          "Parks": "PARGS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22",
+      "STAR": "PROUD2",
+      "Route": [
+        "GREKO",
+        "KLGA"
+      ],
+      "Altitude": 2000,
+      "Heading": 209,
+      "Speed": 169,
+      "AssignedSpeed": 170,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "13",
+        "31"
+      ]
+    },
+    "Delta 21 95": {
+      "Callsign": "DAL2195",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Grecko": "GREKO",
+        "LaGuardia": "KLGA",
+        "Proud": "PROUD",
+        "Yoman": "YOMAN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22": "I22",
+        "RNAV X Runway 22": "RX2",
+        "RNAV Y Runway 22": "RY2",
+        "RNAV Z Runway 22": "RZ2"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two": "22",
+        "visual runway two two": "22",
+        "visual two two": "22"
+      },
+      "ApproachFixes": {
+        "I22": {
+          "Grecko": "GREKO",
+          "Yoman": "YOMAN"
+        },
+        "RX2": {
+          "Da-zoo": "DAZOO",
+          "Dans": "DANPS",
+          "Donyb": "DONYB",
+          "Eyrod": "EYROD",
+          "Jotre": "JOTRE",
+          "Kuz": "KUZZZ"
+        },
+        "RY2": {
+          "Froggy": "FROGI",
+          "Grecko": "GREKO"
+        },
+        "RZ2": {
+          "Castle": "CASLE",
+          "Harp": "HAARP",
+          "Kuz": "KUZZZ",
+          "Kylie": "KYLIE",
+          "Parks": "PARGS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22",
+      "STAR": "PROUD2",
+      "Route": [
+        "PROUD",
+        "KLGA"
+      ],
+      "Altitude": 3015,
+      "Heading": 130,
+      "Speed": 185,
+      "AssignedHeading": 130,
+      "AssignedSpeed": 170,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "13",
+        "31"
+      ]
+    },
+    "Delta 24 12": {
+      "Callsign": "DAL2412",
+      "LastAddressed": true,
+      "AircraftType": "BCS3",
+      "Fixes": {
+        "Grecko": "GREKO",
+        "LaGuardia": "KLGA",
+        "Proud": "PROUD",
+        "Yoman": "YOMAN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22": "I22",
+        "RNAV X Runway 22": "RX2",
+        "RNAV Y Runway 22": "RY2",
+        "RNAV Z Runway 22": "RZ2"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two": "22",
+        "visual runway two two": "22",
+        "visual two two": "22"
+      },
+      "ApproachFixes": {
+        "I22": {
+          "Grecko": "GREKO",
+          "Yoman": "YOMAN"
+        },
+        "RX2": {
+          "Da-zoo": "DAZOO",
+          "Dans": "DANPS",
+          "Donyb": "DONYB",
+          "Eyrod": "EYROD",
+          "Jotre": "JOTRE",
+          "Kuz": "KUZZZ"
+        },
+        "RY2": {
+          "Froggy": "FROGI",
+          "Grecko": "GREKO"
+        },
+        "RZ2": {
+          "Castle": "CASLE",
+          "Harp": "HAARP",
+          "Kuz": "KUZZZ",
+          "Kylie": "KYLIE",
+          "Parks": "PARGS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22",
+      "STAR": "PROUD2",
+      "Route": [
+        "PROUD",
+        "KLGA"
+      ],
+      "Altitude": 3785,
+      "Heading": 45,
+      "Speed": 252,
+      "AssignedHeading": 45,
+      "AssignedSpeed": 230,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "13",
+        "31"
+      ]
+    },
+    "Delta seven 51": {
+      "Callsign": "DAL751",
+      "AircraftType": "B738",
+      "Fixes": {
+        "LaGuardia": "KLGA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22": "I22",
+        "RNAV X Runway 22": "RX2",
+        "RNAV Y Runway 22": "RY2",
+        "RNAV Z Runway 22": "RZ2"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two": "22",
+        "visual runway two two": "22",
+        "visual two two": "22"
+      },
+      "ApproachFixes": {
+        "I22": {
+          "Grecko": "GREKO",
+          "Yoman": "YOMAN"
+        },
+        "RX2": {
+          "Da-zoo": "DAZOO",
+          "Dans": "DANPS",
+          "Donyb": "DONYB",
+          "Eyrod": "EYROD",
+          "Jotre": "JOTRE",
+          "Kuz": "KUZZZ"
+        },
+        "RY2": {
+          "Froggy": "FROGI",
+          "Grecko": "GREKO"
+        },
+        "RZ2": {
+          "Castle": "CASLE",
+          "Harp": "HAARP",
+          "Kuz": "KUZZZ",
+          "Kylie": "KYLIE",
+          "Parks": "PARGS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22",
+      "STAR": "MIP4",
+      "Route": [
+        "KLGA"
+      ],
+      "Altitude": 1747,
+      "Heading": 224,
+      "Speed": 169,
+      "AssignedSpeed": 170,
+      "State": "cleared approach",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "13",
+        "31"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Brickyard 47 49 Airport one o'clock and nine r' miles\"",
+    "[local-stt] normalized words: [brickyard 47 49 airport 1 oclock and 9 r miles]",
+    "[local-stt] tokens: 10",
+    "[local-stt]   token[0]: Text=\"brickyard\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"47\" Type=1 Value=47",
+    "[local-stt]   token[2]: Text=\"49\" Type=1 Value=49",
+    "[local-stt]   token[3]: Text=\"airport\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"1\" Type=1 Value=1",
+    "[local-stt]   token[5]: Text=\"oclock\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"and\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"9\" Type=1 Value=9",
+    "[local-stt]   token[8]: Text=\"r\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"miles\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 10 tokens, 5 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 10 tokens, 5 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Brickyard 47 49\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Brickyard 47 49\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"Brickyard 47 49\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Brickyard 46 84\" (airline=1.000, flight=0.700, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Brickyard 47 49\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 7 results",
+    "[local-stt]     result 0: \"Brickyard 46 84\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Brickyard 47 49\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Delta 21 95\" (airline=0.437, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Delta 24 12\" (airline=0.437, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Delta seven 51\" (airline=0.437, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Brickyard 46 84\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"Brickyard 47 49\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Brickyard 47 49\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"Brickyard 47 49\" (airline=0.500, flight=0.700, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Brickyard 47 49\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"RPA4749\" (spokenKey=\"Brickyard 47 49\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"RPA4749\" SpokenKey=\"Brickyard 47 49\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=2000 Fixes=2 Approaches=4 VisualApproaches=3 AssignedApproach=\"ILS Runway 22\" LAHSORunways=[13 31]",
+    "[local-stt]   fix: \"LaGuardia\" -\u003e \"KLGA\"",
+    "[local-stt]   fix: \"Grecko\" -\u003e \"GREKO\"",
+    "[local-stt]   approach: \"ILS Runway 22\" -\u003e \"I22\"",
+    "[local-stt]   approach: \"RNAV Y Runway 22\" -\u003e \"RY2\"",
+    "[local-stt]   approach: \"RNAV X Runway 22\" -\u003e \"RX2\"",
+    "[local-stt]   approach: \"RNAV Z Runway 22\" -\u003e \"RZ2\"",
+    "[local-stt]   visual approach: \"visual approach runway two two\" -\u003e \"22\"",
+    "[local-stt]   visual approach: \"visual two two\" -\u003e \"22\"",
+    "[local-stt]   visual approach: \"visual runway two two\" -\u003e \"22\"",
+    "[local-stt] command tokens after disregard: 7",
+    "[local-stt]   token[0]: Text=\"airport\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"1\" Type=1 Value=1",
+    "[local-stt]   token[2]: Text=\"oclock\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"and\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"9\" Type=1 Value=9",
+    "[local-stt]   token[5]: Text=\"r\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"miles\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 7 tokens",
+    "[local-stt]   matched command: \"AP/1/9\" [airport_advisory] (pos=0, conf=0.99, consumed=5, isThen=false)",
+    "[local-stt]   no match at token[0]=\"airport\", skipping",
+    "[local-stt]   no match at token[5]=\"r\", skipping",
+    "[local-stt]   no match at token[1]=\"1\", skipping",
+    "[local-stt]   no match at token[6]=\"miles\", skipping",
+    "[local-stt]   no match at token[2]=\"oclock\", skipping",
+    "[local-stt]   skipping filler word: \"and\"",
+    "[local-stt]   no match at token[4]=\"9\", skipping",
+    "[local-stt]   no match at token[5]=\"r\", skipping",
+    "[local-stt]   no match at token[6]=\"miles\", skipping",
+    "[local-stt]   beam final[0]: score=2.340 pos=7 commands=[AP/1/9]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=7 commands=[]",
+    "[local-stt] ParseCommands: result=[AP/1/9] (avgConf=0.99)",
+    "[local-stt] parsed commands: [AP/1/9] (conf=0.99, kinds=1)",
+    "[local-stt] validated commands: [AP/1/9] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"RPA4749 AP/1/9\" (conf=0.99, time=2.024ms) ==="
+  ]
+}

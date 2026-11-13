@@ -1,0 +1,218 @@
+{
+  "time": "2026-11-11T04:44:27.278058336Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "november five four three four fresno approach say again",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, uniform, information, Alta niner, Wosim, Ameer, Riso, Siboc, Isesy, Frame, Ebb-tuw, Morla, Blear, one one right, one one left, runway, Visual, r-nav, yankee, Localizer, cessna one seventy-two zero lima brahvo, skyhawk zero lima brahvo, november seven three zero lima brahvo, november five four three four, American 76 77, Alta, Porterville Municipal Airport, , Fresno Yosemite International Airport",
+  "whisper_duration_ms": 368.982,
+  "audio_duration_ms": 5832,
+  "processor": "GPU: NVIDIA GeForce RTX 5070 Ti (16211MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "N5434",
+  "command": "GA",
+  "reason": "say again",
+  "stt_aircraft": {
+    "American 76 77": {
+      "Callsign": "AAL7677",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Alta": "ALTTA",
+        "Fresno Yosemite": "KFAT"
+      },
+      "CandidateApproaches": {
+        "Localizer Y Runway 11L": "LY11L",
+        "RNAV Runway 11L": "R1L",
+        "RNAV Runway 11R": "R1R",
+        "Visual Runway 11L": "V1L",
+        "Visual Runway 11R": "V1R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one one left": "11L",
+        "visual approach runway one one right": "11R",
+        "visual one one left": "11L",
+        "visual one one right": "11R",
+        "visual runway one one left": "11L",
+        "visual runway one one right": "11R"
+      },
+      "ApproachFixes": {
+        "LY11L": {
+          "Ameer": "AMEER",
+          "Blear": "BLEAR",
+          "Isesy": "ISESY",
+          "Morla": "MORLA",
+          "Wepox": "WEPOX",
+          "slack": "SLACK"
+        },
+        "R1L": {
+          "Blear": "BLEAR",
+          "Ebb-tuw": "EBTUW",
+          "Frame": "FRAME",
+          "Isesy": "ISESY",
+          "Morla": "MORLA",
+          "Riso": "RIWSO",
+          "Siboc": "SIBOC",
+          "Wepox": "WEPOX",
+          "slack": "SLACK"
+        },
+        "R1R": {
+          "Blear": "BLEAR",
+          "Ebb-tuw": "EBTUW",
+          "Frame": "FRAME",
+          "Isesy": "ISESY",
+          "Riso": "RIWSO",
+          "Siboc": "SIBOC",
+          "Wosim": "WOSIM",
+          "Zuvek": "ZUVEK",
+          "jitmu": "JITMU"
+        },
+        "V1L": {
+          "Ameer": "AMEER",
+          "Morla": "MORLA",
+          "slack": "SLACK"
+        },
+        "V1R": {
+          "Wosim": "WOSIM",
+          "Zuvek": "ZUVEK"
+        }
+      },
+      "STAR": "ALTTA9",
+      "Route": [
+        "ALTTA",
+        "KFAT"
+      ],
+      "Altitude": 15309,
+      "Heading": 318,
+      "Speed": 332,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F"
+    },
+    "cessna one seventy-two zero lima brahvo": {
+      "Callsign": "N730LB/T",
+      "AircraftType": "C172",
+      "Fixes": {
+        "Fresno Chandler Executive": "KFCH",
+        "Porterville Municipal": "KPTV"
+      },
+      "Altitude": 6781,
+      "Heading": 136,
+      "Speed": 147,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "AddressingForm": 1
+    },
+    "november five four three four": {
+      "Callsign": "N5434",
+      "Fixes": {
+        "": "L45",
+        "Hanford Municipal": "KHJO"
+      },
+      "Altitude": 2071,
+      "Heading": 160,
+      "Speed": 73,
+      "State": "vfr flight following",
+      "ControllerFrequency": "1F"
+    },
+    "november seven three zero lima brahvo": {
+      "Callsign": "N730LB",
+      "LastAddressed": true,
+      "AircraftType": "C172",
+      "Fixes": {
+        "Fresno Chandler Executive": "KFCH",
+        "Porterville Municipal": "KPTV"
+      },
+      "Altitude": 6781,
+      "Heading": 136,
+      "Speed": 147,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F"
+    },
+    "skyhawk zero lima brahvo": {
+      "Callsign": "N730LB/T",
+      "AircraftType": "C172",
+      "Fixes": {
+        "Fresno Chandler Executive": "KFCH",
+        "Porterville Municipal": "KPTV"
+      },
+      "Altitude": 6781,
+      "Heading": 136,
+      "Speed": 147,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "AddressingForm": 1
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"november five four three four fresno approach say again\"",
+    "[local-stt] normalized words: [november 5 4 3 4 fresno approach say again]",
+    "[local-stt] tokens: 6",
+    "[local-stt]   token[0]: Text=\"november\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"5434\" Type=1 Value=5434",
+    "[local-stt]   token[2]: Text=\"fresno\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"say\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"again\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 6 tokens, 5 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 6 tokens, 5 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"november five four three four\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"november five four three four\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"november five four three four\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"november five four three four\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 2 results",
+    "[local-stt]     result 0: \"American 76 77\" (airline=0.514, flight=0.000, skip=2)",
+    "[local-stt]     result 1: \"American 76 77\" (airline=0.625, flight=0.000, skip=3)",
+    "[local-stt]     pattern \"airline_only\": selected \"American 76 77\" (airline=0.62, flight=0.00, skip=3)",
+    "[local-stt]     pattern \"airline_only\": scoring rejected \"American 76 77\"",
+    "[local-stt]   pattern \"ga_november\": 1 results",
+    "[local-stt]     result 0: \"november five four three four\" (airline=0.800, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"ga_november\": selected \"november five four three four\" (airline=0.80, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"november five four three four\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"november five four three four\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"november five four three four\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"N5434\" (spokenKey=\"november five four three four\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"N5434\" SpokenKey=\"november five four three four\" Conf=1.00 Consumed=2",
+    "[local-stt] aircraft context: State=\"vfr flight following\" Altitude=2071 Fixes=2 Approaches=0 VisualApproaches=0 AssignedApproach=\"\" LAHSORunways=[]",
+    "[local-stt]   fix: \"\" -\u003e \"L45\"",
+    "[local-stt]   fix: \"Hanford Municipal\" -\u003e \"KHJO\"",
+    "[local-stt] command tokens after disregard: 4",
+    "[local-stt]   token[0]: Text=\"fresno\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"say\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"again\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 4 tokens",
+    "[local-stt]   matched command: \"\" [position_id] (pos=0, conf=0.74, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"fresno\", skipping",
+    "[local-stt]   no match at token[2]=\"say\", skipping",
+    "[local-stt]   matched command: \"\" [position_id] (pos=1, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[1]=\"approach\", skipping",
+    "[local-stt]   no match at token[3]=\"again\", skipping",
+    "[local-stt]   no match at token[2]=\"say\", skipping",
+    "[local-stt]   no match at token[2]=\"say\", skipping",
+    "[local-stt]   no match at token[3]=\"again\", skipping",
+    "[local-stt]   no match at token[3]=\"again\", skipping",
+    "[local-stt]   beam final[0]: score=0.598 pos=4 commands=[]",
+    "[local-stt]   beam final[1]: score=-1.705 pos=4 commands=[]",
+    "[local-stt]   beam final[2]: score=-4.605 pos=4 commands=[]",
+    "[local-stt] ParseCommands: matched but no commands to issue",
+    "[local-stt] parsed commands: [] (conf=1.00, kinds=100)",
+    "[local-stt] validated commands: [] (conf=0.00)",
+    "[local-stt] VFR aircraft with position ID only, treating as implicit go ahead",
+    "[local-stt] === DecodeTranscript END: \"N5434 GA\" (conf=1.00, time=2.0826ms) ==="
+  ]
+}

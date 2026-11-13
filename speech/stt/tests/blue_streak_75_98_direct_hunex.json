@@ -1,0 +1,782 @@
+{
+  "time": "2026-11-04T02:46:34.078515023Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Blue Streak 75 98 direct Hunex",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, juliet, information, Parker seven, Millet six, Jones eight, Flips seven, Chesley niner, Banker eight, Weasel eight, Kween eight, Jojo eight, Icons eight, DURST one, three six, one right, one left, runway, I L S, Southwest eight 91, Southwest 54 55, Brickyard 96 74, Piedmont 82 24, Blue Streak 94 48, Blue Streak 75 98, Blue Streak 72 35, Blue Streak 44 40, Blue Streak 33 25, American niner 79, American 76, American 36, American one 39, Hunex, Jenda, Krisel, Defox, Vall, Hekam, Solomon, Canuck, Cedox, Ppool, Glassy, Benby, Lonia, Audi, Epaye, Barbeque, Nuggt, Nivse, Will Go, Nuxey, Durst, Cat, Unjam, Thack, Hey-you, Marjo, Jojo, Welet, Kilns, Wise, CHARLESTON, Queen, Paykin, Nooks, Sikdu, Lancer, Denny, Lonny, Caarz, Clawed, Hampy, Icons, Charlotte Douglas International Airport, Gilfin, Wades",
+  "whisper_duration_ms": 120.028,
+  "audio_duration_ms": 2888,
+  "processor": "GPU: NVIDIA GeForce RTX 5070 Ti (15995MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "JIA7598",
+  "command": "DHUNEX",
+  "stt_aircraft": {
+    "American 36": {
+      "Callsign": "AAL36",
+      "AircraftType": "A321",
+      "Fixes": {
+        "Charlotte Douglas": "KCLT",
+        "Gilfin": "GILFN",
+        "Icons": "ICONS",
+        "Nooks": "NOOKS"
+      },
+      "SID": "ICONS8",
+      "Route": [
+        "GILFN",
+        "ICONS",
+        "NOOKS",
+        "WURFL",
+        "KONEY",
+        "TAALN",
+        "ROYCO",
+        "JEVED",
+        "WOPNR",
+        "PRMUS",
+        "KENLL",
+        "KDJT"
+      ],
+      "Altitude": 3099,
+      "Heading": 250,
+      "Speed": 220,
+      "AssignedHeading": 250,
+      "State": "departure",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W"
+    },
+    "American 76": {
+      "Callsign": "AAL76",
+      "AircraftType": "A321",
+      "Fixes": {
+        "Charlotte Douglas": "KCLT",
+        "Denny": "DENNE",
+        "Glassy": "GLASI",
+        "Marjo": "MARJO",
+        "Nivse": "NIVSE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Runway 1R": "I1R",
+        "ILS Runway 36": "I36"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual approach runway three six": "36",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R",
+        "visual runway three six": "36",
+        "visual three six": "36"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Canuck": "CUNUK",
+          "Defox": "DEFOX",
+          "Lonia": "LONIA",
+          "Nelson": "NLSON",
+          "Nuxey": "NUXXY",
+          "Welet": "WELET"
+        },
+        "I1R": {
+          "Denny": "DENNE",
+          "Glassy": "GLASI",
+          "Hunex": "HUNEX",
+          "Krisel": "KRISL",
+          "Marjo": "MARJO",
+          "Nivse": "NIVSE",
+          "Solomon": "SOLMN"
+        },
+        "I36": {
+          "Hekam": "HEKAM",
+          "Hey-you": "HAYOU",
+          "Jenda": "JENDA",
+          "Lancer": "LANSR",
+          "Nuggt": "NUGGT",
+          "Ppool": "PPOOL",
+          "Sikdu": "CIKDU"
+        }
+      },
+      "AssignedApproach": "ILS Runway 1R",
+      "STAR": "BANKR8",
+      "Route": [
+        "DENNE",
+        "MARJO",
+        "NIVSE",
+        "GLASI",
+        "KCLT"
+      ],
+      "Altitude": 5000,
+      "Heading": 48,
+      "Speed": 281,
+      "State": "cleared approach",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D"
+    },
+    "American niner 79": {
+      "Callsign": "AAL979",
+      "AircraftType": "A321",
+      "Fixes": {
+        "Charlotte Douglas": "KCLT",
+        "Hey-you": "HAYOU",
+        "Lancer": "LANSR",
+        "Sikdu": "CIKDU"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Runway 1R": "I1R",
+        "ILS Runway 36": "I36"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual approach runway three six": "36",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R",
+        "visual runway three six": "36",
+        "visual three six": "36"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Canuck": "CUNUK",
+          "Defox": "DEFOX",
+          "Lonia": "LONIA",
+          "Nelson": "NLSON",
+          "Nuxey": "NUXXY",
+          "Welet": "WELET"
+        },
+        "I1R": {
+          "Denny": "DENNE",
+          "Glassy": "GLASI",
+          "Hunex": "HUNEX",
+          "Krisel": "KRISL",
+          "Marjo": "MARJO",
+          "Nivse": "NIVSE",
+          "Solomon": "SOLMN"
+        },
+        "I36": {
+          "Hekam": "HEKAM",
+          "Hey-you": "HAYOU",
+          "Jenda": "JENDA",
+          "Lancer": "LANSR",
+          "Nuggt": "NUGGT",
+          "Ppool": "PPOOL",
+          "Sikdu": "CIKDU"
+        }
+      },
+      "AssignedApproach": "ILS Runway 36",
+      "STAR": "MLLET6",
+      "Route": [
+        "LANSR",
+        "CIKDU",
+        "HAYOU",
+        "KCLT"
+      ],
+      "Altitude": 6353,
+      "Heading": 303,
+      "Speed": 280,
+      "State": "cleared approach",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "American one 39": {
+      "Callsign": "AAL139",
+      "AircraftType": "A321",
+      "Fixes": {
+        "Benby": "BENBY",
+        "Charlotte Douglas": "KCLT",
+        "Cubim": "CUBIM",
+        "I bait": "IBATE",
+        "Jojo": "JOJJO",
+        "Lonny": "LONEE",
+        "Tyler": "TIELR",
+        "Wades": "WAYDS",
+        "Will Go": "WLLGO"
+      },
+      "SID": "JOJJO8",
+      "Route": [
+        "WAYDS",
+        "LONEE",
+        "JOJJO",
+        "WLLGO",
+        "BENBY",
+        "TIELR",
+        "CUBIM",
+        "IBATE",
+        "IIU",
+        "LISLE",
+        "SPI",
+        "SKBOZ",
+        "LNK",
+        "CHE",
+        "BONGO",
+        "HELPR",
+        "GAROT",
+        "INYOE",
+        "KSFO"
+      ],
+      "Altitude": 5919,
+      "Heading": 312,
+      "Speed": 243,
+      "State": "departure",
+      "ControllerFrequency": "1W",
+      "TrackingController": "C43"
+    },
+    "Blue Streak 33 25": {
+      "Callsign": "JIA3325",
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Charlotte Douglas": "KCLT",
+        "Hey-you": "HAYOU",
+        "Sikdu": "CIKDU"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Runway 1R": "I1R",
+        "ILS Runway 36": "I36"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual approach runway three six": "36",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R",
+        "visual runway three six": "36",
+        "visual three six": "36"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Canuck": "CUNUK",
+          "Defox": "DEFOX",
+          "Lonia": "LONIA",
+          "Nelson": "NLSON",
+          "Nuxey": "NUXXY",
+          "Welet": "WELET"
+        },
+        "I1R": {
+          "Denny": "DENNE",
+          "Glassy": "GLASI",
+          "Hunex": "HUNEX",
+          "Krisel": "KRISL",
+          "Marjo": "MARJO",
+          "Nivse": "NIVSE",
+          "Solomon": "SOLMN"
+        },
+        "I36": {
+          "Hekam": "HEKAM",
+          "Hey-you": "HAYOU",
+          "Jenda": "JENDA",
+          "Lancer": "LANSR",
+          "Nuggt": "NUGGT",
+          "Ppool": "PPOOL",
+          "Sikdu": "CIKDU"
+        }
+      },
+      "AssignedApproach": "ILS Runway 36",
+      "STAR": "CHSLY9",
+      "Route": [
+        "CIKDU",
+        "HAYOU",
+        "KCLT"
+      ],
+      "Altitude": 3070,
+      "Heading": 278,
+      "Speed": 221,
+      "State": "cleared approach",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "Blue Streak 44 40": {
+      "Callsign": "JIA4440",
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Charlotte Douglas": "KCLT",
+        "Icons": "ICONS",
+        "Nooks": "NOOKS"
+      },
+      "SID": "ICONS8",
+      "Route": [
+        "ICONS",
+        "NOOKS",
+        "SAV",
+        "OMN",
+        "MALET",
+        "TRV",
+        "PBI",
+        "MRLIN",
+        "PREDA",
+        "ISAAC",
+        "OYSTA",
+        "CAREY",
+        "MAJUR",
+        "ZQA",
+        "LEPAS",
+        "BOSAR",
+        "DONEZ",
+        "GEROT",
+        "MYEF"
+      ],
+      "Altitude": 11641,
+      "Heading": 175,
+      "Speed": 326,
+      "State": "departure",
+      "ControllerFrequency": "1W",
+      "TrackingController": "C43"
+    },
+    "Blue Streak 72 35": {
+      "Callsign": "JIA7235",
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Barbeque": "BBQEE",
+        "Canuck": "CUNUK",
+        "Cedox": "CEDOX",
+        "Charlotte Douglas": "KCLT",
+        "Defox": "DEFOX",
+        "Lonia": "LONIA",
+        "Nelson": "NLSON",
+        "Nuxey": "NUXXY",
+        "Paykin": "PAYKN",
+        "Thack": "THACK",
+        "Vall": "VALLL",
+        "Welet": "WELET"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Runway 1R": "I1R",
+        "ILS Runway 36": "I36"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual approach runway three six": "36",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R",
+        "visual runway three six": "36",
+        "visual three six": "36"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Canuck": "CUNUK",
+          "Defox": "DEFOX",
+          "Lonia": "LONIA",
+          "Nelson": "NLSON",
+          "Nuxey": "NUXXY",
+          "Welet": "WELET"
+        },
+        "I1R": {
+          "Denny": "DENNE",
+          "Glassy": "GLASI",
+          "Hunex": "HUNEX",
+          "Krisel": "KRISL",
+          "Marjo": "MARJO",
+          "Nivse": "NIVSE",
+          "Solomon": "SOLMN"
+        },
+        "I36": {
+          "Hekam": "HEKAM",
+          "Hey-you": "HAYOU",
+          "Jenda": "JENDA",
+          "Lancer": "LANSR",
+          "Nuggt": "NUGGT",
+          "Ppool": "PPOOL",
+          "Sikdu": "CIKDU"
+        }
+      },
+      "AssignedApproach": "ILS Runway 1L",
+      "STAR": "PARQR7",
+      "Route": [
+        "PAYKN",
+        "THACK",
+        "BBQEE",
+        "CEDOX",
+        "VALLL",
+        "KCLT"
+      ],
+      "Altitude": 15320,
+      "Heading": 160,
+      "Speed": 321,
+      "State": "arrival",
+      "ControllerFrequency": "1U",
+      "TrackingController": "1U"
+    },
+    "Blue Streak 75 98": {
+      "Callsign": "JIA7598",
+      "LastAddressed": true,
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Charlotte Douglas": "KCLT",
+        "Denny": "DENNE",
+        "Glassy": "GLASI",
+        "Marjo": "MARJO",
+        "Nivse": "NIVSE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Runway 1R": "I1R",
+        "ILS Runway 36": "I36"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual approach runway three six": "36",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R",
+        "visual runway three six": "36",
+        "visual three six": "36"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Canuck": "CUNUK",
+          "Defox": "DEFOX",
+          "Lonia": "LONIA",
+          "Nelson": "NLSON",
+          "Nuxey": "NUXXY",
+          "Welet": "WELET"
+        },
+        "I1R": {
+          "Denny": "DENNE",
+          "Glassy": "GLASI",
+          "Hunex": "HUNEX",
+          "Krisel": "KRISL",
+          "Marjo": "MARJO",
+          "Nivse": "NIVSE",
+          "Solomon": "SOLMN"
+        },
+        "I36": {
+          "Hekam": "HEKAM",
+          "Hey-you": "HAYOU",
+          "Jenda": "JENDA",
+          "Lancer": "LANSR",
+          "Nuggt": "NUGGT",
+          "Ppool": "PPOOL",
+          "Sikdu": "CIKDU"
+        }
+      },
+      "AssignedApproach": "ILS Runway 1R",
+      "STAR": "JONZE8",
+      "Route": [
+        "DENNE",
+        "MARJO",
+        "NIVSE",
+        "GLASI",
+        "KCLT"
+      ],
+      "Altitude": 5000,
+      "Heading": 43,
+      "Speed": 281,
+      "State": "cleared approach",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D"
+    },
+    "Blue Streak 94 48": {
+      "Callsign": "JIA9448",
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Charlotte Douglas": "KCLT",
+        "Hampy": "HMMPY",
+        "Myrtle Beach": "KMYR",
+        "Queen": "KWEEN",
+        "Unjam": "UNJAM"
+      },
+      "SID": "KWEEN8",
+      "Route": [
+        "HMMPY",
+        "KWEEN",
+        "UNJAM",
+        "KMYR"
+      ],
+      "Altitude": 4826,
+      "Heading": 120,
+      "Speed": 226,
+      "AssignedHeading": 120,
+      "State": "departure",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W"
+    },
+    "Brickyard 96 74": {
+      "Callsign": "RPA9674",
+      "AircraftType": "E170",
+      "Fixes": {
+        "Cat": "CAATT",
+        "Charlotte Douglas": "KCLT",
+        "Epaye": "EPAYE",
+        "Hekam": "HEKAM",
+        "Hey-you": "HAYOU",
+        "Jenda": "JENDA",
+        "Lancer": "LANSR",
+        "Nuggt": "NUGGT",
+        "Ppool": "PPOOL",
+        "Sikdu": "CIKDU",
+        "Wise": "WHIZE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Runway 1R": "I1R",
+        "ILS Runway 36": "I36"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual approach runway three six": "36",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R",
+        "visual runway three six": "36",
+        "visual three six": "36"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Canuck": "CUNUK",
+          "Defox": "DEFOX",
+          "Lonia": "LONIA",
+          "Nelson": "NLSON",
+          "Nuxey": "NUXXY",
+          "Welet": "WELET"
+        },
+        "I1R": {
+          "Denny": "DENNE",
+          "Glassy": "GLASI",
+          "Hunex": "HUNEX",
+          "Krisel": "KRISL",
+          "Marjo": "MARJO",
+          "Nivse": "NIVSE",
+          "Solomon": "SOLMN"
+        },
+        "I36": {
+          "Hekam": "HEKAM",
+          "Hey-you": "HAYOU",
+          "Jenda": "JENDA",
+          "Lancer": "LANSR",
+          "Nuggt": "NUGGT",
+          "Ppool": "PPOOL",
+          "Sikdu": "CIKDU"
+        }
+      },
+      "AssignedApproach": "ILS Runway 36",
+      "STAR": "CHSLY9",
+      "Route": [
+        "WHIZE",
+        "CAATT",
+        "EPAYE",
+        "KCLT"
+      ],
+      "Altitude": 15950,
+      "Heading": 220,
+      "Speed": 311,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "Piedmont 82 24": {
+      "Callsign": "PDT8224",
+      "AircraftType": "E145",
+      "Fixes": {
+        "CHARLESTON": "HVQ",
+        "Charlotte Douglas": "KCLT",
+        "Clawed": "CLAWD",
+        "Tri-State Airport / Milton J. Ferguson": "KHTS"
+      },
+      "SID": "WEAZL8",
+      "Route": [
+        "CLAWD",
+        "HVQ",
+        "KHTS"
+      ],
+      "Altitude": 16000,
+      "Heading": 1,
+      "Speed": 385,
+      "State": "departure",
+      "ControllerFrequency": "1W",
+      "TrackingController": "C43"
+    },
+    "Southwest 54 55": {
+      "Callsign": "SWA5455",
+      "AircraftType": "B737",
+      "Fixes": {
+        "Audi": "AUDII",
+        "Caarz": "CAARZ",
+        "Charlotte Douglas": "KCLT",
+        "Durst": "DURST",
+        "Kilns": "KILNS"
+      },
+      "SID": "DURST1",
+      "Route": [
+        "CAARZ",
+        "KILNS",
+        "DURST",
+        "AUDII",
+        "THHMP",
+        "KBWI"
+      ],
+      "Altitude": 14815,
+      "Heading": 77,
+      "Speed": 376,
+      "State": "departure",
+      "ControllerFrequency": "1W",
+      "TrackingController": "C43"
+    },
+    "Southwest eight 91": {
+      "Callsign": "SWA891",
+      "AircraftType": "B737",
+      "Fixes": {
+        "Canuck": "CUNUK",
+        "Charlotte Douglas": "KCLT",
+        "Defox": "DEFOX",
+        "Lonia": "LONIA",
+        "Nelson": "NLSON",
+        "Nuxey": "NUXXY",
+        "Welet": "WELET"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Runway 1R": "I1R",
+        "ILS Runway 36": "I36"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual approach runway three six": "36",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R",
+        "visual runway three six": "36",
+        "visual three six": "36"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Canuck": "CUNUK",
+          "Defox": "DEFOX",
+          "Lonia": "LONIA",
+          "Nelson": "NLSON",
+          "Nuxey": "NUXXY",
+          "Welet": "WELET"
+        },
+        "I1R": {
+          "Denny": "DENNE",
+          "Glassy": "GLASI",
+          "Hunex": "HUNEX",
+          "Krisel": "KRISL",
+          "Marjo": "MARJO",
+          "Nivse": "NIVSE",
+          "Solomon": "SOLMN"
+        },
+        "I36": {
+          "Hekam": "HEKAM",
+          "Hey-you": "HAYOU",
+          "Jenda": "JENDA",
+          "Lancer": "LANSR",
+          "Nuggt": "NUGGT",
+          "Ppool": "PPOOL",
+          "Sikdu": "CIKDU"
+        }
+      },
+      "AssignedApproach": "ILS Runway 1L",
+      "STAR": "FILPZ7",
+      "Route": [
+        "KCLT"
+      ],
+      "Altitude": 4000,
+      "Heading": 183,
+      "Speed": 218,
+      "State": "arrival",
+      "ControllerFrequency": "1U",
+      "TrackingController": "1U"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Blue Streak 75 98 direct Hunex\"",
+    "[local-stt] normalized words: [blue streak 75 98 direct hunex]",
+    "[local-stt] tokens: 6",
+    "[local-stt]   token[0]: Text=\"blue\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"streak\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"75\" Type=1 Value=75",
+    "[local-stt]   token[3]: Text=\"98\" Type=1 Value=98",
+    "[local-stt]   token[4]: Text=\"direct\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"hunex\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 6 tokens, 13 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 6 tokens, 13 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Blue Streak 75 98\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Blue Streak 75 98\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 4 results",
+    "[local-stt]     result 0: \"American niner 79\" (airline=0.458, flight=0.722, skip=0)",
+    "[local-stt]     result 1: \"Blue Streak 75 98\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 2: \"American niner 79\" (airline=0.514, flight=0.722, skip=1)",
+    "[local-stt]     result 3: \"Blue Streak 75 98\" (airline=0.472, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Blue Streak 75 98\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 26 results",
+    "[local-stt]     result 0: \"American 36\" (airline=0.458, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"American one 39\" (airline=0.458, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Brickyard 96 74\" (airline=0.508, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Southwest 54 55\" (airline=0.574, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"American niner 79\" (airline=0.458, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Blue Streak 33 25\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Blue Streak 75 98\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 1: \"Blue Streak 75 98\" (airline=0.500, flight=1.000, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Blue Streak 75 98\" (airline=0.50, flight=1.00, skip=1)",
+    "[local-stt]   exact callsign \"JIA7598\" (spokenKey=\"Blue Streak 75 98\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"JIA7598\" SpokenKey=\"Blue Streak 75 98\" Conf=1.00 Consumed=4",
+    "[local-stt] aircraft context: State=\"cleared approach\" Altitude=5000 Fixes=5 Approaches=3 VisualApproaches=9 AssignedApproach=\"ILS Runway 1R\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Charlotte Douglas\" -\u003e \"KCLT\"",
+    "[local-stt]   fix: \"Denny\" -\u003e \"DENNE\"",
+    "[local-stt]   fix: \"Marjo\" -\u003e \"MARJO\"",
+    "[local-stt]   fix: \"Nivse\" -\u003e \"NIVSE\"",
+    "[local-stt]   fix: \"Glassy\" -\u003e \"GLASI\"",
+    "[local-stt]   approach: \"ILS Runway 1L\" -\u003e \"I1L\"",
+    "[local-stt]   approach: \"ILS Runway 1R\" -\u003e \"I1R\"",
+    "[local-stt]   approach: \"ILS Runway 36\" -\u003e \"I36\"",
+    "[local-stt]   visual approach: \"visual approach runway three six\" -\u003e \"36\"",
+    "[local-stt]   visual approach: \"visual three six\" -\u003e \"36\"",
+    "[local-stt]   visual approach: \"visual runway one left\" -\u003e \"1L\"",
+    "[local-stt]   visual approach: \"visual one left\" -\u003e \"1L\"",
+    "[local-stt]   visual approach: \"visual one right\" -\u003e \"1R\"",
+    "[local-stt]   visual approach: \"visual approach runway one left\" -\u003e \"1L\"",
+    "[local-stt]   visual approach: \"visual runway one right\" -\u003e \"1R\"",
+    "[local-stt]   visual approach: \"visual approach runway one right\" -\u003e \"1R\"",
+    "[local-stt]   visual approach: \"visual runway three six\" -\u003e \"36\"",
+    "[local-stt] command tokens after disregard: 2",
+    "[local-stt]   token[0]: Text=\"direct\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"hunex\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 2 tokens",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"hunex\" against 5 fixes",
+    "[local-stt]   extractFix: no match found for \"hunex\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"hunex\" against 5 fixes",
+    "[local-stt]   extractFix: no match found for \"hunex\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"hunex\" against 5 fixes",
+    "[local-stt]   extractFix: no match found for \"hunex\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"hunex\" against 5 fixes",
+    "[local-stt]   extractFix: no match found for \"hunex\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"hunex\" against 5 fixes",
+    "[local-stt]   extractFix: no match found for \"hunex\"",
+    "[local-stt]   matched command: \"SAYAGAIN/FIX\" [] (pos=0, conf=0.50, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[0]=\"direct\", skipping",
+    "[local-stt]   no match at token[1]=\"hunex\", skipping",
+    "[local-stt]   no match at token[1]=\"hunex\", skipping",
+    "[local-stt]   beam final[0]: score=0.100 pos=2 commands=[SAYAGAIN/FIX]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=2 commands=[]",
+    "[local-stt] ParseCommands: result=[SAYAGAIN/FIX] (avgConf=0.50)",
+    "[local-stt] parsed commands: [SAYAGAIN/FIX] (conf=0.50, kinds=1)",
+    "[local-stt] validated commands: [SAYAGAIN/FIX] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"JIA7598 SAYAGAIN/FIX\" (conf=0.50, time=1.0258ms) ==="
+  ]
+}

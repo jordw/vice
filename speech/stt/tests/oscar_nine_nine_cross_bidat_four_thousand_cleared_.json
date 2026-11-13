@@ -1,0 +1,1065 @@
+{
+  "time": "2026-11-08T22:22:04.608646566Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Oscar Nine Nine cross bidat four thousand cleared ARNAV Zulu Two Seven approach",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, bravo, alpha, information, Lucky one, Comics two, two seven, two eight right, runway, yankee, mike, zulu, r-nav, Localizer, I L S, Southwest 88 60, Southwest six 67, piper turbo arrow five delta brahvo, turbo arrow five delta brahvo, november two five five delta brahvo, citation four foxtrot kilo, citation ten four foxtrot kilo, citation X four foxtrot kilo, november one eight four foxtrot kilo, JetBlue 29, Alaska 99, Alaska 22, American 71, Carsner, Catdog, Jade, Nesty, Klo-min, Mibby, Taco, bagel, Lucky, Ogote, Sayae, reebo, Hannah, Jeeves, Sijhi, Barrett, Aztec, Penny, Lindy, Vai-Da, Okain, Husker, Montgomery-Gibbs Executive Airport, San Diego International Airport",
+  "whisper_duration_ms": 220.113,
+  "audio_duration_ms": 4552,
+  "processor": "GPU: NVIDIA GeForce RTX 5060 Ti (16050MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "ASA99",
+  "command": "CVYDDA/A40 CRZ7",
+  "stt_aircraft": {
+    "Alaska 22": {
+      "Callsign": "ASA22",
+      "AircraftType": "B737",
+      "Fixes": {
+        "Okain": "OKAIN",
+        "San Diego": "KSAN",
+        "Sijhi": "CIJHI",
+        "reebo": "REEBO"
+      },
+      "CandidateApproaches": {
+        "Localizer Runway 27": "L27",
+        "RNAV M Runway 27": "RM7",
+        "RNAV Y Runway 27": "RY7",
+        "RNAV Z Runway 27": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "L27": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RM7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        },
+        "RY7": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RZ7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        }
+      },
+      "AssignedApproach": "Localizer Runway 27",
+      "STAR": "LUCKI1",
+      "Route": [
+        "OKAIN",
+        "CIJHI",
+        "REEBO",
+        "KSAN"
+      ],
+      "Altitude": 3887,
+      "Heading": 271,
+      "Speed": 145,
+      "State": "cleared approach",
+      "ControllerFrequency": "5E",
+      "TrackingController": "5S"
+    },
+    "Alaska 99": {
+      "Callsign": "ASA99",
+      "LastAddressed": true,
+      "AircraftType": "B738",
+      "Fixes": {
+        "Okain": "OKAIN",
+        "San Diego": "KSAN",
+        "Sayae": "SAYAE",
+        "Sijhi": "CIJHI",
+        "Taco": "TOKOE",
+        "Vai-Da": "VYDDA"
+      },
+      "CandidateApproaches": {
+        "Localizer Runway 27": "L27",
+        "RNAV M Runway 27": "RM7",
+        "RNAV Y Runway 27": "RY7",
+        "RNAV Z Runway 27": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "L27": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RM7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        },
+        "RY7": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RZ7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        }
+      },
+      "AssignedApproach": "RNAV Z Runway 27",
+      "STAR": "COMIX2",
+      "Route": [
+        "VYDDA",
+        "OKAIN",
+        "SAYAE",
+        "CIJHI",
+        "TOKOE",
+        "KSAN"
+      ],
+      "Altitude": 5000,
+      "Heading": 164,
+      "Speed": 175,
+      "State": "arrival",
+      "ControllerFrequency": "5E",
+      "TrackingController": "5E"
+    },
+    "American 71": {
+      "Callsign": "AAL71",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Barrett": "BARET",
+        "Hannah": "HNAHH",
+        "Husker": "HSKER",
+        "Lindy": "LYNDI",
+        "Lucky": "LUCKI",
+        "San Diego": "KSAN"
+      },
+      "CandidateApproaches": {
+        "Localizer Runway 27": "L27",
+        "RNAV M Runway 27": "RM7",
+        "RNAV Y Runway 27": "RY7",
+        "RNAV Z Runway 27": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "L27": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RM7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        },
+        "RY7": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RZ7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        }
+      },
+      "STAR": "LUCKI1",
+      "Route": [
+        "HSKER",
+        "BARET",
+        "HNAHH",
+        "LUCKI",
+        "LYNDI",
+        "KSAN"
+      ],
+      "Altitude": 13902,
+      "Heading": 208,
+      "Speed": 325,
+      "State": "arrival",
+      "ControllerFrequency": "5E",
+      "TrackingController": "5E"
+    },
+    "JetBlue 29": {
+      "Callsign": "JBU29",
+      "AircraftType": "A321",
+      "Fixes": {
+        "Lindy": "LYNDI",
+        "Okain": "OKAIN",
+        "San Diego": "KSAN",
+        "Sijhi": "CIJHI",
+        "Vai-Da": "VYDDA",
+        "reebo": "REEBO"
+      },
+      "CandidateApproaches": {
+        "Localizer Runway 27": "L27",
+        "RNAV M Runway 27": "RM7",
+        "RNAV Y Runway 27": "RY7",
+        "RNAV Z Runway 27": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "L27": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RM7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        },
+        "RY7": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RZ7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        }
+      },
+      "AssignedApproach": "Localizer Runway 27",
+      "STAR": "LUCKI1",
+      "Route": [
+        "LYNDI",
+        "KSAN"
+      ],
+      "Altitude": 6000,
+      "Heading": 238,
+      "Speed": 156,
+      "State": "arrival",
+      "ControllerFrequency": "5E",
+      "TrackingController": "5E"
+    },
+    "Southwest 88 60": {
+      "Callsign": "SWA8860",
+      "AircraftType": "B737",
+      "Fixes": {
+        "San Diego": "KSAN"
+      },
+      "CandidateApproaches": {
+        "Localizer Runway 27": "L27",
+        "RNAV M Runway 27": "RM7",
+        "RNAV Y Runway 27": "RY7",
+        "RNAV Z Runway 27": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "L27": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RM7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        },
+        "RY7": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RZ7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        }
+      },
+      "STAR": "COMIX2",
+      "Route": [
+        "KSAN"
+      ],
+      "Altitude": 5000,
+      "Heading": 100,
+      "Speed": 288,
+      "AssignedAltitude": 5000,
+      "AssignedHeading": 100,
+      "AssignedSpeed": 250,
+      "State": "arrival",
+      "ControllerFrequency": "5E",
+      "TrackingController": "5E"
+    },
+    "Southwest six 67": {
+      "Callsign": "SWA667",
+      "AircraftType": "B737",
+      "Fixes": {
+        "Aztec": "AZTEK",
+        "Jeeves": "JEEVS",
+        "Lindy": "LYNDI",
+        "Lucky": "LUCKI",
+        "San Diego": "KSAN"
+      },
+      "CandidateApproaches": {
+        "Localizer Runway 27": "L27",
+        "RNAV M Runway 27": "RM7",
+        "RNAV Y Runway 27": "RY7",
+        "RNAV Z Runway 27": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "L27": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RM7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        },
+        "RY7": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RZ7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        }
+      },
+      "STAR": "LUCKI1",
+      "Route": [
+        "AZTEK",
+        "JEEVS",
+        "LUCKI",
+        "LYNDI",
+        "KSAN"
+      ],
+      "Altitude": 10694,
+      "Heading": 253,
+      "Speed": 273,
+      "State": "arrival",
+      "ControllerFrequency": "5E",
+      "TrackingController": "5E"
+    },
+    "citation X four foxtrot kilo": {
+      "Callsign": "N184FK/T",
+      "AircraftType": "C750",
+      "Fixes": {
+        "Montgomery-Gibbs Executive": "KMYF",
+        "Penny": "PENYY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight right": "28R",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Barrett": "BARET",
+          "Mibby": "MIBBY",
+          "Nesty": "NESTY",
+          "Ogote": "OGOTE",
+          "Penny": "PENYY",
+          "bagel": "BAKEL"
+        },
+        "R8R": {
+          "Barrett": "BARET",
+          "Mibby": "MIBBY",
+          "Nesty": "NESTY",
+          "Ogote": "OGOTE",
+          "Palos": "PALOS",
+          "Penny": "PENYY",
+          "bagel": "BAKEL"
+        }
+      },
+      "AssignedApproach": "ILS Runway 28R",
+      "Route": [
+        "PENYY",
+        "KMYF"
+      ],
+      "Altitude": 3128,
+      "Heading": 253,
+      "Speed": 219,
+      "State": "cleared approach",
+      "ControllerFrequency": "5E",
+      "TrackingController": "5Y",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "5",
+        "23"
+      ]
+    },
+    "citation four foxtrot kilo": {
+      "Callsign": "N184FK/T",
+      "AircraftType": "C750",
+      "Fixes": {
+        "Montgomery-Gibbs Executive": "KMYF",
+        "Penny": "PENYY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight right": "28R",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Barrett": "BARET",
+          "Mibby": "MIBBY",
+          "Nesty": "NESTY",
+          "Ogote": "OGOTE",
+          "Penny": "PENYY",
+          "bagel": "BAKEL"
+        },
+        "R8R": {
+          "Barrett": "BARET",
+          "Mibby": "MIBBY",
+          "Nesty": "NESTY",
+          "Ogote": "OGOTE",
+          "Palos": "PALOS",
+          "Penny": "PENYY",
+          "bagel": "BAKEL"
+        }
+      },
+      "AssignedApproach": "ILS Runway 28R",
+      "Route": [
+        "PENYY",
+        "KMYF"
+      ],
+      "Altitude": 3128,
+      "Heading": 253,
+      "Speed": 219,
+      "State": "cleared approach",
+      "ControllerFrequency": "5E",
+      "TrackingController": "5Y",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "5",
+        "23"
+      ]
+    },
+    "citation ten four foxtrot kilo": {
+      "Callsign": "N184FK/T",
+      "AircraftType": "C750",
+      "Fixes": {
+        "Montgomery-Gibbs Executive": "KMYF",
+        "Penny": "PENYY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight right": "28R",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Barrett": "BARET",
+          "Mibby": "MIBBY",
+          "Nesty": "NESTY",
+          "Ogote": "OGOTE",
+          "Penny": "PENYY",
+          "bagel": "BAKEL"
+        },
+        "R8R": {
+          "Barrett": "BARET",
+          "Mibby": "MIBBY",
+          "Nesty": "NESTY",
+          "Ogote": "OGOTE",
+          "Palos": "PALOS",
+          "Penny": "PENYY",
+          "bagel": "BAKEL"
+        }
+      },
+      "AssignedApproach": "ILS Runway 28R",
+      "Route": [
+        "PENYY",
+        "KMYF"
+      ],
+      "Altitude": 3128,
+      "Heading": 253,
+      "Speed": 219,
+      "State": "cleared approach",
+      "ControllerFrequency": "5E",
+      "TrackingController": "5Y",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "5",
+        "23"
+      ]
+    },
+    "november one eight four foxtrot kilo": {
+      "Callsign": "N184FK",
+      "AircraftType": "C750",
+      "Fixes": {
+        "Montgomery-Gibbs Executive": "KMYF",
+        "Penny": "PENYY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight right": "28R",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Barrett": "BARET",
+          "Mibby": "MIBBY",
+          "Nesty": "NESTY",
+          "Ogote": "OGOTE",
+          "Penny": "PENYY",
+          "bagel": "BAKEL"
+        },
+        "R8R": {
+          "Barrett": "BARET",
+          "Mibby": "MIBBY",
+          "Nesty": "NESTY",
+          "Ogote": "OGOTE",
+          "Palos": "PALOS",
+          "Penny": "PENYY",
+          "bagel": "BAKEL"
+        }
+      },
+      "AssignedApproach": "ILS Runway 28R",
+      "Route": [
+        "PENYY",
+        "KMYF"
+      ],
+      "Altitude": 3128,
+      "Heading": 253,
+      "Speed": 219,
+      "State": "cleared approach",
+      "ControllerFrequency": "5E",
+      "TrackingController": "5Y",
+      "LAHSORunways": [
+        "5",
+        "23"
+      ]
+    },
+    "november two five five delta brahvo": {
+      "Callsign": "N255DB",
+      "AircraftType": "P28S",
+      "Fixes": {
+        "Imperial County": "KIPL",
+        "Montgomery-Gibbs Executive": "KMYF",
+        "Penny": "PENYY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight right": "28R",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Barrett": "BARET",
+          "Mibby": "MIBBY",
+          "Nesty": "NESTY",
+          "Ogote": "OGOTE",
+          "Penny": "PENYY",
+          "bagel": "BAKEL"
+        },
+        "R8R": {
+          "Barrett": "BARET",
+          "Mibby": "MIBBY",
+          "Nesty": "NESTY",
+          "Ogote": "OGOTE",
+          "Palos": "PALOS",
+          "Penny": "PENYY",
+          "bagel": "BAKEL"
+        }
+      },
+      "AssignedApproach": "ILS Runway 28R",
+      "Route": [
+        "PENYY",
+        "KMYF"
+      ],
+      "Altitude": 6187,
+      "Heading": 256,
+      "Speed": 134,
+      "State": "cleared approach",
+      "ControllerFrequency": "5E",
+      "TrackingController": "5E",
+      "LAHSORunways": [
+        "5",
+        "23"
+      ]
+    },
+    "piper turbo arrow five delta brahvo": {
+      "Callsign": "N255DB/T",
+      "AircraftType": "P28S",
+      "Fixes": {
+        "Imperial County": "KIPL",
+        "Montgomery-Gibbs Executive": "KMYF",
+        "Penny": "PENYY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight right": "28R",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Barrett": "BARET",
+          "Mibby": "MIBBY",
+          "Nesty": "NESTY",
+          "Ogote": "OGOTE",
+          "Penny": "PENYY",
+          "bagel": "BAKEL"
+        },
+        "R8R": {
+          "Barrett": "BARET",
+          "Mibby": "MIBBY",
+          "Nesty": "NESTY",
+          "Ogote": "OGOTE",
+          "Palos": "PALOS",
+          "Penny": "PENYY",
+          "bagel": "BAKEL"
+        }
+      },
+      "AssignedApproach": "ILS Runway 28R",
+      "Route": [
+        "PENYY",
+        "KMYF"
+      ],
+      "Altitude": 6187,
+      "Heading": 256,
+      "Speed": 134,
+      "State": "cleared approach",
+      "ControllerFrequency": "5E",
+      "TrackingController": "5E",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "5",
+        "23"
+      ]
+    },
+    "turbo arrow five delta brahvo": {
+      "Callsign": "N255DB/T",
+      "AircraftType": "P28S",
+      "Fixes": {
+        "Imperial County": "KIPL",
+        "Montgomery-Gibbs Executive": "KMYF",
+        "Penny": "PENYY"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight right": "28R",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Barrett": "BARET",
+          "Mibby": "MIBBY",
+          "Nesty": "NESTY",
+          "Ogote": "OGOTE",
+          "Penny": "PENYY",
+          "bagel": "BAKEL"
+        },
+        "R8R": {
+          "Barrett": "BARET",
+          "Mibby": "MIBBY",
+          "Nesty": "NESTY",
+          "Ogote": "OGOTE",
+          "Palos": "PALOS",
+          "Penny": "PENYY",
+          "bagel": "BAKEL"
+        }
+      },
+      "AssignedApproach": "ILS Runway 28R",
+      "Route": [
+        "PENYY",
+        "KMYF"
+      ],
+      "Altitude": 6187,
+      "Heading": 256,
+      "Speed": 134,
+      "State": "cleared approach",
+      "ControllerFrequency": "5E",
+      "TrackingController": "5E",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "5",
+        "23"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Oscar Nine Nine cross bidat four thousand cleared ARNAV Zulu Two Seven approach\"",
+    "[local-stt] normalized words: [oscar 9 9 cross bidat 4 thousand cleared arnav zulu 2 7 approach]",
+    "[local-stt] tokens: 10",
+    "[local-stt]   token[0]: Text=\"oscar\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"99\" Type=1 Value=99",
+    "[local-stt]   token[2]: Text=\"cross\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"bidat\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"40\" Type=2 Value=40",
+    "[local-stt]   token[5]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"arnav\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"zulu\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"27\" Type=1 Value=27",
+    "[local-stt]   token[9]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 10 tokens, 13 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 10 tokens, 13 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"Alaska 99\" (airline=0.411, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Alaska 99\" (airline=0.41, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 16 results",
+    "[local-stt]     result 0: \"Southwest six 67\" (airline=0.374, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Alaska 99\" (airline=0.411, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Southwest 88 60\" (airline=0.374, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Alaska 22\" (airline=0.411, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"American 71\" (airline=0.492, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Southwest six 67\" (airline=0.53, flight=0.00, skip=2)",
+    "[local-stt]     pattern \"airline_only\": scoring rejected \"Southwest six 67\"",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Alaska 99\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Alaska 99\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"Alaska 99\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   best callsign candidate: \"ASA99\" (conf=0.92, consumed=2, addressingForm=0, spokenKey=\"Alaska 99\"; 1 candidates)",
+    "[local-stt] callsign match: Callsign=\"ASA99\" SpokenKey=\"Alaska 99\" Conf=0.92 Consumed=2",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=5000 Fixes=6 Approaches=4 VisualApproaches=3 AssignedApproach=\"RNAV Z Runway 27\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Sayae\" -\u003e \"SAYAE\"",
+    "[local-stt]   fix: \"Sijhi\" -\u003e \"CIJHI\"",
+    "[local-stt]   fix: \"Taco\" -\u003e \"TOKOE\"",
+    "[local-stt]   fix: \"San Diego\" -\u003e \"KSAN\"",
+    "[local-stt]   fix: \"Vai-Da\" -\u003e \"VYDDA\"",
+    "[local-stt]   fix: \"Okain\" -\u003e \"OKAIN\"",
+    "[local-stt]   approach: \"RNAV M Runway 27\" -\u003e \"RM7\"",
+    "[local-stt]   approach: \"Localizer Runway 27\" -\u003e \"L27\"",
+    "[local-stt]   approach: \"RNAV Y Runway 27\" -\u003e \"RY7\"",
+    "[local-stt]   approach: \"RNAV Z Runway 27\" -\u003e \"RZ7\"",
+    "[local-stt]   visual approach: \"visual two seven\" -\u003e \"27\"",
+    "[local-stt]   visual approach: \"visual runway two seven\" -\u003e \"27\"",
+    "[local-stt]   visual approach: \"visual approach runway two seven\" -\u003e \"27\"",
+    "[local-stt] command tokens after disregard: 8",
+    "[local-stt]   token[0]: Text=\"cross\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"bidat\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"40\" Type=2 Value=40",
+    "[local-stt]   token[3]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"arnav\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"zulu\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"27\" Type=1 Value=27",
+    "[local-stt]   token[7]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 8 tokens",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"bidat\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"bidat\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"40\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"40\"",
+    "[local-stt]   no match at token[0]=\"cross\", skipping",
+    "[local-stt]   no match at token[1]=\"bidat\", skipping",
+    "[local-stt]   matched command: \"A40\" [standalone_altitude] (pos=2, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[2]=\"40\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"arnav\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"arnav\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"zulu\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"zulu\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"27\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"27\"",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"rnav\" variant=\"z\" runway=\"two seven\" -\u003e \"RZ7\" (consumed=3)",
+    "[local-stt]   matched command: \"CRZ7\" [cleared_approach] (pos=3, conf=0.99, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[3]=\"cleared\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"arnav\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"arnav\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"zulu\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"zulu\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"27\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"27\"",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"rnav\" variant=\"z\" runway=\"two seven\" -\u003e \"RZ7\" (consumed=3)",
+    "[local-stt]   matched command: \"CRZ7\" [cleared_approach] (pos=3, conf=0.99, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[3]=\"cleared\", skipping",
+    "[local-stt]   no match at token[7]=\"approach\", skipping",
+    "[local-stt]   no match at token[7]=\"approach\", skipping",
+    "[local-stt]   matched command: \"\" [position_id] (pos=4, conf=0.64, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[4]=\"arnav\", skipping",
+    "[local-stt]   matched command: \"\" [position_id] (pos=4, conf=0.64, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[4]=\"arnav\", skipping",
+    "[local-stt]   beam final[0]: score=2.938 pos=8 commands=[A40 CRZ7]",
+    "[local-stt]   beam final[1]: score=0.037 pos=8 commands=[CRZ7]",
+    "[local-stt]   beam final[2]: score=-1.107 pos=8 commands=[A40]",
+    "[local-stt]   beam final[3]: score=-4.007 pos=8 commands=[]",
+    "[local-stt] ParseCommands: result=[A40 CRZ7] (avgConf=0.99)",
+    "[local-stt] parsed commands: [A40 CRZ7] (conf=0.99, kinds=1)",
+    "[local-stt] validated commands: [A40 CRZ7] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"ASA99 A40 CRZ7\" (conf=0.91, time=7.5199ms) ==="
+  ]
+}

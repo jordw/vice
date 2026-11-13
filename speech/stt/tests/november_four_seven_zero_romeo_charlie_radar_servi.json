@@ -1,0 +1,412 @@
+{
+  "time": "2026-11-01T21:59:43.469056673Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1072:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "november four seven zero romeo charlie radar services terminated squawk VFR frequency change approved",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, Jodie, Jidpu, Woxav, two seven, two two, runway, r-nav, Localizer, I L S, Commute Air 42 49, caravan zero romeo charlie, cessna caravan zero romeo charlie, november four seven zero romeo charlie, falcon two thousand three sierra whiskey, november two seven three sierra whiskey, Cosby, Wexin, WILKES-BARRE, Julut, , Wilkes-Barre/Scranton International Airport",
+  "whisper_duration_ms": 155.3,
+  "audio_duration_ms": 6088,
+  "processor": "GPU: NVIDIA GeForce RTX 5090 (32187MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "N470RC",
+  "command": "RST",
+  "reason": "squawk VFR and frequency change approved need no command",
+  "stt_aircraft": {
+    "Commute Air 42 49": {
+      "Callsign": "UCA4249",
+      "LastAddressed": true,
+      "AircraftType": "E45X",
+      "Fixes": {
+        "Cosby": "COSBY",
+        "Julut": "JULUT",
+        "WILKES-BARRE": "LVZ",
+        "Wexin": "WEXIN",
+        "Wilkes-Barre/Scranton": "KAVP"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22": "I22",
+        "Localizer Runway 22": "L22",
+        "RNAV Runway 22": "R22"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two": "22",
+        "visual runway two two": "22",
+        "visual two two": "22"
+      },
+      "ApproachFixes": {
+        "I22": {
+          "Cosby": "COSBY",
+          "Julut": "JULUT",
+          "Wexin": "WEXIN"
+        },
+        "L22": {
+          "Cosby": "COSBY",
+          "Julut": "JULUT",
+          "Wexin": "WEXIN",
+          "xagke": "XAGKE"
+        },
+        "R22": {
+          "Cona": "KONAA",
+          "Jidpu": "JIDPU",
+          "Jodie": "JODIE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22",
+      "Route": [
+        "LVZ",
+        "KAVP"
+      ],
+      "Altitude": 4000,
+      "Speed": 264,
+      "AssignedHeading": 250,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "LAHSORunways": [
+        "10",
+        "28"
+      ]
+    },
+    "caravan zero romeo charlie": {
+      "Callsign": "N470RC/T",
+      "AircraftType": "C208",
+      "Fixes": {
+        "": "8N8",
+        "Wilkes Barre Wyoming Valley": "KWBW"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 27": "R27"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "R27": {
+          "Hepop": "HEPOP",
+          "Woxav": "WOXAV"
+        }
+      },
+      "Altitude": 4500,
+      "Heading": 210,
+      "Speed": 154,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "AddressingForm": 1
+    },
+    "cessna caravan zero romeo charlie": {
+      "Callsign": "N470RC/T",
+      "AircraftType": "C208",
+      "Fixes": {
+        "": "8N8",
+        "Wilkes Barre Wyoming Valley": "KWBW"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 27": "R27"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "R27": {
+          "Hepop": "HEPOP",
+          "Woxav": "WOXAV"
+        }
+      },
+      "Altitude": 4500,
+      "Heading": 210,
+      "Speed": 154,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E",
+      "AddressingForm": 1
+    },
+    "falcon two thousand three sierra whiskey": {
+      "Callsign": "N273SW/T",
+      "AircraftType": "F2TH",
+      "Fixes": {
+        "Julut": "JULUT",
+        "Wexin": "WEXIN",
+        "Wilkes-Barre/Scranton": "KAVP"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22": "I22",
+        "Localizer Runway 22": "L22",
+        "RNAV Runway 22": "R22"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two": "22",
+        "visual runway two two": "22",
+        "visual two two": "22"
+      },
+      "ApproachFixes": {
+        "I22": {
+          "Cosby": "COSBY",
+          "Julut": "JULUT",
+          "Wexin": "WEXIN"
+        },
+        "L22": {
+          "Cosby": "COSBY",
+          "Julut": "JULUT",
+          "Wexin": "WEXIN",
+          "xagke": "XAGKE"
+        },
+        "R22": {
+          "Cona": "KONAA",
+          "Jidpu": "JIDPU",
+          "Jodie": "JODIE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22",
+      "Route": [
+        "JULUT",
+        "WEXIN",
+        "KAVP"
+      ],
+      "Altitude": 3440,
+      "Heading": 220,
+      "Speed": 240,
+      "State": "cleared approach",
+      "ControllerFrequency": "1B",
+      "TrackingController": "1B",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "10",
+        "28"
+      ]
+    },
+    "november four seven zero romeo charlie": {
+      "Callsign": "N470RC",
+      "AircraftType": "C208",
+      "Fixes": {
+        "": "8N8",
+        "Wilkes Barre Wyoming Valley": "KWBW"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 27": "R27"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "R27": {
+          "Hepop": "HEPOP",
+          "Woxav": "WOXAV"
+        }
+      },
+      "Altitude": 4500,
+      "Heading": 210,
+      "Speed": 154,
+      "State": "arrival",
+      "ControllerFrequency": "1E",
+      "TrackingController": "1E"
+    },
+    "november two seven three sierra whiskey": {
+      "Callsign": "N273SW",
+      "AircraftType": "F2TH",
+      "Fixes": {
+        "Julut": "JULUT",
+        "Wexin": "WEXIN",
+        "Wilkes-Barre/Scranton": "KAVP"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 22": "I22",
+        "Localizer Runway 22": "L22",
+        "RNAV Runway 22": "R22"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two": "22",
+        "visual runway two two": "22",
+        "visual two two": "22"
+      },
+      "ApproachFixes": {
+        "I22": {
+          "Cosby": "COSBY",
+          "Julut": "JULUT",
+          "Wexin": "WEXIN"
+        },
+        "L22": {
+          "Cosby": "COSBY",
+          "Julut": "JULUT",
+          "Wexin": "WEXIN",
+          "xagke": "XAGKE"
+        },
+        "R22": {
+          "Cona": "KONAA",
+          "Jidpu": "JIDPU",
+          "Jodie": "JODIE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 22",
+      "Route": [
+        "JULUT",
+        "WEXIN",
+        "KAVP"
+      ],
+      "Altitude": 3440,
+      "Heading": 220,
+      "Speed": 240,
+      "State": "cleared approach",
+      "ControllerFrequency": "1B",
+      "TrackingController": "1B",
+      "LAHSORunways": [
+        "10",
+        "28"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"november four seven zero romeo charlie radar services terminated squawk VFR frequency change approved\"",
+    "[local-stt] normalized words: [november 4 7 0 romeo charlie radar services terminated squawk vfr frequency change approved]",
+    "[local-stt] tokens: 12",
+    "[local-stt]   token[0]: Text=\"november\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"470\" Type=1 Value=470",
+    "[local-stt]   token[2]: Text=\"romeo\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"charlie\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"radar\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"services\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"terminated\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"squawk\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"vfr\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"frequency\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"change\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"approved\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 12 tokens, 6 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 12 tokens, 6 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 6 results",
+    "[local-stt]     result 0: \"cessna caravan zero romeo charlie\" (airline=0.431, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"caravan zero romeo charlie\" (airline=0.423, flight=1.000, skip=0)",
+    "[local-stt]     result 2: \"november four seven zero romeo charlie\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 3: \"november four seven zero romeo charlie\" (airline=0.547, flight=0.850, skip=2)",
+    "[local-stt]     result 4: \"cessna caravan zero romeo charlie\" (airline=0.456, flight=0.850, skip=2)",
+    "[local-stt]     pattern \"airline_flight\": selected \"november four seven zero romeo charlie\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 3 results",
+    "[local-stt]     result 0: \"Commute Air 42 49\" (airline=0.490, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Commute Air 42 49\" (airline=0.562, flight=0.000, skip=2)",
+    "[local-stt]     result 2: \"Commute Air 42 49\" (airline=0.571, flight=0.000, skip=3)",
+    "[local-stt]     pattern \"airline_only\": selected \"Commute Air 42 49\" (airline=0.57, flight=0.00, skip=3)",
+    "[local-stt]     pattern \"airline_only\": scoring rejected \"Commute Air 42 49\"",
+    "[local-stt]   pattern \"ga_november\": 1 results",
+    "[local-stt]     result 0: \"november four seven zero romeo charlie\" (airline=0.800, flight=0.750, skip=0)",
+    "[local-stt]     pattern \"ga_november\": selected \"november four seven zero romeo charlie\" (airline=0.80, flight=0.75, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 6 results",
+    "[local-stt]     result 0: \"cessna caravan zero romeo charlie\" (airline=0.500, flight=0.960, skip=0)",
+    "[local-stt]     result 1: \"caravan zero romeo charlie\" (airline=0.500, flight=0.960, skip=0)",
+    "[local-stt]     result 2: \"november four seven zero romeo charlie\" (airline=0.500, flight=0.960, skip=0)",
+    "[local-stt]     result 3: \"november four seven zero romeo charlie\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 4: \"cessna caravan zero romeo charlie\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"november four seven zero romeo charlie\" (airline=0.50, flight=1.00, skip=1)",
+    "[local-stt]   best callsign candidate: \"N470RC\" (conf=1.00, consumed=4, addressingForm=0, spokenKey=\"november four seven zero romeo charlie\"; 2 candidates)",
+    "[local-stt] ParseCommands: 8 tokens",
+    "[local-stt]   matched command: \"RST\" [radar_services_terminated] (pos=0, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[0]=\"radar\", skipping",
+    "[local-stt]   matched command: \"\" [squawk_vfr] (pos=3, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[3]=\"squawk\", skipping",
+    "[local-stt]   no match at token[1]=\"services\", skipping",
+    "[local-stt]   matched command: \"\" [frequency_change_approved] (pos=5, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[5]=\"frequency\", skipping",
+    "[local-stt]   no match at token[4]=\"vfr\", skipping",
+    "[local-stt]   no match at token[2]=\"terminated\", skipping",
+    "[local-stt]   no match at token[6]=\"change\", skipping",
+    "[local-stt]   matched command: \"\" [frequency_change_approved] (pos=5, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[5]=\"frequency\", skipping",
+    "[local-stt]   matched command: \"\" [squawk_vfr] (pos=3, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[3]=\"squawk\", skipping",
+    "[local-stt]   matched command: \"APPROVED\" [approved] (pos=7, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[7]=\"approved\", skipping",
+    "[local-stt]   matched command: \"\" [frequency_change_approved] (pos=5, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[5]=\"frequency\", skipping",
+    "[local-stt]   beam final[0]: score=4.783 pos=8 commands=[RST]",
+    "[local-stt]   beam final[1]: score=1.284 pos=8 commands=[RST APPROVED]",
+    "[local-stt]   beam final[2]: score=1.284 pos=8 commands=[RST]",
+    "[local-stt]   beam final[3]: score=0.687 pos=8 commands=[]",
+    "[local-stt] ParseCommands: result=[RST] (avgConf=1.00)",
+    "[local-stt] ParseCommands: 10 tokens",
+    "[local-stt]   no match at token[0]=\"romeo\", skipping",
+    "[local-stt]   no match at token[1]=\"charlie\", skipping",
+    "[local-stt]   matched command: \"RST\" [radar_services_terminated] (pos=2, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[2]=\"radar\", skipping",
+    "[local-stt]   matched command: \"\" [squawk_vfr] (pos=5, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[5]=\"squawk\", skipping",
+    "[local-stt]   no match at token[3]=\"services\", skipping",
+    "[local-stt]   matched command: \"\" [frequency_change_approved] (pos=7, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[7]=\"frequency\", skipping",
+    "[local-stt]   no match at token[6]=\"vfr\", skipping",
+    "[local-stt]   no match at token[4]=\"terminated\", skipping",
+    "[local-stt]   no match at token[8]=\"change\", skipping",
+    "[local-stt]   matched command: \"\" [frequency_change_approved] (pos=7, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[7]=\"frequency\", skipping",
+    "[local-stt]   matched command: \"\" [squawk_vfr] (pos=5, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[5]=\"squawk\", skipping",
+    "[local-stt]   matched command: \"APPROVED\" [approved] (pos=9, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[9]=\"approved\", skipping",
+    "[local-stt]   matched command: \"\" [frequency_change_approved] (pos=7, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[7]=\"frequency\", skipping",
+    "[local-stt]   beam final[0]: score=4.783 pos=10 commands=[RST]",
+    "[local-stt]   beam final[1]: score=1.284 pos=10 commands=[RST APPROVED]",
+    "[local-stt]   beam final[2]: score=1.284 pos=10 commands=[RST]",
+    "[local-stt]   beam final[3]: score=0.687 pos=10 commands=[]",
+    "[local-stt] ParseCommands: result=[RST] (avgConf=1.00)",
+    "[local-stt] callsign match: Callsign=\"N470RC\" SpokenKey=\"november four seven zero romeo charlie\" Conf=1.00 Consumed=4",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=4500 Fixes=2 Approaches=1 VisualApproaches=3 AssignedApproach=\"\" LAHSORunways=[]",
+    "[local-stt]   fix: \"\" -\u003e \"8N8\"",
+    "[local-stt]   fix: \"Wilkes Barre Wyoming Valley\" -\u003e \"KWBW\"",
+    "[local-stt]   approach: \"RNAV Runway 27\" -\u003e \"R27\"",
+    "[local-stt]   visual approach: \"visual runway two seven\" -\u003e \"27\"",
+    "[local-stt]   visual approach: \"visual approach runway two seven\" -\u003e \"27\"",
+    "[local-stt]   visual approach: \"visual two seven\" -\u003e \"27\"",
+    "[local-stt] command tokens after disregard: 8",
+    "[local-stt]   token[0]: Text=\"radar\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"services\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"terminated\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"squawk\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"vfr\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"frequency\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"change\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"approved\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 8 tokens",
+    "[local-stt]   matched command: \"RST\" [radar_services_terminated] (pos=0, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[0]=\"radar\", skipping",
+    "[local-stt]   matched command: \"\" [squawk_vfr] (pos=3, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[3]=\"squawk\", skipping",
+    "[local-stt]   no match at token[1]=\"services\", skipping",
+    "[local-stt]   matched command: \"\" [frequency_change_approved] (pos=5, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[5]=\"frequency\", skipping",
+    "[local-stt]   no match at token[4]=\"vfr\", skipping",
+    "[local-stt]   no match at token[2]=\"terminated\", skipping",
+    "[local-stt]   no match at token[6]=\"change\", skipping",
+    "[local-stt]   matched command: \"\" [frequency_change_approved] (pos=5, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[5]=\"frequency\", skipping",
+    "[local-stt]   matched command: \"\" [squawk_vfr] (pos=3, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[3]=\"squawk\", skipping",
+    "[local-stt]   matched command: \"APPROVED\" [approved] (pos=7, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[7]=\"approved\", skipping",
+    "[local-stt]   matched command: \"\" [frequency_change_approved] (pos=5, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[5]=\"frequency\", skipping",
+    "[local-stt]   beam final[0]: score=4.783 pos=8 commands=[RST]",
+    "[local-stt]   beam final[1]: score=1.284 pos=8 commands=[RST APPROVED]",
+    "[local-stt]   beam final[2]: score=1.284 pos=8 commands=[RST]",
+    "[local-stt]   beam final[3]: score=0.687 pos=8 commands=[]",
+    "[local-stt] ParseCommands: result=[RST] (avgConf=1.00)",
+    "[local-stt] parsed commands: [RST] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [RST] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"N470RC RST\" (conf=1.00, time=10.0183ms) ==="
+  ]
+}

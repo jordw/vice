@@ -1,0 +1,810 @@
+{
+  "time": "2026-10-31T21:57:19.650305258Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:668:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Pac Valley 13 88 maintain maximum forward air speed",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, foxtrot, echo, information, Lucky one, Comics two, two seven, two eight right, runway, yankee, mike, Localizer, zulu, r-nav, I L S, SkyWest five hundred november, SkyWest 39 50, Pac Valley 13 88, piper cheyenne two four victor x-ray, cheyenne two four victor x-ray, november six zero four victor x-ray, Jazz one 91, Alaska five 27, American 21 79, Okain, Vai-Da, Nesty, Mibby, Carsner, bagel, Catdog, Taco, Ogote, Jade, X-mans, Lindy, Sijhi, Barrett, Naddo, Lantern, Lucky, Carif, Sayae, MISSION BAY, Klo-min, flush, Hannah, Montgomery-Gibbs Executive Airport, San Diego International Airport",
+  "whisper_duration_ms": 193.938,
+  "audio_duration_ms": 3016,
+  "processor": "GPU: NVIDIA GeForce RTX 4080 (16264MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "PCM1388",
+  "command": "SMAX",
+  "reason": "maximum forward air speed",
+  "stt_aircraft": {
+    "Alaska five 27": {
+      "Callsign": "ASA527",
+      "AircraftType": "B739",
+      "Fixes": {
+        "Carsner": "CRSNR",
+        "Catdog": "CATDG",
+        "Jade": "AJADE",
+        "Klo-min": "KLOMN",
+        "Lantern": "LNTRN",
+        "Lindy": "LYNDI",
+        "Naddo": "NADDO",
+        "Okain": "OKAIN",
+        "San Diego": "KSAN",
+        "Sayae": "SAYAE",
+        "Sijhi": "CIJHI",
+        "Taco": "TOKOE",
+        "Vai-Da": "VYDDA",
+        "X-mans": "XMANS",
+        "flush": "FLSHH"
+      },
+      "CandidateApproaches": {
+        "Localizer Runway 27": "L27",
+        "RNAV M Runway 27": "RM7",
+        "RNAV Y Runway 27": "RY7",
+        "RNAV Z Runway 27": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "L27": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RM7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        },
+        "RY7": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RZ7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        }
+      },
+      "AssignedApproach": "RNAV Z Runway 27",
+      "STAR": "COMIX2",
+      "Route": [
+        "FLSHH",
+        "LNTRN",
+        "XMANS",
+        "KLOMN",
+        "NADDO",
+        "KSAN"
+      ],
+      "Altitude": 14571,
+      "Heading": 137,
+      "Speed": 375,
+      "State": "arrival",
+      "ControllerFrequency": "5N",
+      "TrackingController": "5N"
+    },
+    "American 21 79": {
+      "Callsign": "AAL2179",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Carsner": "CRSNR",
+        "Catdog": "CATDG",
+        "Hannah": "HNAHH",
+        "Jade": "AJADE",
+        "Klo-min": "KLOMN",
+        "Lindy": "LYNDI",
+        "Lucky": "LUCKI",
+        "Okain": "OKAIN",
+        "San Diego": "KSAN",
+        "Sayae": "SAYAE",
+        "Sijhi": "CIJHI",
+        "Taco": "TOKOE",
+        "Vai-Da": "VYDDA"
+      },
+      "CandidateApproaches": {
+        "Localizer Runway 27": "L27",
+        "RNAV M Runway 27": "RM7",
+        "RNAV Y Runway 27": "RY7",
+        "RNAV Z Runway 27": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "L27": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RM7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        },
+        "RY7": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RZ7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        }
+      },
+      "AssignedApproach": "RNAV Z Runway 27",
+      "STAR": "LUCKI1",
+      "Route": [
+        "HNAHH",
+        "LUCKI",
+        "LYNDI",
+        "KSAN"
+      ],
+      "Altitude": 8217,
+      "Heading": 231,
+      "Speed": 234,
+      "AssignedSpeed": 180,
+      "State": "arrival",
+      "ControllerFrequency": "5E",
+      "TrackingController": "5E"
+    },
+    "Jazz one 91": {
+      "Callsign": "JZA191",
+      "LastAddressed": true,
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Carsner": "CRSNR",
+        "Catdog": "CATDG",
+        "Jade": "AJADE",
+        "Klo-min": "KLOMN",
+        "Lindy": "LYNDI",
+        "Naddo": "NADDO",
+        "Okain": "OKAIN",
+        "San Diego": "KSAN",
+        "Sayae": "SAYAE",
+        "Sijhi": "CIJHI",
+        "Taco": "TOKOE",
+        "Vai-Da": "VYDDA"
+      },
+      "CandidateApproaches": {
+        "Localizer Runway 27": "L27",
+        "RNAV M Runway 27": "RM7",
+        "RNAV Y Runway 27": "RY7",
+        "RNAV Z Runway 27": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "L27": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RM7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        },
+        "RY7": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RZ7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        }
+      },
+      "AssignedApproach": "RNAV Z Runway 27",
+      "STAR": "COMIX2",
+      "Route": [
+        "KLOMN",
+        "NADDO",
+        "KSAN"
+      ],
+      "Altitude": 5848,
+      "Heading": 90,
+      "Speed": 205,
+      "AssignedAltitude": 5000,
+      "AssignedHeading": 90,
+      "AssignedSpeed": 180,
+      "State": "arrival",
+      "ControllerFrequency": "5N",
+      "TrackingController": "5N"
+    },
+    "Pac Valley 13 88": {
+      "Callsign": "PCM1388",
+      "AircraftType": "C208",
+      "Fixes": {
+        "Imperial County": "KIPL",
+        "San Diego": "KSAN",
+        "Sayae": "SAYAE",
+        "Sijhi": "CIJHI",
+        "Taco": "TOKOE"
+      },
+      "CandidateApproaches": {
+        "Localizer Runway 27": "L27",
+        "RNAV M Runway 27": "RM7",
+        "RNAV Y Runway 27": "RY7",
+        "RNAV Z Runway 27": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "L27": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RM7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        },
+        "RY7": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RZ7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        }
+      },
+      "AssignedApproach": "RNAV Z Runway 27",
+      "Route": [
+        "SAYAE",
+        "CIJHI",
+        "TOKOE",
+        "KSAN"
+      ],
+      "Altitude": 4369,
+      "Heading": 275,
+      "Speed": 150,
+      "AssignedAltitude": 5000,
+      "State": "cleared approach",
+      "ControllerFrequency": "5E",
+      "TrackingController": "5E"
+    },
+    "SkyWest 39 50": {
+      "Callsign": "SKW3950",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Carsner": "CRSNR",
+        "Catdog": "CATDG",
+        "Jade": "AJADE",
+        "Klo-min": "KLOMN",
+        "Lindy": "LYNDI",
+        "MISSION BAY": "MZB",
+        "Okain": "OKAIN",
+        "San Diego": "KSAN",
+        "Sayae": "SAYAE",
+        "Sijhi": "CIJHI",
+        "Taco": "TOKOE",
+        "Vai-Da": "VYDDA"
+      },
+      "CandidateApproaches": {
+        "Localizer Runway 27": "L27",
+        "RNAV M Runway 27": "RM7",
+        "RNAV Y Runway 27": "RY7",
+        "RNAV Z Runway 27": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "L27": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RM7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        },
+        "RY7": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RZ7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        }
+      },
+      "AssignedApproach": "RNAV Z Runway 27",
+      "Route": [
+        "MZB",
+        "KSAN"
+      ],
+      "Altitude": 5676,
+      "Heading": 90,
+      "Speed": 202,
+      "AssignedAltitude": 5000,
+      "AssignedHeading": 90,
+      "AssignedSpeed": 180,
+      "State": "arrival",
+      "ControllerFrequency": "5N",
+      "TrackingController": "5N"
+    },
+    "SkyWest five hundred november": {
+      "Callsign": "SKW500N",
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Carif": "CARIF",
+        "Los Angeles": "KLAX",
+        "MISSION BAY": "MZB",
+        "San Diego": "KSAN"
+      },
+      "CandidateApproaches": {
+        "Localizer Runway 27": "L27",
+        "RNAV M Runway 27": "RM7",
+        "RNAV Y Runway 27": "RY7",
+        "RNAV Z Runway 27": "RZ7"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two seven": "27",
+        "visual runway two seven": "27",
+        "visual two seven": "27"
+      },
+      "ApproachFixes": {
+        "L27": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RM7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        },
+        "RY7": {
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sijhi": "CIJHI",
+          "Vai-Da": "VYDDA",
+          "reebo": "REEBO"
+        },
+        "RZ7": {
+          "Carsner": "CRSNR",
+          "Catdog": "CATDG",
+          "Jade": "AJADE",
+          "Klo-min": "KLOMN",
+          "Lindy": "LYNDI",
+          "Okain": "OKAIN",
+          "Sayae": "SAYAE",
+          "Sijhi": "CIJHI",
+          "Taco": "TOKOE",
+          "Vai-Da": "VYDDA"
+        }
+      },
+      "Route": [
+        "CARIF",
+        "MZB",
+        "KSAN"
+      ],
+      "Altitude": 13000,
+      "Heading": 123,
+      "Speed": 377,
+      "State": "arrival",
+      "ControllerFrequency": "5N",
+      "TrackingController": "5N"
+    },
+    "cheyenne two four victor x-ray": {
+      "Callsign": "N604VX/T",
+      "AircraftType": "PAY2",
+      "Fixes": {
+        "Barrett": "BARET",
+        "MISSION BAY": "MZB",
+        "Mibby": "MIBBY",
+        "Montgomery-Gibbs Executive": "KMYF",
+        "Nesty": "NESTY",
+        "Ogote": "OGOTE",
+        "Penny": "PENYY",
+        "bagel": "BAKEL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight right": "28R",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Barrett": "BARET",
+          "Mibby": "MIBBY",
+          "Nesty": "NESTY",
+          "Ogote": "OGOTE",
+          "Penny": "PENYY",
+          "bagel": "BAKEL"
+        },
+        "R8R": {
+          "Barrett": "BARET",
+          "Mibby": "MIBBY",
+          "Nesty": "NESTY",
+          "Ogote": "OGOTE",
+          "Palos": "PALOS",
+          "Penny": "PENYY",
+          "bagel": "BAKEL"
+        }
+      },
+      "AssignedApproach": "ILS Runway 28R",
+      "Route": [
+        "MZB",
+        "KMYF"
+      ],
+      "Altitude": 11619,
+      "Heading": 153,
+      "Speed": 210,
+      "AssignedAltitude": 6000,
+      "State": "arrival",
+      "ControllerFrequency": "5N",
+      "TrackingController": "5N",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "5",
+        "23"
+      ]
+    },
+    "november six zero four victor x-ray": {
+      "Callsign": "N604VX",
+      "AircraftType": "PAY2",
+      "Fixes": {
+        "Barrett": "BARET",
+        "MISSION BAY": "MZB",
+        "Mibby": "MIBBY",
+        "Montgomery-Gibbs Executive": "KMYF",
+        "Nesty": "NESTY",
+        "Ogote": "OGOTE",
+        "Penny": "PENYY",
+        "bagel": "BAKEL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight right": "28R",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Barrett": "BARET",
+          "Mibby": "MIBBY",
+          "Nesty": "NESTY",
+          "Ogote": "OGOTE",
+          "Penny": "PENYY",
+          "bagel": "BAKEL"
+        },
+        "R8R": {
+          "Barrett": "BARET",
+          "Mibby": "MIBBY",
+          "Nesty": "NESTY",
+          "Ogote": "OGOTE",
+          "Palos": "PALOS",
+          "Penny": "PENYY",
+          "bagel": "BAKEL"
+        }
+      },
+      "AssignedApproach": "ILS Runway 28R",
+      "Route": [
+        "MZB",
+        "KMYF"
+      ],
+      "Altitude": 11619,
+      "Heading": 153,
+      "Speed": 210,
+      "AssignedAltitude": 6000,
+      "State": "arrival",
+      "ControllerFrequency": "5N",
+      "TrackingController": "5N",
+      "LAHSORunways": [
+        "5",
+        "23"
+      ]
+    },
+    "piper cheyenne two four victor x-ray": {
+      "Callsign": "N604VX/T",
+      "AircraftType": "PAY2",
+      "Fixes": {
+        "Barrett": "BARET",
+        "MISSION BAY": "MZB",
+        "Mibby": "MIBBY",
+        "Montgomery-Gibbs Executive": "KMYF",
+        "Nesty": "NESTY",
+        "Ogote": "OGOTE",
+        "Penny": "PENYY",
+        "bagel": "BAKEL"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 28R": "I8R",
+        "RNAV Runway 28R": "R8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two eight right": "28R",
+        "visual runway two eight right": "28R",
+        "visual two eight right": "28R"
+      },
+      "ApproachFixes": {
+        "I8R": {
+          "Barrett": "BARET",
+          "Mibby": "MIBBY",
+          "Nesty": "NESTY",
+          "Ogote": "OGOTE",
+          "Penny": "PENYY",
+          "bagel": "BAKEL"
+        },
+        "R8R": {
+          "Barrett": "BARET",
+          "Mibby": "MIBBY",
+          "Nesty": "NESTY",
+          "Ogote": "OGOTE",
+          "Palos": "PALOS",
+          "Penny": "PENYY",
+          "bagel": "BAKEL"
+        }
+      },
+      "AssignedApproach": "ILS Runway 28R",
+      "Route": [
+        "MZB",
+        "KMYF"
+      ],
+      "Altitude": 11619,
+      "Heading": 153,
+      "Speed": 210,
+      "AssignedAltitude": 6000,
+      "State": "arrival",
+      "ControllerFrequency": "5N",
+      "TrackingController": "5N",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "5",
+        "23"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Pac Valley 13 88 maintain maximum forward air speed\"",
+    "[local-stt] normalized words: [pac valley 13 88 maintain maximum forward air speed]",
+    "[local-stt] tokens: 9",
+    "[local-stt]   token[0]: Text=\"pac\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"valley\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"13\" Type=1 Value=13",
+    "[local-stt]   token[3]: Text=\"88\" Type=1 Value=88",
+    "[local-stt]   token[4]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"maximum\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"forward\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"air\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"speed\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 9 tokens, 9 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 9 tokens, 9 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Pac Valley 13 88\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Pac Valley 13 88\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"Pac Valley 13 88\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Pac Valley 13 88\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Pac Valley 13 88\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 10 results",
+    "[local-stt]     result 0: \"Jazz one 91\" (airline=0.528, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Pac Valley 13 88\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Alaska five 27\" (airline=0.500, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"American 21 79\" (airline=0.639, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Alaska five 27\" (airline=0.556, flight=0.000, skip=1)",
+    "[local-stt]     pattern \"airline_only\": selected \"Pac Valley 13 88\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Pac Valley 13 88\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 1: \"Pac Valley 13 88\" (airline=0.500, flight=1.000, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Pac Valley 13 88\" (airline=0.50, flight=1.00, skip=1)",
+    "[local-stt]   best callsign candidate: \"PCM1388\" (conf=1.00, consumed=4, addressingForm=0, spokenKey=\"Pac Valley 13 88\"; 2 candidates)",
+    "[local-stt] ParseCommands: 5 tokens",
+    "[local-stt]   matched command: \"SMAX\" [maximum_speed] (pos=0, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[0]=\"maintain\", skipping",
+    "[local-stt]   matched command: \"\" [acknowledgment] (pos=3, conf=0.85, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[3]=\"air\", skipping",
+    "[local-stt]   matched command: \"SMAX\" [maximum_speed] (pos=1, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[1]=\"maximum\", skipping",
+    "[local-stt]   no match at token[4]=\"speed\", skipping",
+    "[local-stt]   no match at token[4]=\"speed\", skipping",
+    "[local-stt]   matched command: \"\" [acknowledgment] (pos=3, conf=0.85, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[3]=\"air\", skipping",
+    "[local-stt]   no match at token[2]=\"forward\", skipping",
+    "[local-stt]   no match at token[4]=\"speed\", skipping",
+    "[local-stt]   no match at token[4]=\"speed\", skipping",
+    "[local-stt]   beam final[0]: score=2.229 pos=5 commands=[SMAX]",
+    "[local-stt]   beam final[1]: score=-0.509 pos=5 commands=[SMAX]",
+    "[local-stt]   beam final[2]: score=-0.672 pos=5 commands=[SMAX]",
+    "[local-stt]   beam final[3]: score=-3.409 pos=5 commands=[SMAX]",
+    "[local-stt] ParseCommands: result=[SMAX] (avgConf=1.00)",
+    "[local-stt] ParseCommands: 7 tokens",
+    "[local-stt]   no match at token[0]=\"13\", skipping",
+    "[local-stt]   no match at token[1]=\"88\", skipping",
+    "[local-stt]   matched command: \"SMAX\" [maximum_speed] (pos=2, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[2]=\"maintain\", skipping",
+    "[local-stt]   matched command: \"\" [acknowledgment] (pos=5, conf=0.85, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[5]=\"air\", skipping",
+    "[local-stt]   matched command: \"SMAX\" [maximum_speed] (pos=3, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[3]=\"maximum\", skipping",
+    "[local-stt]   no match at token[6]=\"speed\", skipping",
+    "[local-stt]   no match at token[6]=\"speed\", skipping",
+    "[local-stt]   matched command: \"\" [acknowledgment] (pos=5, conf=0.85, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[5]=\"air\", skipping",
+    "[local-stt]   no match at token[4]=\"forward\", skipping",
+    "[local-stt]   no match at token[6]=\"speed\", skipping",
+    "[local-stt]   no match at token[6]=\"speed\", skipping",
+    "[local-stt]   beam final[0]: score=2.229 pos=7 commands=[SMAX]",
+    "[local-stt]   beam final[1]: score=-0.509 pos=7 commands=[SMAX]",
+    "[local-stt]   beam final[2]: score=-0.672 pos=7 commands=[SMAX]",
+    "[local-stt]   beam final[3]: score=-3.409 pos=7 commands=[SMAX]",
+    "[local-stt] ParseCommands: result=[SMAX] (avgConf=1.00)",
+    "[local-stt] callsign match: Callsign=\"PCM1388\" SpokenKey=\"Pac Valley 13 88\" Conf=1.00 Consumed=4",
+    "[local-stt] aircraft context: State=\"cleared approach\" Altitude=4369 Fixes=5 Approaches=4 VisualApproaches=3 AssignedApproach=\"RNAV Z Runway 27\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Taco\" -\u003e \"TOKOE\"",
+    "[local-stt]   fix: \"San Diego\" -\u003e \"KSAN\"",
+    "[local-stt]   fix: \"Imperial County\" -\u003e \"KIPL\"",
+    "[local-stt]   fix: \"Sayae\" -\u003e \"SAYAE\"",
+    "[local-stt]   fix: \"Sijhi\" -\u003e \"CIJHI\"",
+    "[local-stt]   approach: \"RNAV Y Runway 27\" -\u003e \"RY7\"",
+    "[local-stt]   approach: \"RNAV Z Runway 27\" -\u003e \"RZ7\"",
+    "[local-stt]   approach: \"RNAV M Runway 27\" -\u003e \"RM7\"",
+    "[local-stt]   approach: \"Localizer Runway 27\" -\u003e \"L27\"",
+    "[local-stt]   visual approach: \"visual runway two seven\" -\u003e \"27\"",
+    "[local-stt]   visual approach: \"visual approach runway two seven\" -\u003e \"27\"",
+    "[local-stt]   visual approach: \"visual two seven\" -\u003e \"27\"",
+    "[local-stt] command tokens after disregard: 5",
+    "[local-stt]   token[0]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"maximum\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"forward\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"air\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"speed\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 5 tokens",
+    "[local-stt]   matched command: \"SMAX\" [maximum_speed] (pos=0, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[0]=\"maintain\", skipping",
+    "[local-stt]   matched command: \"\" [acknowledgment] (pos=3, conf=0.85, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[3]=\"air\", skipping",
+    "[local-stt]   matched command: \"SMAX\" [maximum_speed] (pos=1, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[1]=\"maximum\", skipping",
+    "[local-stt]   no match at token[4]=\"speed\", skipping",
+    "[local-stt]   no match at token[4]=\"speed\", skipping",
+    "[local-stt]   matched command: \"\" [acknowledgment] (pos=3, conf=0.85, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[3]=\"air\", skipping",
+    "[local-stt]   no match at token[2]=\"forward\", skipping",
+    "[local-stt]   no match at token[4]=\"speed\", skipping",
+    "[local-stt]   no match at token[4]=\"speed\", skipping",
+    "[local-stt]   beam final[0]: score=2.229 pos=5 commands=[SMAX]",
+    "[local-stt]   beam final[1]: score=-0.509 pos=5 commands=[SMAX]",
+    "[local-stt]   beam final[2]: score=-0.672 pos=5 commands=[SMAX]",
+    "[local-stt]   beam final[3]: score=-3.409 pos=5 commands=[SMAX]",
+    "[local-stt] ParseCommands: result=[SMAX] (avgConf=1.00)",
+    "[local-stt] parsed commands: [SMAX] (conf=1.00, kinds=10001)",
+    "[local-stt] validated commands: [SMAX] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"PCM1388 SMAX\" (conf=1.00, time=8.753ms) ==="
+  ]
+}

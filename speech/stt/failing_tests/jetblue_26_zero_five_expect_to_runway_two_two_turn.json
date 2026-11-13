@@ -1,0 +1,666 @@
+{
+  "time": "2026-11-11T05:30:06.892927043Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "JetBlue 26 zero five expect to runway two two turn right heading three six zero",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, papa, hotel, information, Rays three, Matty six, Dades two, Bullfrog three, Bay-po two, Tiyob, Dades, Lizard, Zaplin, Uflix, cobox, Zadsa, Detse, Donhu, two two, one niner right, one niner left, one eight, runway, r-nav, I L S, Southwest six 67, Sun Country six 72, Spirit Wings 88 68, Spirit Wings 81 25, Spirit Wings 40 18, Flexjet one 36, JetBlue 46 65, ExecJet 26 zero five, ExecJet 14 81, wipso, spring, Lisa F, Wilon, Mera, Pomse, Guzda, Capok, Ecake, ST PETERSBURG, Bucks, Jetstream, Venue, Zepum, Jambob, Baypo, slop, Jackball, Deside, entah, Darbs, Fadi, OCALA, Finki, St. Petersburg Clearwater International Airport, Tampa International Airport, Peter O Knight Airport, LAKELAND",
+  "whisper_duration_ms": 249.672,
+  "audio_duration_ms": 3528,
+  "processor": "GPU: NVIDIA GeForce RTX 5060 Laptop GPU (7899MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "EJA2605",
+  "command": "ER22 R360",
+  "reason": "JetBlue for ExecJet; number exact",
+  "stt_aircraft": {
+    "ExecJet 14 81": {
+      "Callsign": "EJA1481",
+      "AircraftType": "C560",
+      "Fixes": {
+        "LAKELAND": "LAL",
+        "OCALA": "OCF",
+        "Ocala International Airport - Jim Taylor": "KOCF",
+        "Zephyrhills Municipal": "KZPH"
+      },
+      "Route": [
+        "LAL",
+        "OCF",
+        "KOCF"
+      ],
+      "Altitude": 3778,
+      "Heading": 90,
+      "Speed": 275,
+      "AssignedAltitude": 4000,
+      "AssignedHeading": 90,
+      "State": "departure",
+      "ControllerFrequency": "1R",
+      "TrackingController": "1R"
+    },
+    "ExecJet 26 zero five": {
+      "Callsign": "EJA2605",
+      "LastAddressed": true,
+      "AircraftType": "C560",
+      "Fixes": {
+        "Dades": "DADES",
+        "LAKELAND": "LAL",
+        "Peter O Knight": "KTPF",
+        "ST PETERSBURG": "PIE",
+        "Tiyob": "TIYOB",
+        "Utobe": "UTOBE"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 22": "R22"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two": "22",
+        "visual runway two two": "22",
+        "visual two two": "22"
+      },
+      "ApproachFixes": {
+        "R22": {
+          "Dades": "DADES",
+          "LAKELAND": "LAL",
+          "ST PETERSBURG": "PIE",
+          "Tiyob": "TIYOB",
+          "Utobe": "UTOBE"
+        }
+      },
+      "Route": [
+        "KTPF"
+      ],
+      "Altitude": 4000,
+      "Heading": 297,
+      "Speed": 269,
+      "State": "arrival",
+      "ControllerFrequency": "1L",
+      "TrackingController": "1L",
+      "LAHSORunways": [
+        "18",
+        "36"
+      ]
+    },
+    "Flexjet one 36": {
+      "Callsign": "LXJ136",
+      "AircraftType": "LJ40",
+      "Fixes": {
+        "Capok": "CAPOK",
+        "Clearwater": "KPIE",
+        "Darbs": "DARBS",
+        "ST PETERSBURG": "PIE",
+        "Zepum": "ZEPUM",
+        "wipso": "WIPSO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 18": "I18",
+        "RNAV Runway 18": "R18"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight": "18",
+        "visual one eight": "18",
+        "visual runway one eight": "18"
+      },
+      "ApproachFixes": {
+        "I18": {
+          "Capok": "CAPOK",
+          "Darbs": "DARBS",
+          "ST PETERSBURG": "PIE",
+          "Zepum": "ZEPUM",
+          "wipso": "WIPSO"
+        },
+        "R18": {
+          "Detse": "DETSE",
+          "Donhu": "DONHU",
+          "ST PETERSBURG": "PIE",
+          "Sound": "SAUND",
+          "Wigus": "WIGUS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 18",
+      "STAR": "BLFRG3",
+      "Route": [
+        "KPIE"
+      ],
+      "Altitude": 12395,
+      "Heading": 285,
+      "Speed": 296,
+      "AssignedHeading": 285,
+      "State": "arrival",
+      "ControllerFrequency": "1G",
+      "TrackingController": "1G",
+      "LAHSORunways": [
+        "4",
+        "22"
+      ]
+    },
+    "JetBlue 46 65": {
+      "Callsign": "JBU4665",
+      "AircraftType": "E190",
+      "Fixes": {
+        "Fadi": "FADDI",
+        "Jambob": "JMBOB",
+        "Tampa": "KTPA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 19L": "I9L",
+        "ILS Runway 19R": "I9R",
+        "RNAV Runway 19L": "R9L",
+        "RNAV Runway 19R": "R9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one niner left": "19L",
+        "visual approach runway one niner right": "19R",
+        "visual one niner left": "19L",
+        "visual one niner right": "19R",
+        "visual runway one niner left": "19L",
+        "visual runway one niner right": "19R"
+      },
+      "ApproachFixes": {
+        "I9L": {
+          "Bucks": "BUCCS",
+          "Pomse": "POMSE"
+        },
+        "I9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE"
+        },
+        "R9L": {
+          "Darbs": "DARBS",
+          "Jetstream": "JSTRM",
+          "Lizard": "LZARD",
+          "Pomse": "POMSE",
+          "Uflix": "UFLIX",
+          "Zadsa": "ZADSA",
+          "Zaplin": "ZPLIN",
+          "cobox": "COBOX"
+        },
+        "R9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE",
+          "Zeshy": "ZESHY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 19R",
+      "STAR": "MAATY6",
+      "Route": [
+        "FADDI",
+        "JMBOB",
+        "KTPA"
+      ],
+      "Altitude": 3000,
+      "Heading": 187,
+      "Speed": 238,
+      "State": "cleared approach",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "Southwest six 67": {
+      "Callsign": "SWA667",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Baypo": "BAYPO",
+        "Camjo": "CAMJO",
+        "Ecake": "ECAKE",
+        "Finki": "FINKI",
+        "Tampa": "KTPA",
+        "Wilon": "WILON",
+        "spring": "SPRNG"
+      },
+      "SID": "BAYPO2",
+      "Route": [
+        "FINKI",
+        "BAYPO",
+        "ECAKE",
+        "WILON",
+        "SPRNG",
+        "CAMJO",
+        "TWINS",
+        "PONZE",
+        "KCLT"
+      ],
+      "Altitude": 3809,
+      "Heading": 252,
+      "Speed": 218,
+      "AssignedAltitude": 10000,
+      "AssignedHeading": 280,
+      "State": "departure",
+      "ControllerFrequency": "1G",
+      "TrackingController": "1G"
+    },
+    "Spirit Wings 40 18": {
+      "Callsign": "NKS4018",
+      "AircraftType": "A20N",
+      "Fixes": {
+        "Fadi": "FADDI",
+        "Jambob": "JMBOB",
+        "Mera": "MERRA",
+        "ST PETERSBURG": "PIE",
+        "Tampa": "KTPA",
+        "Venue": "VENNU",
+        "entah": "ENTAH"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 19L": "I9L",
+        "ILS Runway 19R": "I9R",
+        "RNAV Runway 19L": "R9L",
+        "RNAV Runway 19R": "R9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one niner left": "19L",
+        "visual approach runway one niner right": "19R",
+        "visual one niner left": "19L",
+        "visual one niner right": "19R",
+        "visual runway one niner left": "19L",
+        "visual runway one niner right": "19R"
+      },
+      "ApproachFixes": {
+        "I9L": {
+          "Bucks": "BUCCS",
+          "Pomse": "POMSE"
+        },
+        "I9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE"
+        },
+        "R9L": {
+          "Darbs": "DARBS",
+          "Jetstream": "JSTRM",
+          "Lizard": "LZARD",
+          "Pomse": "POMSE",
+          "Uflix": "UFLIX",
+          "Zadsa": "ZADSA",
+          "Zaplin": "ZPLIN",
+          "cobox": "COBOX"
+        },
+        "R9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE",
+          "Zeshy": "ZESHY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 19R",
+      "STAR": "RAYZZ3",
+      "Route": [
+        "ENTAH",
+        "VENNU",
+        "KTPA"
+      ],
+      "Altitude": 5219,
+      "Heading": 15,
+      "Speed": 280,
+      "AssignedAltitude": 5000,
+      "AssignedHeading": 360,
+      "State": "arrival",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "Spirit Wings 81 25": {
+      "Callsign": "NKS8125",
+      "AircraftType": "A321",
+      "Fixes": {
+        "Bucks": "BUCCS",
+        "Deside": "DSIDE",
+        "Guzda": "GUZDA",
+        "Jetstream": "JSTRM",
+        "Lisa F": "LISAF",
+        "Pomse": "POMSE",
+        "Tampa": "KTPA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 19L": "I9L",
+        "ILS Runway 19R": "I9R",
+        "RNAV Runway 19L": "R9L",
+        "RNAV Runway 19R": "R9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one niner left": "19L",
+        "visual approach runway one niner right": "19R",
+        "visual one niner left": "19L",
+        "visual one niner right": "19R",
+        "visual runway one niner left": "19L",
+        "visual runway one niner right": "19R"
+      },
+      "ApproachFixes": {
+        "I9L": {
+          "Bucks": "BUCCS",
+          "Pomse": "POMSE"
+        },
+        "I9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE"
+        },
+        "R9L": {
+          "Darbs": "DARBS",
+          "Jetstream": "JSTRM",
+          "Lizard": "LZARD",
+          "Pomse": "POMSE",
+          "Uflix": "UFLIX",
+          "Zadsa": "ZADSA",
+          "Zaplin": "ZPLIN",
+          "cobox": "COBOX"
+        },
+        "R9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE",
+          "Zeshy": "ZESHY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 19L",
+      "STAR": "BLFRG3",
+      "Route": [
+        "DSIDE",
+        "JSTRM",
+        "GUZDA",
+        "LISAF",
+        "KTPA"
+      ],
+      "Altitude": 5000,
+      "Heading": 270,
+      "Speed": 267,
+      "AssignedAltitude": 5000,
+      "AssignedHeading": 270,
+      "State": "arrival",
+      "ControllerFrequency": "1G",
+      "TrackingController": "1G",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "Spirit Wings 88 68": {
+      "Callsign": "NKS8868",
+      "AircraftType": "V170",
+      "Fixes": {
+        "Bucks": "BUCCS",
+        "Jackball": "JKBAL",
+        "Pomse": "POMSE",
+        "Tampa": "KTPA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 19L": "I9L",
+        "ILS Runway 19R": "I9R",
+        "RNAV Runway 19L": "R9L",
+        "RNAV Runway 19R": "R9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one niner left": "19L",
+        "visual approach runway one niner right": "19R",
+        "visual one niner left": "19L",
+        "visual one niner right": "19R",
+        "visual runway one niner left": "19L",
+        "visual runway one niner right": "19R"
+      },
+      "ApproachFixes": {
+        "I9L": {
+          "Bucks": "BUCCS",
+          "Pomse": "POMSE"
+        },
+        "I9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE"
+        },
+        "R9L": {
+          "Darbs": "DARBS",
+          "Jetstream": "JSTRM",
+          "Lizard": "LZARD",
+          "Pomse": "POMSE",
+          "Uflix": "UFLIX",
+          "Zadsa": "ZADSA",
+          "Zaplin": "ZPLIN",
+          "cobox": "COBOX"
+        },
+        "R9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE",
+          "Zeshy": "ZESHY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 19L",
+      "STAR": "DADES2",
+      "Route": [
+        "JKBAL",
+        "KTPA"
+      ],
+      "Altitude": 6835,
+      "Heading": 266,
+      "Speed": 214,
+      "AssignedSpeed": 170,
+      "State": "arrival",
+      "ControllerFrequency": "1F",
+      "TrackingController": "1F",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    },
+    "Sun Country six 72": {
+      "Callsign": "SCX672",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Fadi": "FADDI",
+        "Jambob": "JMBOB",
+        "Mera": "MERRA",
+        "ST PETERSBURG": "PIE",
+        "Tampa": "KTPA",
+        "slop": "SCLOP"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 19L": "I9L",
+        "ILS Runway 19R": "I9R",
+        "RNAV Runway 19L": "R9L",
+        "RNAV Runway 19R": "R9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one niner left": "19L",
+        "visual approach runway one niner right": "19R",
+        "visual one niner left": "19L",
+        "visual one niner right": "19R",
+        "visual runway one niner left": "19L",
+        "visual runway one niner right": "19R"
+      },
+      "ApproachFixes": {
+        "I9L": {
+          "Bucks": "BUCCS",
+          "Pomse": "POMSE"
+        },
+        "I9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE"
+        },
+        "R9L": {
+          "Darbs": "DARBS",
+          "Jetstream": "JSTRM",
+          "Lizard": "LZARD",
+          "Pomse": "POMSE",
+          "Uflix": "UFLIX",
+          "Zadsa": "ZADSA",
+          "Zaplin": "ZPLIN",
+          "cobox": "COBOX"
+        },
+        "R9R": {
+          "Fadi": "FADDI",
+          "Jambob": "JMBOB",
+          "Mera": "MERRA",
+          "ST PETERSBURG": "PIE",
+          "Zeshy": "ZESHY"
+        }
+      },
+      "AssignedApproach": "ILS Runway 19R",
+      "STAR": "MAATY6",
+      "Route": [
+        "SCLOP",
+        "KTPA"
+      ],
+      "Altitude": 5237,
+      "Heading": 94,
+      "Speed": 281,
+      "State": "arrival",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D",
+      "LAHSORunways": [
+        "10",
+        "28",
+        "10",
+        "28"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"JetBlue 26 zero five expect to runway two two turn right heading three six zero\"",
+    "[local-stt] normalized words: [jetblue 26 0 5 expect to runway 2 2 turn right heading 3 6 0]",
+    "[local-stt] tokens: 10",
+    "[local-stt]   token[0]: Text=\"jetblue\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"2605\" Type=1 Value=2605",
+    "[local-stt]   token[2]: Text=\"expect\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"to\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"22\" Type=1 Value=22",
+    "[local-stt]   token[6]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"heading\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"360\" Type=1 Value=360",
+    "[local-stt] MatchCallsign: 10 tokens, 9 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 10 tokens, 9 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"ExecJet 26 zero five\" (airline=0.524, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"ExecJet 26 zero five\" (airline=0.52, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 12 results",
+    "[local-stt]     result 0: \"Flexjet one 36\" (airline=0.524, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"ExecJet 14 81\" (airline=0.524, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"JetBlue 46 65\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"ExecJet 26 zero five\" (airline=0.524, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Southwest six 67\" (airline=0.476, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"JetBlue 46 65\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"ExecJet 26 zero five\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"ExecJet 26 zero five\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"ExecJet 26 zero five\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   best callsign candidate: \"EJA2605\" (conf=0.92, consumed=2, addressingForm=0, spokenKey=\"ExecJet 26 zero five\"; 2 candidates)",
+    "[local-stt] ParseCommands: 8 tokens",
+    "[local-stt]   extractApproach: unique runway match \"two two\" -\u003e \"R22\"",
+    "[local-stt]   matched command: \"ER22\" [expect_approach] (pos=0, conf=0.96, consumed=4, isThen=false)",
+    "[local-stt]   adding 5 fixes from approach R22 to aircraft context",
+    "[local-stt]   no match at token[0]=\"expect\", skipping",
+    "[local-stt]   matched command: \"R360\" [turn_right_heading] (pos=4, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[4]=\"turn\", skipping",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   matched command: \"R360\" [turn_right_heading] (pos=5, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[5]=\"right\", skipping",
+    "[local-stt]   no match at token[2]=\"runway\", skipping",
+    "[local-stt]   no match at token[3]=\"22\", skipping",
+    "[local-stt]   matched command: \"H360\" [heading_only] (pos=6, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[6]=\"heading\", skipping",
+    "[local-stt]   matched command: \"R360\" [turn_right_heading] (pos=4, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[4]=\"turn\", skipping",
+    "[local-stt]   beam final[0]: score=4.620 pos=8 commands=[ER22 R360]",
+    "[local-stt]   beam final[1]: score=1.720 pos=8 commands=[ER22 R360]",
+    "[local-stt]   beam final[2]: score=0.089 pos=8 commands=[R360]",
+    "[local-stt]   beam final[3]: score=-1.181 pos=8 commands=[ER22 H360]",
+    "[local-stt] ParseCommands: result=[ER22 R360] (avgConf=0.98)",
+    "[local-stt] ParseCommands: 9 tokens",
+    "[local-stt]   no match at token[0]=\"2605\", skipping",
+    "[local-stt]   extractApproach: no type match, falling back to assigned approach \"I9R\" (dir=R)",
+    "[local-stt]   matched command: \"EI9R\" [expect_approach] (pos=1, conf=0.95, consumed=6, isThen=false)",
+    "[local-stt]   adding 4 fixes from approach I9R to aircraft context",
+    "[local-stt]   no match at token[1]=\"expect\", skipping",
+    "[local-stt]   matched command: \"H360\" [heading_only] (pos=7, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[7]=\"heading\", skipping",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   no match at token[8]=\"360\", skipping",
+    "[local-stt]   no match at token[3]=\"runway\", skipping",
+    "[local-stt]   no match at token[4]=\"22\", skipping",
+    "[local-stt]   matched command: \"R360\" [turn_right_heading] (pos=5, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[5]=\"turn\", skipping",
+    "[local-stt]   matched command: \"R360\" [turn_right_heading] (pos=6, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[6]=\"right\", skipping",
+    "[local-stt]   beam final[0]: score=4.495 pos=9 commands=[EI9R H360]",
+    "[local-stt]   beam final[1]: score=0.997 pos=9 commands=[EI9R]",
+    "[local-stt]   beam final[2]: score=0.089 pos=9 commands=[R360]",
+    "[local-stt]   beam final[3]: score=-2.812 pos=9 commands=[R360]",
+    "[local-stt] ParseCommands: result=[EI9R H360] (avgConf=0.98)",
+    "[local-stt] callsign match: Callsign=\"EJA2605\" SpokenKey=\"ExecJet 26 zero five\" Conf=0.92 Consumed=2",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=4000 Fixes=1 Approaches=1 VisualApproaches=3 AssignedApproach=\"\" LAHSORunways=[18 36]",
+    "[local-stt]   fix: \"Peter O Knight\" -\u003e \"KTPF\"",
+    "[local-stt]   approach: \"RNAV Runway 22\" -\u003e \"R22\"",
+    "[local-stt]   visual approach: \"visual runway two two\" -\u003e \"22\"",
+    "[local-stt]   visual approach: \"visual approach runway two two\" -\u003e \"22\"",
+    "[local-stt]   visual approach: \"visual two two\" -\u003e \"22\"",
+    "[local-stt] command tokens after disregard: 8",
+    "[local-stt]   token[0]: Text=\"expect\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"to\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"22\" Type=1 Value=22",
+    "[local-stt]   token[4]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"heading\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"360\" Type=1 Value=360",
+    "[local-stt] ParseCommands: 8 tokens",
+    "[local-stt]   extractApproach: unique runway match \"two two\" -\u003e \"R22\"",
+    "[local-stt]   matched command: \"ER22\" [expect_approach] (pos=0, conf=0.96, consumed=4, isThen=false)",
+    "[local-stt]   adding 5 fixes from approach R22 to aircraft context",
+    "[local-stt]   no match at token[0]=\"expect\", skipping",
+    "[local-stt]   matched command: \"R360\" [turn_right_heading] (pos=4, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[4]=\"turn\", skipping",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   matched command: \"R360\" [turn_right_heading] (pos=5, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[5]=\"right\", skipping",
+    "[local-stt]   no match at token[2]=\"runway\", skipping",
+    "[local-stt]   no match at token[3]=\"22\", skipping",
+    "[local-stt]   matched command: \"H360\" [heading_only] (pos=6, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[6]=\"heading\", skipping",
+    "[local-stt]   matched command: \"R360\" [turn_right_heading] (pos=4, conf=1.00, consumed=4, isThen=false)",
+    "[local-stt]   no match at token[4]=\"turn\", skipping",
+    "[local-stt]   beam final[0]: score=4.620 pos=8 commands=[ER22 R360]",
+    "[local-stt]   beam final[1]: score=1.720 pos=8 commands=[ER22 R360]",
+    "[local-stt]   beam final[2]: score=0.089 pos=8 commands=[R360]",
+    "[local-stt]   beam final[3]: score=-1.181 pos=8 commands=[ER22 H360]",
+    "[local-stt] ParseCommands: result=[ER22 R360] (avgConf=0.98)",
+    "[local-stt] parsed commands: [ER22 R360] (conf=0.98, kinds=1)",
+    "[local-stt] validated commands: [ER22 R360] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"EJA2605 ER22 R360\" (conf=0.90, time=6.7904ms) ==="
+  ]
+}

@@ -1,0 +1,447 @@
+{
+  "time": "2026-11-08T07:08:11.659226407Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Southwest one fifty eight SoCal Approach radar contact climbing team six thousand",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, uniform, romeo, charlie, information, Rookie one, Emlin three, Zoom three, Calit, Clip, Minnie, Wemdo, Febta, Ehvox, Amele, Dekert, Bonvy, Jward, Effie, trusty, Dirty, two six right, two zero right, three zero, two niner right, runway, zulu, yankee, r-nav, L D A, Visual, I L S, Southwest one 58, SkyWest 77 87, piper cherokee four niner brahvo, cherokee four niner brahvo, november one two four niner brahvo, Hawaiian eight 75, Dyers, Lemon, Hukem, Odeky, snake, SEAL BEACH, Arcus, Sager, Mids, Play, Clever, Albas, Guney, Sebby, Lax, Zilba, Lucig, Zoom, Kayn, Driffy, Ezkel, Cay-hill, John Wayne Orange County International Airport, Zamperini Field, Long Beach International Airport",
+  "whisper_duration_ms": 389.603,
+  "audio_duration_ms": 3784,
+  "processor": "GPU: NVIDIA GeForce RTX 4070 SUPER (11997MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "SWA158",
+  "command": "C60",
+  "reason": "\"climbing team\" is climb and maintain",
+  "stt_aircraft": {
+    "Hawaiian eight 75": {
+      "Callsign": "HAL875",
+      "AircraftType": "A21N",
+      "Fixes": {
+        "Ezkel": "EZKEL",
+        "Guney": "GUNEY",
+        "Long Beach": "KLGB",
+        "Lucig": "LUCIG",
+        "Mids": "MIDDS",
+        "SEAL BEACH": "SLI"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 30": "I30",
+        "RNAV Runway 26R": "R26R",
+        "RNAV Y Runway 30": "RY30",
+        "RNAV Z Runway 30": "R30"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three zero": "30",
+        "visual approach runway two six right": "26R",
+        "visual runway three zero": "30",
+        "visual runway two six right": "26R",
+        "visual three zero": "30",
+        "visual two six right": "26R"
+      },
+      "ApproachFixes": {
+        "I30": {
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS",
+          "SEAL BEACH": "SLI"
+        },
+        "R26R": {
+          "Bucas": "BUCAS",
+          "Cassie": "CASIV",
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Jilan": "JILAN",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        },
+        "R30": {
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        },
+        "RY30": {
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 30",
+      "Route": [
+        "KLGB"
+      ],
+      "Altitude": 4021,
+      "Heading": 40,
+      "Speed": 264,
+      "AssignedHeading": 40,
+      "State": "arrival",
+      "ControllerFrequency": "4B",
+      "TrackingController": "4B",
+      "LAHSORunways": [
+        "12",
+        "30",
+        "8L",
+        "26R",
+        "8R",
+        "26L"
+      ]
+    },
+    "SkyWest 77 87": {
+      "Callsign": "SKW7787",
+      "LastAddressed": true,
+      "AircraftType": "V20R",
+      "Fixes": {
+        "Clever": "KLEVR",
+        "Dyers": "DYERS",
+        "Hukem": "HUKEM",
+        "John Wayne Orange County": "KSNA",
+        "Kayn": "KAYNN",
+        "Lax": "LAXBB",
+        "Lemon": "LEMON",
+        "Sager": "SAGER",
+        "snake": "SNAKE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 20R": "I0R",
+        "LDA Runway 20R": "D0R",
+        "RNAV Z Runway 20R": "Z0R",
+        "Visual Runway 20R": "VR"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero right": "20R",
+        "visual runway two zero right": "20R",
+        "visual two zero right": "20R"
+      },
+      "ApproachFixes": {
+        "D0R": {
+          "Effie": "EFFIE",
+          "Gauer": "GAUER",
+          "trusty": "TUSTI"
+        },
+        "I0R": {
+          "Hukem": "HUKEM",
+          "Lemon": "LEMON",
+          "SEAL BEACH": "SLI",
+          "Sager": "SAGER",
+          "snake": "SNAKE"
+        },
+        "VR": {
+          "Dyers": "DYERS",
+          "Hukem": "HUKEM",
+          "Lemon": "LEMON",
+          "Sager": "SAGER",
+          "snake": "SNAKE"
+        },
+        "Z0R": {
+          "Amele": "AMELE",
+          "Bonvy": "BONVY",
+          "Calit": "CALIT",
+          "Clever": "KLEVR",
+          "Clip": "KLIPP",
+          "Dekert": "DEKRT",
+          "Ehvox": "EHVOX",
+          "Febta": "FEBTA",
+          "Jward": "JWARD",
+          "Minnie": "MNNIE",
+          "Wemdo": "WEMDO",
+          "Zetov": "ZETOV"
+        }
+      },
+      "AssignedApproach": "Visual Runway 20R",
+      "STAR": "RUKKI1",
+      "Route": [
+        "KAYNN",
+        "LAXBB",
+        "KLEVR",
+        "KSNA"
+      ],
+      "Altitude": 7519,
+      "Heading": 78,
+      "Speed": 279,
+      "State": "arrival",
+      "ControllerFrequency": "4R",
+      "TrackingController": "4R"
+    },
+    "Southwest one 58": {
+      "Callsign": "SWA158",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Arcus": "ARCUS",
+        "Beale": "BEALE",
+        "Cay-hill": "CAHIL",
+        "Long Beach": "KLGB",
+        "Play": "PLAYY",
+        "Sebby": "SEBBY",
+        "Yelah": "YELAH",
+        "Zoom": "ZOOMM",
+        "wyzee": "WYZEE"
+      },
+      "SID": "ZOOMM3",
+      "Route": [
+        "CAHIL",
+        "ZOOMM",
+        "SEBBY",
+        "PLAYY",
+        "ARCUS",
+        "YELAH",
+        "WYZEE",
+        "BEALE",
+        "NOOTN",
+        "BETHL",
+        "FREDD",
+        "DICEE",
+        "GLD",
+        "PWE",
+        "JALAP",
+        "KMDW"
+      ],
+      "Altitude": 1406,
+      "Heading": 301,
+      "Speed": 180,
+      "State": "departure",
+      "ControllerFrequency": "4R",
+      "TrackingController": "4R"
+    },
+    "cherokee four niner brahvo": {
+      "Callsign": "N1249B/T",
+      "AircraftType": "P28A",
+      "Fixes": {
+        "Chino": "KCNO",
+        "Driffy": "DRIFY",
+        "Zamperini": "KTOA",
+        "Zilba": "ZILBA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 29R": "I9R",
+        "RNAV Runway 29R": "R9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner right": "29R",
+        "visual runway two niner right": "29R",
+        "visual two niner right": "29R"
+      },
+      "ApproachFixes": {
+        "I9R": {
+          "Albas": "ALBAS",
+          "Driffy": "DRIFY",
+          "Odeky": "ODEQY",
+          "SEAL BEACH": "SLI",
+          "Zilba": "ZILBA"
+        },
+        "R9R": {
+          "Albas": "ALBAS",
+          "Driffy": "DRIFY",
+          "SEAL BEACH": "SLI",
+          "Zilba": "ZILBA"
+        }
+      },
+      "AssignedApproach": "ILS Runway 29R",
+      "STAR": "EMMLN3",
+      "Route": [
+        "DRIFY",
+        "ZILBA",
+        "KTOA"
+      ],
+      "Altitude": 4000,
+      "Heading": 212,
+      "Speed": 125,
+      "State": "cleared approach",
+      "ControllerFrequency": "4R",
+      "TrackingController": "4R",
+      "AddressingForm": 1
+    },
+    "november one two four niner brahvo": {
+      "Callsign": "N1249B",
+      "AircraftType": "P28A",
+      "Fixes": {
+        "Chino": "KCNO",
+        "Driffy": "DRIFY",
+        "Zamperini": "KTOA",
+        "Zilba": "ZILBA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 29R": "I9R",
+        "RNAV Runway 29R": "R9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner right": "29R",
+        "visual runway two niner right": "29R",
+        "visual two niner right": "29R"
+      },
+      "ApproachFixes": {
+        "I9R": {
+          "Albas": "ALBAS",
+          "Driffy": "DRIFY",
+          "Odeky": "ODEQY",
+          "SEAL BEACH": "SLI",
+          "Zilba": "ZILBA"
+        },
+        "R9R": {
+          "Albas": "ALBAS",
+          "Driffy": "DRIFY",
+          "SEAL BEACH": "SLI",
+          "Zilba": "ZILBA"
+        }
+      },
+      "AssignedApproach": "ILS Runway 29R",
+      "STAR": "EMMLN3",
+      "Route": [
+        "DRIFY",
+        "ZILBA",
+        "KTOA"
+      ],
+      "Altitude": 4000,
+      "Heading": 212,
+      "Speed": 125,
+      "State": "cleared approach",
+      "ControllerFrequency": "4R",
+      "TrackingController": "4R"
+    },
+    "piper cherokee four niner brahvo": {
+      "Callsign": "N1249B/T",
+      "AircraftType": "P28A",
+      "Fixes": {
+        "Chino": "KCNO",
+        "Driffy": "DRIFY",
+        "Zamperini": "KTOA",
+        "Zilba": "ZILBA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 29R": "I9R",
+        "RNAV Runway 29R": "R9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner right": "29R",
+        "visual runway two niner right": "29R",
+        "visual two niner right": "29R"
+      },
+      "ApproachFixes": {
+        "I9R": {
+          "Albas": "ALBAS",
+          "Driffy": "DRIFY",
+          "Odeky": "ODEQY",
+          "SEAL BEACH": "SLI",
+          "Zilba": "ZILBA"
+        },
+        "R9R": {
+          "Albas": "ALBAS",
+          "Driffy": "DRIFY",
+          "SEAL BEACH": "SLI",
+          "Zilba": "ZILBA"
+        }
+      },
+      "AssignedApproach": "ILS Runway 29R",
+      "STAR": "EMMLN3",
+      "Route": [
+        "DRIFY",
+        "ZILBA",
+        "KTOA"
+      ],
+      "Altitude": 4000,
+      "Heading": 212,
+      "Speed": 125,
+      "State": "cleared approach",
+      "ControllerFrequency": "4R",
+      "TrackingController": "4R",
+      "AddressingForm": 1
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Southwest one fifty eight SoCal Approach radar contact climbing team six thousand\"",
+    "[local-stt] normalized words: [southwest 1 58 socal approach radar contact climbing team 6 thousand]",
+    "[local-stt] tokens: 9",
+    "[local-stt]   token[0]: Text=\"southwest\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"158\" Type=1 Value=158",
+    "[local-stt]   token[2]: Text=\"socal\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"radar\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"contact\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"climbing\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"team\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"60\" Type=2 Value=60",
+    "[local-stt] MatchCallsign: 9 tokens, 6 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 9 tokens, 6 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Southwest one 58\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Southwest one 58\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"Southwest one 58\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Southwest one 58\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 8 results",
+    "[local-stt]     result 0: \"SkyWest 77 87\" (airline=0.661, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Southwest one 58\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Hawaiian eight 75\" (airline=0.412, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"SkyWest 77 87\" (airline=0.503, flight=0.000, skip=2)",
+    "[local-stt]     result 4: \"Southwest one 58\" (airline=0.633, flight=0.000, skip=2)",
+    "[local-stt]     pattern \"airline_only\": selected \"Southwest one 58\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Southwest one 58\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Southwest one 58\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"Southwest one 58\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"SWA158\" (spokenKey=\"Southwest one 58\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"SWA158\" SpokenKey=\"Southwest one 58\" Conf=1.00 Consumed=2",
+    "[local-stt] aircraft context: State=\"departure\" Altitude=1406 Fixes=9 Approaches=0 VisualApproaches=0 AssignedApproach=\"\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Zoom\" -\u003e \"ZOOMM\"",
+    "[local-stt]   fix: \"Yelah\" -\u003e \"YELAH\"",
+    "[local-stt]   fix: \"Beale\" -\u003e \"BEALE\"",
+    "[local-stt]   fix: \"Sebby\" -\u003e \"SEBBY\"",
+    "[local-stt]   fix: \"Play\" -\u003e \"PLAYY\"",
+    "[local-stt]   fix: \"Arcus\" -\u003e \"ARCUS\"",
+    "[local-stt]   fix: \"wyzee\" -\u003e \"WYZEE\"",
+    "[local-stt]   fix: \"Long Beach\" -\u003e \"KLGB\"",
+    "[local-stt]   fix: \"Cay-hill\" -\u003e \"CAHIL\"",
+    "[local-stt] command tokens after disregard: 7",
+    "[local-stt]   token[0]: Text=\"socal\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"radar\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"contact\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"climbing\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"team\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"60\" Type=2 Value=60",
+    "[local-stt] ParseCommands: 7 tokens",
+    "[local-stt]   matched command: \"\" [position_id] (pos=0, conf=0.74, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"socal\", skipping",
+    "[local-stt]   matched command: \"\" [radar_contact_info] (pos=2, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[2]=\"radar\", skipping",
+    "[local-stt]   matched command: \"\" [position_id] (pos=1, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[1]=\"approach\", skipping",
+    "[local-stt]   matched command: \"C60\" [climb] (pos=4, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[4]=\"climbing\", skipping",
+    "[local-stt]   matched command: \"FC\" [contact_garbled_facility] (pos=3, conf=0.74, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[3]=\"contact\", skipping",
+    "[local-stt]   matched command: \"\" [radar_contact_info] (pos=2, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[2]=\"radar\", skipping",
+    "[local-stt]   matched command: \"\" [radar_contact_info] (pos=2, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[2]=\"radar\", skipping",
+    "[local-stt]   no match at token[5]=\"team\", skipping",
+    "[local-stt]   matched command: \"C60\" [climb] (pos=4, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[4]=\"climbing\", skipping",
+    "[local-stt]   no match at token[5]=\"team\", skipping",
+    "[local-stt]   matched command: \"A60\" [standalone_altitude] (pos=6, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[6]=\"60\", skipping",
+    "[local-stt]   matched command: \"A60\" [standalone_altitude] (pos=6, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[6]=\"60\", skipping",
+    "[local-stt]   beam final[0]: score=3.587 pos=7 commands=[C60]",
+    "[local-stt]   beam final[1]: score=1.284 pos=7 commands=[C60]",
+    "[local-stt]   beam final[2]: score=0.089 pos=7 commands=[A60]",
+    "[local-stt]   beam final[3]: score=-0.509 pos=7 commands=[FC A60]",
+    "[local-stt] ParseCommands: result=[C60] (avgConf=1.00)",
+    "[local-stt] parsed commands: [C60] (conf=1.00, kinds=111)",
+    "[local-stt] validated commands: [C60] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"SWA158 C60\" (conf=1.00, time=3.5644ms) ==="
+  ]
+}

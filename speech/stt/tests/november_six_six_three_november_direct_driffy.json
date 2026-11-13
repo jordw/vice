@@ -1,0 +1,470 @@
+{
+  "time": "2026-11-08T07:23:42.30065955Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "November Six Six Three November direct Driffy",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, x-ray, romeo, charlie, information, Bobby three, Odeky, Driffy, Dirty, Hamug, Zarow, Wisup, Havur, Leymi, POMONA, two six right, two four, two niner right, three zero, runway, zulu, yankee, r-nav, Localizer, I L S, Southwest 20 59, king air three seven tango, king air two hundred three seven tango, november six niner three seven tango, piper cheyenne seven x-ray november, cheyenne one seven x-ray november, november six six seven x-ray november, SEAL BEACH, Mids, Guney, Lucig, Ezkel, Albas, Lax, Long Beach International Airport, Fullerton Municipal Airport, Zamperini Field",
+  "whisper_duration_ms": 189.996,
+  "audio_duration_ms": 3016,
+  "processor": "GPU: NVIDIA GeForce RTX 4070 SUPER (11997MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "N667XN",
+  "command": "DDRIFY",
+  "stt_aircraft": {
+    "Southwest 20 59": {
+      "Callsign": "SWA2059",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Albas": "ALBAS",
+        "Ezkel": "EZKEL",
+        "Guney": "GUNEY",
+        "Lax": "LAXBB",
+        "Long Beach": "KLGB",
+        "Lucig": "LUCIG",
+        "Mids": "MIDDS",
+        "SEAL BEACH": "SLI"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 30": "I30",
+        "RNAV Runway 26R": "R26R",
+        "RNAV Y Runway 30": "RY30",
+        "RNAV Z Runway 30": "R30"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three zero": "30",
+        "visual approach runway two six right": "26R",
+        "visual runway three zero": "30",
+        "visual runway two six right": "26R",
+        "visual three zero": "30",
+        "visual two six right": "26R"
+      },
+      "ApproachFixes": {
+        "I30": {
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS",
+          "SEAL BEACH": "SLI"
+        },
+        "R26R": {
+          "Bucas": "BUCAS",
+          "Cassie": "CASIV",
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Jilan": "JILAN",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        },
+        "R30": {
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        },
+        "RY30": {
+          "Dirty": "DRTTY",
+          "Ezkel": "EZKEL",
+          "Guney": "GUNEY",
+          "Lucig": "LUCIG",
+          "Mids": "MIDDS"
+        }
+      },
+      "AssignedApproach": "ILS Runway 30",
+      "STAR": "BAUBB3",
+      "Route": [
+        "LAXBB",
+        "ALBAS",
+        "EZKEL",
+        "KLGB"
+      ],
+      "Altitude": 6710,
+      "Heading": 57,
+      "Speed": 272,
+      "State": "arrival",
+      "ControllerFrequency": "4R",
+      "TrackingController": "4R",
+      "LAHSORunways": [
+        "12",
+        "30",
+        "8L",
+        "26R",
+        "8R",
+        "26L"
+      ]
+    },
+    "cheyenne one seven x-ray november": {
+      "Callsign": "N667XN/T",
+      "AircraftType": "PAY1",
+      "Fixes": {
+        "Van Nuys": "KVNY",
+        "Zamperini": "KTOA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 29R": "I9R",
+        "RNAV Runway 29R": "R9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner right": "29R",
+        "visual runway two niner right": "29R",
+        "visual two niner right": "29R"
+      },
+      "ApproachFixes": {
+        "I9R": {
+          "Albas": "ALBAS",
+          "Driffy": "DRIFY",
+          "Odeky": "ODEQY",
+          "SEAL BEACH": "SLI",
+          "Zilba": "ZILBA"
+        },
+        "R9R": {
+          "Albas": "ALBAS",
+          "Driffy": "DRIFY",
+          "SEAL BEACH": "SLI",
+          "Zilba": "ZILBA"
+        }
+      },
+      "Route": [
+        "KTOA"
+      ],
+      "Altitude": 4136,
+      "Heading": 129,
+      "Speed": 176,
+      "AssignedHeading": 123,
+      "State": "arrival",
+      "ControllerFrequency": "4R",
+      "TrackingController": "4R",
+      "AddressingForm": 1
+    },
+    "king air three seven tango": {
+      "Callsign": "N6937T/T",
+      "AircraftType": "BE20",
+      "Fixes": {
+        "Fullerton Municipal": "KFUL",
+        "Oxnard": "KOXR"
+      },
+      "CandidateApproaches": {
+        "Localizer Runway 24": "L24",
+        "RNAV Runway 24": "R24"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two four": "24",
+        "visual runway two four": "24",
+        "visual two four": "24"
+      },
+      "ApproachFixes": {
+        "L24": {
+          "Conga": "CONGA",
+          "Hamug": "HAMUG",
+          "Wisup": "WISUP",
+          "Zarow": "ZAROW",
+          "qewti": "QEWTI"
+        },
+        "R24": {
+          "Aktaq": "AKTAQ",
+          "Havur": "HAVUR",
+          "Leymi": "LEYMI",
+          "POMONA": "POM"
+        }
+      },
+      "Route": [
+        "KFUL"
+      ],
+      "Altitude": 5757,
+      "Heading": 80,
+      "Speed": 252,
+      "AssignedHeading": 80,
+      "State": "arrival",
+      "ControllerFrequency": "4B",
+      "TrackingController": "4B",
+      "AddressingForm": 1
+    },
+    "king air two hundred three seven tango": {
+      "Callsign": "N6937T/T",
+      "AircraftType": "BE20",
+      "Fixes": {
+        "Fullerton Municipal": "KFUL",
+        "Oxnard": "KOXR"
+      },
+      "CandidateApproaches": {
+        "Localizer Runway 24": "L24",
+        "RNAV Runway 24": "R24"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two four": "24",
+        "visual runway two four": "24",
+        "visual two four": "24"
+      },
+      "ApproachFixes": {
+        "L24": {
+          "Conga": "CONGA",
+          "Hamug": "HAMUG",
+          "Wisup": "WISUP",
+          "Zarow": "ZAROW",
+          "qewti": "QEWTI"
+        },
+        "R24": {
+          "Aktaq": "AKTAQ",
+          "Havur": "HAVUR",
+          "Leymi": "LEYMI",
+          "POMONA": "POM"
+        }
+      },
+      "Route": [
+        "KFUL"
+      ],
+      "Altitude": 5757,
+      "Heading": 80,
+      "Speed": 252,
+      "AssignedHeading": 80,
+      "State": "arrival",
+      "ControllerFrequency": "4B",
+      "TrackingController": "4B",
+      "AddressingForm": 1
+    },
+    "november six niner three seven tango": {
+      "Callsign": "N6937T",
+      "AircraftType": "BE20",
+      "Fixes": {
+        "Fullerton Municipal": "KFUL",
+        "Oxnard": "KOXR"
+      },
+      "CandidateApproaches": {
+        "Localizer Runway 24": "L24",
+        "RNAV Runway 24": "R24"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two four": "24",
+        "visual runway two four": "24",
+        "visual two four": "24"
+      },
+      "ApproachFixes": {
+        "L24": {
+          "Conga": "CONGA",
+          "Hamug": "HAMUG",
+          "Wisup": "WISUP",
+          "Zarow": "ZAROW",
+          "qewti": "QEWTI"
+        },
+        "R24": {
+          "Aktaq": "AKTAQ",
+          "Havur": "HAVUR",
+          "Leymi": "LEYMI",
+          "POMONA": "POM"
+        }
+      },
+      "Route": [
+        "KFUL"
+      ],
+      "Altitude": 5757,
+      "Heading": 80,
+      "Speed": 252,
+      "AssignedHeading": 80,
+      "State": "arrival",
+      "ControllerFrequency": "4B",
+      "TrackingController": "4B"
+    },
+    "november six six seven x-ray november": {
+      "Callsign": "N667XN",
+      "LastAddressed": true,
+      "AircraftType": "PAY1",
+      "Fixes": {
+        "Van Nuys": "KVNY",
+        "Zamperini": "KTOA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 29R": "I9R",
+        "RNAV Runway 29R": "R9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner right": "29R",
+        "visual runway two niner right": "29R",
+        "visual two niner right": "29R"
+      },
+      "ApproachFixes": {
+        "I9R": {
+          "Albas": "ALBAS",
+          "Driffy": "DRIFY",
+          "Odeky": "ODEQY",
+          "SEAL BEACH": "SLI",
+          "Zilba": "ZILBA"
+        },
+        "R9R": {
+          "Albas": "ALBAS",
+          "Driffy": "DRIFY",
+          "SEAL BEACH": "SLI",
+          "Zilba": "ZILBA"
+        }
+      },
+      "Route": [
+        "KTOA"
+      ],
+      "Altitude": 4136,
+      "Heading": 129,
+      "Speed": 176,
+      "AssignedHeading": 123,
+      "State": "arrival",
+      "ControllerFrequency": "4R",
+      "TrackingController": "4R"
+    },
+    "piper cheyenne seven x-ray november": {
+      "Callsign": "N667XN/T",
+      "AircraftType": "PAY1",
+      "Fixes": {
+        "Van Nuys": "KVNY",
+        "Zamperini": "KTOA"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 29R": "I9R",
+        "RNAV Runway 29R": "R9R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner right": "29R",
+        "visual runway two niner right": "29R",
+        "visual two niner right": "29R"
+      },
+      "ApproachFixes": {
+        "I9R": {
+          "Albas": "ALBAS",
+          "Driffy": "DRIFY",
+          "Odeky": "ODEQY",
+          "SEAL BEACH": "SLI",
+          "Zilba": "ZILBA"
+        },
+        "R9R": {
+          "Albas": "ALBAS",
+          "Driffy": "DRIFY",
+          "SEAL BEACH": "SLI",
+          "Zilba": "ZILBA"
+        }
+      },
+      "Route": [
+        "KTOA"
+      ],
+      "Altitude": 4136,
+      "Heading": 129,
+      "Speed": 176,
+      "AssignedHeading": 123,
+      "State": "arrival",
+      "ControllerFrequency": "4R",
+      "TrackingController": "4R",
+      "AddressingForm": 1
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"November Six Six Three November direct Driffy\"",
+    "[local-stt] normalized words: [november 6 6 3 november direct driffy]",
+    "[local-stt] tokens: 5",
+    "[local-stt]   token[0]: Text=\"november\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"663\" Type=1 Value=663",
+    "[local-stt]   token[2]: Text=\"november\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"direct\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"driffy\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 5 tokens, 7 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 5 tokens, 7 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 3 results",
+    "[local-stt]     result 0: \"november six six seven x-ray november\" (airline=1.000, flight=0.827, skip=0)",
+    "[local-stt]     result 1: \"cheyenne one seven x-ray november\" (airline=0.500, flight=0.827, skip=0)",
+    "[local-stt]     result 2: \"piper cheyenne seven x-ray november\" (airline=0.550, flight=0.827, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"november six six seven x-ray november\" (airline=1.00, flight=0.83, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 3 results",
+    "[local-stt]     result 0: \"Southwest 20 59\" (airline=0.491, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Southwest 20 59\" (airline=0.491, flight=0.000, skip=2)",
+    "[local-stt]     result 2: \"Southwest 20 59\" (airline=0.352, flight=0.000, skip=3)",
+    "[local-stt]     pattern \"airline_only\": selected \"Southwest 20 59\" (airline=0.49, flight=0.00, skip=0)",
+    "[local-stt]     pattern \"airline_only\": scoring rejected \"Southwest 20 59\"",
+    "[local-stt]   pattern \"ga_november\": 2 results",
+    "[local-stt]     result 0: \"november six six seven x-ray november\" (airline=0.800, flight=0.700, skip=0)",
+    "[local-stt]     result 1: \"november six niner three seven tango\" (airline=0.800, flight=0.648, skip=0)",
+    "[local-stt]     pattern \"ga_november\": selected \"november six six seven x-ray november\" (airline=0.80, flight=0.70, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 6 results",
+    "[local-stt]     result 0: \"november six six seven x-ray november\" (airline=0.500, flight=0.827, skip=0)",
+    "[local-stt]     result 1: \"cheyenne one seven x-ray november\" (airline=0.500, flight=0.827, skip=0)",
+    "[local-stt]     result 2: \"piper cheyenne seven x-ray november\" (airline=0.500, flight=0.827, skip=0)",
+    "[local-stt]     result 3: \"cheyenne one seven x-ray november\" (airline=0.500, flight=0.827, skip=1)",
+    "[local-stt]     result 4: \"piper cheyenne seven x-ray november\" (airline=0.500, flight=0.827, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"november six six seven x-ray november\" (airline=0.50, flight=0.83, skip=0)",
+    "[local-stt]   best callsign candidate: \"N667XN\" (conf=0.97, consumed=3, addressingForm=0, spokenKey=\"november six six seven x-ray november\"; 2 candidates)",
+    "[local-stt] ParseCommands: 2 tokens",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"driffy\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"driffy\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"driffy\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"driffy\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"driffy\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"driffy\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"driffy\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"driffy\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"driffy\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"driffy\"",
+    "[local-stt]   matched command: \"SAYAGAIN/FIX\" [] (pos=0, conf=0.50, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[0]=\"direct\", skipping",
+    "[local-stt]   no match at token[1]=\"driffy\", skipping",
+    "[local-stt]   no match at token[1]=\"driffy\", skipping",
+    "[local-stt]   beam final[0]: score=0.100 pos=2 commands=[SAYAGAIN/FIX]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=2 commands=[]",
+    "[local-stt] ParseCommands: result=[SAYAGAIN/FIX] (avgConf=0.50)",
+    "[local-stt] ParseCommands: 3 tokens",
+    "[local-stt]   no match at token[0]=\"november\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"driffy\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"driffy\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"driffy\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"driffy\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"driffy\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"driffy\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"driffy\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"driffy\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"driffy\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"driffy\"",
+    "[local-stt]   matched command: \"SAYAGAIN/FIX\" [] (pos=1, conf=0.50, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[1]=\"direct\", skipping",
+    "[local-stt]   no match at token[2]=\"driffy\", skipping",
+    "[local-stt]   no match at token[2]=\"driffy\", skipping",
+    "[local-stt]   beam final[0]: score=0.100 pos=3 commands=[SAYAGAIN/FIX]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=3 commands=[]",
+    "[local-stt] ParseCommands: result=[SAYAGAIN/FIX] (avgConf=0.50)",
+    "[local-stt] callsign match: Callsign=\"N667XN\" SpokenKey=\"november six six seven x-ray november\" Conf=0.97 Consumed=3",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=4136 Fixes=2 Approaches=2 VisualApproaches=3 AssignedApproach=\"\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Zamperini\" -\u003e \"KTOA\"",
+    "[local-stt]   fix: \"Van Nuys\" -\u003e \"KVNY\"",
+    "[local-stt]   approach: \"RNAV Runway 29R\" -\u003e \"R9R\"",
+    "[local-stt]   approach: \"ILS Runway 29R\" -\u003e \"I9R\"",
+    "[local-stt]   visual approach: \"visual runway two niner right\" -\u003e \"29R\"",
+    "[local-stt]   visual approach: \"visual approach runway two niner right\" -\u003e \"29R\"",
+    "[local-stt]   visual approach: \"visual two niner right\" -\u003e \"29R\"",
+    "[local-stt] command tokens after disregard: 2",
+    "[local-stt]   token[0]: Text=\"direct\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"driffy\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 2 tokens",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"driffy\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"driffy\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"driffy\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"driffy\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"driffy\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"driffy\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"driffy\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"driffy\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"driffy\" against 2 fixes",
+    "[local-stt]   extractFix: no match found for \"driffy\"",
+    "[local-stt]   matched command: \"SAYAGAIN/FIX\" [] (pos=0, conf=0.50, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[0]=\"direct\", skipping",
+    "[local-stt]   no match at token[1]=\"driffy\", skipping",
+    "[local-stt]   no match at token[1]=\"driffy\", skipping",
+    "[local-stt]   beam final[0]: score=0.100 pos=2 commands=[SAYAGAIN/FIX]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=2 commands=[]",
+    "[local-stt] ParseCommands: result=[SAYAGAIN/FIX] (avgConf=0.50)",
+    "[local-stt] parsed commands: [SAYAGAIN/FIX] (conf=0.50, kinds=1)",
+    "[local-stt] validated commands: [SAYAGAIN/FIX] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"N667XN SAYAGAIN/FIX\" (conf=0.48, time=4.0002ms) ==="
+  ]
+}

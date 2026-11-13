@@ -1,0 +1,311 @@
+{
+  "time": "2026-11-10T09:24:22.91371218Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "American two two descend five level three zero zero",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, alpha, information, Seever four, Inwood, Drake, Rivet, one seven left, runway, I L S, United four zero one, Delta 95, American 39 hundred, American three 49, American 22, Them, Seever, switch, Sailor, Just, Neck, Chimley, Leather, Please, TULSA, Proud, Net, Few",
+  "whisper_duration_ms": 126.029,
+  "audio_duration_ms": 3528,
+  "processor": "GPU: NVIDIA GeForce RTX 5060 (7895MB)",
+  "whisper_model": "ggml-base.en-jlvatc-q5_0.bin",
+  "callsign": "AAL22",
+  "command": "D300",
+  "reason": "\"five level\" is flight level",
+  "stt_aircraft": {
+    "American 22": {
+      "Callsign": "AAL22",
+      "AircraftType": "A321",
+      "Fixes": {
+        "Few": "FEWWW",
+        "Leather": "LETHR",
+        "Neck": "NECKK",
+        "Proud": "PROWD",
+        "Sailor": "SAYLR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 17L": "I7L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one seven left": "17L",
+        "visual one seven left": "17L",
+        "visual runway one seven left": "17L"
+      },
+      "ApproachFixes": {
+        "I7L": {
+          "Drake": "DRAAK",
+          "G. Bush": "GBUSH",
+          "Inwood": "INWOD",
+          "Rivet": "RIVET"
+        }
+      },
+      "STAR": "SEEVR4",
+      "Route": [
+        "FEWWW",
+        "PROWD",
+        "LETHR",
+        "NECKK",
+        "SAYLR",
+        "SEEVR",
+        "BRDJE",
+        "NUSSS",
+        "YAHBT",
+        "KDFW"
+      ],
+      "Altitude": 34000,
+      "Heading": 244,
+      "Speed": 450,
+      "AssignedAltitude": 34000,
+      "State": "arrival",
+      "ControllerFrequency": "42",
+      "TrackingController": "42",
+      "LAHSORunways": [
+        "13L",
+        "31R"
+      ]
+    },
+    "American 39 hundred": {
+      "Callsign": "AAL3900",
+      "AircraftType": "A321",
+      "Fixes": {
+        "Leather": "LETHR",
+        "Neck": "NECKK",
+        "Proud": "PROWD",
+        "Sailor": "SAYLR",
+        "Seever": "SEEVR"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 17L": "I7L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one seven left": "17L",
+        "visual one seven left": "17L",
+        "visual runway one seven left": "17L"
+      },
+      "ApproachFixes": {
+        "I7L": {
+          "Drake": "DRAAK",
+          "G. Bush": "GBUSH",
+          "Inwood": "INWOD",
+          "Rivet": "RIVET"
+        }
+      },
+      "STAR": "SEEVR4",
+      "Route": [
+        "PROWD",
+        "LETHR",
+        "NECKK",
+        "SAYLR",
+        "SEEVR",
+        "BRDJE",
+        "NUSSS",
+        "YAHBT",
+        "KDFW"
+      ],
+      "Altitude": 30000,
+      "Heading": 245,
+      "Speed": 430,
+      "AssignedAltitude": 34000,
+      "State": "arrival",
+      "ControllerFrequency": "42",
+      "TrackingController": "42",
+      "LAHSORunways": [
+        "13L",
+        "31R"
+      ]
+    },
+    "American three 49": {
+      "Callsign": "AAL349",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Chimley": "CHMLI",
+        "Just": "JUSST",
+        "Net": "RRNET",
+        "Please": "PLEZE",
+        "switch": "SWTCH"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 17L": "I7L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one seven left": "17L",
+        "visual one seven left": "17L",
+        "visual runway one seven left": "17L"
+      },
+      "ApproachFixes": {
+        "I7L": {
+          "Drake": "DRAAK",
+          "G. Bush": "GBUSH",
+          "Inwood": "INWOD",
+          "Rivet": "RIVET"
+        }
+      },
+      "STAR": "SEEVR4",
+      "Route": [
+        "RRNET",
+        "PLEZE",
+        "CHMLI",
+        "JUSST",
+        "SWTCH",
+        "THEMM",
+        "SEEVR",
+        "BRDJE",
+        "NUSSS",
+        "YAHBT",
+        "KDFW"
+      ],
+      "Altitude": 34000,
+      "Heading": 219,
+      "Speed": 442,
+      "AssignedAltitude": 34000,
+      "State": "arrival",
+      "ControllerFrequency": "42",
+      "TrackingController": "42",
+      "LAHSORunways": [
+        "13L",
+        "31R"
+      ]
+    },
+    "Delta 95": {
+      "Callsign": "DAL95",
+      "AircraftType": "B738",
+      "Fixes": {
+        "TULSA": "TUL"
+      },
+      "Route": [
+        "TUL",
+        "KMSP"
+      ],
+      "Altitude": 31000,
+      "Heading": 349,
+      "Speed": 446,
+      "AssignedAltitude": 31000,
+      "State": "overflight",
+      "ControllerFrequency": "42",
+      "TrackingController": "42"
+    },
+    "United four zero one": {
+      "Callsign": "UAL401",
+      "LastAddressed": true,
+      "AircraftType": "A320",
+      "Fixes": {
+        "Chimley": "CHMLI",
+        "Just": "JUSST",
+        "Please": "PLEZE",
+        "Them": "THEMM",
+        "switch": "SWTCH"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 17L": "I7L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one seven left": "17L",
+        "visual one seven left": "17L",
+        "visual runway one seven left": "17L"
+      },
+      "ApproachFixes": {
+        "I7L": {
+          "Drake": "DRAAK",
+          "G. Bush": "GBUSH",
+          "Inwood": "INWOD",
+          "Rivet": "RIVET"
+        }
+      },
+      "STAR": "SEEVR4",
+      "Route": [
+        "PLEZE",
+        "CHMLI",
+        "JUSST",
+        "SWTCH",
+        "THEMM",
+        "SEEVR",
+        "BRDJE",
+        "NUSSS",
+        "YAHBT",
+        "KDFW"
+      ],
+      "Altitude": 30899,
+      "Heading": 218,
+      "Speed": 380,
+      "AssignedAltitude": 34000,
+      "AssignedSpeed": "M69",
+      "State": "arrival",
+      "ControllerFrequency": "42",
+      "TrackingController": "42",
+      "LAHSORunways": [
+        "13L",
+        "31R"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"American two two descend five level three zero zero\"",
+    "[local-stt] normalized words: [american 2 2 descend 5 level 3 0 0]",
+    "[local-stt] tokens: 6",
+    "[local-stt]   token[0]: Text=\"american\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"22\" Type=1 Value=22",
+    "[local-stt]   token[2]: Text=\"descend\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"5\" Type=1 Value=5",
+    "[local-stt]   token[4]: Text=\"level\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"300\" Type=1 Value=300",
+    "[local-stt] MatchCallsign: 6 tokens, 5 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 6 tokens, 5 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"American 22\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"American 22\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"American 22\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Delta 95\" (airline=0.650, flight=0.850, skip=2)",
+    "[local-stt]     pattern \"airline_flight\": selected \"American 22\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 10 results",
+    "[local-stt]     result 0: \"American three 49\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"American 39 hundred\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Delta 95\" (airline=0.550, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"United four zero one\" (airline=0.361, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"American 22\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"American 22\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"American 22\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"American 22\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"American 22\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"AAL22\" (spokenKey=\"American 22\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"AAL22\" SpokenKey=\"American 22\" Conf=1.00 Consumed=2",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=34000 Fixes=5 Approaches=1 VisualApproaches=3 AssignedApproach=\"\" LAHSORunways=[13L 31R]",
+    "[local-stt]   fix: \"Few\" -\u003e \"FEWWW\"",
+    "[local-stt]   fix: \"Proud\" -\u003e \"PROWD\"",
+    "[local-stt]   fix: \"Leather\" -\u003e \"LETHR\"",
+    "[local-stt]   fix: \"Neck\" -\u003e \"NECKK\"",
+    "[local-stt]   fix: \"Sailor\" -\u003e \"SAYLR\"",
+    "[local-stt]   approach: \"ILS Runway 17L\" -\u003e \"I7L\"",
+    "[local-stt]   visual approach: \"visual approach runway one seven left\" -\u003e \"17L\"",
+    "[local-stt]   visual approach: \"visual one seven left\" -\u003e \"17L\"",
+    "[local-stt]   visual approach: \"visual runway one seven left\" -\u003e \"17L\"",
+    "[local-stt] command tokens after disregard: 4",
+    "[local-stt]   token[0]: Text=\"descend\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"5\" Type=1 Value=5",
+    "[local-stt]   token[2]: Text=\"level\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"300\" Type=1 Value=300",
+    "[local-stt] ParseCommands: 4 tokens",
+    "[local-stt]   matched command: \"D50\" [descend] (pos=0, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"descend\", skipping",
+    "[local-stt]   no match at token[2]=\"level\", skipping",
+    "[local-stt]   no match at token[1]=\"5\", skipping",
+    "[local-stt]   no match at token[3]=\"300\", skipping",
+    "[local-stt]   no match at token[2]=\"level\", skipping",
+    "[local-stt]   no match at token[3]=\"300\", skipping",
+    "[local-stt]   beam final[0]: score=1.196 pos=4 commands=[D50]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=4 commands=[]",
+    "[local-stt] ParseCommands: result=[D50] (avgConf=1.00)",
+    "[local-stt] parsed commands: [D50] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [D50] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"AAL22 D50\" (conf=1.00, time=1.599ms) ==="
+  ]
+}

@@ -1,0 +1,760 @@
+{
+  "time": "2026-11-09T02:39:17.047371979Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Endeavor 68 39 turn left direct ajax",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, alpha, information, Lindz one, Hepeb, one five, runway, r-nav, Echo, D M E, Localizer, embraer phenom three hundred four delta x-ray, phenom three hundred four delta x-ray, november eight five four delta x-ray, embraer phenom three hundred one two four, phenom three hundred one two four, november six one two four, embraer phenom one hundred eight foxtrot x-ray, phenom one hundred eight foxtrot x-ray, november four niner eight foxtrot x-ray, E-R-J one thirty-five two golf juliet, Embraer E-R-J one thirty-five two golf juliet, november two three two golf juliet, Endeavor 68 39, Werner, Buildge, Wokuv, doya, Extreme, Fimso, Ticket, Greeley–Weld County Airport, Kice, Lift, RIFLE, Ajax, KREMMLING, Jargu, Zakor, Slalom, Jessie, RED TABLE, Ivkef, Lindz, SNOW, Aspen-Pitkin County Airport (Sardy Field)",
+  "whisper_duration_ms": 121.232,
+  "audio_duration_ms": 5832,
+  "processor": "GPU: NVIDIA GeForce RTX 5090 (32186MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "EDV6839",
+  "command": "LDAJAXX",
+  "reason": "turn left direct",
+  "stt_aircraft": {
+    "E-R-J one thirty-five two golf juliet": {
+      "Callsign": "N232GJ/T",
+      "AircraftType": "E135",
+      "Fixes": {
+        "Ajax": "AJAXX",
+        "Aspen-Pitkin County Airport (Sardy Field)": "KASE",
+        "Fimso": "FIMSO",
+        "Jargu": "JARGU",
+        "Kice": "KICER",
+        "RED TABLE": "DBL",
+        "Sayag": "CEYAG",
+        "doya": "DOYPE"
+      },
+      "CandidateApproaches": {
+        "Localizer DME Echo Runway 15": "LDE",
+        "Localizer DME Runway 15": "L15",
+        "RNAV Runway 15": "R15"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one five": "15",
+        "visual one five": "15",
+        "visual runway one five": "15"
+      },
+      "ApproachFixes": {
+        "L15": {
+          "Ajax": "AJAXX",
+          "Buildge": "BULDG",
+          "Extreme": "XTREM",
+          "Ivkef": "IVKEF",
+          "Kayak": "KYACK",
+          "Lift": "LIFTT",
+          "Rafter": "RAFTR",
+          "Sayag": "CEYAG",
+          "Ticket": "TIKET",
+          "Werner": "WERNR",
+          "Wokuv": "WOKUV",
+          "Zakor": "ZAKOR"
+        },
+        "LDE": {
+          "Ajax": "AJAXX",
+          "Fimso": "FIMSO",
+          "Jargu": "JARGU",
+          "Kice": "KICER",
+          "RED TABLE": "DBL",
+          "Sayag": "CEYAG",
+          "doya": "DOYPE"
+        },
+        "R15": {
+          "Alex": "ALLIX",
+          "Hepeb": "HEPEB",
+          "RED TABLE": "DBL"
+        }
+      },
+      "AssignedApproach": "Localizer DME Echo Runway 15",
+      "Route": [
+        "DBL",
+        "KASE"
+      ],
+      "Altitude": 15643,
+      "Heading": 359,
+      "Speed": 258,
+      "AssignedHeading": 170,
+      "AssignedSpeed": 200,
+      "State": "arrival",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1A",
+      "AddressingForm": 1
+    },
+    "Embraer E-R-J one thirty-five two golf juliet": {
+      "Callsign": "N232GJ/T",
+      "AircraftType": "E135",
+      "Fixes": {
+        "Ajax": "AJAXX",
+        "Aspen-Pitkin County Airport (Sardy Field)": "KASE",
+        "Fimso": "FIMSO",
+        "Jargu": "JARGU",
+        "Kice": "KICER",
+        "RED TABLE": "DBL",
+        "Sayag": "CEYAG",
+        "doya": "DOYPE"
+      },
+      "CandidateApproaches": {
+        "Localizer DME Echo Runway 15": "LDE",
+        "Localizer DME Runway 15": "L15",
+        "RNAV Runway 15": "R15"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one five": "15",
+        "visual one five": "15",
+        "visual runway one five": "15"
+      },
+      "ApproachFixes": {
+        "L15": {
+          "Ajax": "AJAXX",
+          "Buildge": "BULDG",
+          "Extreme": "XTREM",
+          "Ivkef": "IVKEF",
+          "Kayak": "KYACK",
+          "Lift": "LIFTT",
+          "Rafter": "RAFTR",
+          "Sayag": "CEYAG",
+          "Ticket": "TIKET",
+          "Werner": "WERNR",
+          "Wokuv": "WOKUV",
+          "Zakor": "ZAKOR"
+        },
+        "LDE": {
+          "Ajax": "AJAXX",
+          "Fimso": "FIMSO",
+          "Jargu": "JARGU",
+          "Kice": "KICER",
+          "RED TABLE": "DBL",
+          "Sayag": "CEYAG",
+          "doya": "DOYPE"
+        },
+        "R15": {
+          "Alex": "ALLIX",
+          "Hepeb": "HEPEB",
+          "RED TABLE": "DBL"
+        }
+      },
+      "AssignedApproach": "Localizer DME Echo Runway 15",
+      "Route": [
+        "DBL",
+        "KASE"
+      ],
+      "Altitude": 15643,
+      "Heading": 359,
+      "Speed": 258,
+      "AssignedHeading": 170,
+      "AssignedSpeed": 200,
+      "State": "arrival",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1A",
+      "AddressingForm": 1
+    },
+    "Endeavor 68 39": {
+      "Callsign": "EDV6839",
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Aspen-Pitkin County Airport (Sardy Field)": "KASE",
+        "Extreme": "XTREM",
+        "Ivkef": "IVKEF",
+        "Kayak": "KYACK",
+        "Lift": "LIFTT",
+        "Rafter": "RAFTR",
+        "Sayag": "CEYAG",
+        "Ticket": "TIKET",
+        "Zakor": "ZAKOR"
+      },
+      "CandidateApproaches": {
+        "Localizer DME Echo Runway 15": "LDE",
+        "Localizer DME Runway 15": "L15",
+        "RNAV Runway 15": "R15"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one five": "15",
+        "visual one five": "15",
+        "visual runway one five": "15"
+      },
+      "ApproachFixes": {
+        "L15": {
+          "Ajax": "AJAXX",
+          "Buildge": "BULDG",
+          "Extreme": "XTREM",
+          "Ivkef": "IVKEF",
+          "Kayak": "KYACK",
+          "Lift": "LIFTT",
+          "Rafter": "RAFTR",
+          "Sayag": "CEYAG",
+          "Ticket": "TIKET",
+          "Werner": "WERNR",
+          "Wokuv": "WOKUV",
+          "Zakor": "ZAKOR"
+        },
+        "LDE": {
+          "Ajax": "AJAXX",
+          "Fimso": "FIMSO",
+          "Jargu": "JARGU",
+          "Kice": "KICER",
+          "RED TABLE": "DBL",
+          "Sayag": "CEYAG",
+          "doya": "DOYPE"
+        },
+        "R15": {
+          "Alex": "ALLIX",
+          "Hepeb": "HEPEB",
+          "RED TABLE": "DBL"
+        }
+      },
+      "AssignedApproach": "Localizer DME Runway 15",
+      "Route": [
+        "IVKEF",
+        "ZAKOR",
+        "LIFTT",
+        "TIKET",
+        "XTREM",
+        "KYACK",
+        "RAFTR",
+        "CEYAG",
+        "KASE"
+      ],
+      "Altitude": 14000,
+      "Heading": 321,
+      "Speed": 359,
+      "AssignedAltitude": 16000,
+      "State": "cleared approach",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1A"
+    },
+    "embraer phenom one hundred eight foxtrot x-ray": {
+      "Callsign": "N498FX/T",
+      "AircraftType": "E50P",
+      "Fixes": {
+        "Aspen-Pitkin County Airport (Sardy Field)": "KASE",
+        "Cheyenne Regional Jerry Olson": "KCYS",
+        "Greeley–Weld County": "KGXY",
+        "Jessie": "JESIE",
+        "KREMMLING": "RLG",
+        "SNOW": "SXW"
+      },
+      "SID": "LINDZ1",
+      "Route": [
+        "SXW",
+        "JESIE",
+        "RLG",
+        "KGXY",
+        "KCYS"
+      ],
+      "Altitude": 18357,
+      "Heading": 19,
+      "Speed": 378,
+      "AssignedAltitude": 21000,
+      "State": "departure",
+      "ControllerFrequency": "1A",
+      "TrackingController": "C06",
+      "AddressingForm": 1
+    },
+    "embraer phenom three hundred four delta x-ray": {
+      "Callsign": "N854DX/T",
+      "AircraftType": "E55P",
+      "Fixes": {
+        "Aspen-Pitkin County Airport (Sardy Field)": "KASE",
+        "Lindz": "LINDZ",
+        "RIFLE": "RIL",
+        "Slalom": "SLOLM"
+      },
+      "SID": "LINDZ1",
+      "Route": [
+        "LINDZ",
+        "SLOLM",
+        "RIL",
+        "HELPR",
+        "KSLC"
+      ],
+      "Altitude": 12742,
+      "Heading": 303,
+      "Speed": 255,
+      "AssignedAltitude": 21000,
+      "State": "departure",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1A",
+      "AddressingForm": 1
+    },
+    "embraer phenom three hundred one two four": {
+      "Callsign": "N6124/T",
+      "AircraftType": "E55P",
+      "Fixes": {
+        "Ajax": "AJAXX",
+        "Aspen-Pitkin County Airport (Sardy Field)": "KASE",
+        "Buildge": "BULDG",
+        "Extreme": "XTREM",
+        "Ivkef": "IVKEF",
+        "Kayak": "KYACK",
+        "Lift": "LIFTT",
+        "RED TABLE": "DBL",
+        "Rafter": "RAFTR",
+        "Sayag": "CEYAG",
+        "Ticket": "TIKET",
+        "Werner": "WERNR",
+        "Wokuv": "WOKUV",
+        "Zakor": "ZAKOR"
+      },
+      "CandidateApproaches": {
+        "Localizer DME Echo Runway 15": "LDE",
+        "Localizer DME Runway 15": "L15",
+        "RNAV Runway 15": "R15"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one five": "15",
+        "visual one five": "15",
+        "visual runway one five": "15"
+      },
+      "ApproachFixes": {
+        "L15": {
+          "Ajax": "AJAXX",
+          "Buildge": "BULDG",
+          "Extreme": "XTREM",
+          "Ivkef": "IVKEF",
+          "Kayak": "KYACK",
+          "Lift": "LIFTT",
+          "Rafter": "RAFTR",
+          "Sayag": "CEYAG",
+          "Ticket": "TIKET",
+          "Werner": "WERNR",
+          "Wokuv": "WOKUV",
+          "Zakor": "ZAKOR"
+        },
+        "LDE": {
+          "Ajax": "AJAXX",
+          "Fimso": "FIMSO",
+          "Jargu": "JARGU",
+          "Kice": "KICER",
+          "RED TABLE": "DBL",
+          "Sayag": "CEYAG",
+          "doya": "DOYPE"
+        },
+        "R15": {
+          "Alex": "ALLIX",
+          "Hepeb": "HEPEB",
+          "RED TABLE": "DBL"
+        }
+      },
+      "AssignedApproach": "Localizer DME Runway 15",
+      "Route": [
+        "DBL",
+        "KASE"
+      ],
+      "Altitude": 16273,
+      "Heading": 316,
+      "Speed": 255,
+      "AssignedSpeed": 200,
+      "State": "arrival",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1A",
+      "AddressingForm": 1
+    },
+    "november eight five four delta x-ray": {
+      "Callsign": "N854DX",
+      "AircraftType": "E55P",
+      "Fixes": {
+        "Aspen-Pitkin County Airport (Sardy Field)": "KASE",
+        "Lindz": "LINDZ",
+        "RIFLE": "RIL",
+        "Slalom": "SLOLM"
+      },
+      "SID": "LINDZ1",
+      "Route": [
+        "LINDZ",
+        "SLOLM",
+        "RIL",
+        "HELPR",
+        "KSLC"
+      ],
+      "Altitude": 12742,
+      "Heading": 303,
+      "Speed": 255,
+      "AssignedAltitude": 21000,
+      "State": "departure",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1A"
+    },
+    "november four niner eight foxtrot x-ray": {
+      "Callsign": "N498FX",
+      "AircraftType": "E50P",
+      "Fixes": {
+        "Aspen-Pitkin County Airport (Sardy Field)": "KASE",
+        "Cheyenne Regional Jerry Olson": "KCYS",
+        "Greeley–Weld County": "KGXY",
+        "Jessie": "JESIE",
+        "KREMMLING": "RLG",
+        "SNOW": "SXW"
+      },
+      "SID": "LINDZ1",
+      "Route": [
+        "SXW",
+        "JESIE",
+        "RLG",
+        "KGXY",
+        "KCYS"
+      ],
+      "Altitude": 18357,
+      "Heading": 19,
+      "Speed": 378,
+      "AssignedAltitude": 21000,
+      "State": "departure",
+      "ControllerFrequency": "1A",
+      "TrackingController": "C06"
+    },
+    "november six one two four": {
+      "Callsign": "N6124",
+      "AircraftType": "E55P",
+      "Fixes": {
+        "Ajax": "AJAXX",
+        "Aspen-Pitkin County Airport (Sardy Field)": "KASE",
+        "Buildge": "BULDG",
+        "Extreme": "XTREM",
+        "Ivkef": "IVKEF",
+        "Kayak": "KYACK",
+        "Lift": "LIFTT",
+        "RED TABLE": "DBL",
+        "Rafter": "RAFTR",
+        "Sayag": "CEYAG",
+        "Ticket": "TIKET",
+        "Werner": "WERNR",
+        "Wokuv": "WOKUV",
+        "Zakor": "ZAKOR"
+      },
+      "CandidateApproaches": {
+        "Localizer DME Echo Runway 15": "LDE",
+        "Localizer DME Runway 15": "L15",
+        "RNAV Runway 15": "R15"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one five": "15",
+        "visual one five": "15",
+        "visual runway one five": "15"
+      },
+      "ApproachFixes": {
+        "L15": {
+          "Ajax": "AJAXX",
+          "Buildge": "BULDG",
+          "Extreme": "XTREM",
+          "Ivkef": "IVKEF",
+          "Kayak": "KYACK",
+          "Lift": "LIFTT",
+          "Rafter": "RAFTR",
+          "Sayag": "CEYAG",
+          "Ticket": "TIKET",
+          "Werner": "WERNR",
+          "Wokuv": "WOKUV",
+          "Zakor": "ZAKOR"
+        },
+        "LDE": {
+          "Ajax": "AJAXX",
+          "Fimso": "FIMSO",
+          "Jargu": "JARGU",
+          "Kice": "KICER",
+          "RED TABLE": "DBL",
+          "Sayag": "CEYAG",
+          "doya": "DOYPE"
+        },
+        "R15": {
+          "Alex": "ALLIX",
+          "Hepeb": "HEPEB",
+          "RED TABLE": "DBL"
+        }
+      },
+      "AssignedApproach": "Localizer DME Runway 15",
+      "Route": [
+        "DBL",
+        "KASE"
+      ],
+      "Altitude": 16273,
+      "Heading": 316,
+      "Speed": 255,
+      "AssignedSpeed": 200,
+      "State": "arrival",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1A"
+    },
+    "november two three two golf juliet": {
+      "Callsign": "N232GJ",
+      "LastAddressed": true,
+      "AircraftType": "E135",
+      "Fixes": {
+        "Ajax": "AJAXX",
+        "Aspen-Pitkin County Airport (Sardy Field)": "KASE",
+        "Fimso": "FIMSO",
+        "Jargu": "JARGU",
+        "Kice": "KICER",
+        "RED TABLE": "DBL",
+        "Sayag": "CEYAG",
+        "doya": "DOYPE"
+      },
+      "CandidateApproaches": {
+        "Localizer DME Echo Runway 15": "LDE",
+        "Localizer DME Runway 15": "L15",
+        "RNAV Runway 15": "R15"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one five": "15",
+        "visual one five": "15",
+        "visual runway one five": "15"
+      },
+      "ApproachFixes": {
+        "L15": {
+          "Ajax": "AJAXX",
+          "Buildge": "BULDG",
+          "Extreme": "XTREM",
+          "Ivkef": "IVKEF",
+          "Kayak": "KYACK",
+          "Lift": "LIFTT",
+          "Rafter": "RAFTR",
+          "Sayag": "CEYAG",
+          "Ticket": "TIKET",
+          "Werner": "WERNR",
+          "Wokuv": "WOKUV",
+          "Zakor": "ZAKOR"
+        },
+        "LDE": {
+          "Ajax": "AJAXX",
+          "Fimso": "FIMSO",
+          "Jargu": "JARGU",
+          "Kice": "KICER",
+          "RED TABLE": "DBL",
+          "Sayag": "CEYAG",
+          "doya": "DOYPE"
+        },
+        "R15": {
+          "Alex": "ALLIX",
+          "Hepeb": "HEPEB",
+          "RED TABLE": "DBL"
+        }
+      },
+      "AssignedApproach": "Localizer DME Echo Runway 15",
+      "Route": [
+        "DBL",
+        "KASE"
+      ],
+      "Altitude": 15643,
+      "Heading": 359,
+      "Speed": 258,
+      "AssignedHeading": 170,
+      "AssignedSpeed": 200,
+      "State": "arrival",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1A"
+    },
+    "phenom one hundred eight foxtrot x-ray": {
+      "Callsign": "N498FX/T",
+      "AircraftType": "E50P",
+      "Fixes": {
+        "Aspen-Pitkin County Airport (Sardy Field)": "KASE",
+        "Cheyenne Regional Jerry Olson": "KCYS",
+        "Greeley–Weld County": "KGXY",
+        "Jessie": "JESIE",
+        "KREMMLING": "RLG",
+        "SNOW": "SXW"
+      },
+      "SID": "LINDZ1",
+      "Route": [
+        "SXW",
+        "JESIE",
+        "RLG",
+        "KGXY",
+        "KCYS"
+      ],
+      "Altitude": 18357,
+      "Heading": 19,
+      "Speed": 378,
+      "AssignedAltitude": 21000,
+      "State": "departure",
+      "ControllerFrequency": "1A",
+      "TrackingController": "C06",
+      "AddressingForm": 1
+    },
+    "phenom three hundred four delta x-ray": {
+      "Callsign": "N854DX/T",
+      "AircraftType": "E55P",
+      "Fixes": {
+        "Aspen-Pitkin County Airport (Sardy Field)": "KASE",
+        "Lindz": "LINDZ",
+        "RIFLE": "RIL",
+        "Slalom": "SLOLM"
+      },
+      "SID": "LINDZ1",
+      "Route": [
+        "LINDZ",
+        "SLOLM",
+        "RIL",
+        "HELPR",
+        "KSLC"
+      ],
+      "Altitude": 12742,
+      "Heading": 303,
+      "Speed": 255,
+      "AssignedAltitude": 21000,
+      "State": "departure",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1A",
+      "AddressingForm": 1
+    },
+    "phenom three hundred one two four": {
+      "Callsign": "N6124/T",
+      "AircraftType": "E55P",
+      "Fixes": {
+        "Ajax": "AJAXX",
+        "Aspen-Pitkin County Airport (Sardy Field)": "KASE",
+        "Buildge": "BULDG",
+        "Extreme": "XTREM",
+        "Ivkef": "IVKEF",
+        "Kayak": "KYACK",
+        "Lift": "LIFTT",
+        "RED TABLE": "DBL",
+        "Rafter": "RAFTR",
+        "Sayag": "CEYAG",
+        "Ticket": "TIKET",
+        "Werner": "WERNR",
+        "Wokuv": "WOKUV",
+        "Zakor": "ZAKOR"
+      },
+      "CandidateApproaches": {
+        "Localizer DME Echo Runway 15": "LDE",
+        "Localizer DME Runway 15": "L15",
+        "RNAV Runway 15": "R15"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one five": "15",
+        "visual one five": "15",
+        "visual runway one five": "15"
+      },
+      "ApproachFixes": {
+        "L15": {
+          "Ajax": "AJAXX",
+          "Buildge": "BULDG",
+          "Extreme": "XTREM",
+          "Ivkef": "IVKEF",
+          "Kayak": "KYACK",
+          "Lift": "LIFTT",
+          "Rafter": "RAFTR",
+          "Sayag": "CEYAG",
+          "Ticket": "TIKET",
+          "Werner": "WERNR",
+          "Wokuv": "WOKUV",
+          "Zakor": "ZAKOR"
+        },
+        "LDE": {
+          "Ajax": "AJAXX",
+          "Fimso": "FIMSO",
+          "Jargu": "JARGU",
+          "Kice": "KICER",
+          "RED TABLE": "DBL",
+          "Sayag": "CEYAG",
+          "doya": "DOYPE"
+        },
+        "R15": {
+          "Alex": "ALLIX",
+          "Hepeb": "HEPEB",
+          "RED TABLE": "DBL"
+        }
+      },
+      "AssignedApproach": "Localizer DME Runway 15",
+      "Route": [
+        "DBL",
+        "KASE"
+      ],
+      "Altitude": 16273,
+      "Heading": 316,
+      "Speed": 255,
+      "AssignedSpeed": 200,
+      "State": "arrival",
+      "ControllerFrequency": "1A",
+      "TrackingController": "1A",
+      "AddressingForm": 1
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Endeavor 68 39 turn left direct ajax\"",
+    "[local-stt] normalized words: [endeavor 68 39 turn left direct ajax]",
+    "[local-stt] tokens: 7",
+    "[local-stt]   token[0]: Text=\"endeavor\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"68\" Type=1 Value=68",
+    "[local-stt]   token[2]: Text=\"39\" Type=1 Value=39",
+    "[local-stt]   token[3]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"left\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"direct\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"ajax\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 7 tokens, 13 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 7 tokens, 13 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Endeavor 68 39\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Endeavor 68 39\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"Endeavor 68 39\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Endeavor 68 39\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 2 results",
+    "[local-stt]     result 0: \"Endeavor 68 39\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Endeavor 68 39\" (airline=0.458, flight=0.000, skip=3)",
+    "[local-stt]     pattern \"airline_only\": selected \"Endeavor 68 39\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"Endeavor 68 39\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Endeavor 68 39\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"Endeavor 68 39\" (airline=0.500, flight=0.700, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Endeavor 68 39\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"EDV6839\" (spokenKey=\"Endeavor 68 39\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"EDV6839\" SpokenKey=\"Endeavor 68 39\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"cleared approach\" Altitude=14000 Fixes=9 Approaches=3 VisualApproaches=3 AssignedApproach=\"Localizer DME Runway 15\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Ivkef\" -\u003e \"IVKEF\"",
+    "[local-stt]   fix: \"Zakor\" -\u003e \"ZAKOR\"",
+    "[local-stt]   fix: \"Ticket\" -\u003e \"TIKET\"",
+    "[local-stt]   fix: \"Kayak\" -\u003e \"KYACK\"",
+    "[local-stt]   fix: \"Rafter\" -\u003e \"RAFTR\"",
+    "[local-stt]   fix: \"Aspen-Pitkin County Airport (Sardy Field)\" -\u003e \"KASE\"",
+    "[local-stt]   fix: \"Lift\" -\u003e \"LIFTT\"",
+    "[local-stt]   fix: \"Extreme\" -\u003e \"XTREM\"",
+    "[local-stt]   fix: \"Sayag\" -\u003e \"CEYAG\"",
+    "[local-stt]   approach: \"Localizer DME Runway 15\" -\u003e \"L15\"",
+    "[local-stt]   approach: \"Localizer DME Echo Runway 15\" -\u003e \"LDE\"",
+    "[local-stt]   approach: \"RNAV Runway 15\" -\u003e \"R15\"",
+    "[local-stt]   visual approach: \"visual approach runway one five\" -\u003e \"15\"",
+    "[local-stt]   visual approach: \"visual one five\" -\u003e \"15\"",
+    "[local-stt]   visual approach: \"visual runway one five\" -\u003e \"15\"",
+    "[local-stt] command tokens after disregard: 4",
+    "[local-stt]   token[0]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"left\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"direct\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"ajax\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 4 tokens",
+    "[local-stt]   no match at token[0]=\"turn\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ajax\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"ajax\"",
+    "[local-stt]   no match at token[1]=\"left\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ajax\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"ajax\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ajax\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"ajax\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ajax\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"ajax\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ajax\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"ajax\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ajax\" against 9 fixes",
+    "[local-stt]   extractFix: no match found for \"ajax\"",
+    "[local-stt]   matched command: \"SAYAGAIN/FIX\" [] (pos=2, conf=0.50, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[2]=\"direct\", skipping",
+    "[local-stt]   no match at token[3]=\"ajax\", skipping",
+    "[local-stt]   no match at token[3]=\"ajax\", skipping",
+    "[local-stt]   beam final[0]: score=0.100 pos=4 commands=[SAYAGAIN/FIX]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=4 commands=[]",
+    "[local-stt] ParseCommands: result=[SAYAGAIN/FIX] (avgConf=0.50)",
+    "[local-stt] parsed commands: [SAYAGAIN/FIX] (conf=0.50, kinds=1)",
+    "[local-stt] validated commands: [SAYAGAIN/FIX] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"EDV6839 SAYAGAIN/FIX\" (conf=0.50, time=2.0006ms) ==="
+  ]
+}

@@ -1,0 +1,272 @@
+{
+  "time": "2026-11-04T03:46:27.442670021Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "American 43 97 traffic twelve o'clock seven nautical miles maintain visual separation",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, oscar, information, Seever four, Legree, Yohan, Ickle, Zing, Penny, Bossy, Poppa, Morry, one eight right, one seven center, one three right, one seven left, runway, I L S, Frontier Flight six 47, American 43 97, G. Bush, Inwood, Drake, Yeah but, Rivet, Dallas Fort Worth International Airport",
+  "whisper_duration_ms": 206.772,
+  "audio_duration_ms": 6984,
+  "processor": "GPU: NVIDIA GeForce RTX 5060 Ti (16266MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "AAL4397",
+  "command": "TRAFFIC/12/7/UNK VISSEP",
+  "stt_aircraft": {
+    "American 43 97": {
+      "Callsign": "AAL4397",
+      "LastAddressed": true,
+      "AircraftType": "A321",
+      "Fixes": {
+        "D F W": "KDFW",
+        "Dallas Fort Worth": "KDFW",
+        "Drake": "DRAAK",
+        "G. Bush": "GBUSH",
+        "Inwood": "INWOD",
+        "Rivet": "RIVET"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 13R": "I3R",
+        "ILS Runway 17C": "I7C",
+        "ILS Runway 17L": "I7L",
+        "ILS Runway 18R": "I8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight right": "18R",
+        "visual approach runway one seven center": "17C",
+        "visual approach runway one seven left": "17L",
+        "visual approach runway one three right": "13R",
+        "visual one eight right": "18R",
+        "visual one seven center": "17C",
+        "visual one seven left": "17L",
+        "visual one three right": "13R",
+        "visual runway one eight right": "18R",
+        "visual runway one seven center": "17C",
+        "visual runway one seven left": "17L",
+        "visual runway one three right": "13R"
+      },
+      "ApproachFixes": {
+        "I3R": {
+          "Hodax": "HODAX",
+          "Morry": "MORRY",
+          "Poppa": "POPPA"
+        },
+        "I7C": {
+          "Bossy": "BOSSI",
+          "Jiffy": "JIFFY",
+          "Penny": "PENNY",
+          "Zing": "ZINGG"
+        },
+        "I7L": {
+          "Drake": "DRAAK",
+          "G. Bush": "GBUSH",
+          "Inwood": "INWOD",
+          "Rivet": "RIVET"
+        },
+        "I8R": {
+          "Ickle": "ICKEL",
+          "Legree": "LEGRE",
+          "Nettie": "NETEE",
+          "Yohan": "YOHAN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 17L",
+      "STAR": "SEEVR4",
+      "Route": [
+        "RIVET",
+        "DRAAK",
+        "INWOD",
+        "GBUSH",
+        "KDFW"
+      ],
+      "Altitude": 5000,
+      "Heading": 238,
+      "Speed": 252,
+      "State": "cleared approach",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13L",
+        "31R"
+      ]
+    },
+    "Frontier Flight six 47": {
+      "Callsign": "FFT647",
+      "AircraftType": "A21N",
+      "Fixes": {
+        "D F W": "KDFW",
+        "Dallas Fort Worth": "KDFW",
+        "Drake": "DRAAK",
+        "G. Bush": "GBUSH",
+        "Inwood": "INWOD",
+        "Rivet": "RIVET",
+        "Yeah but": "YAHBT"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 13R": "I3R",
+        "ILS Runway 17C": "I7C",
+        "ILS Runway 17L": "I7L",
+        "ILS Runway 18R": "I8R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one eight right": "18R",
+        "visual approach runway one seven center": "17C",
+        "visual approach runway one seven left": "17L",
+        "visual approach runway one three right": "13R",
+        "visual one eight right": "18R",
+        "visual one seven center": "17C",
+        "visual one seven left": "17L",
+        "visual one three right": "13R",
+        "visual runway one eight right": "18R",
+        "visual runway one seven center": "17C",
+        "visual runway one seven left": "17L",
+        "visual runway one three right": "13R"
+      },
+      "ApproachFixes": {
+        "I3R": {
+          "Hodax": "HODAX",
+          "Morry": "MORRY",
+          "Poppa": "POPPA"
+        },
+        "I7C": {
+          "Bossy": "BOSSI",
+          "Jiffy": "JIFFY",
+          "Penny": "PENNY",
+          "Zing": "ZINGG"
+        },
+        "I7L": {
+          "Drake": "DRAAK",
+          "G. Bush": "GBUSH",
+          "Inwood": "INWOD",
+          "Rivet": "RIVET"
+        },
+        "I8R": {
+          "Ickle": "ICKEL",
+          "Legree": "LEGRE",
+          "Nettie": "NETEE",
+          "Yohan": "YOHAN"
+        }
+      },
+      "AssignedApproach": "ILS Runway 17L",
+      "STAR": "SEEVR4",
+      "Route": [
+        "YAHBT",
+        "KDFW"
+      ],
+      "Altitude": 7497,
+      "Heading": 260,
+      "Speed": 259,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H",
+      "LAHSORunways": [
+        "13L",
+        "31R",
+        "13L",
+        "31R"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"American 43 97 traffic twelve o'clock seven nautical miles maintain visual separation\"",
+    "[local-stt] normalized words: [american 43 97 traffic 12 oclock 7 nautical miles maintain visual separation]",
+    "[local-stt] tokens: 12",
+    "[local-stt]   token[0]: Text=\"american\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"43\" Type=1 Value=43",
+    "[local-stt]   token[2]: Text=\"97\" Type=1 Value=97",
+    "[local-stt]   token[3]: Text=\"traffic\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"12\" Type=1 Value=12",
+    "[local-stt]   token[5]: Text=\"oclock\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"7\" Type=1 Value=7",
+    "[local-stt]   token[7]: Text=\"nautical\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"miles\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"visual\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"separation\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 12 tokens, 2 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 12 tokens, 2 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"American 43 97\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"American 43 97\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"Frontier Flight six 47\" (airline=0.500, flight=0.722, skip=0)",
+    "[local-stt]     result 1: \"American 43 97\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"American 43 97\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 4 results",
+    "[local-stt]     result 0: \"Frontier Flight six 47\" (airline=0.500, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"American 43 97\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Frontier Flight six 47\" (airline=0.490, flight=0.000, skip=3)",
+    "[local-stt]     result 3: \"American 43 97\" (airline=0.607, flight=0.000, skip=3)",
+    "[local-stt]     pattern \"airline_only\": selected \"American 43 97\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"American 43 97\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"American 43 97\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"American 43 97\" (airline=0.500, flight=0.700, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"American 43 97\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"AAL4397\" (spokenKey=\"American 43 97\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"AAL4397\" SpokenKey=\"American 43 97\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"cleared approach\" Altitude=5000 Fixes=6 Approaches=4 VisualApproaches=12 AssignedApproach=\"ILS Runway 17L\" LAHSORunways=[13L 31R 13L 31R]",
+    "[local-stt]   fix: \"Dallas Fort Worth\" -\u003e \"KDFW\"",
+    "[local-stt]   fix: \"D F W\" -\u003e \"KDFW\"",
+    "[local-stt]   fix: \"Rivet\" -\u003e \"RIVET\"",
+    "[local-stt]   fix: \"Drake\" -\u003e \"DRAAK\"",
+    "[local-stt]   fix: \"Inwood\" -\u003e \"INWOD\"",
+    "[local-stt]   fix: \"G. Bush\" -\u003e \"GBUSH\"",
+    "[local-stt]   approach: \"ILS Runway 17C\" -\u003e \"I7C\"",
+    "[local-stt]   approach: \"ILS Runway 17L\" -\u003e \"I7L\"",
+    "[local-stt]   approach: \"ILS Runway 18R\" -\u003e \"I8R\"",
+    "[local-stt]   approach: \"ILS Runway 13R\" -\u003e \"I3R\"",
+    "[local-stt]   visual approach: \"visual runway one three right\" -\u003e \"13R\"",
+    "[local-stt]   visual approach: \"visual approach runway one three right\" -\u003e \"13R\"",
+    "[local-stt]   visual approach: \"visual runway one seven center\" -\u003e \"17C\"",
+    "[local-stt]   visual approach: \"visual approach runway one seven center\" -\u003e \"17C\"",
+    "[local-stt]   visual approach: \"visual runway one seven left\" -\u003e \"17L\"",
+    "[local-stt]   visual approach: \"visual approach runway one seven left\" -\u003e \"17L\"",
+    "[local-stt]   visual approach: \"visual one seven left\" -\u003e \"17L\"",
+    "[local-stt]   visual approach: \"visual runway one eight right\" -\u003e \"18R\"",
+    "[local-stt]   visual approach: \"visual one three right\" -\u003e \"13R\"",
+    "[local-stt]   visual approach: \"visual one seven center\" -\u003e \"17C\"",
+    "[local-stt]   visual approach: \"visual approach runway one eight right\" -\u003e \"18R\"",
+    "[local-stt]   visual approach: \"visual one eight right\" -\u003e \"18R\"",
+    "[local-stt] command tokens after disregard: 9",
+    "[local-stt]   token[0]: Text=\"traffic\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"12\" Type=1 Value=12",
+    "[local-stt]   token[2]: Text=\"oclock\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"7\" Type=1 Value=7",
+    "[local-stt]   token[4]: Text=\"nautical\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"miles\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"maintain\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"visual\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"separation\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 9 tokens",
+    "[local-stt]   matched command: \"TRAFFIC/12/7/UNK\" [traffic_advisory] (pos=0, conf=1.00, consumed=9, isThen=false)",
+    "[local-stt]   no match at token[0]=\"traffic\", skipping",
+    "[local-stt]   no match at token[1]=\"12\", skipping",
+    "[local-stt]   no match at token[2]=\"oclock\", skipping",
+    "[local-stt]   no match at token[3]=\"7\", skipping",
+    "[local-stt]   no match at token[4]=\"nautical\", skipping",
+    "[local-stt]   no match at token[5]=\"miles\", skipping",
+    "[local-stt]   matched command: \"VISSEP\" [visual_separation] (pos=6, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[6]=\"maintain\", skipping",
+    "[local-stt]   extractSTAR: looking for STAR=\"SEEVR4\" telephony=\"Seever four\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   no match at token[7]=\"visual\", skipping",
+    "[local-stt]   no match at token[8]=\"separation\", skipping",
+    "[local-stt]   beam final[0]: score=5.381 pos=9 commands=[TRAFFIC/12/7/UNK]",
+    "[local-stt]   beam final[1]: score=-0.509 pos=9 commands=[VISSEP]",
+    "[local-stt]   beam final[2]: score=-4.605 pos=9 commands=[]",
+    "[local-stt] ParseCommands: result=[TRAFFIC/12/7/UNK] (avgConf=1.00)",
+    "[local-stt] parsed commands: [TRAFFIC/12/7/UNK] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [TRAFFIC/12/7/UNK] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"AAL4397 TRAFFIC/12/7/UNK\" (conf=1.00, time=2.6781ms) ==="
+  ]
+}

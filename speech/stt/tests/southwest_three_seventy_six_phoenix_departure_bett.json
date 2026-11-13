@@ -1,0 +1,881 @@
+{
+  "time": "2026-11-10T05:44:30.650351097Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Southwest Three Seventy Six Phoenix departure better contact climbing team flight level two one zero",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, yankee, quebec, juliet, echo, information, Suns eight, Hooty one, Zepper two, Mister Bill one, Forpee one, Wilup, Tago, Pours, Onele, L T Col, Green, Hawaii, Ibobe, swirl, Willman, Class, first, Freeman, Nave, Ball, Jagal, Todre, Zemos, Serun, Fixar, Zerlo, Gypsy, Hamek, Budme, Lynette, Azcaf, A-vent, Facta, Secka, Nisew, STANFIELD, Dectu, Sizvu, four right, two two left, two six, two five left, two one, runway, V O R, r-nav, I L S, Approach, Visual, United 27, Southwest three 76, piper cherokee one eight tango, cherokee one eight tango, november six one one eight tango, E-R-J one thirty-five six two four, Embraer E-R-J one thirty-five six two four, november five four six two four, piper seminole three six seven, seminole three six seven, november four five three six seven, Frontier Flight 98 54, Frontier Flight 55 29, ExecJet 19 32, Forpee, Cacya, Gelts, Yooper, Oxygen, Tylik, PHOENIX, Resta, Yotes, Fannon, AJ, WILLIE, Maysa, Mister Bill, Suns, Zidog, Osgue, Phoenix Sky Harbor International Airport, Chandler Municipal Airport, Scottsdale Airport, Zeper, Zilub, Falcon Field",
+  "whisper_duration_ms": 225.188,
+  "audio_duration_ms": 4552,
+  "processor": "GPU: NVIDIA GeForce RTX 5060 Ti (16050MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "SWA376",
+  "command": "C210",
+  "reason": "radar contact is not a handoff",
+  "stt_aircraft": {
+    "E-R-J one thirty-five six two four": {
+      "Callsign": "N54624/T",
+      "AircraftType": "E135",
+      "Fixes": {
+        "AJ": "AEJAY",
+        "Chandler Municipal": "KCHD",
+        "Tylik": "TYLIK"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 4R": "R4R",
+        "VOR Runway 4R": "S4R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four right": "4R",
+        "visual four right": "4R",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "R4R": {
+          "Dectu": "DECTU",
+          "Kedu": "KEDDU",
+          "Nisew": "NISIW",
+          "PHOENIX": "PXR",
+          "STANFIELD": "TFD",
+          "Sizvu": "SIZVU"
+        },
+        "S4R": {
+          "Aruly": "ARULY",
+          "Facta": "FACTA",
+          "PHOENIX": "PXR",
+          "STANFIELD": "TFD",
+          "Secka": "SECKA"
+        }
+      },
+      "STAR": "HUUTY1",
+      "Route": [
+        "AEJAY",
+        "TYLIK",
+        "KCHD"
+      ],
+      "Altitude": 7784,
+      "Heading": 204,
+      "Speed": 269,
+      "AssignedAltitude": 7000,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "AddressingForm": 1
+    },
+    "Embraer E-R-J one thirty-five six two four": {
+      "Callsign": "N54624/T",
+      "AircraftType": "E135",
+      "Fixes": {
+        "AJ": "AEJAY",
+        "Chandler Municipal": "KCHD",
+        "Tylik": "TYLIK"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 4R": "R4R",
+        "VOR Runway 4R": "S4R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four right": "4R",
+        "visual four right": "4R",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "R4R": {
+          "Dectu": "DECTU",
+          "Kedu": "KEDDU",
+          "Nisew": "NISIW",
+          "PHOENIX": "PXR",
+          "STANFIELD": "TFD",
+          "Sizvu": "SIZVU"
+        },
+        "S4R": {
+          "Aruly": "ARULY",
+          "Facta": "FACTA",
+          "PHOENIX": "PXR",
+          "STANFIELD": "TFD",
+          "Secka": "SECKA"
+        }
+      },
+      "STAR": "HUUTY1",
+      "Route": [
+        "AEJAY",
+        "TYLIK",
+        "KCHD"
+      ],
+      "Altitude": 7784,
+      "Heading": 204,
+      "Speed": 269,
+      "AssignedAltitude": 7000,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "AddressingForm": 1
+    },
+    "ExecJet 19 32": {
+      "Callsign": "EJA1932",
+      "AircraftType": "CL35",
+      "Fixes": {
+        "Falcon": "KFFZ",
+        "Suns": "SUNSS"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 22L": "RB2L"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two two left": "22L",
+        "visual runway two two left": "22L",
+        "visual two two left": "22L"
+      },
+      "ApproachFixes": {
+        "RB2L": {
+          "A-vent": "AVENT",
+          "Azcaf": "AZCAF",
+          "Lynette": "LYNET",
+          "Toxie": "TOXIE"
+        }
+      },
+      "STAR": "SUNSS8",
+      "Route": [
+        "SUNSS",
+        "KFFZ"
+      ],
+      "Altitude": 9000,
+      "Heading": 298,
+      "Speed": 290,
+      "State": "arrival",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N"
+    },
+    "ExecJet 94 73": {
+      "Callsign": "EJA9473",
+      "AircraftType": "C560",
+      "Fixes": {
+        "Scottsdale": "KSDL"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 21": "RD21",
+        "VOR Runway 21": "VORA21"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two one": "21",
+        "visual runway two one": "21",
+        "visual two one": "21"
+      },
+      "ApproachFixes": {
+        "R21": {
+          "Ball": "BBALL",
+          "Class": "CLAAS",
+          "Denaho": "DNAHO",
+          "Edgar": "EEDGR",
+          "Freeman": "FRMAN",
+          "Green": "MREEN",
+          "Hawaii": "HAWAI",
+          "Ibobe": "IBOBE",
+          "L T Col": "LTCOL",
+          "Nave": "NAAVE",
+          "Onele": "ONELE",
+          "Willman": "WLLMN",
+          "first": "FURST",
+          "swirl": "SWIRL"
+        },
+        "RD21": {
+          "Cacto": "CACTO",
+          "Pours": "POURS",
+          "Tago": "TAGOC",
+          "Wilup": "WILUP"
+        },
+        "RE21": {
+          "Ilele": "ILELE",
+          "PHOENIX": "PXR",
+          "Zirik": "ZIRIK"
+        },
+        "VORA21": {
+          "Cacya": "CACYA",
+          "Gelts": "GELTS",
+          "PHOENIX": "PXR"
+        }
+      },
+      "STAR": "ARLIN4",
+      "Route": [
+        "KSDL"
+      ],
+      "Altitude": 6000,
+      "Heading": 77,
+      "Speed": 292,
+      "State": "arrival",
+      "ControllerFrequency": "1B",
+      "TrackingController": "1B"
+    },
+    "Frontier Flight 55 29": {
+      "Callsign": "FFT5529",
+      "AircraftType": "A321",
+      "Fixes": {
+        "Mister Bill": "MRBIL",
+        "Phoenix": "KPHX",
+        "Sky Harbor": "KPHX",
+        "Yooper": "YOOPR",
+        "Yotes": "YOTES",
+        "Zilub": "ZILUB"
+      },
+      "SID": "MRBIL1",
+      "Route": [
+        "ZILUB",
+        "MRBIL",
+        "YOTES",
+        "YOOPR",
+        "SHNPS",
+        "KDEN"
+      ],
+      "Altitude": 8916,
+      "Heading": 28,
+      "Speed": 321,
+      "AssignedAltitude": 21000,
+      "State": "departure",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N"
+    },
+    "Frontier Flight 98 54": {
+      "Callsign": "FFT9854",
+      "AircraftType": "A20N",
+      "Fixes": {
+        "Maysa": "MAYSA",
+        "Phoenix": "KPHX",
+        "Resta": "RRSTA",
+        "Sky Harbor": "KPHX",
+        "Zeper": "ZEPER"
+      },
+      "SID": "ZEPER2",
+      "Route": [
+        "ZEPER",
+        "MAYSA",
+        "RRSTA",
+        "DOVEE",
+        "SOTOO",
+        "HOUZZ",
+        "FUULL",
+        "SKANN",
+        "RUSME",
+        "KSFO"
+      ],
+      "Altitude": 17166,
+      "Heading": 329,
+      "Speed": 387,
+      "AssignedAltitude": 21000,
+      "State": "departure",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N"
+    },
+    "Southwest three 76": {
+      "Callsign": "SWA376",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "ALBUQUERQUE": "ABQ",
+        "Forpee": "FORPE",
+        "Layla's": "LALUZ",
+        "Osgue": "OSGUE",
+        "Oxygen": "OXYGN",
+        "Phoenix": "KPHX",
+        "ST JOHNS": "SJN",
+        "Sky Harbor": "KPHX",
+        "Zidog": "ZIDOG",
+        "Zilub": "ZILUB"
+      },
+      "SID": "FORPE1",
+      "Route": [
+        "OSGUE",
+        "ZIDOG",
+        "OXYGN",
+        "ZILUB",
+        "FORPE",
+        "LALUZ",
+        "SJN",
+        "ABQ",
+        "GCK",
+        "SLN",
+        "AGENT",
+        "KIDER",
+        "IRK",
+        "KORD"
+      ],
+      "Altitude": 4338,
+      "Heading": 260,
+      "Speed": 220,
+      "State": "departure",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N"
+    },
+    "United 27": {
+      "Callsign": "UAL27",
+      "AircraftType": "B737",
+      "Fixes": {
+        "Fannon": "FANON",
+        "Maysa": "MAYSA",
+        "Phoenix": "KPHX",
+        "Resta": "RRSTA",
+        "Sky Harbor": "KPHX",
+        "Zeper": "ZEPER",
+        "Zidog": "ZIDOG"
+      },
+      "SID": "ZEPER2",
+      "Route": [
+        "ZIDOG",
+        "FANON",
+        "ZEPER",
+        "MAYSA",
+        "RRSTA",
+        "DOVEE",
+        "SOTOO",
+        "HOUZZ",
+        "FUULL",
+        "SKANN",
+        "RUSME",
+        "KSFO"
+      ],
+      "Altitude": 5762,
+      "Heading": 284,
+      "Speed": 230,
+      "AssignedAltitude": 21000,
+      "State": "departure",
+      "ControllerFrequency": "1N",
+      "TrackingController": "1N"
+    },
+    "cherokee one eight tango": {
+      "Callsign": "N6118T/T",
+      "AircraftType": "P28A",
+      "Fixes": {
+        "Phoenix": "KPHX",
+        "Prescott Regional Airport - Ernest A. Love": "KPRC",
+        "Sky Harbor": "KPHX"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 25L": "I5L",
+        "ILS Runway 26": "I26",
+        "Visual Runway 25L": "V5L",
+        "Visual Runway 26": "V26"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two five left": "25L",
+        "visual approach runway two six": "26",
+        "visual runway two five left": "25L",
+        "visual runway two six": "26",
+        "visual two five left": "25L",
+        "visual two six": "26"
+      },
+      "ApproachFixes": {
+        "I26": {
+          "Jagal": "JAGAL",
+          "Prune": "PRUNN",
+          "Serun": "CERUN",
+          "Todre": "TODRE",
+          "Zemos": "ZEMOS",
+          "Zerlo": "ZERLO"
+        },
+        "I5L": {
+          "Budme": "BUDME",
+          "Fixar": "FIXAR",
+          "Gypsy": "GIPSE",
+          "Hamek": "HAMEK",
+          "Scade": "SCADE",
+          "Zerlo": "ZERLO"
+        },
+        "V26": {
+          "Delsey": "DELSE",
+          "Jagal": "JAGAL",
+          "Prune": "PRUNN",
+          "Serun": "CERUN",
+          "Todre": "TODRE",
+          "Zemos": "ZEMOS"
+        },
+        "V5L": {
+          "Budme": "BUDME",
+          "Conte": "KONTE",
+          "Gypsy": "GIPSE",
+          "Hamek": "HAMEK",
+          "Scade": "SCADE"
+        }
+      },
+      "Route": [
+        "KPHX"
+      ],
+      "Altitude": 9000,
+      "Heading": 160,
+      "Speed": 105,
+      "AssignedHeading": 160,
+      "State": "arrival",
+      "ControllerFrequency": "1B",
+      "TrackingController": "1B",
+      "AddressingForm": 1
+    },
+    "november five four six two four": {
+      "Callsign": "N54624",
+      "AircraftType": "E135",
+      "Fixes": {
+        "AJ": "AEJAY",
+        "Chandler Municipal": "KCHD",
+        "Tylik": "TYLIK"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 4R": "R4R",
+        "VOR Runway 4R": "S4R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway four right": "4R",
+        "visual four right": "4R",
+        "visual runway four right": "4R"
+      },
+      "ApproachFixes": {
+        "R4R": {
+          "Dectu": "DECTU",
+          "Kedu": "KEDDU",
+          "Nisew": "NISIW",
+          "PHOENIX": "PXR",
+          "STANFIELD": "TFD",
+          "Sizvu": "SIZVU"
+        },
+        "S4R": {
+          "Aruly": "ARULY",
+          "Facta": "FACTA",
+          "PHOENIX": "PXR",
+          "STANFIELD": "TFD",
+          "Secka": "SECKA"
+        }
+      },
+      "STAR": "HUUTY1",
+      "Route": [
+        "AEJAY",
+        "TYLIK",
+        "KCHD"
+      ],
+      "Altitude": 7784,
+      "Heading": 204,
+      "Speed": 269,
+      "AssignedAltitude": 7000,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W"
+    },
+    "november four five three six seven": {
+      "Callsign": "N45367",
+      "AircraftType": "PA44",
+      "Fixes": {
+        "Cacya": "CACYA",
+        "Gelts": "GELTS",
+        "PHOENIX": "PXR",
+        "Scottsdale": "KSDL",
+        "WILLIE": "IWA"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 21": "RE21",
+        "VOR Runway 21": "VORA21"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two one": "21",
+        "visual runway two one": "21",
+        "visual two one": "21"
+      },
+      "ApproachFixes": {
+        "R21": {
+          "Ball": "BBALL",
+          "Class": "CLAAS",
+          "Denaho": "DNAHO",
+          "Edgar": "EEDGR",
+          "Freeman": "FRMAN",
+          "Green": "MREEN",
+          "Hawaii": "HAWAI",
+          "Ibobe": "IBOBE",
+          "L T Col": "LTCOL",
+          "Nave": "NAAVE",
+          "Onele": "ONELE",
+          "Willman": "WLLMN",
+          "first": "FURST",
+          "swirl": "SWIRL"
+        },
+        "RD21": {
+          "Cacto": "CACTO",
+          "Pours": "POURS",
+          "Tago": "TAGOC",
+          "Wilup": "WILUP"
+        },
+        "RE21": {
+          "Ilele": "ILELE",
+          "PHOENIX": "PXR",
+          "Zirik": "ZIRIK"
+        },
+        "VORA21": {
+          "Cacya": "CACYA",
+          "Gelts": "GELTS",
+          "PHOENIX": "PXR"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 21",
+      "Route": [
+        "IWA",
+        "KSDL"
+      ],
+      "Altitude": 10000,
+      "Heading": 218,
+      "Speed": 115,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W"
+    },
+    "november six one one eight tango": {
+      "Callsign": "N6118T",
+      "AircraftType": "P28A",
+      "Fixes": {
+        "Phoenix": "KPHX",
+        "Prescott Regional Airport - Ernest A. Love": "KPRC",
+        "Sky Harbor": "KPHX"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 25L": "I5L",
+        "ILS Runway 26": "I26",
+        "Visual Runway 25L": "V5L",
+        "Visual Runway 26": "V26"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two five left": "25L",
+        "visual approach runway two six": "26",
+        "visual runway two five left": "25L",
+        "visual runway two six": "26",
+        "visual two five left": "25L",
+        "visual two six": "26"
+      },
+      "ApproachFixes": {
+        "I26": {
+          "Jagal": "JAGAL",
+          "Prune": "PRUNN",
+          "Serun": "CERUN",
+          "Todre": "TODRE",
+          "Zemos": "ZEMOS",
+          "Zerlo": "ZERLO"
+        },
+        "I5L": {
+          "Budme": "BUDME",
+          "Fixar": "FIXAR",
+          "Gypsy": "GIPSE",
+          "Hamek": "HAMEK",
+          "Scade": "SCADE",
+          "Zerlo": "ZERLO"
+        },
+        "V26": {
+          "Delsey": "DELSE",
+          "Jagal": "JAGAL",
+          "Prune": "PRUNN",
+          "Serun": "CERUN",
+          "Todre": "TODRE",
+          "Zemos": "ZEMOS"
+        },
+        "V5L": {
+          "Budme": "BUDME",
+          "Conte": "KONTE",
+          "Gypsy": "GIPSE",
+          "Hamek": "HAMEK",
+          "Scade": "SCADE"
+        }
+      },
+      "Route": [
+        "KPHX"
+      ],
+      "Altitude": 9000,
+      "Heading": 160,
+      "Speed": 105,
+      "AssignedHeading": 160,
+      "State": "arrival",
+      "ControllerFrequency": "1B",
+      "TrackingController": "1B"
+    },
+    "piper cherokee one eight tango": {
+      "Callsign": "N6118T/T",
+      "AircraftType": "P28A",
+      "Fixes": {
+        "Phoenix": "KPHX",
+        "Prescott Regional Airport - Ernest A. Love": "KPRC",
+        "Sky Harbor": "KPHX"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 25L": "I5L",
+        "ILS Runway 26": "I26",
+        "Visual Runway 25L": "V5L",
+        "Visual Runway 26": "V26"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two five left": "25L",
+        "visual approach runway two six": "26",
+        "visual runway two five left": "25L",
+        "visual runway two six": "26",
+        "visual two five left": "25L",
+        "visual two six": "26"
+      },
+      "ApproachFixes": {
+        "I26": {
+          "Jagal": "JAGAL",
+          "Prune": "PRUNN",
+          "Serun": "CERUN",
+          "Todre": "TODRE",
+          "Zemos": "ZEMOS",
+          "Zerlo": "ZERLO"
+        },
+        "I5L": {
+          "Budme": "BUDME",
+          "Fixar": "FIXAR",
+          "Gypsy": "GIPSE",
+          "Hamek": "HAMEK",
+          "Scade": "SCADE",
+          "Zerlo": "ZERLO"
+        },
+        "V26": {
+          "Delsey": "DELSE",
+          "Jagal": "JAGAL",
+          "Prune": "PRUNN",
+          "Serun": "CERUN",
+          "Todre": "TODRE",
+          "Zemos": "ZEMOS"
+        },
+        "V5L": {
+          "Budme": "BUDME",
+          "Conte": "KONTE",
+          "Gypsy": "GIPSE",
+          "Hamek": "HAMEK",
+          "Scade": "SCADE"
+        }
+      },
+      "Route": [
+        "KPHX"
+      ],
+      "Altitude": 9000,
+      "Heading": 160,
+      "Speed": 105,
+      "AssignedHeading": 160,
+      "State": "arrival",
+      "ControllerFrequency": "1B",
+      "TrackingController": "1B",
+      "AddressingForm": 1
+    },
+    "piper seminole three six seven": {
+      "Callsign": "N45367/T",
+      "AircraftType": "PA44",
+      "Fixes": {
+        "Cacya": "CACYA",
+        "Gelts": "GELTS",
+        "PHOENIX": "PXR",
+        "Scottsdale": "KSDL",
+        "WILLIE": "IWA"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 21": "RE21",
+        "VOR Runway 21": "VORA21"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two one": "21",
+        "visual runway two one": "21",
+        "visual two one": "21"
+      },
+      "ApproachFixes": {
+        "R21": {
+          "Ball": "BBALL",
+          "Class": "CLAAS",
+          "Denaho": "DNAHO",
+          "Edgar": "EEDGR",
+          "Freeman": "FRMAN",
+          "Green": "MREEN",
+          "Hawaii": "HAWAI",
+          "Ibobe": "IBOBE",
+          "L T Col": "LTCOL",
+          "Nave": "NAAVE",
+          "Onele": "ONELE",
+          "Willman": "WLLMN",
+          "first": "FURST",
+          "swirl": "SWIRL"
+        },
+        "RD21": {
+          "Cacto": "CACTO",
+          "Pours": "POURS",
+          "Tago": "TAGOC",
+          "Wilup": "WILUP"
+        },
+        "RE21": {
+          "Ilele": "ILELE",
+          "PHOENIX": "PXR",
+          "Zirik": "ZIRIK"
+        },
+        "VORA21": {
+          "Cacya": "CACYA",
+          "Gelts": "GELTS",
+          "PHOENIX": "PXR"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 21",
+      "Route": [
+        "IWA",
+        "KSDL"
+      ],
+      "Altitude": 10000,
+      "Heading": 218,
+      "Speed": 115,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "AddressingForm": 1
+    },
+    "seminole three six seven": {
+      "Callsign": "N45367/T",
+      "AircraftType": "PA44",
+      "Fixes": {
+        "Cacya": "CACYA",
+        "Gelts": "GELTS",
+        "PHOENIX": "PXR",
+        "Scottsdale": "KSDL",
+        "WILLIE": "IWA"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 21": "RE21",
+        "VOR Runway 21": "VORA21"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two one": "21",
+        "visual runway two one": "21",
+        "visual two one": "21"
+      },
+      "ApproachFixes": {
+        "R21": {
+          "Ball": "BBALL",
+          "Class": "CLAAS",
+          "Denaho": "DNAHO",
+          "Edgar": "EEDGR",
+          "Freeman": "FRMAN",
+          "Green": "MREEN",
+          "Hawaii": "HAWAI",
+          "Ibobe": "IBOBE",
+          "L T Col": "LTCOL",
+          "Nave": "NAAVE",
+          "Onele": "ONELE",
+          "Willman": "WLLMN",
+          "first": "FURST",
+          "swirl": "SWIRL"
+        },
+        "RD21": {
+          "Cacto": "CACTO",
+          "Pours": "POURS",
+          "Tago": "TAGOC",
+          "Wilup": "WILUP"
+        },
+        "RE21": {
+          "Ilele": "ILELE",
+          "PHOENIX": "PXR",
+          "Zirik": "ZIRIK"
+        },
+        "VORA21": {
+          "Cacya": "CACYA",
+          "Gelts": "GELTS",
+          "PHOENIX": "PXR"
+        }
+      },
+      "AssignedApproach": "Visual Approach Runway 21",
+      "Route": [
+        "IWA",
+        "KSDL"
+      ],
+      "Altitude": 10000,
+      "Heading": 218,
+      "Speed": 115,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W",
+      "AddressingForm": 1
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Southwest Three Seventy Six Phoenix departure better contact climbing team flight level two one zero\"",
+    "[local-stt] normalized words: [southwest 3 76 phoenix departure better contact climbing team flight level 2 1 0]",
+    "[local-stt] tokens: 9",
+    "[local-stt]   token[0]: Text=\"southwest\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"376\" Type=1 Value=376",
+    "[local-stt]   token[2]: Text=\"phoenix\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"departure\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"better\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"contact\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"climbing\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"team\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"FL210\" Type=2 Value=210",
+    "[local-stt] MatchCallsign: 9 tokens, 15 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 9 tokens, 15 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Southwest three 76\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Southwest three 76\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"Southwest three 76\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Southwest three 76\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 16 results",
+    "[local-stt]     result 0: \"Frontier Flight 55 29\" (airline=0.569, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"United 27\" (airline=0.611, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Frontier Flight 98 54\" (airline=0.569, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Southwest three 76\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"United 27\" (airline=0.437, flight=0.000, skip=2)",
+    "[local-stt]     pattern \"airline_only\": selected \"Southwest three 76\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Southwest three 76\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Southwest three 76\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"Southwest three 76\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"SWA376\" (spokenKey=\"Southwest three 76\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"SWA376\" SpokenKey=\"Southwest three 76\" Conf=1.00 Consumed=2",
+    "[local-stt] aircraft context: State=\"departure\" Altitude=4338 Fixes=10 Approaches=0 VisualApproaches=0 AssignedApproach=\"\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Osgue\" -\u003e \"OSGUE\"",
+    "[local-stt]   fix: \"Zidog\" -\u003e \"ZIDOG\"",
+    "[local-stt]   fix: \"ST JOHNS\" -\u003e \"SJN\"",
+    "[local-stt]   fix: \"Oxygen\" -\u003e \"OXYGN\"",
+    "[local-stt]   fix: \"Zilub\" -\u003e \"ZILUB\"",
+    "[local-stt]   fix: \"Forpee\" -\u003e \"FORPE\"",
+    "[local-stt]   fix: \"Layla's\" -\u003e \"LALUZ\"",
+    "[local-stt]   fix: \"ALBUQUERQUE\" -\u003e \"ABQ\"",
+    "[local-stt]   fix: \"Phoenix\" -\u003e \"KPHX\"",
+    "[local-stt]   fix: \"Sky Harbor\" -\u003e \"KPHX\"",
+    "[local-stt] command tokens after disregard: 7",
+    "[local-stt]   token[0]: Text=\"phoenix\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"departure\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"better\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"contact\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"climbing\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"team\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"FL210\" Type=2 Value=210",
+    "[local-stt] ParseCommands: 7 tokens",
+    "[local-stt]   matched command: \"\" [position_id] (pos=0, conf=0.74, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"phoenix\", skipping",
+    "[local-stt]   no match at token[2]=\"better\", skipping",
+    "[local-stt]   matched command: \"\" [radar_contact_info] (pos=1, conf=0.78, consumed=3, isThen=false)",
+    "[local-stt]   matched command: \"\" [position_id] (pos=1, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[1]=\"departure\", skipping",
+    "[local-stt]   matched command: \"FC\" [contact_garbled_facility] (pos=3, conf=0.74, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[3]=\"contact\", skipping",
+    "[local-stt]   matched command: \"C210\" [climb] (pos=4, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[4]=\"climbing\", skipping",
+    "[local-stt]   no match at token[2]=\"better\", skipping",
+    "[local-stt]   no match at token[2]=\"better\", skipping",
+    "[local-stt]   no match at token[5]=\"team\", skipping",
+    "[local-stt]   matched command: \"C210\" [climb] (pos=4, conf=1.00, consumed=3, isThen=false)",
+    "[local-stt]   no match at token[4]=\"climbing\", skipping",
+    "[local-stt]   matched command: \"FC\" [contact_garbled_facility] (pos=3, conf=0.74, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[3]=\"contact\", skipping",
+    "[local-stt]   matched command: \"A210\" [standalone_altitude] (pos=6, conf=1.00, consumed=1, isThen=false)",
+    "[local-stt]   no match at token[6]=\"FL210\", skipping",
+    "[local-stt]   no match at token[5]=\"team\", skipping",
+    "[local-stt]   beam final[0]: score=1.794 pos=7 commands=[FC A210]",
+    "[local-stt]   beam final[1]: score=0.524 pos=7 commands=[C210]",
+    "[local-stt]   beam final[2]: score=0.089 pos=7 commands=[C210]",
+    "[local-stt]   beam final[3]: score=-1.107 pos=7 commands=[FC]",
+    "[local-stt] ParseCommands: result=[FC A210] (avgConf=0.87)",
+    "[local-stt] parsed commands: [FC A210] (conf=0.87, kinds=101)",
+    "[local-stt] validated commands: [FC A210] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"SWA376 FC A210\" (conf=0.87, time=7.6142ms) ==="
+  ]
+}

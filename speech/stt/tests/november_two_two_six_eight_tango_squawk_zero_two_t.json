@@ -1,0 +1,227 @@
+{
+  "time": "2026-11-04T00:38:20.587203965Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "November two two six eight tango squawk zero two two six",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, victor, information, Lakes four, Mucky three, hodal, word, Treks, Blurg, R-force, apale, myope, zedku, shoe, bald, Squatch, smurf, lips, sukey, poimm, angs, Odine, Hegvo, Zilker, bowties, lamas, jovsa, bird, camdy, three one, three six right, three six left, runway, RNP, r-nav, I L S, Southwest 79 73, Southwest 11 70, november two two six eight tango, lady, rat, JUNCTION, travis, mucky, boys, Payda, Austin Bergstrom International Airport, San Marcos Regional Airport",
+  "whisper_duration_ms": 535.602,
+  "audio_duration_ms": 3144,
+  "processor": "GPU: NVIDIA GeForce RTX 3060 (12113MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "N2268T",
+  "command": "SQ0226",
+  "stt_aircraft": {
+    "Southwest 11 70": {
+      "Callsign": "SWA1170",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Austin Bergstrom": "KAUS",
+        "boys": "BOYZZ",
+        "lady": "LAIDY",
+        "rat": "RATTT",
+        "travis": "TRVSS"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 36L": "I6L",
+        "ILS Runway 36R": "I6R",
+        "RNAV RNP Runway 36L": "R6L",
+        "RNAV RNP Runway 36R": "R6R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three six left": "36L",
+        "visual approach runway three six right": "36R",
+        "visual runway three six left": "36L",
+        "visual runway three six right": "36R",
+        "visual three six left": "36L",
+        "visual three six right": "36R"
+      },
+      "ApproachFixes": {
+        "I6L": {
+          "bird": "BIIRD",
+          "camdy": "CAMDY",
+          "fun": "FUNNN",
+          "jovsa": "JOVSA",
+          "lamas": "LAMAS"
+        },
+        "I6R": {
+          "bald": "BALLD",
+          "finnley": "FNNLY",
+          "shoe": "SSHOE",
+          "zedku": "ZEDKU"
+        },
+        "R6L": {
+          "Hegvo": "HEGVO",
+          "Odine": "ODINE",
+          "Squatch": "SQWCH",
+          "Zilker": "ZILKR",
+          "angs": "ANGGS",
+          "bird": "BIIRD",
+          "bowties": "BOWTZ",
+          "camdy": "CAMDY",
+          "fun": "FUNNN",
+          "lady": "LAIDY",
+          "lamas": "LAMAS",
+          "lips": "LIPSS",
+          "poimm": "POIMM",
+          "smurf": "SMRFF",
+          "sukey": "SUKEY"
+        },
+        "R6R": {
+          "Blurg": "BLURG",
+          "R-force": "RFRCE",
+          "Treks": "TREKS",
+          "angs": "ANGGS",
+          "apale": "APALE",
+          "bald": "BALLD",
+          "bowties": "BOWTZ",
+          "finnley": "FNNLY",
+          "lady": "LAIDY",
+          "lips": "LIPSS",
+          "myope": "MYOPE",
+          "poimm": "POIMM",
+          "shoe": "SSHOE",
+          "smurf": "SMRFF",
+          "word": "WRRDD"
+        }
+      },
+      "STAR": "LAIKS4",
+      "Route": [
+        "BOYZZ",
+        "TRVSS",
+        "RATTT",
+        "LAIDY",
+        "KAUS"
+      ],
+      "Altitude": 10522,
+      "Heading": 111,
+      "Speed": 333,
+      "State": "arrival",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W"
+    },
+    "Southwest 79 73": {
+      "Callsign": "SWA7973",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Austin Bergstrom": "KAUS",
+        "JUNCTION": "JCT",
+        "Payda": "PAYDA",
+        "mucky": "MUCKY"
+      },
+      "SID": "MUCKY3",
+      "Route": [
+        "PAYDA",
+        "MUCKY",
+        "JCT",
+        "TXSAS",
+        "KELP"
+      ],
+      "Altitude": 4503,
+      "Heading": 275,
+      "Speed": 229,
+      "State": "departure",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W"
+    },
+    "november two two six eight tango": {
+      "Callsign": "N2268T",
+      "LastAddressed": true,
+      "Fixes": {
+        "Georgetown Executive Airport at Johnny Gantt": "KGTU",
+        "San Marcos": "KHYI"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 31": "R31"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three one": "31",
+        "visual runway three one": "31",
+        "visual three one": "31"
+      },
+      "ApproachFixes": {
+        "R31": {
+          "are you ok": "RUYOK",
+          "hodal": "HODAL",
+          "tonxu": "TONXU"
+        }
+      },
+      "Altitude": 6500,
+      "Heading": 198,
+      "Speed": 275,
+      "State": "vfr flight following",
+      "ControllerFrequency": "1W",
+      "LAHSORunways": [
+        "8",
+        "26",
+        "17",
+        "35"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"November two two six eight tango squawk zero two two six\"",
+    "[local-stt] normalized words: [november 2 2 6 8 tango squawk 0 2 2 6]",
+    "[local-stt] tokens: 5",
+    "[local-stt]   token[0]: Text=\"november\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"2268\" Type=1 Value=2268",
+    "[local-stt]   token[2]: Text=\"tango\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"squawk\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"0226\" Type=1 Value=226",
+    "[local-stt] MatchCallsign: 5 tokens, 3 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 5 tokens, 3 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"november two two six eight tango\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"november two two six eight tango\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 1 results",
+    "[local-stt]     result 0: \"november two two six eight tango\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"airline_flight\": selected \"november two two six eight tango\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 6 results",
+    "[local-stt]     result 0: \"Southwest 11 70\" (airline=0.491, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Southwest 79 73\" (airline=0.491, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Southwest 11 70\" (airline=0.374, flight=0.000, skip=2)",
+    "[local-stt]     result 3: \"Southwest 79 73\" (airline=0.374, flight=0.000, skip=2)",
+    "[local-stt]     result 4: \"Southwest 11 70\" (airline=0.650, flight=0.000, skip=3)",
+    "[local-stt]     pattern \"airline_only\": selected \"Southwest 11 70\" (airline=0.65, flight=0.00, skip=3)",
+    "[local-stt]     pattern \"airline_only\": scoring rejected \"Southwest 11 70\"",
+    "[local-stt]   pattern \"ga_november\": 1 results",
+    "[local-stt]     result 0: \"november two two six eight tango\" (airline=0.800, flight=0.750, skip=0)",
+    "[local-stt]     pattern \"ga_november\": selected \"november two two six eight tango\" (airline=0.80, flight=0.75, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"november two two six eight tango\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"november two two six eight tango\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"november two two six eight tango\" (airline=0.500, flight=0.907, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"november two two six eight tango\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"N2268T\" (spokenKey=\"november two two six eight tango\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"N2268T\" SpokenKey=\"november two two six eight tango\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"vfr flight following\" Altitude=6500 Fixes=2 Approaches=1 VisualApproaches=3 AssignedApproach=\"\" LAHSORunways=[8 26 17 35]",
+    "[local-stt]   fix: \"San Marcos\" -\u003e \"KHYI\"",
+    "[local-stt]   fix: \"Georgetown Executive Airport at Johnny Gantt\" -\u003e \"KGTU\"",
+    "[local-stt]   approach: \"RNAV Runway 31\" -\u003e \"R31\"",
+    "[local-stt]   visual approach: \"visual three one\" -\u003e \"31\"",
+    "[local-stt]   visual approach: \"visual runway three one\" -\u003e \"31\"",
+    "[local-stt]   visual approach: \"visual approach runway three one\" -\u003e \"31\"",
+    "[local-stt] command tokens after disregard: 2",
+    "[local-stt]   token[0]: Text=\"squawk\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"0226\" Type=1 Value=226",
+    "[local-stt] ParseCommands: 2 tokens",
+    "[local-stt]   matched command: \"SQ0226\" [squawk_code] (pos=0, conf=1.00, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"squawk\", skipping",
+    "[local-stt]   no match at token[1]=\"0226\", skipping",
+    "[local-stt]   beam final[0]: score=1.196 pos=2 commands=[SQ0226]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=2 commands=[]",
+    "[local-stt] ParseCommands: result=[SQ0226] (avgConf=1.00)",
+    "[local-stt] parsed commands: [SQ0226] (conf=1.00, kinds=1)",
+    "[local-stt] validated commands: [SQ0226] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"N2268T SQ0226\" (conf=1.00, time=503.6µs) ==="
+  ]
+}

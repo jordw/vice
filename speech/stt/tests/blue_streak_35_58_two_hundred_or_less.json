@@ -1,0 +1,363 @@
+{
+  "time": "2026-11-11T05:29:16.55304396Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Blue Streak 35 58 two hundred or less",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, oscar, information, Scogs four, Seadog four, Rebella one, Huskel four, slams, Mesh, tate, AUGUSTA, two niner, runway, r-nav, I L S, Up Jet 87 76, Southwest 48 60, Southwest four 39, Blue Streak 35 58, Blue Streak 12 92, ExecJet 51 zero seven, Pete, KENNEBUNK, ALBANY, Sappy, Nelly, CAMBRIDGE, Yomon, Kayc, Yak, Jimmy, Haskell, Bauer, Portland International Jetport",
+  "whisper_duration_ms": 324.069,
+  "audio_duration_ms": 4424,
+  "processor": "GPU: NVIDIA GeForce RTX 4070 (12010MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "JIA3558",
+  "command": "S200-",
+  "stt_aircraft": {
+    "Blue Streak 12 92": {
+      "Callsign": "JIA1292",
+      "AircraftType": "CRJ7",
+      "Fixes": {
+        "KENNEBUNK": "ENE",
+        "Kayc": "KAYCC",
+        "Pete": "PEATT",
+        "Portland International Jetport": "KPWM",
+        "Sappy": "SAPPE",
+        "Yak": "YAAKK",
+        "Yomon": "YOMON"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 29": "I29",
+        "RNAV Runway 29": "R29"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner": "29",
+        "visual runway two niner": "29",
+        "visual two niner": "29"
+      },
+      "ApproachFixes": {
+        "I29": {
+          "KENNEBUNK": "ENE",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE"
+        },
+        "R29": {
+          "AUGUSTA": "AUG",
+          "KENNEBUNK": "ENE",
+          "Mesh": "MESHL",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE",
+          "slams": "SLAMZ",
+          "tate": "TAATE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 29",
+      "STAR": "CDOGG4",
+      "Route": [
+        "KAYCC",
+        "YOMON",
+        "YAAKK",
+        "SAPPE",
+        "KPWM"
+      ],
+      "Altitude": 9000,
+      "Heading": 80,
+      "Speed": 305,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "18",
+        "36"
+      ]
+    },
+    "Blue Streak 35 58": {
+      "Callsign": "JIA3558",
+      "AircraftType": "CRJ7",
+      "Fixes": {
+        "Portland International Jetport": "KPWM",
+        "Sappy": "SAPPE",
+        "Yak": "YAAKK",
+        "Yomon": "YOMON"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 29": "I29",
+        "RNAV Runway 29": "R29"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner": "29",
+        "visual runway two niner": "29",
+        "visual two niner": "29"
+      },
+      "ApproachFixes": {
+        "I29": {
+          "KENNEBUNK": "ENE",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE"
+        },
+        "R29": {
+          "AUGUSTA": "AUG",
+          "KENNEBUNK": "ENE",
+          "Mesh": "MESHL",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE",
+          "slams": "SLAMZ",
+          "tate": "TAATE"
+        }
+      },
+      "STAR": "CDOGG4",
+      "Route": [
+        "YOMON",
+        "YAAKK",
+        "SAPPE",
+        "KPWM"
+      ],
+      "Altitude": 7053,
+      "Heading": 106,
+      "Speed": 302,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "18",
+        "36"
+      ]
+    },
+    "ExecJet 51 zero seven": {
+      "Callsign": "EJA5107",
+      "AircraftType": "C680",
+      "Fixes": {
+        "KENNEBUNK": "ENE",
+        "Pete": "PEATT",
+        "Portland International Jetport": "KPWM",
+        "Sappy": "SAPPE",
+        "Yak": "YAAKK"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 29": "I29",
+        "RNAV Runway 29": "R29"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two niner": "29",
+        "visual runway two niner": "29",
+        "visual two niner": "29"
+      },
+      "ApproachFixes": {
+        "I29": {
+          "KENNEBUNK": "ENE",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE"
+        },
+        "R29": {
+          "AUGUSTA": "AUG",
+          "KENNEBUNK": "ENE",
+          "Mesh": "MESHL",
+          "Pete": "PEATT",
+          "Sappy": "SAPPE",
+          "slams": "SLAMZ",
+          "tate": "TAATE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 29",
+      "STAR": "SCOGS4",
+      "Route": [
+        "YAAKK",
+        "SAPPE",
+        "KPWM"
+      ],
+      "Altitude": 3000,
+      "Heading": 39,
+      "Speed": 259,
+      "State": "arrival",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S",
+      "LAHSORunways": [
+        "18",
+        "36"
+      ]
+    },
+    "Southwest 48 60": {
+      "Callsign": "SWA4860",
+      "LastAddressed": true,
+      "AircraftType": "B738",
+      "Fixes": {
+        "Bauer": "BAUER",
+        "CAMBRIDGE": "CAM",
+        "Haskell": "HSKEL",
+        "Portland International Jetport": "KPWM"
+      },
+      "SID": "HSKEL4",
+      "Route": [
+        "HSKEL",
+        "BAUER",
+        "CAM",
+        "ALB",
+        "HNK",
+        "BUFFY",
+        "DARBO",
+        "DGRAF",
+        "MAGIO",
+        "BIGEO",
+        "PSB",
+        "PSYKO",
+        "EMNEM",
+        "GEFFS",
+        "HVQ",
+        "YOCKY",
+        "GROAT",
+        "KBNA"
+      ],
+      "Altitude": 3339,
+      "Heading": 286,
+      "Speed": 196,
+      "State": "departure",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S"
+    },
+    "Southwest four 39": {
+      "Callsign": "SWA439",
+      "AircraftType": "B737",
+      "Fixes": {
+        "ALBANY": "ALB",
+        "Bauer": "BAUER",
+        "CAMBRIDGE": "CAM",
+        "Portland International Jetport": "KPWM"
+      },
+      "SID": "HSKEL4",
+      "Route": [
+        "BAUER",
+        "CAM",
+        "ALB",
+        "HNK",
+        "BUFFY",
+        "DARBO",
+        "DGRAF",
+        "MAGIO",
+        "BIGEO",
+        "PSB",
+        "PSYKO",
+        "EMNEM",
+        "GEFFS",
+        "HVQ",
+        "YOCKY",
+        "GROAT",
+        "KBNA"
+      ],
+      "Altitude": 16331,
+      "Heading": 275,
+      "Speed": 333,
+      "State": "departure",
+      "ControllerFrequency": "1S",
+      "TrackingController": "1S"
+    },
+    "Up Jet 87 76": {
+      "Callsign": "WUP8776",
+      "AircraftType": "BE40",
+      "Fixes": {
+        "Bedford": "KBED",
+        "Hanscom": "KBED",
+        "Jimmy": "JJIMY",
+        "Nelly": "NELIE",
+        "Portland International Jetport": "KPWM"
+      },
+      "SID": "RBELA1",
+      "Route": [
+        "JJIMY",
+        "NELIE",
+        "KBED"
+      ],
+      "Altitude": 12000,
+      "Heading": 221,
+      "Speed": 321,
+      "State": "departure",
+      "ControllerFrequency": "1S",
+      "TrackingController": "C37"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Blue Streak 35 58 two hundred or less\"",
+    "[local-stt] normalized words: [blue streak 35 58 2 hundred or less]",
+    "[local-stt] tokens: 7",
+    "[local-stt]   token[0]: Text=\"blue\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"streak\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"35\" Type=1 Value=35",
+    "[local-stt]   token[3]: Text=\"582\" Type=1 Value=582",
+    "[local-stt]   token[4]: Text=\"hundred\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"or\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"less\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 7 tokens, 6 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 7 tokens, 6 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": no results",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"Blue Streak 35 58\" (airline=1.000, flight=0.914, skip=0)",
+    "[local-stt]     result 1: \"Blue Streak 35 58\" (airline=0.472, flight=0.914, skip=1)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Blue Streak 35 58\" (airline=1.00, flight=0.91, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 10 results",
+    "[local-stt]     result 0: \"Southwest four 39\" (airline=0.574, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Blue Streak 12 92\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"ExecJet 51 zero seven\" (airline=0.464, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Southwest 48 60\" (airline=0.574, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Blue Streak 35 58\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Blue Streak 12 92\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Blue Streak 35 58\" (airline=0.500, flight=0.650, skip=1)",
+    "[local-stt]     result 1: \"Blue Streak 35 58\" (airline=0.500, flight=0.650, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Blue Streak 35 58\" (airline=0.50, flight=0.65, skip=1)",
+    "[local-stt]   best callsign candidate: \"JIA3558\" (conf=0.98, consumed=5, addressingForm=0, spokenKey=\"Blue Streak 35 58\"; 3 candidates)",
+    "[local-stt] ParseCommands: 2 tokens",
+    "[local-stt]   no match at token[0]=\"or\", skipping",
+    "[local-stt]   no match at token[1]=\"less\", skipping",
+    "[local-stt]   beam final[0]: score=0.000 pos=2 commands=[]",
+    "[local-stt] ParseCommands: no commands found",
+    "[local-stt] ParseCommands: 5 tokens",
+    "[local-stt]   matched command: \"S350-\" [speed_or_less] (pos=0, conf=0.79, consumed=5, isThen=false)",
+    "[local-stt]   no match at token[0]=\"35\", skipping",
+    "[local-stt]   no match at token[1]=\"582\", skipping",
+    "[local-stt]   no match at token[2]=\"hundred\", skipping",
+    "[local-stt]   no match at token[3]=\"or\", skipping",
+    "[local-stt]   no match at token[4]=\"less\", skipping",
+    "[local-stt]   beam final[0]: score=1.794 pos=5 commands=[S350-]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=5 commands=[]",
+    "[local-stt] ParseCommands: result=[S350-] (avgConf=0.79)",
+    "[local-stt]   callsign \"JIA1292\" (conf=0.900 consumed=2) parses better than \"JIA3558\": selecting it",
+    "[local-stt] callsign match: Callsign=\"JIA1292\" SpokenKey=\"Blue Streak 12 92\" Conf=0.90 Consumed=2",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=9000 Fixes=7 Approaches=2 VisualApproaches=3 AssignedApproach=\"ILS Runway 29\" LAHSORunways=[18 36]",
+    "[local-stt]   fix: \"Portland International Jetport\" -\u003e \"KPWM\"",
+    "[local-stt]   fix: \"Kayc\" -\u003e \"KAYCC\"",
+    "[local-stt]   fix: \"Yomon\" -\u003e \"YOMON\"",
+    "[local-stt]   fix: \"Yak\" -\u003e \"YAAKK\"",
+    "[local-stt]   fix: \"Sappy\" -\u003e \"SAPPE\"",
+    "[local-stt]   fix: \"KENNEBUNK\" -\u003e \"ENE\"",
+    "[local-stt]   fix: \"Pete\" -\u003e \"PEATT\"",
+    "[local-stt]   approach: \"ILS Runway 29\" -\u003e \"I29\"",
+    "[local-stt]   approach: \"RNAV Runway 29\" -\u003e \"R29\"",
+    "[local-stt]   visual approach: \"visual runway two niner\" -\u003e \"29\"",
+    "[local-stt]   visual approach: \"visual approach runway two niner\" -\u003e \"29\"",
+    "[local-stt]   visual approach: \"visual two niner\" -\u003e \"29\"",
+    "[local-stt] command tokens after disregard: 5",
+    "[local-stt]   token[0]: Text=\"35\" Type=1 Value=35",
+    "[local-stt]   token[1]: Text=\"582\" Type=1 Value=582",
+    "[local-stt]   token[2]: Text=\"hundred\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"or\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"less\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 5 tokens",
+    "[local-stt]   matched command: \"S350-\" [speed_or_less] (pos=0, conf=0.79, consumed=5, isThen=false)",
+    "[local-stt]   no match at token[0]=\"35\", skipping",
+    "[local-stt]   no match at token[1]=\"582\", skipping",
+    "[local-stt]   no match at token[2]=\"hundred\", skipping",
+    "[local-stt]   no match at token[3]=\"or\", skipping",
+    "[local-stt]   no match at token[4]=\"less\", skipping",
+    "[local-stt]   beam final[0]: score=1.794 pos=5 commands=[S350-]",
+    "[local-stt]   beam final[1]: score=-2.303 pos=5 commands=[]",
+    "[local-stt] ParseCommands: result=[S350-] (avgConf=0.79)",
+    "[local-stt] parsed commands: [S350-] (conf=0.79, kinds=1)",
+    "[local-stt] validated commands: [S350-] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"JIA1292 S350-\" (conf=0.71, time=2.9178ms) ==="
+  ]
+}

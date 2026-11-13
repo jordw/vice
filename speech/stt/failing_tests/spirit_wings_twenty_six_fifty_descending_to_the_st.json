@@ -1,0 +1,838 @@
+{
+  "time": "2026-11-04T03:03:29.017130503Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Spirit Wings Twenty Six Fifty descending to the star expect to analyze runway three six",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, juliet, information, Stocker seven, Parker seven, Millet six, Jones eight, Flips seven, Chesley niner, Weasel eight, Kween eight, Critter niner, Icons eight, three six, one right, one left, runway, I L S, Piedmont 91 46, Piedmont 82 24, Spirit Wings 91 59, Spirit Wings 26 50, Blue Streak 24 86, Frontier Flight eight 87, Frontier Flight six 47, Frontier Flight 28 76, American 84, American five 55, American 13 52, American one 10, Nivse, Marjo, Defox, Canuck, Lonia, Denny, Nuxey, Hekam, Hunex, Welet, Jamgo, Ppool, Barbeque, Krisel, Vall, Slopo, Hey-you, Nuggt, Epaye, Thack, Illsa, Solomon, Cedox, Chesly, Sikdu, Gatee, Wurful, Cat, Unjam, Paykin, Fields, Shelley, Jelno, Willish, Lancer, Mangy, Nooks, Wise, Queen, Jenda, Parker, Criter, CHARLESTON, Icons, Hampy, Charlotte Douglas International Airport, J. Dean",
+  "whisper_duration_ms": 265.325,
+  "audio_duration_ms": 4040,
+  "processor": "GPU: NVIDIA GeForce RTX 5070 Ti (15995MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "NKS2650",
+  "command": "DVS EI36",
+  "reason": "descend via the star, garbled",
+  "stt_aircraft": {
+    "American 13 52": {
+      "Callsign": "AAL1352",
+      "AircraftType": "A319",
+      "Fixes": {
+        "Barbeque": "BBQEE",
+        "Canuck": "CUNUK",
+        "Cedox": "CEDOX",
+        "Charlotte Douglas": "KCLT",
+        "Defox": "DEFOX",
+        "Lonia": "LONIA",
+        "Nelson": "NLSON",
+        "Nuxey": "NUXXY",
+        "Paykin": "PAYKN",
+        "Thack": "THACK",
+        "Vall": "VALLL",
+        "Welet": "WELET"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Runway 1R": "I1R",
+        "ILS Runway 36": "I36"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual approach runway three six": "36",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R",
+        "visual runway three six": "36",
+        "visual three six": "36"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Canuck": "CUNUK",
+          "Defox": "DEFOX",
+          "Lonia": "LONIA",
+          "Nelson": "NLSON",
+          "Nuxey": "NUXXY",
+          "Welet": "WELET"
+        },
+        "I1R": {
+          "Denny": "DENNE",
+          "Glassy": "GLASI",
+          "Hunex": "HUNEX",
+          "Krisel": "KRISL",
+          "Marjo": "MARJO",
+          "Nivse": "NIVSE",
+          "Solomon": "SOLMN"
+        },
+        "I36": {
+          "Hekam": "HEKAM",
+          "Hey-you": "HAYOU",
+          "Jenda": "JENDA",
+          "Lancer": "LANSR",
+          "Nuggt": "NUGGT",
+          "Ppool": "PPOOL",
+          "Sikdu": "CIKDU"
+        }
+      },
+      "AssignedApproach": "ILS Runway 1L",
+      "STAR": "PARQR7",
+      "Route": [
+        "PAYKN",
+        "THACK",
+        "BBQEE",
+        "CEDOX",
+        "VALLL",
+        "KCLT"
+      ],
+      "Altitude": 20002,
+      "Heading": 161,
+      "Speed": 353,
+      "State": "arrival",
+      "ControllerFrequency": "1U",
+      "TrackingController": "1U"
+    },
+    "American 84": {
+      "Callsign": "AAL84",
+      "LastAddressed": true,
+      "AircraftType": "A319",
+      "Fixes": {
+        "Charlotte Douglas": "KCLT",
+        "Hampy": "HMMPY",
+        "Queen": "KWEEN",
+        "Unjam": "UNJAM"
+      },
+      "SID": "KWEEN8",
+      "Route": [
+        "HMMPY",
+        "KWEEN",
+        "UNJAM",
+        "OMN",
+        "EBAYY",
+        "KEYW"
+      ],
+      "Altitude": 2234,
+      "Heading": 54,
+      "Speed": 193,
+      "AssignedHeading": 130,
+      "State": "departure",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W"
+    },
+    "American five 55": {
+      "Callsign": "AAL555",
+      "AircraftType": "A321",
+      "Fixes": {
+        "Charlotte Douglas": "KCLT",
+        "Hey-you": "HAYOU",
+        "Jenda": "JENDA",
+        "Lancer": "LANSR",
+        "Sikdu": "CIKDU"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Runway 1R": "I1R",
+        "ILS Runway 36": "I36"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual approach runway three six": "36",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R",
+        "visual runway three six": "36",
+        "visual three six": "36"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Canuck": "CUNUK",
+          "Defox": "DEFOX",
+          "Lonia": "LONIA",
+          "Nelson": "NLSON",
+          "Nuxey": "NUXXY",
+          "Welet": "WELET"
+        },
+        "I1R": {
+          "Denny": "DENNE",
+          "Glassy": "GLASI",
+          "Hunex": "HUNEX",
+          "Krisel": "KRISL",
+          "Marjo": "MARJO",
+          "Nivse": "NIVSE",
+          "Solomon": "SOLMN"
+        },
+        "I36": {
+          "Hekam": "HEKAM",
+          "Hey-you": "HAYOU",
+          "Jenda": "JENDA",
+          "Lancer": "LANSR",
+          "Nuggt": "NUGGT",
+          "Ppool": "PPOOL",
+          "Sikdu": "CIKDU"
+        }
+      },
+      "AssignedApproach": "ILS Runway 36",
+      "STAR": "STOCR7",
+      "Route": [
+        "JENDA",
+        "LANSR",
+        "CIKDU",
+        "HAYOU",
+        "KCLT"
+      ],
+      "Altitude": 5998,
+      "Heading": 308,
+      "Speed": 279,
+      "State": "cleared approach",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "American one 10": {
+      "Callsign": "AAL110",
+      "AircraftType": "A319",
+      "Fixes": {
+        "Charlotte Douglas": "KCLT",
+        "Criter": "KRITR",
+        "Fields": "FILDS",
+        "Illsa": "ILLSA",
+        "J. Dean": "JDEAN"
+      },
+      "SID": "KRITR9",
+      "Route": [
+        "JDEAN",
+        "KRITR",
+        "FILDS",
+        "ILLSA",
+        "EWESS",
+        "RICCS",
+        "LEJOY",
+        "KPIT"
+      ],
+      "Altitude": 6806,
+      "Heading": 8,
+      "Speed": 294,
+      "State": "departure",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W"
+    },
+    "Blue Streak 24 86": {
+      "Callsign": "JIA2486",
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Charlotte Douglas": "KCLT",
+        "Hey-you": "HAYOU",
+        "Lancer": "LANSR",
+        "Sikdu": "CIKDU"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Runway 1R": "I1R",
+        "ILS Runway 36": "I36"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual approach runway three six": "36",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R",
+        "visual runway three six": "36",
+        "visual three six": "36"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Canuck": "CUNUK",
+          "Defox": "DEFOX",
+          "Lonia": "LONIA",
+          "Nelson": "NLSON",
+          "Nuxey": "NUXXY",
+          "Welet": "WELET"
+        },
+        "I1R": {
+          "Denny": "DENNE",
+          "Glassy": "GLASI",
+          "Hunex": "HUNEX",
+          "Krisel": "KRISL",
+          "Marjo": "MARJO",
+          "Nivse": "NIVSE",
+          "Solomon": "SOLMN"
+        },
+        "I36": {
+          "Hekam": "HEKAM",
+          "Hey-you": "HAYOU",
+          "Jenda": "JENDA",
+          "Lancer": "LANSR",
+          "Nuggt": "NUGGT",
+          "Ppool": "PPOOL",
+          "Sikdu": "CIKDU"
+        }
+      },
+      "AssignedApproach": "ILS Runway 36",
+      "STAR": "CHSLY9",
+      "Route": [
+        "LANSR",
+        "CIKDU",
+        "HAYOU",
+        "KCLT"
+      ],
+      "Altitude": 4000,
+      "Heading": 310,
+      "Speed": 228,
+      "State": "cleared approach",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "Frontier Flight 28 76": {
+      "Callsign": "FFT2876",
+      "AircraftType": "A20N",
+      "Fixes": {
+        "Cat": "CAATT",
+        "Charlotte Douglas": "KCLT",
+        "Epaye": "EPAYE",
+        "Hekam": "HEKAM",
+        "Hey-you": "HAYOU",
+        "Jenda": "JENDA",
+        "Lancer": "LANSR",
+        "Nuggt": "NUGGT",
+        "Ppool": "PPOOL",
+        "Sikdu": "CIKDU",
+        "Wise": "WHIZE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Runway 1R": "I1R",
+        "ILS Runway 36": "I36"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual approach runway three six": "36",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R",
+        "visual runway three six": "36",
+        "visual three six": "36"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Canuck": "CUNUK",
+          "Defox": "DEFOX",
+          "Lonia": "LONIA",
+          "Nelson": "NLSON",
+          "Nuxey": "NUXXY",
+          "Welet": "WELET"
+        },
+        "I1R": {
+          "Denny": "DENNE",
+          "Glassy": "GLASI",
+          "Hunex": "HUNEX",
+          "Krisel": "KRISL",
+          "Marjo": "MARJO",
+          "Nivse": "NIVSE",
+          "Solomon": "SOLMN"
+        },
+        "I36": {
+          "Hekam": "HEKAM",
+          "Hey-you": "HAYOU",
+          "Jenda": "JENDA",
+          "Lancer": "LANSR",
+          "Nuggt": "NUGGT",
+          "Ppool": "PPOOL",
+          "Sikdu": "CIKDU"
+        }
+      },
+      "AssignedApproach": "ILS Runway 36",
+      "STAR": "CHSLY9",
+      "Route": [
+        "WHIZE",
+        "CAATT",
+        "EPAYE",
+        "KCLT"
+      ],
+      "Altitude": 13424,
+      "Heading": 220,
+      "Speed": 297,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "Frontier Flight eight 87": {
+      "Callsign": "FFT887",
+      "AircraftType": "A20N",
+      "Fixes": {
+        "Charlotte Douglas": "KCLT",
+        "Gatee": "GATEE",
+        "Hekam": "HEKAM",
+        "Hey-you": "HAYOU",
+        "Jenda": "JENDA",
+        "Lancer": "LANSR",
+        "Mangy": "MANGY",
+        "Nuggt": "NUGGT",
+        "Ppool": "PPOOL",
+        "Sikdu": "CIKDU"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Runway 1R": "I1R",
+        "ILS Runway 36": "I36"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual approach runway three six": "36",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R",
+        "visual runway three six": "36",
+        "visual three six": "36"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Canuck": "CUNUK",
+          "Defox": "DEFOX",
+          "Lonia": "LONIA",
+          "Nelson": "NLSON",
+          "Nuxey": "NUXXY",
+          "Welet": "WELET"
+        },
+        "I1R": {
+          "Denny": "DENNE",
+          "Glassy": "GLASI",
+          "Hunex": "HUNEX",
+          "Krisel": "KRISL",
+          "Marjo": "MARJO",
+          "Nivse": "NIVSE",
+          "Solomon": "SOLMN"
+        },
+        "I36": {
+          "Hekam": "HEKAM",
+          "Hey-you": "HAYOU",
+          "Jenda": "JENDA",
+          "Lancer": "LANSR",
+          "Nuggt": "NUGGT",
+          "Ppool": "PPOOL",
+          "Sikdu": "CIKDU"
+        }
+      },
+      "AssignedApproach": "ILS Runway 36",
+      "STAR": "MLLET6",
+      "Route": [
+        "MANGY",
+        "GATEE",
+        "KCLT"
+      ],
+      "Altitude": 7144,
+      "Heading": 270,
+      "Speed": 277,
+      "AssignedHeading": 270,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "Frontier Flight six 47": {
+      "Callsign": "FFT647",
+      "AircraftType": "A20N",
+      "Fixes": {
+        "Charlotte Douglas": "KCLT",
+        "Icons": "ICONS",
+        "Nooks": "NOOKS",
+        "Wurful": "WURFL"
+      },
+      "SID": "ICONS8",
+      "Route": [
+        "ICONS",
+        "NOOKS",
+        "WURFL",
+        "KONEY",
+        "TAALN",
+        "ROYCO",
+        "GIPPL",
+        "BEEGE",
+        "LPERD",
+        "KMCO"
+      ],
+      "Altitude": 13199,
+      "Heading": 182,
+      "Speed": 350,
+      "State": "departure",
+      "ControllerFrequency": "1W",
+      "TrackingController": "1W"
+    },
+    "Piedmont 82 24": {
+      "Callsign": "PDT8224",
+      "AircraftType": "E145",
+      "Fixes": {
+        "CHARLESTON": "HVQ",
+        "Tri-State Airport / Milton J. Ferguson": "KHTS"
+      },
+      "SID": "WEAZL8",
+      "Route": [
+        "HVQ",
+        "KHTS"
+      ],
+      "Altitude": 16000,
+      "Heading": 353,
+      "Speed": 382,
+      "State": "departure",
+      "ControllerFrequency": "1W",
+      "TrackingController": "C43"
+    },
+    "Piedmont 91 46": {
+      "Callsign": "PDT9146",
+      "AircraftType": "E145",
+      "Fixes": {
+        "Augusta Regional At Bush": "KAGS",
+        "Charlotte Douglas": "KCLT",
+        "Denny": "DENNE",
+        "Glassy": "GLASI",
+        "Hunex": "HUNEX",
+        "Krisel": "KRISL",
+        "Marjo": "MARJO",
+        "Nivse": "NIVSE",
+        "Shelley": "CHELE",
+        "Solomon": "SOLMN"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Runway 1R": "I1R",
+        "ILS Runway 36": "I36"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual approach runway three six": "36",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R",
+        "visual runway three six": "36",
+        "visual three six": "36"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Canuck": "CUNUK",
+          "Defox": "DEFOX",
+          "Lonia": "LONIA",
+          "Nelson": "NLSON",
+          "Nuxey": "NUXXY",
+          "Welet": "WELET"
+        },
+        "I1R": {
+          "Denny": "DENNE",
+          "Glassy": "GLASI",
+          "Hunex": "HUNEX",
+          "Krisel": "KRISL",
+          "Marjo": "MARJO",
+          "Nivse": "NIVSE",
+          "Solomon": "SOLMN"
+        },
+        "I36": {
+          "Hekam": "HEKAM",
+          "Hey-you": "HAYOU",
+          "Jenda": "JENDA",
+          "Lancer": "LANSR",
+          "Nuggt": "NUGGT",
+          "Ppool": "PPOOL",
+          "Sikdu": "CIKDU"
+        }
+      },
+      "AssignedApproach": "ILS Runway 1R",
+      "STAR": "JONZE8",
+      "Route": [
+        "CHELE",
+        "KCLT"
+      ],
+      "Altitude": 10084,
+      "Heading": 83,
+      "Speed": 296,
+      "State": "arrival",
+      "ControllerFrequency": "1D",
+      "TrackingController": "1D"
+    },
+    "Spirit Wings 26 50": {
+      "Callsign": "NKS2650",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Cat": "CAATT",
+        "Charlotte Douglas": "KCLT",
+        "Chesly": "CHSLY",
+        "Epaye": "EPAYE",
+        "Hekam": "HEKAM",
+        "Hey-you": "HAYOU",
+        "Jamgo": "JAMGO",
+        "Jenda": "JENDA",
+        "Lancer": "LANSR",
+        "Nuggt": "NUGGT",
+        "Ppool": "PPOOL",
+        "Sikdu": "CIKDU",
+        "Slopo": "SLPOH",
+        "Willish": "WLLSH",
+        "Wise": "WHIZE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Runway 1R": "I1R",
+        "ILS Runway 36": "I36"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual approach runway three six": "36",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R",
+        "visual runway three six": "36",
+        "visual three six": "36"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Canuck": "CUNUK",
+          "Defox": "DEFOX",
+          "Lonia": "LONIA",
+          "Nelson": "NLSON",
+          "Nuxey": "NUXXY",
+          "Welet": "WELET"
+        },
+        "I1R": {
+          "Denny": "DENNE",
+          "Glassy": "GLASI",
+          "Hunex": "HUNEX",
+          "Krisel": "KRISL",
+          "Marjo": "MARJO",
+          "Nivse": "NIVSE",
+          "Solomon": "SOLMN"
+        },
+        "I36": {
+          "Hekam": "HEKAM",
+          "Hey-you": "HAYOU",
+          "Jenda": "JENDA",
+          "Lancer": "LANSR",
+          "Nuggt": "NUGGT",
+          "Ppool": "PPOOL",
+          "Sikdu": "CIKDU"
+        }
+      },
+      "AssignedApproach": "ILS Runway 36",
+      "STAR": "CHSLY9",
+      "Route": [
+        "WLLSH",
+        "CHSLY",
+        "SLPOH",
+        "JAMGO",
+        "WHIZE",
+        "CAATT",
+        "EPAYE",
+        "KCLT"
+      ],
+      "Altitude": 22000,
+      "Heading": 267,
+      "Speed": 374,
+      "State": "arrival",
+      "ControllerFrequency": "1H",
+      "TrackingController": "1H"
+    },
+    "Spirit Wings 91 59": {
+      "Callsign": "NKS9159",
+      "AircraftType": "A320",
+      "Fixes": {
+        "Canuck": "CUNUK",
+        "Cedox": "CEDOX",
+        "Charlotte Douglas": "KCLT",
+        "Defox": "DEFOX",
+        "Jelno": "JELNO",
+        "Lonia": "LONIA",
+        "Nelson": "NLSON",
+        "Nuxey": "NUXXY",
+        "Vall": "VALLL",
+        "Welet": "WELET"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 1L": "I1L",
+        "ILS Runway 1R": "I1R",
+        "ILS Runway 36": "I36"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway one left": "1L",
+        "visual approach runway one right": "1R",
+        "visual approach runway three six": "36",
+        "visual one left": "1L",
+        "visual one right": "1R",
+        "visual runway one left": "1L",
+        "visual runway one right": "1R",
+        "visual runway three six": "36",
+        "visual three six": "36"
+      },
+      "ApproachFixes": {
+        "I1L": {
+          "Canuck": "CUNUK",
+          "Defox": "DEFOX",
+          "Lonia": "LONIA",
+          "Nelson": "NLSON",
+          "Nuxey": "NUXXY",
+          "Welet": "WELET"
+        },
+        "I1R": {
+          "Denny": "DENNE",
+          "Glassy": "GLASI",
+          "Hunex": "HUNEX",
+          "Krisel": "KRISL",
+          "Marjo": "MARJO",
+          "Nivse": "NIVSE",
+          "Solomon": "SOLMN"
+        },
+        "I36": {
+          "Hekam": "HEKAM",
+          "Hey-you": "HAYOU",
+          "Jenda": "JENDA",
+          "Lancer": "LANSR",
+          "Nuggt": "NUGGT",
+          "Ppool": "PPOOL",
+          "Sikdu": "CIKDU"
+        }
+      },
+      "AssignedApproach": "ILS Runway 1L",
+      "STAR": "FILPZ7",
+      "Route": [
+        "JELNO",
+        "CEDOX",
+        "VALLL",
+        "KCLT"
+      ],
+      "Altitude": 14560,
+      "Heading": 118,
+      "Speed": 325,
+      "State": "arrival",
+      "ControllerFrequency": "1U",
+      "TrackingController": "1U"
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Spirit Wings Twenty Six Fifty descending to the star expect to analyze runway three six\"",
+    "[local-stt] normalized words: [spirit wings 26 50 descending to the star expect to analyze runway 3 6]",
+    "[local-stt] tokens: 13",
+    "[local-stt]   token[0]: Text=\"spirit\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"wings\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"26\" Type=1 Value=26",
+    "[local-stt]   token[3]: Text=\"50\" Type=1 Value=50",
+    "[local-stt]   token[4]: Text=\"descending\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"to\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"the\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"star\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"expect\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"to\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"analyze\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"36\" Type=1 Value=36",
+    "[local-stt] MatchCallsign: 13 tokens, 12 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 13 tokens, 12 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Spirit Wings 26 50\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Spirit Wings 26 50\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": 2 results",
+    "[local-stt]     result 0: \"Spirit Wings 26 50\" (airline=0.950, flight=0.950, skip=0)",
+    "[local-stt]     result 1: \"Spirit Wings 26 50\" (airline=0.950, flight=0.950, skip=1)",
+    "[local-stt]     pattern \"ga_suffix\": selected \"Spirit Wings 26 50\" (airline=0.95, flight=0.95, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 2 results",
+    "[local-stt]     result 0: \"Spirit Wings 26 50\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Spirit Wings 26 50\" (airline=0.456, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Spirit Wings 26 50\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 18 results",
+    "[local-stt]     result 0: \"American one 10\" (airline=0.361, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"American 13 52\" (airline=0.361, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"American five 55\" (airline=0.361, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Piedmont 82 24\" (airline=0.625, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Frontier Flight 28 76\" (airline=0.458, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Piedmont 82 24\" (airline=0.62, flight=0.00, skip=0)",
+    "[local-stt]     pattern \"airline_only\": scoring rejected \"Piedmont 82 24\"",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Spirit Wings 26 50\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 1: \"Spirit Wings 26 50\" (airline=0.500, flight=1.000, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Spirit Wings 26 50\" (airline=0.50, flight=1.00, skip=1)",
+    "[local-stt]   exact callsign \"NKS2650\" (spokenKey=\"Spirit Wings 26 50\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"NKS2650\" SpokenKey=\"Spirit Wings 26 50\" Conf=1.00 Consumed=4",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=22000 Fixes=15 Approaches=3 VisualApproaches=9 AssignedApproach=\"ILS Runway 36\" LAHSORunways=[]",
+    "[local-stt]   fix: \"Cat\" -\u003e \"CAATT\"",
+    "[local-stt]   fix: \"Lancer\" -\u003e \"LANSR\"",
+    "[local-stt]   fix: \"Willish\" -\u003e \"WLLSH\"",
+    "[local-stt]   fix: \"Chesly\" -\u003e \"CHSLY\"",
+    "[local-stt]   fix: \"Jamgo\" -\u003e \"JAMGO\"",
+    "[local-stt]   fix: \"Wise\" -\u003e \"WHIZE\"",
+    "[local-stt]   fix: \"Jenda\" -\u003e \"JENDA\"",
+    "[local-stt]   fix: \"Sikdu\" -\u003e \"CIKDU\"",
+    "[local-stt]   fix: \"Slopo\" -\u003e \"SLPOH\"",
+    "[local-stt]   fix: \"Epaye\" -\u003e \"EPAYE\"",
+    "[local-stt]   fix: \"Hey-you\" -\u003e \"HAYOU\"",
+    "[local-stt]   fix: \"Charlotte Douglas\" -\u003e \"KCLT\"",
+    "[local-stt]   fix: \"Nuggt\" -\u003e \"NUGGT\"",
+    "[local-stt]   fix: \"Ppool\" -\u003e \"PPOOL\"",
+    "[local-stt]   fix: \"Hekam\" -\u003e \"HEKAM\"",
+    "[local-stt]   approach: \"ILS Runway 1L\" -\u003e \"I1L\"",
+    "[local-stt]   approach: \"ILS Runway 1R\" -\u003e \"I1R\"",
+    "[local-stt]   approach: \"ILS Runway 36\" -\u003e \"I36\"",
+    "[local-stt]   visual approach: \"visual runway one left\" -\u003e \"1L\"",
+    "[local-stt]   visual approach: \"visual approach runway one left\" -\u003e \"1L\"",
+    "[local-stt]   visual approach: \"visual runway one right\" -\u003e \"1R\"",
+    "[local-stt]   visual approach: \"visual runway three six\" -\u003e \"36\"",
+    "[local-stt]   visual approach: \"visual approach runway three six\" -\u003e \"36\"",
+    "[local-stt]   visual approach: \"visual three six\" -\u003e \"36\"",
+    "[local-stt]   visual approach: \"visual one left\" -\u003e \"1L\"",
+    "[local-stt]   visual approach: \"visual approach runway one right\" -\u003e \"1R\"",
+    "[local-stt]   visual approach: \"visual one right\" -\u003e \"1R\"",
+    "[local-stt] command tokens after disregard: 9",
+    "[local-stt]   token[0]: Text=\"descending\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"to\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"the\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"star\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"expect\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"to\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"analyze\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"36\" Type=1 Value=36",
+    "[local-stt] ParseCommands: 9 tokens",
+    "[local-stt]   matched command: \"SAYAGAIN/ALTITUDE\" [] (pos=0, conf=0.50, consumed=2, isThen=false)",
+    "[local-stt]   no match at token[0]=\"descending\", skipping",
+    "[local-stt]   skipping filler word: \"the\"",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   no match at token[3]=\"star\", skipping",
+    "[local-stt]   skipping filler word: \"the\"",
+    "[local-stt]   extractApproach: unique runway match \"three six\" -\u003e \"I36\"",
+    "[local-stt]   matched command: \"EI36\" [expect_approach] (pos=4, conf=0.97, consumed=5, isThen=false)",
+    "[local-stt]   adding 7 fixes from approach I36 to aircraft context",
+    "[local-stt]   no match at token[4]=\"expect\", skipping",
+    "[local-stt]   no match at token[3]=\"star\", skipping",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   extractApproach: unique runway match \"three six\" -\u003e \"I36\"",
+    "[local-stt]   matched command: \"EI36\" [expect_approach] (pos=4, conf=0.97, consumed=5, isThen=false)",
+    "[local-stt]   adding 7 fixes from approach I36 to aircraft context",
+    "[local-stt]   no match at token[4]=\"expect\", skipping",
+    "[local-stt]   no match at token[6]=\"analyze\", skipping",
+    "[local-stt]   skipping filler word: \"to\"",
+    "[local-stt]   no match at token[7]=\"runway\", skipping",
+    "[local-stt]   no match at token[6]=\"analyze\", skipping",
+    "[local-stt]   no match at token[8]=\"36\", skipping",
+    "[local-stt]   no match at token[7]=\"runway\", skipping",
+    "[local-stt]   no match at token[8]=\"36\", skipping",
+    "[local-stt]   beam final[0]: score=3.027 pos=9 commands=[SAYAGAIN/ALTITUDE EI36]",
+    "[local-stt]   beam final[1]: score=0.524 pos=9 commands=[EI36]",
+    "[local-stt]   beam final[2]: score=-2.103 pos=9 commands=[SAYAGAIN/ALTITUDE]",
+    "[local-stt]   beam final[3]: score=-4.605 pos=9 commands=[]",
+    "[local-stt] ParseCommands: result=[SAYAGAIN/ALTITUDE EI36] (avgConf=0.73)",
+    "[local-stt] parsed commands: [SAYAGAIN/ALTITUDE EI36] (conf=0.73, kinds=1)",
+    "[local-stt] validated commands: [SAYAGAIN/ALTITUDE EI36] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"NKS2650 SAYAGAIN/ALTITUDE EI36\" (conf=0.73, time=4.6361ms) ==="
+  ]
+}

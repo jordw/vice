@@ -1,0 +1,837 @@
+{
+  "time": "2026-11-06T18:27:29.116586944Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "manager.go:1057:/server.(*SimManager).ReportSTTLog",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Avelo three 89, Avelo three 99, November five one four delta tango new york approach altimeter three zero six two expect vectors ILS runway two four approach",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, whiskey, foxtrot, bravo, information, Sardi one, Long Island seven, two zero, two four, runway, r-nav, I L S, Ex-Flight three 30, Avelo three 89, Avelo three 76, Southwest 28 74, daher kodiak five alpha charlie, kodiak one hundred five alpha charlie, november niner five alpha charlie, november five one four delta tango, november four eight five delta whiskey, piper cherokee one five yankee, cherokee one five yankee, november four three one five yankee, cessna one seventy-two seven hotel foxtrot, skyhawk seven hotel foxtrot, november one two seven hotel foxtrot, Career Track five zero three, Sorry, Ukege, Elvis, Coram, Gump, Hidal, CALVERTON, Wimak, Bowan, Lily, Dream, Milum, Stubby, Keyed, Riced, BRIDGEPORT, Dwain, Moony, clow, Tweed New Haven Airport, Long Island MacArthur Airport, We got, Igor I Sikorsky Memorial Airport, Soars, HARTFORD",
+  "whisper_duration_ms": 524.595,
+  "audio_duration_ms": 8136,
+  "processor": "GPU: NVIDIA GeForce RTX 3090 (24322MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "N514DT",
+  "command": "EI24",
+  "reason": "three callsigns back to back: the last complete callsign wins; the repeat confirms",
+  "stt_aircraft": {
+    "Avelo three 76": {
+      "Callsign": "VXP376",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Elvis": "ELLVS",
+        "Gump": "GUUMP",
+        "HARTFORD": "HFD",
+        "Keyed": "KEYED",
+        "Lily": "LILKM",
+        "New Haven": "KHVN",
+        "Soars": "SOARS",
+        "Sorry": "SORRY",
+        "Tweed": "KHVN",
+        "Yernu": "YERNU"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 20": "R20"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero": "20",
+        "visual runway two zero": "20",
+        "visual two zero": "20"
+      },
+      "ApproachFixes": {
+        "R20": {
+          "Elvis": "ELLVS",
+          "Gump": "GUUMP",
+          "HARTFORD": "HFD",
+          "Soars": "SOARS",
+          "Sorry": "SORRY",
+          "Yernu": "YERNU"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 20",
+      "STAR": "SARDI1",
+      "Route": [
+        "KEYED",
+        "LILKM",
+        "KHVN"
+      ],
+      "Altitude": 6135,
+      "Heading": 11,
+      "Speed": 262,
+      "AssignedAltitude": 6000,
+      "State": "arrival",
+      "ControllerFrequency": "3H",
+      "TrackingController": "3H"
+    },
+    "Avelo three 89": {
+      "Callsign": "VXP389",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Elvis": "ELLVS",
+        "Gump": "GUUMP",
+        "HARTFORD": "HFD",
+        "Keyed": "KEYED",
+        "Lily": "LILKM",
+        "New Haven": "KHVN",
+        "Soars": "SOARS",
+        "Sorry": "SORRY",
+        "Tweed": "KHVN",
+        "Yernu": "YERNU"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 20": "R20"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero": "20",
+        "visual runway two zero": "20",
+        "visual two zero": "20"
+      },
+      "ApproachFixes": {
+        "R20": {
+          "Elvis": "ELLVS",
+          "Gump": "GUUMP",
+          "HARTFORD": "HFD",
+          "Soars": "SOARS",
+          "Sorry": "SORRY",
+          "Yernu": "YERNU"
+        }
+      },
+      "STAR": "SARDI1",
+      "Route": [
+        "KEYED",
+        "LILKM",
+        "KHVN"
+      ],
+      "Altitude": 5000,
+      "Heading": 11,
+      "Speed": 256,
+      "AssignedAltitude": 5000,
+      "State": "arrival",
+      "ControllerFrequency": "3H",
+      "TrackingController": "3H"
+    },
+    "Career Track five zero three": {
+      "Callsign": "CXK503",
+      "AircraftType": "P28A",
+      "Fixes": {
+        "HARTFORD": "HFD",
+        "Islip": "KISP",
+        "Lawrence": "KLWM",
+        "MacArthur": "KISP",
+        "clow": "CLOWW"
+      },
+      "SID": "LONGI7",
+      "Route": [
+        "HFD",
+        "CLOWW",
+        "KLWM"
+      ],
+      "Altitude": 7000,
+      "Heading": 25,
+      "Speed": 114,
+      "AssignedAltitude": 7000,
+      "State": "departure",
+      "ControllerFrequency": "3H",
+      "TrackingController": "B17"
+    },
+    "Ex-Flight three 30": {
+      "Callsign": "XFL330",
+      "AircraftType": "C680",
+      "Fixes": {
+        "CALVERTON": "CCC",
+        "Coram": "CORAM",
+        "Islip": "KISP",
+        "Keyed": "KEYED",
+        "Lily": "LILKM",
+        "MacArthur": "KISP",
+        "Ukege": "UKEGE"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 24": "I24",
+        "RNAV Runway 24": "R24"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two four": "24",
+        "visual runway two four": "24",
+        "visual two four": "24"
+      },
+      "ApproachFixes": {
+        "I24": {
+          "CALVERTON": "CCC",
+          "Coram": "CORAM",
+          "Ukege": "UKEGE"
+        },
+        "R24": {
+          "CALVERTON": "CCC",
+          "Coram": "CORAM",
+          "Jumum": "JUMUM",
+          "Ukege": "UKEGE"
+        }
+      },
+      "AssignedApproach": "ILS Runway 24",
+      "STAR": "SARDI1",
+      "Route": [
+        "KEYED",
+        "LILKM",
+        "KISP"
+      ],
+      "Altitude": 3000,
+      "Heading": 350,
+      "Speed": 206,
+      "AssignedAltitude": 3000,
+      "AssignedHeading": 350,
+      "AssignedSpeed": 210,
+      "State": "arrival",
+      "ControllerFrequency": "3H",
+      "TrackingController": "3H",
+      "LAHSORunways": [
+        "15L",
+        "33R",
+        "15R",
+        "33L"
+      ]
+    },
+    "Southwest 28 74": {
+      "Callsign": "SWA2874",
+      "AircraftType": "B38M",
+      "Fixes": {
+        "Islip": "KISP",
+        "MacArthur": "KISP"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 24": "I24",
+        "RNAV Runway 24": "R24"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two four": "24",
+        "visual runway two four": "24",
+        "visual two four": "24"
+      },
+      "ApproachFixes": {
+        "I24": {
+          "CALVERTON": "CCC",
+          "Coram": "CORAM",
+          "Ukege": "UKEGE"
+        },
+        "R24": {
+          "CALVERTON": "CCC",
+          "Coram": "CORAM",
+          "Jumum": "JUMUM",
+          "Ukege": "UKEGE"
+        }
+      },
+      "STAR": "SARDI1",
+      "Route": [
+        "KISP"
+      ],
+      "Altitude": 2000,
+      "Heading": 237,
+      "Speed": 259,
+      "AssignedAltitude": 3000,
+      "AssignedHeading": 237,
+      "State": "arrival",
+      "ControllerFrequency": "3H",
+      "TrackingController": "3H",
+      "LAHSORunways": [
+        "15L",
+        "33R",
+        "15R",
+        "33L"
+      ]
+    },
+    "cessna one seventy-two seven hotel foxtrot": {
+      "Callsign": "N127HF/T",
+      "AircraftType": "C172",
+      "Fixes": {
+        "ALBANY": "ALB",
+        "Albany": "KALB",
+        "Bowan": "BOWAN",
+        "Canan": "CANAN",
+        "Hidal": "HIDAL",
+        "Islip": "KISP",
+        "MacArthur": "KISP",
+        "Moony": "MOONI",
+        "Soars": "SOARS",
+        "Stubby": "STUBY"
+      },
+      "SID": "LONGI7",
+      "Route": [
+        "SOARS",
+        "MOONI",
+        "STUBY",
+        "BOWAN",
+        "HIDAL",
+        "CANAN",
+        "ALB",
+        "KALB"
+      ],
+      "Altitude": 6000,
+      "Heading": 6,
+      "Speed": 115,
+      "State": "departure",
+      "ControllerFrequency": "3H",
+      "TrackingController": "1Y",
+      "AddressingForm": 1
+    },
+    "cherokee one five yankee": {
+      "Callsign": "N4315Y/T",
+      "AircraftType": "P28A",
+      "Fixes": {
+        "Bridgeport": "KBDR",
+        "Dwain": "DWAIN",
+        "Milum": "MILUM",
+        "Wimak": "WIMAK"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 24": "R24"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two four": "24",
+        "visual runway two four": "24",
+        "visual two four": "24"
+      },
+      "ApproachFixes": {
+        "R24": {
+          "Dwain": "DWAIN",
+          "Milum": "MILUM",
+          "Wimak": "WIMAK"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 24",
+      "Route": [
+        "DWAIN",
+        "MILUM",
+        "WIMAK",
+        "KBDR"
+      ],
+      "Altitude": 4000,
+      "Heading": 130,
+      "Speed": 133,
+      "AssignedAltitude": 4000,
+      "AssignedHeading": 130,
+      "State": "arrival",
+      "ControllerFrequency": "3R",
+      "TrackingController": "3R",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "daher kodiak five alpha charlie": {
+      "Callsign": "N95AC/T",
+      "AircraftType": "K100",
+      "Fixes": {
+        "Elvis": "ELLVS",
+        "Gump": "GUUMP",
+        "HARTFORD": "HFD",
+        "Keyed": "KEYED",
+        "Lily": "LILKM",
+        "New Haven": "KHVN",
+        "Riced": "RICED",
+        "Soars": "SOARS",
+        "Sorry": "SORRY",
+        "Tweed": "KHVN",
+        "Yernu": "YERNU"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 20": "R20"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero": "20",
+        "visual runway two zero": "20",
+        "visual two zero": "20"
+      },
+      "ApproachFixes": {
+        "R20": {
+          "Elvis": "ELLVS",
+          "Gump": "GUUMP",
+          "HARTFORD": "HFD",
+          "Soars": "SOARS",
+          "Sorry": "SORRY",
+          "Yernu": "YERNU"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 20",
+      "STAR": "SARDI1",
+      "Route": [
+        "RICED",
+        "KEYED",
+        "LILKM",
+        "KHVN"
+      ],
+      "Altitude": 4000,
+      "Heading": 50,
+      "Speed": 156,
+      "AssignedHeading": 50,
+      "State": "arrival",
+      "ControllerFrequency": "3H",
+      "TrackingController": "3H",
+      "AddressingForm": 1
+    },
+    "kodiak one hundred five alpha charlie": {
+      "Callsign": "N95AC/T",
+      "AircraftType": "K100",
+      "Fixes": {
+        "Elvis": "ELLVS",
+        "Gump": "GUUMP",
+        "HARTFORD": "HFD",
+        "Keyed": "KEYED",
+        "Lily": "LILKM",
+        "New Haven": "KHVN",
+        "Riced": "RICED",
+        "Soars": "SOARS",
+        "Sorry": "SORRY",
+        "Tweed": "KHVN",
+        "Yernu": "YERNU"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 20": "R20"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero": "20",
+        "visual runway two zero": "20",
+        "visual two zero": "20"
+      },
+      "ApproachFixes": {
+        "R20": {
+          "Elvis": "ELLVS",
+          "Gump": "GUUMP",
+          "HARTFORD": "HFD",
+          "Soars": "SOARS",
+          "Sorry": "SORRY",
+          "Yernu": "YERNU"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 20",
+      "STAR": "SARDI1",
+      "Route": [
+        "RICED",
+        "KEYED",
+        "LILKM",
+        "KHVN"
+      ],
+      "Altitude": 4000,
+      "Heading": 50,
+      "Speed": 156,
+      "AssignedHeading": 50,
+      "State": "arrival",
+      "ControllerFrequency": "3H",
+      "TrackingController": "3H",
+      "AddressingForm": 1
+    },
+    "november five one four delta tango": {
+      "Callsign": "N514DT",
+      "AircraftType": "SR22",
+      "Fixes": {
+        "BRIDGEPORT": "BDR",
+        "Danbury": "KDXR",
+        "Islip": "KISP",
+        "MacArthur": "KISP"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 24": "I24",
+        "RNAV Runway 24": "R24"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two four": "24",
+        "visual runway two four": "24",
+        "visual two four": "24"
+      },
+      "ApproachFixes": {
+        "I24": {
+          "CALVERTON": "CCC",
+          "Coram": "CORAM",
+          "Ukege": "UKEGE"
+        },
+        "R24": {
+          "CALVERTON": "CCC",
+          "Coram": "CORAM",
+          "Jumum": "JUMUM",
+          "Ukege": "UKEGE"
+        }
+      },
+      "Route": [
+        "BDR",
+        "KISP"
+      ],
+      "Altitude": 5000,
+      "Heading": 65,
+      "Speed": 208,
+      "State": "arrival",
+      "ControllerFrequency": "3O",
+      "TrackingController": "3O",
+      "LAHSORunways": [
+        "15L",
+        "33R",
+        "15R",
+        "33L"
+      ]
+    },
+    "november four eight five delta whiskey": {
+      "Callsign": "N485DW",
+      "AircraftType": "S22T",
+      "Fixes": {
+        "Dream": "DREEM",
+        "HARTFORD": "HFD",
+        "Islip": "KISP",
+        "MacArthur": "KISP",
+        "Norwood": "KOWD",
+        "We got": "WEGOT"
+      },
+      "SID": "LONGI7",
+      "Route": [
+        "WEGOT",
+        "HFD",
+        "DREEM",
+        "KOWD"
+      ],
+      "Altitude": 8000,
+      "Heading": 26,
+      "Speed": 188,
+      "AssignedAltitude": 8000,
+      "State": "departure",
+      "ControllerFrequency": "3H",
+      "TrackingController": "B17"
+    },
+    "november four three one five yankee": {
+      "Callsign": "N4315Y",
+      "AircraftType": "P28A",
+      "Fixes": {
+        "Bridgeport": "KBDR",
+        "Dwain": "DWAIN",
+        "Milum": "MILUM",
+        "Wimak": "WIMAK"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 24": "R24"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two four": "24",
+        "visual runway two four": "24",
+        "visual two four": "24"
+      },
+      "ApproachFixes": {
+        "R24": {
+          "Dwain": "DWAIN",
+          "Milum": "MILUM",
+          "Wimak": "WIMAK"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 24",
+      "Route": [
+        "DWAIN",
+        "MILUM",
+        "WIMAK",
+        "KBDR"
+      ],
+      "Altitude": 4000,
+      "Heading": 130,
+      "Speed": 133,
+      "AssignedAltitude": 4000,
+      "AssignedHeading": 130,
+      "State": "arrival",
+      "ControllerFrequency": "3R",
+      "TrackingController": "3R",
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "november niner five alpha charlie": {
+      "Callsign": "N95AC",
+      "AircraftType": "K100",
+      "Fixes": {
+        "Elvis": "ELLVS",
+        "Gump": "GUUMP",
+        "HARTFORD": "HFD",
+        "Keyed": "KEYED",
+        "Lily": "LILKM",
+        "New Haven": "KHVN",
+        "Riced": "RICED",
+        "Soars": "SOARS",
+        "Sorry": "SORRY",
+        "Tweed": "KHVN",
+        "Yernu": "YERNU"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 20": "R20"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two zero": "20",
+        "visual runway two zero": "20",
+        "visual two zero": "20"
+      },
+      "ApproachFixes": {
+        "R20": {
+          "Elvis": "ELLVS",
+          "Gump": "GUUMP",
+          "HARTFORD": "HFD",
+          "Soars": "SOARS",
+          "Sorry": "SORRY",
+          "Yernu": "YERNU"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 20",
+      "STAR": "SARDI1",
+      "Route": [
+        "RICED",
+        "KEYED",
+        "LILKM",
+        "KHVN"
+      ],
+      "Altitude": 4000,
+      "Heading": 50,
+      "Speed": 156,
+      "AssignedHeading": 50,
+      "State": "arrival",
+      "ControllerFrequency": "3H",
+      "TrackingController": "3H"
+    },
+    "november one two seven hotel foxtrot": {
+      "Callsign": "N127HF",
+      "AircraftType": "C172",
+      "Fixes": {
+        "ALBANY": "ALB",
+        "Albany": "KALB",
+        "Bowan": "BOWAN",
+        "Canan": "CANAN",
+        "Hidal": "HIDAL",
+        "Islip": "KISP",
+        "MacArthur": "KISP",
+        "Moony": "MOONI",
+        "Soars": "SOARS",
+        "Stubby": "STUBY"
+      },
+      "SID": "LONGI7",
+      "Route": [
+        "SOARS",
+        "MOONI",
+        "STUBY",
+        "BOWAN",
+        "HIDAL",
+        "CANAN",
+        "ALB",
+        "KALB"
+      ],
+      "Altitude": 6000,
+      "Heading": 6,
+      "Speed": 115,
+      "State": "departure",
+      "ControllerFrequency": "3H",
+      "TrackingController": "1Y"
+    },
+    "piper cherokee one five yankee": {
+      "Callsign": "N4315Y/T",
+      "AircraftType": "P28A",
+      "Fixes": {
+        "Bridgeport": "KBDR",
+        "Dwain": "DWAIN",
+        "Milum": "MILUM",
+        "Wimak": "WIMAK"
+      },
+      "CandidateApproaches": {
+        "RNAV Runway 24": "R24"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway two four": "24",
+        "visual runway two four": "24",
+        "visual two four": "24"
+      },
+      "ApproachFixes": {
+        "R24": {
+          "Dwain": "DWAIN",
+          "Milum": "MILUM",
+          "Wimak": "WIMAK"
+        }
+      },
+      "AssignedApproach": "RNAV Runway 24",
+      "Route": [
+        "DWAIN",
+        "MILUM",
+        "WIMAK",
+        "KBDR"
+      ],
+      "Altitude": 4000,
+      "Heading": 130,
+      "Speed": 133,
+      "AssignedAltitude": 4000,
+      "AssignedHeading": 130,
+      "State": "arrival",
+      "ControllerFrequency": "3R",
+      "TrackingController": "3R",
+      "AddressingForm": 1,
+      "LAHSORunways": [
+        "11",
+        "29"
+      ]
+    },
+    "skyhawk seven hotel foxtrot": {
+      "Callsign": "N127HF/T",
+      "AircraftType": "C172",
+      "Fixes": {
+        "ALBANY": "ALB",
+        "Albany": "KALB",
+        "Bowan": "BOWAN",
+        "Canan": "CANAN",
+        "Hidal": "HIDAL",
+        "Islip": "KISP",
+        "MacArthur": "KISP",
+        "Moony": "MOONI",
+        "Soars": "SOARS",
+        "Stubby": "STUBY"
+      },
+      "SID": "LONGI7",
+      "Route": [
+        "SOARS",
+        "MOONI",
+        "STUBY",
+        "BOWAN",
+        "HIDAL",
+        "CANAN",
+        "ALB",
+        "KALB"
+      ],
+      "Altitude": 6000,
+      "Heading": 6,
+      "Speed": 115,
+      "State": "departure",
+      "ControllerFrequency": "3H",
+      "TrackingController": "1Y",
+      "AddressingForm": 1
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Avelo three 89, Avelo three 99, November five one four delta tango new york approach altimeter three zero six two expect vectors ILS runway two four approach\"",
+    "[local-stt] normalized words: [avelo 3 89 avelo 3 99 november 5 1 4 delta tango new york approach altimeter 3 0 6 2 expect vectors ils runway 2 4 approach]",
+    "[local-stt] tokens: 19",
+    "[local-stt]   token[0]: Text=\"avelo\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"389\" Type=1 Value=389",
+    "[local-stt]   token[2]: Text=\"avelo\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"399\" Type=1 Value=399",
+    "[local-stt]   token[4]: Text=\"november\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"514\" Type=1 Value=514",
+    "[local-stt]   token[6]: Text=\"delta\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"tango\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"new\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"york\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[11]: Text=\"altimeter\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"3062\" Type=1 Value=3062",
+    "[local-stt]   token[13]: Text=\"expect\" Type=0 Value=-1",
+    "[local-stt]   token[14]: Text=\"vectors\" Type=0 Value=-1",
+    "[local-stt]   token[15]: Text=\"ils\" Type=0 Value=-1",
+    "[local-stt]   token[16]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[17]: Text=\"24\" Type=1 Value=24",
+    "[local-stt]   token[18]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 19 tokens, 16 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 19 tokens, 16 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Avelo three 89\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Avelo three 89\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"ga_suffix\": no results",
+    "[local-stt]   pattern \"airline_flight\": 3 results",
+    "[local-stt]     result 0: \"Avelo three 89\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"november five one four delta tango\" (airline=0.492, flight=0.789, skip=2)",
+    "[local-stt]     result 2: \"november five one four delta tango\" (airline=0.909, flight=1.000, skip=3)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Avelo three 89\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 12 results",
+    "[local-stt]     result 0: \"Southwest 28 74\" (airline=0.437, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Avelo three 76\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Ex-Flight three 30\" (airline=0.541, flight=0.000, skip=0)",
+    "[local-stt]     result 3: \"Avelo three 89\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 4: \"Career Track five zero three\" (airline=0.578, flight=0.000, skip=0)",
+    "[local-stt]     pattern \"airline_only\": selected \"Avelo three 76\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"ga_november\": no results",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 2 results",
+    "[local-stt]     result 0: \"Avelo three 89\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Avelo three 89\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     pattern \"flight_only\": selected \"Avelo three 89\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"VXP389\" (spokenKey=\"Avelo three 89\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"VXP389\" SpokenKey=\"Avelo three 89\" Conf=1.00 Consumed=2",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=5000 Fixes=4 Approaches=1 VisualApproaches=3 AssignedApproach=\"\" LAHSORunways=[]",
+    "[local-stt]   fix: \"New Haven\" -\u003e \"KHVN\"",
+    "[local-stt]   fix: \"Tweed\" -\u003e \"KHVN\"",
+    "[local-stt]   fix: \"Keyed\" -\u003e \"KEYED\"",
+    "[local-stt]   fix: \"Lily\" -\u003e \"LILKM\"",
+    "[local-stt]   approach: \"RNAV Runway 20\" -\u003e \"R20\"",
+    "[local-stt]   visual approach: \"visual runway two zero\" -\u003e \"20\"",
+    "[local-stt]   visual approach: \"visual approach runway two zero\" -\u003e \"20\"",
+    "[local-stt]   visual approach: \"visual two zero\" -\u003e \"20\"",
+    "[local-stt] command tokens after disregard: 17",
+    "[local-stt]   token[0]: Text=\"avelo\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"399\" Type=1 Value=399",
+    "[local-stt]   token[2]: Text=\"november\" Type=0 Value=-1",
+    "[local-stt]   token[3]: Text=\"514\" Type=1 Value=514",
+    "[local-stt]   token[4]: Text=\"delta\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"tango\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"new\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"york\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"altimeter\" Type=0 Value=-1",
+    "[local-stt]   token[10]: Text=\"3062\" Type=1 Value=3062",
+    "[local-stt]   token[11]: Text=\"expect\" Type=0 Value=-1",
+    "[local-stt]   token[12]: Text=\"vectors\" Type=0 Value=-1",
+    "[local-stt]   token[13]: Text=\"ils\" Type=0 Value=-1",
+    "[local-stt]   token[14]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[15]: Text=\"24\" Type=1 Value=24",
+    "[local-stt]   token[16]: Text=\"approach\" Type=0 Value=-1",
+    "[local-stt] stripped altimeter reading: 2 tokens",
+    "[local-stt] ParseCommands: 15 tokens",
+    "[local-stt]   no match at token[0]=\"avelo\", skipping",
+    "[local-stt]   no match at token[1]=\"399\", skipping",
+    "[local-stt]   no match at token[2]=\"november\", skipping",
+    "[local-stt]   no match at token[3]=\"514\", skipping",
+    "[local-stt]   matched command: \"\" [position_id] (pos=4, conf=0.62, consumed=5, isThen=false)",
+    "[local-stt]   no match at token[4]=\"delta\", skipping",
+    "[local-stt]   extractApproach: single candidate with 'approach' keyword -\u003e \"R20\"",
+    "[local-stt]   matched command: \"ER20\" [expect_approach] (pos=9, conf=0.94, consumed=6, isThen=false)",
+    "[local-stt]   adding 6 fixes from approach R20 to aircraft context",
+    "[local-stt]   no match at token[9]=\"expect\", skipping",
+    "[local-stt]   no match at token[5]=\"tango\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"24\" against 4 fixes",
+    "[local-stt]   extractFix: no match found for \"24\"",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSID: no SID assigned and no generic match",
+    "[local-stt]   extractSTAR: looking for STAR=\"SARDI1\" telephony=\"Sardi one\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   extractSTAR: looking for STAR=\"SARDI1\" telephony=\"Sardi one\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   extractSTAR: looking for STAR=\"SARDI1\" telephony=\"Sardi one\"",
+    "[local-stt]   extractSTAR: no match found",
+    "[local-stt]   extractApproach: single candidate with 'approach' keyword -\u003e \"R20\"",
+    "[local-stt]   matched command: \"ER20\" [vectors_approach] (pos=10, conf=0.93, consumed=5, isThen=false)",
+    "[local-stt]   adding 6 fixes from approach R20 to aircraft context",
+    "[local-stt]   no match at token[10]=\"vectors\", skipping",
+    "[local-stt]   no match at token[6]=\"new\", skipping",
+    "[local-stt]   no match at token[7]=\"york\", skipping",
+    "[local-stt]   no match at token[11]=\"ils\", skipping",
+    "[local-stt]   no match at token[8]=\"approach\", skipping",
+    "[local-stt]   no match at token[12]=\"runway\", skipping",
+    "[local-stt]   extractApproach: single candidate with 'approach' keyword -\u003e \"R20\"",
+    "[local-stt]   matched command: \"ER20\" [expect_approach] (pos=9, conf=0.94, consumed=6, isThen=false)",
+    "[local-stt]   adding 6 fixes from approach R20 to aircraft context",
+    "[local-stt]   no match at token[9]=\"expect\", skipping",
+    "[local-stt]   no match at token[13]=\"24\", skipping",
+    "[local-stt]   no match at token[14]=\"approach\", skipping",
+    "[local-stt]   beam final[0]: score=3.828 pos=15 commands=[ER20]",
+    "[local-stt]   beam final[1]: score=0.928 pos=15 commands=[ER20]",
+    "[local-stt]   beam final[2]: score=0.928 pos=15 commands=[ER20]",
+    "[local-stt]   beam final[3]: score=-4.007 pos=15 commands=[]",
+    "[local-stt] ParseCommands: result=[ER20] (avgConf=0.94)",
+    "[local-stt] parsed commands: [ER20] (conf=0.94, kinds=101)",
+    "[local-stt] validated commands: [ER20] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"VXP389 ER20\" (conf=0.94, time=6.2982ms) ==="
+  ]
+}

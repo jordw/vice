@@ -1,0 +1,468 @@
+{
+  "time": "2026-11-06T00:23:02.550500566Z",
+  "level": "INFO",
+  "msg": "STT command",
+  "callstack": [
+    "dispatcher.go:644:/server.(*dispatcher).RunAircraftCommands",
+    "value.go:586:reflect.Value.call",
+    "value.go:369:reflect.Value.Call",
+    "server.go:383:net/rpc.(*service).call",
+    "asm_amd64.s:1771:runtime.goexit"
+  ],
+  "transcript": "Air Shuttle 78 zero four turn left 78 zero two zero cleared ILS runway three five right",
+  "whisper_prompt": "landing the parallel, maintain visual separation, caution wake turbulence, the airport is at your, the field is at your, visual approach, airport in sight, field in sight, maintain mach, say mach, mach, expect further clearance, right turns, left turns, minute legs, radial inbound, as published, hold, good rate, expedite descent, expedite climb, arrival, descend via, climb via, cleared straight-in, flight level, on the localizer, until established, cleared, established, miles from, reduce to final approach speed, radar contact, altimeter, ident, squawk, vectors, expect, contact tower, maintain maximum forward speed, reduce speed to, expect the, proceed direct, fly heading, turn right, turn left, cleared direct, direct, maintain, descend and maintain, climb and maintain, niner, lima, information, Mabel five, Leddle one, D-lamp eight, knox, Awlee, Red bird, Bourbon, three five left, three five right, runway, I L S, Southwest 32 19, Blue Streak 13 88, Delta 86, Delta seven 38, Air Shuttle 78 zero four, American 24 65, Parcel, Pegasus, Upsco, meeko, Ohna, Louisville Muhammad Ali International Airport",
+  "whisper_duration_ms": 412.28,
+  "audio_duration_ms": 6216,
+  "processor": "GPU: NVIDIA GeForce RTX 4060 Ti (8163MB)",
+  "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
+  "callsign": "ASH7804",
+  "command": "L020 CI5R",
+  "reason": "callsign digits repeated where \"heading\" belongs",
+  "stt_aircraft": {
+    "Air Shuttle 78 zero four": {
+      "Callsign": "ASH7804",
+      "LastAddressed": true,
+      "AircraftType": "E75L",
+      "Fixes": {
+        "Louisville Muhammad Ali": "KSDF",
+        "Ohna": "OHNNA",
+        "Parcel": "PARCL",
+        "Pegasus": "PGSUS",
+        "Upsco": "UPSCO",
+        "meeko": "MEEKO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 35L": "I5L",
+        "ILS Runway 35R": "I5R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five left": "35L",
+        "visual approach runway three five right": "35R",
+        "visual runway three five left": "35L",
+        "visual runway three five right": "35R",
+        "visual three five left": "35L",
+        "visual three five right": "35R"
+      },
+      "ApproachFixes": {
+        "I5L": {
+          "Awlee": "AWLEE",
+          "Bourbon": "BRBON",
+          "Cardinal": "CRDNL",
+          "Red bird": "RDBRD",
+          "knox": "KNNOX"
+        },
+        "I5R": {
+          "Ohna": "OHNNA",
+          "Parcel": "PARCL",
+          "Pegasus": "PGSUS",
+          "Upsco": "UPSCO",
+          "meeko": "MEEKO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 35R",
+      "STAR": "MBELL5",
+      "Route": [
+        "KSDF"
+      ],
+      "Altitude": 5000,
+      "Heading": 29,
+      "Speed": 256,
+      "AssignedSpeed": 200,
+      "State": "arrival",
+      "ControllerFrequency": "4W",
+      "TrackingController": "4W",
+      "LAHSORunways": [
+        "11",
+        "29",
+        "11",
+        "29"
+      ]
+    },
+    "American 24 65": {
+      "Callsign": "AAL2465",
+      "AircraftType": "A321",
+      "Fixes": {
+        "Louisville Muhammad Ali": "KSDF",
+        "Ohna": "OHNNA",
+        "Parcel": "PARCL",
+        "Pegasus": "PGSUS",
+        "Upsco": "UPSCO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 35L": "I5L",
+        "ILS Runway 35R": "I5R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five left": "35L",
+        "visual approach runway three five right": "35R",
+        "visual runway three five left": "35L",
+        "visual runway three five right": "35R",
+        "visual three five left": "35L",
+        "visual three five right": "35R"
+      },
+      "ApproachFixes": {
+        "I5L": {
+          "Awlee": "AWLEE",
+          "Bourbon": "BRBON",
+          "Cardinal": "CRDNL",
+          "Red bird": "RDBRD",
+          "knox": "KNNOX"
+        },
+        "I5R": {
+          "Ohna": "OHNNA",
+          "Parcel": "PARCL",
+          "Pegasus": "PGSUS",
+          "Upsco": "UPSCO",
+          "meeko": "MEEKO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 35R",
+      "STAR": "DLAMP8",
+      "Route": [
+        "OHNNA",
+        "PGSUS",
+        "UPSCO",
+        "PARCL",
+        "KSDF"
+      ],
+      "Altitude": 6000,
+      "Heading": 346,
+      "Speed": 185,
+      "AssignedSpeed": 180,
+      "State": "arrival",
+      "ControllerFrequency": "4W",
+      "TrackingController": "4W",
+      "LAHSORunways": [
+        "11",
+        "29",
+        "11",
+        "29"
+      ]
+    },
+    "Blue Streak 13 88": {
+      "Callsign": "JIA1388",
+      "AircraftType": "CRJ9",
+      "Fixes": {
+        "Louisville Muhammad Ali": "KSDF",
+        "Parcel": "PARCL",
+        "Upsco": "UPSCO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 35L": "I5L",
+        "ILS Runway 35R": "I5R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five left": "35L",
+        "visual approach runway three five right": "35R",
+        "visual runway three five left": "35L",
+        "visual runway three five right": "35R",
+        "visual three five left": "35L",
+        "visual three five right": "35R"
+      },
+      "ApproachFixes": {
+        "I5L": {
+          "Awlee": "AWLEE",
+          "Bourbon": "BRBON",
+          "Cardinal": "CRDNL",
+          "Red bird": "RDBRD",
+          "knox": "KNNOX"
+        },
+        "I5R": {
+          "Ohna": "OHNNA",
+          "Parcel": "PARCL",
+          "Pegasus": "PGSUS",
+          "Upsco": "UPSCO",
+          "meeko": "MEEKO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 35R",
+      "STAR": "LEDDL1",
+      "Route": [
+        "UPSCO",
+        "PARCL",
+        "KSDF"
+      ],
+      "Altitude": 3228,
+      "Heading": 346,
+      "Speed": 195,
+      "State": "cleared approach",
+      "ControllerFrequency": "4W",
+      "TrackingController": "4W",
+      "LAHSORunways": [
+        "11",
+        "29",
+        "11",
+        "29"
+      ]
+    },
+    "Delta 86": {
+      "Callsign": "DAL86",
+      "AircraftType": "B739",
+      "Fixes": {
+        "Louisville Muhammad Ali": "KSDF",
+        "Ohna": "OHNNA",
+        "Parcel": "PARCL",
+        "Pegasus": "PGSUS",
+        "Upsco": "UPSCO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 35L": "I5L",
+        "ILS Runway 35R": "I5R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five left": "35L",
+        "visual approach runway three five right": "35R",
+        "visual runway three five left": "35L",
+        "visual runway three five right": "35R",
+        "visual three five left": "35L",
+        "visual three five right": "35R"
+      },
+      "ApproachFixes": {
+        "I5L": {
+          "Awlee": "AWLEE",
+          "Bourbon": "BRBON",
+          "Cardinal": "CRDNL",
+          "Red bird": "RDBRD",
+          "knox": "KNNOX"
+        },
+        "I5R": {
+          "Ohna": "OHNNA",
+          "Parcel": "PARCL",
+          "Pegasus": "PGSUS",
+          "Upsco": "UPSCO",
+          "meeko": "MEEKO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 35R",
+      "STAR": "LEDDL1",
+      "Route": [
+        "OHNNA",
+        "PGSUS",
+        "UPSCO",
+        "PARCL",
+        "KSDF"
+      ],
+      "Altitude": 5000,
+      "Heading": 345,
+      "Speed": 214,
+      "AssignedSpeed": 210,
+      "State": "cleared approach",
+      "ControllerFrequency": "4W",
+      "TrackingController": "4W",
+      "LAHSORunways": [
+        "11",
+        "29",
+        "11",
+        "29"
+      ]
+    },
+    "Delta seven 38": {
+      "Callsign": "DAL738",
+      "AircraftType": "A321",
+      "Fixes": {
+        "Louisville Muhammad Ali": "KSDF",
+        "Ohna": "OHNNA",
+        "Parcel": "PARCL",
+        "Pegasus": "PGSUS",
+        "Upsco": "UPSCO",
+        "meeko": "MEEKO"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 35L": "I5L",
+        "ILS Runway 35R": "I5R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five left": "35L",
+        "visual approach runway three five right": "35R",
+        "visual runway three five left": "35L",
+        "visual runway three five right": "35R",
+        "visual three five left": "35L",
+        "visual three five right": "35R"
+      },
+      "ApproachFixes": {
+        "I5L": {
+          "Awlee": "AWLEE",
+          "Bourbon": "BRBON",
+          "Cardinal": "CRDNL",
+          "Red bird": "RDBRD",
+          "knox": "KNNOX"
+        },
+        "I5R": {
+          "Ohna": "OHNNA",
+          "Parcel": "PARCL",
+          "Pegasus": "PGSUS",
+          "Upsco": "UPSCO",
+          "meeko": "MEEKO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 35R",
+      "STAR": "LEDDL1",
+      "Route": [
+        "MEEKO",
+        "OHNNA",
+        "PGSUS",
+        "UPSCO",
+        "PARCL",
+        "KSDF"
+      ],
+      "Altitude": 6000,
+      "Heading": 347,
+      "Speed": 207,
+      "AssignedSpeed": 200,
+      "State": "arrival",
+      "ControllerFrequency": "4W",
+      "TrackingController": "4W",
+      "LAHSORunways": [
+        "11",
+        "29",
+        "11",
+        "29"
+      ]
+    },
+    "Southwest 32 19": {
+      "Callsign": "SWA3219",
+      "AircraftType": "B738",
+      "Fixes": {
+        "Louisville Muhammad Ali": "KSDF"
+      },
+      "CandidateApproaches": {
+        "ILS Runway 35L": "I5L",
+        "ILS Runway 35R": "I5R"
+      },
+      "CandidateVisualApproaches": {
+        "visual approach runway three five left": "35L",
+        "visual approach runway three five right": "35R",
+        "visual runway three five left": "35L",
+        "visual runway three five right": "35R",
+        "visual three five left": "35L",
+        "visual three five right": "35R"
+      },
+      "ApproachFixes": {
+        "I5L": {
+          "Awlee": "AWLEE",
+          "Bourbon": "BRBON",
+          "Cardinal": "CRDNL",
+          "Red bird": "RDBRD",
+          "knox": "KNNOX"
+        },
+        "I5R": {
+          "Ohna": "OHNNA",
+          "Parcel": "PARCL",
+          "Pegasus": "PGSUS",
+          "Upsco": "UPSCO",
+          "meeko": "MEEKO"
+        }
+      },
+      "AssignedApproach": "ILS Runway 35R",
+      "STAR": "MBELL5",
+      "Route": [
+        "KSDF"
+      ],
+      "Altitude": 2202,
+      "Heading": 346,
+      "Speed": 174,
+      "AssignedSpeed": 180,
+      "State": "cleared approach",
+      "ControllerFrequency": "4W",
+      "TrackingController": "4W",
+      "LAHSORunways": [
+        "11",
+        "29",
+        "11",
+        "29"
+      ]
+    }
+  },
+  "logs": [
+    "[local-stt] === DecodeTranscript START ===",
+    "[local-stt] input transcript: \"Air Shuttle 78 zero four turn left 78 zero two zero cleared ILS runway three five right\"",
+    "[local-stt] normalized words: [air shuttle 78 0 4 turn left 78 0 2 0 cleared ils runway 3 5 right]",
+    "[local-stt] tokens: 11",
+    "[local-stt]   token[0]: Text=\"air\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"shuttle\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"7804\" Type=1 Value=7804",
+    "[local-stt]   token[3]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"left\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"78020\" Type=1 Value=78020",
+    "[local-stt]   token[6]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[7]: Text=\"ils\" Type=0 Value=-1",
+    "[local-stt]   token[8]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[9]: Text=\"35\" Type=1 Value=35",
+    "[local-stt]   token[10]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt] MatchCallsign: 11 tokens, 6 aircraft",
+    "[local-stt] matchCallsignWithPatterns: 11 tokens, 6 aircraft",
+    "[local-stt]   pattern \"exact_phrase\": 1 results",
+    "[local-stt]     result 0: \"Air Shuttle 78 zero four\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     pattern \"exact_phrase\": selected \"Air Shuttle 78 zero four\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_flight\": 3 results",
+    "[local-stt]     result 0: \"Air Shuttle 78 zero four\" (airline=1.000, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Air Shuttle 78 zero four\" (airline=0.900, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"Delta seven 38\" (airline=0.448, flight=0.750, skip=1)",
+    "[local-stt]     pattern \"airline_flight\": selected \"Air Shuttle 78 zero four\" (airline=1.00, flight=1.00, skip=0)",
+    "[local-stt]   pattern \"airline_only\": 11 results",
+    "[local-stt]     result 0: \"American 24 65\" (airline=0.712, flight=0.000, skip=0)",
+    "[local-stt]     result 1: \"Air Shuttle 78 zero four\" (airline=1.000, flight=0.000, skip=0)",
+    "[local-stt]     result 2: \"Blue Streak 13 88\" (airline=0.464, flight=0.000, skip=1)",
+    "[local-stt]     result 3: \"Air Shuttle 78 zero four\" (airline=0.900, flight=0.000, skip=1)",
+    "[local-stt]     result 4: \"Delta 86\" (airline=0.448, flight=0.000, skip=1)",
+    "[local-stt]     pattern \"airline_only\": selected \"Air Shuttle 78 zero four\" (airline=1.00, flight=0.00, skip=0)",
+    "[local-stt]   pattern \"fused_phrase\": no results",
+    "[local-stt]   pattern \"flight_only\": 3 results",
+    "[local-stt]     result 0: \"Air Shuttle 78 zero four\" (airline=0.500, flight=1.000, skip=0)",
+    "[local-stt]     result 1: \"Air Shuttle 78 zero four\" (airline=0.500, flight=1.000, skip=1)",
+    "[local-stt]     result 2: \"Air Shuttle 78 zero four\" (airline=0.500, flight=1.000, skip=2)",
+    "[local-stt]     pattern \"flight_only\": selected \"Air Shuttle 78 zero four\" (airline=0.50, flight=1.00, skip=0)",
+    "[local-stt]   exact callsign \"ASH7804\" (spokenKey=\"Air Shuttle 78 zero four\", skip=0): resolved",
+    "[local-stt] callsign match: Callsign=\"ASH7804\" SpokenKey=\"Air Shuttle 78 zero four\" Conf=1.00 Consumed=3",
+    "[local-stt] aircraft context: State=\"arrival\" Altitude=5000 Fixes=6 Approaches=2 VisualApproaches=6 AssignedApproach=\"ILS Runway 35R\" LAHSORunways=[11 29 11 29]",
+    "[local-stt]   fix: \"Upsco\" -\u003e \"UPSCO\"",
+    "[local-stt]   fix: \"Parcel\" -\u003e \"PARCL\"",
+    "[local-stt]   fix: \"Louisville Muhammad Ali\" -\u003e \"KSDF\"",
+    "[local-stt]   fix: \"meeko\" -\u003e \"MEEKO\"",
+    "[local-stt]   fix: \"Ohna\" -\u003e \"OHNNA\"",
+    "[local-stt]   fix: \"Pegasus\" -\u003e \"PGSUS\"",
+    "[local-stt]   approach: \"ILS Runway 35R\" -\u003e \"I5R\"",
+    "[local-stt]   approach: \"ILS Runway 35L\" -\u003e \"I5L\"",
+    "[local-stt]   visual approach: \"visual approach runway three five left\" -\u003e \"35L\"",
+    "[local-stt]   visual approach: \"visual three five left\" -\u003e \"35L\"",
+    "[local-stt]   visual approach: \"visual runway three five right\" -\u003e \"35R\"",
+    "[local-stt]   visual approach: \"visual approach runway three five right\" -\u003e \"35R\"",
+    "[local-stt]   visual approach: \"visual three five right\" -\u003e \"35R\"",
+    "[local-stt]   visual approach: \"visual runway three five left\" -\u003e \"35L\"",
+    "[local-stt] command tokens after disregard: 8",
+    "[local-stt]   token[0]: Text=\"turn\" Type=0 Value=-1",
+    "[local-stt]   token[1]: Text=\"left\" Type=0 Value=-1",
+    "[local-stt]   token[2]: Text=\"78020\" Type=1 Value=78020",
+    "[local-stt]   token[3]: Text=\"cleared\" Type=0 Value=-1",
+    "[local-stt]   token[4]: Text=\"ils\" Type=0 Value=-1",
+    "[local-stt]   token[5]: Text=\"runway\" Type=0 Value=-1",
+    "[local-stt]   token[6]: Text=\"35\" Type=1 Value=35",
+    "[local-stt]   token[7]: Text=\"right\" Type=0 Value=-1",
+    "[local-stt] ParseCommands: 8 tokens",
+    "[local-stt]   no match at token[0]=\"turn\", skipping",
+    "[local-stt]   no match at token[1]=\"left\", skipping",
+    "[local-stt]   no match at token[2]=\"78020\", skipping",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"ils\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"ils\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"runway\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"runway\"",
+    "[local-stt]   extractFix: trying to match tokens[0]=\"35\" against 6 fixes",
+    "[local-stt]   extractFix: no match found for \"35\"",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"ils\" variant=\"\" runway=\"three five right\" -\u003e \"I5R\" (consumed=4)",
+    "[local-stt]   matched command: \"CI5R\" [cleared_approach] (pos=3, conf=0.99, consumed=5, isThen=false)",
+    "[local-stt]   no match at token[3]=\"cleared\", skipping",
+    "[local-stt]   matchApproachByTypeAndNumber: type=\"ils\" variant=\"\" runway=\"three five right\" -\u003e \"I5R\" (consumed=4)",
+    "[local-stt]   implicit approach match: \"CI5R\" (consumed=4)",
+    "[local-stt]   no match at token[4]=\"ils\", skipping",
+    "[local-stt]   no match at token[5]=\"runway\", skipping",
+    "[local-stt]   no match at token[6]=\"35\", skipping",
+    "[local-stt]   no match at token[7]=\"right\", skipping",
+    "[local-stt]   beam final[0]: score=2.938 pos=8 commands=[CI5R]",
+    "[local-stt]   beam final[1]: score=-1.903 pos=8 commands=[CI5R]",
+    "[local-stt]   beam final[2]: score=-2.303 pos=8 commands=[]",
+    "[local-stt] ParseCommands: result=[CI5R] (avgConf=0.99)",
+    "[local-stt] parsed commands: [CI5R] (conf=0.99, kinds=1)",
+    "[local-stt] validated commands: [CI5R] (conf=1.00)",
+    "[local-stt] === DecodeTranscript END: \"ASH7804 CI5R\" (conf=0.99, time=2.014ms) ==="
+  ]
+}
