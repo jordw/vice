@@ -11,6 +11,7 @@
 // and fetched later, because the Go scheduler is free to reschedule a
 // goroutine onto a different OS thread between cgo calls.
 
+#include <parakeet.h>
 #include <whisper.h>
 
 #include <cstring>
@@ -74,6 +75,53 @@ int whisper_safe_free(
     if (err_buf != nullptr && err_buf_size > 0) err_buf[0] = '\0';
     try {
         whisper_free(ctx);
+        return 0;
+    } catch (const std::exception& e) {
+        copy_err(err_buf, err_buf_size, e.what());
+        return -1;
+    } catch (...) {
+        copy_err(err_buf, err_buf_size, "unknown C++ exception");
+        return -1;
+    }
+}
+
+// Loads a Parakeet model on the given GPU, or on the CPU if use_gpu is false.
+// Returns nullptr with a message in err_buf on failure.
+struct parakeet_context* parakeet_safe_init(
+    const char* path, bool use_gpu, int gpu_device,
+    char* err_buf, size_t err_buf_size) {
+    if (err_buf != nullptr && err_buf_size > 0) err_buf[0] = '\0';
+    try {
+        struct parakeet_context_params params = parakeet_context_default_params();
+        params.use_gpu = use_gpu;
+        params.gpu_device = gpu_device;
+        struct parakeet_context* ctx = parakeet_init_from_file_with_params(path, params);
+        if (ctx == nullptr) {
+            copy_err(err_buf, err_buf_size, "failed to load model");
+        }
+        return ctx;
+    } catch (const std::exception& e) {
+        copy_err(err_buf, err_buf_size, e.what());
+        return nullptr;
+    } catch (...) {
+        copy_err(err_buf, err_buf_size, "unknown C++ exception");
+        return nullptr;
+    }
+}
+
+// Transcribes 16 kHz mono samples with greedy decoding. Returns 0 on success,
+// or -1 with a message in err_buf if the model failed or threw.
+int parakeet_safe_full(
+    struct parakeet_context* ctx, const float* samples, int n_samples, int n_threads,
+    char* err_buf, size_t err_buf_size) {
+    if (err_buf != nullptr && err_buf_size > 0) err_buf[0] = '\0';
+    try {
+        struct parakeet_full_params params = parakeet_full_default_params(PARAKEET_SAMPLING_GREEDY);
+        params.n_threads = n_threads;
+        if (parakeet_full(ctx, params, samples, n_samples) != 0) {
+            copy_err(err_buf, err_buf_size, "inference failed");
+            return -1;
+        }
         return 0;
     } catch (const std::exception& e) {
         copy_err(err_buf, err_buf_size, e.what());

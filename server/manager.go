@@ -44,6 +44,7 @@ type SimManager struct {
 
 	// Helpers and such
 	wxProvider *wx.Provider
+	sttReports *sttReportStore // nil unless the server saves STT reports
 	lg         *log.Logger
 
 	// mu guards the session tables and every session's connections. It is
@@ -70,6 +71,15 @@ func NewSimManager(config LaunchConfig, tables *scenario.Tables, lg *log.Logger)
 		lg:              lg,
 	}
 	sm.scenarios.Store(tables)
+
+	if config.STTReportDir != "" {
+		s, err := newSTTReportStore(config.STTReportDir, config.STTReportMaxBytes, lg)
+		if err != nil {
+			lg.Errorf("Not saving STT reports: %v", err)
+		} else {
+			sm.sttReports = s
+		}
+	}
 
 	sm.launchHTTPServer()
 
@@ -1034,27 +1044,46 @@ func (sm *SimManager) ReportWhisperBenchmark(report *WhisperBenchmarkReport, _ *
 ///////////////////////////////////////////////////////////////////////////
 // STT Log Reporting
 
-// STTLogArgs contains STT command data for logging (sent by local sim clients).
+// STTLogArgs is what a client reports about a voice transmission when the
+// user allows it: the whisper result that vice acted on, the results of the
+// speech recognizers that ran on it only for comparison, and its audio.
 type STTLogArgs struct {
-	Callsign          string
-	Commands          string
-	WhisperDuration   time.Duration
-	AudioDuration     time.Duration
-	WhisperTranscript string
-	WhisperPrompt     string
-	WhisperProcessor  string
-	WhisperModel      string
-	AircraftContext   map[string]stt.Aircraft
-	STTDebugLogs      []string
+	SessionID           string // Random ID that each run of vice picks, to group its reports
+	Callsign            string
+	Commands            string
+	WhisperDuration     time.Duration
+	AudioDuration       time.Duration
+	WhisperTranscript   string
+	WhisperPrompt       string
+	WhisperProcessor    string
+	WhisperModel        string
+	ControllerRadioName string
+	AircraftContext     map[string]stt.Aircraft
+	STTDebugLogs        []string
+	Alternates          []STTAlternate
+	WAV                 []byte // The audio, as a 16 kHz mono 16-bit WAV file
+}
+
+// STTAlternate is the result of a speech recognizer that ran on a
+// transmission only for comparison.
+type STTAlternate struct {
+	Model      string `json:"model"`
+	LatencyMs  int64  `json:"latency_ms"`
+	Transcript string `json:"transcript"`
+	Callsign   string `json:"callsign"`
+	Command    string `json:"command"`         // The decoded command, or "Error: " and why decoding failed
+	Error      string `json:"error,omitempty"` // Why transcription failed
 }
 
 const ReportSTTLogRPC = "SimManager.ReportSTTLog"
 
-// ReportSTTLog receives STT command data from local sim clients and logs it.
+// ReportSTTLog logs a client's report of a voice transmission and, if the
+// server saves reports, saves it with its audio.
 func (sm *SimManager) ReportSTTLog(args *STTLogArgs, _ *struct{}) error {
 	defer sm.lg.CatchAndReportCrash()
 
 	sm.lg.Info("STT command",
+		slog.String("session", args.SessionID),
 		slog.String("transcript", args.WhisperTranscript),
 		slog.String("whisper_prompt", args.WhisperPrompt),
 		slog.Float64("whisper_duration_ms", float64(args.WhisperDuration.Microseconds())/1000.0),
@@ -1063,8 +1092,13 @@ func (sm *SimManager) ReportSTTLog(args *STTLogArgs, _ *struct{}) error {
 		slog.String("whisper_model", args.WhisperModel),
 		slog.String("callsign", args.Callsign),
 		slog.String("command", args.Commands),
+		slog.Any("alternates", args.Alternates),
 		slog.Any("stt_aircraft", args.AircraftContext),
 		slog.Any("logs", args.STTDebugLogs))
+
+	if sm.sttReports != nil {
+		sm.sttReports.Save(args)
+	}
 
 	return nil
 }

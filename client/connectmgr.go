@@ -40,18 +40,20 @@ type ConnectionManager struct {
 	client              *ControlClient
 	connectionStartTime time.Time
 	ttsEnabled          func() bool // Evaluated per command so the user's setting can change at runtime
+	sttReportsEnabled   func() bool // Evaluated per transmission, like ttsEnabled
 
 	onNewClient func(*ControlClient)
 	onError     func(error)
 }
 
-func MakeServerManager(serverAddress string, ttsEnabled func() bool, lg *log.Logger,
+func MakeServerManager(serverAddress string, ttsEnabled, sttReportsEnabled func() bool, lg *log.Logger,
 	onNewClient func(*ControlClient), onError func(error)) (*ConnectionManager, util.ErrorLogger) {
 	cm := &ConnectionManager{
 		serverAddress:           serverAddress,
 		lastRemoteServerAttempt: time.Now(),
 		remoteSimServerChan:     TryConnectRemoteServer(serverAddress, lg),
 		ttsEnabled:              ttsEnabled,
+		sttReportsEnabled:       sttReportsEnabled,
 		onNewClient:             onNewClient,
 		onError:                 onError,
 	}
@@ -66,10 +68,11 @@ func MakeServerManager(serverAddress string, ttsEnabled func() bool, lg *log.Log
 func MakeLocalServerManager(ttsEnabled func() bool, lg *log.Logger,
 	onNewClient func(*ControlClient), onError func(error)) (*ConnectionManager, util.ErrorLogger) {
 	cm := &ConnectionManager{
-		localOnly:   true,
-		ttsEnabled:  ttsEnabled,
-		onNewClient: onNewClient,
-		onError:     onError,
+		localOnly:         true,
+		ttsEnabled:        ttsEnabled,
+		sttReportsEnabled: func() bool { return false },
+		onNewClient:       onNewClient,
+		onError:           onError,
 	}
 	errorLogger := cm.launchLocalServer("", lg)
 	return cm, errorLogger
@@ -125,11 +128,11 @@ func (cm *ConnectionManager) LoadLocalSim(s *sim.Sim, initials string, lg *log.L
 		return nil, err
 	}
 
-	cm.client = NewControlClient(*result.SimState, result.ControllerToken, cm.ttsEnabled, initials,
-		cm.LocalServer.RPCClient, lg)
+	cm.client = NewControlClient(*result.SimState, result.ControllerToken, cm.ttsEnabled, cm.sttReportsEnabled,
+		initials, cm.LocalServer.RPCClient, lg)
 	cm.connectionStartTime = time.Now()
 
-	// Set remote server for STT log reporting (local sims report to remote server)
+	// STT reports go to the remote server.
 	if cm.RemoteServer != nil {
 		cm.client.SetRemoteServer(cm.RemoteServer.RPCClient)
 	}
@@ -162,10 +165,15 @@ func (cm *ConnectionManager) handleSuccessfulConnection(result server.NewSimResu
 		cm.client.Disconnect()
 	}
 
-	cm.client = NewControlClient(*result.SimState, result.ControllerToken, cm.ttsEnabled, initials,
-		srv.RPCClient, lg)
+	cm.client = NewControlClient(*result.SimState, result.ControllerToken, cm.ttsEnabled, cm.sttReportsEnabled,
+		initials, srv.RPCClient, lg)
 
 	cm.connectionStartTime = time.Now()
+
+	// STT reports go to the remote server, whether the sim is local or runs there.
+	if cm.RemoteServer != nil {
+		cm.client.SetRemoteServer(cm.RemoteServer.RPCClient)
+	}
 
 	if cm.onNewClient != nil {
 		cm.onNewClient(cm.client)

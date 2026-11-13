@@ -6,13 +6,11 @@ package server
 
 import (
 	"fmt"
-	"log/slog"
 	"time"
 
 	av "github.com/mmp/vice/aviation"
 	"github.com/mmp/vice/math"
 	"github.com/mmp/vice/sim"
-	"github.com/mmp/vice/speech/stt"
 	"github.com/mmp/vice/util"
 	"github.com/mmp/vice/videomaps"
 )
@@ -568,11 +566,6 @@ type AircraftCommandsArgs struct {
 	WhisperDuration   time.Duration // Time from PTT release until the transcript was decoded (zero for keyboard input)
 	AudioDuration     time.Duration // Duration of the recorded audio (zero for keyboard input)
 	WhisperTranscript string        // Raw whisper transcript (empty for keyboard input)
-	WhisperPrompt     string        // Initial prompt given to whisper (empty for keyboard input)
-	WhisperProcessor  string        // Description of the processor running whisper (GPU model or CPU info)
-	WhisperModel      string
-	AircraftContext   map[string]stt.Aircraft // Aircraft context used for STT decoding (for logging)
-	STTDebugLogs      []string                // Local STT processing logs (for logging)
 }
 
 // If an RPC call returns an error, then the result argument is not returned(!?).
@@ -638,21 +631,6 @@ func (sd *dispatcher) RunAircraftCommands(cmds *AircraftCommandsArgs, result *Ai
 		}
 		return execResult.Error
 	})
-
-	// Log whisper STT commands (WhisperDuration is non-zero for voice commands)
-	if cmds.WhisperDuration > 0 {
-		sd.sm.lg.Info("STT command",
-			slog.String("transcript", cmds.WhisperTranscript),
-			slog.String("whisper_prompt", cmds.WhisperPrompt),
-			slog.Float64("whisper_duration_ms", float64(cmds.WhisperDuration.Microseconds())/1000.0),
-			slog.Float64("audio_duration_ms", float64(cmds.AudioDuration.Microseconds())/1000.0),
-			slog.String("processor", cmds.WhisperProcessor),
-			slog.String("whisper_model", cmds.WhisperModel),
-			slog.String("callsign", string(cmds.Callsign)),
-			slog.String("command", cmds.Commands),
-			slog.Any("stt_aircraft", cmds.AircraftContext),
-			slog.Any("logs", cmds.STTDebugLogs))
-	}
 
 	return nil
 }

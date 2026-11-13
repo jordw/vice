@@ -67,6 +67,10 @@ func uiShowDiscordOptInDialog(p platform.Platform, config *Config) {
 	uiShowModalDialog(gui.NewModalDialog(&DiscordOptInModalClient{config: config}, p), true)
 }
 
+func uiShowSTTReportsOptInDialog(p platform.Platform, config *Config) {
+	uiShowModalDialog(gui.NewModalDialog(&STTReportsOptInModalClient{config: config}, p), true)
+}
+
 func uiShowTargetGenCommandModeDialog(p platform.Platform, config *Config) {
 	client := &NotifyTargetGenModalClient{notifiedNew: &config.NotifiedTargetGenMode}
 	uiShowModalDialog(gui.NewModalDialog(client, p), true)
@@ -379,6 +383,56 @@ func (d *DiscordOptInModalClient) Draw() int {
 	update := !d.config.InhibitDiscordActivity
 	imgui.Checkbox("Update Discord activity status", &update)
 	d.config.InhibitDiscordActivity = !update
+
+	return -1
+}
+
+type STTReportsOptInModalClient struct {
+	config *Config
+}
+
+func (s *STTReportsOptInModalClient) Title() string {
+	return "Voice Recordings for Speech Recognition"
+}
+
+func (s *STTReportsOptInModalClient) Opening() {}
+
+func (s *STTReportsOptInModalClient) Buttons() []gui.DialogButton {
+	return []gui.DialogButton{
+		{
+			Text: "Ok",
+			Action: func() bool {
+				s.config.AskedSTTReportsOptIn = true
+				return true
+			},
+		},
+	}
+}
+
+func (s *STTReportsOptInModalClient) Draw() int {
+	style := imgui.CurrentStyle()
+	spc := style.ItemSpacing()
+	spc.Y -= 4
+	imgui.PushStyleVarVec2(imgui.StyleVarItemSpacing, spc)
+
+	imgui.Text("By default, when you give instructions by voice, vice sends a recording of")
+	imgui.Text("each transmission to the vice server, with its transcript, the commands that")
+	imgui.Text("vice decoded from it, and information about the aircraft in your sim. The")
+	imgui.Text("vice developers use them to test and improve speech recognition. To compare")
+	imgui.Text("speech recognizers, vice also runs two more of them on each transmission that")
+	imgui.Text("it sends.")
+	imgui.Text("")
+	imgui.Text("If you do not want vice to do this, you can disable this feature using the")
+	imgui.Text("checkbox below. You can also change this setting any time in the future in")
+	imgui.Text("the Speech to Text section of the settings window " + gui.Icons.Cog + " via the menu bar.")
+
+	imgui.PopStyleVar()
+
+	imgui.Text("")
+
+	send := !s.config.InhibitSTTReports
+	imgui.Checkbox("Send voice recordings to improve speech recognition", &send)
+	s.config.InhibitSTTReports = !send
 
 	return -1
 }

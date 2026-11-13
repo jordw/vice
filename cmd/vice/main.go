@@ -621,7 +621,8 @@ func runGUI(config *Config, configErr error, lg *log.Logger) error {
 		db.InitDB()
 		nav.InitNavLog(*navLog, *navLogCategories, *navLogCallsign)
 		mgr, errorLogger = client.MakeServerManager(*serverAddress,
-			func() bool { return !config.DisableTextToSpeech && plat.AudioPlaybackError() == nil }, lg,
+			func() bool { return !config.DisableTextToSpeech && plat.AudioPlaybackError() == nil },
+			func() bool { return !config.InhibitSTTReports }, lg,
 			func(c *client.ControlClient) { // updated client
 				if c != nil {
 					// Determine if this is a STARS or ERAM scenario

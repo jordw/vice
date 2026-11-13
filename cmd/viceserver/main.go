@@ -40,6 +40,8 @@ var (
 	navLogCallsign   = flag.String("navlog-callsign", "", "filter navigation logs to only show this `callsign`")
 	smoketest        = flag.Duration("smoketest", 0, "load the scenarios, run a sim with an RPC client attached for this long, and exit; for CI under -race")
 	wxFacilities     = flag.String("wxfacilities", "", "write the weather pipeline's airport and facility list as JSON to `file` and exit")
+	sttReportDir     = flag.String("sttreports", "", "save the voice transmissions that clients report, with their audio, in `directory`")
+	sttReportMaxGB   = flag.Float64("sttreports-max-gb", 50, "stop saving voice transmissions when their directory holds this many `gigabytes`")
 )
 
 // writeWXFacilities writes the list that wxingest and wxpackage use to decide
@@ -114,9 +116,11 @@ func run(lg *log.Logger) error {
 	nav.InitNavLog(*navLogEnabled, *navLogCategories, *navLogCallsign)
 
 	config := server.LaunchConfig{
-		Port:          *serverPort,
-		ServerAddress: *serverAddress,
-		IsLocal:       false,
+		Port:              *serverPort,
+		ServerAddress:     *serverAddress,
+		IsLocal:           false,
+		STTReportDir:      *sttReportDir,
+		STTReportMaxBytes: int64(*sttReportMaxGB * (1 << 30)),
 	}
 
 	if *smoketest > 0 {

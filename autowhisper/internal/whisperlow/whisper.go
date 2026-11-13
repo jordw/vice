@@ -17,13 +17,19 @@ import (
 #cgo linux LDFLAGS: -lstdc++ -fopenmp
 #cgo darwin LDFLAGS: ${SRCDIR}/../../../whisper.cpp/build_go/ggml/src/ggml-blas/libggml-blas.a ${SRCDIR}/../../../whisper.cpp/build_go/ggml/src/ggml-metal/libggml-metal.a -framework Accelerate -framework Metal -framework Foundation -framework CoreGraphics -lstdc++
 #cgo windows LDFLAGS: -static-libstdc++ -static-libgcc -lpthread
+#include <parakeet.h>
 #include <whisper.h>
 #include <stdlib.h>
 #include <string.h>
 
-// no-op logger to silence library output
+// no-op logger to silence library output. The bridges set the Parakeet
+// library's logger along with whisper's, since vice loads Parakeet models
+// through this package too.
 static void cb_log_disable(enum ggml_log_level level, const char * text, void * user_data) { (void)level; (void)text; (void)user_data; }
-static void whisper_log_set_silent_bridge() { whisper_log_set(cb_log_disable, NULL); }
+static void whisper_log_set_silent_bridge() {
+    whisper_log_set(cb_log_disable, NULL);
+    parakeet_log_set(cb_log_disable, NULL);
+}
 
 // Try/catch-wrapped init, inference, and free functions defined in
 // whisper_safe.cpp. The error message (when the wrapped call throws) is
@@ -49,7 +55,10 @@ static void cb_log_forward(enum ggml_log_level level, const char * text, void * 
         callWhisperLog((int)level, (char*)text);
     }
 }
-static void whisper_log_set_forward_bridge() { whisper_log_set(cb_log_forward, NULL); }
+static void whisper_log_set_forward_bridge() {
+    whisper_log_set(cb_log_forward, NULL);
+    parakeet_log_set(cb_log_forward, NULL);
+}
 
 extern void callNewSegment(void* user_data, int new);
 extern void callProgress(void* user_data, int progress);

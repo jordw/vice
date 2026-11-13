@@ -139,6 +139,12 @@ type LaunchConfig struct {
 	Port          int    // if 0, finds an open one
 	ServerAddress string // address to use for remote TTS provider
 	IsLocal       bool
+
+	// Where to save the voice transmissions that clients report, and how
+	// many bytes of them to keep. The server only logs them if
+	// STTReportDir is empty.
+	STTReportDir      string
+	STTReportMaxBytes int64
 }
 
 func LaunchServer(config LaunchConfig, lg *log.Logger) {

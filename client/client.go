@@ -28,11 +28,12 @@ import (
 type ControlClient struct {
 	controllerToken string
 	client          *RPCClient
-	remoteServer    *RPCClient // Remote server for STT log reporting (set when running local sim)
+	remoteServer    *RPCClient // Remote server for STT reports
 
 	// Speech/TTS management
 	transmissions         *TransmissionManager
 	ttsEnabled            func() bool
+	sttReportsEnabled     func() bool
 	sttActive             bool
 	LastTranscription     string
 	LastCommand           string
@@ -236,8 +237,8 @@ func (p *pendingCall) InvokeCallback(c *ControlClient) {
 	}
 }
 
-func NewControlClient(ss server.SimState, controllerToken string, ttsEnabled func() bool, initials string,
-	client *RPCClient, lg *log.Logger) *ControlClient {
+func NewControlClient(ss server.SimState, controllerToken string, ttsEnabled, sttReportsEnabled func() bool,
+	initials string, client *RPCClient, lg *log.Logger) *ControlClient {
 	cc := &ControlClient{
 		controllerToken:   controllerToken,
 		client:            client,
@@ -246,6 +247,7 @@ func NewControlClient(ss server.SimState, controllerToken string, ttsEnabled fun
 		State:             SimState{ss},
 		transmissions:     NewTransmissionManager(lg),
 		ttsEnabled:        ttsEnabled,
+		sttReportsEnabled: sttReportsEnabled,
 		sttTranscriber:    stt.NewTranscriber(lg),
 	}
 

@@ -143,6 +143,9 @@ func uiInit(r renderer.Renderer, p platform.Platform, config *Config, lg *log.Lo
 	if !config.AskedDiscordOptIn {
 		uiShowDiscordOptInDialog(p, config)
 	}
+	if !config.AskedSTTReportsOptIn {
+		uiShowSTTReportsOptInDialog(p, config)
+	}
 	if !config.NotifiedTargetGenMode {
 		uiShowTargetGenCommandModeDialog(p, config)
 	}
@@ -1054,6 +1057,10 @@ func uiDrawSettingsWindow(c *client.ControlClient, config *Config, activeRadarSc
 			}
 			imgui.EndCombo()
 		}
+
+		send := !config.InhibitSTTReports
+		imgui.Checkbox("Send voice recordings to improve speech recognition", &send)
+		config.InhibitSTTReports = !send
 
 		// Test PTT button
 		if ui.testPTTActive {

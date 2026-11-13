@@ -7,13 +7,11 @@ package client
 import (
 	"time"
 
-	whisper "github.com/mmp/vice/autowhisper"
 	av "github.com/mmp/vice/aviation"
 	"github.com/mmp/vice/math"
 	"github.com/mmp/vice/platform/audio"
 	"github.com/mmp/vice/server"
 	"github.com/mmp/vice/sim"
-	"github.com/mmp/vice/speech/stt"
 	"github.com/mmp/vice/videomaps"
 )
 
@@ -30,10 +28,6 @@ type AircraftCommandRequest struct {
 	WhisperDuration   time.Duration
 	AudioDuration     time.Duration
 	WhisperTranscript string
-	WhisperPrompt     string
-	WhisperModel      string
-	AircraftContext   map[string]stt.Aircraft
-	STTDebugLogs      []string
 }
 
 func (c *ControlClient) LaunchAircraft(flight sim.LaunchFlight, callback func(error)) {
@@ -472,12 +466,6 @@ func (c *ControlClient) RunAircraftCommands(req AircraftCommandRequest,
 		c.transmissions.Hold()
 	}
 
-	// Get processor info for voice commands
-	var processorDesc string
-	if req.WhisperDuration > 0 {
-		processorDesc = whisper.ProcessorDescription()
-	}
-
 	rpcStart := time.Now()
 	var result server.AircraftCommandsResult
 	c.addCall(makeRPCCall(c.client.Go(server.RunAircraftCommandsRPC, &server.AircraftCommandsArgs{
@@ -490,11 +478,6 @@ func (c *ControlClient) RunAircraftCommands(req AircraftCommandRequest,
 		WhisperDuration:   req.WhisperDuration,
 		AudioDuration:     req.AudioDuration,
 		WhisperTranscript: req.WhisperTranscript,
-		WhisperPrompt:     req.WhisperPrompt,
-		WhisperProcessor:  processorDesc,
-		WhisperModel:      req.WhisperModel,
-		AircraftContext:   req.AircraftContext,
-		STTDebugLogs:      req.STTDebugLogs,
 	}, &result, nil),
 		func(err error) {
 			rpcDuration := time.Since(rpcStart)

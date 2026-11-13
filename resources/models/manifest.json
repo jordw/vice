@@ -7,6 +7,14 @@
     "hash": "c009de99eca9a979340e33a288528a491d5ecb79d007879685b1483957779367",
     "size": 539225533
   },
+  "ggml-parakeet-tdt-0.6b-v3-f16.bin": {
+    "hash": "833bffc9513b2cae867ee9e51633cfd11e4d51aaa5597c8ac02159385a2b426f",
+    "size": 1255897319
+  },
+  "ggml-parakeet-tdt-0.6b-v3-q8_0.bin": {
+    "hash": "ea8000f18ae5d347f47973ff0517f673c7a9d65711d6bb6765ef3b20e4baadf5",
+    "size": 668757119
+  },
   "ggml-small.en-jlvatc-q5_0.bin": {
     "hash": "b861692c042876ce3134e607292d8f90bed2bc1eb5a1e74500576e8ca89d85f1",
     "size": 175222905

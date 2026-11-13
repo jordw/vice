@@ -56,6 +56,8 @@ type Config struct {
 
 	AskedDiscordOptIn      bool
 	InhibitDiscordActivity bool
+	AskedSTTReportsOptIn   bool
+	InhibitSTTReports      bool
 	NotifiedTargetGenMode  bool
 	DisableTextToSpeech    bool
 	TTSPlaybackSpeed       float32

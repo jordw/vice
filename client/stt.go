@@ -1304,6 +1304,10 @@ func (c *ControlClient) StartStreamingSTT(lg *log.Logger) error {
 		return fmt.Errorf("whisper model load: %w", whisperModelErr)
 	}
 
+	if c.sttReportsEnabled() {
+		loadParakeetModels(lg)
+	}
+
 	// Snapshot state for prompt construction
 	state := c.State
 
@@ -1367,7 +1371,7 @@ func (c *ControlClient) StopStreamingSTT(lg *log.Logger) {
 		defer lg.CatchAndReportCrash()
 
 		// Get final transcription from whisper
-		finalText, audioDuration, sttErr := sttSession.transcriber.Stop()
+		finalText, audioDuration, audio, sttErr := sttSession.transcriber.StopWithAudio()
 		whisperDuration := time.Since(pttReleaseTime)
 
 		if sttErr != nil {
@@ -1382,15 +1386,6 @@ func (c *ControlClient) StopStreamingSTT(lg *log.Logger) {
 
 		c.mu.Unlock()
 
-		if finalText == "" || finalText == "[BLANK_AUDIO]" {
-			c.transmissions.Unhold()
-			if audioDuration >= 2*time.Second {
-				c.transmissions.HoldForRetransmit()
-			}
-			c.postSTTEvent("", "", "")
-			return
-		}
-
 		// Build aircraft context before decoding
 		aircraftCtx := c.sttTranscriber.BuildAircraftContext(&c.State.UserState, c.State.UserTCW)
 
@@ -1401,6 +1396,30 @@ func (c *ControlClient) StopStreamingSTT(lg *log.Logger) {
 			controllerRadioName = ctrl.RadioName
 		}
 
+		// If the user allows reports, every transmission is reported,
+		// including those in which whisper heard nothing. The report goes
+		// after the command, so the comparison models never delay it.
+		report := &server.STTLogArgs{
+			WhisperDuration:     whisperDuration,
+			AudioDuration:       audioDuration,
+			WhisperTranscript:   finalText,
+			WhisperPrompt:       sttSession.prompt,
+			WhisperProcessor:    whisper.ProcessorDescription(),
+			WhisperModel:        GetWhisperModelName(),
+			ControllerRadioName: controllerRadioName,
+			AircraftContext:     aircraftCtx,
+		}
+		defer c.reportSTT(lg, report, audio)
+
+		if finalText == "" || finalText == "[BLANK_AUDIO]" {
+			c.transmissions.Unhold()
+			if audioDuration >= 2*time.Second {
+				c.transmissions.HoldForRetransmit()
+			}
+			c.postSTTEvent("", "", "")
+			return
+		}
+
 		// Start capturing debug logs
 		stt.StartCapture()
 
@@ -1408,19 +1427,19 @@ func (c *ControlClient) StopStreamingSTT(lg *log.Logger) {
 		decoded, err := c.sttTranscriber.DecodeTranscript(aircraftCtx, finalText, controllerRadioName)
 
 		// Stop capturing and get debug logs
-		debugLogs := stt.StopCapture()
+		report.STTDebugLogs = stt.StopCapture()
 
 		totalDuration := time.Since(pttReleaseTime)
+		report.WhisperDuration = totalDuration
 		timingStr := fmt.Sprintf("%.0fms", float64(totalDuration.Microseconds())/1000)
 
 		if err != nil {
 			lg.Infof("STT decode error: %v", err)
+			report.Commands = "Error: " + err.Error()
 			c.transmissions.Unhold()
 			c.postSTTEvent(finalText, "Error: "+err.Error(), timingStr)
 			return
 		}
-
-		whisperModelName := GetWhisperModelName()
 
 		var callsign, command string
 		if decoded == "" {
@@ -1433,6 +1452,7 @@ func (c *ControlClient) StopStreamingSTT(lg *log.Logger) {
 		} else {
 			// Parse callsign and command from decoded result
 			callsign, command, _ = strings.Cut(decoded, " ")
+			report.Callsign, report.Commands = callsign, command
 			lg.Infof("STT command: %s %s", callsign, command)
 
 			c.SetLastCommand(decoded)
@@ -1461,41 +1481,12 @@ func (c *ControlClient) StopStreamingSTT(lg *log.Logger) {
 				WhisperDuration:   totalDuration,
 				AudioDuration:     audioDuration,
 				WhisperTranscript: finalText,
-				WhisperPrompt:     sttSession.prompt,
-				WhisperModel:      whisperModelName,
-				AircraftContext:   aircraftCtx,
-				STTDebugLogs:      debugLogs,
 			}, func(err error, remainingInput string) {
 				c.transmissions.Unhold()
 				if err != nil {
 					lg.Infof("STT command result: %v", err)
 				}
 			})
-		}
-
-		// Report STT to server for logging, including no-command cases.
-		// For local sim clients with a remote server, send to remoteServer.
-		// For no-command cases without a remote server (remote sim client),
-		// send directly since the dispatcher won't log it.
-		c.mu.Lock()
-		remoteServer := c.remoteServer
-		c.mu.Unlock()
-		sttLogArgs := &server.STTLogArgs{
-			Callsign:          callsign,
-			Commands:          command,
-			WhisperDuration:   totalDuration,
-			AudioDuration:     audioDuration,
-			WhisperTranscript: finalText,
-			WhisperPrompt:     sttSession.prompt,
-			WhisperProcessor:  whisper.ProcessorDescription(),
-			WhisperModel:      whisperModelName,
-			AircraftContext:   aircraftCtx,
-			STTDebugLogs:      debugLogs,
-		}
-		if remoteServer != nil {
-			go remoteServer.Go(server.ReportSTTLogRPC, sttLogArgs, nil, nil)
-		} else if decoded == "" {
-			go c.client.Go(server.ReportSTTLogRPC, sttLogArgs, nil, nil)
 		}
 	}()
 }
