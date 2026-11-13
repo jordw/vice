@@ -15,7 +15,7 @@
   "processor": "GPU: NVIDIA GeForce RTX 3060 (12113MB)",
   "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
   "callsign": "RPA2085",
-  "command": "S180 TD30",
+  "command": "S180 D30",
   "stt_aircraft": {
     "Brickyard 20 85": {
       "Callsign": "RPA2085",

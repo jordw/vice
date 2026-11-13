@@ -15,7 +15,7 @@
   "processor": "GPU: NVIDIA GeForce GTX 1650 (4151MB)",
   "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
   "callsign": "JBU951",
-  "command": "TRAFFIC/3/6/59",
+  "command": "TRAFFIC/3/6/50",
   "stt_aircraft": {
     "American one 60": {
       "Callsign": "AAL160",

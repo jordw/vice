@@ -15,7 +15,7 @@
   "processor": "GPU: NVIDIA GeForce RTX 4050 Laptop GPU (5921MB)",
   "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
   "callsign": "UAL6058",
-  "command": "AGAIN",
+  "command": "R270",
   "stt_aircraft": {
     "American 66 38": {
       "Callsign": "AAL6638",

@@ -72,6 +72,17 @@ func commandEquivalent(expected, actual string, ac Aircraft, hasAircraftContext 
 		return true
 	}
 
+	// The simulator sends an aircraft that was cleared for an approach to
+	// the tower when it is told to contact the next controller, so the two
+	// commands are the same instruction for it. "on approach" is how older
+	// test files name that state.
+	if hasAircraftContext && (ac.State == stateClearedApproach || ac.State == "on approach") {
+		isTower := func(cmd string) bool { return cmd == "TO" || strings.HasPrefix(cmd, "TO/") }
+		if expected == "FC" && isTower(actual) || isTower(expected) && actual == "FC" {
+			return true
+		}
+	}
+
 	// A visual-approach clearance with and without the runway direction
 	// letter is the same instruction: when the controller says just
 	// "runway two two", the sim resolves the bare number to the unique
@@ -108,7 +119,7 @@ func commandEquivalent(expected, actual string, ac Aircraft, hasAircraftContext 
 		}
 
 		// Check if they're altitude commands (A, D, or C followed by digits)
-		if !IsNumber(expAlt) {
+		if !isDigits(expAlt) {
 			return false
 		}
 

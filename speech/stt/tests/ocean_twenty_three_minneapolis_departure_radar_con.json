@@ -15,11 +15,14 @@
   "processor": "GPU: NVIDIA GeForce RTX 5060 Ti (16050MB)",
   "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
   "callsign": "OCN23",
-  "command": "A100",
+  "command": "A100 DDLH",
   "stt_aircraft": {
     "Ocean 23 heavy": {
       "Callsign": "OCN23",
       "AircraftType": "A333",
+      "Fixes": {
+        "Duluth": "DLH"
+      },
       "SID": "MSP9",
       "Altitude": 3071,
       "State": "departure",

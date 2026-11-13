@@ -15,7 +15,7 @@
   "processor": "GPU: NVIDIA GeForce RTX 4060 Ti (7949MB)",
   "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
   "callsign": "UAL8282",
-  "command": "D60",
+  "command": "H180 D60",
   "stt_aircraft": {
     "SkyWest 81 97": {
       "Callsign": "SKW8197",

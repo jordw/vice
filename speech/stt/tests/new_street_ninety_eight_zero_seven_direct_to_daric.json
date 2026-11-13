@@ -15,7 +15,7 @@
   "processor": "GPU: AMD Radeon RX 580 2048SP (8192MB)",
   "whisper_model": "ggml-small.en-jlvatc-q5_0.bin",
   "callsign": "JIA9807",
-  "command": "CRIV",
+  "command": "DDARIC CRIV",
   "stt_aircraft": {
     "American 72": {
       "Callsign": "AAL72",

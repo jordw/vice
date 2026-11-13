@@ -15,7 +15,7 @@
   "processor": "GPU: NVIDIA GeForce RTX 5070 (11943MB)",
   "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
   "callsign": "DAL646",
-  "command": "EI1L A80",
+  "command": "SAYAGAIN/APPROACH A80",
   "stt_aircraft": {
     "American six 58": {
       "Callsign": "AAL658",

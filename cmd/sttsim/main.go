@@ -6,19 +6,21 @@
 //
 // Usage:
 //
-//	# Compare string similarity
+//	# Compare how two words or phrases sound
 //	go run ./cmd/sttsim "localizer" "laser"
-//	go run ./cmd/sttsim "heading" "descending"
+//	go run ./cmd/sttsim "fly heading" "flighting"
 //
-//	# Test transcript normalization
+//	# Show how a transcript is read
 //	go run ./cmd/sttsim -norm "five hundred"
 //	go run ./cmd/sttsim -norm "two thousand five hundred"
 //
-// Similarity mode shows the combined WordScore, its Jaro-Winkler and
-// Double Metaphone components, PhoneticMatch, and FuzzyMatch results at
-// various thresholds.
+// Similarity mode shows the phonemes the decoder hears in each argument
+// and the similarity it measures between them. The first argument is what
+// the recognizer wrote and the second is the phraseology it is compared
+// with.
 //
-// Normalization mode shows how a transcript is normalized before parsing.
+// Normalization mode shows the words of a transcript as the decoder reads
+// them, with numbers and altitudes combined.
 package main
 
 import (
@@ -64,35 +66,22 @@ func printUsage() {
 
 func runNormalize(transcript string) {
 	fmt.Printf("Input:  %q\n", transcript)
-	result := stt.NormalizeTranscript(transcript)
-	fmt.Printf("Output: %v\n", result)
-	fmt.Printf("Joined: %q\n", strings.Join(result, " "))
+	var texts []string
+	for _, w := range stt.ReadWords(transcript) {
+		switch w.Kind {
+		case stt.WordNumber:
+			texts = append(texts, "number:"+w.Text)
+		case stt.WordAltitude:
+			texts = append(texts, "altitude:"+w.Text)
+		default:
+			texts = append(texts, w.Text)
+		}
+	}
+	fmt.Printf("Output: %v\n", texts)
 }
 
-func runSimilarity(w1, w2 string) {
-	// The combined score used throughout the parser
-	fmt.Printf("WordScore: %.4f\n", stt.WordScore(w1, w2))
-
-	// Jaro-Winkler score
-	jw := stt.JaroWinkler(w1, w2)
-	fmt.Printf("\nJaro-Winkler: %.4f\n", jw)
-
-	// Double Metaphone encodings
-	p1, a1 := stt.DoubleMetaphone(w1)
-	p2, a2 := stt.DoubleMetaphone(w2)
-	fmt.Printf("\nDouble Metaphone:\n")
-	fmt.Printf("  %q: primary=%q alternate=%q\n", w1, p1, a1)
-	fmt.Printf("  %q: primary=%q alternate=%q\n", w2, p2, a2)
-
-	// PhoneticMatch
-	pm := stt.PhoneticMatch(w1, w2)
-	fmt.Printf("\nPhoneticMatch: %v\n", pm)
-
-	// FuzzyMatch at various thresholds
-	fmt.Printf("\nFuzzyMatch:\n")
-	thresholds := []float64{0.70, 0.75, 0.80, 0.85, 0.90}
-	for _, t := range thresholds {
-		fm := stt.FuzzyMatch(w1, w2, t)
-		fmt.Printf("  threshold %.2f: %v\n", t, fm)
-	}
+func runSimilarity(heard, target string) {
+	fmt.Printf("Heard:  %q  [%s]\n", heard, stt.Pronunciation(heard))
+	fmt.Printf("Target: %q  [%s]\n", target, stt.Pronunciation(target))
+	fmt.Printf("Similarity: %.3f\n", stt.Similarity(strings.ToLower(heard), strings.ToLower(target)))
 }

@@ -14,8 +14,8 @@
   "audio_duration_ms": 5320,
   "processor": "GPU: NVIDIA GeForce RTX 4070 SUPER (11999MB)",
   "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
-  "callsign": "N914RY/T",
-  "command": "S170/U5 FC",
+  "callsign": "N482JY",
+  "command": "S170/U5 TO",
   "stt_aircraft": {
     "ExecJet 70 41": {
       "Callsign": "EJA7041",

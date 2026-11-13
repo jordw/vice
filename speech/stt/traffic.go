@@ -5,470 +5,259 @@
 package stt
 
 import (
+	"fmt"
+	"strconv"
 	"strings"
 )
 
-// This file extracts traffic advisories: o'clock position, distance in
-// miles, altitude, and the trailing visual-separation phrasing. The
-// extraction is phase-structured (position, then distance, then
-// altitude) since advisories follow that spoken order; numeric garble
-// recovery is delegated to DecodeNumber.
+// This file reads traffic advisories: "traffic, ten o'clock, five miles,
+// southeastbound, heavy Boeing triple seven, four thousand". The clock
+// position and the distance come first. What follows is a description
+// that the pilot needs only to recognize the traffic, and somewhere in it
+// the altitude. The description is free text, so it is skipped at a
+// small cost and the altitude is whatever in it reads as one.
 
-// extractTraffic extracts traffic advisory components: o'clock position, distance in miles, and altitude.
-// Pattern: "(N) o'clock, (M) miles, (direction), (aircraft type), (at) (altitude)"
-// Returns o'clock (1-12), miles, encoded altitude (in 100s of feet),
-// whether the altitude was given as "altitude unknown", whether other
-// traffic will maintain visual separation, and tokens consumed. The
-// direction and aircraft type are ignored.
-func extractTraffic(tokens []Token) (int, int, int, bool, bool, int) {
-	if len(tokens) == 0 {
-		return 0, 0, 0, false, false, 0
-	}
+const (
+	// trafficLookahead is how far past the previous item the clock
+	// position and the distance are looked for.
+	trafficLookahead = 4
+	// descriptionLength is how many words of description may precede the
+	// altitude.
+	descriptionLength = 14
+	// descriptionCost is the evidence lost, per unit of sound, for a word
+	// of the description.
+	descriptionCost = 0.03
+)
 
-	consumed := 0
-	var oclock, miles, alt int
-	var altUnknown bool
+var (
+	oclockWord = makeVocabWord("o'clock")
+	milesWords = []vocabWord{makeVocabWord("miles"), makeVocabWord("mile")}
+	unknownAlt = []vocabWord{makeVocabWord("altitude unknown"), makeVocabWord("unknown altitude")}
+)
 
-	// Phase 1: Find o'clock position (1-12)
-	for consumed < len(tokens) && consumed < 10 {
-		t := tokens[consumed]
-		text := strings.ToLower(t.Text)
+// aircraftTypeNumbers are numbers that name an aircraft type and so are
+// not an altitude.
+var aircraftTypeNumbers = map[string]bool{
+	"737": true, "738": true, "739": true, "757": true, "747": true, "767": true, "777": true, "787": true,
+	"319": true, "320": true, "321": true, "330": true, "340": true, "350": true, "380": true, "788": true,
+	"789": true, "748": true, "359": true,
+}
 
-		// Skip filler words
-		if IsFillerWord(text) || text == "at" || text == "your" {
-			consumed++
-			continue
-		}
-
-		// Check for number followed by "o'clock" or just a number in range
-		// 1-12. Merged-digit recovery ("eight eleven o'clock" -> 811 ->
-		// 11) requires the explicit "o'clock" anchor.
-		if t.Type == TokenNumber {
-			oclockFollows := consumed+1 < len(tokens) && FuzzyMatch(tokens[consumed+1].Text, "o'clock", 0.8)
-
-			if cands := DecodeNumber(tokens, consumed, NumberContext{Kind: NumOClock}); len(cands) > 0 &&
-				(cands[0].Score == numScoreLiteral || oclockFollows) {
-				oclock = cands[0].Value
-				if cands[0].Score < numScoreLiteral {
-					logLocalStt("  extractTraffic: extracted o'clock %d from merged %d", oclock, t.Value)
-				}
-				consumed++
-				// Skip "o'clock" if present
-				if oclockFollows {
-					consumed++
-				}
-				break
+// readTraffic reads a traffic advisory after the word "traffic" and
+// returns its command.
+func (d *decoding) readTraffic(pos int) []match {
+	var ms []match
+	for p := pos; p < len(d.tokens) && p <= pos+trafficLookahead; p++ {
+		for _, clock := range d.readNumbers(p) {
+			end, evidence := clock.end, clock.evidence
+			oclock := clock.value()
+			said := false
+			if q := d.spanSimilarity(end, 1, oclockWord); q > similarityFloor {
+				said = true
+				evidence += oclockWord.weight * gain(q)
+				end++
 			}
-		}
-		consumed++
-	}
-
-	if oclock == 0 {
-		return 0, 0, 0, false, false, 0
-	}
-
-	// Phase 2: Find distance in miles
-	for consumed < len(tokens) && consumed < 20 {
-		t := tokens[consumed]
-		text := strings.ToLower(t.Text)
-
-		// Skip filler words and punctuation-like words
-		if IsFillerWord(text) || text == "at" || text == "about" || text == "approximately" {
-			consumed++
-			continue
-		}
-
-		// Check for number followed by "miles" or "mile"
-		if t.Type == TokenNumber && t.Value >= 1 && t.Value <= 50 {
-			miles = t.Value
-			consumed++
-			// Skip "miles" or "mile" if present
-			if consumed < len(tokens) {
-				nextText := strings.ToLower(tokens[consumed].Text)
-				if FuzzyMatch(nextText, "miles", 0.8) || FuzzyMatch(nextText, "mile", 0.8) {
-					consumed++
+			if oclock < 1 || oclock > 12 {
+				// "Eight eleven o'clock": a word ran into the number.
+				if !said {
+					continue
+				}
+				if v := oclock % 100; v >= 1 && v <= 12 {
+					oclock = v
+				} else if v := oclock % 10; v >= 1 {
+					oclock = v
+				} else {
+					continue
 				}
 			}
+			ms = append(ms, d.readTrafficDistance(end, oclock, evidence)...)
+		}
+		if len(ms) > 0 || len(d.atomsAt(p)) > 0 {
 			break
 		}
-		consumed++
 	}
+	return ms
+}
 
-	if miles == 0 {
-		return 0, 0, 0, false, false, 0
-	}
-
-	// Phase 3: Skip direction, runway relationship, and aircraft type; find altitude.
-	// The altitude is the current position of the traffic. If followed by "climbing/descending XXXX",
-	// we use the first altitude (current), not the target.
-	// Altitudes are multiples of 100 feet; aircraft types like 787 are not.
-	otherAircraftWillMaintainVisualSeparation := false
-	for consumed < len(tokens) && consumed < 40 {
-		t := tokens[consumed]
-
-		if next, ok := consumeTrafficLandingParallel(tokens, consumed); ok {
-			consumed = next
-			continue
-		}
-
-		// "type unknown" fills the aircraft-type slot; consume it so its
-		// "unknown" isn't paired with a following "altitude".
-		if next, ok := consumeTypeUnknown(tokens, consumed); ok {
-			consumed = next
-			continue
-		}
-
-		// Check for "altitude unknown" / "unknown altitude" phrasing.
-		if next, ok := consumeAltitudeUnknown(tokens, consumed); ok {
-			altUnknown = true
-			consumed = next
-			break
-		}
-
-		// Check for an altitude reading at this position. Value decoding
-		// (including merged aircraft-type recovery and thousand/hundred
-		// anchors) is DecodeNumber's job; the phase logic here handles
-		// aircraft-type vetoes, cross-token refinement, and trailing
-		// climb/descend phrasing.
-		if t.Type == TokenAltitude {
-			cands := DecodeNumber(tokens, consumed, NumberContext{Kind: NumTrafficAltitude})
-			if len(cands) == 0 {
-				// Implausible altitude with no recovery - skip and keep looking
-				consumed++
+// readTrafficDistance reads the distance and what follows it.
+func (d *decoding) readTrafficDistance(pos, oclock int, evidence float32) []match {
+	var ms []match
+	for p := pos; p < len(d.tokens) && p <= pos+trafficLookahead; p++ {
+		for _, miles := range d.readNumbers(p) {
+			if v := miles.value(); v < 1 || v > 50 {
 				continue
 			}
-			c := cands[0]
-			alt = c.Value
-			consumed += c.Consumed
-
-			if c.Score < numScoreLiteral {
-				logLocalStt("  extractTraffic: extracted altitude %d from implausible %d", alt, t.Value)
-				// Check if the next token is also an implausible altitude that
-				// refines this one (adds hundreds). This handles garbled speech
-				// like "737 five thousand eight five thousand nine hundred" where
-				// the first token gives thousands (50) and the second adds
-				// hundreds (59).
-				if consumed < len(tokens) && tokens[consumed].Type == TokenAltitude && tokens[consumed].Value > 600 {
-					nextExtracted := tokens[consumed].Value % 100
-					if nextExtracted > alt && nextExtracted <= 60 && nextExtracted/10 == alt/10 {
-						logLocalStt("  extractTraffic: refined altitude %d -> %d from implausible %d", alt, nextExtracted, tokens[consumed].Value)
-						alt = nextExtracted
-						consumed++
-					}
+			end, ev := miles.end, evidence+miles.evidence
+			for _, w := range milesWords {
+				if q := d.spanSimilarity(end, 1, w); q > similarityFloor {
+					ev += w.weight * gain(q)
+					end++
+					break
 				}
-			} else {
-				// Check if a nearby token refines this altitude (adds hundreds).
-				// e.g., "5 thousand [noise] 5 thousand 9 hundred" → tokens 50, [8], 59.
-				// Pick 59 over 50 since it's a more precise reading of the same altitude.
-				for j := consumed; j < len(tokens) && j < consumed+3; j++ {
-					if tokens[j].Type == TokenAltitude && tokens[j].Value > alt &&
-						tokens[j].Value <= 600 && tokens[j].Value/10 == alt/10 {
-						logLocalStt("  extractTraffic: refined altitude %d -> %d", alt, tokens[j].Value)
-						alt = tokens[j].Value
-						consumed = j + 1
+			}
+			distance := miles.value()
+			// "Nine miles, correction, seven miles."
+			if d.text(end) == "correction" {
+				for _, corrected := range d.readNumbers(end + 1) {
+					if v := corrected.value(); v >= 1 && v <= 50 {
+						distance, end, ev = v, corrected.end, ev+corrected.evidence
+						if t := d.text(end); t == "miles" || t == "mile" {
+							end++
+						}
 						break
 					}
 				}
 			}
+			ms = append(ms, d.readTrafficAltitude(end, oclock, distance, ev)...)
+		}
+		if len(ms) > 0 || len(d.atomsAt(p)) > 0 {
 			break
 		}
+	}
+	return ms
+}
 
-		// Skip aircraft type numbers (737, 787, A320, etc.) - these are not altitudes
-		if t.Type == TokenNumber && isAircraftTypeNumber(t.Value) {
-			consumed++
+// readTrafficAltitude reads the description of the traffic for its
+// altitude. It returns a reading that ends before the description, with
+// the altitude unknown, and one for each altitude it finds.
+func (d *decoding) readTrafficAltitude(pos, oclock, miles int, evidence float32) []match {
+	command := func(alt string) []any { return []any{fmt.Sprintf("TRAFFIC/%d/%d/%s", oclock, miles, alt)} }
+	ms := []match{{end: pos, evidence: evidence, values: command("UNK")}}
+	// found adds a reading that ends with the altitude, and with what is
+	// said about the traffic after it.
+	found := func(end int, evidence float32, alt string) {
+		end, more := d.readTrafficTail(end)
+		ms = append(ms, match{end: end, evidence: evidence + more, values: command(alt)})
+	}
+
+	inSight := d.phraseology.nonterminals["other_has_us"]
+	// understood is the evidence for the words of the description that
+	// were recognized as describing the traffic, and cost the evidence
+	// lost for those that were not.
+	var understood, cost float32
+	for p := pos; p < len(d.tokens) && p < pos+descriptionLength; p++ {
+		// The number of an aircraft type is not an altitude, nor is any
+		// part of it.
+		if end := d.aircraftTypeNumberEnd(p); end > p {
+			for _, tok := range d.tokens[p:end] {
+				understood += tok.sounds.weight()
+			}
+			p = end - 1
 			continue
 		}
+		ev := evidence + understood - cost
+		if p > pos && d.text(p-1) == "at" {
+			// "At three thousand": the word that introduces the altitude.
+			ev += d.tokens[p-1].sounds.weight()
+		}
+		for _, w := range unknownAlt {
+			if q := d.spanSimilarity(p, 2, w); q > similarityFloor {
+				ms = append(ms, match{end: p + 2, evidence: ev + w.weight*gain(q), values: command("UNK")})
+			}
+		}
+		for _, m := range inSight.matches(d, p) {
+			ms = append(ms, match{end: m.end, evidence: ev + m.evidence, values: []any{"TRAFFIC/INSIGHT"}})
+		}
+		for _, m := range d.readThousands(p, true) {
+			if alt := m.values[0].(int); alt <= highestAltitude {
+				found(m.end, ev+m.evidence, strconv.Itoa(alt))
+			}
+		}
+		for _, r := range d.readNumbers(p) {
+			v := r.value()
+			switch {
+			case len(r.digits) >= 3 && v >= 500 && v <= 60000 && v%100 == 0 && r.digits[0] != '0':
+				// Feet, as a numeral or as "five hundred".
+				found(r.end, ev+r.evidence, strconv.Itoa(v/100))
+			}
+		}
+		if d.text(p) == "flight" || d.text(p) == "fl" {
+			for _, m := range d.phraseology.nonterminals["altitude_fl"].matches(d, p) {
+				found(m.end, ev+m.evidence, strconv.Itoa(m.values[0].(int)))
+			}
+		}
+		switch tok := d.tokens[p]; {
+		case isStopword(tok.text):
+		case trafficWords[tok.text] || strings.HasSuffix(tok.text, "bound"):
+			understood += tok.sounds.weight()
+		default:
+			cost += descriptionCost * tok.sounds.weight()
+		}
+	}
+	return ms
+}
 
-		// Check for number that might be altitude
-		if t.Type == TokenNumber {
-			if cands := DecodeNumber(tokens, consumed, NumberContext{Kind: NumTrafficAltitude}); len(cands) > 0 {
-				c := cands[0]
+// trafficMotion are the words that say what the traffic's altitude is
+// doing.
+var trafficMotion = map[string]bool{"climbing": true, "descending": true, "level": true}
 
-				// Prefer an explicitly "at"-anchored altitude just ahead:
-				// "westbound eighty three hundred at three thousand" — the
-				// "at" reading is the traffic's altitude, the unanchored
-				// one is garble.
-				for j := consumed + c.Consumed; j < len(tokens) && j <= consumed+c.Consumed+3; j++ {
-					if strings.ToLower(tokens[j].Text) != "at" || j+1 >= len(tokens) {
-						continue
-					}
-					if ac := DecodeNumber(tokens, j+1, NumberContext{Kind: NumTrafficAltitude}); len(ac) > 0 {
-						logLocalStt("  extractTraffic: preferring at-anchored altitude %d over %d", ac[0].Value, c.Value)
-						alt = ac[0].Value
-						consumed = j + 1 + ac[0].Consumed
-					}
-					break
-				}
-				if alt > 0 {
-					break
-				}
-
-				alt = c.Value
-				consumed += c.Consumed
-				// After a raw-feet reading, skip "climbing/descending to
-				// XXXX" - we use current altitude, not target.
-				if c.Consumed == 1 && consumed < len(tokens) {
-					nextText := strings.ToLower(tokens[consumed].Text)
-					if FuzzyMatch(nextText, "climbing", 0.8) || FuzzyMatch(nextText, "descending", 0.8) {
-						consumed++
-						if consumed < len(tokens) && tokens[consumed].Type == TokenNumber {
-							consumed++
-						}
-					}
-				}
+// readTrafficTail reads what is said about the traffic after its
+// altitude: what the altitude is doing, the altitude said again, and the
+// request to report the traffic in sight. It returns the position after
+// those words and the evidence for them.
+func (d *decoding) readTrafficTail(pos int) (end int, evidence float32) {
+	end = pos
+	for end < len(d.tokens) {
+		tok := d.tokens[end]
+		if trafficMotion[tok.text] {
+			evidence += tok.sounds.weight()
+			end++
+			continue
+		}
+		// An altitude that is climbing or descending is the traffic's.
+		restated := false
+		for _, m := range d.readThousands(end, true) {
+			if trafficMotion[d.text(m.end)] {
+				end, evidence, restated = m.end, evidence+m.evidence, true
 				break
 			}
 		}
-
-		// No altitude detected at this token. Before consuming it as
-		// noise, check if it begins the "(other aircraft) has you in
-		// sight and will maintain visual separation" phrase — if so,
-		// we're past the altitude (none was given) and need to stop
-		// here so the post-loop trailing-word consumer doesn't run
-		// over it.
-		if next, ok := consumeOtherAircraftMaintainsVisualSeparation(tokens, consumed); ok {
-			otherAircraftWillMaintainVisualSeparation = true
-			consumed = next
-			break
-		}
-
-		consumed++
-	}
-
-	// If we got o'clock and miles but no altitude, treat altitude as unknown.
-	// Controllers commonly omit altitude for parallel-final or pop-up traffic.
-	if alt == 0 && !altUnknown {
-		altUnknown = true
-	}
-
-	if !otherAircraftWillMaintainVisualSeparation {
-		if next, ok := consumeOtherAircraftMaintainsVisualSeparation(tokens, consumed); ok {
-			otherAircraftWillMaintainVisualSeparation = true
-			consumed = next
-		}
-	}
-
-	// Consume trailing traffic advisory words that follow the altitude.
-	// These are part of the traffic call and should not be re-parsed as commands.
-	// Pattern: "[descending/climbing] [report [traffic] in sight]"
-	//
-	// If "airport" or "field" appears in the upcoming tokens, the trailing
-	// phrase is requesting an airport sighting (e.g. "report it and the airport
-	// in sight"). Leave those tokens in place so the AP handler can match.
-	hasAirportSighting := false
-	for j := consumed; j < len(tokens) && j < consumed+8; j++ {
-		text := strings.ToLower(tokens[j].Text)
-		if text == "airport" || text == "field" {
-			hasAirportSighting = true
+		if !restated {
 			break
 		}
 	}
-	if !hasAirportSighting {
-		for consumed < len(tokens) {
-			text := strings.ToLower(tokens[consumed].Text)
-			if FuzzyMatch(text, "descending", 0.8) || FuzzyMatch(text, "climbing", 0.8) ||
-				text == "descend" || text == "climb" {
-				consumed++
-				continue
-			}
-			if text == "report" || text == "sight" || text == "in" || IsFillerWord(text) {
-				consumed++
-				continue
-			}
-			break
+	for _, m := range d.phraseology.nonterminals["traffic_report"].matches(d, end) {
+		if m.evidence > 0 {
+			return m.end, evidence + m.evidence
 		}
 	}
-
-	return oclock, miles, alt, altUnknown, otherAircraftWillMaintainVisualSeparation, consumed
+	return end, evidence
 }
 
-// consumeTypeUnknown recognizes "type unknown", given in place of the
-// traffic's aircraft type. Returns the new token index and true if matched.
-func consumeTypeUnknown(tokens []Token, pos int) (int, bool) {
-	if pos+1 >= len(tokens) {
-		return pos, false
-	}
-	if FuzzyMatch(tokens[pos].Text, "type", 0.8) && FuzzyMatch(tokens[pos+1].Text, "unknown", 0.8) {
-		return pos + 2, true
-	}
-	return pos, false
+// trafficWords are words that describe traffic: its type and what it is
+// doing.
+var trafficWords = map[string]bool{
+	"heavy": true, "super": true, "boeing": true, "airbus": true, "embraer": true, "cessna": true, "regional": true,
+	"jet": true, "climbing": true, "descending": true, "level": true, "landing": true, "parallel": true,
+	"runway": true, "type": true, "unknown": true, "altitude": true, "indicates": true, "triple": true,
 }
 
-// consumeAltitudeUnknown recognizes "[at] altitude unknown" or
-// "unknown altitude" — the controller is reporting traffic from a primary
-// return without Mode C. STT transcription is noisy, so each word is matched
-// fuzzily. "unknown altitude" followed by "[indicates] (altitude)" is not
-// matched: the altitude is known and the "unknown" ends a (possibly
-// garbled) "type unknown". Returns the new token index and true if matched.
-func consumeAltitudeUnknown(tokens []Token, pos int) (int, bool) {
-	// Skip a leading "at".
-	start := pos
-	if start < len(tokens) && strings.ToLower(tokens[start].Text) == "at" {
-		start++
-	}
-	if start+1 >= len(tokens) {
-		return pos, false
-	}
-
-	a, b := tokens[start].Text, tokens[start+1].Text
-	if FuzzyMatch(a, "altitude", 0.8) && FuzzyMatch(b, "unknown", 0.8) {
-		return start + 2, true
-	}
-	if FuzzyMatch(a, "unknown", 0.8) && FuzzyMatch(b, "altitude", 0.8) {
-		next := start + 2
-		if next < len(tokens) && FuzzyMatch(tokens[next].Text, "indicates", 0.8) {
-			next++
+// aircraftTypeNumberEnd returns the position after the number of an
+// aircraft type that starts at pos ("seven thirty seven"), or pos if
+// there is none.
+func (d *decoding) aircraftTypeNumberEnd(pos int) int {
+	end := pos
+	for _, r := range d.readNumbers(pos) {
+		if aircraftTypeNumbers[r.digits] {
+			end = max(end, r.end)
 		}
-		if next < len(tokens) && (tokens[next].Type == TokenNumber || tokens[next].Type == TokenAltitude) {
-			return pos, false
-		}
-		return start + 2, true
 	}
-	return pos, false
+	return end
 }
 
-// consumeOtherAircraftMaintainsVisualSeparation recognizes the phrase
-// "...you in sight and will maintain visual separation" at the end of a
-// traffic advisory. The leading subject ("they have", "(callsign) has", "it
-// has", etc.) is absorbed by the skip-token branch, since real transcripts
-// vary the subject pronoun and verb form. STT transcription is noisy, so we
-// fuzzy-match each word, tolerate a dropped word by advancing the phrase,
-// and tolerate extra spurious tokens by skipping them. The phrase is
-// accepted if at least 7 of its 8 words match.
-func consumeOtherAircraftMaintainsVisualSeparation(tokens []Token, pos int) (int, bool) {
-	phrase := []string{"you", "in", "sight", "and", "will", "maintain", "visual", "separation"}
-
-	phraseIdx, tokenIdx := 0, pos
-	matches := 0
-	lastMatchedTokenIdx := pos - 1
-	endTokenIdx := min(pos+len(phrase)+3, len(tokens))
-
-	for phraseIdx < len(phrase) && tokenIdx < endTokenIdx {
-		text := tokens[tokenIdx].Text
-
-		if FuzzyMatch(text, phrase[phraseIdx], 0.8) {
-			matches++
-			lastMatchedTokenIdx = tokenIdx
-			phraseIdx++
-			tokenIdx++
-			continue
+// readTrafficInSight reads an advisory that gives the traffic's position
+// in words ("off your left") and says that it has this aircraft in
+// sight.
+func (d *decoding) readTrafficInSight(pos int) []match {
+	inSight := d.phraseology.nonterminals["other_has_us"]
+	var cost float32
+	for p := pos; p < len(d.tokens) && p < pos+descriptionLength; p++ {
+		for _, m := range inSight.matches(d, p) {
+			return []match{{end: m.end, evidence: m.evidence - cost, values: []any{""}}}
 		}
-
-		// The expected phrase word may have been dropped; if the following
-		// phrase word matches the current token, skip ahead in the phrase.
-		if phraseIdx+1 < len(phrase) && FuzzyMatch(text, phrase[phraseIdx+1], 0.8) {
-			phraseIdx++
-			continue
-		}
-
-		// Otherwise treat the current token as a stray insertion and skip it.
-		tokenIdx++
-	}
-
-	if matches < 7 {
-		return pos, false
-	}
-	return lastMatchedTokenIdx + 1, true
-}
-
-// consumeTrafficPositionDescriptor recognizes a descriptor-style traffic
-// position phrase that does not include an o'clock value. Used for traffic
-// advisories where the controller gives only relative direction:
-//   - "[off|to] [your] left|right|nose|tail"
-//   - "[from] [the] {compass_dir}" (north, south, east, west, ...)
-//
-// Note: "off", "to", "your", and "the" are filler words elsewhere in the
-// pipeline and may already have been stripped before reaching this point,
-// so this function also accepts the bare direction word.
-func consumeTrafficPositionDescriptor(tokens []Token, pos int) (int, bool) {
-	if pos >= len(tokens) {
-		return pos, false
-	}
-
-	cur := pos
-	// Optional "off" / "to" / "from".
-	if t := strings.ToLower(tokens[cur].Text); t == "off" || t == "to" || t == "from" {
-		cur++
-	}
-	// Optional "your" / "the".
-	if cur < len(tokens) {
-		if t := strings.ToLower(tokens[cur].Text); t == "your" || t == "the" {
-			cur++
+		if tok := d.tokens[p]; !isStopword(tok.text) {
+			cost += descriptionCost * tok.sounds.weight()
 		}
 	}
-	if cur >= len(tokens) {
-		return pos, false
-	}
-
-	t := strings.ToLower(tokens[cur].Text)
-	if t == "left" || t == "right" || t == "nose" || t == "tail" {
-		return cur + 1, true
-	}
-	if _, ok := compassDirections[t]; ok {
-		return cur + 1, true
-	}
-	for long := range compassDirections {
-		if len(t) >= 3 && FuzzyMatch(t, long, 0.8) {
-			return cur + 1, true
-		}
-	}
-	return pos, false
-}
-
-func consumeTrafficLandingParallel(tokens []Token, pos int) (int, bool) {
-	if pos >= len(tokens) {
-		return pos, false
-	}
-
-	text := strings.ToLower(tokens[pos].Text)
-	if text != "landing" && text != "land" {
-		return pos, false
-	}
-
-	next := pos + 1
-	if next < len(tokens) && strings.ToLower(tokens[next].Text) == "the" {
-		next++
-	}
-	if next >= len(tokens) || !FuzzyMatch(tokens[next].Text, "parallel", 0.8) {
-		return pos, false
-	}
-	next++
-
-	if next < len(tokens) && FuzzyMatch(tokens[next].Text, "runway", 0.8) {
-		next++
-	}
-	return next, true
-}
-
-// extractHoldParams extracts hold parameters from tokens for controller-specified holds.
-// Pattern: "on the (radial) radial [inbound], (minutes) minute legs, (left/right) turns"
-// Returns the full hold command string and number of tokens consumed.
-// Returns empty string and 0 if no hold parameters found.
-
-// isAircraftTypeNumber returns true if the number matches a common aircraft type.
-// Used to filter out aircraft types from altitude extraction in traffic advisories.
-// Common types: Boeing 737/747/757/767/777/787, Airbus A319/A320/A321/A330/A340/A350/A380
-func isAircraftTypeNumber(n int) bool {
-	switch n {
-	// Boeing narrow-body
-	case 737, 738, 739, 757:
-		return true
-	// Boeing wide-body
-	case 747, 767, 777, 787:
-		return true
-	// Airbus narrow-body (A3xx)
-	case 319, 320, 321:
-		return true
-	// Airbus wide-body
-	case 330, 340, 350, 380:
-		return true
-	// Common variants with generation suffix (e.g., 738 for 737-800)
-	case 788, 789: // 787-8, 787-9
-		return true
-	case 748: // 747-8
-		return true
-	case 359: // A350-900
-		return true
-	}
-	return false
+	return nil
 }

@@ -14,8 +14,8 @@
   "audio_duration_ms": 2760,
   "processor": "GPU: NVIDIA GeForce RTX 3060 (12115MB)",
   "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
-  "callsign": "",
-  "command": "",
+  "callsign": "CAL7378",
+  "command": "FC",
   "stt_aircraft": {
     "Delta five 75 heavy": {
       "Callsign": "DAL575",

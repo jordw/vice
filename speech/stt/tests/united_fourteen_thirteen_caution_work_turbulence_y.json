@@ -15,7 +15,7 @@
   "processor": "GPU: NVIDIA GeForce RTX 4090 (24138MB)",
   "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
   "callsign": "UAL1413",
-  "command": "S180/UDOOIN",
+  "command": "CWT S180/UDOOIN",
   "stt_aircraft": {
     "Brickyard 34 55": {
       "Callsign": "RPA3455",

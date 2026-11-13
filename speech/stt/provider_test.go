@@ -16,10 +16,10 @@ import (
 	"github.com/mmp/vice/sim"
 )
 
-// TestMain initializes the aviation database and STT registries for all tests.
+// TestMain initializes the aviation database for all tests.
 func TestMain(m *testing.M) {
 	db.InitDB()
-	Init()
+	logToStdout = false
 	os.Exit(m.Run())
 }
 
@@ -2243,12 +2243,12 @@ func TestDisregardHandling(t *testing.T) {
 			expected: "AAL100 D40 S210",
 		},
 		{
-			name:       "correction with turn left preserves heading",
+			name:       "correction with turn left keeps the turn direction",
 			transcript: "American 100 turn left heading one eight zero correction two zero zero speed one eight zero",
 			aircraft: map[string]Aircraft{
 				"American 100": {Callsign: "AAL100", State: "arrival"},
 			},
-			expected: "AAL100 H200 S180",
+			expected: "AAL100 L200 S180",
 		},
 	}
 
@@ -2437,156 +2437,6 @@ func TestPositionIdentification(t *testing.T) {
 
 // Unit tests for individual components
 
-func TestJaroWinkler(t *testing.T) {
-	tests := []struct {
-		s1, s2   string
-		minScore float64
-	}{
-		{"american", "american", 1.0},
-		{"american", "amurican", 0.9},
-		{"delta", "delta", 1.0},
-		{"delta", "deltta", 0.9},
-		{"", "", 1.0},
-		{"abc", "", 0.0},
-		// STT transcription errors for command keywords
-		{"tepart", "depart", 0.8}, // Common mistranscription
-		{"descend", "descend", 1.0},
-		{"decend", "descend", 0.8},
-	}
-
-	for _, tt := range tests {
-		score := JaroWinkler(tt.s1, tt.s2)
-		if score < tt.minScore {
-			t.Errorf("JaroWinkler(%q, %q) = %.2f, want >= %.2f", tt.s1, tt.s2, score, tt.minScore)
-		}
-	}
-}
-
-func TestPhoneticMatch(t *testing.T) {
-	tests := []struct {
-		w1, w2 string
-		match  bool
-	}{
-		{"american", "amurican", true},
-		{"delta", "deltta", true},
-		{"tree", "three", true},
-		{"cat", "dog", false},
-		// STT transcription errors - should match phonetically
-		{"tepart", "depart", true}, // T and D both encode to T in phonetic
-	}
-
-	for _, tt := range tests {
-		result := PhoneticMatch(tt.w1, tt.w2)
-		if result != tt.match {
-			t.Errorf("PhoneticMatch(%q, %q) = %v, want %v", tt.w1, tt.w2, result, tt.match)
-		}
-	}
-}
-
-func TestFuzzyMatch(t *testing.T) {
-	tests := []struct {
-		word, target string
-		threshold    float64
-		match        bool
-	}{
-		// Exact match
-		{"depart", "depart", 0.8, true},
-		// JaroWinkler match
-		{"tepart", "depart", 0.8, true}, // Common STT error - first letter wrong
-		// No match
-		{"xyz", "depart", 0.8, false},
-		// Phonetic match (even if JaroWinkler might be lower)
-		{"tree", "three", 0.8, true},
-	}
-
-	for _, tt := range tests {
-		result := FuzzyMatch(tt.word, tt.target, tt.threshold)
-		if result != tt.match {
-			// Also print the JaroWinkler score for debugging
-			score := JaroWinkler(tt.word, tt.target)
-			phonetic := PhoneticMatch(tt.word, tt.target)
-			t.Errorf("FuzzyMatch(%q, %q, %.1f) = %v, want %v (JW=%.3f, phonetic=%v)",
-				tt.word, tt.target, tt.threshold, result, tt.match, score, phonetic)
-		}
-	}
-}
-
-func TestNormalizeTranscript(t *testing.T) {
-	tests := []struct {
-		input    string
-		expected []string
-	}{
-		{"tree fower too", []string{"3", "4", "2"}},
-		{"American 123", []string{"american", "123"}}, // Airline names stay as-is; matching happens via aircraft context
-		// Note: disregard handling moved to provider level after callsign matching
-		{"turn left disregard turn right", []string{"turn", "left", "disregard", "turn", "right"}},
-		{"1-1-thousand", []string{"1", "1", "thousand"}}, // Hyphens split into separate words
-		// "niner" sometimes transcribed as "nine or" - should skip "or" between digits
-		// "or" noise between digits passes through; matching absorbs it.
-		{"two nine or zero", []string{"2", "9", "or", "0"}},
-		{"heading two niner zero", []string{"heading", "2", "9", "0"}},
-		{"", nil},
-		// "niner thousand" transcribed as "9 or 1000" passes through.
-		{"descend and maintain, 9 or 1000", []string{"descend", "and", "maintain", "9", "or", "1000"}},
-		// Garbled command words ("flighting" for "fly heading") pass
-		// through normalization untouched; they are recognized during
-		// template matching via the confusion table.
-		{"flighting 030", []string{"flighting", "030"}},
-		// "@" should be treated as "at"
-		{"@ cameron descend", []string{"at", "cameron", "descend"}},
-		// processAndDigit: single digits on both sides → "and" → "1" (mishearing of "one")
-		{"two and zero", []string{"2", "1", "0"}},
-		// processAndDigit: prev-prev also digit → multi-digit-sequence skip wins
-		{"two nine and zero", []string{"2", "9", "0"}},
-		// processAndDigit: multi-digit on either side → "and" is a connector, dropped
-		{"8000 and 250", []string{"8000", "250"}},
-		{"5 and 8000", []string{"5", "8000"}},
-		// collapseRepetitions: a whisper loop collapses...
-		{"x ray x ray x ray jet", []string{"x", "ray", "jet"}},
-		// ...but repeated digits are content, spelled out or not.
-		{"november three three three mike echo", []string{"november", "3", "3", "3", "mike", "echo"}},
-		{"november 3 3 3 mike echo", []string{"november", "3", "3", "3", "mike", "echo"}},
-	}
-
-	for _, tt := range tests {
-		result := NormalizeTranscript(tt.input)
-		if len(result) != len(tt.expected) {
-			t.Errorf("NormalizeTranscript(%q) = %v, want %v", tt.input, result, tt.expected)
-			continue
-		}
-		for i := range result {
-			if result[i] != tt.expected[i] {
-				t.Errorf("NormalizeTranscript(%q)[%d] = %q, want %q", tt.input, i, result[i], tt.expected[i])
-			}
-		}
-	}
-}
-
-func TestTokenize(t *testing.T) {
-	tests := []struct {
-		input    []string
-		numToks  int
-		firstVal int
-	}{
-		{[]string{"8", "thousand"}, 1, 80},                        // altitude
-		{[]string{"flight", "level", "3", "5", "0"}, 1, 350},      // FL
-		{[]string{"flight", "level", "1", "minor", "0"}, 1, 190},  // FL, garbled niner
-		{[]string{"flight", "level", "1", "landing", "0"}, 5, -1}, // FL too garbled to read
-		{[]string{"2", "7", "0"}, 1, 270},                         // heading
-	}
-
-	for _, tt := range tests {
-		result := Tokenize(tt.input)
-		if len(result) != tt.numToks {
-			t.Errorf("Tokenize(%v) got %d tokens, want %d", tt.input, len(result), tt.numToks)
-			continue
-		}
-		if tt.numToks > 0 && result[0].Value != tt.firstVal {
-			t.Errorf("Tokenize(%v)[0].Value = %d, want %d", tt.input, result[0].Value, tt.firstVal)
-		}
-	}
-}
-
 // Benchmark for performance verification
 
 func BenchmarkDecodeTranscript(b *testing.B) {
@@ -2628,387 +2478,6 @@ func BenchmarkDecodeTranscriptComplex(b *testing.B) {
 // =============================================================================
 // Unit Tests for commands.go
 // =============================================================================
-
-func TestParseCommandsBasic(t *testing.T) {
-	tests := []struct {
-		name     string
-		tokens   []Token
-		ac       Aircraft
-		expected []string
-	}{
-		{
-			name: "descend command",
-			tokens: []Token{
-				{Text: "descend", Type: TokenWord},
-				{Text: "maintain", Type: TokenWord},
-				{Text: "80", Type: TokenAltitude, Value: 80},
-			},
-			ac:       Aircraft{Altitude: 12000, State: "arrival"},
-			expected: []string{"D80"},
-		},
-		{
-			name: "climb command",
-			tokens: []Token{
-				{Text: "climb", Type: TokenWord},
-				{Text: "90", Type: TokenAltitude, Value: 90},
-			},
-			ac:       Aircraft{Altitude: 5000, State: "departure"},
-			expected: []string{"C90"},
-		},
-		{
-			name: "turn left heading",
-			tokens: []Token{
-				{Text: "turn", Type: TokenWord},
-				{Text: "left", Type: TokenWord},
-				{Text: "heading", Type: TokenWord},
-				{Text: "270", Type: TokenNumber, Value: 270},
-			},
-			ac:       Aircraft{State: "arrival"},
-			expected: []string{"L270"},
-		},
-		{
-			name: "turn right heading",
-			tokens: []Token{
-				{Text: "turn", Type: TokenWord},
-				{Text: "right", Type: TokenWord},
-				{Text: "heading", Type: TokenWord},
-				{Text: "090", Type: TokenNumber, Value: 90},
-			},
-			ac:       Aircraft{State: "arrival"},
-			expected: []string{"R090"},
-		},
-		{
-			name: "reduce speed",
-			tokens: []Token{
-				{Text: "reduce", Type: TokenWord},
-				{Text: "speed", Type: TokenWord},
-				{Text: "250", Type: TokenNumber, Value: 250},
-			},
-			ac:       Aircraft{State: "arrival"},
-			expected: []string{"S250"},
-		},
-		{
-			name: "expedite climb",
-			tokens: []Token{
-				{Text: "expedite", Type: TokenWord},
-				{Text: "climb", Type: TokenWord},
-			},
-			ac:       Aircraft{State: "departure"},
-			expected: []string{"EC"},
-		},
-		{
-			name: "expedite descent",
-			tokens: []Token{
-				{Text: "expedite", Type: TokenWord},
-				{Text: "descent", Type: TokenWord},
-			},
-			ac:       Aircraft{State: "arrival"},
-			expected: []string{"ED"},
-		},
-		{
-			name: "expedite descent through altitude",
-			tokens: []Token{
-				{Text: "expedite", Type: TokenWord},
-				{Text: "descent", Type: TokenWord},
-				{Text: "through", Type: TokenWord},
-				{Text: "50", Type: TokenAltitude, Value: 50},
-			},
-			ac:       Aircraft{State: "arrival"},
-			expected: []string{"ED50"},
-		},
-		{
-			name: "expedite climb through altitude",
-			tokens: []Token{
-				{Text: "expedite", Type: TokenWord},
-				{Text: "climb", Type: TokenWord},
-				{Text: "through", Type: TokenWord},
-				{Text: "100", Type: TokenAltitude, Value: 100},
-			},
-			ac:       Aircraft{State: "departure"},
-			expected: []string{"EC100"},
-		},
-		{
-			name: "expedite descend through altitude",
-			tokens: []Token{
-				{Text: "expedite", Type: TokenWord},
-				{Text: "descend", Type: TokenWord},
-				{Text: "through", Type: TokenWord},
-				{Text: "50", Type: TokenAltitude, Value: 50},
-			},
-			ac:       Aircraft{State: "arrival"},
-			expected: []string{"ED50"},
-		},
-		{
-			name: "expedite descent to altitude",
-			tokens: []Token{
-				{Text: "expedite", Type: TokenWord},
-				{Text: "descent", Type: TokenWord},
-				// "to" is a filler word and gets stripped; the bare pattern matches
-				{Text: "50", Type: TokenAltitude, Value: 50},
-			},
-			ac:       Aircraft{State: "arrival"},
-			expected: []string{"ED50"},
-		},
-		{
-			name: "best rate descent",
-			tokens: []Token{
-				{Text: "best", Type: TokenWord},
-				{Text: "rate", Type: TokenWord},
-				{Text: "descent", Type: TokenWord},
-			},
-			ac:       Aircraft{State: "arrival"},
-			expected: []string{"ED"},
-		},
-		{
-			name: "best rate climb",
-			tokens: []Token{
-				{Text: "best", Type: TokenWord},
-				{Text: "rate", Type: TokenWord},
-				{Text: "climb", Type: TokenWord},
-			},
-			ac:       Aircraft{State: "departure"},
-			expected: []string{"EC"},
-		},
-		{
-			name: "best rate descent through altitude",
-			tokens: []Token{
-				{Text: "best", Type: TokenWord},
-				{Text: "rate", Type: TokenWord},
-				{Text: "descent", Type: TokenWord},
-				{Text: "through", Type: TokenWord},
-				{Text: "50", Type: TokenAltitude, Value: 50},
-			},
-			ac:       Aircraft{State: "arrival"},
-			expected: []string{"ED50"},
-		},
-		{
-			name: "good rate descent",
-			tokens: []Token{
-				{Text: "good", Type: TokenWord},
-				{Text: "rate", Type: TokenWord},
-				{Text: "descent", Type: TokenWord},
-			},
-			ac:       Aircraft{State: "arrival"},
-			expected: []string{"GRD"},
-		},
-		{
-			name: "good rate of climb",
-			tokens: []Token{
-				{Text: "good", Type: TokenWord},
-				{Text: "rate", Type: TokenWord},
-				{Text: "of", Type: TokenWord},
-				{Text: "climb", Type: TokenWord},
-			},
-			ac:       Aircraft{State: "departure"},
-			expected: []string{"GRC"},
-		},
-		{
-			name: "good rate through altitude",
-			tokens: []Token{
-				{Text: "good", Type: TokenWord},
-				{Text: "rate", Type: TokenWord},
-				{Text: "through", Type: TokenWord},
-				{Text: "50", Type: TokenAltitude, Value: 50},
-			},
-			ac:       Aircraft{State: "arrival"},
-			expected: []string{"GR50"},
-		},
-		{
-			name: "good rate to altitude",
-			tokens: []Token{
-				{Text: "good", Type: TokenWord},
-				{Text: "rate", Type: TokenWord},
-				// "to" is a filler word and gets stripped; the bare pattern matches
-				{Text: "100", Type: TokenAltitude, Value: 100},
-			},
-			ac:       Aircraft{State: "arrival"},
-			expected: []string{"GR100"},
-		},
-		{
-			name: "cross distance direction altitude",
-			tokens: []Token{
-				{Text: "cross", Type: TokenWord},
-				{Text: "5", Type: TokenNumber, Value: 5},
-				{Text: "miles", Type: TokenWord},
-				{Text: "west", Type: TokenWord},
-				{Text: "of", Type: TokenWord},
-				{Text: "detgy", Type: TokenWord},
-				{Text: "maintain", Type: TokenWord},
-				{Text: "30", Type: TokenAltitude, Value: 30},
-			},
-			ac: Aircraft{
-				State: "arrival",
-				Fixes: map[string]string{"detgy": "DETGY"},
-			},
-			expected: []string{"CDETGY/5W/A30"},
-		},
-		{
-			name:     "empty tokens",
-			tokens:   []Token{},
-			ac:       Aircraft{State: "arrival"},
-			expected: nil,
-		},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			commands, _ := ParseCommands(tt.tokens, tt.ac)
-			if len(commands) != len(tt.expected) {
-				t.Errorf("ParseCommands() got %v, want %v", commands, tt.expected)
-				return
-			}
-			for i := range commands {
-				if commands[i] != tt.expected[i] {
-					t.Errorf("ParseCommands()[%d] = %q, want %q", i, commands[i], tt.expected[i])
-				}
-			}
-		})
-	}
-}
-
-func TestParseCommandsThenSequencing(t *testing.T) {
-	tests := []struct {
-		name     string
-		tokens   []Token
-		ac       Aircraft
-		expected []string
-	}{
-		{
-			name: "speed then descend",
-			tokens: []Token{
-				{Text: "reduce", Type: TokenWord},
-				{Text: "speed", Type: TokenWord},
-				{Text: "250", Type: TokenNumber, Value: 250},
-				{Text: "then", Type: TokenWord},
-				{Text: "descend", Type: TokenWord},
-				{Text: "80", Type: TokenAltitude, Value: 80},
-			},
-			ac:       Aircraft{Altitude: 12000, State: "arrival"},
-			expected: []string{"S250", "TD80"},
-		},
-		{
-			name: "descend then speed",
-			tokens: []Token{
-				{Text: "descend", Type: TokenWord},
-				{Text: "80", Type: TokenAltitude, Value: 80},
-				{Text: "then", Type: TokenWord},
-				{Text: "reduce", Type: TokenWord},
-				{Text: "210", Type: TokenNumber, Value: 210},
-			},
-			ac:       Aircraft{Altitude: 12000, State: "arrival"},
-			expected: []string{"D80", "TS210"},
-		},
-		{
-			name: "at altitude triggers then",
-			tokens: []Token{
-				{Text: "at", Type: TokenWord},
-				{Text: "30", Type: TokenAltitude, Value: 30},
-				{Text: "reduce", Type: TokenWord},
-				{Text: "speed", Type: TokenWord},
-				{Text: "180", Type: TokenNumber, Value: 180},
-			},
-			ac:       Aircraft{Altitude: 5000, State: "arrival"},
-			expected: []string{"TS180"},
-		},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			commands, _ := ParseCommands(tt.tokens, tt.ac)
-			if len(commands) != len(tt.expected) {
-				t.Errorf("ParseCommands() got %v, want %v", commands, tt.expected)
-				return
-			}
-			for i := range commands {
-				if commands[i] != tt.expected[i] {
-					t.Errorf("ParseCommands()[%d] = %q, want %q", i, commands[i], tt.expected[i])
-				}
-			}
-		})
-	}
-}
-
-func TestParseCommandsPriorityResolution(t *testing.T) {
-	tests := []struct {
-		name     string
-		tokens   []Token
-		ac       Aircraft
-		expected []string
-		desc     string
-	}{
-		{
-			name: "descend_maintain beats descend (higher priority)",
-			tokens: []Token{
-				{Text: "descend", Type: TokenWord},
-				{Text: "maintain", Type: TokenWord},
-				{Text: "80", Type: TokenAltitude, Value: 80},
-			},
-			ac:       Aircraft{Altitude: 12000, State: "arrival"},
-			expected: []string{"D80"},
-			desc:     "Both match but descend_maintain (priority 10) wins over descend (priority 5)",
-		},
-		{
-			name: "climb_maintain beats climb (higher priority)",
-			tokens: []Token{
-				{Text: "climb", Type: TokenWord},
-				{Text: "maintain", Type: TokenWord},
-				{Text: "100", Type: TokenAltitude, Value: 100},
-			},
-			ac:       Aircraft{Altitude: 5000, State: "departure"},
-			expected: []string{"C100"},
-			desc:     "climb_maintain (priority 10) beats climb (priority 5)",
-		},
-		{
-			name: "turn_left_heading beats heading_only",
-			tokens: []Token{
-				{Text: "turn", Type: TokenWord},
-				{Text: "left", Type: TokenWord},
-				{Text: "heading", Type: TokenWord},
-				{Text: "270", Type: TokenNumber, Value: 270},
-			},
-			ac:       Aircraft{State: "arrival"},
-			expected: []string{"L270"},
-			desc:     "turn_left_heading (priority 10) beats heading_only (priority 5)",
-		},
-		{
-			name: "climb_via_sid beats climb",
-			tokens: []Token{
-				{Text: "climb", Type: TokenWord},
-				{Text: "via", Type: TokenWord},
-				{Text: "the", Type: TokenWord},
-				{Text: "sid", Type: TokenWord},
-			},
-			ac:       Aircraft{State: "departure"},
-			expected: []string{"CVS"},
-			desc:     "climb_via_sid (priority 15) beats climb (priority 5)",
-		},
-		{
-			name: "present_heading beats heading_only",
-			tokens: []Token{
-				{Text: "present", Type: TokenWord},
-				{Text: "heading", Type: TokenWord},
-			},
-			ac:       Aircraft{State: "arrival"},
-			expected: []string{"H"},
-			desc:     "present_heading (priority 12) beats heading_only (priority 5)",
-		},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			commands, _ := ParseCommands(tt.tokens, tt.ac)
-			if len(commands) != len(tt.expected) {
-				t.Errorf("%s: got %v, want %v", tt.desc, commands, tt.expected)
-				return
-			}
-			for i := range commands {
-				if commands[i] != tt.expected[i] {
-					t.Errorf("%s: [%d] = %q, want %q", tt.desc, i, commands[i], tt.expected[i])
-				}
-			}
-		})
-	}
-}
 
 func TestVisualApproachSTTPatterns(t *testing.T) {
 	tests := []struct {
@@ -3917,857 +3386,13 @@ func TestCautionWakeTurbulenceSTTPatterns(t *testing.T) {
 	}
 }
 
-func TestSpellDigits(t *testing.T) {
-	for _, tt := range []struct{ in, expected string }{
-		{"s 9", "s nine"},
-		{"s9", "s nine"},
-		{"020", "zero two zero"},
-		{"9s", "nine s"},
-		{"deer park", "deer park"},
-	} {
-		if got := spellDigits(tt.in); got != tt.expected {
-			t.Errorf("spellDigits(%q) = %q, want %q", tt.in, got, tt.expected)
-		}
-	}
-}
-
-func TestExtractFix(t *testing.T) {
-	fixes := map[string]string{
-		"jenny":     "JENNY",
-		"deer park": "DPK",
-		"pucky":     "PUCKY",
-		"gayel":     "GAYEL",
-		"snine":     "SNINE",
-		"S Four":    "SFOUR",
-	}
-
-	tests := []struct {
-		name         string
-		tokens       []Token
-		expectedFix  string
-		expectedCons int
-	}{
-		{
-			name: "exact match",
-			tokens: []Token{
-				{Text: "jenny", Type: TokenWord},
-			},
-			expectedFix:  "JENNY",
-			expectedCons: 1,
-		},
-		{
-			name: "multi-word fix",
-			tokens: []Token{
-				{Text: "deer", Type: TokenWord},
-				{Text: "park", Type: TokenWord},
-			},
-			expectedFix:  "DPK",
-			expectedCons: 2,
-		},
-		{
-			name: "fuzzy match",
-			tokens: []Token{
-				{Text: "jenney", Type: TokenWord},
-			},
-			expectedFix:  "JENNY",
-			expectedCons: 1,
-		},
-		{
-			name: "vowel normalization (gail -> gayel)",
-			tokens: []Token{
-				{Text: "gail", Type: TokenWord},
-			},
-			expectedFix:  "GAYEL",
-			expectedCons: 1,
-		},
-		{
-			// Normalization digitizes the spoken number, so the fix's
-			// number word is only recoverable by spelling it back out.
-			name: "digitized number word (s 9 -> snine)",
-			tokens: []Token{
-				{Text: "s", Type: TokenWord},
-				{Text: "9", Type: TokenNumber, Value: 9},
-			},
-			expectedFix:  "SNINE",
-			expectedCons: 2,
-		},
-		{
-			name: "digitized number word matching a spelled-out name (s 4 -> S Four)",
-			tokens: []Token{
-				{Text: "s", Type: TokenWord},
-				{Text: "4", Type: TokenNumber, Value: 4},
-			},
-			expectedFix:  "SFOUR",
-			expectedCons: 2,
-		},
-		{
-			name:         "number that isn't a fix",
-			tokens:       []Token{{Text: "180", Type: TokenNumber, Value: 180}},
-			expectedFix:  "",
-			expectedCons: 0,
-		},
-		{
-			name:         "no match",
-			tokens:       []Token{{Text: "xyz", Type: TokenWord}},
-			expectedFix:  "",
-			expectedCons: 0,
-		},
-		{
-			name:         "empty tokens",
-			tokens:       []Token{},
-			expectedFix:  "",
-			expectedCons: 0,
-		},
-		// Spelling correction tests
-		{
-			name: "spelling with thats trigger - deer park thats delta papa kilo",
-			tokens: []Token{
-				{Text: "deer", Type: TokenWord},
-				{Text: "park", Type: TokenWord},
-				{Text: "thats", Type: TokenWord},
-				{Text: "delta", Type: TokenWord},
-				{Text: "papa", Type: TokenWord},
-				{Text: "kilo", Type: TokenWord},
-			},
-			expectedFix:  "DPK",
-			expectedCons: 6, // all tokens consumed
-		},
-		{
-			name: "spelling confirms match - jenny thats juliet echo november november yankee",
-			tokens: []Token{
-				{Text: "jenny", Type: TokenWord},
-				{Text: "thats", Type: TokenWord},
-				{Text: "juliet", Type: TokenWord},
-				{Text: "echo", Type: TokenWord},
-				{Text: "november", Type: TokenWord},
-				{Text: "november", Type: TokenWord},
-				{Text: "yankee", Type: TokenWord},
-			},
-			expectedFix:  "JENNY",
-			expectedCons: 7, // all tokens consumed
-		},
-		{
-			name: "spelling without trigger - pucky papa uniform charlie kilo yankee",
-			tokens: []Token{
-				{Text: "pucky", Type: TokenWord},
-				{Text: "papa", Type: TokenWord},
-				{Text: "uniform", Type: TokenWord},
-				{Text: "charlie", Type: TokenWord},
-				{Text: "kilo", Type: TokenWord},
-				{Text: "yankee", Type: TokenWord},
-			},
-			expectedFix:  "PUCKY",
-			expectedCons: 6, // all tokens consumed
-		},
-		{
-			name: "spelling overrides garbled spoken name",
-			tokens: []Token{
-				{Text: "deerpak", Type: TokenWord}, // garbled "deer park"
-				{Text: "thats", Type: TokenWord},
-				{Text: "delta", Type: TokenWord},
-				{Text: "papa", Type: TokenWord},
-				{Text: "kilo", Type: TokenWord},
-			},
-			expectedFix:  "DPK",
-			expectedCons: 5, // all tokens consumed
-		},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			fix, _, consumed := extractFix(tt.tokens, fixes)
-			if fix != tt.expectedFix {
-				t.Errorf("extractFix() fix = %q, want %q", fix, tt.expectedFix)
-			}
-			if consumed != tt.expectedCons {
-				t.Errorf("extractFix() consumed = %d, want %d", consumed, tt.expectedCons)
-			}
-		})
-	}
-}
-
-func TestExtractSquawk(t *testing.T) {
-	tests := []struct {
-		name         string
-		tokens       []Token
-		expectedCode string
-		expectedCons int
-	}{
-		{
-			name: "four digit tokens",
-			tokens: []Token{
-				{Text: "1", Type: TokenWord},
-				{Text: "2", Type: TokenWord},
-				{Text: "0", Type: TokenWord},
-				{Text: "0", Type: TokenWord},
-			},
-			expectedCode: "1200",
-			expectedCons: 4,
-		},
-		{
-			name: "number token",
-			tokens: []Token{
-				{Text: "7700", Type: TokenNumber, Value: 7700},
-			},
-			expectedCode: "7700",
-			expectedCons: 1,
-		},
-		{
-			name:         "incomplete code",
-			tokens:       []Token{{Text: "1", Type: TokenWord}, {Text: "2", Type: TokenWord}},
-			expectedCode: "",
-			expectedCons: 0,
-		},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			code, consumed := extractSquawk(tt.tokens)
-			if code != tt.expectedCode {
-				t.Errorf("extractSquawk() code = %q, want %q", code, tt.expectedCode)
-			}
-			if consumed != tt.expectedCons {
-				t.Errorf("extractSquawk() consumed = %d, want %d", consumed, tt.expectedCons)
-			}
-		})
-	}
-}
-
-func TestExtractDegrees(t *testing.T) {
-	tests := []struct {
-		name         string
-		tokens       []Token
-		expectedDeg  int
-		expectedDir  string
-		expectedCons int
-	}{
-		{
-			name: "degrees left",
-			tokens: []Token{
-				{Text: "20", Type: TokenNumber, Value: 20},
-				{Text: "degrees", Type: TokenWord},
-				{Text: "left", Type: TokenWord},
-			},
-			expectedDeg:  20,
-			expectedDir:  "left",
-			expectedCons: 3,
-		},
-		{
-			name: "degrees right",
-			tokens: []Token{
-				{Text: "30", Type: TokenNumber, Value: 30},
-				{Text: "right", Type: TokenWord},
-			},
-			expectedDeg:  30,
-			expectedDir:  "right",
-			expectedCons: 2,
-		},
-		{
-			name: "direction before number without degrees keyword - no match",
-			tokens: []Token{
-				{Text: "left", Type: TokenWord},
-				{Text: "15", Type: TokenNumber, Value: 15},
-			},
-			expectedDeg:  0,
-			expectedDir:  "",
-			expectedCons: 0,
-		},
-		{
-			name: "direction before number with degrees keyword - matches",
-			tokens: []Token{
-				{Text: "left", Type: TokenWord},
-				{Text: "15", Type: TokenNumber, Value: 15},
-				{Text: "degrees", Type: TokenWord},
-			},
-			expectedDeg:  15,
-			expectedDir:  "left",
-			expectedCons: 3,
-		},
-		{
-			name:         "missing direction",
-			tokens:       []Token{{Text: "20", Type: TokenNumber, Value: 20}},
-			expectedDeg:  0,
-			expectedDir:  "",
-			expectedCons: 0,
-		},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			deg, dir, consumed := extractDegrees(tt.tokens)
-			if deg != tt.expectedDeg {
-				t.Errorf("extractDegrees() deg = %d, want %d", deg, tt.expectedDeg)
-			}
-			if dir != tt.expectedDir {
-				t.Errorf("extractDegrees() dir = %q, want %q", dir, tt.expectedDir)
-			}
-			if consumed != tt.expectedCons {
-				t.Errorf("extractDegrees() consumed = %d, want %d", consumed, tt.expectedCons)
-			}
-		})
-	}
-}
-
-func TestUntilEstablishedPattern(t *testing.T) {
-	tests := []struct {
-		name     string
-		tokens   []Token
-		ac       Aircraft
-		expected []string
-	}{
-		{
-			name: "altitude until established",
-			tokens: []Token{
-				{Text: "40", Type: TokenAltitude, Value: 40},
-				{Text: "until", Type: TokenWord},
-				{Text: "established", Type: TokenWord},
-			},
-			ac:       Aircraft{State: "arrival"},
-			expected: []string{"A40"},
-		},
-		{
-			name: "altitude until established on localizer",
-			tokens: []Token{
-				{Text: "30", Type: TokenAltitude, Value: 30},
-				{Text: "until", Type: TokenWord},
-				{Text: "established", Type: TokenWord},
-				{Text: "on", Type: TokenWord},
-				{Text: "the", Type: TokenWord},
-				{Text: "localizer", Type: TokenWord},
-			},
-			ac:       Aircraft{State: "arrival"},
-			expected: []string{"A30"},
-		},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			commands, _ := ParseCommands(tt.tokens, tt.ac)
-			if len(commands) != len(tt.expected) {
-				t.Errorf("ParseCommands() got %v, want %v", commands, tt.expected)
-				return
-			}
-			for i := range commands {
-				if commands[i] != tt.expected[i] {
-					t.Errorf("ParseCommands()[%d] = %q, want %q", i, commands[i], tt.expected[i])
-				}
-			}
-		})
-	}
-}
-
 // =============================================================================
 // Unit Tests for validate.go
 // =============================================================================
 
-func TestValidateCommands(t *testing.T) {
-	tests := []struct {
-		name         string
-		commands     []string
-		ac           Aircraft
-		expectedLen  int
-		minConf      float64
-		expectErrors bool
-	}{
-		{
-			name:         "valid descend for arrival",
-			commands:     []string{"D80"},
-			ac:           Aircraft{Altitude: 12000, State: "arrival"},
-			expectedLen:  1,
-			minConf:      0.9,
-			expectErrors: false,
-		},
-		{
-			name:         "invalid descend - target above current",
-			commands:     []string{"D150"},
-			ac:           Aircraft{Altitude: 10000, State: "arrival"},
-			expectedLen:  1, // becomes SAYAGAIN/ALTITUDE
-			minConf:      0.0,
-			expectErrors: true,
-		},
-		{
-			name:         "valid climb for departure",
-			commands:     []string{"C100"},
-			ac:           Aircraft{Altitude: 5000, State: "departure"},
-			expectedLen:  1,
-			minConf:      0.9,
-			expectErrors: false,
-		},
-		{
-			name:         "invalid climb - target below current",
-			commands:     []string{"C50"},
-			ac:           Aircraft{Altitude: 10000, State: "departure"},
-			expectedLen:  1, // becomes SAYAGAIN/ALTITUDE
-			minConf:      0.0,
-			expectErrors: true,
-		},
-		{
-			name:         "expedite climb invalid for arrival",
-			commands:     []string{"EC"},
-			ac:           Aircraft{Altitude: 10000, State: "arrival"},
-			expectedLen:  0,
-			minConf:      0.0,
-			expectErrors: true,
-		},
-		{
-			name:         "expedite descent invalid for departure",
-			commands:     []string{"ED"},
-			ac:           Aircraft{Altitude: 10000, State: "departure"},
-			expectedLen:  0,
-			minConf:      0.0,
-			expectErrors: true,
-		},
-		{
-			name:         "contact tower valid for arrival",
-			commands:     []string{"TO"},
-			ac:           Aircraft{State: "arrival"},
-			expectedLen:  1,
-			minConf:      0.9,
-			expectErrors: false,
-		},
-		{
-			name:         "contact tower valid on approach",
-			commands:     []string{"TO"},
-			ac:           Aircraft{State: "on approach"},
-			expectedLen:  1,
-			minConf:      0.9,
-			expectErrors: false,
-		},
-		{
-			name:         "CVS only valid for departures",
-			commands:     []string{"CVS"},
-			ac:           Aircraft{State: "arrival"},
-			expectedLen:  0,
-			minConf:      0.0,
-			expectErrors: true,
-		},
-		{
-			name:         "CVS valid for departures",
-			commands:     []string{"CVS"},
-			ac:           Aircraft{State: "departure"},
-			expectedLen:  1,
-			minConf:      0.9,
-			expectErrors: false,
-		},
-		{
-			name:         "CVS except altitude above current valid",
-			commands:     []string{"CVS/A100"},
-			ac:           Aircraft{State: "departure", Altitude: 3000},
-			expectedLen:  1,
-			minConf:      0.9,
-			expectErrors: false,
-		},
-		{
-			name:         "CVS except altitude below current rejected",
-			commands:     []string{"CVS/A020"},
-			ac:           Aircraft{State: "departure", Altitude: 5000},
-			expectedLen:  1, // becomes SAYAGAIN/ALTITUDE
-			minConf:      0.0,
-			expectErrors: true,
-		},
-		{
-			name:         "DVS except altitude below current valid",
-			commands:     []string{"DVS/A120"},
-			ac:           Aircraft{State: "arrival", Altitude: 25000},
-			expectedLen:  1,
-			minConf:      0.9,
-			expectErrors: false,
-		},
-		{
-			name:         "DVS except altitude above current rejected",
-			commands:     []string{"DVS/A150"},
-			ac:           Aircraft{State: "arrival", Altitude: 12000},
-			expectedLen:  1, // becomes SAYAGAIN/ALTITUDE
-			minConf:      0.0,
-			expectErrors: true,
-		},
-		{
-			name:         "expect approach valid for local departure with approaches",
-			commands:     []string{"EI22L"},
-			ac:           Aircraft{State: "departure", CandidateApproaches: map[string]string{"ILS Runway 22L": "I22L"}},
-			expectedLen:  1,
-			minConf:      0.9,
-			expectErrors: false,
-		},
-		{
-			name:         "expedite descent valid for local departure with approaches",
-			commands:     []string{"ED"},
-			ac:           Aircraft{Altitude: 10000, State: "departure", CandidateApproaches: map[string]string{"ILS Runway 22L": "I22L"}},
-			expectedLen:  1,
-			minConf:      0.9,
-			expectErrors: false,
-		},
-		{
-			name:         "altitude discretion only valid for VFR",
-			commands:     []string{"A"},
-			ac:           Aircraft{State: "arrival"},
-			expectedLen:  0,
-			minConf:      0.0,
-			expectErrors: true,
-		},
-		{
-			name:         "altitude discretion valid for VFR",
-			commands:     []string{"A"},
-			ac:           Aircraft{State: "vfr flight following"},
-			expectedLen:  1,
-			minConf:      0.9,
-			expectErrors: false,
-		},
-		{
-			name:         "mixed valid and invalid commands",
-			commands:     []string{"L270", "D150"}, // heading valid, descend invalid (target > current)
-			ac:           Aircraft{Altitude: 10000, State: "arrival"},
-			expectedLen:  2, // heading survives, descend becomes SAYAGAIN/ALTITUDE
-			minConf:      0.0,
-			expectErrors: true,
-		},
-		{
-			name:         "empty commands",
-			commands:     []string{},
-			ac:           Aircraft{State: "arrival"},
-			expectedLen:  0,
-			minConf:      0.0,
-			expectErrors: false,
-		},
-		{
-			name:         "speed with do not exceed suffix",
-			commands:     []string{"S250-"},
-			ac:           Aircraft{State: "arrival", AircraftType: "B738"},
-			expectedLen:  1,
-			minConf:      0.9,
-			expectErrors: false,
-		},
-		{
-			name:         "speed with at or above suffix",
-			commands:     []string{"S250+"},
-			ac:           Aircraft{State: "arrival", AircraftType: "B738"},
-			expectedLen:  1,
-			minConf:      0.9,
-			expectErrors: false,
-		},
-		{
-			name:         "speed until with suffix",
-			commands:     []string{"S180-/U5DME"},
-			ac:           Aircraft{State: "arrival", AircraftType: "B738"},
-			expectedLen:  1,
-			minConf:      0.9,
-			expectErrors: false,
-		},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			result := ValidateCommands(tt.commands, tt.ac)
-
-			if len(result.ValidCommands) != tt.expectedLen {
-				t.Errorf("ValidateCommands() got %d commands, want %d (got %v)",
-					len(result.ValidCommands), tt.expectedLen, result.ValidCommands)
-			}
-			if result.Confidence < tt.minConf {
-				t.Errorf("ValidateCommands() confidence = %.2f, want >= %.2f",
-					result.Confidence, tt.minConf)
-			}
-			if tt.expectErrors && len(result.Errors) == 0 {
-				t.Error("ValidateCommands() expected errors but got none")
-			}
-			if !tt.expectErrors && len(result.Errors) > 0 {
-				t.Errorf("ValidateCommands() unexpected errors: %v", result.Errors)
-			}
-		})
-	}
-}
-
 // =============================================================================
 // Unit Tests for callsign.go
 // =============================================================================
-
-func TestMatchCallsignDirect(t *testing.T) {
-	tests := []struct {
-		name          string
-		tokens        []Token
-		aircraft      map[string]Aircraft
-		expectedCS    string
-		expectedConf  float64
-		expectedCons  int
-		expectNoMatch bool
-	}{
-		{
-			name: "exact airline and number match",
-			tokens: []Token{
-				{Text: "american", Type: TokenWord},
-				{Text: "5936", Type: TokenNumber, Value: 5936},
-			},
-			aircraft: map[string]Aircraft{
-				"American 5936": {Callsign: "AAL5936"},
-			},
-			expectedCS:   "AAL5936",
-			expectedConf: 0.9,
-			expectedCons: 2,
-		},
-		{
-			name: "digit tokens for flight number",
-			tokens: []Token{
-				{Text: "delta", Type: TokenWord},
-				{Text: "4", Type: TokenWord},
-				{Text: "4", Type: TokenWord},
-				{Text: "2", Type: TokenWord},
-			},
-			aircraft: map[string]Aircraft{
-				"Delta 442": {Callsign: "DAL442"},
-			},
-			expectedCS:   "DAL442",
-			expectedConf: 0.9,
-			expectedCons: 4,
-		},
-		{
-			name: "multi-word airline",
-			tokens: []Token{
-				{Text: "china", Type: TokenWord},
-				{Text: "southern", Type: TokenWord},
-				{Text: "940", Type: TokenNumber, Value: 940},
-			},
-			aircraft: map[string]Aircraft{
-				"China Southern 940": {Callsign: "CSN940"},
-			},
-			expectedCS:   "CSN940",
-			expectedConf: 0.9,
-			expectedCons: 3,
-		},
-		{
-			name: "fuzzy airline match",
-			tokens: []Token{
-				{Text: "amurican", Type: TokenWord}, // fuzzy
-				{Text: "100", Type: TokenNumber, Value: 100},
-			},
-			aircraft: map[string]Aircraft{
-				"American 100": {Callsign: "AAL100"},
-			},
-			expectedCS:   "AAL100",
-			expectedConf: 0.5,
-			expectedCons: 2,
-		},
-		{
-			name: "skip garbage at start",
-			tokens: []Token{
-				{Text: "lass", Type: TokenWord}, // garbage
-				{Text: "delta", Type: TokenWord},
-				{Text: "100", Type: TokenNumber, Value: 100},
-			},
-			aircraft: map[string]Aircraft{
-				"Delta 100": {Callsign: "DAL100"},
-			},
-			expectedCS:   "DAL100",
-			expectedConf: 0.5,
-			expectedCons: 3,
-		},
-		{
-			name: "no match returns empty",
-			tokens: []Token{
-				{Text: "xyz", Type: TokenWord},
-				{Text: "999", Type: TokenNumber, Value: 999},
-			},
-			aircraft: map[string]Aircraft{
-				"American 100": {Callsign: "AAL100"},
-			},
-			expectNoMatch: true,
-		},
-		{
-			name:          "empty tokens",
-			tokens:        []Token{},
-			aircraft:      map[string]Aircraft{"American 100": {Callsign: "AAL100"}},
-			expectNoMatch: true,
-		},
-		{
-			name: "empty aircraft",
-			tokens: []Token{
-				{Text: "american", Type: TokenWord},
-				{Text: "100", Type: TokenNumber, Value: 100},
-			},
-			aircraft:      map[string]Aircraft{},
-			expectNoMatch: true,
-		},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			match, remaining := MatchCallsign(tt.tokens, tt.aircraft)
-
-			if tt.expectNoMatch {
-				if match.Callsign != "" {
-					t.Errorf("MatchCallsign() expected no match, got %q", match.Callsign)
-				}
-				return
-			}
-
-			if match.Callsign != tt.expectedCS {
-				t.Errorf("MatchCallsign() callsign = %q, want %q", match.Callsign, tt.expectedCS)
-			}
-			if match.Confidence < tt.expectedConf {
-				t.Errorf("MatchCallsign() confidence = %.2f, want >= %.2f",
-					match.Confidence, tt.expectedConf)
-			}
-			if match.Consumed != tt.expectedCons {
-				t.Errorf("MatchCallsign() consumed = %d, want %d", match.Consumed, tt.expectedCons)
-			}
-			expectedRemaining := len(tt.tokens) - tt.expectedCons
-			if len(remaining) != expectedRemaining {
-				t.Errorf("MatchCallsign() remaining = %d tokens, want %d",
-					len(remaining), expectedRemaining)
-			}
-		})
-	}
-}
-
-func TestMatchCallsignGACallsigns(t *testing.T) {
-	tests := []struct {
-		name         string
-		tokens       []Token
-		aircraft     map[string]Aircraft
-		expectedCS   string
-		expectedCons int
-	}{
-		{
-			name: "november N-number",
-			tokens: []Token{
-				{Text: "november", Type: TokenWord},
-				{Text: "1", Type: TokenWord},
-				{Text: "2", Type: TokenWord},
-				{Text: "3", Type: TokenWord},
-				{Text: "a", Type: TokenWord},
-				{Text: "b", Type: TokenWord},
-			},
-			aircraft: map[string]Aircraft{
-				"November 123AB": {Callsign: "N123AB"},
-			},
-			expectedCS:   "N123AB",
-			expectedCons: 6,
-		},
-		{
-			name: "N prefix",
-			tokens: []Token{
-				{Text: "n", Type: TokenWord},
-				{Text: "3", Type: TokenWord},
-				{Text: "4", Type: TokenWord},
-				{Text: "5", Type: TokenWord},
-			},
-			aircraft: map[string]Aircraft{
-				"November 345": {Callsign: "N345"},
-			},
-			expectedCS:   "N345",
-			expectedCons: 4,
-		},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			match, _ := MatchCallsign(tt.tokens, tt.aircraft)
-			if match.Callsign != tt.expectedCS {
-				t.Errorf("MatchCallsign() = %q, want %q", match.Callsign, tt.expectedCS)
-			}
-			if match.Consumed != tt.expectedCons {
-				t.Errorf("MatchCallsign() consumed = %d, want %d", match.Consumed, tt.expectedCons)
-			}
-		})
-	}
-}
-
-func TestMatchCallsignWithSuffix(t *testing.T) {
-	tests := []struct {
-		name         string
-		tokens       []Token
-		aircraft     map[string]Aircraft
-		expectedCS   string
-		expectedCons int
-	}{
-		{
-			name: "heavy suffix consumed",
-			tokens: []Token{
-				{Text: "lufthansa", Type: TokenWord},
-				{Text: "4wj", Type: TokenWord},
-				{Text: "heavy", Type: TokenWord},
-			},
-			aircraft: map[string]Aircraft{
-				"Lufthansa 4WJ heavy": {Callsign: "DLH4WJ"},
-			},
-			expectedCS:   "DLH4WJ",
-			expectedCons: 3,
-		},
-		{
-			name: "super suffix consumed",
-			tokens: []Token{
-				{Text: "emirates", Type: TokenWord},
-				{Text: "100", Type: TokenNumber, Value: 100},
-				{Text: "super", Type: TokenWord},
-			},
-			aircraft: map[string]Aircraft{
-				"Emirates 100 super": {Callsign: "UAE100"},
-			},
-			expectedCS:   "UAE100",
-			expectedCons: 3,
-		},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			match, _ := MatchCallsign(tt.tokens, tt.aircraft)
-			if match.Callsign != tt.expectedCS {
-				t.Errorf("MatchCallsign() = %q, want %q", match.Callsign, tt.expectedCS)
-			}
-			if match.Consumed != tt.expectedCons {
-				t.Errorf("MatchCallsign() consumed = %d, want %d", match.Consumed, tt.expectedCons)
-			}
-		})
-	}
-}
-
-func TestFlightNumberOnlyFallback(t *testing.T) {
-	tests := []struct {
-		name        string
-		tokens      []Token
-		aircraft    map[string]Aircraft
-		expectedCS  string
-		expectMatch bool
-	}{
-		{
-			name: "unique flight number matches",
-			tokens: []Token{
-				{Text: "garbled", Type: TokenWord},
-				{Text: "5936", Type: TokenNumber, Value: 5936},
-			},
-			aircraft: map[string]Aircraft{
-				"American 5936": {Callsign: "AAL5936"},
-			},
-			expectedCS:  "AAL5936",
-			expectMatch: true,
-		},
-		{
-			name: "completely garbled input with no flight number",
-			tokens: []Token{
-				{Text: "xyz", Type: TokenWord},
-				{Text: "abc", Type: TokenWord},
-			},
-			aircraft: map[string]Aircraft{
-				"American 100": {Callsign: "AAL100"},
-			},
-			expectMatch: false,
-		},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			match, _ := MatchCallsign(tt.tokens, tt.aircraft)
-			if tt.expectMatch {
-				if match.Callsign != tt.expectedCS {
-					t.Errorf("MatchCallsign() = %q, want %q", match.Callsign, tt.expectedCS)
-				}
-			} else {
-				if match.Callsign != "" {
-					t.Errorf("MatchCallsign() expected no match, got %q", match.Callsign)
-				}
-			}
-		})
-	}
-}
 
 // TestDecodeCommandsForCallsign tests decoding commands when callsign is already known.
 // This is used when controller repeats a command without callsign after an AGAIN response.
@@ -4860,57 +3485,6 @@ func TestDecodeCommandsForCallsign(t *testing.T) {
 // =============================================================================
 // JSON File Tests from tests/ directory
 // =============================================================================
-
-// TestSTTFromJSONFiles runs all JSON test files from the tests/ directory.
-// Each file contains a transcript, the full aircraft context, and the expected
-// command output. This allows regression testing with real-world scenarios.
-func TestSTTFromJSONFiles(t *testing.T) {
-	testsDir := "tests"
-
-	// Check if tests directory exists
-	if _, err := os.Stat(testsDir); os.IsNotExist(err) {
-		t.Skip("tests/ directory not found")
-		return
-	}
-
-	// Find all JSON files
-	files, err := filepath.Glob(filepath.Join(testsDir, "*.json"))
-	if err != nil {
-		t.Fatalf("failed to glob test files: %v", err)
-	}
-
-	if len(files) == 0 {
-		t.Skip("no JSON test files found in tests/")
-		return
-	}
-
-	provider := NewTranscriber(nil)
-
-	for _, file := range files {
-		testName := strings.TrimSuffix(filepath.Base(file), ".json")
-		t.Run(testName, func(t *testing.T) {
-			t.Parallel()
-
-			testFile, err := LoadTestFile(file)
-			if err != nil {
-				t.Fatalf("failed to load %s: %v", file, err)
-			}
-
-			aircraft := testFile.BuildAircraftMap()
-
-			// Run the transcript through STT
-			result, err := provider.DecodeTranscript(aircraft, testFile.Transcript, "")
-			if err != nil {
-				t.Errorf("DecodeTranscript error: %v", err)
-				return
-			}
-
-			if expected := testFile.Expected(); !CommandsEquivalent(expected, result, aircraft) {
-				t.Errorf("got %q, want %q", result, expected)
-			}
-		})
-	}
-}
 
 func TestSpelledFixNames(t *testing.T) {
 	tests := []struct {
@@ -5273,93 +3847,6 @@ func TestApproachTypeNames(t *testing.T) {
 	}
 }
 
-func TestDetectNegativeThatWasFor(t *testing.T) {
-	tests := []struct {
-		name           string
-		tokens         []Token
-		expectedFound  bool
-		expectedOffset int // number of tokens consumed (to get remaining)
-	}{
-		{
-			name: "negative that was for",
-			tokens: []Token{
-				{Text: "negative", Type: TokenWord},
-				{Text: "that", Type: TokenWord},
-				{Text: "was", Type: TokenWord},
-				{Text: "for", Type: TokenWord},
-				{Text: "delta", Type: TokenWord},
-				{Text: "456", Type: TokenNumber, Value: 456},
-			},
-			expectedFound:  true,
-			expectedOffset: 4, // after "negative that was for"
-		},
-		{
-			name: "no that was for",
-			tokens: []Token{
-				{Text: "no", Type: TokenWord},
-				{Text: "that", Type: TokenWord},
-				{Text: "was", Type: TokenWord},
-				{Text: "for", Type: TokenWord},
-				{Text: "united", Type: TokenWord},
-				{Text: "123", Type: TokenNumber, Value: 123},
-			},
-			expectedFound:  true,
-			expectedOffset: 4, // after "no that was for"
-		},
-		{
-			name: "negative was for (without that)",
-			tokens: []Token{
-				{Text: "negative", Type: TokenWord},
-				{Text: "was", Type: TokenWord},
-				{Text: "for", Type: TokenWord},
-				{Text: "american", Type: TokenWord},
-				{Text: "789", Type: TokenNumber, Value: 789},
-			},
-			expectedFound:  true,
-			expectedOffset: 3, // after "negative was for"
-		},
-		{
-			name: "just negative without correction pattern",
-			tokens: []Token{
-				{Text: "negative", Type: TokenWord},
-				{Text: "delta", Type: TokenWord},
-				{Text: "456", Type: TokenNumber, Value: 456},
-			},
-			expectedFound: false,
-		},
-		{
-			name: "regular command (no correction)",
-			tokens: []Token{
-				{Text: "turn", Type: TokenWord},
-				{Text: "left", Type: TokenWord},
-				{Text: "heading", Type: TokenWord},
-				{Text: "270", Type: TokenNumber, Value: 270},
-			},
-			expectedFound: false,
-		},
-		{
-			name:          "empty tokens",
-			tokens:        []Token{},
-			expectedFound: false,
-		},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			remaining, found := detectNegativeThatWasFor(tt.tokens)
-			if found != tt.expectedFound {
-				t.Errorf("found = %v, want %v", found, tt.expectedFound)
-			}
-			if tt.expectedFound {
-				expectedRemaining := len(tt.tokens) - tt.expectedOffset
-				if len(remaining) != expectedRemaining {
-					t.Errorf("remaining tokens = %d, want %d", len(remaining), expectedRemaining)
-				}
-			}
-		})
-	}
-}
-
 func TestNegativeThatWasForFullParse(t *testing.T) {
 	tests := []struct {
 		name       string
@@ -5606,6 +4093,929 @@ func TestJoinCommands(t *testing.T) {
 			}
 			if result != tt.expected {
 				t.Errorf("got %q, want %q", result, tt.expected)
+			}
+		})
+	}
+}
+
+func TestParseCommandsBasic(t *testing.T) {
+	tests := []struct {
+		name     string
+		tokens   []Token
+		ac       Aircraft
+		expected []string
+	}{
+		{
+			name: "descend command",
+			tokens: []Token{
+				{Text: "descend", Type: TokenWord},
+				{Text: "maintain", Type: TokenWord},
+				{Text: "80", Type: TokenAltitude, Value: 80},
+			},
+			ac:       Aircraft{Altitude: 12000, State: "arrival"},
+			expected: []string{"D80"},
+		},
+		{
+			name: "climb command",
+			tokens: []Token{
+				{Text: "climb", Type: TokenWord},
+				{Text: "90", Type: TokenAltitude, Value: 90},
+			},
+			ac:       Aircraft{Altitude: 5000, State: "departure"},
+			expected: []string{"C90"},
+		},
+		{
+			name: "turn left heading",
+			tokens: []Token{
+				{Text: "turn", Type: TokenWord},
+				{Text: "left", Type: TokenWord},
+				{Text: "heading", Type: TokenWord},
+				{Text: "270", Type: TokenNumber, Value: 270},
+			},
+			ac:       Aircraft{State: "arrival"},
+			expected: []string{"L270"},
+		},
+		{
+			name: "turn right heading",
+			tokens: []Token{
+				{Text: "turn", Type: TokenWord},
+				{Text: "right", Type: TokenWord},
+				{Text: "heading", Type: TokenWord},
+				{Text: "090", Type: TokenNumber, Value: 90},
+			},
+			ac:       Aircraft{State: "arrival"},
+			expected: []string{"R090"},
+		},
+		{
+			name: "reduce speed",
+			tokens: []Token{
+				{Text: "reduce", Type: TokenWord},
+				{Text: "speed", Type: TokenWord},
+				{Text: "250", Type: TokenNumber, Value: 250},
+			},
+			ac:       Aircraft{State: "arrival"},
+			expected: []string{"S250"},
+		},
+		{
+			name: "expedite climb",
+			tokens: []Token{
+				{Text: "expedite", Type: TokenWord},
+				{Text: "climb", Type: TokenWord},
+			},
+			ac:       Aircraft{State: "departure"},
+			expected: []string{"EC"},
+		},
+		{
+			name: "expedite descent",
+			tokens: []Token{
+				{Text: "expedite", Type: TokenWord},
+				{Text: "descent", Type: TokenWord},
+			},
+			ac:       Aircraft{State: "arrival"},
+			expected: []string{"ED"},
+		},
+		{
+			name: "expedite descent through altitude",
+			tokens: []Token{
+				{Text: "expedite", Type: TokenWord},
+				{Text: "descent", Type: TokenWord},
+				{Text: "through", Type: TokenWord},
+				{Text: "50", Type: TokenAltitude, Value: 50},
+			},
+			ac:       Aircraft{State: "arrival"},
+			expected: []string{"ED50"},
+		},
+		{
+			name: "expedite climb through altitude",
+			tokens: []Token{
+				{Text: "expedite", Type: TokenWord},
+				{Text: "climb", Type: TokenWord},
+				{Text: "through", Type: TokenWord},
+				{Text: "100", Type: TokenAltitude, Value: 100},
+			},
+			ac:       Aircraft{State: "departure"},
+			expected: []string{"EC100"},
+		},
+		{
+			name: "expedite descend through altitude",
+			tokens: []Token{
+				{Text: "expedite", Type: TokenWord},
+				{Text: "descend", Type: TokenWord},
+				{Text: "through", Type: TokenWord},
+				{Text: "50", Type: TokenAltitude, Value: 50},
+			},
+			ac:       Aircraft{State: "arrival"},
+			expected: []string{"ED50"},
+		},
+		{
+			name: "expedite descent to altitude",
+			tokens: []Token{
+				{Text: "expedite", Type: TokenWord},
+				{Text: "descent", Type: TokenWord},
+				// "to" is a filler word and gets stripped; the bare pattern matches
+				{Text: "50", Type: TokenAltitude, Value: 50},
+			},
+			ac:       Aircraft{State: "arrival"},
+			expected: []string{"ED50"},
+		},
+		{
+			name: "best rate descent",
+			tokens: []Token{
+				{Text: "best", Type: TokenWord},
+				{Text: "rate", Type: TokenWord},
+				{Text: "descent", Type: TokenWord},
+			},
+			ac:       Aircraft{State: "arrival"},
+			expected: []string{"ED"},
+		},
+		{
+			name: "best rate climb",
+			tokens: []Token{
+				{Text: "best", Type: TokenWord},
+				{Text: "rate", Type: TokenWord},
+				{Text: "climb", Type: TokenWord},
+			},
+			ac:       Aircraft{State: "departure"},
+			expected: []string{"EC"},
+		},
+		{
+			name: "best rate descent through altitude",
+			tokens: []Token{
+				{Text: "best", Type: TokenWord},
+				{Text: "rate", Type: TokenWord},
+				{Text: "descent", Type: TokenWord},
+				{Text: "through", Type: TokenWord},
+				{Text: "50", Type: TokenAltitude, Value: 50},
+			},
+			ac:       Aircraft{State: "arrival"},
+			expected: []string{"ED50"},
+		},
+		{
+			name: "good rate descent",
+			tokens: []Token{
+				{Text: "good", Type: TokenWord},
+				{Text: "rate", Type: TokenWord},
+				{Text: "descent", Type: TokenWord},
+			},
+			ac:       Aircraft{State: "arrival"},
+			expected: []string{"GRD"},
+		},
+		{
+			name: "good rate of climb",
+			tokens: []Token{
+				{Text: "good", Type: TokenWord},
+				{Text: "rate", Type: TokenWord},
+				{Text: "of", Type: TokenWord},
+				{Text: "climb", Type: TokenWord},
+			},
+			ac:       Aircraft{State: "departure"},
+			expected: []string{"GRC"},
+		},
+		{
+			name: "good rate through altitude",
+			tokens: []Token{
+				{Text: "good", Type: TokenWord},
+				{Text: "rate", Type: TokenWord},
+				{Text: "through", Type: TokenWord},
+				{Text: "50", Type: TokenAltitude, Value: 50},
+			},
+			ac:       Aircraft{State: "arrival"},
+			expected: []string{"GR50"},
+		},
+		{
+			name: "good rate to altitude",
+			tokens: []Token{
+				{Text: "good", Type: TokenWord},
+				{Text: "rate", Type: TokenWord},
+				// "to" is a filler word and gets stripped; the bare pattern matches
+				{Text: "100", Type: TokenAltitude, Value: 100},
+			},
+			ac:       Aircraft{State: "arrival"},
+			expected: []string{"GR100"},
+		},
+		{
+			name: "cross distance direction altitude",
+			tokens: []Token{
+				{Text: "cross", Type: TokenWord},
+				{Text: "5", Type: TokenNumber, Value: 5},
+				{Text: "miles", Type: TokenWord},
+				{Text: "west", Type: TokenWord},
+				{Text: "of", Type: TokenWord},
+				{Text: "detgy", Type: TokenWord},
+				{Text: "maintain", Type: TokenWord},
+				{Text: "30", Type: TokenAltitude, Value: 30},
+			},
+			ac: Aircraft{
+				State: "arrival",
+				Fixes: map[string]string{"detgy": "DETGY"},
+			},
+			expected: []string{"CDETGY/5W/A30"},
+		},
+		{
+			name:     "empty tokens",
+			tokens:   []Token{},
+			ac:       Aircraft{State: "arrival"},
+			expected: nil,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			commands, _ := ParseCommands(tt.tokens, tt.ac)
+			if len(commands) != len(tt.expected) {
+				t.Errorf("ParseCommands() got %v, want %v", commands, tt.expected)
+				return
+			}
+			for i := range commands {
+				if commands[i] != tt.expected[i] {
+					t.Errorf("ParseCommands()[%d] = %q, want %q", i, commands[i], tt.expected[i])
+				}
+			}
+		})
+	}
+}
+
+func TestParseCommandsThenSequencing(t *testing.T) {
+	tests := []struct {
+		name     string
+		tokens   []Token
+		ac       Aircraft
+		expected []string
+	}{
+		{
+			name: "speed then descend",
+			tokens: []Token{
+				{Text: "reduce", Type: TokenWord},
+				{Text: "speed", Type: TokenWord},
+				{Text: "250", Type: TokenNumber, Value: 250},
+				{Text: "then", Type: TokenWord},
+				{Text: "descend", Type: TokenWord},
+				{Text: "80", Type: TokenAltitude, Value: 80},
+			},
+			ac:       Aircraft{Altitude: 12000, State: "arrival"},
+			expected: []string{"S250", "TD80"},
+		},
+		{
+			name: "descend then speed",
+			tokens: []Token{
+				{Text: "descend", Type: TokenWord},
+				{Text: "80", Type: TokenAltitude, Value: 80},
+				{Text: "then", Type: TokenWord},
+				{Text: "reduce", Type: TokenWord},
+				{Text: "210", Type: TokenNumber, Value: 210},
+			},
+			ac:       Aircraft{Altitude: 12000, State: "arrival"},
+			expected: []string{"D80", "TS210"},
+		},
+		{
+			name: "at altitude triggers then",
+			tokens: []Token{
+				{Text: "at", Type: TokenWord},
+				{Text: "30", Type: TokenAltitude, Value: 30},
+				{Text: "reduce", Type: TokenWord},
+				{Text: "speed", Type: TokenWord},
+				{Text: "180", Type: TokenNumber, Value: 180},
+			},
+			ac:       Aircraft{Altitude: 5000, State: "arrival"},
+			expected: []string{"TS180"},
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			commands, _ := ParseCommands(tt.tokens, tt.ac)
+			if len(commands) != len(tt.expected) {
+				t.Errorf("ParseCommands() got %v, want %v", commands, tt.expected)
+				return
+			}
+			for i := range commands {
+				if commands[i] != tt.expected[i] {
+					t.Errorf("ParseCommands()[%d] = %q, want %q", i, commands[i], tt.expected[i])
+				}
+			}
+		})
+	}
+}
+
+func TestParseCommandsPriorityResolution(t *testing.T) {
+	tests := []struct {
+		name     string
+		tokens   []Token
+		ac       Aircraft
+		expected []string
+		desc     string
+	}{
+		{
+			name: "descend_maintain beats descend (higher priority)",
+			tokens: []Token{
+				{Text: "descend", Type: TokenWord},
+				{Text: "maintain", Type: TokenWord},
+				{Text: "80", Type: TokenAltitude, Value: 80},
+			},
+			ac:       Aircraft{Altitude: 12000, State: "arrival"},
+			expected: []string{"D80"},
+			desc:     "Both match but descend_maintain (priority 10) wins over descend (priority 5)",
+		},
+		{
+			name: "climb_maintain beats climb (higher priority)",
+			tokens: []Token{
+				{Text: "climb", Type: TokenWord},
+				{Text: "maintain", Type: TokenWord},
+				{Text: "100", Type: TokenAltitude, Value: 100},
+			},
+			ac:       Aircraft{Altitude: 5000, State: "departure"},
+			expected: []string{"C100"},
+			desc:     "climb_maintain (priority 10) beats climb (priority 5)",
+		},
+		{
+			name: "turn_left_heading beats heading_only",
+			tokens: []Token{
+				{Text: "turn", Type: TokenWord},
+				{Text: "left", Type: TokenWord},
+				{Text: "heading", Type: TokenWord},
+				{Text: "270", Type: TokenNumber, Value: 270},
+			},
+			ac:       Aircraft{State: "arrival"},
+			expected: []string{"L270"},
+			desc:     "turn_left_heading (priority 10) beats heading_only (priority 5)",
+		},
+		{
+			name: "climb_via_sid beats climb",
+			tokens: []Token{
+				{Text: "climb", Type: TokenWord},
+				{Text: "via", Type: TokenWord},
+				{Text: "the", Type: TokenWord},
+				{Text: "sid", Type: TokenWord},
+			},
+			ac:       Aircraft{State: "departure"},
+			expected: []string{"CVS"},
+			desc:     "climb_via_sid (priority 15) beats climb (priority 5)",
+		},
+		{
+			name: "present_heading beats heading_only",
+			tokens: []Token{
+				{Text: "present", Type: TokenWord},
+				{Text: "heading", Type: TokenWord},
+			},
+			ac:       Aircraft{State: "arrival"},
+			expected: []string{"H"},
+			desc:     "present_heading (priority 12) beats heading_only (priority 5)",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			commands, _ := ParseCommands(tt.tokens, tt.ac)
+			if len(commands) != len(tt.expected) {
+				t.Errorf("%s: got %v, want %v", tt.desc, commands, tt.expected)
+				return
+			}
+			for i := range commands {
+				if commands[i] != tt.expected[i] {
+					t.Errorf("%s: [%d] = %q, want %q", tt.desc, i, commands[i], tt.expected[i])
+				}
+			}
+		})
+	}
+}
+
+func TestExtractFix(t *testing.T) {
+	fixes := map[string]string{
+		"jenny":     "JENNY",
+		"deer park": "DPK",
+		"pucky":     "PUCKY",
+		"gayel":     "GAYEL",
+		"snine":     "SNINE",
+		"S Four":    "SFOUR",
+	}
+
+	tests := []struct {
+		name         string
+		tokens       []Token
+		expectedFix  string
+		expectedCons int
+	}{
+		{
+			name: "exact match",
+			tokens: []Token{
+				{Text: "jenny", Type: TokenWord},
+			},
+			expectedFix:  "JENNY",
+			expectedCons: 1,
+		},
+		{
+			name: "multi-word fix",
+			tokens: []Token{
+				{Text: "deer", Type: TokenWord},
+				{Text: "park", Type: TokenWord},
+			},
+			expectedFix:  "DPK",
+			expectedCons: 2,
+		},
+		{
+			name: "fuzzy match",
+			tokens: []Token{
+				{Text: "jenney", Type: TokenWord},
+			},
+			expectedFix:  "JENNY",
+			expectedCons: 1,
+		},
+		{
+			name: "vowel normalization (gail -> gayel)",
+			tokens: []Token{
+				{Text: "gail", Type: TokenWord},
+			},
+			expectedFix:  "GAYEL",
+			expectedCons: 1,
+		},
+		{
+			// Normalization digitizes the spoken number, so the fix's
+			// number word is only recoverable by spelling it back out.
+			name: "digitized number word (s 9 -> snine)",
+			tokens: []Token{
+				{Text: "s", Type: TokenWord},
+				{Text: "9", Type: TokenNumber, Value: 9},
+			},
+			expectedFix:  "SNINE",
+			expectedCons: 2,
+		},
+		{
+			name: "digitized number word matching a spelled-out name (s 4 -> S Four)",
+			tokens: []Token{
+				{Text: "s", Type: TokenWord},
+				{Text: "4", Type: TokenNumber, Value: 4},
+			},
+			expectedFix:  "SFOUR",
+			expectedCons: 2,
+		},
+		{
+			name:         "number that isn't a fix",
+			tokens:       []Token{{Text: "180", Type: TokenNumber, Value: 180}},
+			expectedFix:  "",
+			expectedCons: 0,
+		},
+		{
+			name:         "no match",
+			tokens:       []Token{{Text: "xyz", Type: TokenWord}},
+			expectedFix:  "",
+			expectedCons: 0,
+		},
+		{
+			name:         "empty tokens",
+			tokens:       []Token{},
+			expectedFix:  "",
+			expectedCons: 0,
+		},
+		// Spelling correction tests
+		{
+			name: "spelling with thats trigger - deer park thats delta papa kilo",
+			tokens: []Token{
+				{Text: "deer", Type: TokenWord},
+				{Text: "park", Type: TokenWord},
+				{Text: "thats", Type: TokenWord},
+				{Text: "delta", Type: TokenWord},
+				{Text: "papa", Type: TokenWord},
+				{Text: "kilo", Type: TokenWord},
+			},
+			expectedFix:  "DPK",
+			expectedCons: 6, // all tokens consumed
+		},
+		{
+			name: "spelling confirms match - jenny thats juliet echo november november yankee",
+			tokens: []Token{
+				{Text: "jenny", Type: TokenWord},
+				{Text: "thats", Type: TokenWord},
+				{Text: "juliet", Type: TokenWord},
+				{Text: "echo", Type: TokenWord},
+				{Text: "november", Type: TokenWord},
+				{Text: "november", Type: TokenWord},
+				{Text: "yankee", Type: TokenWord},
+			},
+			expectedFix:  "JENNY",
+			expectedCons: 7, // all tokens consumed
+		},
+		{
+			name: "spelling without trigger - pucky papa uniform charlie kilo yankee",
+			tokens: []Token{
+				{Text: "pucky", Type: TokenWord},
+				{Text: "papa", Type: TokenWord},
+				{Text: "uniform", Type: TokenWord},
+				{Text: "charlie", Type: TokenWord},
+				{Text: "kilo", Type: TokenWord},
+				{Text: "yankee", Type: TokenWord},
+			},
+			expectedFix:  "PUCKY",
+			expectedCons: 6, // all tokens consumed
+		},
+		{
+			name: "spelling overrides garbled spoken name",
+			tokens: []Token{
+				{Text: "deerpak", Type: TokenWord}, // garbled "deer park"
+				{Text: "thats", Type: TokenWord},
+				{Text: "delta", Type: TokenWord},
+				{Text: "papa", Type: TokenWord},
+				{Text: "kilo", Type: TokenWord},
+			},
+			expectedFix:  "DPK",
+			expectedCons: 5, // all tokens consumed
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			fix, _, consumed := extractFix(tt.tokens, fixes)
+			if fix != tt.expectedFix {
+				t.Errorf("extractFix() fix = %q, want %q", fix, tt.expectedFix)
+			}
+			if consumed != tt.expectedCons {
+				t.Errorf("extractFix() consumed = %d, want %d", consumed, tt.expectedCons)
+			}
+		})
+	}
+}
+
+func TestUntilEstablishedPattern(t *testing.T) {
+	tests := []struct {
+		name     string
+		tokens   []Token
+		ac       Aircraft
+		expected []string
+	}{
+		{
+			name: "altitude until established",
+			tokens: []Token{
+				{Text: "40", Type: TokenAltitude, Value: 40},
+				{Text: "until", Type: TokenWord},
+				{Text: "established", Type: TokenWord},
+			},
+			ac:       Aircraft{State: "arrival"},
+			expected: []string{"A40"},
+		},
+		{
+			name: "altitude until established on localizer",
+			tokens: []Token{
+				{Text: "30", Type: TokenAltitude, Value: 30},
+				{Text: "until", Type: TokenWord},
+				{Text: "established", Type: TokenWord},
+				{Text: "on", Type: TokenWord},
+				{Text: "the", Type: TokenWord},
+				{Text: "localizer", Type: TokenWord},
+			},
+			ac:       Aircraft{State: "arrival"},
+			expected: []string{"A30"},
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			commands, _ := ParseCommands(tt.tokens, tt.ac)
+			if len(commands) != len(tt.expected) {
+				t.Errorf("ParseCommands() got %v, want %v", commands, tt.expected)
+				return
+			}
+			for i := range commands {
+				if commands[i] != tt.expected[i] {
+					t.Errorf("ParseCommands()[%d] = %q, want %q", i, commands[i], tt.expected[i])
+				}
+			}
+		})
+	}
+}
+
+func TestMatchCallsignDirect(t *testing.T) {
+	tests := []struct {
+		name          string
+		tokens        []Token
+		aircraft      map[string]Aircraft
+		expectedCS    string
+		expectedConf  float64
+		expectedCons  int
+		expectNoMatch bool
+	}{
+		{
+			name: "exact airline and number match",
+			tokens: []Token{
+				{Text: "american", Type: TokenWord},
+				{Text: "5936", Type: TokenNumber, Value: 5936},
+			},
+			aircraft: map[string]Aircraft{
+				"American 5936": {Callsign: "AAL5936"},
+			},
+			expectedCS:   "AAL5936",
+			expectedConf: 0.9,
+			expectedCons: 2,
+		},
+		{
+			name: "digit tokens for flight number",
+			tokens: []Token{
+				{Text: "delta", Type: TokenWord},
+				{Text: "4", Type: TokenWord},
+				{Text: "4", Type: TokenWord},
+				{Text: "2", Type: TokenWord},
+			},
+			aircraft: map[string]Aircraft{
+				"Delta 442": {Callsign: "DAL442"},
+			},
+			expectedCS:   "DAL442",
+			expectedConf: 0.9,
+			expectedCons: 4,
+		},
+		{
+			name: "multi-word airline",
+			tokens: []Token{
+				{Text: "china", Type: TokenWord},
+				{Text: "southern", Type: TokenWord},
+				{Text: "940", Type: TokenNumber, Value: 940},
+			},
+			aircraft: map[string]Aircraft{
+				"China Southern 940": {Callsign: "CSN940"},
+			},
+			expectedCS:   "CSN940",
+			expectedConf: 0.9,
+			expectedCons: 3,
+		},
+		{
+			name: "fuzzy airline match",
+			tokens: []Token{
+				{Text: "amurican", Type: TokenWord}, // fuzzy
+				{Text: "100", Type: TokenNumber, Value: 100},
+			},
+			aircraft: map[string]Aircraft{
+				"American 100": {Callsign: "AAL100"},
+			},
+			expectedCS:   "AAL100",
+			expectedConf: 0.5,
+			expectedCons: 2,
+		},
+		{
+			name: "skip garbage at start",
+			tokens: []Token{
+				{Text: "lass", Type: TokenWord}, // garbage
+				{Text: "delta", Type: TokenWord},
+				{Text: "100", Type: TokenNumber, Value: 100},
+			},
+			aircraft: map[string]Aircraft{
+				"Delta 100": {Callsign: "DAL100"},
+			},
+			expectedCS:   "DAL100",
+			expectedConf: 0.5,
+			expectedCons: 3,
+		},
+		{
+			name: "no match returns empty",
+			tokens: []Token{
+				{Text: "xyz", Type: TokenWord},
+				{Text: "999", Type: TokenNumber, Value: 999},
+			},
+			aircraft: map[string]Aircraft{
+				"American 100": {Callsign: "AAL100"},
+			},
+			expectNoMatch: true,
+		},
+		{
+			name:          "empty tokens",
+			tokens:        []Token{},
+			aircraft:      map[string]Aircraft{"American 100": {Callsign: "AAL100"}},
+			expectNoMatch: true,
+		},
+		{
+			name: "empty aircraft",
+			tokens: []Token{
+				{Text: "american", Type: TokenWord},
+				{Text: "100", Type: TokenNumber, Value: 100},
+			},
+			aircraft:      map[string]Aircraft{},
+			expectNoMatch: true,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			match, remaining := MatchCallsign(tt.tokens, tt.aircraft)
+
+			if tt.expectNoMatch {
+				if match.Callsign != "" {
+					t.Errorf("MatchCallsign() expected no match, got %q", match.Callsign)
+				}
+				return
+			}
+
+			if match.Callsign != tt.expectedCS {
+				t.Errorf("MatchCallsign() callsign = %q, want %q", match.Callsign, tt.expectedCS)
+			}
+			if match.Confidence < tt.expectedConf {
+				t.Errorf("MatchCallsign() confidence = %.2f, want >= %.2f",
+					match.Confidence, tt.expectedConf)
+			}
+			if match.Consumed != tt.expectedCons {
+				t.Errorf("MatchCallsign() consumed = %d, want %d", match.Consumed, tt.expectedCons)
+			}
+			expectedRemaining := len(tt.tokens) - tt.expectedCons
+			if len(remaining) != expectedRemaining {
+				t.Errorf("MatchCallsign() remaining = %d tokens, want %d",
+					len(remaining), expectedRemaining)
+			}
+		})
+	}
+}
+
+func TestMatchCallsignGACallsigns(t *testing.T) {
+	tests := []struct {
+		name         string
+		tokens       []Token
+		aircraft     map[string]Aircraft
+		expectedCS   string
+		expectedCons int
+	}{
+		{
+			name: "november N-number",
+			tokens: []Token{
+				{Text: "november", Type: TokenWord},
+				{Text: "1", Type: TokenWord},
+				{Text: "2", Type: TokenWord},
+				{Text: "3", Type: TokenWord},
+				{Text: "a", Type: TokenWord},
+				{Text: "b", Type: TokenWord},
+			},
+			aircraft: map[string]Aircraft{
+				"November 123AB": {Callsign: "N123AB"},
+			},
+			expectedCS:   "N123AB",
+			expectedCons: 6,
+		},
+		{
+			name: "N prefix",
+			tokens: []Token{
+				{Text: "n", Type: TokenWord},
+				{Text: "3", Type: TokenWord},
+				{Text: "4", Type: TokenWord},
+				{Text: "5", Type: TokenWord},
+			},
+			aircraft: map[string]Aircraft{
+				"November 345": {Callsign: "N345"},
+			},
+			expectedCS:   "N345",
+			expectedCons: 4,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			match, _ := MatchCallsign(tt.tokens, tt.aircraft)
+			if match.Callsign != tt.expectedCS {
+				t.Errorf("MatchCallsign() = %q, want %q", match.Callsign, tt.expectedCS)
+			}
+			if match.Consumed != tt.expectedCons {
+				t.Errorf("MatchCallsign() consumed = %d, want %d", match.Consumed, tt.expectedCons)
+			}
+		})
+	}
+}
+
+func TestMatchCallsignWithSuffix(t *testing.T) {
+	tests := []struct {
+		name         string
+		tokens       []Token
+		aircraft     map[string]Aircraft
+		expectedCS   string
+		expectedCons int
+	}{
+		{
+			name: "heavy suffix consumed",
+			tokens: []Token{
+				{Text: "lufthansa", Type: TokenWord},
+				{Text: "4wj", Type: TokenWord},
+				{Text: "heavy", Type: TokenWord},
+			},
+			aircraft: map[string]Aircraft{
+				"Lufthansa 4WJ heavy": {Callsign: "DLH4WJ"},
+			},
+			expectedCS:   "DLH4WJ",
+			expectedCons: 3,
+		},
+		{
+			name: "super suffix consumed",
+			tokens: []Token{
+				{Text: "emirates", Type: TokenWord},
+				{Text: "100", Type: TokenNumber, Value: 100},
+				{Text: "super", Type: TokenWord},
+			},
+			aircraft: map[string]Aircraft{
+				"Emirates 100 super": {Callsign: "UAE100"},
+			},
+			expectedCS:   "UAE100",
+			expectedCons: 3,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			match, _ := MatchCallsign(tt.tokens, tt.aircraft)
+			if match.Callsign != tt.expectedCS {
+				t.Errorf("MatchCallsign() = %q, want %q", match.Callsign, tt.expectedCS)
+			}
+			if match.Consumed != tt.expectedCons {
+				t.Errorf("MatchCallsign() consumed = %d, want %d", match.Consumed, tt.expectedCons)
+			}
+		})
+	}
+}
+
+func TestFlightNumberOnlyFallback(t *testing.T) {
+	tests := []struct {
+		name        string
+		tokens      []Token
+		aircraft    map[string]Aircraft
+		expectedCS  string
+		expectMatch bool
+	}{
+		{
+			name: "unique flight number matches",
+			tokens: []Token{
+				{Text: "garbled", Type: TokenWord},
+				{Text: "5936", Type: TokenNumber, Value: 5936},
+			},
+			aircraft: map[string]Aircraft{
+				"American 5936": {Callsign: "AAL5936"},
+			},
+			expectedCS:  "AAL5936",
+			expectMatch: true,
+		},
+		{
+			name: "completely garbled input with no flight number",
+			tokens: []Token{
+				{Text: "xyz", Type: TokenWord},
+				{Text: "abc", Type: TokenWord},
+			},
+			aircraft: map[string]Aircraft{
+				"American 100": {Callsign: "AAL100"},
+			},
+			expectMatch: false,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			match, _ := MatchCallsign(tt.tokens, tt.aircraft)
+			if tt.expectMatch {
+				if match.Callsign != tt.expectedCS {
+					t.Errorf("MatchCallsign() = %q, want %q", match.Callsign, tt.expectedCS)
+				}
+			} else {
+				if match.Callsign != "" {
+					t.Errorf("MatchCallsign() expected no match, got %q", match.Callsign)
+				}
+			}
+		})
+	}
+}
+
+// TestSTTFromJSONFiles runs all JSON test files from the tests/ directory.
+// Each file contains a transcript, the full aircraft context, and the expected
+// command output. This allows regression testing with real-world scenarios.
+func TestSTTFromJSONFiles(t *testing.T) {
+	testsDir := "tests"
+
+	// Check if tests directory exists
+	if _, err := os.Stat(testsDir); os.IsNotExist(err) {
+		t.Skip("tests/ directory not found")
+		return
+	}
+
+	// Find all JSON files
+	files, err := filepath.Glob(filepath.Join(testsDir, "*.json"))
+	if err != nil {
+		t.Fatalf("failed to glob test files: %v", err)
+	}
+
+	if len(files) == 0 {
+		t.Skip("no JSON test files found in tests/")
+		return
+	}
+
+	provider := NewTranscriber(nil)
+
+	for _, file := range files {
+		testName := strings.TrimSuffix(filepath.Base(file), ".json")
+		t.Run(testName, func(t *testing.T) {
+			t.Parallel()
+
+			testFile, err := LoadTestFile(file)
+			if err != nil {
+				t.Fatalf("failed to load %s: %v", file, err)
+			}
+
+			aircraft := testFile.BuildAircraftMap()
+
+			// Run the transcript through STT
+			result, err := provider.DecodeTranscript(aircraft, testFile.Transcript, "")
+			if err != nil {
+				t.Errorf("DecodeTranscript error: %v", err)
+				return
+			}
+
+			if expected := testFile.Expected(); !CommandsEquivalent(expected, result, aircraft) {
+				t.Errorf("got %q, want %q", result, expected)
 			}
 		})
 	}

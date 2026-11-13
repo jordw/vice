@@ -14,8 +14,8 @@
   "audio_duration_ms": 3656,
   "processor": "GPU: AMD Radeon RX 9060 XT (16304MB)",
   "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
-  "callsign": "",
-  "command": "",
+  "callsign": "JBU9159",
+  "command": "EI0R",
   "stt_aircraft": {
     "Av-ianca six 89": {
       "Callsign": "AVA689",

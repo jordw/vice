@@ -14,8 +14,8 @@
   "audio_duration_ms": 2504,
   "processor": "GPU: NVIDIA GeForce RTX 3060 Ti (8238MB)",
   "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
-  "callsign": "",
-  "command": "",
+  "callsign": "JBU688",
+  "command": "DWAROR",
   "stt_aircraft": {
     "JetBlue six 88": {
       "Callsign": "JBU688",

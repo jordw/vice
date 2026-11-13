@@ -15,7 +15,7 @@
   "processor": "GPU: NVIDIA GeForce RTX 3060 (12113MB)",
   "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
   "callsign": "ENY8513",
-  "command": "D76",
+  "command": "D60",
   "stt_aircraft": {
     "AeroMexico eight 23": {
       "Callsign": "AMX823",

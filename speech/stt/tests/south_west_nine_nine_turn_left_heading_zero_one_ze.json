@@ -14,7 +14,7 @@
   "audio_duration_ms": 2760,
   "processor": "GPU: NVIDIA GeForce GTX 1660 SUPER (6180MB)",
   "whisper_model": "ggml-small.en-jlvatc-q5_0.bin",
-  "callsign": "SWA795",
+  "callsign": "SWA919",
   "command": "L010",
   "stt_aircraft": {
     "Delta seven 34": {

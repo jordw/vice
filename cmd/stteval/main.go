@@ -202,7 +202,7 @@ var keywordChecks = []struct {
 func catIn(cats ...string) func([]string) bool {
 	return func(cmds []string) bool {
 		return slices.ContainsFunc(cmds, func(c string) bool {
-			return slices.Contains(cats, stt.CommandCategory(c))
+			return slices.Contains(cats, commandCategory(c))
 		})
 	}
 }
@@ -253,7 +253,7 @@ var radarish = map[string]bool{
 // consistencyFlags applies transcript-vs-output plausibility checks to the
 // current decoder output.
 func consistencyFlags(transcript, current string) []string {
-	tokens := stt.Tokenize(stt.NormalizeTranscript(transcript))
+	tokens := stt.ReadWords(transcript)
 	var flags []string
 
 	fields := strings.Fields(current)
@@ -264,7 +264,7 @@ func consistencyFlags(transcript, current string) []string {
 
 	nonFiller := 0
 	for _, t := range tokens {
-		if !stt.IsFillerWord(strings.ToLower(t.Text)) {
+		if !stt.IsStopword(strings.ToLower(t.Text)) {
 			nonFiller++
 		}
 	}
@@ -296,13 +296,13 @@ func consistencyFlags(transcript, current string) []string {
 	// appear (allowing for the standard encodings) somewhere in the output.
 	// An acknowledgment-only transmission is correctly answered with
 	// silence, its unechoed callsign digits notwithstanding.
-	if current == "" && slices.ContainsFunc(tokens, func(t stt.Token) bool {
+	if current == "" && slices.ContainsFunc(tokens, func(t stt.Word) bool {
 		return ackWords[strings.ToLower(t.Text)]
 	}) {
 		return flags
 	}
 	outRuns := digitRuns(current)
-	correctionAt := slices.IndexFunc(tokens, func(t stt.Token) bool {
+	correctionAt := slices.IndexFunc(tokens, func(t stt.Word) bool {
 		return strings.EqualFold(t.Text, "correction")
 	})
 	hasContact := contactOK(cmds)
@@ -339,8 +339,8 @@ func consistencyFlags(transcript, current string) []string {
 			continue
 		}
 		var cands []string
-		switch t.Type {
-		case stt.TokenNumber:
+		switch t.Kind {
+		case stt.WordNumber:
 			if len(t.Text) < 2 {
 				continue
 			}
@@ -351,7 +351,7 @@ func consistencyFlags(transcript, current string) []string {
 			if t.Value >= 1000 && t.Value%100 == 0 {
 				cands = append(cands, strconv.Itoa(t.Value/100))
 			}
-		case stt.TokenAltitude:
+		case stt.WordAltitude:
 			// Altitudes are encoded in hundreds of feet in commands.
 			cands = append(cands, strconv.Itoa(t.Value))
 		default:
