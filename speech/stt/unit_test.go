@@ -7,6 +7,8 @@ package stt
 import (
 	"slices"
 	"testing"
+
+	"github.com/mmp/vice/sim"
 )
 
 func TestTokenize(t *testing.T) {
@@ -428,6 +430,32 @@ func TestCallsignRepairs(t *testing.T) {
 	} {
 		if got, _ := NewTranscriber(nil).DecodeTranscript(aircraft, tt.transcript, ""); got != tt.expected {
 			t.Errorf("%q: got %q, want %q", tt.transcript, got, tt.expected)
+		}
+	}
+}
+
+// The /T suffix is part of what a test file expects only if the transcript
+// opens with the words that tell the two forms of address apart.
+func TestTestFileMatchesAddressingForm(t *testing.T) {
+	aircraft := map[string]Aircraft{
+		"november one two three alpha bravo": {Callsign: "N123AB"},
+		"skyhawk three alpha bravo":          {Callsign: "N123AB/T", AddressingForm: sim.AddressingFormTypeTrailing3},
+	}
+	for _, tt := range []struct {
+		transcript, callsign, result string
+		want                         bool
+	}{
+		{"November one two three alpha bravo fly heading zero nine zero", "N123AB", "N123AB H090", true},
+		{"November one two three alpha bravo fly heading zero nine zero", "N123AB", "N123AB/T H090", false},
+		{"Skyhawk three alpha bravo fly heading zero nine zero", "N123AB/T", "N123AB/T H090", true},
+		{"Skyhawk three alpha bravo fly heading zero nine zero", "N123AB/T", "N123AB H090", false},
+		{"Sky talk three alpha bravo fly heading zero nine zero", "N123AB/T", "N123AB H090", true},
+		{"Sky talk three alpha bravo fly heading zero nine zero", "N123AB", "N123AB/T H090", true},
+		{"Sky talk three alpha bravo fly heading zero nine zero", "N123AB", "N123AB/T H180", false},
+	} {
+		tf := TestFile{Transcript: tt.transcript, Callsign: tt.callsign, Command: "H090"}
+		if got := tf.Matches(tt.result, aircraft); got != tt.want {
+			t.Errorf("%q expecting %s, result %q: got %v, want %v", tt.transcript, tt.callsign, tt.result, got, tt.want)
 		}
 	}
 }

@@ -53,7 +53,7 @@ func main() {
 	fmt.Printf("Expected:   %q\n", expected)
 	fmt.Printf("Actual:     %q\n", result)
 
-	if stt.CommandsEquivalent(expected, result, aircraft) {
+	if testFile.Matches(result, aircraft) {
 		fmt.Println("\nPASS")
 		os.Exit(0)
 	} else {

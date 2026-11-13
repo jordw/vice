@@ -9,6 +9,7 @@ import (
 	"maps"
 	"os"
 	"regexp"
+	"slices"
 	"strings"
 
 	"github.com/mmp/vice/sim"
@@ -57,6 +58,51 @@ func (tf TestFile) Expected() string {
 		return ""
 	}
 	return strings.TrimSpace(tf.Callsign + " " + tf.Command)
+}
+
+// Matches reports whether result is the decoder output that the file
+// expects. The /T suffix of the callsign is compared only if the transcript
+// states the form of address: it opens with "November", or with the type of
+// the expected aircraft as its type form gives it. After any other opening
+// words, either form is accepted.
+func (tf TestFile) Matches(result string, aircraft map[string]Aircraft) bool {
+	expected := tf.Expected()
+	if !tf.statesAddressingForm(aircraft) {
+		expected, result = withoutTypeForm(expected), withoutTypeForm(result)
+	}
+	return CommandsEquivalent(expected, result, aircraft)
+}
+
+// statesAddressingForm reports whether the transcript opens with exactly
+// the words that tell the full form of the expected callsign from its type
+// form.
+func (tf TestFile) statesAddressingForm(aircraft map[string]Aircraft) bool {
+	tokens := tokenize(tf.Transcript)
+	opensWith := func(words string) bool {
+		opening := tokenize(words)
+		return len(opening) > 0 && len(opening) <= len(tokens) &&
+			slices.EqualFunc(opening, tokens[:len(opening)], func(a, b token) bool { return a.text == b.text })
+	}
+	if opensWith("november") {
+		return true
+	}
+	callsign := strings.TrimSuffix(tf.Callsign, "/T")
+	for key, ac := range aircraft {
+		if ac.AddressingForm != sim.AddressingFormTypeTrailing3 || strings.TrimSuffix(ac.Callsign, "/T") != callsign {
+			continue
+		}
+		if a := makeAddressee(key, ac); len(a.names) > 0 && opensWith(a.names[0].text) {
+			return true
+		}
+	}
+	return false
+}
+
+// withoutTypeForm returns the decoder output with no /T suffix on its
+// callsign.
+func withoutTypeForm(output string) string {
+	callsign, commands, _ := strings.Cut(output, " ")
+	return strings.TrimSpace(strings.TrimSuffix(callsign, "/T") + " " + commands)
 }
 
 var testFilenameStrip = regexp.MustCompile(`[^a-z0-9_]`)

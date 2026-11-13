@@ -140,7 +140,7 @@ func phaseDecode(statePath, evalDir string) error {
 				return fmt.Errorf("decoding %q: %v", e.Transcript, err)
 			}
 			row.Current = current
-			row.Agree = stt.CommandsEquivalent(row.Stored, current, aircraft)
+			row.Agree = e.Matches(current, aircraft)
 			row.Flags = consistencyFlags(e.Transcript, current)
 			if row.Agree && len(row.Flags) == 0 {
 				row.Class = "trusted"

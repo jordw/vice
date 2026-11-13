@@ -5014,8 +5014,8 @@ func TestSTTFromJSONFiles(t *testing.T) {
 				return
 			}
 
-			if expected := testFile.Expected(); !CommandsEquivalent(expected, result, aircraft) {
-				t.Errorf("got %q, want %q", result, expected)
+			if !testFile.Matches(result, aircraft) {
+				t.Errorf("got %q, want %q", result, testFile.Expected())
 			}
 		})
 	}
