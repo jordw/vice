@@ -212,6 +212,171 @@
     }
   },
   "facility_adaptations": {
+    "arts_coordination": {
+      "PPP": {
+        "route_based": [
+          {
+            "type": "star",
+            "id": "BRUSR1",
+            "fixes": [],
+            "default_fix": "BRUSR"
+          },
+          {
+            "type": "star",
+            "id": "EAGUL6",
+            "fixes": [],
+            "default_fix": "EAGUL"
+          },
+          {
+            "type": "star",
+            "id": "PINNG1",
+            "fixes": [],
+            "default_fix": "PINNG"
+          },
+          {
+            "type": "star",
+            "id": "HYDRR1",
+            "fixes": [],
+            "default_fix": "HYDRR"
+          },
+          {
+            "type": "star",
+            "id": "ARLIN4",
+            "fixes": [],
+            "default_fix": "HYDRR"
+          },
+          {
+            "type": "star",
+            "id": "DSERT2",
+            "fixes": [],
+            "default_fix": "DSERT"
+          },
+          {
+            "type": "star",
+            "id": "HUUTY1",
+            "fixes": [],
+            "default_fix": "HUUTY"
+          },
+          {
+            "type": "sid",
+            "id": "BROAK1",
+            "fixes": [],
+            "default_fix": "BROAK"
+          },
+          {
+            "type": "sid",
+            "id": "ECLPS1",
+            "fixes": [],
+            "default_fix": "ECLPS"
+          },
+          {
+            "type": "sid",
+            "id": "FORPE1",
+            "fixes": [],
+            "default_fix": "FORPE"
+          },
+          {
+            "type": "sid",
+            "id": "FYRBD1",
+            "fixes": [],
+            "default_fix": "FYRBD"
+          },
+          {
+            "type": "sid",
+            "id": "KEENS3",
+            "fixes": [],
+            "default_fix": "KEENS"
+          },
+          {
+            "type": "sid",
+            "id": "MRBIL1",
+            "fixes": [],
+            "default_fix": "MRBIL"
+          },
+          {
+            "type": "sid",
+            "id": "QUAKY1",
+            "fixes": [],
+            "default_fix": "QUAKY"
+          },
+          {
+            "type": "sid",
+            "id": "STRRM1",
+            "fixes": [],
+            "default_fix": "BNYRD"
+          },
+          {
+            "type": "sid",
+            "id": "ZEPER2",
+            "fixes": [],
+            "default_fix": "ZEPER"
+          },
+          {
+            "type": "sid",
+            "id": "BNYRD6",
+            "fixes": [],
+            "default_fix": "BNYRD"
+          },
+          {
+            "type": "sid",
+            "id": "FTHLS6",
+            "fixes": [],
+            "default_fix": "BROAK"
+          },
+          {
+            "type": "sid",
+            "id": "IZZZO8",
+            "fixes": [],
+            "default_fix": "KEENS"
+          },
+          {
+            "type": "sid",
+            "id": "JUDTH7",
+            "fixes": [],
+            "default_fix": "FYRBD"
+          },
+          {
+            "type": "sid",
+            "id": "KATMN6",
+            "fixes": [],
+            "default_fix": "ECLPS"
+          },
+          {
+            "type": "sid",
+            "id": "LALUZ6",
+            "fixes": [],
+            "default_fix": "FORPE"
+          },
+          {
+            "type": "sid",
+            "id": "MAYSA7",
+            "fixes": [],
+            "default_fix": "ZEPER"
+          },
+          {
+            "type": "sid",
+            "id": "SNOBL1",
+            "fixes": [],
+            "default_fix": "QUAKY"
+          },
+          {
+            "type": "sid",
+            "id": "YOTES6",
+            "fixes": [],
+            "default_fix": "MRBIL"
+          }
+        ],
+        "zone_based": [
+          {
+            "area_id": "P50",
+            "center": "PHX",
+            "arrival": [],
+            "departure": [],
+            "overflight": []
+          }
+        ]
+      }
+    },
     "coordination_fixes": {
       "BRUSR": [
         {
