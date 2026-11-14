@@ -587,12 +587,10 @@ func compose(cmds []string, ac *Aircraft) []string {
 		cmds = slices.DeleteFunc(cmds, func(cmd string) bool { return cmd == approvedMarker })
 	}
 
-	// One request to say a value again is enough.
+	// A command said twice, whether restated by the controller or repeated
+	// by the recognizer, is carried out once.
 	seen := make(map[string]bool)
 	return slices.DeleteFunc(cmds, func(cmd string) bool {
-		if !strings.HasPrefix(cmd, "SAYAGAIN/") {
-			return false
-		}
 		dup := seen[cmd]
 		seen[cmd] = true
 		return dup

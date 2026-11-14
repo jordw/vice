@@ -147,6 +147,9 @@ type AltitudeIntent struct {
 	AlreadyExpediting bool
 	ThenSpeed         *av.Airspeed // speed once we reach the altitude
 	ThenSpeedType     SpeedType
+	// FollowsSpeed marks an altitude that waits on the speed change read
+	// back just before it: "slow to 210, then down to 6,000".
+	FollowsSpeed bool
 }
 
 func (a AltitudeIntent) Render(rt *RadioTransmission, r *rand.Rand) {
@@ -176,39 +179,37 @@ func (a AltitudeIntent) Render(rt *RadioTransmission, r *rand.Rand) {
 		rt.Add("at {airspeed}", *a.AfterSpeed)
 	}
 
+	then := ""
+	if a.FollowsSpeed {
+		then = "then "
+	}
+	// A rate through the altitude the aircraft is going to is a rate to it.
+	through := a.RateThrough != nil && *a.RateThrough != a.Altitude
+
 	if a.Expedite {
-		if a.RateThrough != nil {
-			rt.Add("[expedite through|expediting through] {alt}", *a.RateThrough)
+		switch {
+		case through:
+			rt.Add(then+"[expedite through|expediting through] {alt}", *a.RateThrough)
 			// After the through-altitude, just read back the target without repeating "expediting"
-			rt.Add("[up to|] {alt}", a.Altitude)
-		} else if a.Direction == AltitudeClimb {
-			rt.Add("[expediting up to|expedite] {alt}", a.Altitude)
-		} else {
-			rt.Add("[expediting down to|expedite] {alt}", a.Altitude)
+			if a.Direction == AltitudeClimb {
+				rt.Add("[up to|] {alt}", a.Altitude)
+			} else {
+				rt.Add("[down to|] {alt}", a.Altitude)
+			}
+		case a.Direction == AltitudeClimb:
+			rt.Add(then+"[expediting up to|expedite] {alt}", a.Altitude)
+		default:
+			rt.Add(then+"[expediting down to|expedite] {alt}", a.Altitude)
 		}
 	} else if a.GoodRate {
-		if a.RateThrough != nil {
-			rt.Add("[good rate through|good rate to] {alt}", *a.RateThrough)
+		if through {
+			rt.Add(then+"[good rate through|good rate to] {alt}", *a.RateThrough)
 		} else {
-			rt.Add("[good rate|we'll give you a good rate]")
+			rt.Add(then + "[good rate|we'll give you a good rate]")
 		}
-		switch a.Direction {
-		case AltitudeClimb:
-			rt.Add("[climb-and-maintain|up to|] {alt}", a.Altitude)
-		case AltitudeDescend:
-			rt.Add("[descend-and-maintain|down to|] {alt}", a.Altitude)
-		case AltitudeMaintain:
-			rt.Add("[maintain|we'll keep it at|] {alt}", a.Altitude)
-		}
+		a.renderTarget(rt, false)
 	} else {
-		switch a.Direction {
-		case AltitudeClimb:
-			rt.Add("[climb-and-maintain|up to|] {alt}", a.Altitude)
-		case AltitudeDescend:
-			rt.Add("[descend-and-maintain|down to|] {alt}", a.Altitude)
-		case AltitudeMaintain:
-			rt.Add("[maintain|we'll keep it at|] {alt}", a.Altitude)
-		}
+		a.renderTarget(rt, a.FollowsSpeed)
 	}
 
 	if a.ThenSpeed != nil {
@@ -228,6 +229,25 @@ func (a AltitudeIntent) Render(rt *RadioTransmission, r *rand.Rand) {
 
 	if !earlySpeed && a.AfterSpeed != nil {
 		rt.Add("[once we're|] at {airspeed}", *a.AfterSpeed)
+	}
+}
+
+// renderTarget reads back the altitude to climb, descend, or hold at. The
+// verb may go unsaid, except after "then".
+func (a AltitudeIntent) renderTarget(rt *RadioTransmission, then bool) {
+	var verbs string
+	switch a.Direction {
+	case AltitudeClimb:
+		verbs = "climb-and-maintain|up to"
+	case AltitudeDescend:
+		verbs = "descend-and-maintain|down to"
+	case AltitudeMaintain:
+		verbs = "maintain|we'll keep it at"
+	}
+	if then {
+		rt.Add("then ["+verbs+"] {alt}", a.Altitude)
+	} else {
+		rt.Add("["+verbs+"|] {alt}", a.Altitude)
 	}
 }
 
@@ -621,33 +641,12 @@ func (n NavigationIntent) Render(rt *RadioTransmission, r *rand.Rand) {
 	case NavDepartFixHeading:
 		rt.Add("depart {fix} heading {hdg}", n.Fix, n.Heading)
 	case NavCrossFixAt:
-		rt.Add("cross {fix}", n.Fix)
-		if n.AltRestriction != nil {
-			rt.Add("{altrest}", n.AltRestriction)
-		}
-		if n.SpeedRestriction != nil {
-			phrase, args := SpeedRestrictionPhrase(*n.SpeedRestriction)
-			rt.Add(phrase, args...)
-		}
+		n.renderCrossing(rt, "cross {fix}", n.Fix)
 	case NavCrossDistanceFromFixAt:
-		rt.Add("cross {num} miles "+math.Compass(n.Direction.Heading())+" of {fix}",
+		n.renderCrossing(rt, "cross {num} miles "+math.Compass(n.Direction.Heading())+" of {fix}",
 			int(n.Distance), n.Fix)
-		if n.AltRestriction != nil {
-			rt.Add("{altrest}", n.AltRestriction)
-		}
-		if n.SpeedRestriction != nil {
-			phrase, args := SpeedRestrictionPhrase(*n.SpeedRestriction)
-			rt.Add(phrase, args...)
-		}
 	case NavCrossDME:
-		rt.Add("cross {num} D M E", int(n.Distance))
-		if n.AltRestriction != nil {
-			rt.Add("{altrest}", n.AltRestriction)
-		}
-		if n.SpeedRestriction != nil {
-			phrase, args := SpeedRestrictionPhrase(*n.SpeedRestriction)
-			rt.Add(phrase, args...)
-		}
+		n.renderCrossing(rt, "cross {num} D M E", int(n.Distance))
 	case NavInterceptRadial:
 		rt.Add("[intercept|join] the {fix} {hdg} radial "+util.Select(n.Outbound, "outbound", "inbound"),
 			n.Fix, n.Radial)
@@ -662,6 +661,24 @@ func (n NavigationIntent) Render(rt *RadioTransmission, r *rand.Rand) {
 	case NavAltitudeDiscretion:
 		rt.Add("[altitude our discretion|altitude our discretion, maintain VFR]")
 	}
+}
+
+// renderCrossing reads back where to cross and the altitude and speed to
+// cross at as one phrase, without a pause between them.
+func (n NavigationIntent) renderCrossing(rt *RadioTransmission, where string, args ...any) {
+	if n.AltRestriction != nil {
+		where += " {altrest}"
+		args = append(args, n.AltRestriction)
+	}
+	if n.SpeedRestriction != nil {
+		phrase, spdArgs := SpeedRestrictionPhrase(*n.SpeedRestriction)
+		if n.AltRestriction != nil {
+			where += " and"
+		}
+		where += " " + phrase
+		args = append(args, spdArgs...)
+	}
+	rt.Add(where, args...)
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -712,6 +729,9 @@ func (a ApproachIntent) Render(rt *RadioTransmission, r *rand.Rand) {
 			rt.Add("at {fix} cleared straight in {appr}", a.Fix, a.ApproachName)
 		} else {
 			rt.Add("at {fix} cleared {appr}", a.Fix, a.ApproachName)
+		}
+		if a.LAHSORunway != "" {
+			rt.Add("[and we'll hold short of|hold short of] runway {rwy}", a.LAHSORunway)
 		}
 	case ApproachAtFixIntercept:
 		if a.HasLocalizer {
@@ -1182,7 +1202,8 @@ func findOrderedMatches(intentTypes []reflect.Type, paramTypes []reflect.Type) [
 
 // mergeIntents combines related intents using registered merge functions.
 // Merge functions are tried in priority order (longer matches first, then registration order).
-// Matches are ordered but not necessarily contiguous (e.g., [A, X, B] matches a merger for [A, B]).
+// Matches are ordered but not necessarily contiguous (e.g., [A, X, B] matches a merger for [A, B],
+// and the merged intent follows X).
 // The algorithm restarts from the top after each successful merge and continues until
 // no further progress is made.
 func mergeIntents(intents []CommandIntent) []CommandIntent {
@@ -1210,8 +1231,10 @@ restart:
 				for _, matchIndice := range slices.Backward(matchIndices) {
 					intents = slices.Delete(intents, matchIndice, matchIndice+1)
 				}
-				// Insert replacement at position of first match
-				intents = slices.Insert(intents, matchIndices[0], replacement...)
+				// The replacement goes where the last of the intents it replaces
+				// was, after anything said between them.
+				at := matchIndices[len(matchIndices)-1] - (len(matchIndices) - 1)
+				intents = slices.Insert(intents, at, replacement...)
 				continue restart
 			}
 		}
@@ -1247,6 +1270,45 @@ func mergeAltitudeSpeed(alt AltitudeIntent, spd SpeedIntent) ([]CommandIntent, b
 
 }
 
+// mergeSpeedAltitude reads back an altitude that waits on a speed change
+// after the speed, with "then", instead of repeating the speed.
+func mergeSpeedAltitude(spd SpeedIntent, alt AltitudeIntent) ([]CommandIntent, bool) {
+	if alt.AfterSpeed == nil || *alt.AfterSpeed != spd.Speed || spd.AfterFix != "" || spd.AfterAltitude != nil ||
+		spd.Until != nil {
+		return nil, false
+	}
+	switch spd.Type {
+	case SpeedAssign, SpeedReduce, SpeedIncrease:
+		alt.AfterSpeed = nil
+		alt.FollowsSpeed = true
+		return []CommandIntent{spd, alt}, true
+	}
+	return nil, false
+}
+
+// mergeExpectCleared drops the readback of the approach to expect when the
+// transmission also clears the aircraft for it.
+func mergeExpectCleared(exp ApproachIntent, clr ClearedApproachIntent) ([]CommandIntent, bool) {
+	if exp.Type != ApproachExpect || exp.ApproachName != clr.Approach {
+		return nil, false
+	}
+	if clr.LAHSORunway == "" {
+		clr.LAHSORunway = exp.LAHSORunway
+	}
+	return []CommandIntent{clr}, true
+}
+
+// mergeExpectAtFixCleared is mergeExpectCleared for a clearance at a fix.
+func mergeExpectAtFixCleared(exp ApproachIntent, clr ApproachIntent) ([]CommandIntent, bool) {
+	if exp.Type != ApproachExpect || clr.Type != ApproachAtFixCleared || exp.ApproachName != clr.ApproachName {
+		return nil, false
+	}
+	if clr.LAHSORunway == "" {
+		clr.LAHSORunway = exp.LAHSORunway
+	}
+	return []CommandIntent{clr}, true
+}
+
 // mergeProcedureSpeed folds a speed given with a climb via SID or descend
 // via STAR into the procedure's readback, since together they are the
 // "except maintain (speed)" form of the instruction.
@@ -1278,6 +1340,9 @@ func mergeTransponder(ta, tb TransponderIntent) ([]CommandIntent, bool) {
 func init() {
 	RegisterIntentMerger(mergeAltitudeExpedite)
 	RegisterIntentMerger(mergeAltitudeSpeed)
+	RegisterIntentMerger(mergeSpeedAltitude)
+	RegisterIntentMerger(mergeExpectCleared)
+	RegisterIntentMerger(mergeExpectAtFixCleared)
 	RegisterIntentMerger(mergeProcedureSpeed)
 	RegisterIntentMerger(mergeTransponder)
 }

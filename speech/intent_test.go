@@ -16,6 +16,11 @@ import (
 
 func renderIntentForTest(t *testing.T, intent CommandIntent, seed uint64) string {
 	t.Helper()
+	return renderIntentsForTest(t, []CommandIntent{intent}, seed)
+}
+
+func renderIntentsForTest(t *testing.T, intents []CommandIntent, seed uint64) string {
+	t.Helper()
 
 	if db.DB == nil {
 		db.DB = &db.StaticDatabase{
@@ -26,7 +31,7 @@ func renderIntentForTest(t *testing.T, intent CommandIntent, seed uint64) string
 
 	r := rand.Make()
 	r.Seed(seed)
-	rd, err := RenderIntents([]CommandIntent{intent}, r).Render(r)
+	rd, err := RenderIntents(intents, r).Render(r)
 	if err != nil {
 		t.Fatalf("seed %d: %v", seed, err)
 	}
@@ -430,5 +435,107 @@ func TestResumeProcedureReadback(t *testing.T) {
 			t.Errorf("seed %d: got %q, want the STAR named", seed, readback)
 		}
 		assertContainsAny(t, readback, "resume", "rejoin")
+	}
+}
+
+// TestExpediteThroughReadback verifies that the altitude after an expedite
+// through another is read back in the direction of the descent, and that an
+// expedite through the altitude the aircraft is going to is read back as one
+// to it.
+func TestExpediteThroughReadback(t *testing.T) {
+	through, target := float32(6000), float32(4000)
+	descent := AltitudeIntent{Altitude: target, Direction: AltitudeDescend, Expedite: true, RateThrough: &through}
+	toTarget := AltitudeIntent{Altitude: target, Direction: AltitudeDescend, Expedite: true, RateThrough: &target}
+	for seed := uint64(1); seed <= 20; seed++ {
+		readback := renderIntentForTest(t, descent, seed)
+		if !strings.Contains(readback, "through 6,000") || !strings.Contains(readback, "4,000") ||
+			strings.Contains(readback, "up to") {
+			t.Errorf("seed %d: got %q, want an expedite through 6,000 down to 4,000", seed, readback)
+		}
+		readback = renderIntentForTest(t, toTarget, seed)
+		if strings.Contains(readback, "through") || strings.Count(readback, "4,000") != 1 {
+			t.Errorf("seed %d: got %q, want an expedite to 4,000", seed, readback)
+		}
+	}
+}
+
+// TestSpeedThenAltitudeReadback verifies that an altitude that waits on a
+// speed change follows the speed's readback with "then" instead of repeating
+// the speed, with or without an expedite.
+func TestSpeedThenAltitudeReadback(t *testing.T) {
+	spd := av.MakeIAS(210)
+	speed := SpeedIntent{Speed: spd, Type: SpeedReduce}
+	alt := AltitudeIntent{Altitude: 6000, Direction: AltitudeDescend, AfterSpeed: &spd}
+	expedite := alt
+	expedite.Expedite = true
+	for _, intents := range [][]CommandIntent{{speed, alt}, {speed, alt, expedite}} {
+		for seed := uint64(1); seed <= 20; seed++ {
+			readback := renderIntentsForTest(t, intents, seed)
+			if strings.Count(readback, "210") != 1 || strings.Count(readback, "6,000") != 1 ||
+				!strings.Contains(readback, "then") {
+				t.Errorf("seed %d: got %q, want the speed, then the altitude", seed, readback)
+			}
+			if len(intents) == 3 && !strings.Contains(readback, "expedit") {
+				t.Errorf("seed %d: got %q, want an expedite", seed, readback)
+			}
+		}
+	}
+}
+
+// TestExpectClearedReadback verifies that an approach to expect is not read
+// back when the same transmission clears the aircraft for it.
+func TestExpectClearedReadback(t *testing.T) {
+	const appr = "RNAV Z Runway 27"
+	expect := ApproachIntent{Type: ApproachExpect, ApproachName: appr, LAHSORunway: "33"}
+	for _, test := range []struct {
+		name    string
+		intents []CommandIntent
+		want    int
+	}{
+		{"cleared", []CommandIntent{expect, ClearedApproachIntent{Approach: appr}}, 1},
+		{"cleared at a fix", []CommandIntent{expect,
+			ApproachIntent{Type: ApproachAtFixCleared, ApproachName: appr, Fix: "LYNDI"}}, 1},
+		{"cleared for another", []CommandIntent{expect, ClearedApproachIntent{Approach: "ILS Runway 27"}}, 2},
+	} {
+		for seed := uint64(1); seed <= 20; seed++ {
+			readback := renderIntentsForTest(t, test.intents, seed)
+			if n := strings.Count(readback, "runway 27"); n != test.want {
+				t.Errorf("%s, seed %d: got %q, want the approach named %d times", test.name, seed, readback, test.want)
+			}
+			if !strings.Contains(readback, "hold short of runway 33") {
+				t.Errorf("%s, seed %d: got %q, want the hold short", test.name, seed, readback)
+			}
+		}
+	}
+}
+
+// TestCrossFixAtAltitudeReadback verifies that the fix and the altitude to
+// cross it at are read back as one phrase.
+func TestCrossFixAtAltitudeReadback(t *testing.T) {
+	ar := av.MakeAtAltitudeRestriction(5000)
+	intent := NavigationIntent{Type: NavCrossFixAt, Fix: "VYDDA", AltRestriction: &ar}
+	for seed := uint64(1); seed <= 10; seed++ {
+		if readback := renderIntentForTest(t, intent, seed); readback != "cross vydda at 5,000" {
+			t.Errorf("seed %d: got %q, want %q", seed, readback, "cross vydda at 5,000")
+		}
+	}
+}
+
+// TestMergedIntentKeepsItsPlace verifies that intents merged across others
+// are read back where the later of them was said: a clearance after a
+// crossing restriction stays after it.
+func TestMergedIntentKeepsItsPlace(t *testing.T) {
+	const appr = "RNAV Runway 35"
+	ar := av.MakeAtAltitudeRestriction(12000)
+	intents := []CommandIntent{
+		ApproachIntent{Type: ApproachExpect, ApproachName: appr},
+		NavigationIntent{Type: NavCrossFixAt, Fix: "JAZZZ", AltRestriction: &ar},
+		ApproachIntent{Type: ApproachAtFixCleared, ApproachName: appr, Fix: "JAZZZ"},
+	}
+	for seed := uint64(1); seed <= 10; seed++ {
+		readback := renderIntentsForTest(t, intents, seed)
+		if want := "cross jazzz at 12,000, at jazzz cleared rnav runway 35"; readback != want {
+			t.Errorf("seed %d: got %q, want %q", seed, readback, want)
+		}
 	}
 }

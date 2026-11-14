@@ -278,6 +278,8 @@ func TestExpediteAltitude(t *testing.T) {
 		{"up to an altitude", departure, "expedite up to one zero thousand", "C100 EC"},
 		{"after maintaining an altitude above", departure, "maintain one zero thousand expedite", "A100 EC"},
 		{"after maintaining an altitude below", arrival, "maintain four thousand expedite", "A40 ED"},
+		{"altitude restated with the expedite", departure,
+			"climb and maintain one five thousand expedite up to one five thousand", "C150 EC"},
 	} {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := decodeFor(tt.ac, tt.words); got != tt.expected {
@@ -321,6 +323,22 @@ func TestFixNames(t *testing.T) {
 				t.Errorf("%q: got %q, want %q", tt.words, got, tt.expected)
 			}
 		})
+	}
+}
+
+// TestComposeRepeatedCommands checks that a command said twice in one
+// transmission is given once, in the place it was first said.
+func TestComposeRepeatedCommands(t *testing.T) {
+	for _, tt := range []struct{ input, expected []string }{
+		{[]string{"T5R", "T5R"}, []string{"T5R"}},
+		{[]string{"T10R", "A60", "T10R"}, []string{"T10R", "A60"}},
+		{[]string{"FC", "TO", "TO"}, []string{"FC", "TO"}},
+		{[]string{"CI2L", "H190", "CI2L"}, []string{"CI2L", "H190"}},
+		{[]string{"SAYAGAIN/ALTITUDE", "H190", "SAYAGAIN/ALTITUDE"}, []string{"SAYAGAIN/ALTITUDE", "H190"}},
+	} {
+		if got := compose(slices.Clone(tt.input), &Aircraft{}); !slices.Equal(got, tt.expected) {
+			t.Errorf("%v: got %v, want %v", tt.input, got, tt.expected)
+		}
 	}
 }
 
