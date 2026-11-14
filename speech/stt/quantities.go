@@ -109,6 +109,13 @@ func (d *decoding) interpretSpeed(r numberReading) (quantity, bool) {
 	if s[0] == '0' {
 		return quantity{}, false
 	}
+	// A number before "thousand" or "hundred" is an altitude.
+	if _, _, ok := d.thousandAfter(r.end); ok {
+		return quantity{}, false
+	}
+	if _, _, ok := d.unitAt(r.end, atomHundred); ok {
+		return quantity{}, false
+	}
 
 	var in quantity
 	switch {

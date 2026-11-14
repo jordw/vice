@@ -73,6 +73,12 @@ func (r *rule) then() *rule {
 	return r
 }
 
+// withoutVerb marks the rule as one for a value said without its verb.
+func (r *rule) withoutVerb() *rule {
+	r.verbless = true
+	return r
+}
+
 // scaled multiplies the evidence of the rule's readings.
 func (r *rule) scaled(s float32) *rule {
 	r.scale = s
@@ -247,8 +253,8 @@ func (p *phraseology) defineAltitudeRules() {
 	// An altitude said in thousands needs no verb to be understood, and
 	// one before "until established" belongs to an approach clearance.
 	established := " until|till established|establishing [on|from|onto|of] [the] [localizer|glideslope|glide|slope|final] [approach] [course]"
-	p.command("{thousands} [feet]", maintain).in(categoryAltitude)
-	p.command("{thousands} [feet]"+established, maintain).in(categoryAltitude)
+	p.command("{thousands} [feet]", maintain).in(categoryAltitude).withoutVerb()
+	p.command("{thousands} [feet]"+established, maintain).in(categoryAltitude).withoutVerb()
 	p.command("maintain [at] {altitude}"+established, maintain).in(categoryAltitude)
 	p.remark(kindInformational, established[1:])
 	p.remark(kindInformational, "expect further clearance")

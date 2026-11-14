@@ -81,6 +81,9 @@ type rule struct {
 	// incomplete marks a rule that stands for the start of an instruction
 	// whose value was not understood.
 	incomplete bool
+	// verbless marks a rule for a value said without the verb that
+	// assigns it: "four thousand".
+	verbless bool
 }
 
 // segment is a reading of tokens [start, end) as a rule.
@@ -102,11 +105,19 @@ type interpretation struct {
 // most one instruction of each category: the search keeps the set of
 // categories used so far. A heading is the exception, because a
 // controller who restates one is correcting it, and "correction" starts
-// the set over.
+// the set over. An altitude said in full, in thousands or as a flight
+// level, may be said again: controllers restate one ("maintain five
+// thousand until established"), and the recognizer repeats whole
+// transmissions. A different altitude said in full and with its verb
+// replaces it, as a heading does. A misheard speed or a stray number
+// does not.
 func (d *decoding) interpret(rules []*rule, start int) interpretation {
 	type state struct {
 		pos  int
 		used uint16 // bit set of categories
+		// altitude is the altitude assigned so far, in hundreds of feet,
+		// if it was said in full, or 0.
+		altitude int
 	}
 	type choice struct {
 		evidence float32
@@ -122,17 +133,26 @@ func (d *decoding) interpret(rules []*rule, start int) interpretation {
 		if c, ok := best[st]; ok {
 			return c.evidence
 		}
-		skip := state{st.pos + 1, st.used}
+		skip := state{st.pos + 1, st.used, st.altitude}
 		c := choice{evidence: solve(skip), next: skip}
 		for _, r := range rules {
 			// A request to say a value again assigns nothing.
 			assigns := r.category != categoryNone && !r.incomplete
 			bit := uint16(1) << r.category
-			if assigns && r.category != categoryHeading && st.used&bit != 0 {
+			if assigns && r.category != categoryHeading && r.category != categoryAltitude && st.used&bit != 0 {
 				continue
 			}
 			for _, m := range r.matches(d, st.pos) {
-				next := state{m.end, st.used}
+				alt := 0
+				if assigns && r.category == categoryAltitude {
+					if d.saysThousands(st.pos, m.end) {
+						alt = assignedAltitude(m.values[0].(string))
+					}
+					if st.used&bit != 0 && (alt == 0 || st.altitude == 0 || alt != st.altitude && r.verbless) {
+						continue
+					}
+				}
+				next := state{m.end, st.used, st.altitude}
 				// Words that put the next instruction after the one in
 				// progress say nothing when no instruction follows them.
 				if r.kind == kindThen && solve(next) <= 0 {
@@ -140,9 +160,12 @@ func (d *decoding) interpret(rules []*rule, start int) interpretation {
 				}
 				switch {
 				case r.kind == kindCorrection:
-					next.used = 0
+					next.used, next.altitude = 0, 0
 				case assigns:
 					next.used |= bit
+					if r.category == categoryAltitude {
+						next.altitude = alt
+					}
 				}
 				cost := float32(instructionCost)
 				if r.kind != kindCommand || r.incomplete {
@@ -175,6 +198,28 @@ func (d *decoding) interpret(rules []*rule, start int) interpretation {
 		st = c.next
 	}
 	return in
+}
+
+// saysThousands reports whether the words [start, end) give an altitude
+// in thousands of feet or as a flight level, not as bare digits.
+func (d *decoding) saysThousands(start, end int) bool {
+	for pos := start; pos < end; pos++ {
+		if _, _, ok := d.unitAt(pos, atomThousand); ok || d.text(pos) == "level" || d.text(pos) == "fl" {
+			return true
+		}
+	}
+	return false
+}
+
+// assignedAltitude returns the altitude, in hundreds of feet, that a
+// reading's commands assign, or 0 if they assign none.
+func assignedAltitude(cmds string) int {
+	for cmd := range strings.FieldsSeq(cmds) {
+		if _, alt, ok := altitudeCommand(cmd); ok {
+			return alt
+		}
+	}
+	return 0
 }
 
 // asksAgain reports whether all a segment does is ask for a value to be
@@ -566,6 +611,24 @@ func compose(cmds []string, ac *Aircraft) []string {
 			}
 			cmds[i+1] = fmt.Sprintf("A%s/%c%d", fix, letter, alt)
 			i++
+		}
+	}
+
+	// The last altitude said is the one assigned. One said before it with
+	// another value was replaced, and one with the same value is given
+	// once. This comes after the crossings, because a climb or descent
+	// that starts at a fix is a separate instruction.
+	isAltitude := func(cmd string) bool { _, _, ok := altitudeCommand(cmd); return ok }
+	if last := lastIndexFunc(cmds, isAltitude); last >= 0 {
+		_, final, _ := altitudeCommand(cmds[last])
+		given := false
+		for i, cmd := range cmds {
+			if _, alt, ok := altitudeCommand(cmd); ok {
+				if given || alt != final {
+					cmds[i] = ""
+				}
+				given = given || alt == final
+			}
 		}
 	}
 

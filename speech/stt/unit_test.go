@@ -6,6 +6,7 @@ package stt
 
 import (
 	"slices"
+	"strings"
 	"testing"
 
 	"github.com/mmp/vice/sim"
@@ -332,6 +333,58 @@ func TestFixNames(t *testing.T) {
 	}
 }
 
+// TestSecondAltitude checks that an altitude said twice in a transmission
+// is given once, and that a different one said in full with its verb
+// replaces the first.
+func TestSecondAltitude(t *testing.T) {
+	departure := Aircraft{Altitude: 5000, State: "departure", AircraftType: "B738"}
+	arrival := Aircraft{Altitude: 8000, State: "arrival", AircraftType: "B738",
+		CandidateApproaches: map[string]string{"ILS Runway 26": "I26"}}
+	for _, tt := range []struct {
+		ac              Aircraft
+		words, expected string
+	}{
+		{departure, "climb and maintain one five thousand climb and maintain one five thousand", "C150"},
+		{arrival, "descend and maintain five thousand maintain five thousand until established cleared ils runway two six",
+			"D50 CI26"},
+		{arrival, "descend and maintain five thousand ah let's make it descend and maintain three thousand", "D30"},
+		{arrival, "descend and maintain four thousand descend and maintain three thousand", "D30"},
+		{arrival, "maintain six thousand maintain four thousand until established cleared ils runway two six",
+			"A40 CI26"},
+		// Neither a stray number nor a misheard speed is an altitude said
+		// in full.
+		{arrival, "descend and maintain four thousand three thousand", "D40"},
+		{arrival, "descend and maintain three thousand maintain one zero knots", "D30 SAYAGAIN/SPEED"},
+	} {
+		if got := decodeFor(tt.ac, tt.words); got != tt.expected {
+			t.Errorf("%q: got %q, want %q", tt.words, got, tt.expected)
+		}
+	}
+}
+
+// TestThousandsAreNotSpeeds checks that a number said before "thousand" or
+// "hundred" is never read as a speed, even where an altitude cannot be read.
+func TestThousandsAreNotSpeeds(t *testing.T) {
+	departure := Aircraft{Altitude: 5000, State: "departure", AircraftType: "B738"}
+	arrival := Aircraft{Altitude: 8000, State: "arrival", AircraftType: "B738"}
+	for _, tt := range []struct {
+		ac    Aircraft
+		words string
+	}{
+		{arrival, "descend and maintain four thousand maintain two five thousand"},
+		{departure, "climb via the sid maintain one five thousand"},
+		{arrival, "maintain speed two five thousand"},
+		{arrival, "speed one five hundred"},
+	} {
+		got := decodeFor(tt.ac, tt.words)
+		if slices.ContainsFunc(strings.Fields(got), func(cmd string) bool {
+			return len(cmd) > 1 && cmd[0] == 'S' && cmd[1] >= '0' && cmd[1] <= '9'
+		}) {
+			t.Errorf("%q: got %q, which assigns a speed", tt.words, got)
+		}
+	}
+}
+
 // TestComposeRepeatedCommands checks that a command said twice in one
 // transmission is given once, in the place it was first said.
 func TestComposeRepeatedCommands(t *testing.T) {
@@ -341,6 +394,7 @@ func TestComposeRepeatedCommands(t *testing.T) {
 		{[]string{"FC", "TO", "TO"}, []string{"FC", "TO"}},
 		{[]string{"CI2L", "H190", "CI2L"}, []string{"CI2L", "H190"}},
 		{[]string{"SAYAGAIN/ALTITUDE", "H190", "SAYAGAIN/ALTITUDE"}, []string{"SAYAGAIN/ALTITUDE", "H190"}},
+		{[]string{"D50", "A50", "CI26"}, []string{"D50", "CI26"}},
 	} {
 		if got := compose(slices.Clone(tt.input), &Aircraft{}); !slices.Equal(got, tt.expected) {
 			t.Errorf("%v: got %v, want %v", tt.input, got, tt.expected)
@@ -395,9 +449,9 @@ func TestCoalesceAfterFixAltitudes(t *testing.T) {
 			expected: []string{"CROSLY/A60", "DROSLY"},
 		},
 		{
-			name:     "non-cross C command unchanged",
+			name:     "climb is not a crossing and the later altitude replaces it",
 			input:    []string{"C90", "D30"},
-			expected: []string{"C90", "D30"},
+			expected: []string{"D30"},
 		},
 		{
 			name:     "cleared approach unchanged",
