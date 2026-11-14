@@ -35,3 +35,10 @@ func (m *ParakeetModel) Transcribe(audio []float32) (string, error) {
 	defer m.mu.Unlock()
 	return m.ctx.Transcribe(audio, runtime.NumCPU())
 }
+
+// Close frees the model.
+func (m *ParakeetModel) Close() {
+	m.mu.Lock()
+	defer m.mu.Unlock()
+	m.ctx.Close()
+}

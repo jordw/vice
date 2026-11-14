@@ -32,13 +32,6 @@ is via OpenScope (https://github.com/openscope/openscope), MIT licensed.
 Thanks also to the FAA for making CSV files of navaids and their locations easily
 available.
 
-*** Speech Recognition ***
-
-* NVIDIA's Parakeet TDT 0.6B v3 speech recognition model
-  (huggingface.co/nvidia/parakeet-tdt-0.6b-v3), licensed under CC-BY-4.0
-  (creativecommons.org/licenses/by/4.0). vice uses it converted to the ggml
-  format, and also an 8-bit quantized version of that.
-
 *** Icons ***
 
 Courtesy of DALL-E 2:

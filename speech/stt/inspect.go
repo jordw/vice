@@ -94,6 +94,12 @@ type LogBuffer struct {
 // tests turn it off.
 var logToStdout = true
 
+// DisableStdoutTrace stops the printing of each decode's trace, for tools
+// that decode many transcripts.
+func DisableStdoutTrace() {
+	logToStdout = false
+}
+
 var (
 	currentLogBuffer *LogBuffer
 	logBufferMu      sync.Mutex

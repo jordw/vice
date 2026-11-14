@@ -43,6 +43,12 @@ func NewParakeetContext(path string) (*ParakeetContext, error) {
 	return &ParakeetContext{ctx: ctx}, nil
 }
 
+// Close frees the model.
+func (c *ParakeetContext) Close() {
+	C.parakeet_free(c.ctx)
+	c.ctx = nil
+}
+
 // Transcribe returns the text of 16 kHz mono samples.
 func (c *ParakeetContext) Transcribe(samples []float32, threads int) (string, error) {
 	if len(samples) == 0 {

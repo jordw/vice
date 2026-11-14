@@ -1292,9 +1292,10 @@ func (c *ControlClient) GetAndClearPTTReleaseTime() time.Time {
 
 // streamingSTT holds state for a transcription session.
 type streamingSTT struct {
-	transcriber *whisper.Transcriber
-	state       SimState // Snapshot of state at start of streaming
-	prompt      string   // Initial prompt given to whisper, logged with the transcript
+	transcriber    *whisper.Transcriber
+	state          SimState // Snapshot of state at start of streaming
+	prompt         string   // Initial prompt given to whisper, logged with the transcript
+	realtimeFactor float64  // Benchmark result that chose whisper's decoding, reported with the transcript
 }
 
 // StartStreamingSTT begins a transcription session.
@@ -1305,10 +1306,6 @@ func (c *ControlClient) StartStreamingSTT(lg *log.Logger) error {
 	<-whisperModelDone
 	if whisperModelErr != nil {
 		return fmt.Errorf("whisper model load: %w", whisperModelErr)
-	}
-
-	if c.sttReportsEnabled() {
-		loadParakeetModels(lg)
 	}
 
 	// Snapshot state for prompt construction
@@ -1322,17 +1319,19 @@ func (c *ControlClient) StartStreamingSTT(lg *log.Logger) error {
 			estTokens, whisperPromptTokenLimit)
 	}
 
+	rtf := whisperRealtimeFactor
 	st := whisper.NewTranscriber(whisperModel, &whisperModelMu, whisper.Options{
 		Language:       "en",
 		InitialPrompt:  prompt,
-		RealtimeFactor: whisperRealtimeFactor,
+		RealtimeFactor: rtf,
 	})
 
 	c.mu.Lock()
 	c.streamingSTT = &streamingSTT{
-		transcriber: st,
-		state:       state,
-		prompt:      prompt,
+		transcriber:    st,
+		state:          state,
+		prompt:         prompt,
+		realtimeFactor: rtf,
 	}
 	// Hold speech playback during recording/processing
 	c.sttActive = true
@@ -1400,19 +1399,20 @@ func (c *ControlClient) StopStreamingSTT(lg *log.Logger) {
 		}
 
 		// If the user allows reports, every transmission is reported,
-		// including those in which whisper heard nothing. The report goes
-		// after the command, so the comparison models never delay it.
+		// including those in which whisper heard nothing. The deferred
+		// call sends the report with the command that vice decoded.
 		report := &server.STTLogArgs{
-			WhisperDuration:     whisperDuration,
-			AudioDuration:       audioDuration,
-			WhisperTranscript:   finalText,
-			WhisperPrompt:       sttSession.prompt,
-			WhisperProcessor:    whisper.ProcessorDescription(),
-			WhisperModel:        GetWhisperModelName(),
-			ControllerRadioName: controllerRadioName,
-			AircraftContext:     aircraftCtx,
+			WhisperDuration:       whisperDuration,
+			AudioDuration:         audioDuration,
+			WhisperTranscript:     finalText,
+			WhisperPrompt:         sttSession.prompt,
+			WhisperProcessor:      whisper.ProcessorDescription(),
+			WhisperModel:          GetWhisperModelName(),
+			WhisperRealtimeFactor: sttSession.realtimeFactor,
+			ControllerRadioName:   controllerRadioName,
+			AircraftContext:       aircraftCtx,
 		}
-		defer c.reportSTT(lg, report, audio)
+		defer c.reportSTT(report, audio)
 
 		if finalText == "" || finalText == "[BLANK_AUDIO]" {
 			c.transmissions.Unhold()

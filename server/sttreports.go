@@ -27,9 +27,9 @@ const maxSTTReportWAVBytes = 44 + 60*16000*2
 // that read those entries also read reports.
 type STTReport struct {
 	stt.TestFile
-	SessionID           string         `json:"session_id"`
-	ControllerRadioName string         `json:"controller_radio_name"`
-	Alternates          []STTAlternate `json:"alternates"`
+	SessionID             string  `json:"session_id"`
+	WhisperRealtimeFactor float64 `json:"whisper_realtime_factor"`
+	ControllerRadioName   string  `json:"controller_radio_name"`
 }
 
 // sttReportStore saves reported voice transmissions for testing and training
@@ -99,9 +99,9 @@ func (s *sttReportStore) Save(args *STTLogArgs) {
 			STTAircraft:       args.AircraftContext,
 			Logs:              args.STTDebugLogs,
 		},
-		SessionID:           args.SessionID,
-		ControllerRadioName: args.ControllerRadioName,
-		Alternates:          args.Alternates,
+		SessionID:             args.SessionID,
+		WhisperRealtimeFactor: args.WhisperRealtimeFactor,
+		ControllerRadioName:   args.ControllerRadioName,
 	}
 	j, err := json.MarshalIndent(report, "", "  ")
 	if err != nil {

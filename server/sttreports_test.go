@@ -44,21 +44,15 @@ func TestSTTReportStore(t *testing.T) {
 	}
 
 	args := &STTLogArgs{
-		SessionID:           "session",
-		Callsign:            "AAL123",
-		Commands:            "D50",
-		WhisperTranscript:   "american one twenty three descend and maintain five thousand",
-		WhisperModel:        "ggml-small.en-jlvatc-q5_0.bin",
-		ControllerRadioName: "New York Approach",
-		AircraftContext:     map[string]stt.Aircraft{"American 123": {Callsign: "AAL123"}},
-		Alternates: []STTAlternate{{
-			Model:      "parakeet-tdt-0.6b-v3-f16",
-			LatencyMs:  57,
-			Transcript: "American 123 descend and maintain 5000",
-			Callsign:   "AAL123",
-			Command:    "D50",
-		}},
-		WAV: testWAV(16000),
+		SessionID:             "session",
+		Callsign:              "AAL123",
+		Commands:              "D50",
+		WhisperTranscript:     "american one twenty three descend and maintain five thousand",
+		WhisperModel:          "ggml-small.en-jlvatc-q5_0.bin",
+		ControllerRadioName:   "New York Approach",
+		WhisperRealtimeFactor: 0.04,
+		AircraftContext:       map[string]stt.Aircraft{"American 123": {Callsign: "AAL123"}},
+		WAV:                   testWAV(16000),
 	}
 	s.Save(args)
 
@@ -92,8 +86,7 @@ func TestSTTReportStore(t *testing.T) {
 	if err := json.Unmarshal(b, &r); err != nil {
 		t.Fatal(err)
 	}
-	if r.SessionID != "session" || r.ControllerRadioName != "New York Approach" ||
-		len(r.Alternates) != 1 || r.Alternates[0] != args.Alternates[0] {
+	if r.SessionID != "session" || r.ControllerRadioName != "New York Approach" || r.WhisperRealtimeFactor != 0.04 {
 		t.Errorf("saved report %+v does not match the report", r)
 	}
 

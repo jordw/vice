@@ -1045,34 +1045,23 @@ func (sm *SimManager) ReportWhisperBenchmark(report *WhisperBenchmarkReport, _ *
 // STT Log Reporting
 
 // STTLogArgs is what a client reports about a voice transmission when the
-// user allows it: the whisper result that vice acted on, the results of the
-// speech recognizers that ran on it only for comparison, and its audio.
+// user allows it: the whisper result that vice acted on, what vice needs to
+// transcribe and decode it again, and its audio.
 type STTLogArgs struct {
-	SessionID           string // Random ID that each run of vice picks, to group its reports
-	Callsign            string
-	Commands            string
-	WhisperDuration     time.Duration
-	AudioDuration       time.Duration
-	WhisperTranscript   string
-	WhisperPrompt       string
-	WhisperProcessor    string
-	WhisperModel        string
-	ControllerRadioName string
-	AircraftContext     map[string]stt.Aircraft
-	STTDebugLogs        []string
-	Alternates          []STTAlternate
-	WAV                 []byte // The audio, as a 16 kHz mono 16-bit WAV file
-}
-
-// STTAlternate is the result of a speech recognizer that ran on a
-// transmission only for comparison.
-type STTAlternate struct {
-	Model      string `json:"model"`
-	LatencyMs  int64  `json:"latency_ms"`
-	Transcript string `json:"transcript"`
-	Callsign   string `json:"callsign"`
-	Command    string `json:"command"`         // The decoded command, or "Error: " and why decoding failed
-	Error      string `json:"error,omitempty"` // Why transcription failed
+	SessionID             string // Random ID that each run of vice picks, to group its reports
+	Callsign              string
+	Commands              string
+	WhisperDuration       time.Duration
+	AudioDuration         time.Duration
+	WhisperTranscript     string
+	WhisperPrompt         string
+	WhisperProcessor      string
+	WhisperModel          string
+	WhisperRealtimeFactor float64 // Benchmark result that chose whisper's decoding (autowhisper.Options)
+	ControllerRadioName   string
+	AircraftContext       map[string]stt.Aircraft
+	STTDebugLogs          []string
+	WAV                   []byte // The audio, as a 16 kHz mono 16-bit WAV file
 }
 
 const ReportSTTLogRPC = "SimManager.ReportSTTLog"
@@ -1092,7 +1081,6 @@ func (sm *SimManager) ReportSTTLog(args *STTLogArgs, _ *struct{}) error {
 		slog.String("whisper_model", args.WhisperModel),
 		slog.String("callsign", args.Callsign),
 		slog.String("command", args.Commands),
-		slog.Any("alternates", args.Alternates),
 		slog.Any("stt_aircraft", args.AircraftContext),
 		slog.Any("logs", args.STTDebugLogs))
 
