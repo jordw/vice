@@ -1264,7 +1264,10 @@ func makeWhisperPrompt(state SimState) string {
 	)
 
 	slices.Reverse(promptParts)
-	return strings.Join(promptParts, ", ")
+	// Whisper reads the prompt as the text just before the transmission. Without the period,
+	// it sometimes continues the last item with a number ("Score" then "six"), and the
+	// transcript turns into a loop of digits.
+	return strings.Join(promptParts, ", ") + "."
 }
 
 // postSTTEvent posts an STTCommandEvent to the event stream.

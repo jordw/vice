@@ -46,7 +46,11 @@ func TestWhisperPromptReportingPoints(t *testing.T) {
 		"AAL3": track("AAL3", "OTHER", tower),
 	}
 
-	parts := strings.Split(makeWhisperPrompt(ss), ", ")
+	prompt, ok := strings.CutSuffix(makeWhisperPrompt(ss), ".")
+	if !ok {
+		t.Error("prompt does not end with a period, so whisper may continue its last item")
+	}
+	parts := strings.Split(prompt, ", ")
 	count := func(s string) int {
 		return len(util.FilterSlice(parts, func(p string) bool { return p == s }))
 	}
