@@ -162,6 +162,29 @@ func TestExpediteDuringAssignedAltitudeDelay(t *testing.T) {
 	f.AssertDescending()
 }
 
+// An expedite given while an altitude waits on a speed change is read back
+// as an expedite, so that it merges with the altitude's readback.
+func TestExpediteAltitudeAfterSpeed(t *testing.T) {
+	f := NewArrivalFlight(t, ArrivalConfig{
+		Waypoints:        "SAJUL DETGY HAUPT",
+		DepartureAirport: "KMCO",
+		ArrivalAirport:   "KJFK",
+		AircraftType:     "A320",
+		InitialAltitude:  8000,
+		InitialSpeed:     250,
+	})
+	f.AssignSpeed(180)
+	f.nav.AssignAltitude(3000, true, f.simTime, 0)
+
+	intent, ok := f.nav.ExpediteDescent().(speech.AltitudeIntent)
+	if !ok || !intent.Expedite || intent.Altitude != 3000 || intent.AfterSpeed == nil {
+		t.Fatalf("expected an expedited descent to 3,000 after the speed change, got %+v", intent)
+	}
+	if a := f.nav.Altitude.AfterSpeed; a == nil || a.Rate != RateExpedite {
+		t.Fatalf("expected the altitude after speed to be expedited, got %+v", a)
+	}
+}
+
 // While the pilot reacts to a higher altitude, an aircraft climbing to its
 // cleared altitude keeps climbing to it rather than leveling off.
 func TestAssignAltitudeContinuesClimbToClearedAltitude(t *testing.T) {

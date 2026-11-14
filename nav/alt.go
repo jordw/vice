@@ -214,7 +214,13 @@ func (nav *Nav) setRate(rate RateQualifier, throughAlt *float32, direction speec
 	if wrongDir {
 		if a := nav.Altitude.AfterSpeed; a != nil {
 			a.Rate = rate
-			return speech.AltitudeIntent{Direction: direction, Altitude: a.Altitude, AfterSpeed: &a.Speed}
+			return speech.AltitudeIntent{
+				Direction:  direction,
+				Altitude:   a.Altitude,
+				AfterSpeed: &a.Speed,
+				Expedite:   rate == RateExpedite,
+				GoodRate:   rate == RateGood,
+			}
 		}
 		dir := "descending"
 		if direction == speech.AltitudeClimb {

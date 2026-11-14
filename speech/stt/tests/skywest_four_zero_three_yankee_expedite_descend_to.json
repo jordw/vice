@@ -16,7 +16,7 @@
   "processor": "GPU: NVIDIA GeForce RTX 4080 SUPER (16045MB)",
   "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
   "callsign": "SKW403Y",
-  "command": "ED70",
+  "command": "D70 ED",
   "reason": "\"to seven thousand\" must not make 270; the repeat confirms",
   "stt_aircraft": {
     "Frontier Flight six 54": {

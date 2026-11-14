@@ -126,7 +126,7 @@ func readInstructions(tokens []token, start int, ac *Aircraft) instructions {
 	for kind := range kinds {
 		understood = understood || kind != kindThen && kind != kindDisregard && kind != kindCorrection
 	}
-	return instructions{commands: compose(cmds), kinds: kinds, evidence: in.evidence, understood: understood}
+	return instructions{commands: compose(cmds, ac), kinds: kinds, evidence: in.evidence, understood: understood}
 }
 
 // lastAddressed returns the aircraft the controller most recently

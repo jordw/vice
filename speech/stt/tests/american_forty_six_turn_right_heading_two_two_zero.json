@@ -16,7 +16,7 @@
   "processor": "GPU: NVIDIA GeForce RTX 3080 (10267MB)",
   "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
   "callsign": "AAL46",
-  "command": "R220 I ED20",
+  "command": "R220 I D20 ED",
   "stt_aircraft": {
     "American 46": {
       "Callsign": "AAL46",

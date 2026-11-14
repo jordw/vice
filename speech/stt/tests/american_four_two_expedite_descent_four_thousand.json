@@ -16,7 +16,7 @@
   "processor": "GPU: NVIDIA GeForce RTX 4060 Ti (8163MB)",
   "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
   "callsign": "AAL42",
-  "command": "ED40",
+  "command": "D40 ED",
   "stt_aircraft": {
     "Air Shuttle 77 33": {
       "Callsign": "ASH7733",

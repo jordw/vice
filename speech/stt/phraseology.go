@@ -253,12 +253,26 @@ func (p *phraseology) defineAltitudeRules() {
 	p.remark(kindInformational, established[1:])
 	p.remark(kindInformational, "expect further clearance")
 
-	// Expedite, and its synonym "best rate".
+	// Expedite, and its synonym "best rate". Through an altitude, the
+	// aircraft expedites until it passes it. To an altitude, the altitude is
+	// assigned and then expedited, in that order, because an altitude
+	// restated after an expedite cancels it (7110.65 2-1-5).
+	expediteTo := func(assign func(captured, int) string) func(c captured) string {
+		return func(c captured) string {
+			cmd := assign(c, c.int(0))
+			if letter, _, ok := altitudeCommand(cmd); ok {
+				return cmd + " E" + string(letter)
+			}
+			return cmd
+		}
+	}
 	for _, verb := range []string{"expedite", "best rate"} {
-		p.command(verb+" descent|descend [through] {altitude_fl}", func(c captured) string {
+		p.command(verb+" descent|descend through {altitude_fl}", func(c captured) string {
 			return fmt.Sprintf("ED%d", c.int(0))
 		})
-		p.command(verb+" climb [through] {altitude_fl}", func(c captured) string { return fmt.Sprintf("EC%d", c.int(0)) })
+		p.command(verb+" climb through {altitude_fl}", func(c captured) string { return fmt.Sprintf("EC%d", c.int(0)) })
+		p.command(verb+" descent|descend [down] [to] {altitude_fl}", expediteTo(descendTo))
+		p.command(verb+" climb [up] [to] {altitude_fl}", expediteTo(climbTo))
 		p.command(verb+" descent|descend", func(c captured) string {
 			if ac := c.d.aircraft; ac.State == stateDeparture && len(ac.CandidateApproaches) == 0 {
 				return ""
@@ -272,8 +286,15 @@ func (p *phraseology) defineAltitudeRules() {
 			return "EC"
 		})
 	}
+	// Without a verb, the altitude gives the direction.
+	p.command("expedite [down|up] [to] {altitude}", expediteTo(func(c captured, alt int) string {
+		if alt*100 > c.d.aircraft.Altitude {
+			return climbTo(c, alt)
+		}
+		return descendTo(c, alt)
+	}))
 	// "Expedite" alone takes its direction from the altitude instruction
-	// before it; see resolveExpedite.
+	// next to it; see compose.
 	p.command("expedite", func(c captured) string {
 		if t := c.d.text(c.end); t == "climb" || t == "descent" || t == "descend" {
 			return ""

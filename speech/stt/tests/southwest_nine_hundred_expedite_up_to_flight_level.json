@@ -16,7 +16,7 @@
   "processor": "GPU: AMD Radeon RX 9070 XT (16304MB)",
   "whisper_model": "ggml-medium.en-jlvatc-q5_0.bin",
   "callsign": "SWA900",
-  "command": "EC150",
+  "command": "C150 EC",
   "reason": "expedite to a flight level; flight level is not a heading",
   "stt_aircraft": {
     "E-R-J one thirty-five five kilo mike": {

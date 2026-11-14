@@ -15,7 +15,7 @@
   "processor": "GPU: AMD Radeon(TM) Graphics (16202MB)",
   "whisper_model": "ggml-base.en-jlvatc-q5_0.bin",
   "callsign": "BWA360",
-  "command": "ED50",
+  "command": "D50 ED",
   "stt_aircraft": {
     "American 27 55": {
       "Callsign": "AAL2755",

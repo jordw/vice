@@ -251,6 +251,42 @@ func TestPlausibility(t *testing.T) {
 	}
 }
 
+// TestExpediteAltitude checks that an expedite given with an altitude
+// comes after the altitude's command, which would otherwise cancel it, and
+// that only "through" makes the altitude where the expedite ends.
+func TestExpediteAltitude(t *testing.T) {
+	arrival := Aircraft{Altitude: 8000, AssignedAltitude: 4000, State: "arrival"}
+	level := Aircraft{Altitude: 6000, AssignedAltitude: 6000, State: "arrival"}
+	departure := Aircraft{Altitude: 5000, State: "departure"}
+	for _, tt := range []struct {
+		name     string
+		ac       Aircraft
+		words    string
+		expected string
+	}{
+		{"to an altitude", arrival, "expedite to four thousand", "D40 ED"},
+		{"altitude alone", arrival, "expedite four thousand", "D40 ED"},
+		{"down to an altitude", arrival, "expedite down to four thousand", "D40 ED"},
+		{"descent to an altitude", arrival, "expedite descent to four thousand", "D40 ED"},
+		{"your descent to an altitude", arrival, "expedite your descent to four thousand", "D40 ED"},
+		{"descent and an altitude", arrival, "expedite descent four thousand", "D40 ED"},
+		{"descent, then the altitude", arrival, "expedite descent descend and maintain four thousand", "D40 ED"},
+		{"descent through an altitude", arrival, "expedite descent through six thousand", "ED60"},
+		{"best rate to an altitude", arrival, "best rate descent to four thousand", "D40 ED"},
+		{"from level flight", level, "expedite to four thousand", "D40 ED"},
+		{"climb to an altitude", departure, "expedite climb to one zero thousand", "C100 EC"},
+		{"up to an altitude", departure, "expedite up to one zero thousand", "C100 EC"},
+		{"after maintaining an altitude above", departure, "maintain one zero thousand expedite", "A100 EC"},
+		{"after maintaining an altitude below", arrival, "maintain four thousand expedite", "A40 ED"},
+	} {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := decodeFor(tt.ac, tt.words); got != tt.expected {
+				t.Errorf("%q: got %q, want %q", tt.words, got, tt.expected)
+			}
+		})
+	}
+}
+
 func TestFixNames(t *testing.T) {
 	for _, tt := range []struct {
 		name     string
@@ -385,7 +421,7 @@ func TestCoalesceAfterFixAltitudes(t *testing.T) {
 			// Make a copy so we don't modify test data
 			input := make([]string, len(tt.input))
 			copy(input, tt.input)
-			got := compose(input)
+			got := compose(input, &Aircraft{})
 			if len(got) != len(tt.expected) {
 				t.Fatalf("got %v, want %v", got, tt.expected)
 			}
