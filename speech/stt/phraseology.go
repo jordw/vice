@@ -253,26 +253,34 @@ func (p *phraseology) defineAltitudeRules() {
 	p.remark(kindInformational, established[1:])
 	p.remark(kindInformational, "expect further clearance")
 
-	// Expedite, and its synonym "best rate". Through an altitude, the
-	// aircraft expedites until it passes it. To an altitude, the altitude is
-	// assigned and then expedited, in that order, because an altitude
-	// restated after an expedite cancels it (7110.65 2-1-5).
-	expediteTo := func(assign func(captured, int) string) func(c captured) string {
+	// Expedite, and its synonym "best rate", and "good rate". Through an
+	// altitude, the rate holds until the aircraft passes it. To an altitude,
+	// the altitude is assigned and then the rate, in that order, because an
+	// altitude restated after a rate cancels it (7110.65 2-1-5). rate is the
+	// command, ED or GRD, without its last letter.
+	rateTo := func(rate string, assign func(captured, int) string) func(c captured) string {
 		return func(c captured) string {
 			cmd := assign(c, c.int(0))
 			if letter, _, ok := altitudeCommand(cmd); ok {
-				return cmd + " E" + string(letter)
+				return cmd + " " + rate + string(letter)
 			}
 			return cmd
 		}
+	}
+	// Without a verb, the altitude gives the direction.
+	toAltitude := func(c captured, alt int) string {
+		if alt*100 > c.d.aircraft.Altitude {
+			return climbTo(c, alt)
+		}
+		return descendTo(c, alt)
 	}
 	for _, verb := range []string{"expedite", "best rate"} {
 		p.command(verb+" descent|descend through {altitude_fl}", func(c captured) string {
 			return fmt.Sprintf("ED%d", c.int(0))
 		})
 		p.command(verb+" climb through {altitude_fl}", func(c captured) string { return fmt.Sprintf("EC%d", c.int(0)) })
-		p.command(verb+" descent|descend [down] [to] {altitude_fl}", expediteTo(descendTo))
-		p.command(verb+" climb [up] [to] {altitude_fl}", expediteTo(climbTo))
+		p.command(verb+" descent|descend [down] [to] {altitude_fl}", rateTo("E", descendTo))
+		p.command(verb+" climb [up] [to] {altitude_fl}", rateTo("E", climbTo))
 		p.command(verb+" descent|descend", func(c captured) string {
 			if ac := c.d.aircraft; ac.State == stateDeparture && len(ac.CandidateApproaches) == 0 {
 				return ""
@@ -286,13 +294,7 @@ func (p *phraseology) defineAltitudeRules() {
 			return "EC"
 		})
 	}
-	// Without a verb, the altitude gives the direction.
-	p.command("expedite [down|up] [to] {altitude}", expediteTo(func(c captured, alt int) string {
-		if alt*100 > c.d.aircraft.Altitude {
-			return climbTo(c, alt)
-		}
-		return descendTo(c, alt)
-	}))
+	p.command("expedite [down|up] [to] {altitude}", rateTo("E", toAltitude))
 	// "Expedite" alone takes its direction from the altitude instruction
 	// next to it; see compose.
 	p.command("expedite", func(c captured) string {
@@ -304,7 +306,10 @@ func (p *phraseology) defineAltitudeRules() {
 
 	p.command("good rate [of] descent|descend", func(captured) string { return "GRD" })
 	p.command("good rate [of] climb", func(captured) string { return "GRC" })
-	p.command("good rate [through] {altitude_fl}", func(c captured) string { return fmt.Sprintf("GR%d", c.int(0)) })
+	p.command("good rate through {altitude_fl}", func(c captured) string { return fmt.Sprintf("GR%d", c.int(0)) })
+	p.command("good rate [of] descent|descend [down] [to] {altitude_fl}", rateTo("GR", descendTo))
+	p.command("good rate [of] climb [up] [to] {altitude_fl}", rateTo("GR", climbTo))
+	p.command("good rate [down|up] [to] {altitude}", rateTo("GR", toAltitude))
 
 	p.command("say altitude", func(captured) string { return "SA" })
 	p.command("altitude [at] [your] discretion", func(c captured) string {

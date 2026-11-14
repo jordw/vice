@@ -4287,11 +4287,11 @@ func TestParseCommandsBasic(t *testing.T) {
 			tokens: []Token{
 				{Text: "good", Type: TokenWord},
 				{Text: "rate", Type: TokenWord},
-				// "to" is a filler word and gets stripped; the bare pattern matches
+				{Text: "to", Type: TokenWord},
 				{Text: "100", Type: TokenAltitude, Value: 100},
 			},
-			ac:       Aircraft{State: "arrival"},
-			expected: []string{"GR100"},
+			ac:       Aircraft{State: "arrival", Altitude: 15000},
+			expected: []string{"D100", "GRD"},
 		},
 		{
 			name: "cross distance direction altitude",

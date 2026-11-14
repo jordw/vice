@@ -497,11 +497,11 @@ func isApproachClearance(cmd string) bool {
 // compose applies the rules that relate the commands of a transmission
 // to each other. ac is the aircraft they are for.
 func compose(cmds []string, ac *Aircraft) []string {
-	// An expedite said just before an altitude is for that altitude. The
-	// pilot takes the altitude first, because an altitude restated after an
-	// expedite cancels it.
+	// An expedite or good rate said just before an altitude is for that
+	// altitude. The pilot takes the altitude first, because an altitude
+	// restated after a rate cancels it.
 	for i := 0; i+1 < len(cmds); i++ {
-		if cmd := cmds[i]; cmd != expediteMarker && cmd != "ED" && cmd != "EC" {
+		if !slices.Contains([]string{expediteMarker, "ED", "EC", "GRD", "GRC"}, cmds[i]) {
 			continue
 		}
 		if _, _, ok := altitudeCommand(cmds[i+1]); ok && !strings.HasPrefix(cmds[i+1], "T") {

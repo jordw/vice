@@ -251,9 +251,9 @@ func TestPlausibility(t *testing.T) {
 	}
 }
 
-// TestExpediteAltitude checks that an expedite given with an altitude
-// comes after the altitude's command, which would otherwise cancel it, and
-// that only "through" makes the altitude where the expedite ends.
+// TestExpediteAltitude checks that an expedite or good rate given with an
+// altitude comes after the altitude's command, which would otherwise cancel
+// it, and that only "through" makes the altitude where the rate ends.
 func TestExpediteAltitude(t *testing.T) {
 	arrival := Aircraft{Altitude: 8000, AssignedAltitude: 4000, State: "arrival"}
 	level := Aircraft{Altitude: 6000, AssignedAltitude: 6000, State: "arrival"}
@@ -280,6 +280,12 @@ func TestExpediteAltitude(t *testing.T) {
 		{"after maintaining an altitude below", arrival, "maintain four thousand expedite", "A40 ED"},
 		{"altitude restated with the expedite", departure,
 			"climb and maintain one five thousand expedite up to one five thousand", "C150 EC"},
+		{"good rate to an altitude", arrival, "good rate to four thousand", "D40 GRD"},
+		{"good rate down to an altitude", arrival, "good rate down to four thousand", "D40 GRD"},
+		{"good rate of descent to an altitude", arrival, "good rate of descent to four thousand", "D40 GRD"},
+		{"good rate through an altitude", arrival, "good rate through six thousand", "GR60"},
+		{"good rate of climb to an altitude", departure, "good rate of climb to one zero thousand", "C100 GRC"},
+		{"good rate, then the altitude", arrival, "good rate of descent descend and maintain four thousand", "D40 GRD"},
 	} {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := decodeFor(tt.ac, tt.words); got != tt.expected {
