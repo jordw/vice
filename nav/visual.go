@@ -147,11 +147,12 @@ type FollowTraffic struct {
 // ClearedVisualApproach finalizes a non-charted visual approach clearance for
 // the runway named on Nav.Approach.Assigned (a synthesized VisualApproach).
 // Joining one of the visual's reference approaches, from the aircraft's
-// heading or at a fix of its route, is an intercept like any other
-// approach's; the visual's descent profile is laid along the reference from
-// where the aircraft joins it. A pilot who joins no reference flies to the
-// final themselves: behind the traffic they are following, or from the
-// reference nearest them to a 3 nm final.
+// heading or at a fix of its route short of the threshold, is an intercept
+// like any other approach's; the visual's descent profile is laid along the
+// reference from where the aircraft joins it. A pilot who joins no reference
+// makes their own way onto the runway's final approach course: behind the
+// traffic they are following, or from the nearest point of a reference to
+// the point on the course 3 nm from the threshold.
 func (nav *Nav) ClearedVisualApproach(follow *FollowTraffic, lahsoRunway string) speech.CommandIntent {
 	defer nav.record("ClearedVisualApproach", follow, lahsoRunway)()
 	ap := nav.Approach.Assigned
@@ -183,7 +184,10 @@ func (nav *Nav) ClearedVisualApproach(follow *FollowTraffic, lahsoRunway string)
 				nav.releaseAltitudeForVisual()
 				return intent(cancelHold)
 			}
-		} else if start, ok := nav.joinApproach(""); ok {
+		} else if start, rest, ok := nav.firstApproachFix(); ok && len(rest) > 1 {
+			// A route that meets the references only at the threshold is
+			// already on its final, so there is no reference left to join.
+			nav.joinApproach("")
 			cancelHold := nav.applyClearedApproachState()
 			nav.Approach.InterceptState = NotIntercepting
 			wps := nav.AssignedWaypoints()

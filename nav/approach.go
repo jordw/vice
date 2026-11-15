@@ -287,14 +287,22 @@ func (nav *Nav) joinApproach(joinFix string) (int, bool) {
 		return 0, true
 	}
 
-	navwps := nav.AssignedWaypoints()
-	for i, wp := range navwps {
-		if route, idx := approachRouteThrough(ap, wp.Fix); route != nil {
-			nav.setAssignedWaypoints(nav.spliceApproachRoute(navwps, i, route[idx:]))
-			return i, true
-		}
+	if i, route, ok := nav.firstApproachFix(); ok {
+		nav.setAssignedWaypoints(nav.spliceApproachRoute(nav.AssignedWaypoints(), i, route))
+		return i, true
 	}
 	return 0, false
+}
+
+// firstApproachFix returns the index in the aircraft's route of its first fix
+// on the assigned approach and the approach's route from that fix on.
+func (nav *Nav) firstApproachFix() (int, av.WaypointArray, bool) {
+	for i, wp := range nav.AssignedWaypoints() {
+		if route, idx := approachRouteThrough(nav.Approach.Assigned, wp.Fix); route != nil {
+			return i, route[idx:], true
+		}
+	}
+	return 0, nil, false
 }
 
 // prepareForApproach sets up the aircraft to fly the assigned approach, either

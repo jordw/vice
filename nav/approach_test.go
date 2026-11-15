@@ -2041,6 +2041,42 @@ func TestClearedVisualAtReferenceFixFliesReference(t *testing.T) {
 	}
 }
 
+// TestClearedVisualWithOnlyThresholdAhead verifies that a visual clearance
+// for an aircraft on its final with only the threshold left in its route,
+// as after joining an ILS, has it fly the final with the visual's profile
+// rather than join a reference at the threshold.
+func TestClearedVisualWithOnlyThresholdAhead(t *testing.T) {
+	f := NewArrivalFlight(t, ArrivalConfig{
+		Waypoints:        "HAUPT/a6000 LEFER/a4000",
+		DepartureAirport: "KMCO",
+		ArrivalAirport:   "KJFK",
+		AircraftType:     "A320",
+		InitialAltitude:  2000,
+		InitialSpeed:     170,
+	})
+	f.ExpectVisualApproach("22L")
+
+	ap := f.nav.Approach.Assigned
+	fs := &f.nav.FlightState
+	route := ap.Waypoints[0]
+	f.nav.Waypoints = []av.Waypoint{route[len(route)-1], fs.ArrivalAirport}
+	crs := ap.FinalApproachCourse(fs.NmPerLongitude, fs.MagneticVariation)
+	back := math.Scale2f(math.HeadingVector(crs), -5)
+	fs.Position = math.NM2LL(math.Add2f(math.LL2NM(ap.Threshold, fs.NmPerLongitude), back), fs.NmPerLongitude)
+	fs.Heading = math.TrueToMagnetic(crs, fs.MagneticVariation)
+
+	if intent, unable := f.ClearedVisualApproach("22L").(speech.UnableIntent); unable {
+		t.Fatalf("ClearedVisualApproach returned unable: %+v", intent)
+	}
+	fixes := navRouteFixes(f.nav)
+	if !slices.Contains(fixes, "_22L_3NM_FINAL") {
+		t.Errorf("route = %v, want the 3 nm final ahead of the threshold", fixes)
+	}
+	if wps := av.WaypointArray(f.nav.Waypoints); !wps[len(wps)-2].HasLandAction() {
+		t.Errorf("route = %q, want a landing waypoint before the arrival airport", wps.Encode())
+	}
+}
+
 // TestClearedVisualAlongILSAfterVectorArmsIntercept verifies that issuing
 // CVA to an aircraft that was committed to an ILS reference, then vectored
 // off, re-arms the intercept state machine (InterceptState = InitialHeading,
