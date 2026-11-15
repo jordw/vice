@@ -874,71 +874,85 @@ func TestVisualApproachWaypointsUseReferenceApproachDogleg(t *testing.T) {
 	}
 }
 
-func TestVisualApproachBelowNaturalTODUsesFAFOn3NMFinal(t *testing.T) {
-	rwy := av.Runway{
-		Id:                      "36",
-		Heading:                 360,
-		Threshold:               math.Point2LL{0, 0},
-		Elevation:               100,
-		ThresholdCrossingHeight: 50,
-	}
-	setupTestRunway(t, "KTEST", rwy)
+// TestVisualApproachFAFIsThe3NMFinal checks that the 3 nm final is a visual's
+// final approach fix wherever the aircraft is against the 3 degree path at
+// its join, and that the join carries no altitude of its own: the aircraft
+// descends in one straight line to the 3 nm final.
+func TestVisualApproachFAFIsThe3NMFinal(t *testing.T) {
+	for _, tc := range []struct {
+		name      string
+		elevation int
+		joinNM    float32 // the join's distance from the threshold
+		altitude  float32
+	}{
+		{name: "above the path", elevation: 0, joinNM: 8, altitude: 5000},
+		{name: "below the path", elevation: 100, joinNM: 14, altitude: 3000},
+		{name: "low", elevation: 0, joinNM: 6, altitude: 800},
+	} {
+		t.Run(tc.name, func(t *testing.T) {
+			rwy := av.Runway{
+				Id:                      "36",
+				Heading:                 360,
+				Threshold:               math.Point2LL{0, 0},
+				Elevation:               tc.elevation,
+				ThresholdCrossingHeight: 50,
+			}
+			setupTestRunway(t, "KTEST", rwy)
 
-	nmPerLong := float32(60)
-	joinFix := av.Waypoint{Fix: "JOIN36", Location: math.Point2LL{0, -14.0 / 60}}
-	reference := &av.Approach{
-		Type:      av.ILSApproach,
-		Runway:    "36",
-		Threshold: rwy.Threshold,
-		Waypoints: []av.WaypointArray{{
-			fafWaypoint("FAF36", math.Point2LL{0, -25.0 / 60}),
-			joinFix,
-			{Fix: "_36_THRESHOLD", Location: rwy.Threshold},
-		}},
-	}
+			nmPerLong := float32(60)
+			joinFix := av.Waypoint{Fix: "JOIN36", Location: math.Point2LL{0, -tc.joinNM / 60}}
+			reference := &av.Approach{
+				Type:      av.ILSApproach,
+				Runway:    "36",
+				Threshold: rwy.Threshold,
+				Waypoints: []av.WaypointArray{{
+					fafWaypoint("FAF36", math.Point2LL{0, -25.0 / 60}),
+					joinFix,
+					{Fix: "_36_THRESHOLD", Location: rwy.Threshold},
+				}},
+			}
 
-	// Aircraft flying direct to JOIN36, on the centerline 14 nm out, at
-	// 3000 ft. Natural TOD for 3000 ft is ~9 nm — well inside the join — so
-	// the join is not the FAF and the FAF lives on _36_3NM_FINAL. The
-	// cleared-visual TargetAltitude branch drives the 3° glideslope from
-	// clearance time.
-	n := nav.Nav{
-		FlightState: nav.FlightState{
-			Position:          math.Point2LL{1.0 / nmPerLong, -15.0 / 60},
-			Altitude:          3000,
-			NmPerLongitude:    nmPerLong,
-			MagneticVariation: 0,
-			ArrivalAirport:    av.Waypoint{Fix: "KTEST"},
-		},
-	}
-	directTo(&n, joinFix)
+			// Flying direct to JOIN36, 1 nm short of it on the centerline.
+			n := nav.Nav{
+				FlightState: nav.FlightState{
+					Position:          math.Point2LL{1.0 / nmPerLong, -(tc.joinNM + 1) / 60},
+					Altitude:          tc.altitude,
+					NmPerLongitude:    nmPerLong,
+					MagneticVariation: 0,
+					ArrivalAirport:    av.Waypoint{Fix: "KTEST"},
+				},
+			}
+			directTo(&n, joinFix)
 
-	n.Approach.AssignedId = "_VIS36"
-	n.Approach.Assigned = visualApproachTo(rwy, reference)
-	n.Approach.VisualReferences = []*av.Approach{reference}
-	intent := n.ClearedVisualApproach(nil, "")
-	if _, unable := intent.(speech.UnableIntent); unable {
-		t.Fatalf("unexpected UnableIntent: %v", intent)
-	}
+			n.Approach.AssignedId = "_VIS36"
+			n.Approach.Assigned = visualApproachTo(rwy, reference)
+			n.Approach.VisualReferences = []*av.Approach{reference}
+			intent := n.ClearedVisualApproach(nil, "")
+			if _, unable := intent.(speech.UnableIntent); unable {
+				t.Fatalf("unexpected UnableIntent: %v", intent)
+			}
 
-	if todIdx := slices.IndexFunc(n.Waypoints, func(wp av.Waypoint) bool { return wp.Fix == "_36_TOD" }); todIdx != -1 {
-		t.Fatalf("did not expect _36_TOD waypoint; got %v", wpNames(n.Waypoints))
-	}
-	if n.Waypoints[0].FAF() {
-		t.Errorf("join waypoint %q should not be the FAF below natural TOD; got %v", n.Waypoints[0].Fix, wpNames(n.Waypoints))
-	}
+			join := n.Waypoints[0]
+			if join.FAF() {
+				t.Errorf("join waypoint %q should not be the FAF; got %v", join.Fix, wpNames(n.Waypoints))
+			}
+			if ar := join.AltitudeRestriction(); ar != nil {
+				t.Errorf("join altitude = %v, want none", ar.Range)
+			}
 
-	finalIdx := slices.IndexFunc(n.Waypoints, func(wp av.Waypoint) bool { return wp.Fix == "_36_3NM_FINAL" })
-	if finalIdx == -1 {
-		t.Fatalf("expected _36_3NM_FINAL waypoint; got %v", wpNames(n.Waypoints))
-	}
-	if !n.Waypoints[finalIdx].FAF() {
-		t.Error("_36_3NM_FINAL should have FAF when the aircraft is below natural TOD")
-	}
-	if ar := n.Waypoints[finalIdx].AltitudeRestriction(); ar == nil {
-		t.Error("_36_3NM_FINAL should have an altitude restriction")
-	} else if ar.Range[0] != 1000 {
-		t.Errorf("_36_3NM_FINAL altitude = %v, want at %d (elev+900)", ar.Range, 100+900)
+			finalIdx := slices.IndexFunc(n.Waypoints, func(wp av.Waypoint) bool { return wp.Fix == "_36_3NM_FINAL" })
+			if finalIdx == -1 {
+				t.Fatalf("expected _36_3NM_FINAL waypoint; got %v", wpNames(n.Waypoints))
+			}
+			if !n.Waypoints[finalIdx].FAF() {
+				t.Error("_36_3NM_FINAL should be the FAF")
+			}
+			if ar := n.Waypoints[finalIdx].AltitudeRestriction(); ar == nil {
+				t.Error("_36_3NM_FINAL should have an altitude restriction")
+			} else if want := float32(tc.elevation + 900); ar.Range[0] != want || ar.Range[1] != want {
+				t.Errorf("_36_3NM_FINAL altitude = %v, want at %.0f (elev+900)", ar.Range, want)
+			}
+		})
 	}
 }
 
@@ -999,81 +1013,6 @@ func TestVisualApproachPreservesAssignedDescent(t *testing.T) {
 	}
 }
 
-func TestVisualApproachJoinIsFAFWhenPastNaturalTOD(t *testing.T) {
-	rwy := av.Runway{
-		Id:                      "36",
-		Heading:                 360,
-		Threshold:               math.Point2LL{0, 0},
-		Elevation:               0,
-		ThresholdCrossingHeight: 50,
-	}
-	setupTestRunway(t, "KTEST", rwy)
-
-	nmPerLong := float32(60)
-	joinFix := av.Waypoint{Fix: "JOIN36", Location: math.Point2LL{0, -8.0 / 60}}
-	reference := &av.Approach{
-		Type:      av.ILSApproach,
-		Runway:    "36",
-		Threshold: rwy.Threshold,
-		Waypoints: []av.WaypointArray{{
-			fafWaypoint("FAF36", math.Point2LL{0, -25.0 / 60}),
-			joinFix,
-			{Fix: "_36_THRESHOLD", Location: rwy.Threshold},
-		}},
-	}
-
-	// Aircraft at 5000 ft flying direct to JOIN36, on the centerline 8 nm
-	// out — TOD for 5000 ft is ~15.6 nm so the natural top-of-descent is
-	// well behind the join. The join itself should become the FAF, with an
-	// altitude restriction on the standard 3° glideslope at the join's
-	// distance from the threshold.
-	n := nav.Nav{
-		FlightState: nav.FlightState{
-			Position:          math.Point2LL{1.0 / nmPerLong, -9.0 / 60},
-			Altitude:          5000,
-			NmPerLongitude:    nmPerLong,
-			MagneticVariation: 0,
-			ArrivalAirport:    av.Waypoint{Fix: "KTEST"},
-		},
-	}
-	directTo(&n, joinFix)
-
-	n.Approach.AssignedId = "_VIS36"
-	n.Approach.Assigned = visualApproachTo(rwy, reference)
-	n.Approach.VisualReferences = []*av.Approach{reference}
-	intent := n.ClearedVisualApproach(nil, "")
-	if _, unable := intent.(speech.UnableIntent); unable {
-		t.Fatalf("unexpected UnableIntent: %v", intent)
-	}
-
-	if todIdx := slices.IndexFunc(n.Waypoints, func(wp av.Waypoint) bool { return wp.Fix == "_36_TOD" }); todIdx != -1 {
-		t.Fatalf("did not expect _36_TOD waypoint; got %v", wpNames(n.Waypoints))
-	}
-
-	join := n.Waypoints[0]
-	if !join.FAF() {
-		t.Errorf("join waypoint %q should be the FAF; got %v", join.Fix, wpNames(n.Waypoints))
-	}
-	// Glideslope altitude at 8 nm with TCH 50 ft is 50 + 8*tan(3°)*6076 ≈ 2597 ft;
-	// allow a few feet of tolerance for the lat/long precision of the join
-	// (joinPoint.distanceToThreshold is computed via NMDistance2LL).
-	wantJoinAlt := float32(50) + math.Tan(math.Radians(float32(3)))*math.NauticalMilesToFeet*8
-	if ar := join.AltitudeRestriction(); ar == nil {
-		t.Error("join should have an altitude restriction when it is the FAF")
-	} else if math.Abs(ar.Range[0]-wantJoinAlt) > 10 || ar.Range[0] != ar.Range[1] {
-		t.Errorf("join altitude = %v, want at ~%.0f (3° glideslope at 8 nm)", ar.Range, wantJoinAlt)
-	}
-
-	// The 3-NM final should still be present without FAF (the join took it).
-	finalIdx := slices.IndexFunc(n.Waypoints, func(wp av.Waypoint) bool { return wp.Fix == "_36_3NM_FINAL" })
-	if finalIdx == -1 {
-		t.Fatalf("expected _36_3NM_FINAL waypoint; got %v", wpNames(n.Waypoints))
-	}
-	if n.Waypoints[finalIdx].FAF() {
-		t.Error("_36_3NM_FINAL should not have FAF when join is the FAF")
-	}
-}
-
 func TestVisualApproachDropsNonDescentAssignment(t *testing.T) {
 	rwy := av.Runway{
 		Id:                      "36",
@@ -1097,7 +1036,7 @@ func TestVisualApproachDropsNonDescentAssignment(t *testing.T) {
 
 	// Aircraft level at 3000, with a stale "maintain 3000" assignment from earlier.
 	// The visual clearance should drop that assignment so it doesn't shadow the
-	// TOD/FAF altitude restrictions via TargetAltitude.activeAssignedAltitude.
+	// visual's profile via TargetAltitude.activeAssignedAltitude.
 	maintain := float32(3000)
 	n := nav.Nav{
 		Instructions: nav.Instructions{
@@ -1253,74 +1192,12 @@ func TestVisualApproachDropsAssignedDescentBelowProfile(t *testing.T) {
 		t.Errorf("nav.Altitude.ActiveAssigned = %v, want nil", *n.Altitude.ActiveAssigned)
 	}
 
-	// Sanity: _3NM_FINAL is the FAF when joinIsFAF doesn't apply. If something
-	// changes that and an in-route restriction takes over, the preservation rule
-	// above no longer matters and the test loses its meaning — fail loudly so
-	// it's noticed.
+	// Sanity: _3NM_FINAL is the FAF. If something changes that and an
+	// in-route restriction takes over, the preservation rule above no longer
+	// matters and the test loses its meaning — fail loudly so it's noticed.
 	finalIdx := slices.IndexFunc(n.Waypoints, func(wp av.Waypoint) bool { return wp.Fix == "_36_3NM_FINAL" })
 	if finalIdx == -1 || !n.Waypoints[finalIdx].FAF() {
 		t.Fatalf("expected _36_3NM_FINAL with FAF; got %v", wpNames(n.Waypoints))
-	}
-}
-
-func TestVisualApproachLowAircraftKeepsFAFOn3NMFinal(t *testing.T) {
-	rwy := av.Runway{
-		Id:                      "36",
-		Heading:                 360,
-		Threshold:               math.Point2LL{0, 0},
-		Elevation:               0,
-		ThresholdCrossingHeight: 50,
-	}
-	setupTestRunway(t, "KTEST", rwy)
-
-	nmPerLong := float32(60)
-	joinFix := av.Waypoint{Fix: "JOIN36", Location: math.Point2LL{0, -6.0 / 60}}
-	reference := &av.Approach{
-		Type:      av.ILSApproach,
-		Runway:    "36",
-		Threshold: rwy.Threshold,
-		Waypoints: []av.WaypointArray{{
-			fafWaypoint("FAF36", math.Point2LL{0, -25.0 / 60}),
-			joinFix,
-			{Fix: "_36_THRESHOLD", Location: rwy.Threshold},
-		}},
-	}
-
-	// Aircraft at 800 ft flying direct to JOIN36, on the centerline 6 nm
-	// out. Natural TOD is ~2.36 nm — well inside the join, so joinIsFAF is
-	// false and the FAF lives on _36_3NM_FINAL.
-	n := nav.Nav{
-		FlightState: nav.FlightState{
-			Position:          math.Point2LL{1.0 / nmPerLong, -7.0 / 60},
-			Altitude:          800,
-			NmPerLongitude:    nmPerLong,
-			MagneticVariation: 0,
-			ArrivalAirport:    av.Waypoint{Fix: "KTEST"},
-		},
-	}
-	directTo(&n, joinFix)
-
-	n.Approach.AssignedId = "_VIS36"
-	n.Approach.Assigned = visualApproachTo(rwy, reference)
-	n.Approach.VisualReferences = []*av.Approach{reference}
-	intent := n.ClearedVisualApproach(nil, "")
-	if _, unable := intent.(speech.UnableIntent); unable {
-		t.Fatalf("unexpected UnableIntent: %v", intent)
-	}
-
-	if todIdx := slices.IndexFunc(n.Waypoints, func(wp av.Waypoint) bool { return wp.Fix == "_36_TOD" }); todIdx != -1 {
-		t.Fatalf("did not expect _36_TOD waypoint; got %v", wpNames(n.Waypoints))
-	}
-	if n.Waypoints[0].FAF() {
-		t.Errorf("join waypoint %q should not be the FAF for a low aircraft; got %v", n.Waypoints[0].Fix, wpNames(n.Waypoints))
-	}
-
-	finalIdx := slices.IndexFunc(n.Waypoints, func(wp av.Waypoint) bool { return wp.Fix == "_36_3NM_FINAL" })
-	if finalIdx == -1 {
-		t.Fatalf("expected _36_3NM_FINAL waypoint; got %v", wpNames(n.Waypoints))
-	}
-	if !n.Waypoints[finalIdx].FAF() {
-		t.Error("_36_3NM_FINAL should have FAF when joinIsFAF doesn't apply")
 	}
 }
 

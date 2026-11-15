@@ -2077,6 +2077,68 @@ func TestClearedVisualWithOnlyThresholdAhead(t *testing.T) {
 	}
 }
 
+// TestClearedVisualAboveProfileDescendsToFinal checks that an aircraft
+// cleared for a visual well above its profile, 2 nm before the reference's
+// intermediate fix, descends in one straight line to the 3 nm final rather
+// than to the reference's fixes on the way.
+func TestClearedVisualAboveProfileDescendsToFinal(t *testing.T) {
+	f := NewArrivalFlight(t, ArrivalConfig{
+		Waypoints:        "HAUPT/a6000 LEFER/a4000",
+		DepartureAirport: "KMCO",
+		ArrivalAirport:   "KJFK",
+		AircraftType:     "A320",
+		InitialAltitude:  4500,
+		InitialSpeed:     170,
+	})
+	f.ExpectVisualApproach("22L")
+
+	ap := f.nav.Approach.Assigned
+	fs := &f.nav.FlightState
+	route := ap.Waypoints[0]
+	ifIdx := slices.IndexFunc(route, func(wp av.Waypoint) bool { return wp.IF() })
+	if ifIdx == -1 {
+		t.Fatalf("route %q has no intermediate fix", route.Encode())
+	}
+	f.nav.Waypoints = append(route[ifIdx:].Clone(), fs.ArrivalAirport)
+	thr := math.LL2NM(ap.Threshold, fs.NmPerLongitude)
+	d := math.Distance2f(math.LL2NM(route[ifIdx].Location, fs.NmPerLongitude), thr) + 2
+	crs := ap.FinalApproachCourse(fs.NmPerLongitude, fs.MagneticVariation)
+	fs.Position = math.NM2LL(math.Add2f(thr, math.Scale2f(math.HeadingVector(crs), -d)), fs.NmPerLongitude)
+	fs.Heading = math.TrueToMagnetic(crs, fs.MagneticVariation)
+	// 1,200 feet above a 3 degree path.
+	rwy, _ := f.nav.lookup().Runway("KJFK", "22L")
+	fs.Altitude = float32(rwy.Elevation+rwy.ThresholdCrossingHeight) + d*ftPerNMOnGlideslope + 1200
+
+	if intent, unable := f.ClearedVisualApproach("22L").(speech.UnableIntent); unable {
+		t.Fatalf("ClearedVisualApproach returned unable: %+v", intent)
+	}
+	wps := av.WaypointArray(f.nav.Waypoints)
+	for _, wp := range wps[:len(wps)-2] {
+		if wp.FAF() != (wp.Fix == "_22L_3NM_FINAL") {
+			t.Errorf("%s: FAF %v, want only the 3 nm final as the FAF", wp.Fix, wp.FAF())
+		}
+		if ar := wp.AltitudeRestriction(); ar != nil && wp.Fix != "_22L_3NM_FINAL" {
+			t.Errorf("%s has altitude restriction %v, want none before the 3 nm final", wp.Fix, ar.Range)
+		}
+	}
+	finalAlt := float32(rwy.Elevation) + 900
+	if alt, _, _ := f.nav.TargetAltitude(); alt != finalAlt {
+		t.Errorf("target altitude %.0f, want the 3 nm final's %.0f", alt, finalAlt)
+	}
+
+	var maxRate float32
+	f.StepUntil("passed the 3 nm final", func() bool {
+		maxRate = max(maxRate, -fs.AltitudeRate)
+		return !slices.Contains(navRouteFixes(f.nav), "_22L_3NM_FINAL")
+	})
+	if maxRate > 1800 {
+		t.Errorf("descended at up to %.0f fpm, want no more than 1800", maxRate)
+	}
+	if math.Abs(fs.Altitude-finalAlt) > 100 {
+		t.Errorf("crossed the 3 nm final at %.0f, want %.0f", fs.Altitude, finalAlt)
+	}
+}
+
 // TestClearedVisualAlongILSAfterVectorArmsIntercept verifies that issuing
 // CVA to an aircraft that was committed to an ILS reference, then vectored
 // off, re-arms the intercept state machine (InterceptState = InitialHeading,

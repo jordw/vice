@@ -783,26 +783,16 @@ func (nav *Nav) visualApproachRouteFromReferences(runway string, followTraffic *
 
 // visualRouteFromJoin returns the route the visual is flown along from
 // joinPoint on a reference route to the runway's threshold, carrying the
-// descent profile: a 3 degree glidepath from the top of descent through a
-// 3 nm final at 900 feet above the runway. followTraffic, if given, is
-// where the traffic being followed is, which the join takes the place of.
+// descent profile: one continuous descent from wherever the aircraft is to
+// a 3 nm final 900 feet above the runway, the visual's final approach fix,
+// and from there to the threshold. followTraffic, if given, is where the
+// traffic being followed is, which the join takes the place of.
 func (nav *Nav) visualRouteFromJoin(runway string, joinPoint visualApproachJoinPoint, followTraffic *math.Point2LL) []av.Waypoint {
 	nmPerLong := nav.FlightState.NmPerLongitude
 	rwy, _ := nav.lookup().Runway(av.ICAOAirportCode(nav.FlightState.ArrivalAirport.Fix), runway)
 	finalPoint, hasFinalPoint := visualRoutePointAtDistance(joinPoint.route, 3, nmPerLong)
 	thresholdAlt := rwy.Elevation + rwy.ThresholdCrossingHeight
 	final3nmAlt := float32(rwy.Elevation) + 900
-
-	// Top-of-descent altitude: continue any in-progress controller-assigned descent (so "descend
-	// and maintain 3000" still completes), otherwise hold current.  Reference Altitude.Assigned if
-	// set so that we place the TOD for the altitude the aircraft is heading for, not where it is
-	// currently.
-	todAlt := nav.FlightState.Altitude
-	if a := nav.Altitude.Assigned; a != nil && *a < todAlt {
-		todAlt = *a
-	}
-	// Distance from threshold for a 3° glideslope crossing the threshold at TCH.
-	todDist := (todAlt - float32(thresholdAlt)) / ftPerNMOnGlideslope
 
 	join := av.Waypoint{Location: joinPoint.location}
 	switch {
@@ -812,11 +802,9 @@ func (nav *Nav) visualRouteFromJoin(runway string, joinPoint visualApproachJoinP
 	case joinPoint.finalTurn:
 		join.Fix = "_" + runway + "_FINAL_TURN"
 	case joinPoint.lateralDistance == 0 && joinPoint.segmentFraction == 0:
-		// The join is at a fix of the route: fly the fix itself, so that
-		// its restrictions come along rather than being displaced by a
-		// bare join point.
-		join = joinPoint.route[joinPoint.segment : joinPoint.segment+1].Clone()[0]
-		join.SetFAF(false)
+		// The join is at a fix of the route: fly the fix itself rather
+		// than a bare join point at it.
+		join = referenceFixes(joinPoint.route[joinPoint.segment : joinPoint.segment+1])[0]
 	case joinPoint.lateralDistance == 0:
 		join.Fix = "_" + runway + "_INTERCEPT"
 	default:
@@ -846,45 +834,19 @@ func (nav *Nav) visualRouteFromJoin(runway string, joinPoint visualApproachJoinP
 		start = joinPoint.segment
 	}
 	if hasFinalPoint && joinPoint.distanceToThreshold > 3.25 {
-		// Visual approaches use the same pure-geometric descent the post-FAF
-		// path uses, so the FAF marker lives on the first waypoint that has a
-		// glideslope-anchored altitude restriction: the join when the aircraft
-		// is past natural TOD, otherwise _3NM_FINAL.
-		joinIsFAF := todDist >= joinPoint.distanceToThreshold
-
-		if joinIsFAF {
-			glideAlt := float32(thresholdAlt) + ftPerNMOnGlideslope*joinPoint.distanceToThreshold
-			wps[len(wps)-1].SetFAF(true)
-			wps[len(wps)-1].SetAltitudeRestriction(av.MakeAtAltitudeRestriction(glideAlt))
+		if start <= finalPoint.segment {
+			wps = append(wps, referenceFixes(joinPoint.route[start:finalPoint.segment+1])...)
 		}
-
-		// Reference dogleg fixes between join and 3-NM final, with FAF flags cleared (an
-		// inherited FAF would prematurely flip nav.Approach.PassedFAF).
-		intermediates := func(lo, hi int) []av.Waypoint {
-			if lo >= hi {
-				return nil
-			}
-			copied := joinPoint.route[lo:hi].Clone()
-			for i := range copied {
-				copied[i].SetFAF(false)
-			}
-			return copied
-		}
-
-		wps = append(wps, intermediates(start, finalPoint.segment+1)...)
-
 		finalWp := av.Waypoint{Fix: "_" + runway + "_3NM_FINAL", Location: finalPoint.location}
 		finalWp.SetOnApproach(true)
 		finalWp.SetAltitudeRestriction(av.MakeAtAltitudeRestriction(final3nmAlt))
-		if !joinIsFAF {
-			finalWp.SetFAF(true)
-		}
+		finalWp.SetFAF(true)
 		wps = append(wps, finalWp)
 		start = finalPoint.segment + 1
 	}
 
 	if start < len(joinPoint.route) {
-		wps = append(wps, joinPoint.route[start:].Clone()...)
+		wps = append(wps, referenceFixes(joinPoint.route[start:])...)
 	}
 
 	// A few things at the last waypoint.
@@ -903,6 +865,19 @@ func (nav *Nav) visualRouteFromJoin(runway string, joinPoint visualApproachJoinP
 		wps[i].SetFlyOver(i == len(wps)-1)
 	}
 	return wps
+}
+
+// referenceFixes returns copies of wps, fixes of a visual's reference route,
+// for the route the visual is flown along. A visual approach is not an
+// instrument approach, so the reference's altitudes and final approach fix
+// give way to the visual's own descent profile.
+func referenceFixes(wps av.WaypointArray) av.WaypointArray {
+	fixes := wps.Clone()
+	for i := range fixes {
+		fixes[i].SetFAF(false)
+		fixes[i].ClearAltitudeRestriction()
+	}
+	return fixes
 }
 
 // keepsArcOntoChartedVisual keeps an active arc that already joins the
