@@ -7,6 +7,7 @@ package tts
 import (
 	"errors"
 	"fmt"
+	"math/cmplx"
 	"runtime"
 	"slices"
 	"strings"
@@ -373,7 +374,7 @@ func resampleAudio(samples []float32, srcRate, dstRate int) []float32 {
 // that are taken rate times farther apart than they are placed; each one
 // is shifted by up to a few milliseconds to where it best matches how the
 // input continued after the previous window, so that the seams don't
-// click.
+// click. makeShiftSearch finds that shift.
 func timeStretch(samples []float32, sampleRate int, rate float32) []float32 {
 	if rate == 1 || len(samples) == 0 {
 		return samples
@@ -396,6 +397,8 @@ func timeStretch(samples []float32, sampleRate int, rate float32) []float32 {
 	x := make([]float32, pad+len(samples)+pad+winLen)
 	copy(x[pad:], samples)
 
+	search := makeShiftSearch(2*tolerance + winLen)
+
 	out := make([]float32, int(float32(len(samples))/rate))
 	weight := make([]float32, len(out))
 	prev := -1
@@ -408,16 +411,8 @@ func timeStretch(samples []float32, sampleRate int, rate float32) []float32 {
 		start := pad + ta
 		if prev >= 0 {
 			natural := x[prev+synthesisHop : prev+synthesisHop+winLen]
-			bestCorr := float32(0)
-			for s := pad + ta - tolerance; s <= pad+ta+tolerance; s++ {
-				var corr float32
-				for i, v := range natural {
-					corr += v * x[s+i]
-				}
-				if s == pad+ta-tolerance || corr > bestCorr {
-					start, bestCorr = s, corr
-				}
-			}
+			first := pad + ta - tolerance
+			start = first + search(natural, x[first:first+2*tolerance+winLen])
 		}
 
 		for i, w := range window[:min(winLen, len(out)-ts)] {
@@ -433,4 +428,88 @@ func timeStretch(samples []float32, sampleRate int, rate float32) []float32 {
 		}
 	}
 	return out
+}
+
+// makeShiftSearch returns a function that finds where ref lines up best
+// with x, which is longer than ref and has at most n samples. The function
+// returns the shift s that gives the largest sum of ref[i]*x[s+i] over the
+// samples of ref. The first such shift wins a tie.
+//
+// The sums for all of the shifts are the cross-correlation of x and ref.
+// The function gets them from two Fourier transforms, which takes about a
+// tenth of the time that it takes to add up each sum. It works in float64
+// because the rounding errors of float32 transforms change the answer
+// where the audio is quiet.
+func makeShiftSearch(n int) func(ref, x []float32) int {
+	size := 1
+	for size < n {
+		size *= 2
+	}
+	fft := makeFFT(size)
+	z, c := make([]complex128, size), make([]complex128, size)
+
+	return func(ref, x []float32) int {
+		// One transform gives the transforms of both signals. With x in
+		// the real parts and ref in the imaginary parts, the transform of
+		// x is X[k] = (z[k] + conj(z[size-k])) / 2 and the transform of
+		// ref is R[k] = (z[k] - conj(z[size-k])) / 2i.
+		clear(z)
+		for i, v := range x {
+			z[i] = complex(float64(v), 0)
+		}
+		for i, v := range ref {
+			z[i] = complex(real(z[i]), float64(v))
+		}
+		fft(z)
+
+		// The real part of the transform of conj(X[k]) * R[k] is the
+		// cross-correlation, times a positive constant.
+		for k := range c {
+			zk, y := z[k], cmplx.Conj(z[(size-k)%size])
+			c[k] = cmplx.Conj(zk+y) * (zk - y) * -1i
+		}
+		fft(c)
+
+		best := 0
+		for s := 1; s <= len(x)-len(ref); s++ {
+			if real(c[s]) > real(c[best]) {
+				best = s
+			}
+		}
+		return best
+	}
+}
+
+// makeFFT returns a function that replaces n values with their discrete
+// Fourier transform. n must be a power of two.
+func makeFFT(n int) func(z []complex128) {
+	// rev[i] is i with the order of its bits reversed.
+	rev := make([]int, n)
+	for i := range rev {
+		rev[i] = rev[i/2]/2 + (i%2)*(n/2)
+	}
+	roots := make([]complex128, n/2)
+	for i := range roots {
+		roots[i] = cmplx.Rect(1, -2*math.Pi*float64(i)/float64(n))
+	}
+
+	return func(z []complex128) {
+		for i, r := range rev {
+			if i < r {
+				z[i], z[r] = z[r], z[i]
+			}
+		}
+		// Each pass joins pairs of transforms of half values into
+		// transforms of size values.
+		for size := 2; size <= n; size *= 2 {
+			half, step := size/2, n/size
+			for i := 0; i < n; i += size {
+				a, b := z[i:i+half], z[i+half:i+size]
+				for j := range a {
+					t := roots[j*step] * b[j]
+					a[j], b[j] = a[j]+t, a[j]-t
+				}
+			}
+		}
+	}
 }
