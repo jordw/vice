@@ -99,6 +99,12 @@ type altitudeTarget struct {
 	// level is set when the restrictions ahead require exactly the current
 	// altitude at fix, so the aircraft stays level until it gets there.
 	level bool
+	// minimum, on a cleared approach, is the highest minimum altitude at the
+	// fixes up to fix: the lowest the aircraft may level at on its way there.
+	minimum float32
+	// descend is set on a cleared approach when the aircraft descends now,
+	// in a straight line to fix.
+	descend bool
 }
 
 // findAltitudeTarget scans waypoints to determine the target altitude and
@@ -147,39 +153,11 @@ func (nav *Nav) findAltitudeTarget() (altitudeTarget, bool) {
 		return altitudeTarget{}, false
 	}
 
-	haveFixAssignments := len(nav.FixAssignments) > 0
-	getChartedRestriction := func(i int) *av.AltitudeRestriction {
-		wp := &wps[i]
-		if ar := nav.controllerAltitudeRestriction(wp); ar != nil {
-			return ar
-		}
-		ar := nav.chartedAltitudeRestriction(wp)
-		if ar != nil && haveFixAssignments {
-			// If the controller has given 'cross [wp] at [alt]' for a
-			// future waypoint, ignore the charted altitude restriction.
-			// Explicit loop avoids slices.ContainsFunc which copies the
-			// large Waypoint struct by value for each element via the closure.
-			for j := i + 1; j < len(wps); j++ {
-				if fa, ok := nav.FixAssignments[wps[j].Fix]; ok && fa.Arrive.Altitude != nil {
-					return nil
-				}
-			}
-		}
-		return ar
+	if nav.Approach.Cleared {
+		return nav.approachAltitudeTarget(wps)
 	}
 
-	// On a cleared approach, "at or above X" means the aircraft should
-	// target X (the floor) to maintain a normal descent profile, not
-	// stay high because the restriction is technically satisfied.
-	getRestriction := func(i int) *av.AltitudeRestriction {
-		ar := getChartedRestriction(i)
-		if ar != nil && nav.Approach.Cleared && wps[i].OnApproach() &&
-			ar.Range[1] == av.MaxAltitude && ar.Range[0] > 0 {
-			adjusted := av.MakeAtAltitudeRestriction(ar.Range[0])
-			return &adjusted
-		}
-		return ar
-	}
+	getRestriction := func(i int) *av.AltitudeRestriction { return nav.routeAltitudeRestriction(wps, i) }
 
 	// Find the *last* waypoint that has an altitude restriction that
 	// applies to the aircraft. Along the way, note the nearest met
@@ -240,12 +218,6 @@ func (nav *Nav) findAltitudeTarget() (altitudeTarget, bool) {
 		// Does this one have a relevant altitude restriction?
 		restr := getRestriction(i)
 		if restr == nil {
-			continue
-		}
-
-		// Ignore it if the aircraft is cleared for the approach and is below it.
-		// TODO: I think this can be 'break' rather than continue...
-		if nav.Approach.Cleared && nav.FlightState.Altitude < restr.Range[0] {
 			continue
 		}
 
@@ -311,6 +283,119 @@ func (nav *Nav) findAltitudeTarget() (altitudeTarget, bool) {
 
 	level := altRange[0] == altRange[1] && altRange[0] == nav.FlightState.Altitude
 	return altitudeTarget{altitude: alt, fix: fix, level: level}, true
+}
+
+// routeAltitudeRestriction returns the altitude restriction the aircraft
+// flies at wps[i]: one the controller assigned there, or else the charted
+// one, unless the controller assigned a crossing altitude at a fix after it.
+func (nav *Nav) routeAltitudeRestriction(wps []av.Waypoint, i int) *av.AltitudeRestriction {
+	wp := &wps[i]
+	if ar := nav.controllerAltitudeRestriction(wp); ar != nil {
+		return ar
+	}
+	ar := nav.chartedAltitudeRestriction(wp)
+	if ar != nil && len(nav.FixAssignments) > 0 {
+		// Explicit loop avoids slices.ContainsFunc which copies the
+		// large Waypoint struct by value for each element via the closure.
+		for j := i + 1; j < len(wps); j++ {
+			if fa, ok := nav.FixAssignments[wps[j].Fix]; ok && fa.Arrive.Altitude != nil {
+				return nil
+			}
+		}
+	}
+	return ar
+}
+
+// approachAltitudeTarget returns what a pilot cleared for an approach
+// descends toward along wps: the final approach fix at its altitude, or, past
+// it or below it, the end of the approach. The restrictions on the way are
+// flown as charted: a minimum is the lowest the aircraft may be there, not an
+// altitude to descend to, and a restriction above the aircraft doesn't apply.
+//
+// The aircraft has to get down to the target and to each maximum on the way.
+// A level aircraft stays level until it is on a 3 degree path to one of them,
+// as on a glideslope, and then descends in a straight line to the one that
+// needs the steepest descent. One that is already descending, or is past the
+// final approach fix, keeps on down in that straight line. Until then, the
+// target is the one whose path it will meet first. Where the line would pass
+// below a minimum, it aims for that minimum instead.
+func (nav *Nav) approachAltitudeTarget(wps []av.Waypoint) (altitudeTarget, bool) {
+	alt := nav.FlightState.Altitude
+	type limit struct {
+		altitude, dist float32
+		fix            string
+	}
+	var floors, ceilings []limit
+	dist := float32(0)
+	prev := nav.FlightState.Position
+	for i := range wps {
+		dist += math.NMDistance2LLFast(prev, wps[i].Location, nav.FlightState.NmPerLongitude)
+		prev = wps[i].Location
+		ar := nav.routeAltitudeRestriction(wps, i)
+		if ar == nil || ar.Range[0] > alt {
+			continue
+		}
+		lim := limit{dist: max(dist, 0.01), fix: wps[i].Fix}
+		if wps[i].FAF() {
+			lim.altitude = util.Select(ar.Range[0] > 0, ar.Range[0], ar.Range[1])
+			floors, ceilings = append(floors, lim), append(ceilings, lim)
+			break
+		}
+		if ar.Range[0] > 0 {
+			lim.altitude = ar.Range[0]
+			floors = append(floors, lim)
+		}
+		if ar.Range[1] < alt {
+			lim.altitude = ar.Range[1]
+			ceilings = append(ceilings, lim)
+		}
+	}
+	if len(ceilings) == 0 {
+		return altitudeTarget{}, false
+	}
+
+	gradient := func(l limit) float32 { return (alt - l.altitude) / l.dist }
+	descending := nav.Approach.PassedFAF || nav.FlightState.AltitudeRate < -50
+	var aim *limit
+	next, nextDist := ceilings[0], math.Infinity
+	for i, c := range ceilings {
+		// How far the aircraft flies level before it is on a 3 degree path
+		// to c. A little below the path counts as on it, so that an
+		// aircraft following it doesn't stop and start.
+		level := c.dist - (alt-c.altitude+50)/ftPerNMOnGlideslope
+		if descending || level <= 0 {
+			if aim == nil || gradient(c) > gradient(*aim) {
+				aim = &ceilings[i]
+			}
+		} else if level < nextDist {
+			next, nextDist = c, level
+		}
+	}
+	minimum := func(to limit) float32 {
+		var m float32
+		for _, f := range floors {
+			if f.dist <= to.dist {
+				m = max(m, f.altitude)
+			}
+		}
+		return m
+	}
+	if aim == nil {
+		return altitudeTarget{altitude: next.altitude, fix: next.fix, minimum: minimum(next)}, true
+	}
+
+	g := gradient(*aim)
+	var floor *limit
+	for i, f := range floors {
+		if f.dist < aim.dist && alt-g*f.dist < f.altitude && (floor == nil || gradient(f) < gradient(*floor)) {
+			floor = &floors[i]
+		}
+	}
+	if floor != nil {
+		aim = floor
+	}
+	return altitudeTarget{altitude: aim.altitude, fix: aim.fix, level: aim.altitude == alt, minimum: minimum(*aim),
+		descend: true}, true
 }
 
 // LowestProcedureAltitude returns the lowest applicable published altitude

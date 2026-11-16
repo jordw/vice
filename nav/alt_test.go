@@ -1195,9 +1195,41 @@ func TestClearedApproachLiftsExceptFloor(t *testing.T) {
 		f.ExpectApproach("I22L")
 		f.ClearedApproach("I22L")
 	})
-	f.AtFix("LEFER", func(f *FlightTest) { f.AssertAltitudeBelow(4300) })
-	f.AtFix("ROSLY", func(f *FlightTest) { f.AssertAltitudeNear(3000, 200) })
+	f.AtFix("ROSLY", func(f *FlightTest) { f.AssertAltitudeBelow(4000) })
+	f.AtFix("ZALPO", func(f *FlightTest) { f.AssertAltitudeNear(1800, 100) })
 	f.Run()
+}
+
+// TestClearedApproachWhileDescendingKeepsDescending verifies that an aircraft
+// cleared for an approach while it is descending below a 3 degree path to the
+// final approach fix keeps descending in a straight line to the fix, rather
+// than leveling off until it meets the path.
+func TestClearedApproachWhileDescendingKeepsDescending(t *testing.T) {
+	f := NewArrivalFlight(t, ArrivalConfig{
+		Waypoints:        "HAUPT LEFER/a4000/star ROSLY/a3000/star",
+		DepartureAirport: "KMCO",
+		ArrivalAirport:   "KJFK",
+		AircraftType:     "A320",
+		InitialAltitude:  6000,
+		InitialSpeed:     210,
+	})
+	f.DescendViaSTAR()
+	f.ExpectApproach("I22L")
+	f.StepUntil("descending", func() bool { return f.nav.FlightState.AltitudeRate < -500 })
+	f.ClearedApproach("I22L")
+
+	dist, ok := f.nav.routeDistanceToFix("ZALPO")
+	if !ok || f.nav.FlightState.Altitude-1800 > dist*ftPerNMOnGlideslope-500 {
+		t.Fatalf("expected the aircraft well below a 3 degree path to ZALPO, got %.0f ft %.1f nm out",
+			f.nav.FlightState.Altitude, dist)
+	}
+	f.StepUntil("passed ZALPO", func() bool {
+		if f.nav.FlightState.AltitudeRate > -50 {
+			t.Fatalf("leveled off at %.0f ft before ZALPO", f.nav.FlightState.Altitude)
+		}
+		return f.nav.Approach.PassedFAF
+	})
+	f.AssertAltitudeNear(1800, 100)
 }
 
 // TestClearedAltitudeFloorsDescent verifies that an arrival cleared to an
@@ -1381,6 +1413,9 @@ func TestVectorKeepsIssuedAltitude(t *testing.T) {
 
 // TestVectorOffApproachAfterCompletedDescent verifies that a completed descent
 // clearance does not cause a climb when the aircraft is vectored off an approach.
+// The aircraft is cleared late and high, so it passes ROSLY above its assigned
+// 3000, which is kept until the next fix, and the approach then takes it
+// below 3000 before it gets there.
 func TestVectorOffApproachAfterCompletedDescent(t *testing.T) {
 	f := NewArrivalFlight(t, ArrivalConfig{
 		Waypoints:        "SAJUL DETGY HAUPT LEFER ROSLY",
@@ -1391,6 +1426,7 @@ func TestVectorOffApproachAfterCompletedDescent(t *testing.T) {
 		InitialSpeed:     210,
 	})
 	f.ExpectApproach("I22L")
+	f.StepUntil("passed LEFER", func() bool { return f.nav.Waypoints[0].Fix == "ROSLY" })
 	f.AssignAltitude(3000)
 	f.ClearedApproach("I22L")
 	f.StepUntil("descended below the preserved clearance", func() bool {
@@ -2063,9 +2099,9 @@ func newChartedVisualFlight(t *testing.T) *FlightTest {
 // 28R report: an aircraft vectored onto a charted visual while level at an
 // assigned 5000 flew the whole procedure level. Two things have to happen for
 // it to come down. The clearance has to release the assigned altitude, and the
-// descent has to be the continuous geometric one a visual gets rather than the
-// generic top-of-descent gate, which waits for roughly half the aircraft's max
-// descent rate and so never fires on a procedure this short.
+// descent has to aim for the procedure's altitudes: a cleared aircraft below
+// a 3 degree path to its target stays level until it meets the path, and then
+// follows it down.
 //
 // The aircraft joins past the chart's crossing altitude, as it did in the
 // report, so the descent target is the runway threshold.
@@ -2075,8 +2111,8 @@ func TestChartedVisualDescendsFromAssignedAltitude(t *testing.T) {
 
 	// Vectored in from 10 nm right of the course abeam the 18 nm point,
 	// converging at 45°, so the aircraft joins 8 nm out — past MILLO. That
-	// leaves 22 nm of track miles to lose 5000 ft, well short of the rate the
-	// top-of-descent gate waits for.
+	// leaves 22 nm of track miles to lose 5000 ft, below a 3 degree path, so
+	// the aircraft holds 5000 until it meets the path.
 	nmPerLong := f.nav.FlightState.NmPerLongitude
 	f.nav.FlightState.Position = math.Offset2LL(cv.at(18), math.NormalizeHeading(cv.inbound+90), 10, nmPerLong)
 	intercept := math.TrueToMagnetic(math.NormalizeHeading(cv.inbound-45), f.nav.FlightState.MagneticVariation)
@@ -2100,19 +2136,12 @@ func TestChartedVisualDescendsFromAssignedAltitude(t *testing.T) {
 		t.Error("expected the cleared charted visual to count as being on the approach")
 	}
 
-	alt, rate, geometric := f.nav.TargetAltitude()
-	if !geometric {
-		t.Error("expected a geometric descent on the cleared charted visual")
-	}
-	if alt != cv.thresholdAlt {
-		t.Errorf("target altitude = %.0f, want %.0f (threshold restriction)", alt, cv.thresholdAlt)
-	}
-	if rate <= 0 {
-		t.Errorf("descent rate = %.0f, want positive", rate)
+	if target, ok := f.nav.findAltitudeTarget(); !ok || target.altitude != cv.thresholdAlt {
+		t.Errorf("altitude target = %+v, %v; want the threshold restriction %.0f", target, ok, cv.thresholdAlt)
 	}
 
 	f.AfterTicks(15, func(f *FlightTest) {
-		f.AssertDescending()
+		f.AssertLevelFlight()
 	})
 	f.AfterTicks(180, func(f *FlightTest) {
 		f.AssertAltitudeBelow(4500)

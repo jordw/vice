@@ -5,7 +5,6 @@
 package nav
 
 import (
-	"slices"
 	"time"
 
 	av "github.com/mmp/vice/aviation"
@@ -487,18 +486,20 @@ func (nav *Nav) TargetAltitude() (float32, float32, bool) {
 			if ok && eta > 0 {
 				geometricRate := (nav.FlightState.Altitude - target.altitude) / eta * 60
 
-				if nav.descendsOnGlidepath() {
-					return alt, geometricRate, true // exact glideslope
-				}
-
-				descent := nav.Perf.Rate.Descent
 				altDiff := nav.FlightState.Altitude - target.altitude
-
+				descent := nav.Perf.Rate.Descent
 				// The AltitudeRate check fixes a case where we enter an oscillatory state of "start
 				// descent" / "no not yet" and end up descending too late to meet the restriction.
 				startDescent := geometricRate > descent/2 || nav.FlightState.AltitudeRate < -50
 
-				if nav.Waypoints[0].VFRPhase == av.VFRPhaseDownwind {
+				switch {
+				case nav.Approach.Cleared:
+					if target.descend {
+						return alt, geometricRate, true
+					}
+				case nav.descendsOnGlidepath():
+					return alt, geometricRate, true // exact glideslope
+				case nav.Waypoints[0].VFRPhase == av.VFRPhaseDownwind:
 					if nav.PassedWaypoint.VFRPhase == av.VFRPhaseDownwind {
 						// A VFR aircraft on downwind descends steadily to
 						// the pattern's altitudes, starting abeam the
@@ -511,15 +512,7 @@ func (nav *Nav) TargetAltitude() (float32, float32, bool) {
 					if altDiff/vfrDescentRate*60 >= eta-30 || nav.FlightState.AltitudeRate < -vfrDescentRate/2 {
 						return alt, max(geometricRate, vfrDescentRate), true
 					}
-				} else if nav.Approach.Cleared && nav.isFAF(target.fix) {
-					// A pilot cleared for an approach starts down to the
-					// final approach fix where a 3 degree path to it
-					// begins, as on a glideslope, and follows the path
-					// from there.
-					if startDescent || altDiff >= dist*ftPerNMOnGlideslope {
-						return alt, geometricRate, true
-					}
-				} else if startDescent {
+				case startDescent:
 					// Dynamic safety factor: accounts for ramp-up deficit where
 					// updateAltitude takes ~13 ticks to reach full rate, causing
 					// ~descent/9 ft of lost altitude change. Scale the factor
@@ -538,12 +531,12 @@ func (nav *Nav) TargetAltitude() (float32, float32, bool) {
 				// Nor does it ever take the aircraft back up: at the tail of
 				// a descent it would otherwise climb back toward the fix it
 				// has already passed.
-				held := min(max(ar.TargetAltitude(nav.FlightState.Altitude), target.altitude),
+				held := min(max(ar.TargetAltitude(nav.FlightState.Altitude), target.altitude, target.minimum),
 					nav.FlightState.Altitude)
 				return nav.limitAltitude(held), MaximumRate, false
 			}
 			if c := nav.Altitude.Cleared; c != nil && c.Altitude < nav.FlightState.Altitude {
-				return c.Altitude, MaximumRate, false
+				return min(max(c.Altitude, target.minimum), nav.FlightState.Altitude), MaximumRate, false
 			}
 			return nav.FlightState.Altitude, 0, false
 		}
@@ -580,11 +573,13 @@ func (nav *Nav) limitAltitude(alt float32) float32 {
 }
 
 // descendsOnGlidepath reports whether the aircraft descends on the exact
-// geometric path to its next altitude restriction rather than holding
-// level until it has to start down: past the FAF, cleared for a visual
-// approach, or on a VFR landing's base, final, or straight-in legs.
+// geometric path to its next altitude restriction, changing its rate at
+// once rather than easing in and out: following a cleared approach's
+// descent, past the FAF, cleared for a visual approach, or on a VFR
+// landing's base, final, or straight-in legs.
 func (nav *Nav) descendsOnGlidepath() bool {
-	if nav.Approach.PassedFAF || nav.clearedForVisualApproach() {
+	if nav.Approach.PassedFAF || nav.clearedForVisualApproach() ||
+		(nav.Approach.Cleared && nav.activeAssignedAltitude() == nil) {
 		return true
 	}
 	if len(nav.Waypoints) == 0 {
@@ -596,9 +591,4 @@ func (nav *Nav) descendsOnGlidepath() bool {
 	default:
 		return false
 	}
-}
-
-// isFAF reports whether fix is the final approach fix of the route ahead.
-func (nav *Nav) isFAF(fix string) bool {
-	return slices.ContainsFunc(nav.Waypoints, func(wp av.Waypoint) bool { return wp.Fix == fix && wp.FAF() })
 }
