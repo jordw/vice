@@ -129,7 +129,7 @@
 
 	    <section class="docs-intro">
               <p>
-                <i>vice</i> is an air traffic control simulator, focused on TRACON and enroute scenarios; it provides an accurate simulation of the STARS system for TRACON and the ERAM system for enroute.
+                <i>vice</i> is an air traffic control simulator; it provides an accurate simulation of the STARS system for TRACON scenarios and the ERAM system for enroute.
                 Simulations have simulated traffic and virtual controllers covering other positions.
                 Instructions may be given to aircraft verbally or via the keyboard; pilot responses are generated using speech synthesis.
                 <i>vice</i> also supports multiple-user scenarios, where each person controls a different position at a facility.
@@ -137,13 +137,13 @@
               </p>
               <p><i>vice</i> supports departure and arrival control
                 scenarios in numerous TRACONs and ATCT/TRACONs:
-A11 A80, A90, AAC, ABE, ABQ, AGS, ALB, ASE, AUS, AVL, BGR, BHM, BIL, BNA, BOI, BTV, BUF, C90, CHS,
-CID, CLE, CLT, COS, CPR, CVG, D01, D10, D21, DAB, F11, GSO, GSP, GTF, HNL, I90, IND, JAX, L30, M98,
-MCI, MDT, MIA, MKE, MYR, N90, NCT, OGG, OKC, P31, P50, P80, PCT, PHL, PIT, PVD, PWM, R90, RDU, S46,
-S56, SAT, SAV, SBA, SBN, SCT, SDF, SGF, SYR, TPA, and
-Y90.
+A11, A80, A90, AAC, ABE, ABQ, AGS, ALB, ASE, AUS, AVL, BGR, BHM, BIL, BNA, BOI, BTV
+BUF, C90, CHS, CID, CLE, CLT, COS, CPR, CVG, D01, D10, D21, DAB, EUG, F11, FAR, FAT
+GSO, GSP, GTF, HNL, HSV, I90, ILM, IND, JAX, L30, LBB, LTS, M03, M98, MCI, MDT, MIA
+MKE, MYR, N90, NCT, OGG, OKC, ORF, P31, P50, P80, PBI, PCT, PHL, PIT, PVD, PWM, R90
+RDU, RSW, S46, S56, SAT, SAV, SBA, SBN, SCT, SDF, SGF, SYR, T75, TPA, TYS, and Y90.
 Enroute scenarios are available for 
-ZBW, ZDV, ZJX, ZLA, ZLC, and ZNY.
+ZSU, ZBW, ZDC, ZDV, ZFW, ZJX, ZLA, ZLC, ZME, ZNY, and ZTL.
                 New scenarios are regularly added.
               </p>
               <p>
@@ -161,11 +161,7 @@ ZBW, ZDV, ZJX, ZLA, ZLC, and ZNY.
 
 	  <section class="docs-section" id="started">
             <h2 class="section-heading">Getting Started</h2>
-            <p>The radar client interfaces that <i>vice</i> provides are based on STARS and ERAM.
-              For familiarity to VATSIM controllers, <i>vice</i> generally follows the keyboard command scheme implemented
-              in <a href="https://crc.virtualnas.net/docs/#/">CRC's STARS implementation</a>; see
-              the discussion of <a href="#section-stars"><i>vice</i>'s STARS
-              emulation</a> below for more information.
+            <p>The radar client interfaces that <i>vice</i> provides are based on the STARS and ERAM systems used by air traffic controllers in the United States.
             </p>
             <h3 id="launching-a-simulation">Launching A Simulation</h3>
             <p>
@@ -179,7 +175,7 @@ ZBW, ZDV, ZJX, ZLA, ZLC, and ZNY.
               <img src="config.png" srcset="config-2x.png 2x" width="716" height="731">
             </div>
             <br>
-            <p>After selecting an ARTCC, the available TRACONs and ATCT/TRACONs in that ARTCC are shown.
+            <p>After you select an ARTCC, the available TRACONs and ATCT/TRACONs in that ARTCC are shown.
               Selecting one of those gives a number of scenarios to choose from. Here the ZNY ARTCC has
               been selected and then the PHL ATCT/TRACON. After choosing a scenario and clicking the "Next"
               button, a window with further settings is shown:
@@ -328,7 +324,7 @@ ZBW, ZDV, ZJX, ZLA, ZLC, and ZNY.
 
             <p>With <i>vice</i> you can also have multiple controllers working aircraft together.
               Select "Create a sim on the public vice server" in the "New Simulation" window and
-              you can select an ARTCC, ATCT/TRACON, and scenario in the same way
+              you can select an ARTCC or TRACON, and then select a scenario in the same way
               that you do with a single controller.
               For multi-controller scenarios, there are some additional settings, shown beneath
               the list of scenarios:
@@ -373,7 +369,7 @@ ZBW, ZDV, ZJX, ZLA, ZLC, and ZNY.
 	  <section class="docs-section" id="scenario-briefs">
             <h3 class="section-heading">Scenario Briefs</h3>
 
-            <p><i>vice</i> has a newly-added feature that allows scenario developers to write <i>scenario briefs</i>,
+            <p><i>vice</i> allows scenario developers to write <i>scenario briefs</i>,
               documents that give information about the flows, airspace, and other expectations for a scenario.
               (Currently, only the JFK and LGA-area N90 scenarios are documented.)
               These are shown in the scenario info window, which is displayed by clicking the
@@ -390,20 +386,21 @@ ZBW, ZDV, ZJX, ZLA, ZLC, and ZNY.
 	  <section class="docs-section" id="atc-commands">
             <h2 class="section-heading">ATC Instructions (Keyboard)</h2>
 
-            <p>A variety of instructions can be issued to aircraft by an aircraft controller.
+            <p>A variety of instructions can be issued to aircraft by a controller.
               To issue an instruction, first press the <code>[TAB]</code> key.
-              This will place the STARS radar into "target generation" mode and the characters "TG"
-              will appear above the text input area (which is by default on the left side of the STARS
-              window, towards the top.  STARS reverts to normal command entry mode after a valid ATC
-              instruction is entered, though target generation can be locked by pressing <code>[SHIFT][TAB]</code>.
+              This will place the STARS/ERAM radar scope into "target generation" mode.
+              With STARS, the characters "TG" appear above the text input area (which is by default on the left side of the STARS
+              window, towards the top), and with ERAM, the characters "TG" appear at the start of the command entry area.
+              Both revert to normal command entry mode after a valid ATC
+              instruction is entered, though in STARS, target generation mode can be locked by pressing <code>[SHIFT][TAB]</code>.
             </p>
-            <p>The commands below can then be entered to issue control commands to aircraft.
-              As you enter commands, they will be shown in the STARS input area.
+            <p>The following commands can then be entered to issue control commands to aircraft.
+              As you enter commands, they will be shown in the input area.
               You can correct errors with the backspace key or press the <code>[ESCAPE]</code> key
               to exit target generation mode.</p>
             <p>To indicate which aircraft should be given a command, you
               can either enter a command and click on an aircraft's radar
-              track in the STARS window or you can enter the aircraft's callsign followed by a space
+              track in the radar window or you can enter the aircraft's callsign followed by a space
               before the command, and then press the "enter" key. You can also give just the callsign suffix,
               if that is enough to unambiguously identify a single aircraft.
               The callsign of the last aircraft you issued to a command to is shown after "TG" when
@@ -411,7 +408,7 @@ ZBW, ZDV, ZJX, ZLA, ZLC, and ZNY.
               If you'd like to give another instruction to that aircraft, you can skip entering its callsign.
               Entering another aircraft's callsign causes the command to be issued to that aircraft instead.</p>
             <p>After you issue a command, the virtual pilot's readback is
-              shown in the readback window below the STARS window.
+              shown in the messages window.
               After receiving an instruction, the aircraft will start
               following that instruction, to the best of its abilities.
               Unlike VATSIM, the pilots will always do exactly what you
