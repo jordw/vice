@@ -588,6 +588,45 @@ func TestDirectToApproachFixNoDescentWithoutClearance(t *testing.T) {
 	f.Run()
 }
 
+// TestCrossingAltitudeWithApproachClearanceDescendsAtOnce: "direct ROSLY,
+// cross ROSLY at 4,000, cleared ILS 22L" clears the aircraft down to 4,000.
+// The descent starts while the pilot is still turning direct and continues
+// to ROSLY, rather than the aircraft holding its altitude until it is on a 3
+// degree path to ROSLY.
+func TestCrossingAltitudeWithApproachClearanceDescendsAtOnce(t *testing.T) {
+	f := NewArrivalFlight(t, ArrivalConfig{
+		Waypoints:        "HAUPT/a6000 LEFER/a4000",
+		DepartureAirport: "KMCO",
+		ArrivalAirport:   "KJFK",
+		AircraftType:     "A320",
+		InitialAltitude:  6000,
+		InitialSpeed:     210,
+		AssignedAltitude: 6000,
+		InitialHeading:   180,
+	})
+
+	f.ExpectApproach("I22L")
+	f.DirectFix("ROSLY")
+	ar := av.MakeAtAltitudeRestriction(4000)
+	f.nav.CrossFixAt("ROSLY", &ar, nil, f.temp())
+	f.ClearedApproach("I22L")
+	if !f.nav.hasDeferredRoute() {
+		t.Fatal("expected the direct to still be pending pilot response")
+	}
+
+	f.AfterTicks(30, func(f *FlightTest) {
+		f.AssertAltitudeBelow(5700)
+	})
+	f.AfterTicks(120, func(f *FlightTest) {
+		f.AssertDescending()
+	})
+	f.AtFix("ROSLY", func(f *FlightTest) {
+		f.AssertAltitudeNear(4000, 50)
+	})
+
+	f.Run()
+}
+
 // TestAtFixClearedApproach verifies that "at fix, cleared approach"
 // activates the approach clearance when the aircraft passes the named fix
 // (regression test for 61db003f).

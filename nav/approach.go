@@ -416,6 +416,7 @@ func (nav *Nav) ClearedApproach(approach string, traffic *FollowTraffic, simTime
 
 	if nav.Approach.Cleared {
 		cancelHold := nav.applyClearedApproachState()
+		nav.descendToCrossingAltitude()
 		if straightIn {
 			nav.Approach.NoPT = true
 		}
@@ -449,6 +450,7 @@ func (nav *Nav) ClearedApproach(approach string, traffic *FollowTraffic, simTime
 		// No procedure turn needed if we were vectored to intercept.
 		nav.Approach.NoPT = true
 	}
+	nav.descendToCrossingAltitude()
 
 	// A pilot who has been cleared for the approach is quick to act on a
 	// pending heading or direct; the clearance never delays one.
@@ -490,6 +492,29 @@ func (nav *Nav) applyClearedApproachState() (cancelHold bool) {
 		nav.Altitude.Cleared = &ClearedAltitude{Altitude: c.Altitude}
 	}
 	return
+}
+
+// descendToCrossingAltitude takes "cross the fix at an altitude, cleared for
+// the approach" as "descend and maintain that altitude, cleared for the
+// approach": a pilot above the first crossing altitude the controller gave
+// on the route ahead is cleared down to it, as clearAltitudeForApproach
+// clears an unfinished descent. The aircraft keeps descending, even while it
+// still turns onto the route, rather than leveling off until the approach's
+// descent planning calls for the descent, and that planning still makes the
+// crossing when it takes a steeper descent.
+func (nav *Nav) descendToCrossingAltitude() {
+	if nav.Altitude.Assigned != nil || nav.Altitude.AfterSpeed != nil {
+		return
+	}
+	wps := nav.AssignedWaypoints()
+	for i := range wps {
+		if ar := nav.controllerAltitudeRestriction(&wps[i]); ar != nil {
+			if alt := ar.TargetAltitude(nav.FlightState.Altitude); alt < nav.FlightState.Altitude {
+				nav.Altitude.Cleared = &ClearedAltitude{Altitude: alt}
+			}
+			return
+		}
+	}
 }
 
 func (nav *Nav) CancelApproachClearance() speech.CommandIntent {
