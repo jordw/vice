@@ -246,8 +246,9 @@ func (nav *Nav) flyVisualRoute(wps []av.Waypoint) {
 // releaseAltitudeForVisual leaves the aircraft's altitude to the visual's
 // descent profile. A controller-assigned descent is kept only when it sits
 // above the profile's 3 nm final anchor (rwy.Elevation + 900), so "descend
-// and maintain 3000" still completes at a normal rate; it ends once the
-// aircraft gets there or the profile drops below it (crossAltitude).
+// and maintain 3000" still completes at a normal rate. It ends once the
+// profile drops below it, and once the aircraft gets there, it stays as the
+// cleared altitude until the profile reaches it (crossAltitude).
 func (nav *Nav) releaseAltitudeForVisual() {
 	rwy, _ := nav.lookup().Runway(av.ICAOAirportCode(nav.FlightState.ArrivalAirport.Fix), nav.Approach.Assigned.Runway)
 	profileFloor := float32(rwy.Elevation) + 900

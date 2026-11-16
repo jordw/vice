@@ -498,10 +498,11 @@ func (nav *Nav) applyClearedApproachState() (cancelHold bool) {
 // the approach" as "descend and maintain that altitude, cleared for the
 // approach": a pilot above the first crossing altitude the controller gave
 // on the route ahead is cleared down to it, as clearAltitudeForApproach
-// clears an unfinished descent. The aircraft keeps descending, even while it
-// still turns onto the route, rather than leveling off until the approach's
-// descent planning calls for the descent, and that planning still makes the
-// crossing when it takes a steeper descent.
+// clears an unfinished descent. The aircraft starts down at once, even while
+// it still turns onto the route, and levels at the altitude, rather than
+// holding its altitude until the approach's descent planning calls for the
+// descent. That planning still makes the crossing when it needs a steeper
+// descent.
 func (nav *Nav) descendToCrossingAltitude() {
 	if nav.Altitude.Assigned != nil || nav.Altitude.AfterSpeed != nil {
 		return

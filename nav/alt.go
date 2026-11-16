@@ -434,10 +434,16 @@ func (nav *Nav) crossAltitude(next float32, slowingTo250 bool) float32 {
 	}
 
 	// A cleared visual keeps a descent the controller assigned only until
-	// the aircraft gets there or the visual's profile drops below it; the
-	// profile takes it on from there.
+	// the aircraft gets there or the visual's profile drops below it. If
+	// the profile drops below it first, the profile takes the aircraft on
+	// from there. An aircraft that gets there first keeps the altitude as
+	// its cleared altitude and waits there for the profile, as a
+	// controller's descent ends on other approaches.
 	if a := nav.activeAssignedAltitude(); a != nil && nav.Altitude.ActivateAt.IsZero() &&
 		nav.clearedForVisualApproach() && cur > *a && (next <= *a || nav.visualProfileBelow(*a)) {
+		if !nav.visualProfileBelow(*a) {
+			nav.Altitude.Cleared = &ClearedAltitude{Altitude: *a}
+		}
 		nav.Altitude.Assigned = nil
 		nav.Altitude.ActiveAssigned = nil
 	}
@@ -523,8 +529,14 @@ func (nav *Nav) TargetAltitude() (float32, float32, bool) {
 					return alt, min(geometricRate*safetyFactor, descent), true
 				}
 			}
-			// Not time yet
-			if ar := nav.Altitude.Restriction; ar != nil {
+			// Not time yet. A descent the controller gave, kept as a
+			// cleared altitude that is not a floor, is finished before
+			// a restriction carried from the fix behind, which would
+			// hold the aircraft where it is. A floor, as on a descend
+			// via, keeps the restriction first.
+			c := nav.Altitude.Cleared
+			controllerDescent := c != nil && !c.IsFloor && c.Altitude < nav.FlightState.Altitude
+			if ar := nav.Altitude.Restriction; ar != nil && !controllerDescent {
 				// The restriction carried forward from the fix behind us may
 				// be lower than what the route ahead requires (SID
 				// restrictions step up); it doesn't supersede the target.
@@ -535,7 +547,7 @@ func (nav *Nav) TargetAltitude() (float32, float32, bool) {
 					nav.FlightState.Altitude)
 				return nav.limitAltitude(held), MaximumRate, false
 			}
-			if c := nav.Altitude.Cleared; c != nil && c.Altitude < nav.FlightState.Altitude {
+			if c != nil && c.Altitude < nav.FlightState.Altitude {
 				return min(max(c.Altitude, target.minimum), nav.FlightState.Altitude), MaximumRate, false
 			}
 			return nav.FlightState.Altitude, 0, false

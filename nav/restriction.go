@@ -315,10 +315,12 @@ func (nav *Nav) routeAltitudeRestriction(wps []av.Waypoint, i int) *av.AltitudeR
 // The aircraft has to get down to the target and to each maximum on the way.
 // A level aircraft stays level until it is on a 3 degree path to one of them,
 // as on a glideslope, and then descends in a straight line to the one that
-// needs the steepest descent. One that is already descending, or is past the
-// final approach fix, keeps on down in that straight line. Until then, the
-// target is the one whose path it will meet first. Where the line would pass
-// below a minimum, it aims for that minimum instead.
+// needs the steepest descent. One that is already descending on its own, or
+// is past the final approach fix, keeps on down in that straight line. A
+// descent the controller gave ends at its altitude, and the aircraft then
+// waits there as a level one does. Until then, the target is the one whose
+// path it will meet first. Where the line would pass below a minimum, it
+// aims for that minimum instead.
 func (nav *Nav) approachAltitudeTarget(wps []av.Waypoint) (altitudeTarget, bool) {
 	alt := nav.FlightState.Altitude
 	type limit struct {
@@ -355,7 +357,8 @@ func (nav *Nav) approachAltitudeTarget(wps []av.Waypoint) (altitudeTarget, bool)
 	}
 
 	gradient := func(l limit) float32 { return (alt - l.altitude) / l.dist }
-	descending := nav.Approach.PassedFAF || nav.FlightState.AltitudeRate < -50
+	descending := nav.Approach.PassedFAF ||
+		(nav.FlightState.AltitudeRate < -50 && !nav.descendingToClearedAltitude())
 	var aim *limit
 	next, nextDist := ceilings[0], math.Infinity
 	for i, c := range ceilings {
@@ -396,6 +399,14 @@ func (nav *Nav) approachAltitudeTarget(wps []av.Waypoint) (altitudeTarget, bool)
 	}
 	return altitudeTarget{altitude: aim.altitude, fix: aim.fix, level: aim.altitude == alt, minimum: minimum(*aim),
 		descend: true}, true
+}
+
+// descendingToClearedAltitude reports whether the aircraft's descent is one
+// the controller gave it, kept as its cleared altitude: that descent ends
+// there, rather than carrying on below the approach's 3 degree path.
+func (nav *Nav) descendingToClearedAltitude() bool {
+	c := nav.Altitude.Cleared
+	return c != nil && !c.IsFloor && c.Altitude <= nav.FlightState.Altitude
 }
 
 // LowestProcedureAltitude returns the lowest applicable published altitude

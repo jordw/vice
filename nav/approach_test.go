@@ -589,10 +589,11 @@ func TestDirectToApproachFixNoDescentWithoutClearance(t *testing.T) {
 }
 
 // TestCrossingAltitudeWithApproachClearanceDescendsAtOnce: "direct ROSLY,
-// cross ROSLY at 4,000, cleared ILS 22L" clears the aircraft down to 4,000.
-// The descent starts while the pilot is still turning direct and continues
-// to ROSLY, rather than the aircraft holding its altitude until it is on a 3
-// degree path to ROSLY.
+// cross ROSLY at 4,000, cleared ILS 22L" clears the aircraft down to 4,000,
+// as "descend and maintain 4,000" would. The descent starts while the pilot
+// is still turning direct, and the aircraft levels at 4,000 well before
+// ROSLY, rather than holding its altitude until it is on a 3 degree path to
+// ROSLY.
 func TestCrossingAltitudeWithApproachClearanceDescendsAtOnce(t *testing.T) {
 	f := NewArrivalFlight(t, ArrivalConfig{
 		Waypoints:        "HAUPT/a6000 LEFER/a4000",
@@ -618,7 +619,8 @@ func TestCrossingAltitudeWithApproachClearanceDescendsAtOnce(t *testing.T) {
 		f.AssertAltitudeBelow(5700)
 	})
 	f.AfterTicks(120, func(f *FlightTest) {
-		f.AssertDescending()
+		f.AssertAltitudeNear(4000, 10)
+		f.AssertLevelFlight()
 	})
 	f.AtFix("ROSLY", func(f *FlightTest) {
 		f.AssertAltitudeNear(4000, 50)
