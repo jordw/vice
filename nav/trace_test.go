@@ -30,7 +30,7 @@ var updateTraces = flag.Bool("update", false,
 	"rewrite the recorded flight of each trace whose replay differs, making the replay the reference")
 
 // tracesDir holds the traces TestTraces replays.
-const tracesDir = "testdata/traces"
+const tracesDir = "testtraces"
 
 // How far the replay may stray from the recording before the aircraft
 // counts as flying differently.
