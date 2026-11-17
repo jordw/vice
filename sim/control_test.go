@@ -698,23 +698,58 @@ func TestExecutionOrder(t *testing.T) {
 	s.State.Controllers = map[ControlPosition]*av.Controller{"2B": {}}
 
 	tests := []struct {
-		commands string
-		want     []int
+		commands  string
+		want      []int
+		clearance bool
 	}{
-		{"CI22L A30", []int{1, 0}},
-		{"A30 CI22L", []int{0, 1}},
-		{"L090 CI22L D30 S180", []int{0, 2, 1, 3}},
-		{"CVA26 D50 C40", []int{1, 2, 0}},
-		{"CSI A30", []int{1, 0}},
-		{"CTTL A30", []int{1, 0}},
-		{"CT2B A30", []int{0, 1}},
-		{"CAC C40", []int{0, 1}},
-		{"AMATTY/CI22L A30", []int{0, 1}},
-		{"CMATTY/A30 A40", []int{0, 1}},
+		{"CI22L A30", []int{1, 0}, true},
+		{"A30 CI22L", []int{0, 1}, true},
+		{"L090 CI22L D30 S180", []int{0, 2, 1, 3}, true},
+		{"CVA26 D50 C40", []int{1, 2, 0}, true},
+		{"CSI A30", []int{1, 0}, true},
+		{"CTTL A30", []int{1, 0}, true},
+		{"CT2B A30", []int{0, 1}, false},
+		{"CAC C40", []int{0, 1}, false},
+		{"AMATTY/CI22L A30", []int{0, 1}, false},
+		{"CMATTY/A30 A40", []int{0, 1}, false},
 	}
 	for _, tc := range tests {
-		if got := s.executionOrder(strings.Fields(tc.commands)); !slices.Equal(got, tc.want) {
-			t.Errorf("%s: order %v, want %v", tc.commands, got, tc.want)
+		got, clearance := s.executionOrder(strings.Fields(tc.commands))
+		if !slices.Equal(got, tc.want) || clearance != tc.clearance {
+			t.Errorf("%s: order %v, clearance %v, want %v, %v", tc.commands, got, clearance, tc.want, tc.clearance)
+		}
+	}
+}
+
+// TestRunControlCommandsAltitudeWithClearanceAgain checks that an altitude
+// given to an aircraft established on its approach cancels the clearance,
+// unless the same transmission clears it for the approach again.
+func TestRunControlCommandsAltitudeWithClearanceAgain(t *testing.T) {
+	for _, tc := range []struct {
+		commands string
+		cancels  bool
+	}{
+		{"D20", true},
+		{"D20 CI22L", false},
+		{"CI22L D20", false},
+	} {
+		s := NewTestSim(log.New(true, "error", t.TempDir()))
+		ac := MakeTestAircraft("AAL123", "22L")
+		ac.Nav.Perf = db.DB.AircraftPerformance["A320"]
+		ac.Nav.Approach.Assigned.FullName = "ILS Runway 22L"
+		ac.Nav.Approach.Cleared = true
+		ac.Nav.Approach.PassedApproachFix = true
+		s.Aircraft[ac.ADSBCallsign] = ac
+
+		res := s.RunAircraftControlCommands(E2ETCW(), ac.ADSBCallsign, tc.commands, 0, 0, "")
+		if res.Error != nil {
+			t.Fatalf("%s: %v", tc.commands, res.Error)
+		}
+		if got := strings.Contains(res.ReadbackSpokenText, "cancels our approach clearance"); got != tc.cancels {
+			t.Errorf("%s: readback %q, want the cancellation %v", tc.commands, res.ReadbackSpokenText, tc.cancels)
+		}
+		if ac.Nav.Approach.Cleared == tc.cancels {
+			t.Errorf("%s: cleared %v, want %v", tc.commands, ac.Nav.Approach.Cleared, !tc.cancels)
 		}
 	}
 }

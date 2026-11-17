@@ -64,14 +64,30 @@ const vfrDescentRate = 500
 // the altitude it is already flying is only restated and changes nothing.
 func (nav *Nav) AssignAltitude(alt float32, afterSpeed bool, simTime Time, delayReduction time.Duration) speech.CommandIntent {
 	defer nav.record("AssignAltitude", alt, afterSpeed, simTime, delayReduction)()
+	return nav.assignAltitude(alt, afterSpeed, nav.establishedOnApproach(), simTime, delayReduction)
+}
+
+// AssignAltitudeBeforeClearance assigns an altitude given in the same
+// transmission as an approach clearance, which the pilot takes as given
+// before the clearance. It never cancels a clearance the aircraft already
+// has, since the transmission clears it again.
+func (nav *Nav) AssignAltitudeBeforeClearance(alt float32, simTime Time, delayReduction time.Duration) speech.CommandIntent {
+	defer nav.record("AssignAltitudeBeforeClearance", alt, simTime, delayReduction)()
+	return nav.assignAltitude(alt, false, false, simTime, delayReduction)
+}
+
+// assignAltitude assigns alt. established is set when the aircraft is
+// established on an approach, where the altitude cancels the clearance
+// unless it restates the one the aircraft is flying.
+func (nav *Nav) assignAltitude(alt float32, afterSpeed, established bool, simTime Time,
+	delayReduction time.Duration) speech.CommandIntent {
 	if alt > nav.Perf.Ceiling {
 		return speech.MakeUnableIntent("unable. That altitude is above our ceiling.")
 	}
-	cancelsApproach := nav.establishedOnApproach()
-	if cancelsApproach && nav.fliesAltitude(alt) {
+	if established && nav.fliesAltitude(alt) {
 		return speech.AltitudeIntent{Altitude: alt, Direction: nav.altitudeDirection(alt)}
 	}
-	if cancelsApproach {
+	if established {
 		nav.cancelApproachClearance()
 	}
 	nav.clearFixAltitudes()
@@ -79,7 +95,7 @@ func (nav *Nav) AssignAltitude(alt float32, afterSpeed bool, simTime Time, delay
 	if !deferred {
 		nav.enqueueAssignedAltitude(alt, simTime, delayReduction)
 	}
-	intent.CancelsApproach = cancelsApproach
+	intent.CancelsApproach = established
 	return intent
 }
 

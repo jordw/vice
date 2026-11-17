@@ -23,6 +23,16 @@ func (s *Sim) AssignAltitude(tcw TCW, callsign av.ADSBCallsign, altitude int, af
 		})
 }
 
+// AssignAltitudeBeforeClearance assigns an altitude given in the same
+// transmission as an approach clearance (nav.AssignAltitudeBeforeClearance).
+func (s *Sim) AssignAltitudeBeforeClearance(tcw TCW, callsign av.ADSBCallsign, altitude int,
+	delayReduction time.Duration) (speech.CommandIntent, error) {
+	return s.dispatchControlledAircraftCommand(tcw, callsign,
+		func(tcw TCW, ac *Aircraft) speech.CommandIntent {
+			return ac.Nav.AssignAltitudeBeforeClearance(float32(altitude), s.State.SimTime.NavTime(), delayReduction)
+		})
+}
+
 type HeadingArgs struct {
 	TCW            TCW
 	ADSBCallsign   av.ADSBCallsign

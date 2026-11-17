@@ -3427,6 +3427,29 @@ func TestApproachEstablishment(t *testing.T) {
 		}
 	})
 
+	// An altitude given with a clearance the aircraft already has is taken
+	// as given before it: the clearance stands, and the approach takes over
+	// once the pilot acts on the altitude.
+	t.Run("AltitudeWithClearanceAgain", func(t *testing.T) {
+		f := cleared(t, 9000)
+		nextFix(f, "LEFER")
+		intent, ok := f.nav.AssignAltitudeBeforeClearance(5000, f.simTime, 0).(speech.AltitudeIntent)
+		if !ok || intent.CancelsApproach {
+			t.Errorf("got %+v, want an altitude that does not cancel the clearance", intent)
+		}
+		f.ClearedApproach("I22L")
+		if !f.nav.Approach.Cleared {
+			t.Fatal("expected the clearance to stand")
+		}
+		f.StepUntil("the pilot acted on the 5000", func() bool { return f.nav.Altitude.ActivateAt.IsZero() })
+		if f.nav.Altitude.Assigned != nil {
+			t.Errorf("the 5000 should give way to the approach: %+v", f.nav.Altitude)
+		}
+		if c := f.nav.Altitude.Cleared; c == nil || c.Altitude != 5000 {
+			t.Errorf("cleared altitude %+v, want the descent to 5000 kept", c)
+		}
+	})
+
 	// A controller's descent the aircraft is still finishing on the
 	// approach is restated, not changed.
 	t.Run("RestatedDescentKeepsClearance", func(t *testing.T) {

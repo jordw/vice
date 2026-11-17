@@ -139,7 +139,7 @@ func (s *Sim) RunControlCommands(tcw TCW, callsign av.ADSBCallsign, commandStr s
 	var remaining string
 	refused := false
 
-	order := s.executionOrder(commands)
+	order, clearance := s.executionOrder(commands)
 	for k, i := range order {
 		command := commands[i]
 		// A pilot who refused part of the transmission stays on frequency so
@@ -148,8 +148,12 @@ func (s *Sim) RunControlCommands(tcw TCW, callsign av.ADSBCallsign, commandStr s
 			continue
 		}
 
+		run := s.runOneControlCommand
+		if clearance && isAltitudeAssignment(command) {
+			run = s.runAltitudeBeforeClearance
+		}
 		delayReduction := sttDuration + time.Duration(len(commands)-1-i)*audioShare
-		intent, err := s.runOneControlCommand(tcw, callsign, command, delayReduction)
+		intent, err := run(tcw, callsign, command, delayReduction)
 		if err != nil {
 			cmdErr = err
 			remaining = strings.Join(util.MapSlice(slices.Sorted(slices.Values(order[k:])),
@@ -200,22 +204,33 @@ func (s *Sim) RunControlCommands(tcw TCW, callsign av.ADSBCallsign, commandStr s
 // order to run them: as spoken, except that an altitude assignment after an
 // approach clearance runs just before the clearance. A pilot takes an
 // altitude given in the same transmission as the clearance as one given
-// before it.
-func (s *Sim) executionOrder(commands []string) []int {
-	var order []int
-	clearance := -1 // where the approach clearance is in order
+// before it. It also reports whether the transmission has an approach
+// clearance.
+func (s *Sim) executionOrder(commands []string) (order []int, clearance bool) {
+	at := -1 // where the approach clearance is in order
 	for i, command := range commands {
-		if clearance >= 0 && isAltitudeAssignment(command) {
-			order = slices.Insert(order, clearance, i)
-			clearance++
+		if at >= 0 && isAltitudeAssignment(command) {
+			order = slices.Insert(order, at, i)
+			at++
 			continue
 		}
-		if _, _, ok := s.parseApproachClearance(command); ok && clearance < 0 {
-			clearance = len(order)
+		if _, _, ok := s.parseApproachClearance(command); ok && at < 0 {
+			at = len(order)
 		}
 		order = append(order, i)
 	}
-	return order
+	return order, at >= 0
+}
+
+// runAltitudeBeforeClearance runs an altitude assignment given in the same
+// transmission as an approach clearance.
+func (s *Sim) runAltitudeBeforeClearance(tcw TCW, callsign av.ADSBCallsign, command string,
+	delayReduction time.Duration) (speech.CommandIntent, error) {
+	alt, err := assignedAltitude(command)
+	if err != nil {
+		return nil, err
+	}
+	return s.AssignAltitudeBeforeClearance(tcw, callsign, alt, delayReduction)
 }
 
 // Markers that the STT decoder puts ahead of the commands when the controller
@@ -564,6 +579,20 @@ func isAltitudeAssignment(command string) bool {
 	return len(command) > 1 && strings.ContainsRune("ACD", rune(command[0])) && util.IsAllNumbers(command[1:])
 }
 
+// assignedAltitude returns the altitude in feet that an altitude assignment
+// (isAltitudeAssignment) gives.
+func assignedAltitude(command string) (int, error) {
+	alt, err := strconv.Atoi(command[1:])
+	if err != nil {
+		return 0, err
+	}
+	if alt > 600 && (alt%100 == 0) {
+		// Sometimes STT transcript interpretation forgets altitudes are in 100s...
+		alt /= 100
+	}
+	return 100 * alt, nil
+}
+
 // parseApproachClearance parses a command that clears the aircraft for an
 // approach: CVA and a runway for a visual; CSI and the approach, or the
 // expected one, for a straight-in; or C and the approach, the expected one
@@ -609,15 +638,11 @@ func (s *Sim) runOneControlCommand(tcw TCW, callsign av.ADSBCallsign, command st
 	}
 
 	if isAltitudeAssignment(command) {
-		alt, err := strconv.Atoi(command[1:])
+		alt, err := assignedAltitude(command)
 		if err != nil {
 			return nil, err
 		}
-		if alt > 600 && (alt%100 == 0) {
-			// Sometimes STT transcript interpretation forgets altitudes are in 100s...
-			alt /= 100
-		}
-		return s.AssignAltitude(tcw, callsign, 100*alt, false, delayReduction)
+		return s.AssignAltitude(tcw, callsign, alt, false, delayReduction)
 	}
 
 	switch command[0] {
