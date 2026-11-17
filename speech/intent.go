@@ -147,9 +147,8 @@ type AltitudeIntent struct {
 	AlreadyExpediting bool
 	ThenSpeed         *av.Airspeed // speed once we reach the altitude
 	ThenSpeedType     SpeedType
-	// FollowsSpeed marks an altitude that waits on the speed change read
-	// back just before it: "slow to 210, then down to 6,000".
-	FollowsSpeed bool
+	FollowsSpeed      bool // a "then" altitude after a speed readback before it
+	CancelsApproach   bool // the altitude takes the aircraft off an approach approach
 }
 
 func (a AltitudeIntent) Render(rt *RadioTransmission, r *rand.Rand) {
@@ -229,6 +228,10 @@ func (a AltitudeIntent) Render(rt *RadioTransmission, r *rand.Rand) {
 
 	if !earlySpeed && a.AfterSpeed != nil {
 		rt.Add("[once we're|] at {airspeed}", *a.AfterSpeed)
+	}
+
+	if a.CancelsApproach {
+		rt.Add("understand that cancels our approach clearance")
 	}
 }
 

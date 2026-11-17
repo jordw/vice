@@ -122,6 +122,17 @@ func TestAltitudeAfterSpeedReadback(t *testing.T) {
 	}
 }
 
+// TestAltitudeCancelsApproachReadback checks that a pilot established on an
+// approach reads back that a new altitude cancels the approach clearance.
+func TestAltitudeCancelsApproachReadback(t *testing.T) {
+	intent := AltitudeIntent{Altitude: 4000, Direction: AltitudeClimb, CancelsApproach: true}
+	for seed := uint64(1); seed <= 10; seed++ {
+		if readback := renderIntentForTest(t, intent, seed); !strings.Contains(readback, "understand that cancels our approach clearance") {
+			t.Fatalf("readback %q", readback)
+		}
+	}
+}
+
 // TestThenMachReadback verifies that a Mach number to fly after reaching an
 // assigned altitude is read back as a Mach number.
 func TestThenMachReadback(t *testing.T) {

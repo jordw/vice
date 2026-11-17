@@ -71,13 +71,6 @@ func (nav *Nav) visualProfileAltitude(dist float32) float32 {
 	return nav.FlightState.ArrivalAirportElevation + 900 + max(dist-3, 0)*ftPerNMOnGlideslope
 }
 
-// visualProfileBelow reports whether the aircraft, cleared for a visual, is
-// where the visual's descent profile is below alt.
-func (nav *Nav) visualProfileBelow(alt float32) bool {
-	dist, ok := nav.approachDistanceRemaining()
-	return ok && nav.visualProfileAltitude(dist) < alt
-}
-
 // selectVisualReferences picks the reference approaches whose geometry will
 // seed a synthesized non-charted visual to runway. ILS and Localizer
 // approaches are always included when present so direct-to-fix and at-fix
@@ -181,7 +174,7 @@ func (nav *Nav) ClearedVisualApproach(follow *FollowTraffic, lahsoRunway string)
 				nav.Approach.NoPT = true
 				// Until the aircraft is on the course, it descends by its
 				// distance to the runway (visualDescentFromHeading).
-				nav.releaseAltitudeForVisual()
+				nav.clearAltitudeForApproach()
 				return intent(cancelHold)
 			}
 		} else if start, rest, ok := nav.firstApproachFix(); ok && len(rest) > 1 {
@@ -230,8 +223,9 @@ func (nav *Nav) visualRouteToFinal(follow *FollowTraffic) []av.Waypoint {
 
 // flyVisualRoute puts the aircraft on wps, the route it flies the visual
 // along, with the airport after it. The route carries the join and the
-// descent profile, so a pending heading or direct goes, as do the altitude
-// assignments the profile replaces.
+// descent profile, so a pending heading or direct goes, and the profile
+// replaces the altitude assignments as on an approach the aircraft is
+// established on.
 func (nav *Nav) flyVisualRoute(wps []av.Waypoint) {
 	nav.Waypoints = append(stripProcedureTurns(wps), nav.FlightState.ArrivalAirport)
 	// A visual flown this way never has InterceptState=OnApproachCourse, so
@@ -240,25 +234,7 @@ func (nav *Nav) flyVisualRoute(wps []av.Waypoint) {
 	nav.Approach.PassedApproachFix = true
 	nav.Heading = Heading{}
 	nav.DeferredNavHeading = nil
-	nav.releaseAltitudeForVisual()
-}
-
-// releaseAltitudeForVisual leaves the aircraft's altitude to the visual's
-// descent profile. A controller-assigned descent is kept only when it sits
-// above the profile's 3 nm final anchor (rwy.Elevation + 900), so "descend
-// and maintain 3000" still completes at a normal rate. It ends once the
-// profile drops below it, and once the aircraft gets there, it stays as the
-// cleared altitude until the profile reaches it (crossAltitude).
-func (nav *Nav) releaseAltitudeForVisual() {
-	rwy, _ := nav.lookup().Runway(av.ICAOAirportCode(nav.FlightState.ArrivalAirport.Fix), nav.Approach.Assigned.Runway)
-	profileFloor := float32(rwy.Elevation) + 900
-	preserved := Altitude{}
-	if a := nav.Altitude.Assigned; a != nil && *a < nav.FlightState.Altitude && *a >= profileFloor {
-		preserved.Assigned = nav.Altitude.Assigned
-		preserved.ActiveAssigned = nav.Altitude.ActiveAssigned
-		preserved.ActivateAt = nav.Altitude.ActivateAt
-	}
-	nav.Altitude = preserved
+	nav.clearAltitudeForApproach()
 }
 
 // visualApproachRouteFollowingTraffic returns waypoints to sequence the

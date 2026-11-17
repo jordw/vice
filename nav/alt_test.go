@@ -1347,9 +1347,9 @@ func TestVectorKeepsIssuedAltitude(t *testing.T) {
 	})
 
 	// "Descend and maintain 3000, cleared ILS" on the route: once the
-	// aircraft joins the approach, the 3000 is carried as its cleared
-	// altitude. A heading takes it off the approach, cancelling the
-	// clearance, and it continues down to 3000.
+	// aircraft joins the approach and the pilot acts on the altitude, the
+	// 3000 is carried as its cleared altitude. A heading takes it off the
+	// approach, cancelling the clearance, and it continues down to 3000.
 	t.Run("TurnOffJoinedApproach", func(t *testing.T) {
 		f := NewArrivalFlight(t, ArrivalConfig{
 			Waypoints:        "SAJUL DETGY HAUPT LEFER ROSLY",
@@ -1362,7 +1362,9 @@ func TestVectorKeepsIssuedAltitude(t *testing.T) {
 		f.ExpectApproach("I22L")
 		f.AssignAltitude(3000)
 		f.ClearedApproach("I22L")
-		f.StepUntil("passed a fix on the approach", func() bool { return f.nav.Approach.PassedApproachFix })
+		f.StepUntil("passed a fix on the approach with the altitude in effect", func() bool {
+			return f.nav.Approach.PassedApproachFix && f.nav.Altitude.ActivateAt.IsZero()
+		})
 
 		turnLeft(f, 10)
 		if f.nav.Approach.Cleared {

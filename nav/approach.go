@@ -445,7 +445,9 @@ func (nav *Nav) ClearedApproach(approach string, traffic *FollowTraffic, simTime
 		nav.clearAltitudeForApproach()
 	} else if establishedNoPT {
 		// First intercepted then cleared or otherwise passed an
-		// approach fix, so allow it to start descending.
+		// approach fix, so allow it to start descending. It is still on
+		// the course prepareForApproach took it off.
+		nav.Approach.InterceptState = OnApproachCourse
 		nav.clearAltitudeForApproach()
 		// No procedure turn needed if we were vectored to intercept.
 		nav.Approach.NoPT = true
@@ -524,12 +526,16 @@ func (nav *Nav) CancelApproachClearance() speech.CommandIntent {
 		return speech.MakeUnableIntent("unable. we're not currently cleared for an approach")
 	}
 
+	nav.cancelApproachClearance()
+	return speech.ApproachIntent{Type: speech.ApproachCancel}
+}
+
+// cancelApproachClearance takes away the aircraft's approach clearance.
+func (nav *Nav) cancelApproachClearance() {
 	nav.Approach.Cleared = false
 	nav.Approach.InterceptState = NotIntercepting
 	nav.Approach.NoPT = false
 	nav.Approach.Abandoned = true
-
-	return speech.ApproachIntent{Type: speech.ApproachCancel}
 }
 
 // AtFixCleared clears the aircraft for the approach once it passes fix. An
@@ -608,17 +614,24 @@ func (nav *Nav) clearApproachAtFix(wp av.Waypoint) bool {
 // down the approach's altitudes. One established on the course without a
 // clearance goes around at the FAF, asks for the clearance at the IF, and
 // asks early at an earlier fix if it is too high to make the FAF.
-func (nav *Nav) passApproachFix(wp av.Waypoint) {
-	if nav.Approach.Cleared {
+// clearedAtFix is set when an "at the fix, cleared for the approach"
+// clearance took effect at wp, which makes it a fix of the approach even
+// when the route had it from the arrival. Only a fix of the approach
+// establishes a cleared aircraft on it; once it is established, every fix
+// it passes keeps it on the approach's altitudes.
+func (nav *Nav) passApproachFix(wp av.Waypoint, clearedAtFix bool) {
+	onApproach := wp.OnApproach() || clearedAtFix
+	if nav.Approach.Cleared && (onApproach || nav.Approach.PassedApproachFix) {
 		nav.clearAltitudeForApproach()
-		nav.Approach.PassedApproachFix = true
 		if wp.FAF() {
 			nav.Approach.PassedFAF = true
 		}
-	} else if wp.OnApproach() {
-		// Overflew an approach fix but haven't been cleared yet.
-		nav.Approach.PassedApproachFix = true
 	}
+	if !onApproach {
+		return
+	}
+	// An aircraft that is not yet cleared has still overflown the fix.
+	nav.Approach.PassedApproachFix = true
 
 	if wp.FAF() && nav.InterceptedButNotCleared() {
 		// At the FAF without clearance, go around.
@@ -627,7 +640,7 @@ func (nav *Nav) passApproachFix(wp av.Waypoint) {
 		if wp.IF() {
 			// At the IF, the pilot asks for approach clearance.
 			nav.Requests.ApproachClearance = true
-		} else if wp.OnApproach() {
+		} else {
 			// At an intermediate approach fix, check if the altitude
 			// makes descent to the FAF challenging (>300 ft/nm).
 			nav.checkEarlyApproachRequest(&wp)
@@ -664,6 +677,24 @@ func (nav *Nav) checkEarlyApproachRequest(currentWp *av.Waypoint) {
 	if altToLose > 0 && altToLose/dist > 300 {
 		nav.Requests.ApproachClearance = true
 	}
+}
+
+// establishedOnApproach reports whether the aircraft, cleared for an
+// approach, is established on it, so that the approach's altitudes replace
+// the one it was assigned: it has passed one of the approach's fixes or is
+// on its course, and is not on a vector. A visual approach is flown on the
+// pilot's own navigation from the clearance.
+func (nav *Nav) establishedOnApproach() bool {
+	if !nav.Approach.Cleared {
+		return false
+	}
+	if nav.clearedForVisualApproach() {
+		return true
+	}
+	if _, onHeading := nav.AssignedHeading(); onHeading {
+		return false
+	}
+	return nav.Approach.PassedApproachFix || nav.Approach.InterceptState == OnApproachCourse
 }
 
 func (nav *Nav) OnApproach(checkAltitude bool) bool {

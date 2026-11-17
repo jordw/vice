@@ -57,17 +57,41 @@ const MaximumRate = 100000
 // descends to enter the traffic pattern.
 const vfrDescentRate = 500
 
+// AssignAltitude assigns an altitude to climb or descend to and maintain.
+// An aircraft cleared for an approach and not yet established on it
+// maintains the altitude until it is. One already established is flying the
+// approach's altitudes, so a new altitude cancels the approach clearance;
+// the altitude it is already flying is only restated and changes nothing.
 func (nav *Nav) AssignAltitude(alt float32, afterSpeed bool, simTime Time, delayReduction time.Duration) speech.CommandIntent {
 	defer nav.record("AssignAltitude", alt, afterSpeed, simTime, delayReduction)()
 	if alt > nav.Perf.Ceiling {
 		return speech.MakeUnableIntent("unable. That altitude is above our ceiling.")
+	}
+	cancelsApproach := nav.establishedOnApproach()
+	if cancelsApproach && nav.fliesAltitude(alt) {
+		return speech.AltitudeIntent{Altitude: alt, Direction: nav.altitudeDirection(alt)}
+	}
+	if cancelsApproach {
+		nav.cancelApproachClearance()
 	}
 	nav.clearFixAltitudes()
 	intent, deferred := nav.prepareAltitudeAssignment(alt, afterSpeed)
 	if !deferred {
 		nav.enqueueAssignedAltitude(alt, simTime, delayReduction)
 	}
+	intent.CancelsApproach = cancelsApproach
 	return intent
+}
+
+// fliesAltitude reports whether alt is the altitude the aircraft is already
+// flying: it is level there, or it is finishing a controller's descent to
+// it.
+func (nav *Nav) fliesAltitude(alt float32) bool {
+	fs := &nav.FlightState
+	if c := nav.Altitude.Cleared; c != nil && !c.IsFloor && c.Altitude == alt && alt < fs.Altitude {
+		return true
+	}
+	return math.Abs(fs.AltitudeRate) < 50 && math.Abs(fs.Altitude-alt) < 50
 }
 
 // prepareAltitudeAssignment returns the readback of an altitude assignment
@@ -75,7 +99,7 @@ func (nav *Nav) AssignAltitude(alt float32, afterSpeed bool, simTime Time, delay
 // wait on the speed change, in which case it is stored as such and true is
 // returned, leaving the caller nothing to assign; or the speed change may
 // wait on the altitude.
-func (nav *Nav) prepareAltitudeAssignment(alt float32, afterSpeed bool) (speech.CommandIntent, bool) {
+func (nav *Nav) prepareAltitudeAssignment(alt float32, afterSpeed bool) (speech.AltitudeIntent, bool) {
 	direction := nav.altitudeDirection(alt)
 	intent := speech.AltitudeIntent{
 		Altitude:  alt,
@@ -299,8 +323,13 @@ func (nav *Nav) hasIssuedAltitude() bool {
 // aircraft transitions to following approach restrictions. If the controller
 // assigned a descent altitude that the aircraft hasn't yet reached, it is
 // preserved as a Cleared altitude so the descent continues; the approach's
-// restrictions may take the aircraft below it.
+// restrictions may take the aircraft below it. An assignment the pilot has
+// yet to act on is left for activatePendingAltitude to release once it
+// takes effect.
 func (nav *Nav) clearAltitudeForApproach() {
+	if !nav.Altitude.ActivateAt.IsZero() {
+		return
+	}
 	var cleared *ClearedAltitude
 	if nav.Altitude.Assigned != nil && *nav.Altitude.Assigned < nav.FlightState.Altitude {
 		cleared = &ClearedAltitude{Altitude: *nav.Altitude.Assigned}
@@ -320,6 +349,12 @@ func (nav *Nav) activatePendingAltitude(simTime Time) {
 	// pilot reacted, as it does when it takes effect at once.
 	nav.Altitude.Cleared = nil
 	nav.Altitude.Restriction = nil
+	// An altitude given with the clearance of an approach the aircraft is
+	// established on gives way to the approach's altitudes, as one given
+	// before it did when the aircraft became established.
+	if nav.establishedOnApproach() {
+		nav.clearAltitudeForApproach()
+	}
 }
 
 // activeAssignedAltitude returns the assigned altitude the aircraft is
@@ -431,21 +466,6 @@ func (nav *Nav) crossAltitude(next float32, slowingTo250 bool) float32 {
 	if nav.Altitude.RateThrough != nil && crosses(*nav.Altitude.RateThrough) {
 		nav.Altitude.Rate = RateNormal
 		nav.Altitude.RateThrough = nil
-	}
-
-	// A cleared visual keeps a descent the controller assigned only until
-	// the aircraft gets there or the visual's profile drops below it. If
-	// the profile drops below it first, the profile takes the aircraft on
-	// from there. An aircraft that gets there first keeps the altitude as
-	// its cleared altitude and waits there for the profile, as a
-	// controller's descent ends on other approaches.
-	if a := nav.activeAssignedAltitude(); a != nil && nav.Altitude.ActivateAt.IsZero() &&
-		nav.clearedForVisualApproach() && cur > *a && (next <= *a || nav.visualProfileBelow(*a)) {
-		if !nav.visualProfileBelow(*a) {
-			nav.Altitude.Cleared = &ClearedAltitude{Altitude: *a}
-		}
-		nav.Altitude.Assigned = nil
-		nav.Altitude.ActiveAssigned = nil
 	}
 
 	return next
@@ -563,15 +583,21 @@ func (nav *Nav) routeTargetAltitude(target altitudeTarget, rate float32) (float3
 // the approach's minimums, or else a restriction it missed at the fix
 // behind it.
 func (nav *Nav) approachTargetAltitude(rate float32) (float32, float32, bool) {
+	fs := &nav.FlightState
 	if nav.clearedForVisualOnHeading() {
-		return nav.visualDescentFromHeading()
+		alt, r, geometric := nav.visualDescentFromHeading()
+		if c := nav.Altitude.Cleared; !geometric && c != nil && c.Altitude < fs.Altitude {
+			// Until the visual's path is below it, a controller's
+			// descent is finished, but not below the 3 nm final.
+			return min(max(c.Altitude, fs.ArrivalAirportElevation+900), fs.Altitude), MaximumRate, false
+		}
+		return alt, r, geometric
 	}
 	target, ok := nav.approachAltitudeTarget()
 	if !ok {
 		return nav.untargetedAltitude(rate)
 	}
 
-	fs := &nav.FlightState
 	if target.level {
 		return fs.Altitude, 0, false
 	}

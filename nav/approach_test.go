@@ -9,6 +9,7 @@ import (
 	gomath "math"
 	"slices"
 	"testing"
+	"time"
 
 	av "github.com/mmp/vice/aviation"
 	"github.com/mmp/vice/aviation/db"
@@ -3341,4 +3342,182 @@ func TestLDACoursePassingWideOfThreshold(t *testing.T) {
 			}
 		})
 	}
+}
+
+// TestApproachEstablishment covers when an aircraft cleared for an approach
+// is established on it and what an altitude assignment means before and
+// after: HIRBO is a fix of the arrival and HAUPT the first fix of the ILS
+// 22L at KJFK.
+func TestApproachEstablishment(t *testing.T) {
+	cleared := func(t *testing.T, assigned float32) *FlightTest {
+		f := NewArrivalFlight(t, ArrivalConfig{
+			Waypoints:        "HIRBO HAUPT LEFER ROSLY",
+			DepartureAirport: "KMCO",
+			ArrivalAirport:   "KJFK",
+			AircraftType:     "A320",
+			InitialAltitude:  9000,
+			InitialSpeed:     210,
+			AssignedAltitude: assigned,
+		})
+		f.ExpectApproach("I22L")
+		f.ClearedApproach("I22L")
+		return f
+	}
+	nextFix := func(f *FlightTest, fix string) {
+		f.t.Helper()
+		f.StepUntil("on to "+fix, func() bool { return f.nav.Waypoints[0].Fix == fix })
+	}
+	assign := func(f *FlightTest, alt float32) speech.AltitudeIntent {
+		f.t.Helper()
+		intent, ok := f.nav.AssignAltitude(alt, false, f.simTime, 0).(speech.AltitudeIntent)
+		if !ok {
+			f.t.Fatalf("assigning %.0f: got %T, want an AltitudeIntent", alt, intent)
+		}
+		return intent
+	}
+
+	t.Run("ArrivalFixDoesNotEstablish", func(t *testing.T) {
+		f := cleared(t, 9000)
+		nextFix(f, "HAUPT")
+		if f.nav.establishedOnApproach() {
+			t.Error("passing HIRBO, a fix of the arrival, established the aircraft")
+		}
+		if a := f.nav.Altitude.Assigned; a == nil || *a != 9000 {
+			t.Errorf("assigned altitude %v, want the 9000 kept until established", a)
+		}
+		f.AssertAltitudeNear(9000, 1)
+
+		nextFix(f, "LEFER")
+		if !f.nav.establishedOnApproach() {
+			t.Error("passing HAUPT did not establish the aircraft")
+		}
+		if f.nav.Altitude.Assigned != nil {
+			t.Errorf("the 9000 should give way to the approach once established: %+v", f.nav.Altitude)
+		}
+	})
+
+	t.Run("AltitudeBeforeEstablishedReplacesIt", func(t *testing.T) {
+		f := cleared(t, 9000)
+		if intent := assign(f, 8000); intent.CancelsApproach {
+			t.Error("an altitude before the aircraft is established cancelled the clearance")
+		}
+		if !f.nav.Approach.Cleared {
+			t.Error("expected the clearance to stand")
+		}
+		f.StepUntil("down to 8000", func() bool { return f.nav.FlightState.Altitude <= 8000 })
+		if f.nav.establishedOnApproach() {
+			t.Fatal("the aircraft was established before it got down to 8000")
+		}
+		f.Step(5)
+		f.AssertAltitudeNear(8000, 1)
+	})
+
+	t.Run("AltitudeAfterEstablishedCancels", func(t *testing.T) {
+		f := cleared(t, 9000)
+		nextFix(f, "LEFER")
+		intent := assign(f, 7000)
+		if !intent.CancelsApproach {
+			t.Error("the readback should say that the altitude cancels the approach clearance")
+		}
+		if f.nav.Approach.Cleared {
+			t.Error("expected the altitude to cancel the approach clearance")
+		}
+		if a := f.nav.Altitude.Assigned; a == nil || *a != 7000 {
+			t.Errorf("assigned altitude %v, want 7000", a)
+		}
+	})
+
+	// A controller's descent the aircraft is still finishing on the
+	// approach is restated, not changed.
+	t.Run("RestatedDescentKeepsClearance", func(t *testing.T) {
+		f := cleared(t, 5000)
+		nextFix(f, "LEFER")
+		if c := f.nav.Altitude.Cleared; c == nil || c.Altitude != 5000 || f.nav.FlightState.Altitude <= 5000 {
+			t.Fatalf("expected an unfinished descent to 5000 at %.0f, got %+v", f.nav.FlightState.Altitude, c)
+		}
+		before := f.nav.Altitude
+		intent := assign(f, 5000)
+		if intent.CancelsApproach || !f.nav.Approach.Cleared {
+			t.Error("restating the descent cancelled the clearance")
+		}
+		if intent.Direction != speech.AltitudeDescend {
+			t.Errorf("readback direction %v, want a descent", intent.Direction)
+		}
+		if f.nav.Altitude != before {
+			t.Errorf("restating changed the altitude state from %+v to %+v", before, f.nav.Altitude)
+		}
+	})
+}
+
+// TestVisualApproachEstablishedAtClearance covers a visual approach, which
+// the pilot flies on their own from the clearance: an altitude given with
+// the clearance gives way to the visual once the pilot acts on it, and one
+// given later cancels the clearance unless it restates the altitude the
+// aircraft is level at.
+func TestVisualApproachEstablishedAtClearance(t *testing.T) {
+	// The 3 degree path is at about 5,100 ft 16 nm out.
+	visual := func(t *testing.T, alt float32) *FlightTest {
+		apg := LookupApproachGeometry(t, "KJFK", "I22L")
+		f := NewArrivalFlight(t, ArrivalConfig{
+			Waypoints:        apg.ThresholdOffset(16, 0).DMSString() + " LEFER ROSLY",
+			DepartureAirport: "KMCO",
+			ArrivalAirport:   "KJFK",
+			AircraftType:     "A320",
+			InitialAltitude:  alt,
+			InitialSpeed:     210,
+			AssignedAltitude: alt,
+		})
+		f.ExpectVisualApproach("22L")
+		return f
+	}
+	clearVisual := func(f *FlightTest) {
+		f.t.Helper()
+		if intent, unable := f.ClearedVisualApproach("22L").(speech.UnableIntent); unable {
+			f.t.Fatalf("unable to clear the visual: %v", intent)
+		}
+	}
+
+	t.Run("AltitudeWithClearance", func(t *testing.T) {
+		f := visual(t, 6000)
+		f.nav.AssignAltitude(4000, false, f.simTime, 5*time.Second)
+		clearVisual(f)
+		if !f.nav.establishedOnApproach() {
+			t.Fatal("a visual should be established at its clearance")
+		}
+		if f.nav.Altitude.ActivateAt.IsZero() {
+			t.Fatal("the pilot should still be about to act on the 4000")
+		}
+		f.StepUntil("the pilot acted on the 4000", func() bool { return f.nav.Altitude.ActivateAt.IsZero() })
+		if f.nav.Altitude.Assigned != nil {
+			t.Errorf("the 4000 should give way to the visual: %+v", f.nav.Altitude)
+		}
+		if c := f.nav.Altitude.Cleared; c == nil || c.Altitude != 4000 {
+			t.Errorf("cleared altitude %+v, want the descent to 4000 kept", c)
+		}
+	})
+
+	t.Run("LaterAltitudeCancels", func(t *testing.T) {
+		f := visual(t, 3000)
+		clearVisual(f)
+		f.Step(10)
+		intent, ok := f.nav.AssignAltitude(5000, false, f.simTime, 0).(speech.AltitudeIntent)
+		if !ok || !intent.CancelsApproach || f.nav.Approach.Cleared {
+			t.Errorf("an altitude after the visual clearance should cancel it: %+v, cleared %v", intent, f.nav.Approach.Cleared)
+		}
+	})
+
+	t.Run("RestatedLevelAltitudeKeepsClearance", func(t *testing.T) {
+		f := visual(t, 3000)
+		clearVisual(f)
+		f.Step(10)
+		f.AssertLevelFlight()
+		alt := f.nav.FlightState.Altitude
+		intent, ok := f.nav.AssignAltitude(alt, false, f.simTime, 0).(speech.AltitudeIntent)
+		if !ok || intent.CancelsApproach || !f.nav.Approach.Cleared {
+			t.Errorf("restating %.0f should keep the visual clearance: %+v, cleared %v", alt, intent, f.nav.Approach.Cleared)
+		}
+		if intent.Direction != speech.AltitudeMaintain {
+			t.Errorf("readback direction %v, want maintain", intent.Direction)
+		}
+	})
 }

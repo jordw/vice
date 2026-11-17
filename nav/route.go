@@ -481,7 +481,7 @@ func (nav *Nav) passWaypoint(callsign string, wp av.Waypoint, simTime Time) Upda
 	if nav.Heading.Arc != nil {
 		nav.Heading = Heading{}
 	}
-	nav.passApproachFix(wp)
+	nav.passApproachFix(wp, clearedAtFix)
 	nav.carryRestrictions(wp)
 
 	var actionEvent *av.WaypointActionEvent

@@ -977,10 +977,9 @@ func TestVisualApproachPreservesAssignedDescent(t *testing.T) {
 		}},
 	}
 
-	// Aircraft at 5000 ft with controller-assigned descent to 3000. The clearance
-	// should preserve the in-progress descent so the aircraft continues at
-	// standard rate to 3000 — activeAssignedAltitude shadows the geometric
-	// descent until the first approach fix is crossed.
+	// Aircraft at 5000 ft with controller-assigned descent to 3000. The
+	// clearance keeps the unfinished descent as the cleared altitude, as an
+	// instrument approach does once the aircraft is established.
 	assigned := float32(3000)
 	n := nav.Nav{
 		Instructions: nav.Instructions{
@@ -1006,10 +1005,11 @@ func TestVisualApproachPreservesAssignedDescent(t *testing.T) {
 		t.Fatalf("unexpected UnableIntent: %v", intent)
 	}
 
-	if n.Altitude.Assigned == nil {
-		t.Error("nav.Altitude.Assigned should be preserved after visual approach clearance")
-	} else if *n.Altitude.Assigned != 3000 {
-		t.Errorf("nav.Altitude.Assigned = %v, want 3000", *n.Altitude.Assigned)
+	if n.Altitude.Assigned != nil {
+		t.Errorf("nav.Altitude.Assigned = %v, want nil after the visual approach clearance", *n.Altitude.Assigned)
+	}
+	if c := n.Altitude.Cleared; c == nil || *c != (nav.ClearedAltitude{Altitude: 3000}) {
+		t.Errorf("nav.Altitude.Cleared = %+v, want the 3000 descent", c)
 	}
 }
 
@@ -1133,7 +1133,7 @@ func TestVisualApproachPreservesPendingDescent(t *testing.T) {
 	}
 }
 
-func TestVisualApproachDropsAssignedDescentBelowProfile(t *testing.T) {
+func TestVisualApproachDescentStopsAtProfileFloor(t *testing.T) {
 	// High-elevation runway exaggerates the case: profile floor is 5000 + 900 =
 	// 5900 ft, so a "descend and maintain 4500" assignment is below it.
 	rwy := av.Runway{
@@ -1157,9 +1157,8 @@ func TestVisualApproachDropsAssignedDescentBelowProfile(t *testing.T) {
 	}
 
 	// Aircraft at 7000 ft assigned 4500 ft. The _3NM_FINAL anchor sits at the
-	// profile floor of 5900 ft. Preserving the 4500-ft assignment would let
-	// TargetAltitude's activeAssignedAltitude shadow that restriction and
-	// command the aircraft through the visual profile's floor.
+	// profile floor of 5900 ft. The clearance keeps the descent, which ends at
+	// that floor, as a controller's descent ends at an approach's minimums.
 	belowProfile := float32(4500)
 	n := nav.Nav{
 		Instructions: nav.Instructions{
@@ -1185,16 +1184,16 @@ func TestVisualApproachDropsAssignedDescentBelowProfile(t *testing.T) {
 		t.Fatalf("unexpected UnableIntent: %v", intent)
 	}
 
-	if n.Altitude.Assigned != nil {
-		t.Errorf("nav.Altitude.Assigned = %v, want nil — assignment is below the visual profile floor", *n.Altitude.Assigned)
+	if c := n.Altitude.Cleared; c == nil || *c != (nav.ClearedAltitude{Altitude: 4500}) {
+		t.Errorf("nav.Altitude.Cleared = %+v, want the 4500 descent", c)
 	}
-	if n.Altitude.ActiveAssigned != nil {
-		t.Errorf("nav.Altitude.ActiveAssigned = %v, want nil", *n.Altitude.ActiveAssigned)
+	if alt, _, _ := n.TargetAltitude(); alt < 5900 {
+		t.Errorf("target altitude %.0f, want no lower than the profile floor of 5900", alt)
 	}
 
 	// Sanity: _3NM_FINAL is the FAF. If something changes that and an
-	// in-route restriction takes over, the preservation rule above no longer
-	// matters and the test loses its meaning — fail loudly so it's noticed.
+	// in-route restriction takes over, the floor above no longer comes from
+	// it and the test loses its meaning — fail loudly so it's noticed.
 	finalIdx := slices.IndexFunc(n.Waypoints, func(wp av.Waypoint) bool { return wp.Fix == "_36_3NM_FINAL" })
 	if finalIdx == -1 || !n.Waypoints[finalIdx].FAF() {
 		t.Fatalf("expected _36_3NM_FINAL with FAF; got %v", wpNames(n.Waypoints))
