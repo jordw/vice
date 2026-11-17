@@ -637,9 +637,7 @@ func (nav *Nav) HoldAtFix(callsign string, fix string, hold *av.Hold) speech.Com
 		nav.FixAssignments[h.Fix] = FixAssignment{Hold: &h}
 	}
 
-	// These seem prudent to clear at this point.
-	nav.Approach.Cleared = false
-	nav.Approach.PassedApproachFix = false
+	nav.leaveApproach()
 
 	turnDir := util.Select(h.TurnDirection == av.TurnRight, "right", "left")
 	var legLength string

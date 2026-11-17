@@ -133,6 +133,53 @@ func TestAltitudeCancelsApproachReadback(t *testing.T) {
 	}
 }
 
+// TestHeadingCancelsApproachReadback checks that a pilot reads back that a
+// heading cancels the approach clearance, in every form of heading, except
+// when the same transmission clears the aircraft for an approach again. It
+// also checks that each form reads back that it cancels a hold.
+func TestHeadingCancelsApproachReadback(t *testing.T) {
+	const note = "understand that cancels our approach clearance"
+	headings := []HeadingIntent{
+		{Heading: 180, Type: HeadingAssign, Turn: HeadingTurnToLeft},
+		{Heading: 180, Type: HeadingTurnLeft, Degrees: 20},
+		{Heading: 180, Type: HeadingTurnRight, Degrees: 20},
+		{Heading: 180, Type: HeadingPresent},
+	}
+	altitude := AltitudeIntent{Altitude: 3000, Direction: AltitudeDescend}
+	clearance := ClearedApproachIntent{Approach: "ILS Runway 22L"}
+	intercept := ApproachIntent{Type: ApproachIntercept, ApproachName: "ILS Runway 22L", HasLocalizer: true}
+	render := func(intents []CommandIntent, seed uint64) string {
+		r := rand.Make()
+		r.Seed(seed)
+		rd, err := RenderIntents(intents, r).Render(r)
+		if err != nil {
+			t.Fatal(err)
+		}
+		return rd.Written
+	}
+
+	for _, h := range headings {
+		h.CancelsApproach = true
+		h.CancelHold = true
+		for seed := uint64(1); seed <= 10; seed++ {
+			readback := render([]CommandIntent{h}, seed)
+			if !strings.Contains(readback, note) || !strings.Contains(readback, "hold") {
+				t.Fatalf("%+v: readback %q", h, readback)
+			}
+			if readback = render([]CommandIntent{h, intercept}, seed); !strings.Contains(readback, note) {
+				t.Fatalf("%+v with an intercept: readback %q", h, readback)
+			}
+			readback = render([]CommandIntent{h, altitude, clearance}, seed)
+			if strings.Contains(readback, note) {
+				t.Fatalf("%+v with a clearance: readback %q", h, readback)
+			}
+			if ia, ic := strings.Index(readback, "3,000"), strings.Index(readback, "cleared"); ia < 0 || ic < ia {
+				t.Fatalf("%+v with a clearance: readback %q, want the altitude before the clearance", h, readback)
+			}
+		}
+	}
+}
+
 // TestThenMachReadback verifies that a Mach number to fly after reaching an
 // assigned altitude is read back as a Mach number.
 func TestThenMachReadback(t *testing.T) {

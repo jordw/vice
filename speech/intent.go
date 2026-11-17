@@ -479,29 +479,29 @@ const (
 
 // HeadingIntent represents heading assignment commands
 type HeadingIntent struct {
-	Heading    math.MagneticHeading
-	Type       HeadingType
-	Turn       HeadingTurn       // for HeadingAssign: which way to turn
-	Degrees    int               // for HeadingTurnLeft/Right: how many degrees
-	CancelHold bool              // heading cancels an active hold
-	Join       *NavigationIntent // joining an airway/procedure
+	Heading         math.MagneticHeading
+	Type            HeadingType
+	Turn            HeadingTurn       // for HeadingAssign: which way to turn
+	Degrees         int               // for HeadingTurnLeft/Right: how many degrees
+	CancelHold      bool              // heading cancels an active hold
+	CancelsApproach bool              // heading cancels the aircraft's approach clearance
+	Join            *NavigationIntent // joining an airway/procedure
 }
 
 func (h HeadingIntent) Render(rt *RadioTransmission, r *rand.Rand) {
-	prefix := ""
 	if h.CancelHold {
-		prefix = "cancel [the|] hold, "
+		rt.Add("cancel [the|] hold")
 	}
 
 	switch h.Type {
 	case HeadingAssign:
 		switch h.Turn {
 		case HeadingTurnClosest:
-			rt.Add(prefix+"[heading|fly heading] {hdg}", h.Heading)
+			rt.Add("[heading|fly heading] {hdg}", h.Heading)
 		case HeadingTurnToRight:
-			rt.Add(prefix+"[right heading|right|turn right] {hdg}", h.Heading)
+			rt.Add("[right heading|right|turn right] {hdg}", h.Heading)
 		case HeadingTurnToLeft:
-			rt.Add(prefix+"[left heading|left|turn left] {hdg}", h.Heading)
+			rt.Add("[left heading|left|turn left] {hdg}", h.Heading)
 		}
 		if h.Join != nil {
 			h.Join.Render(rt, r)
@@ -512,6 +512,10 @@ func (h HeadingIntent) Render(rt *RadioTransmission, r *rand.Rand) {
 		rt.Add("[turn {num} degrees right|{num} to the right|{num} right]", h.Degrees)
 	case HeadingPresent:
 		rt.Add("[fly present heading|present heading]")
+	}
+
+	if h.CancelsApproach {
+		rt.Add("understand that cancels our approach clearance")
 	}
 }
 
@@ -1205,8 +1209,9 @@ func findOrderedMatches(intentTypes []reflect.Type, paramTypes []reflect.Type) [
 
 // mergeIntents combines related intents using registered merge functions.
 // Merge functions are tried in priority order (longer matches first, then registration order).
-// Matches are ordered but not necessarily contiguous (e.g., [A, X, B] matches a merger for [A, B],
-// and the merged intent follows X).
+// Matches are ordered but not necessarily contiguous (e.g., [A, X, B] matches a merger for [A, B]).
+// A merger that returns one intent for each it matched replaces them in place; otherwise
+// its result goes where the first match was.
 // The algorithm restarts from the top after each successful merge and continues until
 // no further progress is made.
 func mergeIntents(intents []CommandIntent) []CommandIntent {
@@ -1230,6 +1235,12 @@ restart:
 			}
 
 			if replacement, ok := callMerger(merger, matchedIntents); ok {
+				if len(replacement) == len(matchIndices) {
+					for i, idx := range matchIndices {
+						intents[idx] = replacement[i]
+					}
+					continue restart
+				}
 				// Remove matched intents in reverse order (to preserve indices)
 				for _, matchIndice := range slices.Backward(matchIndices) {
 					intents = slices.Delete(intents, matchIndice, matchIndice+1)
@@ -1327,6 +1338,17 @@ func mergeProcedureSpeed(p ProcedureIntent, spd SpeedIntent) ([]CommandIntent, b
 	return nil, false
 }
 
+// mergeHeadingClearance drops a heading's note that it cancels the
+// approach clearance when the same transmission clears the aircraft for an
+// approach again.
+func mergeHeadingClearance(h HeadingIntent, c ClearedApproachIntent) ([]CommandIntent, bool) {
+	if !h.CancelsApproach {
+		return nil, false
+	}
+	h.CancelsApproach = false
+	return []CommandIntent{h, c}, true
+}
+
 func mergeTransponder(ta, tb TransponderIntent) ([]CommandIntent, bool) {
 	if tb.Code != nil {
 		ta.Code = tb.Code
@@ -1348,4 +1370,5 @@ func init() {
 	RegisterIntentMerger(mergeExpectAtFixCleared)
 	RegisterIntentMerger(mergeProcedureSpeed)
 	RegisterIntentMerger(mergeTransponder)
+	RegisterIntentMerger(mergeHeadingClearance)
 }

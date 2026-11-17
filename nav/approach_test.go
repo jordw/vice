@@ -3544,3 +3544,166 @@ func TestVisualApproachEstablishedAtClearance(t *testing.T) {
 		}
 	})
 }
+
+// TestApproachClearanceExits checks what each way of ending an approach
+// clearance leaves behind. A cancel ends the clearance, including one
+// waiting for its fix, and the descent state that goes with it, but the
+// aircraft stays where it is on the approach's route. A vector or a missed
+// intercept also takes it off the route.
+func TestApproachClearanceExits(t *testing.T) {
+	newFlight := func(t *testing.T, route string) *FlightTest {
+		f := NewArrivalFlight(t, ArrivalConfig{
+			Waypoints:        route,
+			DepartureAirport: "KMCO",
+			ArrivalAirport:   "KJFK",
+			AircraftType:     "A320",
+			InitialAltitude:  7000,
+			InitialSpeed:     210,
+			AssignedAltitude: 7000,
+		})
+		f.ExpectApproach("I22L")
+		return f
+	}
+	pastFAF := func(t *testing.T) *FlightTest {
+		f := newFlight(t, "HAUPT LEFER ROSLY")
+		f.ClearedApproach("I22L")
+		f.StepUntil("past the FAF", func() bool { return f.nav.Approach.PassedFAF })
+		return f
+	}
+	vector := func(f *FlightTest) speech.HeadingIntent {
+		f.t.Helper()
+		intent, ok := f.nav.AssignHeading(180, av.TurnClosest, f.simTime, 0).(speech.HeadingIntent)
+		if !ok {
+			f.t.Fatalf("got %T, want a HeadingIntent", intent)
+		}
+		return intent
+	}
+
+	t.Run("CancelKeepsPositionOnRoute", func(t *testing.T) {
+		f := pastFAF(t)
+		assertNotUnable(t, f.nav.CancelApproachClearance())
+		a := f.nav.Approach
+		if a.Cleared || a.PassedFAF || !a.Abandoned {
+			t.Errorf("cleared %v passed FAF %v abandoned %v, want false false true", a.Cleared, a.PassedFAF, a.Abandoned)
+		}
+		if !a.PassedApproachFix {
+			t.Error("a cancel should leave the aircraft past the approach's fixes")
+		}
+		f.ClearedApproach("I22L")
+		if !f.nav.establishedOnApproach() {
+			t.Error("cleared again on the approach's route, the aircraft should be established")
+		}
+		if f.nav.Approach.PassedFAF {
+			t.Error("a new clearance should not start out past the FAF")
+		}
+	})
+
+	t.Run("VectorLeavesApproach", func(t *testing.T) {
+		f := pastFAF(t)
+		if intent := vector(f); !intent.CancelsApproach {
+			t.Error("the readback should say that the heading cancels the approach clearance")
+		}
+		a := f.nav.Approach
+		if a.Cleared || a.PassedFAF || a.PassedApproachFix || a.InterceptState != NotIntercepting || !a.Abandoned {
+			t.Errorf("approach state %+v, want off the approach and abandoned", a)
+		}
+		if f.nav.descendsOnGlidepath() {
+			t.Error("a vectored aircraft should not descend as if on the glidepath")
+		}
+		if intent := vector(f); intent.CancelsApproach {
+			t.Error("a second heading has no clearance to cancel")
+		}
+	})
+
+	t.Run("VectorOffUnclearedCourse", func(t *testing.T) {
+		f := newFlight(t, "HAUPT LEFER")
+		f.DirectFix("ROSLY")
+		if f.nav.Approach.InterceptState != OnApproachCourse {
+			t.Fatalf("intercept state %v after direct to an approach fix, want OnApproachCourse", f.nav.Approach.InterceptState)
+		}
+		if intent := vector(f); intent.CancelsApproach {
+			t.Error("an uncleared aircraft has no clearance to cancel")
+		}
+		if f.nav.InterceptedButNotCleared() {
+			t.Error("a vectored aircraft is no longer on the approach course")
+		}
+	})
+
+	t.Run("MissedInterceptLeavesApproach", func(t *testing.T) {
+		f := pastFAF(t)
+		f.nav.approachOvershootRequestVectors()
+		a := f.nav.Approach
+		if a.Cleared || a.PassedFAF || a.PassedApproachFix || a.NoPT || a.InterceptState != NotIntercepting {
+			t.Errorf("approach state %+v, want off the approach", a)
+		}
+		if !a.Abandoned || !f.nav.Requests.Vectors {
+			t.Errorf("abandoned %v vectors requested %v, want both", a.Abandoned, f.nav.Requests.Vectors)
+		}
+	})
+
+	t.Run("CancelPendingAtFix", func(t *testing.T) {
+		f := newFlight(t, "HAUPT LEFER ROSLY")
+		assertNotUnable(t, f.AtFixCleared("ROSLY", "I22L", false))
+		assertNotUnable(t, f.nav.CancelApproachClearance())
+		if f.nav.Approach.AtFixClearedRoute != nil {
+			t.Errorf("pending clearance at %v survived the cancel", waypointFixes(f.nav.Approach.AtFixClearedRoute))
+		}
+		f.StepUntil("past ROSLY", func() bool { return f.nav.Waypoints[0].Fix != "ROSLY" })
+		if f.nav.Approach.Cleared {
+			t.Error("the cancelled clearance took effect at ROSLY")
+		}
+	})
+
+	t.Run("VectorCancelsPendingAtFix", func(t *testing.T) {
+		f := newFlight(t, "HAUPT LEFER ROSLY")
+		assertNotUnable(t, f.AtFixCleared("ROSLY", "I22L", false))
+		if intent := vector(f); !intent.CancelsApproach {
+			t.Error("the readback should say that the heading cancels the pending clearance")
+		}
+		if f.nav.Approach.EffectivelyCleared() {
+			t.Error("the pending clearance survived the vector")
+		}
+	})
+
+	t.Run("ClearanceReplacesPendingAtFix", func(t *testing.T) {
+		f := newFlight(t, "HAUPT LEFER ROSLY")
+		assertNotUnable(t, f.AtFixCleared("ROSLY", "I22L", false))
+		f.ClearedApproach("I22L")
+		if f.nav.Approach.AtFixClearedRoute != nil {
+			t.Errorf("pending clearance at %v survived the clearance", waypointFixes(f.nav.Approach.AtFixClearedRoute))
+		}
+	})
+}
+
+// TestTurnDegrees checks that a turn by a number of degrees turns from the
+// present heading and reads back what the heading cancels.
+func TestTurnDegrees(t *testing.T) {
+	f := NewArrivalFlight(t, ArrivalConfig{
+		Waypoints:        "HAUPT LEFER ROSLY",
+		DepartureAirport: "KMCO",
+		ArrivalAirport:   "KJFK",
+		AircraftType:     "A320",
+		InitialAltitude:  7000,
+		InitialSpeed:     210,
+	})
+	f.ExpectApproach("I22L")
+	f.ClearedApproach("I22L")
+	start := f.nav.FlightState.Heading
+
+	intent, ok := f.nav.TurnDegrees(30, av.TurnLeft, f.simTime, 0).(speech.HeadingIntent)
+	if !ok {
+		t.Fatalf("got %T, want a HeadingIntent", intent)
+	}
+	want := math.OffsetHeading(start, -30)
+	if intent.Type != speech.HeadingTurnLeft || intent.Degrees != 30 || intent.Heading != want {
+		t.Errorf("intent %+v, want a 30 degree left turn to %.0f", intent, want)
+	}
+	if !intent.CancelsApproach || f.nav.Approach.Cleared {
+		t.Errorf("the turn should cancel the approach clearance and say so: %+v", intent)
+	}
+
+	intent, ok = f.nav.TurnDegrees(20, av.TurnRight, f.simTime, 0).(speech.HeadingIntent)
+	if !ok || intent.Type != speech.HeadingTurnRight || intent.CancelsApproach {
+		t.Errorf("intent %+v, want a right turn that cancels nothing", intent)
+	}
+}

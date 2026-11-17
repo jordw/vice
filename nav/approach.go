@@ -484,6 +484,7 @@ func (nav *Nav) applyClearedApproachState() (cancelHold bool) {
 		cancelHold = true
 	}
 	nav.Approach.Cleared = true
+	nav.Approach.AtFixClearedRoute = nil
 	nav.Approach.StandbyApproach = false
 	nav.Approach.Abandoned = false
 	nav.Speed = Speed{}
@@ -522,7 +523,7 @@ func (nav *Nav) descendToCrossingAltitude() {
 
 func (nav *Nav) CancelApproachClearance() speech.CommandIntent {
 	defer nav.record("CancelApproachClearance")()
-	if !nav.Approach.Cleared {
+	if !nav.Approach.EffectivelyCleared() {
 		return speech.MakeUnableIntent("unable. we're not currently cleared for an approach")
 	}
 
@@ -530,12 +531,26 @@ func (nav *Nav) CancelApproachClearance() speech.CommandIntent {
 	return speech.ApproachIntent{Type: speech.ApproachCancel}
 }
 
-// cancelApproachClearance takes away the aircraft's approach clearance.
+// cancelApproachClearance takes away the aircraft's approach clearance,
+// whether in effect or waiting for its fix. The aircraft keeps the speed it
+// was flying the approach at. Its position on the approach's route, which
+// establishes it again if it is cleared again, stands.
 func (nav *Nav) cancelApproachClearance() {
+	nav.Approach.Abandoned = nav.Approach.Abandoned || nav.Approach.EffectivelyCleared()
 	nav.Approach.Cleared = false
+	nav.Approach.AtFixClearedRoute = nil
 	nav.Approach.InterceptState = NotIntercepting
 	nav.Approach.NoPT = false
-	nav.Approach.Abandoned = true
+	nav.Approach.PassedFAF = false
+}
+
+// leaveApproach cancels the aircraft's approach clearance and takes it off
+// the approach's route: it is no longer on the course or past any of its
+// fixes.
+func (nav *Nav) leaveApproach() {
+	nav.cancelApproachClearance()
+	nav.Approach.Intercept = InterceptCourse{}
+	nav.Approach.PassedApproachFix = false
 }
 
 // AtFixCleared clears the aircraft for the approach once it passes fix. An

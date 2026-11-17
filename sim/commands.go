@@ -53,9 +53,9 @@ func (s *Sim) AssignHeading(hdg *HeadingArgs) (speech.CommandIntent, error) {
 			} else if hdg.ToJoin {
 				return ac.AssignHeadingToJoin(hdg.Heading, hdg.Turn, s.State.SimTime, hdg.DelayReduction)
 			} else if hdg.LeftDegrees != 0 {
-				return ac.TurnLeft(hdg.LeftDegrees, s.State.SimTime, hdg.DelayReduction)
+				return ac.TurnDegrees(hdg.LeftDegrees, av.TurnLeft, s.State.SimTime, hdg.DelayReduction)
 			} else if hdg.RightDegrees != 0 {
-				return ac.TurnRight(hdg.RightDegrees, s.State.SimTime, hdg.DelayReduction)
+				return ac.TurnDegrees(hdg.RightDegrees, av.TurnRight, s.State.SimTime, hdg.DelayReduction)
 			} else {
 				return ac.AssignHeading(hdg.Heading, hdg.Turn, s.State.SimTime, hdg.DelayReduction)
 			}

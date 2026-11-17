@@ -147,13 +147,32 @@ func (nav *Nav) AssignHeading(hdg math.MagneticHeading, turn av.TurnDirection, s
 	}
 
 	cancelHold := nav.Heading.Hold != nil
-	nav.assignHeading(hdg, turn, simTime, delayReduction)
+	cancelsApproach := nav.assignHeading(hdg, turn, simTime, delayReduction)
 
 	return speech.HeadingIntent{
-		Heading:    hdg,
-		Type:       speech.HeadingAssign,
-		Turn:       headingTurn(turn),
-		CancelHold: cancelHold,
+		Heading:         hdg,
+		Type:            speech.HeadingAssign,
+		Turn:            headingTurn(turn),
+		CancelHold:      cancelHold,
+		CancelsApproach: cancelsApproach,
+	}
+}
+
+// TurnDegrees turns the aircraft deg degrees from its present heading in
+// the direction turn, which is av.TurnLeft or av.TurnRight.
+func (nav *Nav) TurnDegrees(deg int, turn av.TurnDirection, simTime Time, delayReduction time.Duration) speech.CommandIntent {
+	defer nav.record("TurnDegrees", deg, turn, simTime, delayReduction)()
+	left := turn == av.TurnLeft
+	hdg := math.OffsetHeading(nav.FlightState.Heading, util.Select(left, -deg, deg))
+	cancelHold := nav.Heading.Hold != nil
+	cancelsApproach := nav.assignHeading(hdg, turn, simTime, delayReduction)
+
+	return speech.HeadingIntent{
+		Heading:         hdg,
+		Type:            util.Select(left, speech.HeadingTurnLeft, speech.HeadingTurnRight),
+		Degrees:         deg,
+		CancelHold:      cancelHold,
+		CancelsApproach: cancelsApproach,
 	}
 }
 
@@ -171,7 +190,12 @@ func headingTurn(turn av.TurnDirection) speech.HeadingTurn {
 	}
 }
 
-func (nav *Nav) assignHeading(hdg math.MagneticHeading, turn av.TurnDirection, simTime Time, delayReduction time.Duration) {
+// assignHeading assigns a heading the controller gave. It reports whether
+// the heading cancelled an approach clearance: a first vector takes the
+// aircraft off the approach, while one already on a heading keeps a
+// clearance to intercept the approach from it.
+func (nav *Nav) assignHeading(hdg math.MagneticHeading, turn av.TurnDirection, simTime Time,
+	delayReduction time.Duration) (cancelsApproach bool) {
 	approachCleared := nav.Approach.Cleared
 	snapshotAltitude := false
 
@@ -198,29 +222,27 @@ func (nav *Nav) assignHeading(hdg math.MagneticHeading, turn av.TurnDirection, s
 			}
 		}
 
-		// Only cancel approach clearance if the aircraft wasn't on a
-		// heading and now we're giving them one. It keeps the speed it was
-		// flying the approach at, as when the controller cancels the
-		// clearance.
-		nav.Approach.Abandoned = nav.Approach.Abandoned || approachCleared
-		nav.Approach.Cleared = false
-
-		// MVAs are back in the mix
-		nav.Approach.PassedApproachFix = false
+		cancelsApproach = nav.Approach.EffectivelyCleared()
+		nav.leaveApproach()
 	}
 
 	// Don't carry this from a waypoint we may have previously passed.
 	nav.Approach.NoPT = false
 	nav.enqueueHeading(hdg, turn, approachCleared, simTime, delayReduction)
 	nav.DeferredNavHeading.SnapshotAltitudeOnEffect = snapshotAltitude
+	return cancelsApproach
 }
 
 func (nav *Nav) FlyPresentHeading(simTime Time, delayReduction time.Duration) speech.CommandIntent {
 	defer nav.record("FlyPresentHeading", simTime, delayReduction)()
-	nav.assignHeading(nav.FlightState.Heading, av.TurnClosest, simTime, delayReduction)
+	cancelHold := nav.Heading.Hold != nil
+	hdg := nav.FlightState.Heading
+	cancelsApproach := nav.assignHeading(hdg, av.TurnClosest, simTime, delayReduction)
 	return speech.HeadingIntent{
-		Heading: nav.FlightState.Heading,
-		Type:    speech.HeadingPresent,
+		Heading:         hdg,
+		Type:            speech.HeadingPresent,
+		CancelHold:      cancelHold,
+		CancelsApproach: cancelsApproach,
 	}
 }
 

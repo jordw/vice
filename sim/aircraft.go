@@ -590,24 +590,8 @@ func (ac *Aircraft) AssignHeading(heading int, turn av.TurnDirection, simTime Ti
 	return ac.Nav.AssignHeading(math.MagneticHeading(heading), turn, simTime.NavTime(), delayReduction)
 }
 
-func (ac *Aircraft) TurnLeft(deg int, simTime Time, delayReduction time.Duration) speech.CommandIntent {
-	hdg := math.OffsetHeading(ac.Nav.FlightState.Heading, -deg)
-	ac.Nav.AssignHeading(hdg, av.TurnLeft, simTime.NavTime(), delayReduction)
-	return speech.HeadingIntent{
-		Type:    speech.HeadingTurnLeft,
-		Heading: hdg,
-		Degrees: deg,
-	}
-}
-
-func (ac *Aircraft) TurnRight(deg int, simTime Time, delayReduction time.Duration) speech.CommandIntent {
-	hdg := math.OffsetHeading(ac.Nav.FlightState.Heading, deg)
-	ac.Nav.AssignHeading(hdg, av.TurnRight, simTime.NavTime(), delayReduction)
-	return speech.HeadingIntent{
-		Type:    speech.HeadingTurnRight,
-		Heading: hdg,
-		Degrees: deg,
-	}
+func (ac *Aircraft) TurnDegrees(deg int, turn av.TurnDirection, simTime Time, delayReduction time.Duration) speech.CommandIntent {
+	return ac.Nav.TurnDegrees(deg, turn, simTime.NavTime(), delayReduction)
 }
 
 func (ac *Aircraft) FlyPresentHeading(simTime Time, delayReduction time.Duration) speech.CommandIntent {

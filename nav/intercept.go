@@ -564,10 +564,10 @@ func (nav *Nav) approachRecoveryFeasible(ap *av.Approach) bool {
 }
 
 // approachOvershootRequestVectors cancels the approach and flags the
-// pilot to request new vectors from ATC.
+// pilot to request new vectors from ATC. The pilot keeps the approach speed
+// whether or not the aircraft was cleared.
 func (nav *Nav) approachOvershootRequestVectors() {
-	nav.Approach.InterceptState = NotIntercepting
-	nav.Approach.Cleared = false
+	nav.leaveApproach()
 	nav.Approach.Abandoned = true
 	nav.Requests.Vectors = true
 }

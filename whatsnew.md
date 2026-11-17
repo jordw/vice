@@ -5,6 +5,7 @@
   - Improved visual approach intercepts when feeder legs are present
   - Aircraft on a downwind can be cleared for a visual approach
   - An altitude after establishment cancels an approach clearance
+  - Pilots read back that a vector cancels their approach clearance
 - Scenarios
   - Real-world jet departures no longer fly prop departure routes
   - Real-world flights within a TRACON no longer use unrelated gates
