@@ -92,46 +92,51 @@ func (nav *Nav) carryRestrictions(wp av.Waypoint) {
 // for those.
 const descentPlanningFraction = 0.75
 
-// altitudeTarget holds the result of scanning waypoints for an altitude target.
+// altitudeTarget is the altitude restriction ahead that the aircraft flies
+// toward.
 type altitudeTarget struct {
 	altitude float32
 	fix      string
 	// level is set when the restrictions ahead require exactly the current
 	// altitude at fix, so the aircraft stays level until it gets there.
 	level bool
-	// minimum, on a cleared approach, is the highest minimum altitude at the
-	// fixes up to fix: the lowest the aircraft may level at on its way there.
-	minimum float32
-	// descend is set on a cleared approach when the aircraft descends now,
-	// in a straight line to fix.
-	descend bool
 }
 
-// findAltitudeTarget scans waypoints to determine the target altitude and
-// fix, using the reverse-walk logic to satisfy all downstream altitude
-// constraints. Returns the target and true if found.
+// findAltitudeTarget returns the altitude restriction ahead that the
+// aircraft flies toward, if there is one.
 func (nav *Nav) findAltitudeTarget() (altitudeTarget, bool) {
-	// On a heading the route's fixes don't apply, except that a pilot
-	// cleared for a charted visual descends along the procedure it is
-	// joining.
-	if nav.Heading.Assigned != nil &&
-		(!nav.clearedForVisualApproach() || nav.Approach.Assigned.Type != av.ChartedVisualApproach) {
-		return altitudeTarget{}, false
+	if nav.Approach.Cleared {
+		t, ok := nav.approachAltitudeTarget()
+		return t.altitudeTarget, ok
 	}
+	return nav.routeAltitudeTarget()
+}
 
-	// Don't consider restrictions after an upcoming hold
+// waypointsToHold returns the route up to the fix of an upcoming hold:
+// restrictions after it don't apply yet.
+func (nav *Nav) waypointsToHold() []av.Waypoint {
 	wps := nav.Waypoints
 	for i := range wps {
 		if hold := nav.Heading.Hold; hold != nil && hold.Hold.Fix == wps[i].Fix {
-			wps = wps[:i+1]
-			break
+			return wps[:i+1]
 		}
 		if nfa, ok := nav.FixAssignments[wps[i].Fix]; ok && nfa.Hold != nil {
-			wps = wps[:i+1]
-			break
+			return wps[:i+1]
 		}
 	}
+	return wps
+}
 
+// routeAltitudeTarget scans waypoints to determine the target altitude and
+// fix, using the reverse-walk logic to satisfy all downstream altitude
+// constraints. Returns the target and true if found.
+func (nav *Nav) routeAltitudeTarget() (altitudeTarget, bool) {
+	// On a heading the route's fixes don't apply.
+	if nav.Heading.Assigned != nil {
+		return altitudeTarget{}, false
+	}
+
+	wps := nav.waypointsToHold()
 	if nav.Prespawn {
 		// Simplified forward scan for prespawn: find the first waypoint
 		// with an actionable restriction. Skips FixAssignment lookups
@@ -151,10 +156,6 @@ func (nav *Nav) findAltitudeTarget() (altitudeTarget, bool) {
 			return altitudeTarget{altitude: alt, fix: wps[i].Fix}, true
 		}
 		return altitudeTarget{}, false
-	}
-
-	if nav.Approach.Cleared {
-		return nav.approachAltitudeTarget(wps)
 	}
 
 	getRestriction := func(i int) *av.AltitudeRestriction { return nav.routeAltitudeRestriction(wps, i) }
@@ -306,8 +307,19 @@ func (nav *Nav) routeAltitudeRestriction(wps []av.Waypoint, i int) *av.AltitudeR
 	return ar
 }
 
+// approachTarget is what a pilot cleared for an approach descends toward.
+type approachTarget struct {
+	altitudeTarget
+	// minimum is the highest minimum altitude at the fixes up to fix: the
+	// lowest the aircraft may level at on its way there.
+	minimum float32
+	// descend is set when the aircraft descends now, in a straight line to
+	// fix.
+	descend bool
+}
+
 // approachAltitudeTarget returns what a pilot cleared for an approach
-// descends toward along wps: the final approach fix at its altitude, or, past
+// descends toward along its route: the final approach fix at its altitude, or, past
 // it or below it, the end of the approach. The restrictions on the way are
 // flown as charted: a minimum is the lowest the aircraft may be there, not an
 // altitude to descend to, and a restriction above the aircraft doesn't apply.
@@ -321,7 +333,14 @@ func (nav *Nav) routeAltitudeRestriction(wps []av.Waypoint, i int) *av.AltitudeR
 // waits there as a level one does. Until then, the target is the one whose
 // path it will meet first. Where the line would pass below a minimum, it
 // aims for that minimum instead.
-func (nav *Nav) approachAltitudeTarget(wps []av.Waypoint) (altitudeTarget, bool) {
+//
+// On a heading the approach's fixes don't apply, except that a pilot
+// cleared for a charted visual descends along the procedure it is joining.
+func (nav *Nav) approachAltitudeTarget() (approachTarget, bool) {
+	if nav.Heading.Assigned != nil && nav.Approach.Assigned.Type != av.ChartedVisualApproach {
+		return approachTarget{}, false
+	}
+	wps := nav.waypointsToHold()
 	alt := nav.FlightState.Altitude
 	type limit struct {
 		altitude, dist float32
@@ -353,7 +372,7 @@ func (nav *Nav) approachAltitudeTarget(wps []av.Waypoint) (altitudeTarget, bool)
 		}
 	}
 	if len(ceilings) == 0 {
-		return altitudeTarget{}, false
+		return approachTarget{}, false
 	}
 
 	gradient := func(l limit) float32 { return (alt - l.altitude) / l.dist }
@@ -384,7 +403,8 @@ func (nav *Nav) approachAltitudeTarget(wps []av.Waypoint) (altitudeTarget, bool)
 		return m
 	}
 	if aim == nil {
-		return altitudeTarget{altitude: next.altitude, fix: next.fix, minimum: minimum(next)}, true
+		return approachTarget{altitudeTarget: altitudeTarget{altitude: next.altitude, fix: next.fix},
+			minimum: minimum(next)}, true
 	}
 
 	g := gradient(*aim)
@@ -397,8 +417,8 @@ func (nav *Nav) approachAltitudeTarget(wps []av.Waypoint) (altitudeTarget, bool)
 	if floor != nil {
 		aim = floor
 	}
-	return altitudeTarget{altitude: aim.altitude, fix: aim.fix, level: aim.altitude == alt, minimum: minimum(*aim),
-		descend: true}, true
+	return approachTarget{altitudeTarget: altitudeTarget{altitude: aim.altitude, fix: aim.fix, level: aim.altitude == alt},
+		minimum: minimum(*aim), descend: true}, true
 }
 
 // descendingToClearedAltitude reports whether the aircraft's descent is one

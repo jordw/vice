@@ -469,100 +469,137 @@ func (nav *Nav) TargetAltitude() (float32, float32, bool) {
 		return *alt, rate, false
 	}
 
+	if nav.Approach.Cleared {
+		return nav.approachTargetAltitude(rate)
+	}
+	if target, ok := nav.routeAltitudeTarget(); ok {
+		return nav.routeTargetAltitude(target, rate)
+	}
+	return nav.untargetedAltitude(rate)
+}
+
+// routeTargetAltitude returns what TargetAltitude does for an aircraft
+// flying its route's restrictions toward target.
+func (nav *Nav) routeTargetAltitude(target altitudeTarget, rate float32) (float32, float32, bool) {
+	alt := nav.limitAltitude(target.altitude)
+	if target.level && alt == nav.FlightState.Altitude {
+		return alt, 0, false
+	}
+	if nav.FlightState.Altitude < target.altitude ||
+		(alt > target.altitude && alt >= nav.FlightState.Altitude) {
+		// Climbing, which starts immediately, or held at or climbing
+		// back to a floor above the restriction.
+		return alt, rate, false
+	}
+
+	// Descending: compute geometric descent rate. The profile is
+	// flown to the restriction; a cleared altitude above it only
+	// stops the descent early.
+	dist, ok := nav.routeDistanceToFix(target.fix)
+	eta := dist / nav.FlightState.GS * 3600
+	if ok && eta > 0 {
+		geometricRate := (nav.FlightState.Altitude - target.altitude) / eta * 60
+
+		altDiff := nav.FlightState.Altitude - target.altitude
+		descent := nav.Perf.Rate.Descent
+		// The AltitudeRate check fixes a case where we enter an oscillatory state of "start
+		// descent" / "no not yet" and end up descending too late to meet the restriction.
+		startDescent := geometricRate > descent/2 || nav.FlightState.AltitudeRate < -50
+
+		switch {
+		case nav.descendsOnGlidepath():
+			return alt, geometricRate, true // exact glideslope
+		case nav.Waypoints[0].VFRPhase == av.VFRPhaseDownwind:
+			if nav.PassedWaypoint.VFRPhase == av.VFRPhaseDownwind {
+				// A VFR aircraft on downwind descends steadily to
+				// the pattern's altitudes, starting abeam the
+				// threshold.
+				return alt, geometricRate, true
+			}
+			// On its way into the pattern, it descends at a normal
+			// VFR rate, starting in time to level off half a minute
+			// before the entry, and keeps on once it has started.
+			if altDiff/vfrDescentRate*60 >= eta-30 || nav.FlightState.AltitudeRate < -vfrDescentRate/2 {
+				return alt, max(geometricRate, vfrDescentRate), true
+			}
+		case startDescent:
+			// Dynamic safety factor: accounts for ramp-up deficit where
+			// updateAltitude takes ~13 ticks to reach full rate, causing
+			// ~descent/9 ft of lost altitude change. Scale the factor
+			// inversely with descent size so small descents get more margin.
+			rampUpSec := float32(1) / rateMaxDeltaPercent
+			rampUpDeficit := descent * rampUpSec / (2 * 60)
+			safetyFactor := min(float32(1)+rampUpDeficit/max(altDiff, 100), 1.5)
+			return alt, min(geometricRate*safetyFactor, descent), true
+		}
+	}
+
+	// Not time yet. A descent the controller gave, kept as a cleared
+	// altitude that is not a floor, is finished before a restriction
+	// carried from the fix behind, which would hold the aircraft where it
+	// is. A floor, as on a descend via, keeps the restriction first.
+	c := nav.Altitude.Cleared
+	controllerDescent := c != nil && !c.IsFloor && c.Altitude < nav.FlightState.Altitude
+	if ar := nav.Altitude.Restriction; ar != nil && !controllerDescent {
+		// The restriction carried forward from the fix behind us may
+		// be lower than what the route ahead requires (SID
+		// restrictions step up); it doesn't supersede the target.
+		// Nor does it ever take the aircraft back up: at the tail of
+		// a descent it would otherwise climb back toward the fix it
+		// has already passed.
+		held := min(max(ar.TargetAltitude(nav.FlightState.Altitude), target.altitude), nav.FlightState.Altitude)
+		return nav.limitAltitude(held), MaximumRate, false
+	}
+	if c != nil && c.Altitude < nav.FlightState.Altitude {
+		return c.Altitude, MaximumRate, false
+	}
+	return nav.FlightState.Altitude, 0, false
+}
+
+// approachTargetAltitude returns what TargetAltitude does for an aircraft
+// cleared for an approach that has no assigned altitude to hold. It
+// descends in a straight line once approachAltitudeTarget calls for it.
+// Until then it finishes a descent the controller gave it, but not below
+// the approach's minimums, or else a restriction it missed at the fix
+// behind it.
+func (nav *Nav) approachTargetAltitude(rate float32) (float32, float32, bool) {
 	if nav.clearedForVisualOnHeading() {
 		return nav.visualDescentFromHeading()
 	}
-
-	if target, ok := nav.findAltitudeTarget(); ok {
-		alt := nav.limitAltitude(target.altitude)
-		if target.level && alt == nav.FlightState.Altitude {
-			return alt, 0, false
-		}
-		if nav.FlightState.Altitude < target.altitude ||
-			(alt > target.altitude && alt >= nav.FlightState.Altitude) {
-			// Climbing, which starts immediately, or held at or climbing
-			// back to a floor above the restriction.
-			return alt, rate, false
-		} else {
-			// Descending: compute geometric descent rate. The profile is
-			// flown to the restriction; a cleared altitude above it only
-			// stops the descent early.
-			dist, ok := nav.routeDistanceToFix(target.fix)
-			eta := dist / nav.FlightState.GS * 3600
-			if ok && eta > 0 {
-				geometricRate := (nav.FlightState.Altitude - target.altitude) / eta * 60
-
-				altDiff := nav.FlightState.Altitude - target.altitude
-				descent := nav.Perf.Rate.Descent
-				// The AltitudeRate check fixes a case where we enter an oscillatory state of "start
-				// descent" / "no not yet" and end up descending too late to meet the restriction.
-				startDescent := geometricRate > descent/2 || nav.FlightState.AltitudeRate < -50
-
-				switch {
-				case nav.Approach.Cleared:
-					if target.descend {
-						return alt, geometricRate, true
-					}
-				case nav.descendsOnGlidepath():
-					return alt, geometricRate, true // exact glideslope
-				case nav.Waypoints[0].VFRPhase == av.VFRPhaseDownwind:
-					if nav.PassedWaypoint.VFRPhase == av.VFRPhaseDownwind {
-						// A VFR aircraft on downwind descends steadily to
-						// the pattern's altitudes, starting abeam the
-						// threshold.
-						return alt, geometricRate, true
-					}
-					// On its way into the pattern, it descends at a normal
-					// VFR rate, starting in time to level off half a minute
-					// before the entry, and keeps on once it has started.
-					if altDiff/vfrDescentRate*60 >= eta-30 || nav.FlightState.AltitudeRate < -vfrDescentRate/2 {
-						return alt, max(geometricRate, vfrDescentRate), true
-					}
-				case startDescent:
-					// Dynamic safety factor: accounts for ramp-up deficit where
-					// updateAltitude takes ~13 ticks to reach full rate, causing
-					// ~descent/9 ft of lost altitude change. Scale the factor
-					// inversely with descent size so small descents get more margin.
-					rampUpSec := float32(1) / rateMaxDeltaPercent
-					rampUpDeficit := descent * rampUpSec / (2 * 60)
-					safetyFactor := min(float32(1)+rampUpDeficit/max(altDiff, 100), 1.5)
-					return alt, min(geometricRate*safetyFactor, descent), true
-				}
-			}
-			// Not time yet. A descent the controller gave, kept as a
-			// cleared altitude that is not a floor, is finished before
-			// a restriction carried from the fix behind, which would
-			// hold the aircraft where it is. A floor, as on a descend
-			// via, keeps the restriction first.
-			c := nav.Altitude.Cleared
-			controllerDescent := c != nil && !c.IsFloor && c.Altitude < nav.FlightState.Altitude
-			if ar := nav.Altitude.Restriction; ar != nil && !controllerDescent {
-				// The restriction carried forward from the fix behind us may
-				// be lower than what the route ahead requires (SID
-				// restrictions step up); it doesn't supersede the target.
-				// Nor does it ever take the aircraft back up: at the tail of
-				// a descent it would otherwise climb back toward the fix it
-				// has already passed.
-				held := min(max(ar.TargetAltitude(nav.FlightState.Altitude), target.altitude, target.minimum),
-					nav.FlightState.Altitude)
-				return nav.limitAltitude(held), MaximumRate, false
-			}
-			if c != nil && c.Altitude < nav.FlightState.Altitude {
-				return min(max(c.Altitude, target.minimum), nav.FlightState.Altitude), MaximumRate, false
-			}
-			return nav.FlightState.Altitude, 0, false
-		}
+	target, ok := nav.approachAltitudeTarget()
+	if !ok {
+		return nav.untargetedAltitude(rate)
 	}
 
+	fs := &nav.FlightState
+	if target.level {
+		return fs.Altitude, 0, false
+	}
+	if target.descend {
+		dist, ok := nav.routeDistanceToFix(target.fix)
+		if eta := dist / fs.GS * 3600; ok && eta > 0 {
+			return target.altitude, (fs.Altitude - target.altitude) / eta * 60, true
+		}
+	}
+	if c := nav.Altitude.Cleared; c != nil && c.Altitude < fs.Altitude {
+		return min(max(c.Altitude, target.minimum), fs.Altitude), MaximumRate, false
+	}
+	if ar := nav.Altitude.Restriction; ar != nil {
+		return min(max(ar.TargetAltitude(fs.Altitude), target.altitude, target.minimum), fs.Altitude), MaximumRate, false
+	}
+	return fs.Altitude, 0, false
+}
+
+// untargetedAltitude returns what TargetAltitude does for an aircraft with
+// no restriction ahead to fly toward: it goes to its cleared altitude or
+// the restriction carried from the fix behind it, or else stays where it is.
+func (nav *Nav) untargetedAltitude(rate float32) (float32, float32, bool) {
 	if c := nav.Altitude.Cleared; c != nil {
 		return min(c.Altitude, nav.FinalAltitude), rate, false
 	}
-
 	if ar := nav.Altitude.Restriction; ar != nil {
 		return ar.TargetAltitude(nav.FlightState.Altitude), rate, false
 	}
-
-	// Baseline: stay where we are
 	return nav.FlightState.Altitude, 0, false
 }
 

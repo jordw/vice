@@ -588,9 +588,7 @@ func (nav *Nav) clearApproachAtFix(wp av.Waypoint) bool {
 		return false
 	}
 
-	nav.Approach.Cleared = true
-	nav.Speed = Speed{}
-	nav.clearFixSpeeds()
+	nav.applyClearedApproachState()
 	if wp.NoPT() || route[0].NoPT() {
 		nav.Approach.NoPT = true
 	}
