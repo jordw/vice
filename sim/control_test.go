@@ -691,6 +691,59 @@ func TestRunControlCommandsStaysOnFrequency(t *testing.T) {
 	}
 }
 
+// TestExecutionOrder checks that an altitude given after an approach
+// clearance in the same transmission runs before the clearance.
+func TestExecutionOrder(t *testing.T) {
+	s := NewTestSim(log.New(true, "error", t.TempDir()))
+	s.State.Controllers = map[ControlPosition]*av.Controller{"2B": {}}
+
+	tests := []struct {
+		commands string
+		want     []int
+	}{
+		{"CI22L A30", []int{1, 0}},
+		{"A30 CI22L", []int{0, 1}},
+		{"L090 CI22L D30 S180", []int{0, 2, 1, 3}},
+		{"CVA26 D50 C40", []int{1, 2, 0}},
+		{"CSI A30", []int{1, 0}},
+		{"CTTL A30", []int{1, 0}},
+		{"CT2B A30", []int{0, 1}},
+		{"CAC C40", []int{0, 1}},
+		{"AMATTY/CI22L A30", []int{0, 1}},
+		{"CMATTY/A30 A40", []int{0, 1}},
+	}
+	for _, tc := range tests {
+		if got := s.executionOrder(strings.Fields(tc.commands)); !slices.Equal(got, tc.want) {
+			t.Errorf("%s: order %v, want %v", tc.commands, got, tc.want)
+		}
+	}
+}
+
+// TestRunControlCommandsReadsBackInSpokenOrder checks that an altitude run
+// before the approach clearance it followed is still read back after it.
+func TestRunControlCommandsReadsBackInSpokenOrder(t *testing.T) {
+	s := NewTestSim(log.New(true, "error", t.TempDir()))
+	ac := MakeTestAircraft("AAL123", "22L")
+	ac.Nav.Perf = db.DB.AircraftPerformance["A320"]
+	ac.Nav.Approach.Assigned.FullName = "ILS Runway 22L"
+	hdg := math.MagneticHeading(220)
+	ac.Nav.Heading.Assigned = &hdg
+	s.Aircraft[ac.ADSBCallsign] = ac
+
+	res := s.RunAircraftControlCommands(E2ETCW(), ac.ADSBCallsign, "CI22L A40", 0, 0, "")
+	if res.Error != nil {
+		t.Fatal(res.Error)
+	}
+	rb := strings.ToLower(res.ReadbackSpokenText)
+	cleared, altitude := strings.Index(rb, "cleared"), strings.Index(rb, "thousand")
+	if cleared < 0 || altitude < cleared {
+		t.Errorf("readback %q: want the clearance, then the altitude", res.ReadbackSpokenText)
+	}
+	if want := (ControlTransmission{Commands: "CI22L A40"}); ac.ControlTransmissions[0] != want {
+		t.Errorf("recorded %+v, want %+v", ac.ControlTransmissions[0], want)
+	}
+}
+
 // TestRunControlCommandsRecordsTransmissions checks that each transmission's
 // commands are recorded up to any that fails, along with the transcript of
 // spoken ones.
