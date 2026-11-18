@@ -224,6 +224,11 @@ func (s *Sim) deleteAircraft(ac *Aircraft, reason DeleteReason) {
 			return pa.ADSBCallsign == ac.ADSBCallsign
 		})
 	}
+	for _, hs := range s.HoldingStacks {
+		hs.Aircraft = slices.DeleteFunc(hs.Aircraft, func(h HeldArrival) bool {
+			return h.Callsign == ac.ADSBCallsign
+		})
+	}
 
 	fp := ac.FlightPlan
 	if fp == nil {

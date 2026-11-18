@@ -98,7 +98,11 @@ type CommonState struct {
 	ArrivalRunways     []ArrivalRunway
 	HistoricalScenario bool
 	InboundFlows       map[string]*av.InboundFlow
-	Emergencies        []Emergency
+	// ArrivalHoldFixes gives, by inbound flow and then by arrival index, the
+	// fix where a virtual controller can hold the arrival; see
+	// Sim.arrivalHoldFix. Arrivals that can't be held are absent.
+	ArrivalHoldFixes map[string]map[int]string
+	Emergencies      []Emergency
 
 	Center                    math.Point2LL
 	Range                     float32

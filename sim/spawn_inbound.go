@@ -7,6 +7,7 @@ package sim
 import (
 	"fmt"
 	gomath "math"
+	"slices"
 	"time"
 
 	av "github.com/mmp/vice/aviation"
@@ -55,6 +56,7 @@ func (s *Sim) createScheduledArrival(e ScheduledArrival) (*Aircraft, error) {
 	if err := s.finalizeArrival(ac, arr, filedRoute, e.Group); err != nil {
 		return nil, err
 	}
+	s.joinHoldingStack(ac, e.Group, e.Index)
 	return ac, nil
 }
 
@@ -400,4 +402,251 @@ func (s *Sim) associateAtSpawn(ac *Aircraft, nasFp FlightPlan) error {
 		ACID: fp.ACID,
 	})
 	return nil
+}
+
+///////////////////////////////////////////////////////////////////////////
+// Holding
+
+// maxHeldArrivals is how many arrivals a holding stack takes; arrivals that
+// would join a full one wait to spawn.
+const maxHeldArrivals = 5
+
+// holdingAreaNM is how far from its fix a hold takes an aircraft: a 1.5
+// minute leg at 265 knots and the turn at its end.
+const holdingAreaNM = 9
+
+// HoldingStack is a virtual controller's stack of arrivals holding at a
+// fix, 1,000' apart. Each arrival joins at the top, and those already
+// there step down to make room for it; when the holding ends, they leave
+// from the bottom up.
+type HoldingStack struct {
+	Hold     av.Hold
+	Location math.Point2LL
+	// Top is the altitude the newest arrival holds at: no higher than any
+	// of the arrivals would hold at on its own, so none climbs to join.
+	Top float32
+	// Floor is the lowest altitude the hold may be flown at: its charted
+	// minimum and 1,000' above the terrain.
+	Floor float32
+	// Aircraft are the arrivals in the stack in the order they joined, so
+	// the first is at the bottom.
+	Aircraft []HeldArrival
+	// Left is the last arrival to leave; the next one is cleared out of
+	// the hold once it is clear of the fix.
+	Left av.ADSBCallsign
+}
+
+// HeldArrival is an arrival in a holding stack.
+type HeldArrival struct {
+	Callsign av.ADSBCallsign
+	Altitude float32
+	Released bool // it has been cleared out of the hold
+}
+
+// hasRoom reports whether the stack can take another arrival with its top
+// at top.
+func (hs *HoldingStack) hasRoom(top float32) bool {
+	n := len(hs.Aircraft)
+	return n < maxHeldArrivals && top-1000*float32(n) >= hs.Floor
+}
+
+// findArrivalHoldFixes finds the fix where each of the scenario's arrivals
+// can be held.
+func (s *Sim) findArrivalHoldFixes() map[string]map[int]string {
+	fixes := make(map[string]map[int]string)
+	for name, flow := range s.State.InboundFlows {
+		for i := range flow.Arrivals {
+			arr := &flow.Arrivals[i]
+			if j := s.arrivalHoldFix(arr); j != -1 {
+				if fixes[name] == nil {
+					fixes[name] = make(map[int]string)
+				}
+				fixes[name][i] = arr.Waypoints[j].Fix
+			}
+		}
+	}
+	return fixes
+}
+
+// arrivalHoldFix returns the index of the waypoint where a virtual
+// controller can hold arrivals flying arr: the first fix past the spawn
+// point, if a virtual controller still has the track there. It returns -1
+// if a human controller has it by then or the route leaves for a heading
+// before reaching a fix.
+func (s *Sim) arrivalHoldFix(arr *av.Arrival) int {
+	if !s.isVirtualController(arr.InitialController) {
+		return -1
+	}
+	toHuman := func(g av.WaypointActionGroup) bool {
+		return g.Actions.HumanHandoff ||
+			(g.Actions.HandoffController != "" && !s.isVirtualController(g.Actions.HandoffController))
+	}
+	for i, wp := range arr.Waypoints {
+		if _, ok := db.DB.LookupWaypoint(wp.Fix); ok && i > 0 {
+			return i
+		}
+		// The handoffs at a fix are made as the aircraft passes it, so one
+		// at the holding fix waits until the aircraft leaves the hold.
+		if slices.ContainsFunc(wp.ActionGroups(), toHuman) || wp.AssignsHeading() {
+			return -1
+		}
+	}
+	return -1
+}
+
+// arrivalHold returns the hold that arrivals flying arr fly at its ith
+// waypoint when the stack's top is at alt: one charted there, preferably
+// for alt, or else a standard hold on the course into the fix.
+func (s *Sim) arrivalHold(arr *av.Arrival, i int, alt float32) av.Hold {
+	fix := arr.Waypoints[i].Fix
+	holds := db.DB.EnrouteHolds[fix]
+	if j := slices.IndexFunc(holds, func(h av.Hold) bool {
+		return alt >= float32(h.MinimumAltitude) && (h.MaximumAltitude == 0 || alt <= float32(h.MaximumAltitude))
+	}); j != -1 {
+		return holds[j]
+	} else if len(holds) > 0 {
+		return holds[0]
+	}
+
+	course := math.Heading2LL(arr.Waypoints[i-1].Location, arr.Waypoints[i].Location, s.State.NmPerLongitude)
+	return av.Hold{
+		Fix:           fix,
+		InboundCourse: math.TrueToMagnetic(course, s.State.MagneticVariation),
+		TurnDirection: av.TurnRight,
+	}
+}
+
+// holdingStackFull reports whether the arrival would join a holding stack
+// that has no room for it.
+func (s *Sim) holdingStackFull(group string, index int) bool {
+	fix, ok := s.State.ArrivalHoldFixes[group][index]
+	if !ok {
+		return false
+	}
+	hs, ok := s.HoldingStacks[fix]
+	return ok && !hs.hasRoom(hs.Top)
+}
+
+// joinHoldingStack has a newly created arrival hold at its holding fix if
+// center is holding arrivals there or still has some there in its stack.
+// It joins the stack at the top, holding at the altitude it spawned at or
+// lower if it is to cross the fix lower, and the arrivals already there
+// step down to make room. One that there is no room for flies on.
+func (s *Sim) joinHoldingStack(ac *Aircraft, group string, index int) {
+	arr := &s.State.InboundFlows[group].Arrivals[index]
+	i := s.arrivalHoldFix(arr)
+	if i == -1 {
+		return
+	}
+	fix := arr.Waypoints[i].Fix
+	hs, ok := s.HoldingStacks[fix]
+	if !ok && !s.State.LaunchConfig.ArrivalHolds[fix] {
+		return
+	}
+
+	alt := ac.Altitude()
+	if ar := arr.Waypoints[i].AltitudeRestriction(); ar != nil {
+		alt = min(alt, ar.Range[1])
+	}
+	if !ok {
+		hold := s.arrivalHold(arr, i, alt)
+		terrain := s.terrain.HighestTerrainIn(math.BoundLatLongCircle(arr.Waypoints[i].Location, holdingAreaNM))
+		hs = &HoldingStack{
+			Hold:     hold,
+			Location: arr.Waypoints[i].Location,
+			Top:      alt,
+			Floor:    float32(max(hold.MinimumAltitude, terrain+1000)),
+		}
+	}
+	top := min(hs.Top, alt)
+	if !hs.hasRoom(top) {
+		return
+	}
+
+	hs.Top = top
+	n := len(hs.Aircraft)
+	for j := range hs.Aircraft {
+		s.lowerHeldArrival(&hs.Aircraft[j], top-1000*float32(n-j))
+	}
+	ac.Nav.HoldAtFix(string(ac.ADSBCallsign), fix, &hs.Hold)
+	s.assignHoldingAltitude(ac, top)
+	hs.Aircraft = append(hs.Aircraft, HeldArrival{Callsign: ac.ADSBCallsign, Altitude: top})
+
+	if s.HoldingStacks == nil {
+		s.HoldingStacks = make(map[string]*HoldingStack)
+	}
+	s.HoldingStacks[fix] = hs
+}
+
+// lowerHeldArrival has the held arrival descend to alt if it is holding
+// higher; held arrivals never climb.
+func (s *Sim) lowerHeldArrival(h *HeldArrival, alt float32) {
+	if alt >= h.Altitude {
+		return
+	}
+	h.Altitude = alt
+	if ac := s.inboundAircraft(h.Callsign); ac != nil {
+		s.assignHoldingAltitude(ac, alt)
+	}
+}
+
+func (s *Sim) assignHoldingAltitude(ac *Aircraft, alt float32) {
+	defer ac.commandsFrom(string(ac.ControllerFrequency), false)()
+	ac.Nav.AssignAltitudeNow(alt, false)
+	s.recordVirtualAltitudeEntry(ac.FlightPlan, ac.ControllerFrequency, int(alt), false)
+}
+
+// inboundAircraft returns the aircraft with the callsign, whether it is in
+// the sim or waiting at its spawn point to enter it.
+func (s *Sim) inboundAircraft(callsign av.ADSBCallsign) *Aircraft {
+	if ac, ok := s.Aircraft[callsign]; ok {
+		return ac
+	}
+	for _, r := range s.ReadyInbounds {
+		if r.Aircraft.ADSBCallsign == callsign {
+			return r.Aircraft
+		}
+	}
+	return nil
+}
+
+// updateHoldingStacks drops the arrivals that have left their holding
+// stacks and the stacks left empty. Where center has stopped holding, the
+// arrivals are cleared out of the hold one at a time from the bottom.
+func (s *Sim) updateHoldingStacks() {
+	for _, fix := range util.SortedMapKeys(s.HoldingStacks) {
+		hs := s.HoldingStacks[fix]
+		hs.Aircraft = slices.DeleteFunc(hs.Aircraft, func(h HeldArrival) bool {
+			// One waiting to enter the sim is still to come.
+			ac, ok := s.Aircraft[h.Callsign]
+			left := ok && !ac.Nav.HoldingAt(fix)
+			if left {
+				hs.Left = h.Callsign
+			}
+			return left
+		})
+
+		if len(hs.Aircraft) == 0 {
+			delete(s.HoldingStacks, fix)
+		} else if !s.State.LaunchConfig.ArrivalHolds[fix] {
+			s.releaseHeldArrival(fix, hs)
+		}
+	}
+}
+
+// releaseHeldArrival clears the arrival at the bottom of the stack out of
+// the hold once the last one to leave is minArrivalTrailNM from the fix.
+func (s *Sim) releaseHeldArrival(fix string, hs *HoldingStack) {
+	h := &hs.Aircraft[0]
+	ac, ok := s.Aircraft[h.Callsign]
+	if !ok || h.Released {
+		return
+	}
+	if prev, ok := s.Aircraft[hs.Left]; ok && math.NMDistance2LL(prev.Position(), hs.Location) < minArrivalTrailNM {
+		return
+	}
+
+	defer ac.commandsFrom(string(ac.ControllerFrequency), false)()
+	ac.Nav.LeaveHold(fix)
+	h.Released = true
 }

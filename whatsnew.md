@@ -1,5 +1,6 @@
 - Scenario updates: BIL (Ryan C), ZAB (Ketan K)
 - Major rewrite of speech-to-text processing as well as opt-in transmission recording
+- Center can now be asked to hold arrivals
 - Flight model
   - CWT separation is enforced when spawning arrivals and overflights
   - Improved visual approach intercepts when feeder legs are present

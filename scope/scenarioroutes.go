@@ -123,10 +123,12 @@ func joinWrapped[S ~string](items []S, width int) string {
 	return b.String()
 }
 
-// tableColumn is a column of one of the scenario info window's tables.
+// tableColumn is a column of one of the scenario info window's tables. If
+// draw is set, it draws a row's cell in place of its text.
 type tableColumn[T any] struct {
 	name string
 	text func(T) string
+	draw func(T)
 }
 
 // drawSelectionTable draws a table of rows, each led by a checkbox that
@@ -170,7 +172,13 @@ func drawSelectionTable[T any](id string, rows []T, check func(T), cols ...table
 				continue
 			}
 			imgui.TableNextColumn()
-			imgui.Text(util.Select(text[i][j] == "", "--", text[i][j]))
+			if text[i][j] == "" {
+				imgui.Text("--")
+			} else if cols[j].draw != nil {
+				cols[j].draw(r)
+			} else {
+				imgui.Text(text[i][j])
+			}
 		}
 	}
 }
@@ -204,16 +212,33 @@ func (rd *RouteDrawer) drawArrivalsUI(c *client.ControlClient) {
 		}
 	}
 
+	holdFix := func(r row) string { return c.State.ArrivalHoldFixes[r.flow][r.index] }
 	drawSelectionTable("arr", rows,
 		func(r row) {
 			enabled := rd.arrivals[r.flow][r.index]
 			imgui.Checkbox(fmt.Sprintf("##arr-%s-%d", r.flow, r.index), &enabled)
 			rd.arrivals[r.flow][r.index] = enabled
 		},
-		tableColumn[row]{"Arrival", func(r row) string { return r.flow }},
-		tableColumn[row]{"Airport(s)", func(r row) string { return joinWrapped(r.arr.Airports, listWrapWidth) }},
-		tableColumn[row]{"Aircraft", func(r row) string { return r.arr.Aircraft.String() }},
-		tableColumn[row]{"Description", func(r row) string { return r.arr.Description }})
+		tableColumn[row]{name: "Hold", text: holdFix, draw: func(r row) {
+			// Arrivals that share a holding fix share its stack, so
+			// they are held together.
+			fix := holdFix(r)
+			lc := c.State.LaunchConfig
+			held := lc.ArrivalHolds[fix]
+			if imgui.Checkbox(fmt.Sprintf("%s##hold-%s-%d", fix, r.flow, r.index), &held) {
+				if lc.ArrivalHolds == nil {
+					lc.ArrivalHolds = make(map[string]bool)
+				}
+				lc.ArrivalHolds[fix] = held
+				c.SetLaunchConfig(lc)
+			}
+		}},
+		tableColumn[row]{name: "Arrival", text: func(r row) string { return r.flow }},
+		tableColumn[row]{name: "Airport(s)", text: func(r row) string {
+			return joinWrapped(r.arr.Airports, listWrapWidth)
+		}},
+		tableColumn[row]{name: "Aircraft", text: func(r row) string { return r.arr.Aircraft.String() }},
+		tableColumn[row]{name: "Description", text: func(r row) string { return r.arr.Description }})
 }
 
 func (rd *RouteDrawer) drawApproachesUI(c *client.ControlClient, lg *log.Logger) {
@@ -255,11 +280,11 @@ func (rd *RouteDrawer) drawApproachesUI(c *client.ControlClient, lg *log.Logger)
 			imgui.Checkbox("##enable-"+string(r.airport)+"-"+string(r.runway)+"-"+r.name, &enabled)
 			rd.approaches[r.airport][r.name] = enabled
 		},
-		tableColumn[row]{"Airport", func(r row) string { return string(r.airport) }},
-		tableColumn[row]{"Runway", func(r row) string { return string(r.runway) }},
-		tableColumn[row]{"Code", func(r row) string { return r.name }},
-		tableColumn[row]{"Description", func(r row) string { return r.appr.FullName }},
-		tableColumn[row]{"FAF", func(r row) string {
+		tableColumn[row]{name: "Airport", text: func(r row) string { return string(r.airport) }},
+		tableColumn[row]{name: "Runway", text: func(r row) string { return string(r.runway) }},
+		tableColumn[row]{name: "Code", text: func(r row) string { return r.name }},
+		tableColumn[row]{name: "Description", text: func(r row) string { return r.appr.FullName }},
+		tableColumn[row]{name: "FAF", text: func(r row) string {
 			if i := slices.IndexFunc(r.appr.Waypoints[0], func(wp av.Waypoint) bool { return wp.FAF() }); i != -1 {
 				return r.appr.Waypoints[0][i].Fix
 			}
@@ -334,12 +359,18 @@ func (rd *RouteDrawer) drawDeparturesUI(c *client.ControlClient) {
 				r.group.Aircraft.String(), &enabled)
 			rd.departures[r.airport][r.group] = enabled
 		},
-		tableColumn[departureRow]{"Airport", func(r departureRow) string { return string(r.airport) }},
-		tableColumn[departureRow]{"SID", func(r departureRow) string { return r.group.SID }},
-		tableColumn[departureRow]{"Aircraft", func(r departureRow) string { return r.group.Aircraft.String() }},
-		tableColumn[departureRow]{"Runways", func(r departureRow) string { return strings.Join(r.runways, ", ") }},
-		tableColumn[departureRow]{"Exits", func(r departureRow) string { return joinWrapped(r.exits, listWrapWidth) }},
-		tableColumn[departureRow]{"Description", func(r departureRow) string {
+		tableColumn[departureRow]{name: "Airport", text: func(r departureRow) string { return string(r.airport) }},
+		tableColumn[departureRow]{name: "SID", text: func(r departureRow) string { return r.group.SID }},
+		tableColumn[departureRow]{name: "Aircraft", text: func(r departureRow) string {
+			return r.group.Aircraft.String()
+		}},
+		tableColumn[departureRow]{name: "Runways", text: func(r departureRow) string {
+			return strings.Join(r.runways, ", ")
+		}},
+		tableColumn[departureRow]{name: "Exits", text: func(r departureRow) string {
+			return joinWrapped(r.exits, listWrapWidth)
+		}},
+		tableColumn[departureRow]{name: "Description", text: func(r departureRow) string {
 			return strings.Join(r.descriptions, " / ")
 		}})
 }
@@ -379,8 +410,8 @@ func (rd *RouteDrawer) drawOverflightsUI(c *client.ControlClient) {
 			imgui.Checkbox(fmt.Sprintf("##of-%s-%d", r.flow, r.index), &enabled)
 			rd.overflights[r.flow][r.index] = enabled
 		},
-		tableColumn[row]{"Overflight", func(r row) string { return r.flow }},
-		tableColumn[row]{"Description", func(r row) string { return r.of.Description }})
+		tableColumn[row]{name: "Overflight", text: func(r row) string { return r.flow }},
+		tableColumn[row]{name: "Description", text: func(r row) string { return r.of.Description }})
 }
 
 func (rd *RouteDrawer) drawAirspaceUI(c *client.ControlClient) {

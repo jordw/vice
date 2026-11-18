@@ -82,6 +82,9 @@ type Sim struct {
 	// been created but waits at its spawn point for separation from the
 	// flow's last launch.
 	ReadyInbounds map[string]ReadyInbound
+	// HoldingStacks holds the arrivals virtual controllers are holding, by
+	// holding fix.
+	HoldingStacks map[string]*HoldingStack
 	// Airport -> pattern state
 	PatternState   map[av.ICAOAirportCode]*PatternState
 	NextVFFRequest Time
@@ -365,6 +368,7 @@ func NewSim(config NewSimConfiguration, lg *log.Logger) *Sim {
 
 	s.State = newCommonState(config, config.StartTime.UTC(), s.wxModel, s.METAR, s.Rand, lg)
 	s.ScenarioDefaultConsolidation = config.ControllerConfiguration.DefaultConsolidation
+	s.State.ArrivalHoldFixes = s.findArrivalHoldFixes()
 
 	return s
 }

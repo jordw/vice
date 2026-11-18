@@ -5,16 +5,19 @@
 package sim
 
 import (
+	"encoding/json"
 	"fmt"
 	"slices"
 	"testing"
 	"time"
 
 	av "github.com/mmp/vice/aviation"
+	"github.com/mmp/vice/aviation/db"
 	"github.com/mmp/vice/math"
 	"github.com/mmp/vice/nav"
 	"github.com/mmp/vice/traffic"
 	"github.com/mmp/vice/util"
+	"github.com/mmp/vice/wx"
 )
 
 // A flight at an airport the scenario lands no traffic at must not hold up the
@@ -571,5 +574,244 @@ func TestSetInboundERAMAltitudes(t *testing.T) {
 				t.Errorf("data block altitude %d, expected %d", fp.DataBlockAltitude(), tc.expected)
 			}
 		})
+	}
+}
+
+// holdTestSim returns a sim whose TEST flow has one arrival, flying route
+// worked by ZNY, a virtual controller, unless initial gives the controller
+// it starts with. N90 is the human position.
+func holdTestSim(t *testing.T, route string, initial ControlPosition) *Sim {
+	t.Helper()
+	b, _ := json.Marshal(route)
+	var wps av.WaypointArray
+	if err := json.Unmarshal(b, &wps); err != nil {
+		t.Fatalf("%s: %v", route, err)
+	}
+	for i := range wps {
+		wps[i].Location, _ = db.DB.LookupWaypoint(wps[i].Fix)
+	}
+
+	s := NewTestSim(testLogger())
+	s.ControlPositions = map[TCP]*av.Controller{"ZNY": {}, "ZOB": {}, "N90": {}}
+	s.ScenarioDefaultConsolidation = PositionConsolidation{"N90": nil}
+	s.STARSComputer = makeSTARSComputer("N90")
+	s.terrain = (&db.Terrain{}).MakeGrid()
+	s.State.NmPerLongitude = 45
+	s.State.InboundFlows = map[string]*av.InboundFlow{"TEST": {Arrivals: []av.Arrival{{
+		Waypoints:         wps,
+		InitialController: util.Select(initial != "", initial, "ZNY"),
+		Airports:          []av.ICAOAirportCode{"KEWR"},
+	}}}}
+	s.State.ArrivalHoldFixes = s.findArrivalHoldFixes()
+	return s
+}
+
+// spawnHoldTestArrival creates an arrival on the TEST flow at alt, joining
+// the holding stack as a scheduled one would.
+func spawnHoldTestArrival(t *testing.T, s *Sim, callsign av.ADSBCallsign, alt int) *Aircraft {
+	t.Helper()
+	arr := s.State.InboundFlows["TEST"].Arrivals[0]
+	arr.InitialAltitudes = []int{alt}
+	n := nav.MakeArrivalNav(callsign, &arr, "KATL", "KEWR", 35000, db.DB.AircraftPerformance["B738"],
+		nav.BriefPilotDelays, false, s.State.NmPerLongitude, s.State.MagneticVariation, s.wxModel,
+		s.State.SimTime.NavTime(), s.Rand, s.lg)
+	if n == nil {
+		t.Fatalf("%s: no nav", callsign)
+	}
+	ac := &Aircraft{ADSBCallsign: callsign, TypeOfFlight: av.FlightTypeArrival, ControllerFrequency: "ZNY",
+		ArrivalAirport: "KEWR", Nav: *n}
+	s.joinHoldingStack(ac, "TEST", 0)
+	s.Aircraft[callsign] = ac
+	return ac
+}
+
+func assignedAltitudeOf(ac *Aircraft) float32 {
+	if alt := ac.Nav.Altitude.Assigned; alt != nil {
+		return *alt
+	}
+	return 0
+}
+
+// An arrival is held at the first fix in the database past its spawn
+// point, so long as no human controller has the track by then.
+func TestArrivalHoldFix(t *testing.T) {
+	for _, tc := range []struct {
+		route   string
+		initial ControlPosition
+		fix     string
+	}{
+		{route: "HAYED RACKI PENNS", fix: "RACKI"},
+		{route: "HAYED RACKI PENNS", initial: "N90"},
+		{route: "HAYED/ho RACKI PENNS"},
+		{route: "HAYED/hoN90 RACKI PENNS"},
+		{route: "HAYED/hoZOB RACKI PENNS", fix: "RACKI"},
+		{route: "HAYED RACKI/ho PENNS", fix: "RACKI"},
+		{route: "HAYED _HAYED_RACKI RACKI PENNS", fix: "RACKI"},
+		{route: "HAYED _HAYED_RACKI/ho RACKI PENNS"},
+		{route: "HAYED/h090 RACKI PENNS"},
+	} {
+		s := holdTestSim(t, tc.route, tc.initial)
+		if fix := s.State.ArrivalHoldFixes["TEST"][0]; fix != tc.fix {
+			t.Errorf("%s (%s): held at %q, expected %q", tc.route, tc.initial, fix, tc.fix)
+		}
+	}
+}
+
+// Each arrival joins the stack at the top while those already there step
+// down 1,000'; a full stack stops the arrivals that would join it from
+// spawning. When the holding ends, they leave from the bottom up, each
+// once the one before it is clear of the fix, and arrivals that spawn in
+// the meantime still join the stack.
+func TestHoldingStack(t *testing.T) {
+	s := holdTestSim(t, "HAYED RACKI PENNS SWEET", "")
+	s.State.LaunchConfig.ArrivalHolds = map[string]bool{"RACKI": true}
+
+	var held []*Aircraft
+	for i := range maxHeldArrivals {
+		held = append(held, spawnHoldTestArrival(t, s, av.ADSBCallsign(fmt.Sprintf("DAL%d", i+1)), 12000))
+		for j, ac := range held {
+			if alt, want := assignedAltitudeOf(ac), float32(12000-1000*(i-j)); alt != want {
+				t.Errorf("%d holding: %s assigned %.0f, expected %.0f", i+1, ac.ADSBCallsign, alt, want)
+			}
+			if !ac.Nav.HoldingAt("RACKI") {
+				t.Errorf("%s not holding at RACKI", ac.ADSBCallsign)
+			}
+		}
+	}
+	hold := s.HoldingStacks["RACKI"].Hold
+	if hold.TurnDirection != av.TurnRight || hold.LegMinutes != 0 || hold.LegLengthNM != 0 {
+		t.Errorf("RACKI has no charted hold, but holding in %+v", hold)
+	}
+
+	if !s.holdingStackFull("TEST", 0) {
+		t.Error("stack of five not full")
+	}
+	s.Schedule.Arrivals = []ScheduledArrival{{
+		ScheduledFlight: ScheduledFlight{Callsign: "DAL9", AircraftType: "B738", DepartureAirport: "KATL",
+			ArrivalAirport: "KEWR", SpawnTime: s.State.SimTime}, Group: "TEST"}}
+	s.spawnScheduledArrivals()
+	if len(s.Schedule.Arrivals) != 1 {
+		t.Error("arrival for a full stack was spawned")
+	}
+	if extra := spawnHoldTestArrival(t, s, "DAL6", 12000); extra.Nav.HoldingAt("RACKI") {
+		t.Error("sixth arrival is holding")
+	}
+
+	s.State.LaunchConfig.ArrivalHolds["RACKI"] = false
+	fix := s.HoldingStacks["RACKI"].Location
+	held[0].Nav.FlightState.Position = fix
+	s.updateHoldingStacks()
+	if held[0].Nav.HoldingAt("RACKI") || !held[1].Nav.HoldingAt("RACKI") {
+		t.Error("the bottom arrival wasn't the only one to be released")
+	}
+	s.updateHoldingStacks()
+	if !held[1].Nav.HoldingAt("RACKI") {
+		t.Error("released the next arrival with the one before it still at the fix")
+	}
+	held[0].Nav.FlightState.Position = math.Offset2LL(fix, 90, minArrivalTrailNM+1, s.State.NmPerLongitude)
+	s.updateHoldingStacks()
+	if held[1].Nav.HoldingAt("RACKI") || !held[2].Nav.HoldingAt("RACKI") {
+		t.Error("didn't release the next arrival once the one before it was clear of the fix")
+	}
+
+	// DAL2 is on its way out but still in the hold.
+	late := spawnHoldTestArrival(t, s, "DAL7", 12000)
+	for i, ac := range []*Aircraft{held[1], held[2], held[3], held[4], late} {
+		if alt, want := assignedAltitudeOf(ac), float32(8000+1000*i); alt != want {
+			t.Errorf("after DAL7 joined: %s assigned %.0f, expected %.0f", ac.ADSBCallsign, alt, want)
+		}
+	}
+
+	s.deleteAircraft(held[3], DeleteByController)
+	if slices.ContainsFunc(s.HoldingStacks["RACKI"].Aircraft, func(h HeldArrival) bool { return h.Callsign == "DAL4" }) {
+		t.Error("deleted aircraft still in the stack")
+	}
+
+	for _, ac := range []*Aircraft{held[1], held[2], held[4], late} {
+		ac.Nav.LeaveHold("RACKI")
+	}
+	s.updateHoldingStacks()
+	if _, ok := s.HoldingStacks["RACKI"]; ok {
+		t.Error("empty stack remains")
+	}
+	if ac := spawnHoldTestArrival(t, s, "DAL8", 12000); ac.Nav.HoldingAt("RACKI") {
+		t.Error("arrival held after the stack emptied")
+	}
+}
+
+// A stack starts at the altitude its arrival is to cross the fix at, holds
+// as charted, and never goes below the charted minimum; a later arrival
+// that spawns lower brings the stack down under it.
+func TestHoldingStackAltitudes(t *testing.T) {
+	s := holdTestSim(t, "RACKI PENNS/a11000 SWEET", "")
+	s.State.LaunchConfig.ArrivalHolds = map[string]bool{"PENNS": true}
+	dal1 := spawnHoldTestArrival(t, s, "DAL1", 12000)
+	if alt := assignedAltitudeOf(dal1); alt != 11000 {
+		t.Errorf("holding at %.0f, not the 11,000 restriction", alt)
+	}
+	if hold := s.HoldingStacks["PENNS"].Hold; hold.InboundCourse != 122 || hold.LegMinutes != 1 {
+		t.Errorf("not holding as charted at PENNS: %+v", hold)
+	}
+	dal2 := spawnHoldTestArrival(t, s, "DAL2", 5000)
+	if a1, a2 := assignedAltitudeOf(dal1), assignedAltitudeOf(dal2); a1 != 4000 || a2 != 5000 {
+		t.Errorf("assigned %.0f and %.0f, expected 4000 and 5000", a1, a2)
+	}
+	if !s.holdingStackFull("TEST", 0) {
+		t.Error("stack not full above the charted 3,100' minimum")
+	}
+}
+
+// Held arrivals enter the hold and fly it until released; then the bottom
+// one leaves first and continues along its route.
+func TestHeldArrivalsLeaveBottomFirst(t *testing.T) {
+	s := holdTestSim(t, "HAYED RACKI PENNS SWEET", "")
+	s.State.LaunchConfig.ArrivalHolds = map[string]bool{"RACKI": true}
+	pRACKI, _ := db.DB.LookupWaypoint("RACKI")
+
+	step := func(seconds int) {
+		for range seconds {
+			s.State.SimTime = s.State.SimTime.Add(time.Second)
+			for ac := range util.SortedMapValues(s.Aircraft) {
+				ac.Nav.UpdateWithWeather(string(ac.ADSBCallsign), wx.MakeStandardSampleForAltitude(ac.Altitude()),
+					nil, av.FlightRulesIFR, s.State.SimTime.NavTime(), false)
+			}
+			s.updateHoldingStacks()
+		}
+	}
+	stepUntil := func(what string, done func() bool) {
+		for range 1800 {
+			if done() {
+				return
+			}
+			step(1)
+		}
+		t.Fatalf("%s never happened", what)
+	}
+
+	dal1 := spawnHoldTestArrival(t, s, "DAL1", 12000)
+	step(90)
+	dal2 := spawnHoldTestArrival(t, s, "DAL2", 12000)
+	stepUntil("DAL2 reached RACKI", func() bool {
+		return dal2.Nav.Heading.Hold != nil && math.NMDistance2LL(dal2.Position(), pRACKI) < 1
+	})
+	step(600)
+	if dal1.Nav.Heading.Hold == nil || math.Abs(dal1.Altitude()-11000) > 50 || math.Abs(dal2.Altitude()-12000) > 50 {
+		t.Fatalf("not holding at 11,000 and 12,000: %.0f, %.0f", dal1.Altitude(), dal2.Altitude())
+	}
+
+	s.State.LaunchConfig.ArrivalHolds["RACKI"] = false
+	stepUntil("DAL1 left the hold", func() bool { return !dal1.Nav.HoldingAt("RACKI") })
+	if !dal2.Nav.HoldingAt("RACKI") {
+		t.Error("DAL2 left the hold with DAL1")
+	}
+	if d := math.NMDistance2LL(dal1.Position(), pRACKI); d > 1 {
+		t.Errorf("DAL1 left the hold %.1fnm from RACKI", d)
+	}
+	stepUntil("DAL2 left the hold", func() bool { return !dal2.Nav.HoldingAt("RACKI") })
+	if d := math.NMDistance2LL(dal1.Position(), pRACKI); d < minArrivalTrailNM {
+		t.Errorf("DAL2 left the hold %.1fnm behind DAL1", d)
+	}
+	if dal1.Nav.Waypoints[0].Fix != "PENNS" {
+		t.Errorf("DAL1 is flying to %s, not PENNS", dal1.Nav.Waypoints[0].Fix)
 	}
 }

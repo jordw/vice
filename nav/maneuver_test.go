@@ -905,3 +905,70 @@ func holdCircuitStepStrings(t *testing.T, hold *FlyHold) (string, string, string
 	}
 	return hold.Maneuvers[0].String(), hold.Maneuvers[1].String(), hold.Maneuvers[2].String()
 }
+
+// holdTestFlight is an arrival that is to hold at PENNS, with RACKI before
+// it and SWEET after.
+func holdTestFlight(t *testing.T) *FlightTest {
+	f := NewArrivalFlight(t, ArrivalConfig{
+		Waypoints:        "RACKI PENNS SWEET BWZ",
+		DepartureAirport: "KATL",
+		ArrivalAirport:   "KEWR",
+		AircraftType:     "B738",
+		InitialAltitude:  11000,
+		InitialSpeed:     250,
+		AssignedAltitude: 11000,
+	})
+	f.nav.HoldAtFix(f.callsign, "PENNS", &av.Hold{
+		Fix:           "PENNS",
+		InboundCourse: 122,
+		TurnDirection: av.TurnRight,
+		LegMinutes:    1,
+	})
+	return f
+}
+
+// An aircraft told to leave its hold finishes the lap it is flying and
+// leaves at the holding fix, continuing along its route from there.
+func TestLeaveHoldFinishesLap(t *testing.T) {
+	f := holdTestFlight(t)
+	pPENNS, _ := db.DB.LookupWaypoint("PENNS")
+
+	distance := func() float32 { return math.NMDistance2LL(f.nav.FlightState.Position, pPENNS) }
+	f.StepUntil("reached PENNS", func() bool { return distance() < 0.5 })
+	f.StepUntil("flew outbound", func() bool { return distance() > 3 })
+
+	f.nav.LeaveHold("PENNS")
+	if !f.nav.HoldingAt("PENNS") {
+		t.Fatal("left the hold on the outbound leg")
+	}
+	f.StepUntil("left the hold", func() bool { return !f.nav.HoldingAt("PENNS") })
+	if d := distance(); d > 1 {
+		t.Errorf("left the hold %.1fnm from PENNS", d)
+	}
+
+	f.Step(30)
+	if f.nav.Heading.Hold != nil || f.nav.Waypoints[0].Fix != "SWEET" {
+		t.Errorf("not on course to SWEET 30s after leaving the hold: next fix %s, hold %v",
+			f.nav.Waypoints[0].Fix, f.nav.Heading.Hold)
+	}
+}
+
+// An aircraft told to leave a hold it hasn't reached yet flies past the
+// holding fix.
+func TestLeaveHoldBeforeReachingIt(t *testing.T) {
+	f := holdTestFlight(t)
+	if !f.nav.HoldingAt("PENNS") {
+		t.Fatal("not expecting to hold at PENNS")
+	}
+
+	f.nav.LeaveHold("PENNS")
+	if f.nav.HoldingAt("PENNS") {
+		t.Fatal("still expecting to hold at PENNS")
+	}
+	f.StepUntil("passed PENNS", func() bool {
+		if f.nav.Heading.Hold != nil {
+			t.Fatal("entered the hold")
+		}
+		return f.nav.Waypoints[0].Fix == "SWEET"
+	})
+}

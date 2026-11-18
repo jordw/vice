@@ -684,6 +684,30 @@ func (nav *Nav) holdAtNextFix(callsign string) {
 	}
 }
 
+// HoldingAt reports whether the aircraft is flying a hold at fix or will
+// enter one when it reaches the fix.
+func (nav *Nav) HoldingAt(fix string) bool {
+	if hold := nav.Heading.Hold; hold != nil {
+		return hold.Hold.Fix == fix
+	}
+	nfa, ok := nav.FixAssignments[fix]
+	return ok && nfa.Hold != nil && nav.fixInRoute(fix)
+}
+
+// LeaveHold has the aircraft finish the lap of its hold at fix that it is
+// flying and resume its route when it next reaches the fix. If it hasn't
+// reached the hold yet, it flies on past the fix.
+func (nav *Nav) LeaveHold(fix string) {
+	defer nav.record("LeaveHold", fix)()
+	if hold := nav.Heading.Hold; hold != nil && hold.Hold.Fix == fix {
+		hold.Cancel = true
+	}
+	if nfa, ok := nav.FixAssignments[fix]; ok && nfa.Hold != nil {
+		nfa.Hold = nil
+		nav.FixAssignments[fix] = nfa
+	}
+}
+
 // GetHeading returns the heading and turn direction for the hold's current
 // leg, flying its entry and then circuits until it is cancelled.
 func (fh *FlyHold) GetHeading(callsign string, nav *Nav, wxs wx.Sample, simTime Time) (math.MagneticHeading, av.TurnDirection) {

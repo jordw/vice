@@ -725,6 +725,7 @@ func (s *Sim) updateState() {
 		s.updatePatternPhases()
 		s.relievePatternPressure()
 		s.admitHoldingArrivals()
+		s.updateHoldingStacks()
 		s.spawnAircraft()
 
 		s.STARSComputer.Update(s)

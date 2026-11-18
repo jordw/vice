@@ -115,6 +115,9 @@ type LaunchConfig struct {
 	ArrivalPushes               bool
 	ArrivalPushFrequencyMinutes int
 	ArrivalPushLengthMinutes    int
+	// ArrivalHolds gives the fixes where center is holding arrivals; see
+	// CommonState.ArrivalHoldFixes.
+	ArrivalHolds map[string]bool
 
 	EmergencyAircraftRate float32 // Aircraft per hour
 }

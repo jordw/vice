@@ -871,6 +871,12 @@ func (s *Sim) spawnScheduledArrivals() {
 			i++
 			continue
 		}
+		// One that would join a full holding stack waits until there's
+		// room for it.
+		if s.holdingStackFull(e.Group, e.Index) {
+			i++
+			continue
+		}
 		if e.Source != TrafficSourceScenario && (blocked[e.Group] || !s.arrivalFlowSpaced(e.Group)) {
 			blocked[e.Group] = true
 			i++

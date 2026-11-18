@@ -316,6 +316,23 @@ ZSU, ZBW, ZDC, ZDV, ZFW, ZJX, ZLA, ZLC, ZME, ZNY, and ZTL.
             <div class="text-center">
               <img src="manual-launch.png" srcset="manual-launch-2x.png 2x" width="621" height="399">
             </div><br>
+            <p>You can also ask the center controller to hold arrivals.
+              A hold is a racetrack pattern that an aircraft flies at a fix while it waits.
+              In the scenario information window, the "Hold" column of the arrivals table gives the fix
+              where center can hold each arrival.
+              That fix is the first fix after the arrival enters the simulation.
+              Center cannot hold an arrival if a human controller already works it at that point.
+            </p>
+            <p>If you select the check box in the "Hold" column, center holds the arrivals that enter after that.
+              They hold at that fix, 1,000' apart.
+              Each new arrival enters the hold at the top, and the others descend to make room for it.
+              The arrivals fly the charted hold at the fix, or a standard hold if the fix has none.
+              When five arrivals hold, <i>vice</i> launches no more of those arrivals.
+              Arrivals whose routes pass the same fix share one holding stack, so center holds them together.
+            </p>
+            <p>If you clear the check box, center releases the arrivals from the bottom up.
+              Each one continues along its route at its holding altitude.
+            </p>
             <br>
           </section>
 
