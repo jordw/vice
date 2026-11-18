@@ -325,10 +325,30 @@ func (s PhraseFormatString) render(r *rand.Rand, args []any) (written, spoken st
 	}); err != nil {
 		return "", "", err
 	}
-	spoken, err = phrase.format(args, func(f SnippetFormatter, arg any) (string, error) {
+	spoken, err = phrase.respell().format(args, func(f SnippetFormatter, arg any) (string, error) {
 		return f.Spoken(r, arg)
 	})
 	return written, spoken, err
+}
+
+// spokenRespellings gives how to say the words of a phrase's literal text
+// that the speech synthesizer gets wrong. The synthesizer spells out a short
+// word in capitals, which suits "IMC" but not "SID".
+var spokenRespellings = map[string]string{
+	"SID": "sid",
+}
+
+var capitalWord = regexp.MustCompile(`\b[A-Z]+\b`)
+
+// respell returns the phrase with its literal words in spokenRespellings
+// replaced by their spoken forms.
+func (s PhraseFormatString) respell() PhraseFormatString {
+	return PhraseFormatString(capitalWord.ReplaceAllStringFunc(string(s), func(w string) string {
+		if sp, ok := spokenRespellings[w]; ok {
+			return sp
+		}
+		return w
+	}))
 }
 
 // format fills in the directives of a phrase whose alternations have been
@@ -919,7 +939,7 @@ func (FixSnippetFormatter) Written(arg any) (string, error) {
 			return fmt.Sprintf("%d miles %s of %s", dist, math.Compass(dir.Heading()), namedFix), nil
 		}
 		if _, dist, ok := av.ParseSyntheticDMEFix(fix); ok {
-			return fmt.Sprintf("%d D M E", dist), nil
+			return fmt.Sprintf("%d DME", dist), nil
 		}
 	}
 

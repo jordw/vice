@@ -367,7 +367,7 @@ func (s SpeedIntent) renderUntil(rt *RadioTransmission, suffix string) {
 	if s.Until.Fix != "" {
 		rt.Add("{airspeed}"+suffix+" until {fix}", s.Speed, s.Until.Fix)
 	} else if s.Until.DME > 0 {
-		rt.Add("{airspeed}"+suffix+" until {num} D M E", s.Speed, s.Until.DME)
+		rt.Add("{airspeed}"+suffix+" until {num} DME", s.Speed, s.Until.DME)
 	} else if s.Until.MileFinal > 0 {
 		rt.Add("{airspeed}"+suffix+" until {num} mile final", s.Speed, s.Until.MileFinal)
 	}
@@ -653,7 +653,7 @@ func (n NavigationIntent) Render(rt *RadioTransmission, r *rand.Rand) {
 		n.renderCrossing(rt, "cross {num} miles "+math.Compass(n.Direction.Heading())+" of {fix}",
 			int(n.Distance), n.Fix)
 	case NavCrossDME:
-		n.renderCrossing(rt, "cross {num} D M E", int(n.Distance))
+		n.renderCrossing(rt, "cross {num} DME", int(n.Distance))
 	case NavInterceptRadial:
 		rt.Add("[intercept|join] the {fix} {hdg} radial "+util.Select(n.Outbound, "outbound", "inbound"),
 			n.Fix, n.Radial)

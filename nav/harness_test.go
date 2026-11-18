@@ -245,7 +245,7 @@ func TestContactMessageIncludesCrossDMEAltitude(t *testing.T) {
 	f.nav.CrossDMEAt(5, &ar, nil, f.temp())
 
 	written := strings.ToLower(writtenForTest(t, f.nav.ContactMessage("", "", false, false), f.nav.Rand))
-	if !strings.Contains(written, "cross") || !strings.Contains(written, "5 d m e") ||
+	if !strings.Contains(written, "cross") || !strings.Contains(written, "5 dme") ||
 		!strings.Contains(written, "3,000") {
 		t.Fatalf("contact message missing cross-DME restriction: %q", written)
 	}

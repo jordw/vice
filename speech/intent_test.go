@@ -326,6 +326,20 @@ func TestProcedureExceptReadback(t *testing.T) {
 	}
 }
 
+// TestClimbViaSIDSpoken verifies that the readback shows "SID" in capitals
+// but says it as a word, since the speech synthesizer spells out short words
+// in capitals.
+func TestClimbViaSIDSpoken(t *testing.T) {
+	r := rand.Make()
+	rd, err := RenderIntents([]CommandIntent{ProcedureIntent{Type: ProcedureClimbViaSID}}, r).Render(r)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if rd.Written != "climb via the SID" || rd.Spoken != "climb via the sid." {
+		t.Errorf("written %q spoken %q, want \"climb via the SID\" and \"climb via the sid.\"", rd.Written, rd.Spoken)
+	}
+}
+
 func TestSpeedUntilFinalDirection(t *testing.T) {
 	for _, test := range []struct {
 		name        string
