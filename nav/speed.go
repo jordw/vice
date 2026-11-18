@@ -306,6 +306,14 @@ func (nav *Nav) selectTargetSpeed(targetAltitude float32, rules av.FlightRules, 
 	return t
 }
 
+// speedLimitedTo250 reports whether the 250 knot limit below 10,000 feet
+// (14 CFR 91.117(a)) applies: the aircraft is below 10,000 feet, or at
+// 10,000 feet and about to descend below.
+func (nav *Nav) speedLimitedTo250(targetAltitude float32) bool {
+	alt := nav.FlightState.Altitude
+	return alt < 10000 || (alt <= 10000 && targetAltitude < 10000)
+}
+
 // governingSpeed returns the speed of whatever governs the aircraft's
 // speed, in order of priority: a controller's speed instruction, a hold it
 // is about to enter, a departure's initial climb, an upcoming or carried
@@ -347,7 +355,7 @@ func (nav *Nav) governingSpeed(targetAltitude float32, rules av.FlightRules, wxs
 		// The 250 knot limit below 10,000 feet applies to an assignment
 		// that allows 250 knots (AIM 4-4-12). An aircraft at 10,000 feet
 		// slows before it descends below.
-		if alt := nav.FlightState.Altitude; ias.Range[0] <= 250 && (alt < 10000 || (alt <= 10000 && targetAltitude < 10000)) {
+		if ias.Range[0] <= 250 && nav.speedLimitedTo250(targetAltitude) {
 			target = min(target, 250)
 		}
 		return speedTarget{ias: target, rate: MaximumRate}
@@ -390,7 +398,7 @@ func (nav *Nav) governingSpeed(targetAltitude float32, rules av.FlightRules, wxs
 		if nav.Speed.Restriction != nil {
 			targetSpeed = nav.restrictedSpeed(nav.Speed.Restriction, targetSpeed)
 		}
-		if _, sr, _, ok := nav.getUpcomingSpeedRestrictionWaypoint(); nav.Heading.Assigned == nil && ok {
+		if _, sr, ok := nav.getUpcomingSpeedRestrictionWaypoint(); nav.Heading.Assigned == nil && ok {
 			targetSpeed = nav.restrictedSpeed(sr, targetSpeed)
 		}
 
@@ -401,22 +409,28 @@ func (nav *Nav) governingSpeed(targetAltitude float32, rules av.FlightRules, wxs
 	}
 
 	pendingDecel := false
-	if onSID, sr, fix, ok := nav.getUpcomingSpeedRestrictionWaypoint(); nav.Heading.Assigned == nil && ok {
+	if wp, sr, ok := nav.getUpcomingSpeedRestrictionWaypoint(); nav.Heading.Assigned == nil && ok {
 		naturalIAS, _ := nav.targetAltitudeIAS(temp)
 		speed := nav.restrictedSpeed(sr, naturalIAS)
+		// Below 10,000 feet, a speed above 250 knots is flown only where a
+		// controller's crossing restriction requires it, as for an
+		// assigned speed. A charted one is not.
+		if nav.speedLimitedTo250(targetAltitude) && !(nav.controllerSpeedAt(wp) && sr.Range[0] > 250) {
+			speed = min(speed, 250)
+		}
 		// A restriction ahead may slow a pilot who is adjusting their own
 		// speed for the approach but doesn't speed them up.
 		if speed > nav.FlightState.IAS && !nav.Approach.pilotAdjustsSpeed() {
 			// Accelerate immediately
 			return speedTarget{ias: speed, rate: MaximumRate}
-		} else if onSID {
+		} else if wp.OnSID() {
 			// SID: comply immediately
 			return speedTarget{ias: speed, rate: MaximumRate}
 		} else {
 			// Geometric deceleration check: compute how fast we'd
 			// need to decelerate to hit the target speed at the fix,
 			// and start when that exceeds half our capability.
-			dist, ok := nav.routeDistanceToFix(fix)
+			dist, ok := nav.routeDistanceToFix(wp.Fix)
 			eta := dist / nav.FlightState.GS * 3600 // seconds to fix
 			if ok && eta > 0 {
 				neededRate := (nav.FlightState.IAS - speed) / eta * 60 // kts per minute
@@ -439,6 +453,12 @@ func (nav *Nav) governingSpeed(targetAltitude float32, rules av.FlightRules, wxs
 	if nav.Speed.Restriction != nil && !nav.Approach.pilotAdjustsSpeed() {
 		naturalIAS, _ := nav.targetAltitudeIAS(temp)
 		spd := nav.restrictedSpeed(nav.Speed.Restriction, naturalIAS)
+		// The 250 knot limit applies to a speed carried past its fix,
+		// whoever gave it, as it does when crossAltitude drops one at
+		// 10,000 feet.
+		if nav.speedLimitedTo250(targetAltitude) {
+			spd = min(spd, 250)
+		}
 		if pendingDecel {
 			spd = min(spd, nav.FlightState.IAS)
 		}
@@ -483,8 +503,12 @@ func (nav *Nav) governingSpeed(targetAltitude float32, rules av.FlightRules, wxs
 
 	if nav.Approach.pilotAdjustsSpeed() {
 		// Don't speed up if we're cleared, or were until the approach fell
-		// through.
-		return speedTarget{ias: nav.FlightState.IAS, rate: MaximumRate}
+		// through. The 250 knot limit still applies to the speed kept.
+		ias := nav.FlightState.IAS
+		if nav.speedLimitedTo250(targetAltitude) {
+			ias = min(ias, 250)
+		}
+		return speedTarget{ias: ias, rate: MaximumRate}
 	}
 
 	// Nothing assigned by the controller or the route, so set a target

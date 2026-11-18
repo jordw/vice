@@ -265,7 +265,7 @@ func (nav *Nav) SayIndicatedSpeed(temp av.Temperature) speech.CommandIntent {
 		if spd, exact := sr.ExactValue(); exact {
 			intent.Assigned = &spd
 		}
-	} else if _, sr, _, ok := nav.getUpcomingSpeedRestrictionWaypoint(); nav.Heading.Assigned == nil && ok {
+	} else if _, sr, ok := nav.getUpcomingSpeedRestrictionWaypoint(); nav.Heading.Assigned == nil && ok {
 		naturalIAS, _ := nav.targetAltitudeIAS(temp)
 		spd := nav.restrictedSpeed(sr, naturalIAS)
 		intent.Assigned = &spd

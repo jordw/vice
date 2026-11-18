@@ -447,21 +447,27 @@ func (nav *Nav) LowestProcedureAltitude() (float32, bool) {
 	return lowest, found
 }
 
-func (nav *Nav) getUpcomingSpeedRestrictionWaypoint() (onSID bool, sr *av.SpeedRestriction, fix string, ok bool) {
+func (nav *Nav) getUpcomingSpeedRestrictionWaypoint() (wp *av.Waypoint, sr *av.SpeedRestriction, ok bool) {
 	if nav.Prespawn {
-		return false, nil, "", false
+		return nil, nil, false
 	}
 
 	for i := range nav.Waypoints {
 		wp := &nav.Waypoints[i]
 		if nfa, ok := nav.FixAssignments[wp.Fix]; ok && nfa.Arrive.Speed != nil {
-			return wp.OnSID(), nfa.Arrive.Speed, wp.Fix, true
+			return wp, nfa.Arrive.Speed, true
 		}
 		if wsr := nav.chartedSpeedRestriction(wp); wsr != nil {
-			return wp.OnSID(), wsr, wp.Fix, true
+			return wp, wsr, true
 		}
 	}
-	return false, nil, "", false
+	return nil, nil, false
+}
+
+// controllerSpeedAt reports whether the speed restriction at wp is one a
+// controller gave rather than a charted one.
+func (nav *Nav) controllerSpeedAt(wp *av.Waypoint) bool {
+	return nav.FixAssignments[wp.Fix].Arrive.Speed != nil || wp.SyntheticCrossing()
 }
 
 // restrictedSpeed returns the speed a pilot would choose given a speed

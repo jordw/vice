@@ -337,6 +337,44 @@ func TestExpediteWithAssignedSpeedSlowsTo250(t *testing.T) {
 	f.AssertSpeedBelow(251)
 }
 
+// TestChartedSpeedBelowTenThousand verifies that a charted speed above 250
+// knots isn't flown below 10,000 feet: an aircraft the controller has taken
+// below the altitudes charted with it stays at 250, both on the way to the
+// fix and past it.
+func TestChartedSpeedBelowTenThousand(t *testing.T) {
+	f := NewArrivalFlight(t, ArrivalConfig{
+		Waypoints:        "SAJUL/a11000-12000/s270/star DETGY/a6000/star HAUPT/a5000/star",
+		DepartureAirport: "KMCO",
+		ArrivalAirport:   "KJFK",
+		AircraftType:     "A320",
+		InitialAltitude:  8000,
+		InitialSpeed:     250,
+		AssignedAltitude: 8000,
+		OnSTAR:           true,
+	})
+	f.BeforeFix("DETGY", func(f *FlightTest) { f.AssertSpeedBelow(250) })
+	f.Run()
+}
+
+// TestControllerCrossingSpeedBelowTenThousand verifies that a controller's
+// crossing speed above 250 knots is flown below 10,000 feet.
+func TestControllerCrossingSpeedBelowTenThousand(t *testing.T) {
+	f := NewArrivalFlight(t, ArrivalConfig{
+		Waypoints:        "SAJUL/star DETGY/star HAUPT/star",
+		DepartureAirport: "KMCO",
+		ArrivalAirport:   "KJFK",
+		AircraftType:     "A320",
+		InitialAltitude:  8000,
+		InitialSpeed:     250,
+		AssignedAltitude: 8000,
+		OnSTAR:           true,
+	})
+	sr := av.MakeAtSpeedRestriction(280)
+	f.nav.CrossFixAt("DETGY", nil, &sr, f.temp())
+	f.AtFix("DETGY", func(f *FlightTest) { f.AssertSpeedNear(280, 5) })
+	f.Run()
+}
+
 // TestSpeedInstructionLimits verifies that a pilot refuses an assigned or
 // crossing speed that the aircraft can't fly but accepts a range it can fly
 // part of.
@@ -392,6 +430,31 @@ func TestSpeedInstructionLimits(t *testing.T) {
 				t.Errorf("CrossDistanceFromFixAt: unable %v, want %v", unable, c.unable)
 			}
 		})
+	}
+}
+
+// TestClearedApproachSpeedBelowTenThousand verifies that an approach
+// clearance, which ends an assigned speed, leaves an aircraft below 10,000
+// feet that was assigned more than 250 knots to slow to 250.
+func TestClearedApproachSpeedBelowTenThousand(t *testing.T) {
+	f := NewArrivalFlight(t, ArrivalConfig{
+		Waypoints:        "SAJUL/star DETGY/star HAUPT/star LEFER/a4000/star ROSLY/a3000/star",
+		DepartureAirport: "KMCO",
+		ArrivalAirport:   "KJFK",
+		AircraftType:     "A320",
+		InitialAltitude:  6000,
+		InitialSpeed:     250,
+		AssignedAltitude: 6000,
+	})
+	f.AssignSpeed(280)
+	f.StepUntil("sped up to 280 knots", func() bool { return f.nav.FlightState.IAS >= 280 })
+
+	f.ExpectApproach("I22L")
+	f.ClearedApproach("I22L")
+	f.StepUntil("slowed to 250 knots", func() bool { return f.nav.FlightState.IAS <= 250 })
+	// Closer in, it would slow for the approach anyway.
+	if d, ok := f.nav.approachDistanceRemaining(); !ok || d < 10 {
+		t.Errorf("slowed to 250 knots only %.1f nm from the end of the approach", d)
 	}
 }
 
