@@ -8,8 +8,59 @@ import (
 	"maps"
 	"testing"
 
+	av "github.com/mmp/vice/aviation"
 	"github.com/mmp/vice/math"
 )
+
+// A surface tracking filter discards the reports of an unassociated target
+// inside it unless the target squawks an SPC.
+func TestSurfaceTrackingFilterVisibility(t *testing.T) {
+	s := newHandoffTestSim()
+	s.State.FacilityAdaptation.Filters.SurfaceTracking = FilterRegions{{AirspaceVolume: bigCircle()}}
+	ac, _ := newHandoffTestTrack(s, "TST400")
+
+	if !s.isRadarVisible(ac) {
+		t.Error("associated track inside the filter is not visible")
+	}
+
+	ac.DisassociateFlightPlan()
+	if s.isRadarVisible(ac) {
+		t.Error("unassociated track inside the filter is visible")
+	}
+
+	ac.Squawk = 0o7700
+	ac.Mode = av.TransponderModeAltitude
+	if !s.isRadarVisible(ac) {
+		t.Error("unassociated track squawking 7700 inside the filter is not visible")
+	}
+
+	ac.Mode = av.TransponderModeStandby
+	if s.isRadarVisible(ac) {
+		t.Error("unassociated track in standby inside the filter is visible")
+	}
+}
+
+// An arrival whose arrival drop filter starts inside the surface tracking
+// filter is dropped there and then loses its track.
+func TestArrivalDropInsideSurfaceTrackingFilter(t *testing.T) {
+	s := newHandoffTestSim()
+	s.STARSComputer = makeSTARSComputer("TEST")
+	s.State.FacilityAdaptation.Filters.SurfaceTracking = FilterRegions{{AirspaceVolume: bigCircle()}}
+	s.State.FacilityAdaptation.Filters.ArrivalDrop = FilterRegions{{AirspaceVolume: bigCircle()}}
+	ac, fp := newHandoffTestTrack(s, "TST400")
+
+	s.STARSComputer.Update(s)
+
+	if ac.IsAssociated() {
+		t.Fatal("arrival inside the arrival drop filter is still associated")
+	}
+	if fp.DeleteTime.IsZero() {
+		t.Error("dropped flight plan has no delete time")
+	}
+	if s.isRadarVisible(ac) {
+		t.Error("dropped arrival inside the surface tracking filter is visible")
+	}
+}
 
 // An FDAM region's TCP-specific leader direction goes on the flight plan for
 // each of its pointout TCPs when a track enters the region. It comes off when

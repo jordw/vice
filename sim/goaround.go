@@ -27,11 +27,6 @@ func (s *Sim) contactDeparture(ac *Aircraft, fp *FlightPlan) {
 	s.enqueueDepartureContact(ac, tcp)
 }
 
-func (s *Sim) isRadarVisible(ac *Aircraft) bool {
-	filters := s.State.FacilityAdaptation.Filters
-	return !filters.SurfaceTracking.Inside(ac.Position(), int(ac.Altitude()))
-}
-
 func (s *Sim) goAround(ac *Aircraft) {
 	// Capture approach info before anything clears it.
 	approach := ac.Nav.Approach.Assigned

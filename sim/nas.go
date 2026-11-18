@@ -92,6 +92,20 @@ func (sc *STARSComputer) AddHeldDeparture(ac *Aircraft) {
 	sc.HoldForRelease = append(sc.HoldForRelease, ac)
 }
 
+// isRadarVisible reports whether the tracker keeps a track for ac. A
+// surface tracking filter discards the reports of an unassociated target
+// inside it unless the target squawks an SPC (DMS Table 6-10, p. 6-72).
+func (s *Sim) isRadarVisible(ac *Aircraft) bool {
+	if ac.IsAssociated() {
+		return true
+	}
+	if spc, _ := ac.Squawk.IsSPC(); spc && ac.Mode != av.TransponderModeStandby {
+		return true
+	}
+	filters := s.State.FacilityAdaptation.Filters
+	return !filters.SurfaceTracking.Inside(ac.Position(), int(ac.Altitude()))
+}
+
 func (sc *STARSComputer) Update(s *Sim) {
 	// Delete any dropped flight plans after the few minute delay has passed.
 	sc.FlightPlans = util.FilterSlice(sc.FlightPlans, func(fp *FlightPlan) bool {
@@ -154,7 +168,8 @@ func (sc *STARSComputer) Update(s *Sim) {
 				}
 
 				if inVolumes(filters.SurfaceTracking) {
-					// Still on the ground and not yet radar visible
+					// Only an SPC target is visible inside the filter, and it
+					// tags up once it leaves.
 					return false
 				}
 
