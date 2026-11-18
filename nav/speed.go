@@ -229,10 +229,10 @@ func (nav *Nav) updateAirspeed(callsign string, targetAltitude float32, geometri
 	ias := math.Clamp(target.ias, nav.Perf.MinimumSpeed(), nav.maxIAS(wxs.Temperature()))
 
 	// An aircraft descending to below 10,000 feet at more than 250 knots
-	// has to be at 250 to descend through it and is held there until it has
-	// slowed, even if it is expediting its descent, which otherwise holds
-	// its speed.
-	slowingTo250 = ias == 250 && fs.Altitude >= 10000 && targetAltitude < 10000 && fs.IAS > 250
+	// has to be at 250 or less to descend through it and is held there
+	// until it has slowed, even if it is expediting its descent, which
+	// otherwise holds its speed.
+	slowingTo250 = ias <= 250 && fs.Altitude >= 10000 && targetAltitude < 10000 && fs.IAS > 250
 	expediting := nav.Altitude.Rate == RateExpedite && !slowingTo250
 
 	NavLog(callsign, simTime, NavLogSpeed, "target=%.0f current=%.0f rate=%.1f", ias, fs.IAS, target.rate)
@@ -341,6 +341,12 @@ func (nav *Nav) governingSpeed(targetAltitude float32, rules av.FlightRules, wxs
 			if fd, ok := nav.approachDistanceRemaining(); ok {
 				target = max(min(target, nav.stabilizingSpeed(fd, nav.approachSpeed(wxs, arrivalMETAR))), ias.Range[0])
 			}
+		}
+		// The 250 knot limit below 10,000 feet applies to an assignment
+		// that allows 250 knots (AIM 4-4-12). An aircraft at 10,000 feet
+		// slows before it descends below.
+		if alt := nav.FlightState.Altitude; ias.Range[0] <= 250 && (alt < 10000 || (alt <= 10000 && targetAltitude < 10000)) {
+			target = min(target, 250)
 		}
 		return speedTarget{ias: target, rate: MaximumRate}
 	}

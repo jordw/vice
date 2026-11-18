@@ -247,6 +247,96 @@ func TestExpediteHoldsSpeedAboveTenThousand(t *testing.T) {
 	f.StepUntil("slowed to 250 knots", func() bool { return f.nav.FlightState.IAS <= 250 })
 }
 
+// TestAssignedSpeedThroughTenThousand verifies that an aircraft descending
+// through 10,000 feet with an assigned speed flies 250 knots or less below
+// it. An assignment that 250 knots satisfies stays in effect; one that it
+// doesn't is canceled.
+func TestAssignedSpeedThroughTenThousand(t *testing.T) {
+	for _, c := range []struct {
+		speed string
+		kept  bool
+	}{
+		{"250+", true},
+		{"280-", true},
+		{"240-280", true},
+		{"260+", false},
+	} {
+		t.Run(c.speed, func(t *testing.T) {
+			f := NewArrivalFlight(t, ArrivalConfig{
+				Waypoints:        "SAJUL DETGY HAUPT",
+				DepartureAirport: "KMCO",
+				ArrivalAirport:   "KJFK",
+				AircraftType:     "A320",
+				InitialAltitude:  12000,
+				InitialSpeed:     280,
+				AssignedAltitude: 12000,
+			})
+			sr, err := av.ParseSpeedRestriction(c.speed)
+			if err != nil {
+				t.Fatal(err)
+			}
+			f.nav.AssignSpeed(sr, false, f.temp())
+			f.AssignAltitude(6000)
+
+			f.StepUntil("descended to 7,000 feet", func() bool {
+				if fs := f.nav.FlightState; fs.Altitude < 10000 && fs.IAS > 250 {
+					t.Fatalf("%.0f knots at %.0f feet", fs.IAS, fs.Altitude)
+				}
+				return f.nav.FlightState.Altitude < 7000
+			})
+			if kept := f.nav.Speed.Assigned != nil; kept != c.kept {
+				t.Errorf("assignment kept: got %v, want %v", kept, c.kept)
+			}
+		})
+	}
+}
+
+// TestAssignedSpeedAtTenThousand verifies that the 250 knot limit applies
+// only below 10,000 feet: an aircraft level at 10,000 feet keeps its speed
+// under an "or greater" assignment, then slows before it descends below.
+func TestAssignedSpeedAtTenThousand(t *testing.T) {
+	f := NewArrivalFlight(t, ArrivalConfig{
+		Waypoints:        "SAJUL DETGY HAUPT",
+		DepartureAirport: "KMCO",
+		ArrivalAirport:   "KJFK",
+		AircraftType:     "A320",
+		InitialAltitude:  10000,
+		InitialSpeed:     280,
+		AssignedAltitude: 10000,
+	})
+	sr := av.MakeAtOrAboveSpeedRestriction(250)
+	f.nav.AssignSpeed(&sr, false, f.temp())
+	f.Step(30)
+	f.AssertSpeedNear(280, 2)
+
+	f.AssignAltitude(6000)
+	f.StepUntil("descended below 10,000 feet", func() bool { return f.nav.FlightState.Altitude < 10000 })
+	f.AssertSpeedBelow(251)
+}
+
+// TestExpediteWithAssignedSpeedSlowsTo250 verifies that an aircraft
+// expediting a descent through 10,000 feet slows to 250 knots or less
+// before it descends below when its assigned speed is less than 250. The
+// speed is within 20 knots of the aircraft's, so the descent doesn't wait
+// for it.
+func TestExpediteWithAssignedSpeedSlowsTo250(t *testing.T) {
+	f := NewArrivalFlight(t, ArrivalConfig{
+		Waypoints:        "SAJUL DETGY HAUPT",
+		DepartureAirport: "KMCO",
+		ArrivalAirport:   "KJFK",
+		AircraftType:     "A320",
+		InitialAltitude:  11000,
+		InitialSpeed:     260,
+		AssignedAltitude: 11000,
+	})
+	f.AssignAltitude(6000)
+	f.ExpediteDescent()
+	f.AssignSpeed(245)
+
+	f.StepUntil("descended below 10,000 feet", func() bool { return f.nav.FlightState.Altitude < 10000 })
+	f.AssertSpeedBelow(251)
+}
+
 // TestAfterFixSpeed verifies that "after fix, maintain speed" fires
 // when the aircraft passes the named fix (regression test for 3155bf14).
 func TestAfterFixSpeed(t *testing.T) {

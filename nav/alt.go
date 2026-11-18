@@ -457,12 +457,15 @@ func (nav *Nav) crossAltitude(next float32, slowingTo250 bool) float32 {
 	if cur >= 10000 && next < 10000 {
 		// Descending through 10,000'
 		if sr := nav.Speed.Assigned; sr != nil {
-			// Cancel if the minimum required speed exceeds 250kts.
-			// For "at or below 280" the floor is 0, so the pilot
-			// can comply at 250 — don't cancel.
-			// For "at or above 260", they can't comply at 250.
-			if sr.Speed().Value > 250 {
+			// An assigned speed that 250 knots doesn't satisfy, like "at
+			// or above 260", is canceled. One that it does, like "at or
+			// below 280", stays and is flown at 250 or less below 10,000'
+			// (governingSpeed). Either way, the aircraft levels off here
+			// to slow down.
+			if sr.Range[0] > 250 {
 				nav.Speed.Assigned = nil
+				next = 10000
+			} else if nav.FlightState.IAS > 250 {
 				next = 10000
 			}
 		}
