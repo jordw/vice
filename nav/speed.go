@@ -63,18 +63,20 @@ func (nav *Nav) machTransition() bool {
 }
 
 // checkAssignedSpeed returns an unable intent and false if the aircraft
-// can't fly the given speed.
-func (nav *Nav) checkAssignedSpeed(spd av.Airspeed, temp av.Temperature) (speech.CommandIntent, bool) {
-	if spd.IsMach {
+// can't fly any speed that sr allows. The speed in sr nearest the present
+// one is the one checked, so a range the aircraft can fly part of passes.
+func (nav *Nav) checkAssignedSpeed(sr *av.SpeedRestriction, temp av.Temperature) (speech.CommandIntent, bool) {
+	if sr.IsMach {
+		mach := sr.Target(nav.Mach())
 		// Round the limits to hundredths, with slack for the round trip
 		// through IAS when the maximum Mach number is what limits maxIAS.
 		alt := nav.FlightState.Altitude
 		minMach := math.Ceil(100*av.IASToMach(nav.Perf.Speed.Landing, alt)-0.01) / 100
 		maxMach := math.Floor(100*av.IASToMach(nav.maxIAS(temp), alt)+0.01) / 100
 
-		if spd.Value < minMach {
+		if mach < minMach {
 			return speech.MakeUnableIntent("unable. Our minimum mach is {mach}", minMach), false
-		} else if spd.Value > maxMach {
+		} else if mach > maxMach {
 			return speech.MakeUnableIntent("unable. Our maximum mach is {mach}", maxMach), false
 		} else if !nav.machTransition() {
 			return speech.MakeUnableIntent("unable. we haven't reached mach transition altitude"), false
@@ -82,10 +84,11 @@ func (nav *Nav) checkAssignedSpeed(spd av.Airspeed, temp av.Temperature) (speech
 		return nil, true
 	}
 
+	ias := sr.Target(nav.FlightState.IAS)
 	maxIAS := 10 * math.Floor(nav.maxIAS(temp)/10)
-	if spd.Value < nav.Perf.Speed.Landing {
+	if ias < nav.Perf.Speed.Landing {
 		return speech.MakeUnableIntent("unable. Our minimum speed is {spd}", nav.Perf.Speed.Landing), false
-	} else if spd.Value > maxIAS {
+	} else if ias > maxIAS {
 		return speech.MakeUnableIntent("unable. Our maximum speed is {spd}", maxIAS), false
 	}
 	return nil, true
@@ -123,12 +126,12 @@ func (nav *Nav) AssignSpeed(sr *av.SpeedRestriction, afterAltitude bool, temp av
 		return speech.SpeedIntent{Type: speech.SpeedCancel}
 	}
 
-	spd := sr.Speed()
-	if intent, ok := nav.checkAssignedSpeed(spd, temp); !ok {
+	if intent, ok := nav.checkAssignedSpeed(sr, temp); !ok {
 		return intent
 	}
 	nav.clearAfterFixSpeeds()
 
+	spd := sr.Speed()
 	_, exact := sr.ExactValue()
 	if nav.Approach.Cleared && exact {
 		nav.Speed = Speed{Assigned: sr}
@@ -165,8 +168,7 @@ func (nav *Nav) AssignSpeedUntil(sr *av.SpeedRestriction, until *speech.SpeedUnt
 		return speech.MakeUnableIntent("unable. {fix} isn't a valid fix", until.Fix)
 	}
 
-	spd := sr.Speed()
-	if intent, ok := nav.checkAssignedSpeed(spd, temp); !ok {
+	if intent, ok := nav.checkAssignedSpeed(sr, temp); !ok {
 		return intent
 	}
 	nav.clearAfterFixSpeeds()
@@ -177,7 +179,7 @@ func (nav *Nav) AssignSpeedUntil(sr *av.SpeedRestriction, until *speech.SpeedUnt
 		intent.Until = until
 		return intent
 	}
-	return speech.SpeedIntent{Speed: spd, Type: speech.SpeedUntilFinal, Until: until}
+	return speech.SpeedIntent{Speed: sr.Speed(), Type: speech.SpeedUntilFinal, Until: until}
 }
 
 func (nav *Nav) MaintainSlowestPractical() speech.CommandIntent {

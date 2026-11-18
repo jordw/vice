@@ -128,7 +128,7 @@ func (nav *Nav) AssignCompoundSpeed(segments []speech.CompoundSpeedSegment, temp
 	defer nav.record("AssignCompoundSpeed", segments, temp)()
 	// Validate all segments before applying any state changes.
 	for _, seg := range segments {
-		if intent, ok := nav.checkAssignedSpeed(seg.Speed.Speed(), temp); !ok {
+		if intent, ok := nav.checkAssignedSpeed(seg.Speed, temp); !ok {
 			return intent
 		}
 
@@ -216,6 +216,9 @@ func (nav *Nav) CrossFixAt(fix string, ar *av.AltitudeRestriction, sr *av.SpeedR
 	if !nav.fixInRoute(fix) {
 		return speech.MakeUnableIntent("unable. {fix} isn't in our route", fix)
 	}
+	if intent, ok := nav.checkCrossingSpeed(sr, temp); !ok {
+		return intent
+	}
 
 	intent := speech.NavigationIntent{
 		Type: speech.NavCrossFixAt,
@@ -238,6 +241,17 @@ func (nav *Nav) CrossFixAt(fix string, ar *av.AltitudeRestriction, sr *av.SpeedR
 	nav.FixAssignments[fix] = nfa
 
 	return intent
+}
+
+// checkCrossingSpeed returns an unable intent and false if the aircraft
+// can't fly any speed that the crossing restriction sr allows. A Mach number
+// isn't checked: whether the aircraft can fly it depends on its altitude at
+// the fix.
+func (nav *Nav) checkCrossingSpeed(sr *av.SpeedRestriction, temp av.Temperature) (speech.CommandIntent, bool) {
+	if sr == nil || sr.IsMach {
+		return nil, true
+	}
+	return nav.checkAssignedSpeed(sr, temp)
 }
 
 // crossingSpeedIntent returns the speed read back for a crossing speed
@@ -358,6 +372,9 @@ func (nav *Nav) CrossDistanceFromFixAt(fix string, dist float32, dir math.Cardin
 	if realPriorIdx < 0 && dist >= math.NMDistance2LL(nav.FlightState.Position, fixLoc) {
 		return speech.MakeUnableIntent("unable. We're already closer to {fix}", fix)
 	}
+	if intent, ok := nav.checkCrossingSpeed(sr, temp); !ok {
+		return intent
+	}
 
 	// Compute synthetic waypoint via linear interpolation.
 	t := 1 - dist/segLen
@@ -418,6 +435,9 @@ func (nav *Nav) CrossDMEAt(dist float32, ar *av.AltitudeRestriction, sr *av.Spee
 
 	if !nav.clearedForVisualApproach() {
 		return speech.MakeUnableIntent("unable, we're not cleared for a visual approach")
+	}
+	if intent, ok := nav.checkCrossingSpeed(sr, temp); !ok {
+		return intent
 	}
 	runway := nav.Approach.Assigned.Runway
 

@@ -337,6 +337,64 @@ func TestExpediteWithAssignedSpeedSlowsTo250(t *testing.T) {
 	f.AssertSpeedBelow(251)
 }
 
+// TestSpeedInstructionLimits verifies that a pilot refuses an assigned or
+// crossing speed that the aircraft can't fly but accepts a range it can fly
+// part of.
+func TestSpeedInstructionLimits(t *testing.T) {
+	newFlight := func(t *testing.T) *FlightTest {
+		return NewArrivalFlight(t, ArrivalConfig{
+			Waypoints:        "SAJUL/star DETGY/star HAUPT/star",
+			DepartureAirport: "KMCO",
+			ArrivalAirport:   "KJFK",
+			AircraftType:     "A320",
+			InitialAltitude:  8000,
+			InitialSpeed:     250,
+			AssignedAltitude: 8000,
+		})
+	}
+	for _, c := range []struct {
+		speed  string
+		unable bool
+	}{
+		{"400", true},
+		{"400-", false},
+		{"100", true},
+		{"100+", false},
+		{"280", false},
+	} {
+		t.Run(c.speed, func(t *testing.T) {
+			sr, err := av.ParseSpeedRestriction(c.speed)
+			if err != nil {
+				t.Fatal(err)
+			}
+
+			f := newFlight(t)
+			_, unable := f.nav.AssignSpeed(sr, false, f.temp()).(speech.UnableIntent)
+			if unable != c.unable {
+				t.Errorf("AssignSpeed: unable %v, want %v", unable, c.unable)
+			}
+
+			f = newFlight(t)
+			_, unable = f.nav.CrossFixAt("DETGY", nil, sr, f.temp()).(speech.UnableIntent)
+			if unable != c.unable {
+				t.Errorf("CrossFixAt: unable %v, want %v", unable, c.unable)
+			}
+
+			f = newFlight(t)
+			hdg := math.TrueToMagnetic(math.Heading2LL(f.nav.Waypoints[1].Location, f.nav.Waypoints[0].Location,
+				f.nav.FlightState.NmPerLongitude), f.nav.FlightState.MagneticVariation)
+			dir, err := math.ParseCardinalOrdinalDirection(math.ShortCompass(hdg))
+			if err != nil {
+				t.Fatal(err)
+			}
+			_, unable = f.nav.CrossDistanceFromFixAt("DETGY", 2, dir, nil, sr, f.temp()).(speech.UnableIntent)
+			if unable != c.unable {
+				t.Errorf("CrossDistanceFromFixAt: unable %v, want %v", unable, c.unable)
+			}
+		})
+	}
+}
+
 // TestAfterFixSpeed verifies that "after fix, maintain speed" fires
 // when the aircraft passes the named fix (regression test for 3155bf14).
 func TestAfterFixSpeed(t *testing.T) {
