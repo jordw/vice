@@ -328,6 +328,39 @@ func (s *Sim) renderAndPostReadback(callsign av.ADSBCallsign, tcw TCW, intents [
 	return ""
 }
 
+// parseNumber parses a number in a command. A number is always a string of
+// digits: a sign is never part of one.
+func parseNumber(s string) (int, error) {
+	n, err := strconv.Atoi(s)
+	if err != nil || !util.IsAllNumbers(s) {
+		return 0, ErrInvalidCommandSyntax
+	}
+	return n, nil
+}
+
+// parseSpeedRestriction parses the speed restriction of a command.
+func parseSpeedRestriction(s string) (*av.SpeedRestriction, error) {
+	sr, err := av.ParseSpeedRestriction(s)
+	if err != nil || sr.Range[0] < 0 || sr.Range[1] < 0 {
+		return nil, ErrInvalidCommandSyntax
+	}
+	return sr, nil
+}
+
+// parseAltitudeRestriction parses the altitude restriction of a command,
+// which gives altitudes in hundreds of feet, and returns it in feet.
+func parseAltitudeRestriction(s string) (*av.AltitudeRestriction, error) {
+	ar, err := av.ParseAltitudeRestriction(s)
+	if err != nil || ar.Range[0] < 0 || ar.Range[1] < 0 {
+		return nil, ErrInvalidCommandSyntax
+	}
+	ar.Range[0] *= 100
+	if ar.Range[1] != av.MaxAltitude {
+		ar.Range[1] *= 100
+	}
+	return ar, nil
+}
+
 // parseSpeedUntil parses the "until" specification from a speed command.
 // Formats:
 //   - "ROSLY" -> fix name
@@ -338,14 +371,13 @@ func parseSpeedUntil(untilStr string) *speech.SpeedUntil {
 
 	// Check for DME pattern: digits followed by DME
 	if before, ok := strings.CutSuffix(untilStr, "DME"); ok {
-		numStr := before
-		if n, err := strconv.Atoi(numStr); err == nil && n > 0 {
+		if n, err := parseNumber(before); err == nil && n > 0 {
 			return &speech.SpeedUntil{DME: n}
 		}
 	}
 
 	// Check for pure number (mile final)
-	if n, err := strconv.Atoi(untilStr); err == nil && n > 0 {
+	if n, err := parseNumber(untilStr); err == nil && n > 0 {
 		return &speech.SpeedUntil{MileFinal: n}
 	}
 
@@ -367,7 +399,7 @@ func parseCompoundSpeed(s string) ([]speech.CompoundSpeedSegment, error) {
 	var segments []speech.CompoundSpeedSegment
 
 	// First part is just the first speed.
-	sr, err := av.ParseSpeedRestriction(parts[0])
+	sr, err := parseSpeedRestriction(parts[0])
 	if err != nil {
 		return nil, err
 	}
@@ -391,7 +423,7 @@ func parseCompoundSpeed(s string) ([]speech.CompoundSpeedSegment, error) {
 
 		if hasSpeed {
 			// Parse the next speed.
-			sr, err = av.ParseSpeedRestriction(speedStr)
+			sr, err = parseSpeedRestriction(speedStr)
 			if err != nil {
 				return nil, err
 			}
@@ -416,7 +448,7 @@ func parseCompoundSpeed(s string) ([]speech.CompoundSpeedSegment, error) {
 // given "to join" with a /J suffix: "120" or "120/J".
 func parseHeading(spec string) (hdg int, toJoin bool, err error) {
 	spec, toJoin = strings.CutSuffix(spec, "/J")
-	hdg, err = strconv.Atoi(spec)
+	hdg, err = parseNumber(spec)
 	return
 }
 
@@ -436,7 +468,7 @@ func parseInterceptRadial(command string) (string, int, bool, bool) {
 		spec = rest
 	}
 
-	radial, err := strconv.Atoi(spec)
+	radial, err := parseNumber(spec)
 	if err != nil || radial < 1 || radial > 360 {
 		return "", 0, false, false
 	}
@@ -462,6 +494,10 @@ func parseInterceptRadial(command string) (string, int, bool, bool) {
 func parseHold(command string) (string, *av.Hold, bool) {
 	fix, opts, ok := strings.Cut(command, "/")
 	fix = strings.ToUpper(fix)
+	if strings.ContainsAny(fix, "+-") {
+		// No fix name has a sign, so this is a malformed heading.
+		return "", nil, false
+	}
 	if !ok {
 		// No options, use published hold
 		return fix, nil, true
@@ -515,7 +551,7 @@ func parseHold(command string) (string, *av.Hold, bool) {
 			if hold.InboundCourse != 0 {
 				return "", nil, false
 			}
-			radial, err := strconv.Atoi(opt[1:])
+			radial, err := parseNumber(opt[1:])
 			if err != nil || radial <= 0 || radial > 360 {
 				return "", nil, false
 			}
@@ -544,10 +580,10 @@ func parseHold(command string) (string, *av.Hold, bool) {
 // "except maintain" altitude, in hundreds of feet.
 func parseViaExceptAltitude(arg string) (*float32, error) {
 	digits, ok := strings.CutPrefix(arg, "A")
-	if !ok || len(digits) == 0 || !util.IsAllNumbers(digits) {
+	if !ok {
 		return nil, ErrInvalidCommandSyntax
 	}
-	alt, err := strconv.Atoi(digits)
+	alt, err := parseNumber(digits)
 	if err != nil || alt < 1 || alt > 600 {
 		return nil, ErrInvalidCommandSyntax
 	}
@@ -562,11 +598,11 @@ func parseOclockMiles(s string) (oclock, miles int, err error) {
 	if !ok {
 		return 0, 0, ErrInvalidCommandSyntax
 	}
-	oclock, err = strconv.Atoi(clockstr)
+	oclock, err = parseNumber(clockstr)
 	if err != nil || oclock < 1 || oclock > 12 {
 		return 0, 0, ErrInvalidCommandSyntax
 	}
-	miles, err = strconv.Atoi(milesstr)
+	miles, err = parseNumber(milesstr)
 	if err != nil || miles < 1 || miles > 50 {
 		return 0, 0, ErrInvalidCommandSyntax
 	}
@@ -582,7 +618,7 @@ func isAltitudeAssignment(command string) bool {
 // assignedAltitude returns the altitude in feet that an altitude assignment
 // (isAltitudeAssignment) gives.
 func assignedAltitude(command string) (int, error) {
-	alt, err := strconv.Atoi(command[1:])
+	alt, err := parseNumber(command[1:])
 	if err != nil {
 		return 0, err
 	}
@@ -602,8 +638,10 @@ func (s *Sim) parseApproachClearance(command string) (approach string, straightI
 	if !isC || isAltitudeAssignment(command) {
 		return "", false, false
 	}
-	// The other commands that start with C.
-	if rest == "AC" || rest == "WT" || rest == "VS" || strings.HasPrefix(rest, "VS/") {
+	// The other commands that start with C. An approach id never has a "/",
+	// so a crossing restriction at a fix whose name starts with SI, VA, or
+	// DME is not a clearance.
+	if rest == "AC" || rest == "WT" || rest == "VS" || strings.Contains(rest, "/") {
 		return "", false, false
 	}
 	if id, ok := strings.CutPrefix(rest, "VA"); ok && id != "" {
@@ -614,9 +652,6 @@ func (s *Sim) parseApproachClearance(command string) (approach string, straightI
 	}
 	if appr, ok := strings.CutPrefix(rest, "SI"); ok && (appr == "" || !util.IsAllNumbers(appr)) {
 		return appr, true, true
-	}
-	if strings.Contains(rest, "/") {
-		return "", false, false
 	}
 	// CT is a contact command for an existing controller, otherwise the
 	// clearance for an approach whose id starts with T.
@@ -674,20 +709,12 @@ func (s *Sim) runOneControlCommand(tcw TCW, callsign av.ADSBCallsign, command st
 			switch components[1][0] {
 			case 'C':
 				rest, straightIn := strings.CutPrefix(components[1][1:], "SI")
-				if util.IsAllNumbers(rest) && len(rest) > 0 {
-					alt, err := strconv.Atoi(rest)
-					if err != nil {
-						return nil, err
-					}
+				if alt, err := parseNumber(rest); err == nil {
 					return s.AfterFixAltitude(tcw, callsign, fix, alt*100)
 				}
 				return s.AtFixCleared(tcw, callsign, fix, rest, straightIn)
 			case 'D':
-				rest := components[1][1:]
-				if !util.IsAllNumbers(rest) || len(rest) == 0 {
-					return nil, ErrInvalidCommandSyntax
-				}
-				alt, err := strconv.Atoi(rest)
+				alt, err := parseNumber(components[1][1:])
 				if err != nil {
 					return nil, err
 				}
@@ -695,7 +722,7 @@ func (s *Sim) runOneControlCommand(tcw TCW, callsign av.ADSBCallsign, command st
 			case 'I':
 				return s.AtFixIntercept(tcw, callsign, fix)
 			case 'S':
-				sr, err := av.ParseSpeedRestriction(components[1][1:])
+				sr, err := parseSpeedRestriction(components[1][1:])
 				if err != nil {
 					return nil, err
 				}
@@ -721,82 +748,43 @@ func (s *Sim) runOneControlCommand(tcw TCW, callsign av.ADSBCallsign, command st
 				return nil, err
 			}
 			return s.ClimbViaSID(tcw, callsign, alt, delayReduction)
-		} else if spec, ok := strings.CutPrefix(command, "CDME"); ok && len(spec) > 0 {
-			distStr, rest, _ := strings.Cut(spec, "/")
-			d, err := strconv.Atoi(distStr)
-			if err != nil {
-				return nil, ErrInvalidCommandSyntax
-			}
-			var ar *av.AltitudeRestriction
-			var sr *av.SpeedRestriction
-			if rest != "" {
-				for cmd := range strings.SplitSeq(rest, "/") {
-					if len(cmd) == 0 {
-						return nil, ErrInvalidCommandSyntax
-					}
-					if cmd[0] == 'A' && len(cmd) > 1 {
-						if ar, err = av.ParseAltitudeRestriction(cmd[1:]); err != nil {
-							return nil, err
-						}
-						ar.Range[0] *= 100
-						if ar.Range[1] != av.MaxAltitude {
-							ar.Range[1] *= 100
-						}
-					} else if cmd[0] == 'S' {
-						if sr, err = av.ParseSpeedRestriction(cmd[1:]); err != nil {
-							return nil, err
-						}
-					} else if cmd[0] == 'M' {
-						if sr, err = av.ParseSpeedRestriction(cmd); err != nil {
-							return nil, err
-						}
-					} else {
-						return nil, ErrInvalidCommandSyntax
-					}
-				}
-			}
-			if ar == nil && sr == nil {
-				return nil, ErrInvalidCommandSyntax
-			}
-			return s.CrossDMEAt(tcw, callsign, float32(d), ar, sr)
 		} else if components := strings.Split(command, "/"); len(components) > 1 {
-			fix := components[0][1:]
 			var ar *av.AltitudeRestriction
 			var sr *av.SpeedRestriction
 			dist := float32(-1)
 			var dir math.CardinalOrdinalDirection
 			for _, cmd := range components[1:] {
-				if len(cmd) == 0 {
-					return nil, ErrInvalidCommandSyntax
-				}
-
-				if cmd[0] == 'A' && len(cmd) > 1 {
-					var err error
-					if ar, err = av.ParseAltitudeRestriction(cmd[1:]); err != nil {
-						return nil, err
-					}
-					ar.Range[0] *= 100
-					if ar.Range[1] != av.MaxAltitude {
-						ar.Range[1] *= 100
-					}
-				} else if cmd[0] == 'S' {
-					var err error
-					if sr, err = av.ParseSpeedRestriction(cmd[1:]); err != nil {
-						return nil, err
-					}
-				} else if cmd[0] == 'M' {
-					var err error
-					if sr, err = av.ParseSpeedRestriction(cmd); err != nil {
-						return nil, err
-					}
-				} else if d, dd, err := av.ParseDistanceDirection(cmd); err == nil {
+				var err error
+				switch {
+				case cmd == "":
+					err = ErrInvalidCommandSyntax
+				case cmd[0] == 'A' && len(cmd) > 1:
+					ar, err = parseAltitudeRestriction(cmd[1:])
+				case cmd[0] == 'S':
+					sr, err = parseSpeedRestriction(cmd[1:])
+				case cmd[0] == 'M':
+					sr, err = parseSpeedRestriction(cmd)
+				default:
+					var d int
+					d, dir, err = av.ParseDistanceDirection(cmd)
 					dist = float32(d)
-					dir = dd
-				} else {
+				}
+				if err != nil {
 					return nil, ErrInvalidCommandSyntax
 				}
 			}
 
+			// DME and a number is a distance on the DME. Anything else is a
+			// fix, even one whose name starts with DME.
+			fix := components[0][1:]
+			if dme, ok := strings.CutPrefix(fix, "DME"); ok {
+				if d, err := parseNumber(dme); err == nil {
+					if dist >= 0 || (ar == nil && sr == nil) {
+						return nil, ErrInvalidCommandSyntax
+					}
+					return s.CrossDMEAt(tcw, callsign, float32(d), ar, sr)
+				}
+			}
 			if dist >= 0 {
 				return s.CrossDistanceFromFixAt(tcw, callsign, fix, dist, dir, ar, sr)
 			}
@@ -824,7 +812,7 @@ func (s *Sim) runOneControlCommand(tcw TCW, callsign av.ADSBCallsign, command st
 			case 'D':
 				return s.DepartFixDirect(tcw, callsign, fix, components[1][1:])
 			case 'H':
-				hdg, err := strconv.Atoi(components[1][1:])
+				hdg, err := parseNumber(components[1][1:])
 				if err != nil {
 					return nil, err
 				}
@@ -847,7 +835,7 @@ func (s *Sim) runOneControlCommand(tcw TCW, callsign av.ADSBCallsign, command st
 		if command == "ED" {
 			return s.ExpediteDescent(tcw, callsign)
 		} else if a, ok := strings.CutPrefix(command, "ED"); ok && len(a) > 0 {
-			alt, err := strconv.Atoi(a)
+			alt, err := parseNumber(a)
 			if err == nil {
 				return s.ExpediteDescentThrough(tcw, callsign, float32(alt*100))
 			}
@@ -856,7 +844,7 @@ func (s *Sim) runOneControlCommand(tcw TCW, callsign av.ADSBCallsign, command st
 		if command == "EC" {
 			return s.ExpediteClimb(tcw, callsign)
 		} else if a, ok := strings.CutPrefix(command, "EC"); ok && len(a) > 0 {
-			alt, err := strconv.Atoi(a)
+			alt, err := parseNumber(a)
 			if err == nil {
 				return s.ExpediteClimbThrough(tcw, callsign, float32(alt*100))
 			}
@@ -902,9 +890,9 @@ func (s *Sim) runOneControlCommand(tcw TCW, callsign av.ADSBCallsign, command st
 		} else if command == "GRC" {
 			return s.GoodRateClimb(tcw, callsign)
 		} else if a, ok := strings.CutPrefix(command, "GR"); ok && len(a) > 0 {
-			alt, err := strconv.Atoi(a)
+			alt, err := parseNumber(a)
 			if err != nil {
-				return nil, ErrInvalidCommandSyntax
+				return nil, err
 			}
 			return s.GoodRateThrough(tcw, callsign, float32(alt*100))
 		} else {
@@ -960,7 +948,7 @@ func (s *Sim) runOneControlCommand(tcw TCW, callsign av.ADSBCallsign, command st
 		if len(command) >= 5 && command[1] == 'D' {
 			return s.DirectFix(tcw, callsign, command[2:], av.TurnLeft, delayReduction)
 		} else if l := len(command); l > 2 && command[l-1] == 'D' {
-			deg, err := strconv.Atoi(command[1 : l-1])
+			deg, err := parseNumber(command[1 : l-1])
 			if err != nil {
 				return nil, err
 			}
@@ -985,7 +973,7 @@ func (s *Sim) runOneControlCommand(tcw TCW, callsign av.ADSBCallsign, command st
 			})
 		}
 	case 'M': // Mach number: M78, M78+ (or greater), M78- (or less)
-		sr, err := av.ParseSpeedRestriction(command)
+		sr, err := parseSpeedRestriction(command)
 		if err != nil || len(strings.TrimRight(command, "+-")) != 3 {
 			return nil, ErrInvalidCommandSyntax
 		}
@@ -1026,7 +1014,7 @@ func (s *Sim) runOneControlCommand(tcw TCW, callsign av.ADSBCallsign, command st
 		} else if len(command) >= 5 && command[1] == 'D' {
 			return s.DirectFix(tcw, callsign, command[2:], av.TurnRight, delayReduction)
 		} else if l := len(command); l > 2 && command[l-1] == 'D' {
-			deg, err := strconv.Atoi(command[1 : l-1])
+			deg, err := parseNumber(command[1 : l-1])
 			if err != nil {
 				return nil, err
 			}
@@ -1096,14 +1084,14 @@ func (s *Sim) runOneControlCommand(tcw TCW, callsign av.ADSBCallsign, command st
 				}
 				return s.AssignCompoundSpeed(tcw, callsign, segments)
 			}
-			sr, err := av.ParseSpeedRestriction(speedStr)
+			sr, err := parseSpeedRestriction(speedStr)
 			if err != nil {
 				return nil, err
 			}
 			until := parseSpeedUntil(untilStr)
 			return s.AssignSpeedUntil(tcw, callsign, sr, until)
 		} else {
-			sr, err := av.ParseSpeedRestriction(command[1:])
+			sr, err := parseSpeedRestriction(command[1:])
 			if err != nil {
 				return nil, err
 			}
@@ -1124,12 +1112,12 @@ func (s *Sim) runOneControlCommand(tcw TCW, callsign av.ADSBCallsign, command st
 				return nil, ErrInvalidCommandSyntax
 			}
 
-			oclock, err := strconv.Atoi(args[0])
+			oclock, err := parseNumber(args[0])
 			if err != nil || oclock < 1 || oclock > 12 {
 				return nil, ErrInvalidCommandSyntax
 			}
 
-			miles, err := strconv.Atoi(args[1])
+			miles, err := parseNumber(args[1])
 			if err != nil || miles < 1 {
 				return nil, ErrInvalidCommandSyntax
 			}
@@ -1137,7 +1125,7 @@ func (s *Sim) runOneControlCommand(tcw TCW, callsign av.ADSBCallsign, command st
 			altUnknown := args[2] == "UNK"
 			var trafficAlt int
 			if !altUnknown {
-				trafficAlt, err = strconv.Atoi(args[2])
+				trafficAlt, err = parseNumber(args[2])
 				if err != nil {
 					return nil, ErrInvalidCommandSyntax
 				}
@@ -1148,12 +1136,12 @@ func (s *Sim) runOneControlCommand(tcw TCW, callsign av.ADSBCallsign, command st
 			return s.ContactTower(tcw, callsign, av.Frequency(0))
 		} else if f, ok := strings.CutPrefix(command, "TO/"); ok {
 			var freq av.Frequency
-			if n, err := strconv.Atoi(f); err == nil {
+			if n, err := parseNumber(f); err == nil {
 				freq = av.Frequency(n)
 			}
 			return s.ContactTower(tcw, callsign, freq)
 		} else if n := len(command); n > 2 {
-			if deg, err := strconv.Atoi(command[1 : n-1]); err == nil {
+			if deg, err := parseNumber(command[1 : n-1]); err == nil {
 				if command[n-1] == 'L' {
 					return s.AssignHeading(&HeadingArgs{
 						TCW:            tcw,
@@ -1173,19 +1161,19 @@ func (s *Sim) runOneControlCommand(tcw TCW, callsign av.ADSBCallsign, command st
 
 			switch command[:2] {
 			case "TS":
-				sr, err := av.ParseSpeedRestriction(command[2:])
+				sr, err := parseSpeedRestriction(command[2:])
 				if err != nil {
 					return nil, err
 				}
 				return s.AssignSpeed(tcw, callsign, sr, true)
 			case "TM":
-				sr, err := av.ParseSpeedRestriction(command[1:])
+				sr, err := parseSpeedRestriction(command[1:])
 				if err != nil {
 					return nil, err
 				}
 				return s.AssignSpeed(tcw, callsign, sr, true)
 			case "TA", "TC", "TD":
-				alt, err := strconv.Atoi(command[2:])
+				alt, err := parseNumber(command[2:])
 				if err != nil {
 					return nil, err
 				}
