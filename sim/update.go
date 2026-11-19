@@ -266,7 +266,8 @@ func (s *Sim) applyVirtualControllerActions(ac *Aircraft, sfp *FlightPlan, fix s
 		}
 		if sfp == nil {
 			s.lg.Errorf("%s: no flight plan for the /ho at %s", ac.ADSBCallsign, fix)
-		} else {
+		} else if s.isVirtualController(sfp.TrackingController) {
+			// A human may already have the track from an earlier named handoff.
 			s.handoffTrack(sfp, sfp.InboundHandoffController)
 		}
 	} else if actions.HandoffController != "" {
@@ -330,6 +331,14 @@ func (s *Sim) applyVirtualControllerActions(ac *Aircraft, sfp *FlightPlan, fix s
 		} else if ac.IsDeparture() && ac.DepartureContactAltitude == 0 {
 			// This is a departure that hasn't contacted the departure controller yet, do it here
 			s.contactDeparture(ac, sfp)
+		} else if sfp.HandoffController != "" && s.isVirtualController(sfp.TrackingController) {
+			// The handoff hasn't been accepted, so the virtual controller
+			// keeps the aircraft until it is; accepting it transfers
+			// comms. An earlier handoff between virtual controllers,
+			// accepted while this fix was still ahead, left the pilot
+			// with the first of them, so the pilot joins the one that
+			// has the track now.
+			s.setControllerFrequency(ac, ControlPosition(sfp.TrackingController))
 		} else {
 			// We didn't enqueue this before since we knew an
 			// explicit comms handoff was coming so go ahead and
@@ -339,10 +348,7 @@ func (s *Sim) applyVirtualControllerActions(ac *Aircraft, sfp *FlightPlan, fix s
 			// may have already flashed the track to a virtual
 			// controller.
 			ctrl := s.State.ResolveController(sfp.InboundHandoffController)
-			// Make sure they've bought the handoff.
-			if ctrl != sfp.HandoffController {
-				s.enqueueControllerContact(ac, TCP(ctrl), ac.ControllerFrequency, 0)
-			}
+			s.enqueueControllerContact(ac, TCP(ctrl), ac.ControllerFrequency, 0)
 		}
 	}
 

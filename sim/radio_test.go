@@ -209,6 +209,91 @@ func TestTransferCommsBeforeAssociation(t *testing.T) {
 	}
 }
 
+// TestTransferCommsWaitsForHandoffAccept verifies that an arrival passing its
+// /tc fix stays with the virtual controller until the human accepts the
+// handoff, and then switches. The inbound position is consolidated under
+// another primary position, so the handoff target differs from the position
+// that the human's TCW is signed in at.
+func TestTransferCommsWaitsForHandoffAccept(t *testing.T) {
+	for _, tc := range []struct {
+		name    string
+		tracker ControlPosition // the virtual controller with the track
+	}{
+		{name: "pilot with the tracking controller", tracker: "N56"},
+		// An earlier handoff between virtual controllers, accepted while the
+		// /tc was still ahead, left the pilot with the first of them.
+		{name: "pilot with an earlier controller", tracker: "N57"},
+	} {
+		t.Run(tc.name, func(t *testing.T) {
+			lg := log.New(true, "error", t.TempDir())
+			s := NewTestSim(lg)
+			s.ScenarioDefaultConsolidation = PositionConsolidation{"1A": {"1B"}}
+			s.ControlPositions = map[TCP]*av.Controller{"1A": {}, "1B": {}, "N56": {}, "N57": {}}
+			s.State.Controllers = map[ControlPosition]*av.Controller{"1A": {}, "1B": {}, "N56": {}, "N57": {}}
+			s.State.CurrentConsolidation = map[TCW]*TCPConsolidation{
+				"TCW1": {PrimaryTCP: "1A", SecondaryTCPs: []SecondaryTCP{{TCP: "1B"}}},
+			}
+
+			ac := MakeTestAircraft("AAL123", "13L")
+			ac.ControllerFrequency = "N56"
+			fp := &FlightPlan{
+				ACID:                     ACID(ac.ADSBCallsign),
+				TypeOfFlight:             av.FlightTypeArrival,
+				TrackingController:       tc.tracker,
+				InboundHandoffController: "1B",
+			}
+			ac.AssociateFlightPlan(fp)
+			s.Aircraft[ac.ADSBCallsign] = ac
+
+			s.applyWaypointActionEvent(ac, av.WaypointActionEvent{Actions: av.WaypointActions{HumanHandoff: true}})
+			if fp.HandoffController != "1B" {
+				t.Fatalf("expected a handoff to 1B, got %q", fp.HandoffController)
+			}
+
+			s.applyWaypointActionEvent(ac, av.WaypointActionEvent{Actions: av.WaypointActions{TransferComms: true}})
+			if len(s.FutureFrequencyChanges) != 0 {
+				t.Fatalf("comms transferred before the handoff was accepted: %+v", s.FutureFrequencyChanges)
+			}
+			if ac.ControllerFrequency != tc.tracker {
+				t.Fatalf("expected the pilot with %s until the accept, got %q", tc.tracker, ac.ControllerFrequency)
+			}
+
+			if err := s.AcceptHandoff("TCW1", fp.ACID); err != nil {
+				t.Fatalf("AcceptHandoff: %v", err)
+			}
+			if len(s.FutureFrequencyChanges) != 1 || s.FutureFrequencyChanges[0].TCP != "1B" {
+				t.Errorf("expected one frequency change to 1B after the accept, got %+v", s.FutureFrequencyChanges)
+			}
+		})
+	}
+}
+
+// TestBareHandoffSkipsHumanTrack verifies that a bare /ho leaves alone a
+// track that a human already took from an earlier named handoff, rather than
+// offering the human a handoff from themselves.
+func TestBareHandoffSkipsHumanTrack(t *testing.T) {
+	lg := log.New(true, "error", t.TempDir())
+	s := NewTestSim(lg)
+	s.ScenarioDefaultConsolidation = PositionConsolidation{"1A": {"1B"}}
+	s.ControlPositions = map[TCP]*av.Controller{"1A": {}, "1B": {}, "N56": {}}
+
+	ac := MakeTestAircraft("AAL123", "13L")
+	ac.ControllerFrequency = "N56" // the /tc is still ahead
+	fp := &FlightPlan{
+		ACID:                     ACID(ac.ADSBCallsign),
+		TypeOfFlight:             av.FlightTypeArrival,
+		TrackingController:       "1B",
+		InboundHandoffController: "1B",
+	}
+	ac.AssociateFlightPlan(fp)
+	s.Aircraft[ac.ADSBCallsign] = ac
+
+	s.applyWaypointActionEvent(ac, av.WaypointActionEvent{Actions: av.WaypointActions{HumanHandoff: true}})
+	if fp.HandoffController != "" {
+		t.Errorf("offered a handoff to %q on a track 1B already owns", fp.HandoffController)
+	}
+}
+
 // TestVirtualHandoffAcceptBeforeAssociation verifies that a departure handed
 // off between virtual controllers before its track tags up is still moved to
 // the accepting controller's frequency. Routes put a named handoff at the
